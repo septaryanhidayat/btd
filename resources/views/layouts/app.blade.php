@@ -35,85 +35,95 @@
             }
         }
 
-        /* Root Background & Typography Base */
-        body {
-            background-color: #FAFAFC;
-            color: #0F172A;
-            overflow-x: hidden;
-        }
-        .dark body {
-            background-color: #070A11;
-            color: #F8FAFC;
-        }
-
-        /* 100% Solid Text Contrast Rule for Light Mode */
-        html.light body,
-        html.light .bento-card,
-        html.light .glass-panel {
+        /* LIGHT MODE (Default Pristine Clean & High Contrast) */
+        html.light body {
+            background-color: #F8FAFC !important;
             color: #0F172A !important;
+        }
+        html.light .bento-card,
+        html.light .glass-card {
+            background: #FFFFFF !important;
+            border: 1.5px solid #E2E8F0 !important;
+            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.07), 0 4px 6px -2px rgba(15, 23, 42, 0.03) !important;
+            color: #0F172A !important;
+        }
+        html.light .bento-card:hover,
+        html.light .glass-card:hover {
+            border-color: #6366F1 !important;
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.2) !important;
+            transform: translateY(-4px);
         }
         html.light h1, html.light h2, html.light h3, html.light h4, html.light h5, html.light h6 {
             color: #0F172A !important;
         }
-        html.light p, html.light span, html.light li {
-            color: #1E293B;
+        html.light p, html.light li {
+            color: #334155 !important;
         }
-        html.light .text-contrast-muted {
-            color: #475569 !important;
+        html.light .text-title-bold {
+            color: #0F172A !important;
+        }
+        html.light .text-desc {
+            color: #334155 !important;
+        }
+        html.light .bg-surface-light {
+            background-color: #FFFFFF !important;
+        }
+        html.light .bg-alt-light {
+            background-color: #F1F5F9 !important;
         }
 
-        /* Ultra-Futuristic Bento Cards */
-        .bento-card {
-            background: #FFFFFF;
-            border: 1.5px solid #E2E8F0;
-            border-radius: 1.75rem;
-            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-        }
-        .dark .bento-card {
-            background: #0E1424;
-            border: 1.5px solid #1E293B;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+        /* DARK MODE (Futuristic Cyber Obsidian) */
+        html.dark body {
+            background-color: #070A11 !important;
             color: #F8FAFC !important;
         }
-        .dark .bento-card h1, .dark .bento-card h2, .dark .bento-card h3, .dark .bento-card h4 {
+        html.dark .bento-card,
+        html.dark .glass-card {
+            background: #0E1424 !important;
+            border: 1.5px solid #1E293B !important;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6) !important;
+            color: #F8FAFC !important;
+        }
+        html.dark .bento-card:hover,
+        html.dark .glass-card:hover {
+            border-color: #818CF8 !important;
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.4) !important;
+            transform: translateY(-4px);
+        }
+        html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
             color: #FFFFFF !important;
         }
-        .dark .bento-card p, .dark .bento-card span {
-            color: #CBD5E1;
+        html.dark p, html.dark li {
+            color: #CBD5E1 !important;
         }
-        .bento-card:hover {
-            border-color: #6366F1;
-            transform: translateY(-4px);
-            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.18);
+        html.dark .text-title-bold {
+            color: #FFFFFF !important;
         }
-        .dark .bento-card:hover {
-            border-color: #818CF8;
-            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.35);
+        html.dark .text-desc {
+            color: #CBD5E1 !important;
         }
-
-        /* Animated Glowing Border Effect */
-        .glow-border {
-            position: relative;
+        html.dark .bg-surface-light {
+            background-color: #0E1424 !important;
         }
-        .glow-border::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(135deg, #4F46E5, #06B6D4, #9333EA, #3B82F6);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        .glow-border:hover::before {
-            opacity: 1;
+        html.dark .bg-alt-light {
+            background-color: #070A11 !important;
         }
 
-        /* Futuristic Gradient Typography */
+        /* Universal Permanent Contrast for Dark Banner / Footer */
+        .dark-banner, .dark-footer {
+            background-color: #090D1A !important;
+            color: #F8FAFC !important;
+        }
+        .dark-banner h1, .dark-banner h2, .dark-banner h3, .dark-footer h4 {
+            color: #FFFFFF !important;
+        }
+        .dark-banner p, .dark-footer p, .dark-footer li, .dark-footer span {
+            color: #CBD5E1 !important;
+        }
+
+        /* 3D Visual Depth and Gradient Utilities */
         .gradient-text-electric {
-            background: linear-gradient(135deg, #1D4ED8 0%, #7C3AED 50%, #0284C7 100%);
+            background: linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #0891B2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -123,24 +133,24 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* 3D Holographic Parallax Container */
-        .perspective-1000 {
-            perspective: 1000px;
+        /* Ambient Pulsing Glow Orbs */
+        @keyframes pulseSlow {
+            0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.25; }
+            50% { transform: scale(1.1) translate(15px, -15px); opacity: 0.45; }
         }
-        .preserve-3d {
-            transform-style: preserve-3d;
+        .animate-pulse-slow {
+            animation: pulseSlow 8s ease-in-out infinite;
         }
 
-        /* Floating Micro-animation */
         @keyframes floatSlow {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(0.5deg); }
+            50% { transform: translateY(-12px) rotate(0.8deg); }
         }
         .animate-float-slow {
-            animation: floatSlow 6s ease-in-out infinite;
+            animation: floatSlow 5s ease-in-out infinite;
         }
 
-        /* Infinite Marquee */
+        /* Infinite Partner Logo Marquee */
         @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
@@ -148,7 +158,7 @@
         .animate-marquee {
             display: flex;
             width: 200%;
-            animation: marquee 25s linear infinite;
+            animation: marquee 28s linear infinite;
         }
         .animate-marquee:hover {
             animation-play-state: paused;
@@ -171,7 +181,7 @@
     </style>
 
     <script>
-        // Default Light Mode script with persistence
+        // High-Contrast Theme Script with persistence
         if (localStorage.theme === 'dark') {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');
@@ -182,19 +192,19 @@
         }
     </script>
 </head>
-<body class="bg-[#FAFAFC] dark:bg-[#070A11] text-slate-900 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-indigo-600 selection:text-white transition-colors duration-300">
+<body class="bg-[#F8FAFC] dark:bg-[#070A11] text-slate-900 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-indigo-600 selection:text-white transition-colors duration-300 relative">
 
-    <!-- Futuristic Top Live Broadcast Bar -->
-    <div class="bg-slate-950 text-white text-xs py-2 px-4 border-b border-slate-800 flex items-center justify-between overflow-hidden">
+    <!-- Top Announcement Live Bar -->
+    <div class="bg-slate-950 text-white text-xs py-2 px-4 border-b border-slate-800 flex items-center justify-between">
         <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold border border-emerald-500/30">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                    ONLINE 2026
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-extrabold border border-emerald-500/30">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    CV. BERANDA TEKNOLOGI DIGITAL
                 </span>
-                <span class="hidden sm:inline text-slate-300 font-medium text-xs">CV. Beranda Teknologi Digital &bull; Enterprise Software House & AI Agency</span>
+                <span class="hidden sm:inline text-slate-300 font-medium text-xs">Jasa Pembuatan Website, Mobile App Android/iOS & Solusi AI</span>
             </div>
-            <div class="flex items-center gap-4 text-xs font-semibold">
+            <div class="flex items-center gap-4 text-xs font-bold">
                 <a href="https://wa.me/6289695249089" target="_blank" class="text-amber-300 hover:text-amber-200 flex items-center gap-1">
                     <span>💬 WhatsApp: 0896 9524 9089</span>
                 </a>
@@ -202,34 +212,34 @@
         </div>
     </div>
 
-    <!-- Floating Glassmorphic Header Navigation -->
+    <!-- Floating Glassmorphic Header Navigation Bar -->
     <header x-data="{ open: false, scrolled: false }" 
             @scroll.window="scrolled = (window.pageYOffset > 20)"
-            :class="scrolled ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-md py-3' : 'bg-transparent py-5'"
+            :class="scrolled ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-md py-3' : 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md py-4 border-b border-slate-200/80 dark:border-slate-800/80'"
             class="sticky top-0 inset-x-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
             <!-- Official Brand Logo -->
             <a href="{{ route('home') }}" class="flex items-center gap-3 group">
-                <div class="p-1 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm group-hover:scale-105 transition-all">
+                <div class="p-1 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs group-hover:scale-105 transition-all">
                     <img src="/images/Logo-BTD.png" alt="Beranda Teknologi Digital Logo" class="h-10 w-auto object-contain" />
                 </div>
                 <div class="flex flex-col">
                     <span class="font-heading font-extrabold text-lg tracking-tight text-slate-950 dark:text-white flex items-center gap-1">
                         Beranda<span class="text-indigo-600 dark:text-indigo-400">Digital</span>
                     </span>
-                    <span class="text-[10px] font-extrabold tracking-widest text-slate-600 dark:text-slate-400 uppercase -mt-1">Startup & Software House</span>
+                    <span class="text-[10px] font-extrabold tracking-widest text-slate-600 dark:text-slate-400 uppercase -mt-1">CV. Beranda Teknologi Digital</span>
                 </div>
             </a>
 
-            <!-- High-Tech Navigation Pills -->
-            <nav class="hidden md:flex items-center gap-1 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-full px-3 py-1.5 shadow-sm">
-                <a href="{{ route('home') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('home') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Beranda</a>
-                <a href="{{ route('services') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('services') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Layanan</a>
-                <a href="{{ route('projects.index') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('projects.*') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Portofolio</a>
-                <a href="{{ route('products.index') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('products.*') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Produk Digital</a>
-                <a href="{{ route('trainer.index') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('trainer.index') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Trainer & Galeri</a>
-                <a href="{{ route('blog.index') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('blog.*') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Informasi</a>
+            <!-- High-Contrast Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full px-3 py-1.5 shadow-xs">
+                <a href="{{ route('home') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('home') ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Beranda</a>
+                <a href="{{ route('services') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('services') ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Layanan</a>
+                <a href="{{ route('projects.index') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('projects.*') ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Portofolio</a>
+                <a href="{{ route('products.index') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('products.*') ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Produk Digital</a>
+                <a href="{{ route('trainer.index') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('trainer.index') ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Trainer & Galeri</a>
+                <a href="{{ route('blog.index') }}" class="px-4 py-1.5 rounded-full text-xs font-extrabold transition-all {{ request()->routeIs('blog.*') ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400' }}">Informasi</a>
             </nav>
 
             <!-- Right Controls: Theme Switcher & Contact Button -->
@@ -237,11 +247,11 @@
                 <button onclick="toggleTheme()" 
                         type="button" 
                         title="Beralih Mode Tampilan"
-                        class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-800 dark:text-amber-300 hover:scale-105 transition-all shadow-sm">
+                        class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-900 dark:text-amber-300 hover:scale-105 transition-all shadow-xs">
                     <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
-                    <svg class="w-5 h-5 block dark:hidden text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 block dark:hidden text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
                 </button>
@@ -256,15 +266,15 @@
 
             <!-- Mobile Controls -->
             <div class="flex items-center gap-2 md:hidden">
-                <button onclick="toggleTheme()" type="button" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-amber-300">
+                <button onclick="toggleTheme()" type="button" class="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-amber-300">
                     <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
-                    <svg class="w-5 h-5 block dark:hidden text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 block dark:hidden text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
                 </button>
-                <button @click="open = !open" type="button" class="p-2 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+                <button @click="open = !open" type="button" class="p-2 rounded-xl text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
                         <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
@@ -304,82 +314,107 @@
         @yield('content')
     </main>
 
-    <!-- Futuristic High-End Footer -->
-    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 pt-16 pb-12 transition-colors">
+    <!-- Permanent High-Contrast Dark Footer -->
+    <footer class="dark-footer border-t border-slate-800 pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-200 dark:border-slate-800">
-                <!-- Column 1: Brand -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+                <!-- Column 1: Brand Info -->
                 <div class="lg:col-span-2 space-y-4">
                     <a href="{{ route('home') }}" class="flex items-center gap-3">
                         <img src="/images/Logo-BTD.png" alt="Beranda Teknologi Digital" class="h-10 w-auto object-contain" />
-                        <span class="font-heading font-extrabold text-xl text-slate-950 dark:text-white">Beranda<span class="text-indigo-600 dark:text-indigo-400">Digital</span></span>
+                        <span class="font-heading font-extrabold text-xl text-white">Beranda<span class="text-indigo-400">Digital</span></span>
                     </a>
-                    <p class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-400 max-w-sm font-medium">
-                        <strong class="text-slate-900 dark:text-white font-bold">CV. Beranda Teknologi Digital</strong> &bull; Mitra transformasi digital inovatif penyedia software enterprise, aplikasi mobile Android/iOS, solusi AI privat, dan pelatihan teknologi profesional.
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-300 max-w-sm font-medium">
+                        <strong class="text-white font-bold">CV. Beranda Teknologi Digital</strong> &bull; Mitra transformasi digital inovatif penyedia software enterprise, aplikasi mobile Android/iOS, solusi AI privat, dan pelatihan teknologi profesional.
                     </p>
-                    <div class="pt-2 text-xs text-slate-700 dark:text-slate-300 space-y-1 font-semibold">
-                        <p class="text-slate-900 dark:text-white font-bold">Direktur Utama: Septa Ryan Hidayat, S.Kom</p>
+                    <div class="pt-2 text-xs text-slate-300 space-y-1 font-semibold">
+                        <p class="text-white font-bold">Direktur Utama: Septa Ryan Hidayat, S.Kom</p>
                         <p>WhatsApp Resmi: 0896 9524 9089 / 0811 7448 447</p>
                     </div>
                 </div>
 
                 <!-- Column 2: Layanan -->
                 <div>
-                    <h4 class="font-heading font-bold text-slate-950 dark:text-white text-xs tracking-wider uppercase mb-4">Layanan Utama</h4>
-                    <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300 font-semibold">
-                        <li><a href="{{ route('services') }}" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">&bull; Web App & Website Enterprise</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">&bull; Mobile App Android & iOS (Flutter)</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">&bull; Custom AI Chatbot & RAG Document</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">&bull; Website Sekolah & Digital Desa</a></li>
+                    <h4 class="font-heading font-bold text-white text-xs tracking-wider uppercase mb-4">Layanan Utama</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-300 font-semibold">
+                        <li><a href="{{ route('services') }}" class="hover:text-indigo-400 transition-colors">&bull; Web App & Website Enterprise</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-indigo-400 transition-colors">&bull; Mobile App Android & iOS (Flutter)</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-indigo-400 transition-colors">&bull; Custom AI Chatbot & RAG Document</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-indigo-400 transition-colors">&bull; Website Sekolah & Digital Desa</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Navigasi -->
                 <div>
-                    <h4 class="font-heading font-bold text-slate-950 dark:text-white text-xs tracking-wider uppercase mb-4">Navigasi</h4>
-                    <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300 font-semibold">
-                        <li><a href="{{ route('home') }}" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">&bull; Beranda</a></li>
-                        <li><a href="{{ route('projects.index') }}" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">&bull; Portofolio Proyek</a></li>
-                        <li><a href="{{ route('products.index') }}" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">&bull; Etalase Produk Digital</a></li>
-                        <li><a href="{{ route('trainer.index') }}" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">&bull; Trainer & Galeri Foto</a></li>
-                        <li><a href="{{ route('blog.index') }}" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">&bull; Informasi & Artikel</a></li>
+                    <h4 class="font-heading font-bold text-white text-xs tracking-wider uppercase mb-4">Navigasi</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-300 font-semibold">
+                        <li><a href="{{ route('home') }}" class="hover:text-indigo-400 transition-colors">&bull; Beranda</a></li>
+                        <li><a href="{{ route('projects.index') }}" class="hover:text-indigo-400 transition-colors">&bull; Portofolio Proyek</a></li>
+                        <li><a href="{{ route('products.index') }}" class="hover:text-indigo-400 transition-colors">&bull; Etalase Produk Digital</a></li>
+                        <li><a href="{{ route('trainer.index') }}" class="hover:text-indigo-400 transition-colors">&bull; Trainer & Galeri Foto</a></li>
+                        <li><a href="{{ route('blog.index') }}" class="hover:text-indigo-400 transition-colors">&bull; Informasi & Artikel</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 4: Kontak Resmi -->
                 <div>
-                    <h4 class="font-heading font-bold text-slate-950 dark:text-white text-xs tracking-wider uppercase mb-4">Kontak Resmi</h4>
-                    <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 font-semibold">
+                    <h4 class="font-heading font-bold text-white text-xs tracking-wider uppercase mb-4">Kontak Resmi</h4>
+                    <ul class="space-y-2 text-xs text-slate-300 font-semibold">
                         <li class="flex items-center gap-2">
-                            <span class="text-indigo-600 dark:text-indigo-400 font-bold">💬 WA 1:</span>
-                            <span class="font-mono text-slate-900 dark:text-white font-bold">0896 9524 9089</span>
+                            <span class="text-indigo-400 font-bold">💬 WA 1:</span>
+                            <span class="font-mono text-white font-bold">0896 9524 9089</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-indigo-600 dark:text-indigo-400 font-bold">💬 WA 2:</span>
+                            <span class="text-indigo-400 font-bold">💬 WA 2:</span>
                             <span class="font-mono font-bold">0811 7448 447</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-indigo-600 dark:text-indigo-400 font-bold">✉️ Email:</span>
-                            <span>info@berandadigital.net</span>
+                            <span class="text-indigo-400 font-bold">✉️ Email:</span>
+                            <span class="text-white font-bold">info@berandadigital.net</span>
                         </li>
-                        <li class="text-[11px] text-slate-600 dark:text-slate-400 pt-1 leading-relaxed">
+                        <li class="text-[11px] text-slate-400 pt-1 leading-relaxed">
                             📍 Sumatera Selatan, Indonesia.
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-medium gap-4">
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-medium gap-4">
                 <p>&copy; {{ date('Y') }} CV. Beranda Teknologi Digital (berandadigital.net). All Rights Reserved.</p>
                 <div class="flex items-center gap-3">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-mono text-[11px] font-bold border border-slate-200 dark:border-slate-800">
-                        <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 text-slate-200 font-mono text-[11px] font-bold border border-slate-800">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                         Laravel 13 & PHP 8.4 Powered
                     </span>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Floating Action Buttons (Quick WA & Scroll to Top) -->
+    <div x-data="{ showTop: false }" 
+         @scroll.window="showTop = (window.pageYOffset > 350)" 
+         class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        
+        <!-- Scroll to Top Button -->
+        <button x-show="showTop" 
+                x-transition 
+                @click="window.scrollTo({ top: 0, behavior: 'smooth' })" 
+                type="button" 
+                class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 shadow-xl flex items-center justify-center hover:scale-110 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
+
+        <!-- Floating WhatsApp Launcher Button -->
+        <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem" 
+           target="_blank" 
+           class="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-xs shadow-2xl shadow-emerald-500/40 hover:scale-105 transition-all">
+            <span class="w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+            <span>Konsultasi WA</span>
+        </a>
+    </div>
 
     <script>
         function toggleTheme() {
