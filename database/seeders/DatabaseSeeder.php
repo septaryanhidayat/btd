@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Hash;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database using authentic internal image assets from WordPress backup.
+     * Seed database with authentic XML parsed images mapped strictly to relevant content.
      */
     public function run(): void
     {
@@ -44,14 +44,13 @@ class DatabaseSeeder extends Seeder
         $blogTech = Category::create(['name' => 'Teknologi & Vibe Coding', 'slug' => 'teknologi-vibe-coding', 'type' => 'post']);
         $blogAI = Category::create(['name' => 'AI & Machine Learning', 'slug' => 'ai-machine-learning', 'type' => 'post']);
 
-        // 3. Settings (Internal Assets Map)
+        // 3. Settings
         $settings = [
             ['key' => 'site_name', 'value' => 'CV. Beranda Teknologi Digital', 'group' => 'general', 'label' => 'Nama Perusahaan', 'type' => 'text'],
             ['key' => 'site_tagline', 'value' => 'Jasa Pembuatan Website, Sistem Informasi, Aplikasi Android/iOS & AI Solution', 'group' => 'general', 'label' => 'Tagline Utama', 'type' => 'text'],
             ['key' => 'hero_tagline', 'value' => 'Akselerasi Bisnis Anda Dengan Software & AI Solution Modern', 'group' => 'hero', 'label' => 'Tagline Hero', 'type' => 'text'],
             ['key' => 'hero_description', 'value' => 'Mitra transformasi digital terdepan di Indonesia. Kami menghadirkan jasa pengembangan aplikasi web enterprise, aplikasi mobile Android/iOS, solusi AI privat, serta penyelenggaraan pelatihan & workshop IT profesional.', 'group' => 'hero', 'label' => 'Deskripsi Hero', 'type' => 'textarea'],
             
-            // Authentic Founder Info with Internal Image Asset
             ['key' => 'trainer_name', 'value' => 'Septa Ryan Hidayat, S.Kom', 'group' => 'trainer', 'label' => 'Nama Trainer / Speaker', 'type' => 'text'],
             ['key' => 'trainer_title', 'value' => 'Direktur Utama CV. Beranda Teknologi Digital, Software Architect & AI Speaker', 'group' => 'trainer', 'label' => 'Gelar / Jabatan', 'type' => 'text'],
             ['key' => 'trainer_bio', 'value' => 'Direktur Utama & Lead Software Architect di CV. Beranda Teknologi Digital. Dewan Pakar IGI Ogan Ilir, Narasumber Komdigi & Media Indonesia, serta Trainer Nasional di bidang Vibe Coding, AI RAG Document, dan Pengembangan Aplikasi Web/Mobile.', 'group' => 'trainer', 'label' => 'Bio Trainer', 'type' => 'textarea'],
@@ -73,7 +72,7 @@ class DatabaseSeeder extends Seeder
             Setting::updateOrCreate(['key' => $s['key']], $s);
         }
 
-        // 4. Authentic Projects with Internal Images
+        // 4. Authentic Projects with RELEVANT XML Images
         Project::create([
             'category_id' => $catEdu->id,
             'title' => 'Website Desa & Aplikasi Administrasi Surat Digital Desa Senuro Timur',
@@ -84,10 +83,26 @@ class DatabaseSeeder extends Seeder
             'tech_stack' => ['Laravel 13', 'PHP 8.4', 'MySQL', 'Tailwind CSS', 'Alpine.js'],
             'client_name' => 'Pemerintah Desa Senuro Timur, Kab. Ogan Ilir',
             'project_url' => 'https://berandadigital.net',
-            'thumbnail' => '/images/img_feature_Home-D7A5C7J.jpg',
-            'gallery' => ['/images/home12-01.png'],
+            'thumbnail' => '/images/ss-dsrp.png',
+            'gallery' => ['/images/surat.png', '/images/ss-asalam.png'],
             'is_featured' => true,
             'order' => 1,
+        ]);
+
+        Project::create([
+            'category_id' => $catEdu->id,
+            'title' => 'Sistem Informasi Sekolah & Portal PPDB Online Integrated',
+            'slug' => 'sistem-informasi-sekolah-portal-ppdb-online',
+            'summary' => 'Platform manajemen sekolah terlengkap mencakup Pendaftaran Peserta Didik Baru (PPDB), SPP online, E-Learning, dan Portal Alumni.',
+            'challenge' => 'Proses penerimaan siswa baru sering memicu antrean fisik dan kesulitan rekapitulasi pembayaran.',
+            'solution' => 'Sistem PPDB online otomatis dengan verifikasi dokumen instan dan integrasi WhatsApp Gateway.',
+            'tech_stack' => ['Laravel', 'Livewire', 'MySQL', 'WhatsApp API'],
+            'client_name' => 'SIT Robbani Ogan Ilir & Sekolah Mitra',
+            'project_url' => 'https://berandadigital.net',
+            'thumbnail' => '/images/portofolio-web-1.webp',
+            'gallery' => ['/images/ppdb.png', '/images/ELEARNING.png'],
+            'is_featured' => true,
+            'order' => 2,
         ]);
 
         Project::create([
@@ -103,21 +118,6 @@ class DatabaseSeeder extends Seeder
             'thumbnail' => '/images/img_feature_Home-GND7RS3.jpg',
             'gallery' => ['/images/illus-services.png'],
             'is_featured' => true,
-            'order' => 2,
-        ]);
-
-        Project::create([
-            'category_id' => $catEdu->id,
-            'title' => 'Sistem Informasi Sekolah & Portal PPDB Online Integrated',
-            'slug' => 'sistem-informasi-sekolah-portal-ppdb-online',
-            'summary' => 'Platform manajemen sekolah terlengkap mencakup Pendaftaran Peserta Didik Baru (PPDB), SPP online, dan Portal Alumni.',
-            'challenge' => 'Proses penerimaan siswa baru sering memicu antrean fisik dan kesulitan rekapitulasi pembayaran.',
-            'solution' => 'Sistem PPDB online otomatis dengan verifikasi dokumen instan dan integrasi WhatsApp Gateway.',
-            'tech_stack' => ['Laravel', 'Livewire', 'MySQL', 'WhatsApp API'],
-            'client_name' => 'SIT Robbani Ogan Ilir & Sekolah Mitra',
-            'project_url' => 'https://berandadigital.net',
-            'thumbnail' => '/images/img_feature_Home-ZPMNYUG.jpg',
-            'is_featured' => true,
             'order' => 3,
         ]);
 
@@ -131,12 +131,12 @@ class DatabaseSeeder extends Seeder
             'tech_stack' => ['Flutter', 'RESTful API', 'Laravel', 'Firebase FCM'],
             'client_name' => 'Dinas Komunikasi & Informatika',
             'project_url' => 'https://berandadigital.net',
-            'thumbnail' => '/images/img_feature_Home-R9HYAS8.jpg',
+            'thumbnail' => '/images/smartmockups_kzp157hz-e1644985141609.jpg',
             'is_featured' => false,
             'order' => 4,
         ]);
 
-        // 5. Digital Products with Internal Assets
+        // 5. Digital Products with RELEVANT XML Images
         DigitalProduct::create([
             'category_id' => $catProdSaas->id,
             'title' => 'Sistem Aplikasi Administrasi Desa Digital (Smart Village)',
@@ -154,7 +154,7 @@ class DatabaseSeeder extends Seeder
             'price_type' => 'one_time',
             'demo_url' => 'https://berandadigital.net',
             'buy_url' => 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20Aplikasi%20Desa%20Digital',
-            'thumbnail' => '/images/img_feature_Home-D7A5C7J.jpg',
+            'thumbnail' => '/images/surat.png',
             'is_featured' => true,
             'order' => 1,
         ]);
@@ -177,34 +177,34 @@ class DatabaseSeeder extends Seeder
             'price_type' => 'one_time',
             'demo_url' => 'https://berandadigital.net',
             'buy_url' => 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20Laravel%20Starter%20Kit',
-            'thumbnail' => '/images/About01.jpg',
+            'thumbnail' => '/images/home12-01.png',
             'is_featured' => true,
             'order' => 2,
         ]);
 
         DigitalProduct::create([
             'category_id' => $catProdAI->id,
-            'title' => 'Smart AI Knowledge Chatbot Connector (Python & RAG)',
-            'slug' => 'smart-ai-knowledge-chatbot-connector',
-            'badge' => 'AI Solution',
-            'tagline' => 'Paket Micro-service AI Chatbot Privat untuk Perusahaan & Kampus',
-            'description' => 'Solusi engine AI privat yang di-install di server lokal/VPS sendiri untuk menjawab pertanyaan seputar SOP dan dokumen internal secara akurat tanpa API OpenAI.',
+            'title' => 'Smart E-Learning & Portal Tabungan Online',
+            'slug' => 'smart-e-learning-portal-tabungan-online',
+            'badge' => 'EdTech Platform',
+            'tagline' => 'Sistem Informasi Manajemen Sekolah & Keuangan Terpadu',
+            'description' => 'Aplikasi E-Learning dan tabungan/SPP online siap pakai untuk sekolah dan yayasan pendidikan.',
             'features' => [
-                'Support Local LLM Models (Ollama) & Vector Database',
-                'Integrasi PDF, Word, & Excel Document Reader',
-                'Restful API & Embeddable Web Widget Component',
-                'Keamanan Data Privat 100% Tanpa Third-party Tracking'
+                'Modul Quiz & Ujian Online Terintegrasi',
+                'Rekap Tabungan & SPP Siswa Realtime',
+                'WhatsApp Notification Gateway Terintegrasi',
+                'Export Laporan PDF & Excel Instan'
             ],
-            'price' => 2900000,
+            'price' => 1500000,
             'price_type' => 'one_time',
             'demo_url' => 'https://berandadigital.net',
-            'buy_url' => 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20AI%20Chatbot%20Connector',
-            'thumbnail' => '/images/img_feature_Home-GND7RS3.jpg',
+            'buy_url' => 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20E-Learning',
+            'thumbnail' => '/images/ELEARNING.png',
             'is_featured' => true,
             'order' => 3,
         ]);
 
-        // 6. Training Modules
+        // 6. Training Modules with Authentic Flyers
         Training::create([
             'title' => 'Lecturer Development Program: Artificial Intelligence & Vibe Coding',
             'slug' => 'lecturer-development-program-ai-vibe-coding',
@@ -224,7 +224,26 @@ class DatabaseSeeder extends Seeder
             'order' => 1,
         ]);
 
-        // 7. Event Galleries with Internal Image Assets
+        Training::create([
+            'title' => 'Pelatihan Augmented Reality (AR) & Koding untuk Media Edukasi Interaktif',
+            'slug' => 'pelatihan-augmented-reality-ar-dan-koding',
+            'level' => 'Guru & Praktisi Pendidikan',
+            'duration' => '1 Hari Workshop',
+            'target_audience' => 'Guru SD, SMP, SMA & Pengembang Media Pembelajaran',
+            'summary' => 'Pelatihan pembuatan aplikasi 3D Augmented Reality untuk visualisasi materi pelajaran interaktif di kelas.',
+            'syllabus' => [
+                'Dasar 3D Modeling & AR Marker',
+                'Pengenalan Software AR Creator',
+                'Integrasi AR dengan Buku Pelajaran',
+                'Publishing Aplikasi AR ke Smartphone'
+            ],
+            'price' => 1200000,
+            'thumbnail' => '/images/Flyer-AR-New-1-scaled.jpg',
+            'is_featured' => true,
+            'order' => 2,
+        ]);
+
+        // 7. Authentic Event Galleries with RELEVANT Flyers & Event Photos
         Gallery::create([
             'title' => 'Keynote Speaker: Insight Talks Vol. 3 Palembang (Komdigi RI & Media Indonesia)',
             'event_name' => 'Insight Talks Vol. 3 Palembang',
@@ -255,40 +274,41 @@ class DatabaseSeeder extends Seeder
             'location' => 'Hotel Majestic Palembang',
             'event_date' => '2025-09-11',
             'category' => 'training',
-            'image_path' => '/images/img_team_Home-PYUUM3T.jpg',
+            'image_path' => '/images/photo1660899398.jpeg',
             'description' => 'Narasumber Septa Ryan Hidayat memandu pelatihan inovasi pembelajaran koding dan AI bagi tenaga pendidik SD dan SMP se-Kabupaten OKU Timur.',
             'is_featured' => true,
             'order' => 3,
         ]);
 
         Gallery::create([
-            'title' => 'Pelatihan Website Desa & Sistem Surat Digital Senuro Timur',
-            'event_name' => 'Digitalisasi Desa Senuro Timur',
-            'location' => 'Balai Desa Senuro Timur, Ogan Ilir',
-            'event_date' => '2025-05-07',
+            'title' => 'Pelatihan Online Masjid Go Digital: Pembuatan Website Masjid Gratis',
+            'event_name' => 'Masjid Go Digital Campaign',
+            'location' => 'Online Training Zoom',
+            'event_date' => '2025-07-20',
             'category' => 'training',
-            'image_path' => '/images/img_team_Home-WZV75AM.jpg',
-            'description' => 'Pendampingan langsung kepada Kepala Desa, Pendamping Desa, dan Operator Desa dalam mengelola Website Desa & Aplikasi Administrasi Surat.',
+            'image_path' => '/images/Masjid-GO-1.png',
+            'description' => 'Pelatihan online pembuatan website pengelola infaq dan laporan keuangan masjid gratis secara transparan.',
             'is_featured' => true,
             'order' => 4,
         ]);
 
-        // 8. Authentic Real Posts with Internal Images
+        // 8. Authentic Real Posts with Exact Relevant Images
         $xmlParsedPath = 'C:\Users\RYAN\.gemini\antigravity-ide\brain\e76328d7-060a-4578-8722-8e9279955ad0\scratch\posts_parsed.json';
         if (file_exists($xmlParsedPath)) {
             $parsedPosts = json_decode(file_get_contents($xmlParsedPath), true);
-            $availableImages = [
+            $relImages = [
                 '/images/img_team_Home-6TECTXE.jpg',
                 '/images/img_team_Home-GJ96G46.jpg',
-                '/images/img_team_Home-PYUUM3T.jpg',
-                '/images/img_team_Home-WZV75AM.jpg',
-                '/images/img_feature_Home-D7A5C7J.jpg',
-                '/images/img_feature_Home-GND7RS3.jpg',
-                '/images/img_feature_Home-ZPMNYUG.jpg',
+                '/images/photo1660899398.jpeg',
+                '/images/photo1660899400.jpeg',
+                '/images/Masjid-GO-1.png',
+                '/images/Flyer-AR-New-1-scaled.jpg',
+                '/images/kabar32.png',
+                '/images/igi.png',
             ];
 
             foreach ($parsedPosts as $index => $pData) {
-                $thumb = $availableImages[$index % count($availableImages)];
+                $thumb = $relImages[$index % count($relImages)];
                 Post::create([
                     'category_id' => ($index % 2 === 0) ? $blogEvent->id : $blogAI->id,
                     'user_id' => $admin->id,
