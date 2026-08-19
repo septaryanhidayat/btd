@@ -54,10 +54,20 @@
             box-shadow: 0 10px 30px -5px rgba(1, 112, 185, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
         }
     </style>
+
+    <script>
+        // Enforce Light Mode as primary default
+        if (localStorage.theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = 'light';
+        }
+    </script>
 </head>
 <body class="bg-white text-slate-800 min-h-screen flex flex-col antialiased selection:bg-[#0170b9] selection:text-white">
 
-    <!-- Top Announcement Bar -->
+    <!-- Top Notification Announcement Bar -->
     <div class="bg-gradient-to-r from-[#0170b9] via-blue-600 to-cyan-600 text-white text-xs py-2 px-4 text-center font-medium flex items-center justify-center gap-2 shadow-sm">
         <span class="bg-white/20 text-white px-2 py-0.5 rounded-full font-bold text-[10px] uppercase tracking-wider">Promo Digital</span>
         <span>Bangun Usaha & Bisnis Anda Go Digital! Konsultasi Gratis & Penawaran Spesial</span>

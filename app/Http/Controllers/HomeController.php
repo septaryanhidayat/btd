@@ -48,17 +48,17 @@ class HomeController extends Controller
         $latestPosts = Post::with(['category', 'author'])
             ->where('status', 'published')
             ->latest('published_at')
-            ->take(3)
+            ->take(6)
             ->get();
 
         // 6. Settings
-        $siteName = Setting::getValue('site_name', 'Beranda Digital');
-        $heroTagline = Setting::getValue('hero_tagline', 'Mitra Transformasi Digital, Developer Software & Inovator Produk AI');
-        $heroDescription = Setting::getValue('hero_description', 'Beranda Digital adalah startup agensi teknologi modern yang bergerak di bidang pembuatan aplikasi enterprise, pengembangan produk digital, dan penyelenggaraan pelatihan/workshop teknologi terkini.');
+        $siteName = Setting::getValue('site_name', 'CV. Beranda Teknologi Digital');
+        $heroTagline = Setting::getValue('hero_tagline', 'Bangun Usaha & Bisnis Anda Go Digital !');
+        $heroDescription = Setting::getValue('hero_description', 'Beranda Teknologi Digital - Jasa pembuatan website, sistem informasi, aplikasi android & desain grafis.');
         
-        $trainerName = Setting::getValue('trainer_name', 'Ryan Beranda Digital');
-        $trainerTitle = Setting::getValue('trainer_title', 'Senior Software Architect, AI Specialist & Certified Corporate Trainer');
-        $trainerBio = Setting::getValue('trainer_bio', 'Berpengalaman lebih dari 8 tahun merancang arsitektur sistem skala besar dan memimpin pelatihan teknologi.');
+        $trainerName = Setting::getValue('trainer_name', 'Septa Ryan Hidayat, S.Kom');
+        $trainerTitle = Setting::getValue('trainer_title', 'Direktur Utama CV. Beranda Teknologi Digital, Software Engineer & AI Speaker');
+        $trainerBio = Setting::getValue('trainer_bio', 'Direktur Utama & Lead Software Engineer di CV. Beranda Teknologi Digital. Dewan Pakar IGI Ogan Ilir, Narasumber Komdigi & Media Indonesia, serta Trainer Nasional.');
         $trainerAvatar = Setting::getValue('trainer_avatar', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80');
 
         return view('public.home', compact(
@@ -75,5 +75,10 @@ class HomeController extends Controller
             'trainerBio',
             'trainerAvatar'
         ));
+    }
+
+    public function services()
+    {
+        return view('public.services');
     }
 }
