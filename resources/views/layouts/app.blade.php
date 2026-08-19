@@ -60,7 +60,6 @@
             box-shadow: 0 20px 35px -10px rgba(79, 70, 229, 0.15);
         }
 
-        /* High Contrast Gradient Text */
         .gradient-text-accent {
             background: linear-gradient(135deg, #1D4ED8 0%, #6D28D9 50%, #0369A1 100%);
             -webkit-background-clip: text;
@@ -114,10 +113,10 @@
 </head>
 <body class="bg-[#F8FAFC] dark:bg-[#080C14] text-slate-900 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-indigo-600 selection:text-white transition-colors duration-300">
 
-    <!-- Top High-Contrast Announcement Bar -->
+    <!-- Top Announcement Bar -->
     <div class="bg-slate-900 text-white text-xs py-2.5 px-4 text-center font-bold flex items-center justify-center gap-2 shadow-sm border-b border-slate-800">
-        <span class="bg-indigo-600 text-white px-2.5 py-0.5 rounded-full font-bold text-[10px] uppercase tracking-wider">Inovasi 2026</span>
-        <span>CV. Beranda Teknologi Digital &bull; Jasa Website, Mobile App & AI</span>
+        <span class="bg-indigo-600 text-white px-2.5 py-0.5 rounded-full font-bold text-[10px] uppercase tracking-wider">Official Site</span>
+        <span>CV. Beranda Teknologi Digital &bull; Jasa Website, Mobile App & AI Solution</span>
         <a href="https://wa.me/6289695249089" target="_blank" class="text-amber-300 font-extrabold hover:underline ml-1">Konsultasi WA 0896 9524 9089 &rarr;</a>
     </div>
 
@@ -128,19 +127,14 @@
             class="sticky top-0 inset-x-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
-            <!-- Brand Logo -->
+            <!-- Official Brand Logo Image (/images/Logo-BTD.png) -->
             <a href="{{ route('home') }}" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 via-indigo-700 to-cyan-600 flex items-center justify-center text-white font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
+                <img src="/images/Logo-BTD.png" alt="Beranda Teknologi Digital Logo" class="h-10 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform" />
+                <div class="hidden sm:flex flex-col">
+                    <span class="font-heading font-extrabold text-lg tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
                         Beranda<span class="text-indigo-700 dark:text-indigo-400">Digital</span>
-                        <span class="inline-flex items-center justify-center w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     </span>
-                    <span class="text-[10px] font-extrabold tracking-widest text-slate-700 dark:text-slate-300 uppercase -mt-1">Startup & Software House</span>
+                    <span class="text-[10px] font-extrabold tracking-widest text-slate-700 dark:text-slate-300 uppercase -mt-1">CV. Beranda Teknologi Digital</span>
                 </div>
             </a>
 
@@ -226,16 +220,14 @@
         @yield('content')
     </main>
 
-    <!-- Footer -->
+    <!-- Footer with Official Brand Logo Image -->
     <footer class="bg-white dark:bg-slate-950 border-t-2 border-slate-300 dark:border-slate-800 text-slate-800 dark:text-slate-300 pt-16 pb-12 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-300 dark:border-slate-800">
                 <!-- Column 1: Brand Info -->
                 <div class="lg:col-span-2 space-y-4">
                     <a href="{{ route('home') }}" class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 to-indigo-700 flex items-center justify-center text-white font-extrabold text-xl shadow-md">
-                            BD
-                        </div>
+                        <img src="/images/Logo-BTD.png" alt="Beranda Teknologi Digital" class="h-10 w-auto object-contain" />
                         <span class="font-heading font-extrabold text-xl text-slate-900 dark:text-white">Beranda<span class="text-indigo-700 dark:text-indigo-400">Digital</span></span>
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300 max-w-sm font-semibold">

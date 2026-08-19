@@ -17,9 +17,9 @@
             <!-- Left Column: High Contrast Headline & Action Buttons -->
             <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
                 
-                <!-- Status Badge -->
+                <!-- Status Badge with Official Brand Logo -->
                 <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bento-card text-xs font-extrabold text-slate-900 dark:text-slate-100 shadow-xs cursor-default">
-                    <span class="inline-flex items-center justify-center w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    <img src="/images/Logo-BTD.png" alt="BTD Logo" class="h-5 w-auto object-contain" />
                     <span>CV. Beranda Teknologi Digital &bull; Startup Agency & Training Center</span>
                 </div>
 
@@ -100,19 +100,36 @@
     </div>
 </section>
 
-<!-- Authentic Partners Trust Bar -->
-<section class="py-10 bg-white dark:bg-slate-900 border-y-2 border-slate-300 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-center text-xs font-extrabold uppercase tracking-widest text-slate-900 dark:text-slate-300 mb-6">
-            Mitra & Instansi Kerja Sama Beranda Teknologi Digital
+<!-- Authentic Partners & Client Logos Section (Featuring Real XML Logo Images) -->
+<section class="py-12 bg-white dark:bg-slate-900 border-y-2 border-slate-300 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <p class="text-center text-xs font-extrabold uppercase tracking-widest text-slate-900 dark:text-slate-300">
+            Mitra & Klien Yang Bekerja Sama Dengan Beranda Teknologi Digital
         </p>
-        <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 font-extrabold text-xs sm:text-sm text-slate-900 dark:text-slate-200">
-            <span class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">🏛️ Kementerian Komdigi RI</span>
-            <span class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">📰 Media Indonesia</span>
-            <span class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">🎓 Politeknik Akamigas Palembang</span>
-            <span class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">🏫 Dinas Pendidikan OKU Timur</span>
-            <span class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">👨‍🏫 IGI Ogan Ilir</span>
-            <span class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">🏛️ Desa Senuro Timur</span>
+
+        <!-- Grid of Real Partner & Client Logo Images -->
+        <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+            <div class="h-12 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700 flex items-center justify-center">
+                <img src="/images/LOGO-CLIENT-WEB.png" alt="Mitra Client Web" class="h-8 w-auto object-contain" />
+            </div>
+            <div class="h-12 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700 flex items-center justify-center">
+                <img src="/images/Partner_img-2-1.png" alt="Mitra Partner 2" class="h-7 w-auto object-contain" />
+            </div>
+            <div class="h-12 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700 flex items-center justify-center">
+                <img src="/images/Partner_img-3-1.png" alt="Mitra Partner 3" class="h-7 w-auto object-contain" />
+            </div>
+            <div class="h-12 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700 flex items-center justify-center">
+                <img src="/images/Partner_img-4-1.png" alt="Mitra Partner 4" class="h-7 w-auto object-contain" />
+            </div>
+            <div class="h-12 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700 flex items-center justify-center">
+                <img src="/images/Partner_img-5-1.png" alt="Mitra Partner 5" class="h-7 w-auto object-contain" />
+            </div>
+            <div class="h-12 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700 flex items-center justify-center font-extrabold text-xs text-slate-900 dark:text-slate-100">
+                🏛️ Kementerian Komdigi RI
+            </div>
+            <div class="h-12 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-300 dark:border-slate-700 flex items-center justify-center font-extrabold text-xs text-slate-900 dark:text-slate-100">
+                🎓 Politeknik Akamigas Palembang
+            </div>
         </div>
     </div>
 </section>
@@ -255,8 +272,82 @@
     </div>
 </section>
 
-<!-- Relevant Workshop Posters & Speaker Profile Showcase -->
+<!-- Dedicated Testimonials Showcase (With Authentic Testimonial Images & Quotes) -->
 <section class="py-24 bg-[#F8FAFC] dark:bg-[#080C14]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+            <span class="px-4 py-1.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-950 dark:text-amber-300 font-extrabold text-xs uppercase tracking-wider border border-amber-300">
+                Testimoni Klien & Peserta
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-950 dark:text-white font-heading">
+                Apa Kata Klien & Mitra Kami ?
+            </h2>
+            <p class="text-slate-900 dark:text-slate-200 text-sm font-bold">Ulasan langsung dari instansi pemerintah, sekolah, dan perusahaan mitra.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bento-card p-8 space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-1 text-amber-500 font-bold text-sm">
+                        ★★★★★ <span>5.0</span>
+                    </div>
+                    <p class="text-slate-900 dark:text-slate-200 text-xs sm:text-sm leading-relaxed font-semibold italic">
+                        "Pelayanan pembuatan website dan aplikasi administrasi desa di Senuro Timur sangat cepat dan responsif. Pengurusan surat warga jadi jauh lebih efisien!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-300 dark:border-slate-800">
+                    <img src="/images/img_testimonial_Home-E87QWM2.jpg" alt="Perangkat Desa" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-600" />
+                    <div>
+                        <h4 class="text-xs font-extrabold text-slate-950 dark:text-white">Perangkat Desa Senuro Timur</h4>
+                        <span class="text-[11px] font-bold text-indigo-700 dark:text-indigo-400">Pemerintah Desa Ogan Ilir</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bento-card p-8 space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-1 text-amber-500 font-bold text-sm">
+                        ★★★★★ <span>5.0</span>
+                    </div>
+                    <p class="text-slate-900 dark:text-slate-200 text-xs sm:text-sm leading-relaxed font-semibold italic">
+                        "Materi Vibe Coding & AI RAG yang dibawakan Pak Septa Ryan Hidayat sangat menginspirasi dosen Politeknik Akamigas Palembang. Praktis & langsung bisa diimplementasikan."
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-300 dark:border-slate-800">
+                    <img src="/images/Wulan.jpg" alt="Dosen Akamigas" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-600" />
+                    <div>
+                        <h4 class="text-xs font-extrabold text-slate-950 dark:text-white">Tim Dosen & Akademisi</h4>
+                        <span class="text-[11px] font-bold text-indigo-700 dark:text-indigo-400">Politeknik Akamigas Palembang</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bento-card p-8 space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-1 text-amber-500 font-bold text-sm">
+                        ★★★★★ <span>5.0</span>
+                    </div>
+                    <p class="text-slate-900 dark:text-slate-200 text-xs sm:text-sm leading-relaxed font-semibold italic">
+                        "Sistem PPDB online dan website sekolah SIT Robbani sangat membantu proses penerimaan siswa baru. Dukungan purna jual Beranda Digital luar biasa!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-300 dark:border-slate-800">
+                    <img src="/images/testimonial_img-11.jpeg" alt="Kepala Sekolah" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-600" />
+                    <div>
+                        <h4 class="text-xs font-extrabold text-slate-950 dark:text-white">Pengelola Yayasan Pendidikan</h4>
+                        <span class="text-[11px] font-bold text-indigo-700 dark:text-indigo-400">SIT Robbani Ogan Ilir</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Speaker Profile & Event Gallery -->
+<section class="py-24 bg-white dark:bg-slate-900 border-t-2 border-slate-300 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         <!-- Direktur Utama Profile Card -->
@@ -336,25 +427,21 @@
 </section>
 
 <!-- Call to Action Banner -->
-<section class="py-20 bg-white dark:bg-slate-900 border-t-2 border-slate-300 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="rounded-3xl bg-slate-950 p-8 sm:p-14 text-white text-center shadow-2xl relative overflow-hidden">
-            <div class="max-w-3xl mx-auto space-y-6 relative z-10">
-                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading">
-                    Siap Memulai Proyek Digital Anda?
-                </h2>
-                <p class="text-slate-200 text-xs sm:text-base leading-relaxed font-semibold">
-                    Konsultasikan pembuatan website, aplikasi Android/iOS, sistem informasi, atau pelatihan IT bersama tim profesional <strong class="text-white font-extrabold">CV. Beranda Teknologi Digital</strong>.
-                </p>
-                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="{{ route('contact') }}" class="w-full sm:w-auto px-8 py-4 rounded-full bg-indigo-700 hover:bg-indigo-800 text-white font-extrabold text-xs sm:text-sm shadow-xl hover:scale-105 transition-all">
-                        Kalkulator Estimasi Biaya (Hitung Otomatis)
-                    </a>
-                    <a href="https://wa.me/6289695249089" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm shadow-xl flex items-center justify-center gap-2 transition-all">
-                        <span>Chat WhatsApp (0896 9524 9089)</span>
-                    </a>
-                </div>
-            </div>
+<section class="py-20 bg-slate-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading">
+            Siap Memulai Proyek Digital Anda?
+        </h2>
+        <p class="text-slate-200 text-xs sm:text-base leading-relaxed font-semibold max-w-2xl mx-auto">
+            Konsultasikan pembuatan website, aplikasi Android/iOS, sistem informasi, atau pelatihan IT bersama tim profesional <strong class="text-white font-extrabold">CV. Beranda Teknologi Digital</strong>.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="{{ route('contact') }}" class="w-full sm:w-auto px-8 py-4 rounded-full bg-indigo-700 hover:bg-indigo-800 text-white font-extrabold text-xs sm:text-sm shadow-xl hover:scale-105 transition-all">
+                Kalkulator Estimasi Biaya (Hitung Otomatis)
+            </a>
+            <a href="https://wa.me/6289695249089" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm shadow-xl flex items-center justify-center gap-2 transition-all">
+                <span>Chat WhatsApp (0896 9524 9089)</span>
+            </a>
         </div>
     </div>
 </section>
