@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Hash;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed database with authentic XML parsed images mapped strictly to relevant content.
+     * Seed database with authentic 100% exact images from WordPress XML backup.
      */
     public function run(): void
     {
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             ['key' => 'trainer_name', 'value' => 'Septa Ryan Hidayat, S.Kom', 'group' => 'trainer', 'label' => 'Nama Trainer / Speaker', 'type' => 'text'],
             ['key' => 'trainer_title', 'value' => 'Direktur Utama CV. Beranda Teknologi Digital, Software Architect & AI Speaker', 'group' => 'trainer', 'label' => 'Gelar / Jabatan', 'type' => 'text'],
             ['key' => 'trainer_bio', 'value' => 'Direktur Utama & Lead Software Architect di CV. Beranda Teknologi Digital. Dewan Pakar IGI Ogan Ilir, Narasumber Komdigi & Media Indonesia, serta Trainer Nasional di bidang Vibe Coding, AI RAG Document, dan Pengembangan Aplikasi Web/Mobile.', 'group' => 'trainer', 'label' => 'Bio Trainer', 'type' => 'textarea'],
-            ['key' => 'trainer_avatar', 'value' => '/images/img_team_Home-6TECTXE.jpg', 'group' => 'trainer', 'label' => 'Foto Profile Trainer', 'type' => 'text'],
+            ['key' => 'trainer_avatar', 'value' => '/images/Insight-Talks-Komdigi.jpeg', 'group' => 'trainer', 'label' => 'Foto Profile Trainer', 'type' => 'text'],
             ['key' => 'trainer_stats_years', 'value' => '8+', 'group' => 'trainer', 'label' => 'Pengalaman Tahun', 'type' => 'text'],
             ['key' => 'trainer_stats_events', 'value' => '85+', 'group' => 'trainer', 'label' => 'Workshop & Seminar', 'type' => 'text'],
             ['key' => 'trainer_stats_alumni', 'value' => '5,000+', 'group' => 'trainer', 'label' => 'Peserta Pelatihan', 'type' => 'text'],
@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
             Setting::updateOrCreate(['key' => $s['key']], $s);
         }
 
-        // 4. Authentic Projects with RELEVANT XML Images
+        // 4. Authentic Projects with REAL Screenshots from XML
         Project::create([
             'category_id' => $catEdu->id,
             'title' => 'Website Desa & Aplikasi Administrasi Surat Digital Desa Senuro Timur',
@@ -115,7 +115,7 @@ class DatabaseSeeder extends Seeder
             'tech_stack' => ['Python PyTorch', 'Laravel 13', 'PgVector', 'Tailwind CSS'],
             'client_name' => 'SIT Robbani & IGI Ogan Ilir',
             'project_url' => 'https://berandadigital.net',
-            'thumbnail' => '/images/img_feature_Home-GND7RS3.jpg',
+            'thumbnail' => '/images/486603910_961047622908242_7404185485069841584_n.jpg',
             'gallery' => ['/images/illus-services.png'],
             'is_featured' => true,
             'order' => 3,
@@ -136,7 +136,7 @@ class DatabaseSeeder extends Seeder
             'order' => 4,
         ]);
 
-        // 5. Digital Products with RELEVANT XML Images
+        // 5. Digital Products
         DigitalProduct::create([
             'category_id' => $catProdSaas->id,
             'title' => 'Sistem Aplikasi Administrasi Desa Digital (Smart Village)',
@@ -204,7 +204,7 @@ class DatabaseSeeder extends Seeder
             'order' => 3,
         ]);
 
-        // 6. Training Modules with Authentic Flyers
+        // 6. Training Modules
         Training::create([
             'title' => 'Lecturer Development Program: Artificial Intelligence & Vibe Coding',
             'slug' => 'lecturer-development-program-ai-vibe-coding',
@@ -219,7 +219,7 @@ class DatabaseSeeder extends Seeder
                 'Studi Kasus Otomasi Administrasi Akademik'
             ],
             'price' => 1500000,
-            'thumbnail' => '/images/img_team_Home-GJ96G46.jpg',
+            'thumbnail' => '/images/626271180_17940187239113665_1282635413631214268_n.jpg',
             'is_featured' => true,
             'order' => 1,
         ]);
@@ -243,29 +243,41 @@ class DatabaseSeeder extends Seeder
             'order' => 2,
         ]);
 
-        // 7. Authentic Event Galleries with RELEVANT Flyers & Event Photos
+        // 7. Authentic Event Galleries with REAL Photo Posters from XML
         Gallery::create([
             'title' => 'Keynote Speaker: Insight Talks Vol. 3 Palembang (Komdigi RI & Media Indonesia)',
             'event_name' => 'Insight Talks Vol. 3 Palembang',
             'location' => 'Hotel Harper Palembang',
             'event_date' => '2026-04-14',
             'category' => 'keynote',
-            'image_path' => '/images/img_team_Home-6TECTXE.jpg',
+            'image_path' => '/images/Insight-Talks-Komdigi.jpeg',
             'description' => 'Septa Ryan Hidayat (CEO Beranda Teknologi Digital) menjadi narasumber bersama Plt. Direktur Komdigi RI dan Direktur Media Indonesia membahas Literasi Media & AI.',
             'is_featured' => true,
             'order' => 1,
         ]);
 
         Gallery::create([
+            'title' => 'Lecturer Development Program 2026 di Politeknik Akamigas Palembang',
+            'event_name' => 'Lecturer Development Program',
+            'location' => 'Politeknik Akamigas Palembang',
+            'event_date' => '2026-03-02',
+            'category' => 'training',
+            'image_path' => '/images/626271180_17940187239113665_1282635413631214268_n.jpg',
+            'description' => 'Pelatihan AI & Vibe Coding untuk pembuatan aplikasi pembelajaran tanpa koding khusus Dosen Politeknik Akamigas.',
+            'is_featured' => true,
+            'order' => 2,
+        ]);
+
+        Gallery::create([
             'title' => 'The Era of Vibe Coding Workshop di Politeknik Akamigas Palembang',
-            'event_name' => 'Politeknik Akamigas Tech Workshop',
+            'event_name' => 'The Era of Vibe Coding',
             'location' => 'Politeknik Akamigas Palembang',
             'event_date' => '2026-02-11',
             'category' => 'workshop',
-            'image_path' => '/images/img_team_Home-GJ96G46.jpg',
+            'image_path' => '/images/631476506_1210308331315502_7735877304621369529_n.jpg',
             'description' => 'Sesi berbagi ilmu pemanfaatan AI Vibe Coding untuk akselerasi pembuatan aplikasi pembelajaran bersama dosen dan mahasiswa.',
             'is_featured' => true,
-            'order' => 2,
+            'order' => 3,
         ]);
 
         Gallery::create([
@@ -274,47 +286,23 @@ class DatabaseSeeder extends Seeder
             'location' => 'Hotel Majestic Palembang',
             'event_date' => '2025-09-11',
             'category' => 'training',
-            'image_path' => '/images/photo1660899398.jpeg',
+            'image_path' => '/images/545410148_1090108853335451_8582489098678183559_n.jpg',
             'description' => 'Narasumber Septa Ryan Hidayat memandu pelatihan inovasi pembelajaran koding dan AI bagi tenaga pendidik SD dan SMP se-Kabupaten OKU Timur.',
-            'is_featured' => true,
-            'order' => 3,
-        ]);
-
-        Gallery::create([
-            'title' => 'Pelatihan Online Masjid Go Digital: Pembuatan Website Masjid Gratis',
-            'event_name' => 'Masjid Go Digital Campaign',
-            'location' => 'Online Training Zoom',
-            'event_date' => '2025-07-20',
-            'category' => 'training',
-            'image_path' => '/images/Masjid-GO-1.png',
-            'description' => 'Pelatihan online pembuatan website pengelola infaq dan laporan keuangan masjid gratis secara transparan.',
             'is_featured' => true,
             'order' => 4,
         ]);
 
-        // 8. Authentic Real Posts with Exact Relevant Images
-        $xmlParsedPath = 'C:\Users\RYAN\.gemini\antigravity-ide\brain\e76328d7-060a-4578-8722-8e9279955ad0\scratch\posts_parsed.json';
-        if (file_exists($xmlParsedPath)) {
-            $parsedPosts = json_decode(file_get_contents($xmlParsedPath), true);
-            $relImages = [
-                '/images/img_team_Home-6TECTXE.jpg',
-                '/images/img_team_Home-GJ96G46.jpg',
-                '/images/photo1660899398.jpeg',
-                '/images/photo1660899400.jpeg',
-                '/images/Masjid-GO-1.png',
-                '/images/Flyer-AR-New-1-scaled.jpg',
-                '/images/kabar32.png',
-                '/images/igi.png',
-            ];
-
+        // 8. Authentic Real Posts from exact_posts_with_images.json
+        $jsonPath = 'C:\Users\RYAN\.gemini\antigravity-ide\brain\e76328d7-060a-4578-8722-8e9279955ad0\scratch\exact_posts_with_images.json';
+        if (file_exists($jsonPath)) {
+            $parsedPosts = json_decode(file_get_contents($jsonPath), true);
             foreach ($parsedPosts as $index => $pData) {
-                $thumb = $relImages[$index % count($relImages)];
                 Post::create([
                     'category_id' => ($index % 2 === 0) ? $blogEvent->id : $blogAI->id,
                     'user_id' => $admin->id,
                     'title' => $pData['title'],
                     'slug' => $pData['slug'] . '-' . uniqid(),
-                    'thumbnail' => $thumb,
+                    'thumbnail' => $pData['image'],
                     'excerpt' => $pData['excerpt'],
                     'body' => $pData['content'],
                     'status' => 'published',
