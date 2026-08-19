@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Hash;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed database with authentic 100% exact images from WordPress XML backup.
+     * Seed database using authentic preview screenshots from public/preview directory.
      */
     public function run(): void
     {
@@ -72,71 +72,71 @@ class DatabaseSeeder extends Seeder
             Setting::updateOrCreate(['key' => $s['key']], $s);
         }
 
-        // 4. Authentic Projects with REAL Screenshots from XML
+        // 4. Authentic Projects Mapped directly to Preview Screencaptures
         Project::create([
-            'category_id' => $catEdu->id,
-            'title' => 'Website Desa & Aplikasi Administrasi Surat Digital Desa Senuro Timur',
-            'slug' => 'website-desa-dan-aplikasi-administrasi-surat-desa-senuro-timur',
-            'summary' => 'Sistem Informasi Digitalisasi Desa dan Otomasi Surat-menyurat Terpadu untuk Perangkat Desa, Pendamping Desa, dan Warga Desa Senuro Timur, Kab. Ogan Ilir.',
-            'challenge' => 'Pelayanan pengurusan surat administrasi desa membutuhkan waktu lama karena pencatatan arsip fisik yang manual.',
-            'solution' => 'Beranda Teknologi Digital membangun portal web desa responsif terhubung dengan generator surat otomatis berbasis QR Code verifikasi.',
+            'category_id' => $catWeb->id,
+            'title' => 'Portal Layanan Pembuatan Website Enterprise & Company Profile',
+            'slug' => 'portal-layanan-pembuatan-website-enterprise',
+            'summary' => 'Jasa Pembuatan Website Perusahaan, Portal Berita, E-Commerce & Landing Page dengan SEO & Mobile Responsive 100%.',
+            'challenge' => 'Kebutuhan website bisnis modern dengan desain cepat, optimasi kecepatan, dan keamanan data.',
+            'solution' => 'Arsitektur website Laravel 13 & PHP 8.4 terhubung dengan CMS admin instan dan integrasi WhatsApp.',
             'tech_stack' => ['Laravel 13', 'PHP 8.4', 'MySQL', 'Tailwind CSS', 'Alpine.js'],
-            'client_name' => 'Pemerintah Desa Senuro Timur, Kab. Ogan Ilir',
+            'client_name' => 'CV. Beranda Teknologi Digital',
             'project_url' => 'https://berandadigital.net',
-            'thumbnail' => '/images/ss-dsrp.png',
-            'gallery' => ['/images/surat.png', '/images/ss-asalam.png'],
+            'thumbnail' => '/preview/screencapture-berandadigital-net-portofolio-website-2026-08-19-17_54_22.png',
+            'gallery' => ['/preview/screencapture-berandadigital-net-2026-08-19-17_31_05.png'],
             'is_featured' => true,
             'order' => 1,
         ]);
 
         Project::create([
-            'category_id' => $catEdu->id,
-            'title' => 'Sistem Informasi Sekolah & Portal PPDB Online Integrated',
-            'slug' => 'sistem-informasi-sekolah-portal-ppdb-online',
-            'summary' => 'Platform manajemen sekolah terlengkap mencakup Pendaftaran Peserta Didik Baru (PPDB), SPP online, E-Learning, dan Portal Alumni.',
-            'challenge' => 'Proses penerimaan siswa baru sering memicu antrean fisik dan kesulitan rekapitulasi pembayaran.',
-            'solution' => 'Sistem PPDB online otomatis dengan verifikasi dokumen instan dan integrasi WhatsApp Gateway.',
-            'tech_stack' => ['Laravel', 'Livewire', 'MySQL', 'WhatsApp API'],
-            'client_name' => 'SIT Robbani Ogan Ilir & Sekolah Mitra',
+            'category_id' => $catMobile->id,
+            'title' => 'Jasa Pembuatan Aplikasi Mobile Android & iOS (Flutter)',
+            'slug' => 'jasa-pembuatan-aplikasi-mobile-android-ios',
+            'summary' => 'Aplikasi Mobile Cross-Platform berbasis Flutter berkecepatan tinggi dengan integrasi RESTful API & Push Notifications.',
+            'challenge' => 'Pengembangan aplikasi mobile dua platform (Android & iOS) sering memakan waktu dan biaya tinggi.',
+            'solution' => 'Solusi Flutter tunggal terhubung ke backend Laravel dengan fitur offline-first dan geolokalasi.',
+            'tech_stack' => ['Flutter', 'RESTful API', 'Laravel', 'Firebase FCM'],
+            'client_name' => 'Klien Startup & Public Agency',
             'project_url' => 'https://berandadigital.net',
-            'thumbnail' => '/images/portofolio-web-1.webp',
-            'gallery' => ['/images/ppdb.png', '/images/ELEARNING.png'],
+            'thumbnail' => '/preview/screencapture-berandadigital-net-aplikasi-android-2026-08-19-17_55_00.png',
+            'gallery' => ['/preview/screencapture-berandadigital-net-layanan-2026-08-19-17_52_22.png'],
             'is_featured' => true,
             'order' => 2,
         ]);
 
         Project::create([
-            'category_id' => $catAI->id,
-            'title' => 'Chatbot AI Privat Dokumen SOP Enterprise (Python & RAG)',
-            'slug' => 'chatbot-ai-privat-dokumen-sop-enterprise',
-            'summary' => 'Engine AI Chatbot mandiri tanpa API eksternal berbayar untuk menjawab pertanyaan seputar SOP internal perusahaan dan materi pendidikan.',
-            'challenge' => 'Perusahaan dan lembaga pendidikan khawatir data privat bocor jika menggunakan API OpenAI publik.',
-            'solution' => 'Pembangunan arsitektur RAG lokal dengan Python, Vector Database, dan frontend dashboard Laravel yang aman.',
-            'tech_stack' => ['Python PyTorch', 'Laravel 13', 'PgVector', 'Tailwind CSS'],
-            'client_name' => 'SIT Robbani & IGI Ogan Ilir',
+            'category_id' => $catEdu->id,
+            'title' => 'Sistem Informasi Administrasi Surating & Desa Digital',
+            'slug' => 'sistem-informasi-administrasi-surating-desa-digital',
+            'summary' => 'Sistem Informasi Digitalisasi Desa dan Otomasi Surat-menyurat Terpadu untuk Perangkat Desa, Pendamping Desa, dan Warga Desa Senuro Timur.',
+            'challenge' => 'Pelayanan pengurusan surat administrasi desa membutuhkan waktu lama karena pencatatan arsip fisik yang manual.',
+            'solution' => 'Beranda Teknologi Digital membangun portal web desa responsif terhubung dengan generator surat otomatis berbasis QR Code verifikasi.',
+            'tech_stack' => ['Laravel 13', 'PHP 8.4', 'MySQL', 'Tailwind CSS'],
+            'client_name' => 'Pemerintah Desa Senuro Timur, Kab. Ogan Ilir',
             'project_url' => 'https://berandadigital.net',
-            'thumbnail' => '/images/486603910_961047622908242_7404185485069841584_n.jpg',
-            'gallery' => ['/images/illus-services.png'],
+            'thumbnail' => '/preview/screencapture-berandadigital-net-sistem-informasi-2026-08-19-17_55_14.png',
+            'gallery' => ['/images/surat.png', '/images/ss-asalam.png'],
             'is_featured' => true,
             'order' => 3,
         ]);
 
         Project::create([
-            'category_id' => $catMobile->id,
-            'title' => 'GovConnect Mobile App & Public Service System',
-            'slug' => 'govconnect-mobile-app-public-service',
-            'summary' => 'Aplikasi mobile Android & iOS layanan publik pengaduan masyarakat cepat tanggap berbasis lokasi presisi.',
-            'challenge' => 'Penanganan fasilitas umum rusak lambat karena ketiadaan koordinat foto lokasi pengaduan.',
-            'solution' => 'Aplikasi mobile Flutter terhubung dengan backend REST API Laravel dan peta interaktif.',
-            'tech_stack' => ['Flutter', 'RESTful API', 'Laravel', 'Firebase FCM'],
-            'client_name' => 'Dinas Komunikasi & Informatika',
+            'category_id' => $catWeb->id,
+            'title' => 'Jasa Pembuatan Website & Campaign Digital Publik / Leader',
+            'slug' => 'jasa-pembuatan-website-campaign-digital',
+            'summary' => 'Platform portal informasi, video profil, dan campaign digital publik dengan sistem interaktif.',
+            'challenge' => 'Membangun branding publik yang transparan dan cepat diakses oleh seluruh lapisan masyarakat.',
+            'solution' => 'Portal web responsif dengan integrasi galeri video, jadwal kegiatan, dan form aspirasi.',
+            'tech_stack' => ['Laravel', 'Tailwind CSS', 'MySQL'],
+            'client_name' => 'Public Leader & Agency Partner',
             'project_url' => 'https://berandadigital.net',
-            'thumbnail' => '/images/smartmockups_kzp157hz-e1644985141609.jpg',
+            'thumbnail' => '/preview/screencapture-berandadigital-net-jasa-website-caleg-2026-08-19-17_54_34.png',
             'is_featured' => false,
             'order' => 4,
         ]);
 
-        // 5. Digital Products
+        // 5. Digital Products Mapped to Screencaptures
         DigitalProduct::create([
             'category_id' => $catProdSaas->id,
             'title' => 'Sistem Aplikasi Administrasi Desa Digital (Smart Village)',
@@ -154,7 +154,7 @@ class DatabaseSeeder extends Seeder
             'price_type' => 'one_time',
             'demo_url' => 'https://berandadigital.net',
             'buy_url' => 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20Aplikasi%20Desa%20Digital',
-            'thumbnail' => '/images/surat.png',
+            'thumbnail' => '/preview/screencapture-berandadigital-net-order-2026-08-19-17_52_40.png',
             'is_featured' => true,
             'order' => 1,
         ]);
@@ -177,29 +177,29 @@ class DatabaseSeeder extends Seeder
             'price_type' => 'one_time',
             'demo_url' => 'https://berandadigital.net',
             'buy_url' => 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20Laravel%20Starter%20Kit',
-            'thumbnail' => '/images/home12-01.png',
+            'thumbnail' => '/preview/screencapture-berandadigital-net-2026-08-19-17_31_05.png',
             'is_featured' => true,
             'order' => 2,
         ]);
 
         DigitalProduct::create([
             'category_id' => $catProdAI->id,
-            'title' => 'Smart E-Learning & Portal Tabungan Online',
-            'slug' => 'smart-e-learning-portal-tabungan-online',
-            'badge' => 'EdTech Platform',
-            'tagline' => 'Sistem Informasi Manajemen Sekolah & Keuangan Terpadu',
-            'description' => 'Aplikasi E-Learning dan tabungan/SPP online siap pakai untuk sekolah dan yayasan pendidikan.',
+            'title' => 'Jasa Pembuatan Video Ucapan & Profil Digital',
+            'slug' => 'jasa-pembuatan-video-ucapan-profil-digital',
+            'badge' => 'Media Studio',
+            'tagline' => 'Layanan Pembuatan Video Profil & Ucapan Hari Besar',
+            'description' => 'Layanan pembuatan video profil perusahaan, instansi, dan ucapan hari raya dengan animasi modern.',
             'features' => [
-                'Modul Quiz & Ujian Online Terintegrasi',
-                'Rekap Tabungan & SPP Siswa Realtime',
-                'WhatsApp Notification Gateway Terintegrasi',
-                'Export Laporan PDF & Excel Instan'
+                'Animasi HD 1080p / 4K Modern',
+                'Custom Voiceover & Backsound Lisensi Resmi',
+                'Revisi Hingga Puas & Format Siap Sosial Media',
+                'Pengerjaan Cepat 1-3 Hari'
             ],
-            'price' => 1500000,
+            'price' => 750000,
             'price_type' => 'one_time',
             'demo_url' => 'https://berandadigital.net',
-            'buy_url' => 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20E-Learning',
-            'thumbnail' => '/images/ELEARNING.png',
+            'buy_url' => 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20Jasa%20Video',
+            'thumbnail' => '/preview/screencapture-berandadigital-net-video-ucapan-2026-08-19-17_54_48.png',
             'is_featured' => true,
             'order' => 3,
         ]);
@@ -219,7 +219,7 @@ class DatabaseSeeder extends Seeder
                 'Studi Kasus Otomasi Administrasi Akademik'
             ],
             'price' => 1500000,
-            'thumbnail' => '/images/626271180_17940187239113665_1282635413631214268_n.jpg',
+            'thumbnail' => '/preview/screencapture-berandadigital-test-trainer-2026-08-19-17_49_10.png',
             'is_featured' => true,
             'order' => 1,
         ]);
@@ -243,7 +243,19 @@ class DatabaseSeeder extends Seeder
             'order' => 2,
         ]);
 
-        // 7. Authentic Event Galleries with REAL Photo Posters from XML
+        // 7. Authentic Event Galleries with REAL Photo Posters from Preview Directory
+        Gallery::create([
+            'title' => 'Tampilan Beranda Website Resmi Beranda Teknologi Digital',
+            'event_name' => 'Original Web Preview',
+            'location' => 'berandadigital.net',
+            'event_date' => '2026-08-19',
+            'category' => 'preview',
+            'image_path' => '/preview/screencapture-berandadigital-net-2026-08-19-17_31_05.png',
+            'description' => 'Tampilan asli beranda utama website Beranda Teknologi Digital.',
+            'is_featured' => true,
+            'order' => 1,
+        ]);
+
         Gallery::create([
             'title' => 'Keynote Speaker: Insight Talks Vol. 3 Palembang (Komdigi RI & Media Indonesia)',
             'event_name' => 'Insight Talks Vol. 3 Palembang',
@@ -251,43 +263,31 @@ class DatabaseSeeder extends Seeder
             'event_date' => '2026-04-14',
             'category' => 'keynote',
             'image_path' => '/images/Insight-Talks-Komdigi.jpeg',
-            'description' => 'Septa Ryan Hidayat (CEO Beranda Teknologi Digital) menjadi narasumber bersama Plt. Direktur Komdigi RI dan Direktur Media Indonesia membahas Literasi Media & AI.',
-            'is_featured' => true,
-            'order' => 1,
-        ]);
-
-        Gallery::create([
-            'title' => 'Lecturer Development Program 2026 di Politeknik Akamigas Palembang',
-            'event_name' => 'Lecturer Development Program',
-            'location' => 'Politeknik Akamigas Palembang',
-            'event_date' => '2026-03-02',
-            'category' => 'training',
-            'image_path' => '/images/626271180_17940187239113665_1282635413631214268_n.jpg',
-            'description' => 'Pelatihan AI & Vibe Coding untuk pembuatan aplikasi pembelajaran tanpa koding khusus Dosen Politeknik Akamigas.',
+            'description' => 'Septa Ryan Hidayat (CEO Beranda Teknologi Digital) menjadi narasumber bersama Plt. Direktur Komdigi RI dan Direktur Media Indonesia.',
             'is_featured' => true,
             'order' => 2,
         ]);
 
         Gallery::create([
-            'title' => 'The Era of Vibe Coding Workshop di Politeknik Akamigas Palembang',
-            'event_name' => 'The Era of Vibe Coding',
-            'location' => 'Politeknik Akamigas Palembang',
-            'event_date' => '2026-02-11',
-            'category' => 'workshop',
-            'image_path' => '/images/631476506_1210308331315502_7735877304621369529_n.jpg',
-            'description' => 'Sesi berbagi ilmu pemanfaatan AI Vibe Coding untuk akselerasi pembuatan aplikasi pembelajaran bersama dosen dan mahasiswa.',
+            'title' => 'Halaman Layanan Jasa & Paket Pembuatan Aplikasi',
+            'event_name' => 'Original Services Preview',
+            'location' => 'berandadigital.net/layanan',
+            'event_date' => '2026-08-19',
+            'category' => 'preview',
+            'image_path' => '/preview/screencapture-berandadigital-net-layanan-2026-08-19-17_52_22.png',
+            'description' => 'Tampilan halaman layanan jasa pembuatan website, mobile app, dan sistem informasi.',
             'is_featured' => true,
             'order' => 3,
         ]);
 
         Gallery::create([
-            'title' => 'Pelatihan Coding & AI Dinas Pendidikan OKU Timur',
-            'event_name' => 'Pelatihan Koding & AI OKU Timur',
-            'location' => 'Hotel Majestic Palembang',
-            'event_date' => '2025-09-11',
-            'category' => 'training',
-            'image_path' => '/images/545410148_1090108853335451_8582489098678183559_n.jpg',
-            'description' => 'Narasumber Septa Ryan Hidayat memandu pelatihan inovasi pembelajaran koding dan AI bagi tenaga pendidik SD dan SMP se-Kabupaten OKU Timur.',
+            'title' => 'Halaman Profil Perusahaan & Bio Direktur Utama Septa Ryan Hidayat',
+            'event_name' => 'Original Profile Preview',
+            'location' => 'berandadigital.net/profile',
+            'event_date' => '2026-08-19',
+            'category' => 'preview',
+            'image_path' => '/preview/screencapture-berandadigital-net-profile-2026-08-19-17_53_14.png',
+            'description' => 'Tampilan halaman profil resmi CV. Beranda Teknologi Digital.',
             'is_featured' => true,
             'order' => 4,
         ]);

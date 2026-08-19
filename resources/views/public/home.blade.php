@@ -3,7 +3,7 @@
 @section('title', 'CV. Beranda Teknologi Digital - Startup Software House, Mobile App & AI')
 
 @section('content')
-<!-- Hero Section (3D Interactive Parallax & High-Contrast Light/Dark Theme) -->
+<!-- Hero Section (3D Interactive Parallax with Authentic Website Screencapture Preview) -->
 <section x-data="{ mouseX: 0, mouseY: 0 }" 
          @mousemove="mouseX = ($event.clientX - window.innerWidth/2) / 30; mouseY = ($event.clientY - window.innerHeight/2) / 30"
          class="relative pt-12 pb-24 lg:pt-20 lg:pb-36 overflow-hidden bg-grid-pattern">
@@ -29,7 +29,7 @@
                     <span class="gradient-text-accent">Software & AI Enterprise</span>
                 </h1>
 
-                <!-- Subtitle (High Contrast Solid Text) -->
+                <!-- Subtitle -->
                 <p class="text-base sm:text-xl text-slate-900 dark:text-slate-200 max-w-2xl leading-relaxed font-bold">
                     Mitra transformasi digital terpercaya penyedia <strong class="text-indigo-700 dark:text-indigo-400 underline decoration-indigo-400">Jasa Pembuatan Website, Aplikasi Mobile Android/iOS, Engine AI Privat</strong>, dan <strong class="text-indigo-700 dark:text-indigo-400 underline decoration-indigo-400">Pelatihan IT Profesional</strong>.
                 </p>
@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <!-- Right Column: Interactive 3D Parallax Canvas Showcase -->
+            <!-- Right Column: Interactive 3D Parallax Canvas Showcase with Authentic Screencapture Preview -->
             <div class="lg:col-span-5 flex justify-center parallax-container">
                 <div class="relative w-full max-w-lg parallax-layer"
                      :style="`transform: rotateY(${mouseX}deg) rotateX(${-mouseY}deg);`">
@@ -64,26 +64,26 @@
                     <!-- Glow Behind -->
                     <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 rounded-3xl opacity-35 blur-2xl"></div>
 
-                    <!-- Futuristic Window Frame featuring internal asset /images/home12-01.png -->
+                    <!-- Futuristic Window Frame featuring internal preview screencapture -->
                     <div class="relative bento-card p-4 shadow-2xl bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-700">
                         <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 text-xs">
                             <div class="flex items-center gap-2">
                                 <span class="w-3 h-3 rounded-full bg-red-500"></span>
                                 <span class="w-3 h-3 rounded-full bg-amber-500"></span>
                                 <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-                                <span class="font-mono text-slate-800 dark:text-slate-300 text-[11px] font-bold ml-2">berandadigital.net &bull; Internal Assets</span>
+                                <span class="font-mono text-slate-800 dark:text-slate-300 text-[11px] font-bold ml-2">berandadigital.net &bull; Authentic Preview</span>
                             </div>
                         </div>
 
                         <div class="mt-3 aspect-4/3 rounded-2xl overflow-hidden relative shadow-inner bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-                            <img src="/images/home12-01.png" alt="Beranda Digital Hero Showcase" class="w-full h-full object-cover" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
+                            <img src="/preview/screencapture-berandadigital-net-2026-08-19-17_31_05.png" alt="Original Website Preview" class="w-full h-full object-cover object-top hover:object-bottom transition-all duration-1000" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none"></div>
                             
                             <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
                                 <span class="px-2.5 py-1 rounded-md bg-indigo-700 font-mono text-[10px] uppercase font-extrabold tracking-wider">
-                                    Internal Image Asset
+                                    Authentic Web Screencapture
                                 </span>
-                                <h4 class="text-sm font-extrabold">Showcase Software & Mobile System</h4>
+                                <h4 class="text-sm font-extrabold">Tampilan Asli berandadigital.net</h4>
                                 <p class="text-[11px] text-slate-200 font-medium">CV. Beranda Teknologi Digital &bull; Palembang & Ogan Ilir</p>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
     </div>
 </section>
 
-<!-- Authentic Partners & Client Logos Section (Featuring Real XML Logo Images) -->
+<!-- Authentic Partners & Client Logos Section -->
 <section class="py-12 bg-white dark:bg-slate-900 border-y-2 border-slate-300 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <p class="text-center text-xs font-extrabold uppercase tracking-widest text-slate-900 dark:text-slate-300">
@@ -151,7 +151,7 @@
         <!-- Bento Grid Layout -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <!-- Bento 1: Web App Enterprise (With Image /images/ss-dsrp.png) -->
+            <!-- Bento 1: Web App Enterprise (With Preview Screenshot) -->
             <div class="md:col-span-2 bento-card p-8 sm:p-10 flex flex-col justify-between group">
                 <div class="space-y-4">
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-900 dark:text-blue-300 text-xs font-extrabold border border-blue-300">
@@ -170,7 +170,7 @@
                 </div>
             </div>
 
-            <!-- Bento 2: Mobile App (With Image /images/smartmockups_kzp157hz-e1644985141609.jpg) -->
+            <!-- Bento 2: Mobile App (With Preview Screenshot) -->
             <div class="bento-card p-8 flex flex-col justify-between group">
                 <div class="space-y-4">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950/80 text-cyan-950 dark:text-cyan-300 text-xs font-extrabold border border-cyan-300">
@@ -186,7 +186,7 @@
                 </div>
             </div>
 
-            <!-- Bento 3: AI Solutions (With Image /images/img_feature_Home-GND7RS3.jpg) -->
+            <!-- Bento 3: AI Solutions -->
             <div class="bento-card p-8 flex flex-col justify-between group">
                 <div class="space-y-4">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/80 text-purple-950 dark:text-purple-300 text-xs font-extrabold border border-purple-300">
@@ -202,7 +202,7 @@
                 </div>
             </div>
 
-            <!-- Bento 4: Corporate Training (With Image /images/img_team_Home-GJ96G46.jpg) -->
+            <!-- Bento 4: Corporate Training -->
             <div class="md:col-span-2 bento-card p-8 sm:p-10 flex flex-col justify-between group">
                 <div class="space-y-4">
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-950 dark:text-amber-300 text-xs font-extrabold border border-amber-300">
@@ -226,12 +226,12 @@
     </div>
 </section>
 
-<!-- Relevant XML Image Showcase Grid (Portofolio) -->
+<!-- Authentic Preview Showcase Grid (Portofolio) -->
 <section class="py-24 bg-white dark:bg-slate-900 border-y-2 border-slate-300 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div class="space-y-2">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-700 dark:text-indigo-400">Portofolio Software</span>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-700 dark:text-indigo-400">Portofolio & Tampilan Asli Website</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 dark:text-white font-heading">Proyek Yang Telah Selesai Dikembangkan</h2>
             </div>
             <a href="{{ route('projects.index') }}" class="text-sm font-extrabold text-indigo-700 dark:text-indigo-400 hover:underline">
@@ -243,7 +243,7 @@
             @foreach($featuredProjects as $project)
                 <div class="bento-card overflow-hidden flex flex-col group">
                     <div class="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-950 relative border-b border-slate-200 dark:border-slate-800">
-                        <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute top-3 left-3">
                             <span class="px-3 py-1 rounded-full bg-slate-950 text-white text-[11px] font-extrabold shadow-md">
                                 {{ $project->category?->name ?? 'Proyek Klien' }}
@@ -272,7 +272,7 @@
     </div>
 </section>
 
-<!-- Dedicated Testimonials Showcase (With Authentic Testimonial Images & Quotes) -->
+<!-- Dedicated Testimonials Showcase -->
 <section class="py-24 bg-[#F8FAFC] dark:bg-[#080C14]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -346,7 +346,7 @@
     </div>
 </section>
 
-<!-- Speaker Profile & Event Gallery -->
+<!-- Authentic Preview Showcase Gallery -->
 <section class="py-24 bg-white dark:bg-slate-900 border-t-2 border-slate-300 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
@@ -397,8 +397,8 @@
         <div class="space-y-8">
             <div class="flex items-center justify-between">
                 <div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-700 dark:text-indigo-400">Dokumentasi Acara Asli</span>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white font-heading">Poster Flyer & Galeri Seminar Real</h3>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-700 dark:text-indigo-400">Dokumentasi & Preview Screencapture Asli</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white font-heading">Galeri Tampilan Website & Event Real</h3>
                 </div>
                 <a href="{{ route('trainer.index') }}" class="text-xs font-extrabold text-indigo-700 dark:text-indigo-400 hover:underline">Lihat Galeri Lengkap &rarr;</a>
             </div>
@@ -407,7 +407,7 @@
                 @foreach($galleries as $gallery)
                     <div class="bento-card overflow-hidden group border-2 border-slate-300 dark:border-slate-800">
                         <div class="aspect-4/3 overflow-hidden relative">
-                            <img src="{{ $gallery->image_path }}" alt="{{ $gallery->title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <img src="{{ $gallery->image_path }}" alt="{{ $gallery->title }}" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
                             
                             <div class="absolute bottom-3 left-3 right-3 text-white space-y-1">
