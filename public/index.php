@@ -5,13 +5,16 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
-// Auto-create essential storage subdirectories if missing on fresh deployment
+// Locate basePath
+$basePath = file_exists(__DIR__ . '/bootstrap/app.php') ? __DIR__ : dirname(__DIR__);
+
+// Auto-create essential storage subdirectories
 $storageFolders = [
-    __DIR__ . '/../storage/framework/views',
-    __DIR__ . '/../storage/framework/sessions',
-    __DIR__ . '/../storage/framework/cache',
-    __DIR__ . '/../storage/logs',
-    __DIR__ . '/../bootstrap/cache',
+    $basePath . '/storage/framework/views',
+    $basePath . '/storage/framework/sessions',
+    $basePath . '/storage/framework/cache',
+    $basePath . '/storage/logs',
+    $basePath . '/bootstrap/cache',
 ];
 foreach ($storageFolders as $folder) {
     if (!is_dir($folder)) {
@@ -20,20 +23,21 @@ foreach ($storageFolders as $folder) {
 }
 
 // Determine if the application is in maintenance mode...
-if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+if (file_exists($maintenance = $basePath . '/storage/framework/maintenance.php')) {
     require $maintenance;
 }
 
-// Verify composer autoloader
-if (!file_exists(__DIR__.'/../vendor/autoload.php')) {
-    die("<h3>Error: Composer Dependencies (vendor/autoload.php) Not Found!</h3><p>Silakan jalankan perintah <code>composer install</code> di terminal cPanel atau upload folder vendor.</p>");
+// Register the Composer autoloader dynamically
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require __DIR__ . '/vendor/autoload.php';
+} elseif (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require __DIR__ . '/../vendor/autoload.php';
+} else {
+    die("<h3>Error: vendor/autoload.php not found.</h3>");
 }
-
-// Register the Composer autoloader...
-require __DIR__.'/../vendor/autoload.php';
 
 // Bootstrap Laravel and handle the request...
 /** @var Application $app */
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once $basePath . '/bootstrap/app.php';
 
 $app->handleRequest(Request::capture());

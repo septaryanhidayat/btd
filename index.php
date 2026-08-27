@@ -5,13 +5,16 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
-// Auto-create essential storage directories
+// Locate basePath
+$basePath = file_exists(__DIR__ . '/bootstrap/app.php') ? __DIR__ : (file_exists(__DIR__ . '/../bootstrap/app.php') ? dirname(__DIR__) : __DIR__);
+
+// Auto-create essential storage subdirectories
 $storageFolders = [
-    __DIR__ . '/storage/framework/views',
-    __DIR__ . '/storage/framework/sessions',
-    __DIR__ . '/storage/framework/cache',
-    __DIR__ . '/storage/logs',
-    __DIR__ . '/bootstrap/cache',
+    $basePath . '/storage/framework/views',
+    $basePath . '/storage/framework/sessions',
+    $basePath . '/storage/framework/cache',
+    $basePath . '/storage/logs',
+    $basePath . '/bootstrap/cache',
 ];
 foreach ($storageFolders as $folder) {
     if (!is_dir($folder)) {
@@ -20,27 +23,21 @@ foreach ($storageFolders as $folder) {
 }
 
 // Determine if the application is in maintenance mode...
-if (file_exists($maintenance = __DIR__.'/storage/framework/maintenance.php')) {
+if (file_exists($maintenance = $basePath . '/storage/framework/maintenance.php')) {
     require $maintenance;
 }
 
-// Check vendor autoload
-if (file_exists(__DIR__.'/vendor/autoload.php')) {
-    require __DIR__.'/vendor/autoload.php';
-} elseif (file_exists(__DIR__.'/../vendor/autoload.php')) {
-    require __DIR__.'/../vendor/autoload.php';
+// Register the Composer autoloader dynamically
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require __DIR__ . '/vendor/autoload.php';
+} elseif (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require __DIR__ . '/../vendor/autoload.php';
 } else {
-    die("<h3>Error: Composer autoload (vendor/autoload.php) not found.</h3><p>Please run <code>composer install</code>.</p>");
+    die("<h3>Error: vendor/autoload.php not found.</h3>");
 }
 
 // Bootstrap Laravel and handle the request...
 /** @var Application $app */
-if (file_exists(__DIR__.'/bootstrap/app.php')) {
-    $app = require_once __DIR__.'/bootstrap/app.php';
-} elseif (file_exists(__DIR__.'/../bootstrap/app.php')) {
-    $app = require_once __DIR__.'/../bootstrap/app.php';
-} else {
-    die("<h3>Error: bootstrap/app.php not found.</h3>");
-}
+$app = require_once $basePath . '/bootstrap/app.php';
 
 $app->handleRequest(Request::capture());
