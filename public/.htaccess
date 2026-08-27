@@ -1,3 +1,5 @@
+DirectoryIndex index.php
+
 # ----------------------------------------------------------------------
 # 1. Force PHP 8.4 / 8.3 Execution on cPanel, CloudLinux & LiteSpeed
 # ----------------------------------------------------------------------
@@ -12,10 +14,6 @@
   AddHandler application/x-httpd-alt-php83___lsphp .php .php8 .phtml
 </IfModule>
 
-<FilesMatch "\.php$">
-  SetHandler application/x-httpd-ea-php84
-</FilesMatch>
-
 # ----------------------------------------------------------------------
 # 2. Apache URL Rewriting & Front Controller
 # ----------------------------------------------------------------------
@@ -25,6 +23,7 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
