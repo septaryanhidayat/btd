@@ -1,19 +1,10 @@
-# Set the “ea-php84” or “alt-php84” package as default PHP programming language
-<IfModule mime_module>
-  AddHandler application/x-httpd-ea-php84 .php .php8 .phtml
-  AddHandler application/x-httpd-ea-php84___lsphp .php .php8 .phtml
-  AddHandler application/x-httpd-alt-php84 .php .php8 .phtml
-  AddHandler application/x-httpd-alt-php84___lsphp .php .php8 .phtml
-  AddHandler application/x-httpd-ea-php83 .php .php8 .phtml
-  AddHandler application/x-httpd-ea-php83___lsphp .php .php8 .phtml
-</IfModule>
-
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
