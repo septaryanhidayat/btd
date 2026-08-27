@@ -128,6 +128,20 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        /* Universal Image & Layout Fail-safe Constraints */
+        *, ::before, ::after {
+            box-sizing: border-box;
+        }
+        img, svg, video {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        img.h-16, img.h-18, img.h-20, img.h-22, img.h-26 {
+            max-height: 5rem !important;
+            width: auto !important;
+            object-fit: contain !important;
+        }
         .anim-logo-object {
             animation: logo-object 4s ease-in-out infinite !important;
         }
