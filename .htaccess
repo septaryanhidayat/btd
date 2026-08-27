@@ -1,6 +1,4 @@
-# ----------------------------------------------------------------------
-# 1. cPanel / CloudLinux / LiteSpeed Multi-PHP 8.4 Handlers
-# ----------------------------------------------------------------------
+# Set the “ea-php84” or “alt-php84” package as default PHP programming language
 <IfModule mime_module>
   AddHandler application/x-httpd-ea-php84 .php .php8 .phtml
   AddHandler application/x-httpd-ea-php84___lsphp .php .php8 .phtml
@@ -8,23 +6,8 @@
   AddHandler application/x-httpd-alt-php84___lsphp .php .php8 .phtml
   AddHandler application/x-httpd-ea-php83 .php .php8 .phtml
   AddHandler application/x-httpd-ea-php83___lsphp .php .php8 .phtml
-  AddHandler application/x-httpd-alt-php83 .php .php8 .phtml
-  AddHandler application/x-httpd-alt-php83___lsphp .php .php8 .phtml
-  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
-  AddHandler application/x-httpd-ea-php82___lsphp .php .php8 .phtml
 </IfModule>
 
-<IfModule lsapi_module>
-  SetHandler application/x-httpd-ea-php84
-</IfModule>
-
-AddType application/x-httpd-ea-php84 .php
-AddType application/x-httpd-alt-php84 .php
-AddType application/x-httpd-php84 .php
-
-# ----------------------------------------------------------------------
-# 2. Apache URL Rewriting & Forwarding
-# ----------------------------------------------------------------------
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
@@ -32,16 +15,17 @@ AddType application/x-httpd-php84 .php
 
     RewriteEngine On
 
-    # Security: Prevent direct access to sensitive files
+    # Direct access to diagnostic tools and static files
+    RewriteCond %{REQUEST_URI} ^/(phpinfo\.php|favicon\.ico|favicon\.png|apple-touch-icon\.png|robots\.txt|sitemap\.xml)$ [NC]
+    RewriteRule ^ - [L]
+
+    # Security: Protect sensitive hidden files
     <FilesMatch "^\.env|\.git|\.cpanel\.yml|composer\.(json|lock)|package(-lock)?\.json">
         Order allow,deny
         Deny from all
     </FilesMatch>
 
-    # Allow direct access to phpinfo diagnostic
-    RewriteCond %{REQUEST_URI} ^/phpinfo\.php$
-    RewriteRule ^ - [L]
-
+    # Forward root and non-public requests to public directory
     RewriteRule ^$ public/index.php [L]
     RewriteRule ^((?!public/).*)$ public/$1 [L]
 </IfModule>
