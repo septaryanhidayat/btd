@@ -7,6 +7,80 @@
 
     <title>@yield('title', 'CV. Beranda Teknologi Digital - Startup Software House, Mobile App & AI')</title>
     <meta name="description" content="@yield('meta_description', 'CV. Beranda Teknologi Digital adalah startup agensi teknologi modern di Indonesia. Jasa pembuatan website, aplikasi Android/iOS, solusi AI, dan workshop IT.')">
+    <meta name="keywords" content="software house palembang, jasa pembuatan website, aplikasi mobile flutter, ai rag document, cv beranda teknologi digital, jasa web murah berkualitas, pelatihan it komdigi">
+    <meta name="author" content="CV. Beranda Teknologi Digital - Septa Ryan Hidayat, S.Kom">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+
+    <!-- OpenGraph (OG) Meta Tags for WhatsApp, Facebook, LinkedIn, Telegram -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('title', 'CV. Beranda Teknologi Digital - Software House, Mobile App & Solusi AI')">
+    <meta property="og:description" content="@yield('meta_description', 'CV. Beranda Teknologi Digital adalah agensi teknologi digital modern di Indonesia. Jasa pembuatan website, aplikasi Android/iOS, solusi AI privat, dan workshop IT profesional.')">
+    <meta property="og:image" content="{{ asset('images/Logo-BTD.png') }}">
+    <meta property="og:image:secure_url" content="{{ asset('images/Logo-BTD.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logo Resmi CV. Beranda Teknologi Digital">
+    <meta property="og:site_name" content="CV. Beranda Teknologi Digital">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="@yield('title', 'CV. Beranda Teknologi Digital - Software House & Solusi AI')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Jasa pembuatan website enterprise, aplikasi mobile Flutter, sistem informasi, solusi AI privat, dan pelatihan IT.')">
+    <meta name="twitter:image" content="{{ asset('images/Logo-BTD.png') }}">
+
+    <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "CV. Beranda Teknologi Digital",
+      "image": "{{ asset('images/Logo-BTD.png') }}",
+      "@id": "https://berandadigital.net",
+      "url": "https://berandadigital.net",
+      "telephone": "+6289695249089",
+      "priceRange": "Rp 3.000.000 - Rp 10.000.000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ogan Ilir & Palembang Hub",
+        "addressLocality": "Ogan Ilir",
+        "addressRegion": "Sumatera Selatan",
+        "postalCode": "30662",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -3.2458,
+        "longitude": 104.6644
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/bteknologi_digital",
+        "https://linkedin.com/company/berandadigital",
+        "https://github.com/septaryanhidayat/btd"
+      ]
+    }
+    </script>
 
     <!-- Google Fonts: Poppins, Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
