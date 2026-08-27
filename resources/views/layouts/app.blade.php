@@ -88,8 +88,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     @php
-        $sitePrimaryColor = \App\Models\Setting::where('key', 'theme_primary_color')->value('value') ?? '#3E5CE7';
-        $siteAccentColor = \App\Models\Setting::where('key', 'theme_accent_color')->value('value') ?? '#fe6000';
+        try {
+            $sitePrimaryColor = \App\Models\Setting::where('key', 'theme_primary_color')->value('value') ?? '#3E5CE7';
+            $siteAccentColor = \App\Models\Setting::where('key', 'theme_accent_color')->value('value') ?? '#fe6000';
+        } catch (\Throwable $e) {
+            $sitePrimaryColor = '#3E5CE7';
+            $siteAccentColor = '#fe6000';
+        }
     @endphp
 
     <style>
