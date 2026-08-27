@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/berandad/public_html
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp .cpanel.yml $DEPLOYPATH/.cpanel.yml
+    - /bin/cp .env.example $DEPLOYPATH/.env.example
