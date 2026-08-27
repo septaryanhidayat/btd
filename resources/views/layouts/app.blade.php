@@ -142,8 +142,36 @@
         }
     </style>
 
-    <!-- Vite Assets & Tailwind -->
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+    <!-- Production Compiled Stylesheet & Vite Assets -->
+    <link rel="stylesheet" href="{{ asset('build/assets/app-B9ThRUf5.css') }}">
+    <link rel="stylesheet" href="/build/assets/app-B9ThRUf5.css">
+    
+    <!-- Tailwind Play CDN Fallback with Custom Palette & Typography -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#3E5CE7',
+                            orange: '#fe6000',
+                            navy: '#07153f',
+                            pink: '#E83E8C',
+                            teal: '#20C997'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(base_path('public/build/manifest.json')) || file_exists(base_path('build/manifest.json')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
 

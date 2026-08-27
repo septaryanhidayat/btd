@@ -10,8 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS (Vite) -->
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+    <!-- Tailwind CSS (Compiled & CDN Fallback) -->
+    <link rel="stylesheet" href="{{ asset('build/assets/app-B9ThRUf5.css') }}">
+    <link rel="stylesheet" href="/build/assets/app-B9ThRUf5.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(base_path('public/build/manifest.json')) || file_exists(base_path('build/manifest.json')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
 
