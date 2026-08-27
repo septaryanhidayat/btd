@@ -1,129 +1,144 @@
 @extends('layouts.app')
 
-@section('title', 'CV. Beranda Teknologi Digital - Startup Software House, Mobile App & AI')
+@section('title', 'CV. Beranda Teknologi Digital - Software House, Mobile App & AI Digital Agency')
 
 @section('content')
-<!-- Hero Section (Interactive 3D Tilt Mockup & Ambient Mesh Glow) -->
-<section x-data="{ 
-            mouseX: 0, 
-            mouseY: 0,
-            textIdx: 0,
-            texts: [
-                'Web Application Enterprise (Laravel 13)',
-                'Aplikasi Mobile iOS & Android (Flutter)',
-                'Sistem AI Privat & RAG Document SOP',
-                'Digitalisasi Desa & Smart School System'
-            ],
-            init() {
-                setInterval(() => {
-                    this.textIdx = (this.textIdx + 1) % this.texts.length;
-                }, 3500);
-            }
-         }" 
-         @mousemove="mouseX = ($event.clientX - window.innerWidth/2) / 35; mouseY = ($event.clientY - window.innerHeight/2) / 35"
-         class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden bg-white dark:bg-[#070A11]">
+<!-- SECTION 1: HERO HEADER (FlyMotion Dynamic Style with Rich Animated Elements & SVG Orbs) -->
+<section class="relative pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden bg-flymotion-hero transition-colors duration-300">
     
-    <!-- Ambient Colorful Glow Orbs (Dynamic & Non-Flat) -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-gradient-to-tr from-blue-500/20 via-indigo-500/20 to-cyan-400/25 dark:from-blue-600/25 dark:via-indigo-600/30 dark:to-cyan-500/30 blur-[130px] rounded-full pointer-events-none -z-10 animate-pulse-slow"></div>
-    <div class="absolute top-10 right-10 w-80 h-80 bg-purple-500/15 dark:bg-purple-600/20 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+    <!-- Organic Background Wave & Animated SVG Elements -->
+    <div class="absolute -top-24 -right-24 w-[600px] h-[600px] bg-gradient-to-br from-blue-200/40 via-indigo-100/30 to-orange-100/30 rounded-full blur-3xl pointer-events-none anim-logo-object"></div>
+    <div class="absolute top-1/2 -left-20 w-80 h-80 bg-orange-100/50 rounded-full blur-3xl pointer-events-none anim-logo-bottom"></div>
+    
+    <!-- Floating Decorative Dotted Grids & Shapes -->
+    <div class="absolute top-12 left-10 text-slate-300 text-xs pointer-events-none select-none tracking-widest anim-logo-top">••••••••••••••••</div>
+    <div class="absolute bottom-20 left-1/3 text-[#fe6000]/40 text-4xl font-black pointer-events-none select-none anim-logo-bottom">~</div>
+    <div class="absolute top-20 right-20 text-[#3E5CE7]/30 text-5xl font-black pointer-events-none select-none anim-shape-rotate">✦</div>
+
+    <!-- Multi-colored SVG Dot Grid (FlyMotion Signature) -->
+    <div class="absolute top-10 right-1/3 opacity-20 pointer-events-none anim-logo-top">
+        <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#3E5CE7"/>
+            <circle cx="30" cy="10" r="3" fill="#FE6000"/>
+            <circle cx="50" cy="10" r="3" fill="#E83E8C"/>
+            <circle cx="70" cy="10" r="3" fill="#20C997"/>
+            <circle cx="90" cy="10" r="3" fill="#3E5CE7"/>
+            <circle cx="10" cy="30" r="3" fill="#FE6000"/>
+            <circle cx="30" cy="30" r="3" fill="#3E5CE7"/>
+            <circle cx="50" cy="30" r="3" fill="#20C997"/>
+            <circle cx="70" cy="30" r="3" fill="#FE6000"/>
+            <circle cx="90" cy="30" r="3" fill="#E83E8C"/>
+            <circle cx="10" cy="50" r="3" fill="#20C997"/>
+            <circle cx="30" cy="50" r="3" fill="#E83E8C"/>
+            <circle cx="50" cy="50" r="3" fill="#3E5CE7"/>
+            <circle cx="70" cy="50" r="3" fill="#20C997"/>
+            <circle cx="90" cy="50" r="3" fill="#FE6000"/>
+            <circle cx="10" cy="70" r="3" fill="#E83E8C"/>
+            <circle cx="30" cy="70" r="3" fill="#FE6000"/>
+            <circle cx="50" cy="70" r="3" fill="#20C997"/>
+            <circle cx="70" cy="70" r="3" fill="#3E5CE7"/>
+            <circle cx="90" cy="70" r="3" fill="#E83E8C"/>
+        </svg>
+    </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
-            <!-- Left Column: High Contrast Typography & Capabilities -->
-            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+            <!-- Left Column: Typography & FlyMotion Action Buttons -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                 
-                <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-indigo-50 dark:bg-slate-900 border border-indigo-200 dark:border-slate-800 shadow-sm text-xs font-extrabold text-slate-950 dark:text-slate-100 cursor-default">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>CV. Beranda Teknologi Digital</span>
-                    <span class="text-slate-400 dark:text-slate-600">&bull;</span>
-                    <span class="text-indigo-700 dark:text-indigo-400">Next-Gen Software & AI</span>
+                <!-- Subtitle / Tagline Badge -->
+                <div class="flex items-center justify-center lg:justify-start gap-3">
+                    <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
+                    <span class="text-xs sm:text-sm font-bold tracking-wider uppercase text-[#fe6000]">
+                        Jasa Web Design & Software House
+                    </span>
                 </div>
 
-                <!-- Main Headline -->
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 dark:text-white tracking-tight leading-[1.1] font-heading">
-                    Membangun Masa Depan <br class="hidden sm:inline" />
-                    <span class="gradient-text-electric">Solusi Digital & AI</span>
+                <!-- Main Dynamic Headline -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#07153f] leading-[1.15]">
+                    Jasa Pembuatan <br class="hidden sm:inline" />
+                    <span class="text-[#3E5CE7]">Website Perusahaan</span>
                 </h1>
 
-                <!-- Cycling Capability Badge -->
-                <div class="h-10 flex items-center justify-center lg:justify-start">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-indigo-100/80 dark:bg-indigo-950/60 border border-indigo-300 dark:border-indigo-800 text-indigo-950 dark:text-indigo-300 font-mono text-xs sm:text-sm font-extrabold shadow-xs">
-                        <span class="text-indigo-600 dark:text-indigo-400 font-extrabold">⚡ Focus:</span>
-                        <span x-text="texts[textIdx]" class="transition-all duration-500"></span>
-                    </div>
-                </div>
-
-                <!-- Subtitle (100% High Contrast) -->
-                <p class="text-base sm:text-lg text-slate-800 dark:text-slate-200 max-w-2xl leading-relaxed font-semibold">
-                    Software House & Digital Agency terpercaya di Indonesia. Kami menghadirkan <strong class="text-slate-950 dark:text-white font-extrabold underline decoration-indigo-400">Website Enterprise</strong>, <strong class="text-slate-950 dark:text-white font-extrabold underline decoration-indigo-400">Aplikasi Mobile Flutter</strong>, <strong class="text-slate-950 dark:text-white font-extrabold underline decoration-indigo-400">Engine AI Privat (RAG)</strong>, serta <strong class="text-slate-950 dark:text-white font-extrabold underline decoration-indigo-400">Pelatihan IT Profesional</strong>.
+                <!-- Subtitle Description -->
+                <p class="text-base sm:text-lg text-[#4a4a4a] max-w-xl leading-relaxed font-normal">
+                    CV. Beranda Teknologi Digital adalah Digital Creative Agency & Software House terpercaya di Indonesia. Kami menghadirkan <strong class="text-[#07153f] font-bold">Website Enterprise</strong>, <strong class="text-[#07153f] font-bold">Aplikasi Mobile Flutter</strong>, <strong class="text-[#07153f] font-bold">Engine AI Privat</strong>, dan <strong class="text-[#07153f] font-bold">Pelatihan IT Profesional</strong>.
                 </p>
 
-                <!-- Dual Action CTA Buttons -->
-                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="{{ route('contact') }}" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-extrabold text-sm shadow-xl shadow-indigo-500/30 hover:scale-105 transition-all flex items-center justify-center gap-2">
-                        <span>Hitung Estimasi Biaya Proyek</span>
+                <!-- Dual FlyMotion CTA Buttons -->
+                <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                    <a href="#kalkulator" class="px-8 py-4 rounded-md bg-[#fe6000] hover:bg-[#e05400] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-orange-500/30 transition-all flex items-center gap-2">
+                        <span>KONSULTASI SEKARANG</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </a>
-                    <a href="https://wa.me/6289695249089" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white font-extrabold text-sm shadow-md hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
-                        <span>💬 Konsultasi WA (0896 9524 9089)</span>
+                    <a href="{{ route('projects.index') }}" class="px-8 py-4 rounded-md bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-blue-600/30 transition-all">
+                        <span>PORTOFOLIO</span>
+                    </a>
+                    <a href="https://wa.me/6289695249089" target="_blank" class="px-6 py-4 rounded-md border-2 border-emerald-500 text-emerald-700 font-bold text-xs hover:bg-emerald-50 transition-all flex items-center gap-2 bg-white/80">
+                        <span>💬 WA: 0896 9524 9089</span>
                     </a>
                 </div>
 
-                <!-- Tech Capability Badges -->
-                <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs text-slate-800 dark:text-slate-200 font-mono">
-                    <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 shadow-xs font-bold">Laravel 13 & PHP 8.4</span>
-                    <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 shadow-xs font-bold">Flutter iOS/Android</span>
-                    <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 shadow-xs font-bold">SQLite / MySQL DB</span>
-                    <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 shadow-xs font-bold">AI RAG & Vibe Coding</span>
+                <!-- Feature Mini Badges -->
+                <div class="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs text-[#64748B] font-medium">
+                    <span class="px-3 py-1.5 rounded-md bg-white border border-slate-200 shadow-xs">⚡ Laravel 13 & PHP 8.4</span>
+                    <span class="px-3 py-1.5 rounded-md bg-white border border-slate-200 shadow-xs">📱 Flutter iOS & Android</span>
+                    <span class="px-3 py-1.5 rounded-md bg-white border border-slate-200 shadow-xs">🤖 Private AI RAG System</span>
+                    <span class="px-3 py-1.5 rounded-md bg-white border border-slate-200 shadow-xs">🚀 Free Domain & Fast Server</span>
                 </div>
             </div>
 
-            <!-- Right Column: 3D Holographic Parallax Mockup Showcase -->
-            <div class="lg:col-span-5 flex justify-center perspective-1000">
-                <div class="relative w-full max-w-lg preserve-3d transition-transform duration-150 ease-out"
-                     :style="`transform: rotateY(${mouseX}deg) rotateX(${-mouseY}deg);`">
+            <!-- Right Column: FlyMotion Hero Person Showcase with Multi-layer Animation -->
+            <div class="lg:col-span-5 flex justify-center relative">
+                <div class="relative w-full max-w-md">
                     
-                    <!-- Glowing Aura -->
-                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-400 rounded-3xl opacity-35 blur-2xl"></div>
-
-                    <!-- Holographic Card Frame -->
-                    <div class="relative bento-card p-4 shadow-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 overflow-hidden">
+                    <!-- Background Ambient Disk -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-300/40 via-purple-200/30 to-orange-200/40 rounded-full blur-2xl opacity-80 anim-logo-object"></div>
+                    
+                    <!-- Hero Person Card Container -->
+                    <div class="relative bg-white/90 backdrop-blur-md rounded-3xl p-5 sm:p-6 shadow-2xl border border-slate-100">
                         
-                        <!-- Header Bar -->
-                        <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 text-xs">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
-                                <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-                                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-                                <span class="font-mono text-slate-900 dark:text-slate-200 text-[11px] font-extrabold ml-2">berandadigital.net &bull; Live Preview</span>
+                        <!-- Top Mini Browser Bar -->
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-100 text-xs mb-4">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                                <span class="font-bold text-[#07153f] ml-2 text-[11px]">berandadigital.net</span>
                             </div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 text-[10px] font-extrabold">
-                                99.9% Uptime
-                            </span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-[#3E5CE7] font-bold text-[10px]">Official Agency</span>
                         </div>
 
-                        <!-- Authentic Screencapture with Interactive Hover Scroll -->
-                        <div class="mt-3 aspect-4/3 rounded-2xl overflow-hidden relative shadow-inner bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 group">
-                            <img src="/preview/screencapture-berandadigital-net-2026-08-19-17_31_05.png" alt="Beranda Digital Preview" class="w-full h-full object-cover object-top group-hover:object-bottom transition-all duration-1000 cursor-pointer" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                        <!-- Hero Image from XML Backup -->
+                        <div class="relative rounded-2xl overflow-hidden bg-gradient-to-b from-blue-50 via-slate-50 to-indigo-50/60 p-3 border border-slate-100 flex items-center justify-center">
+                            <img src="/images/hero-person-old.png" alt="CV. Beranda Teknologi Digital Hero" class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
                             
-                            <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
-                                <span class="px-2.5 py-1 rounded-md bg-indigo-600 font-mono text-[10px] uppercase font-extrabold tracking-wider">
-                                    Authentic Web Preview
-                                </span>
-                                <h4 class="text-sm font-extrabold text-white">Tampilan Asli berandadigital.net</h4>
-                                <p class="text-[11px] text-slate-200 font-medium">CV. Beranda Teknologi Digital &bull; Palembang & Ogan Ilir</p>
+                            <!-- Bottom Verified Badge -->
+                            <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#07153f]/90 backdrop-blur-md text-white text-xs space-y-0.5 shadow-xl">
+                                <div class="flex items-center justify-between text-[10px]">
+                                    <span class="text-amber-400 font-bold">★ Garansi 100% Selesai</span>
+                                    <span class="text-cyan-300">Palembang & Ogan Ilir</span>
+                                </div>
+                                <div class="font-bold text-white text-xs">Jasa Website & Aplikasi IT Terpercaya</div>
                             </div>
                         </div>
 
-                        <!-- Floating Micro-Badge -->
-                        <div class="absolute -top-4 -right-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-3 rounded-2xl shadow-xl flex items-center gap-2 font-mono text-xs font-extrabold text-indigo-600 dark:text-indigo-400 animate-float-slow">
-                            <span>⚡ High Speed Performance</span>
+                        <!-- Floating Badges with FlyMotion Smooth Physics Animations -->
+                        <div class="absolute -top-4 -left-4 bg-white px-4 py-2 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2 text-xs font-bold text-[#fe6000] anim-logo-top">
+                            <span>🎨 Figma UI Design</span>
                         </div>
+
+                        <div class="absolute -top-4 -right-4 bg-white px-4 py-2 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2 text-xs font-bold text-pink-600 anim-logo-bottom">
+                            <span>⚡ Elementor & Web Builder</span>
+                        </div>
+
+                        <div class="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2 text-xs font-bold text-[#3E5CE7] anim-logo-top">
+                            <span>🚀 Laravel 13 & Flutter</span>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -132,359 +147,258 @@
     </div>
 </section>
 
-<!-- Metrics & Impact Counter Band (Consistent High Contrast Light Background) -->
-<section class="py-12 bg-slate-50 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xs space-y-1">
-                <div class="text-3xl sm:text-4xl font-extrabold text-indigo-700 dark:text-indigo-400 font-heading">150+</div>
-                <div class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold">Proyek Sukses Selesai</div>
-            </div>
-            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xs space-y-1">
-                <div class="text-3xl sm:text-4xl font-extrabold text-cyan-700 dark:text-cyan-400 font-heading">99.8%</div>
-                <div class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold">Kepuasan Klien & Mitra</div>
-            </div>
-            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xs space-y-1">
-                <div class="text-3xl sm:text-4xl font-extrabold text-purple-700 dark:text-purple-400 font-heading">85+</div>
-                <div class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold">Event & Workshop IT</div>
-            </div>
-            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xs space-y-1">
-                <div class="text-3xl sm:text-4xl font-extrabold text-amber-600 dark:text-amber-400 font-heading">5,000+</div>
-                <div class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold">Alumni & Peserta Pelatihan</div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- SECTION 2: WHAT WE DO (FlyMotion 6-Card Bento Grid with Pastel Icons & Background Dots) -->
+<section class="py-20 bg-[#f8faff] border-t border-slate-100 transition-colors duration-300 relative overflow-hidden">
+    
+    <!-- Background Floating Accents -->
+    <div class="absolute top-10 right-10 text-slate-200 text-xs pointer-events-none select-none tracking-widest anim-logo-bottom">••••••••••••</div>
+    <div class="absolute bottom-10 left-10 text-blue-200/50 text-6xl font-black pointer-events-none select-none anim-logo-top">✦</div>
 
-<!-- Authentic Partners & Client Logos Marquee Section -->
-<section class="py-14 bg-white dark:bg-[#070A11] overflow-hidden border-b border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <p class="text-center text-xs font-extrabold uppercase tracking-widest text-slate-900 dark:text-slate-300">
-            Dipercaya Oleh Instansi Pemerintah, Perguruan Tinggi & Perusahaan Mitra
-        </p>
-
-        <!-- Infinite Logo Marquee Track -->
-        <div class="relative w-full overflow-hidden">
-            <div class="animate-marquee items-center gap-8 sm:gap-12">
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0">
-                    <img src="/images/LOGO-CLIENT-WEB.png" alt="Mitra Client Web" class="h-8 w-auto object-contain" />
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0">
-                    <img src="/images/Partner_img-2-1.png" alt="Mitra Partner 2" class="h-7 w-auto object-contain" />
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0">
-                    <img src="/images/Partner_img-3-1.png" alt="Mitra Partner 3" class="h-7 w-auto object-contain" />
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0">
-                    <img src="/images/Partner_img-4-1.png" alt="Mitra Partner 4" class="h-7 w-auto object-contain" />
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0">
-                    <img src="/images/Partner_img-5-1.png" alt="Mitra Partner 5" class="h-7 w-auto object-contain" />
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0 font-extrabold text-xs text-slate-950 dark:text-slate-100">
-                    🏛️ Kementerian Komdigi RI
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0 font-extrabold text-xs text-slate-950 dark:text-slate-100">
-                    🎓 Politeknik Akamigas Palembang
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0 font-extrabold text-xs text-slate-950 dark:text-slate-100">
-                    🏫 SIT Robbani Ogan Ilir
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0 font-extrabold text-xs text-slate-950 dark:text-slate-100">
-                    📍 Desa Senuro Timur Ogan Ilir
-                </div>
-
-                <!-- Duplicate for Loop -->
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0">
-                    <img src="/images/LOGO-CLIENT-WEB.png" alt="Mitra Client Web" class="h-8 w-auto object-contain" />
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0">
-                    <img src="/images/Partner_img-2-1.png" alt="Mitra Partner 2" class="h-7 w-auto object-contain" />
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0 font-extrabold text-xs text-slate-950 dark:text-slate-100">
-                    🏛️ Kementerian Komdigi RI
-                </div>
-                <div class="h-12 px-5 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center justify-center shadow-xs shrink-0 font-extrabold text-xs text-slate-950 dark:text-slate-100">
-                    🎓 Politeknik Akamigas Palembang
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Futuristic Bento Grid Ecosystem (Consistent High Contrast Light Background) -->
-<section class="py-24 bg-slate-50/50 dark:bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
-        <div class="text-center max-w-3xl mx-auto space-y-3">
-            <span class="px-4 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-950/80 text-indigo-900 dark:text-indigo-300 font-extrabold text-xs uppercase tracking-wider border border-indigo-300 dark:border-indigo-800">
-                Ekosistem Solusi Digital 2026
-            </span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-950 dark:text-white font-heading">
-                Kapabilitas & Arsitektur Sistem Modern
-            </h2>
-            <p class="text-slate-700 dark:text-slate-300 text-sm sm:text-base font-semibold">Dirancang dengan standar performa tertinggi, keamanan terjamin, dan skalabilitas tak terbatas.</p>
+        <!-- Section Title Header -->
+        <div class="space-y-2 text-left">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
+                <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">SERVICE</span>
+            </div>
+            <h2 class="text-4xl font-extrabold text-[#07153f]">What We Do</h2>
+            <p class="text-base text-[#4a4a4a]">Solusi komprehensif teknologi informasi, pengembangan software, dan pemasaran digital untuk bisnis Anda.</p>
         </div>
 
-        <!-- Bento Grid Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- 6 Bento Cards Grid (Pastel Icons & High Contrast Clean Cards - No Long Screencaptures) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Bento 1: Enterprise Web Apps -->
-            <div class="md:col-span-2 bento-card p-8 sm:p-10 flex flex-col justify-between group">
+            <!-- Card 1: Web Development -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 space-y-5 flex flex-col justify-between group">
                 <div class="space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-900 dark:text-blue-300 text-xs font-extrabold border border-blue-300 dark:border-blue-800">
-                        <span>Web Development Enterprise</span>
+                    <div class="w-16 h-16 rounded-2xl bg-orange-50 text-[#fe6000] flex items-center justify-center text-3xl font-bold shadow-inner">
+                        💻
                     </div>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white">Website, Sistem Informasi & Portal Digital</h3>
-                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed max-w-xl font-medium">
-                        Pengembangan Website Perusahaan, Portal Desa Digital Senuro Timur, Sistem Sekolah PPDB Online, dan Web Application dengan performa tinggi berbasis Laravel 13 & Tailwind v4.
+                    <h3 class="text-2xl font-bold text-[#07153f] group-hover:text-[#3E5CE7] transition-colors">Web Development</h3>
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Jasa pembuatan website company profile, portal berita instansi, sistem informasi desa & sekolah, hingga web application Laravel.
                     </p>
-
-                    <!-- Interactive Code Snippet Preview -->
-                    <div class="p-4 rounded-2xl bg-slate-950 text-slate-200 font-mono text-xs space-y-1.5 border border-slate-800 shadow-inner">
-                        <div class="flex items-center justify-between text-slate-400 text-[10px] pb-1 border-b border-slate-800">
-                            <span>App\Http\Controllers\EnterpriseController.php</span>
-                            <span class="text-emerald-400">PHP 8.4 &bull; Laravel 13</span>
-                        </div>
-                        <p><span class="text-purple-400">public function</span> <span class="text-blue-400">deployEnterpriseApp</span>(<span class="text-amber-300">Request</span> $request) {</p>
-                        <p class="pl-4"><span class="text-indigo-400">$system</span> = <span class="text-emerald-400">BerandaDigital</span>::build(<span class="text-emerald-300">'High-Performance'</span>);</p>
-                        <p class="pl-4"><span class="text-purple-400">return</span> response()->json([<span class="text-emerald-300">'status'</span> => <span class="text-emerald-300">'Ready for Scale'</span>]);</p>
-                        <p>}</p>
-                    </div>
+                    <ul class="space-y-2 text-xs font-semibold text-[#07153f] pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Desain Engaging & 100% Mobile Responsive</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Panel Admin CMS Mudah Digunakan</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Gratis Domain .com & Server SSD Fast</span></li>
+                    </ul>
                 </div>
-
-                <div class="pt-6 flex items-center justify-between border-t border-slate-200 dark:border-slate-800">
-                    <span class="text-xs font-extrabold text-slate-800 dark:text-slate-400 font-mono">Tech: Laravel 13, SQLite / MySQL, Alpine.js</span>
-                    <a href="{{ route('services') }}" class="text-xs font-extrabold text-indigo-700 dark:text-indigo-400 hover:underline flex items-center gap-1">
-                        <span>Pelajari Detail</span> &rarr;
+                <div class="pt-4 border-t border-slate-100">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] hover:underline flex items-center gap-1">
+                        <span>Konsultasi Web Development</span> &rarr;
                     </a>
                 </div>
             </div>
 
-            <!-- Bento 2: Mobile App (Flutter) -->
-            <div class="bento-card p-8 flex flex-col justify-between group">
+            <!-- Card 2: Web Promotion -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 space-y-5 flex flex-col justify-between group">
                 <div class="space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950/80 text-cyan-900 dark:text-cyan-300 text-xs font-extrabold border border-cyan-300 dark:border-cyan-800">
-                        <span>Mobile Cross-Platform</span>
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 text-[#3E5CE7] flex items-center justify-center text-3xl font-bold shadow-inner">
+                        🚀
                     </div>
-                    <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">Aplikasi Mobile iOS & Android</h3>
-                    <p class="text-slate-700 dark:text-slate-300 text-xs leading-relaxed font-medium">
-                        Aplikasi Flutter cepat terintegrasi REST API backend, push notification, geolocation, dan offline cache capability.
+                    <h3 class="text-2xl font-bold text-[#07153f] group-hover:text-[#3E5CE7] transition-colors">Web Promotion</h3>
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Strategi pemasaran digital, SEO optimasi mesin pencari, dan promosi online terukur untuk mempercepat pertumbuhan bisnis Anda.
                     </p>
-                    
-                    <div class="p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs space-y-2">
-                        <div class="flex items-center justify-between text-[11px] font-extrabold text-slate-900 dark:text-slate-200">
-                            <span>📱 Multi-Platform</span>
-                            <span class="text-cyan-700 dark:text-cyan-400">Single Codebase</span>
-                        </div>
-                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2">
-                            <div class="bg-cyan-600 h-2 rounded-full w-full"></div>
-                        </div>
-                    </div>
+                    <ul class="space-y-2 text-xs font-semibold text-[#07153f] pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Optimasi Kata Kunci Masuk Halaman 1 Google</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Audit Kecepatan & Performa Situs</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Laporan Analisis Trafik Pengunjung</span></li>
+                    </ul>
                 </div>
-
-                <div class="pt-6 border-t border-slate-200 dark:border-slate-800">
-                    <a href="{{ route('services') }}" class="text-xs font-extrabold text-cyan-700 dark:text-cyan-400 hover:underline">Lihat Layanan Mobile &rarr;</a>
+                <div class="pt-4 border-t border-slate-100">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] hover:underline flex items-center gap-1">
+                        <span>Konsultasi SEO & Promosi</span> &rarr;
+                    </a>
                 </div>
             </div>
 
-            <!-- Bento 3: AI Solutions & Private RAG -->
-            <div class="bento-card p-8 flex flex-col justify-between group" x-data="{ simulatedAnswer: 'Halo! Engine AI RAG CV. Beranda Teknologi Digital siap membantu otomasi dokumen SOP dan sistem interaktif tanpa biaya langganan API pihak ketiga.' }">
+            <!-- Card 3: Web Maintenance -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 space-y-5 flex flex-col justify-between group">
                 <div class="space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/80 text-purple-900 dark:text-purple-300 text-xs font-extrabold border border-purple-300 dark:border-purple-800">
-                        <span>Artificial Intelligence</span>
+                    <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center text-3xl font-bold shadow-inner">
+                        🛠️
                     </div>
-                    <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">Chatbot AI RAG Privat & Vibe Coding</h3>
-                    <p class="text-slate-700 dark:text-slate-300 text-xs leading-relaxed font-medium">
-                        Engine AI privat untuk membaca dokumen SOP internal perusahaan secara mandiri dan aman.
+                    <h3 class="text-2xl font-bold text-[#07153f] group-hover:text-[#3E5CE7] transition-colors">Web Maintenance</h3>
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Layanan pemeliharaan teknis berkala, keamanan sertifikat SSL, pembaruan server cloud hosting, dan perbaikan bug sistem.
                     </p>
-
-                    <!-- Interactive Live Chatbot Simulator Preview -->
-                    <div class="p-3.5 rounded-2xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800 text-xs space-y-2">
-                        <div class="flex items-center gap-2 text-purple-900 dark:text-purple-300 font-extrabold text-[11px]">
-                            <span class="w-2 h-2 rounded-full bg-purple-600 animate-ping"></span>
-                            <span>Simulasi AI RAG Chatbot:</span>
-                        </div>
-                        <p class="text-[11px] text-slate-800 dark:text-slate-200 italic leading-relaxed font-semibold" x-text="simulatedAnswer"></p>
-                        
-                        <div class="flex flex-wrap gap-1.5 pt-1">
-                            <button @click="simulatedAnswer = 'Sistem RAG (Retrieval-Augmented Generation) membaca PDF/Word SOP perusahaan Anda secara privat & akurat 100%.'" 
-                                    class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-900 border border-purple-300 dark:border-purple-800 text-[10px] font-extrabold text-purple-700 dark:text-purple-400 hover:bg-purple-100">
-                                Apa itu RAG?
-                            </button>
-                            <button @click="simulatedAnswer = 'Proses pembuatan website desa/perusahaan rata-rata memakan waktu 7-14 hari kerja siap online.'" 
-                                    class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-900 border border-purple-300 dark:border-purple-800 text-[10px] font-extrabold text-purple-700 dark:text-purple-400 hover:bg-purple-100">
-                                Berapa lama pengerjaan?
-                            </button>
-                        </div>
-                    </div>
+                    <ul class="space-y-2 text-xs font-semibold text-[#07153f] pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Backup Rutin Berkala & Anti-Malware</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Update Patch Keamanan & Server</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Bantuan Teknis Prioritas 24/7</span></li>
+                    </ul>
                 </div>
-
-                <div class="pt-6 border-t border-slate-200 dark:border-slate-800">
-                    <a href="{{ route('services') }}" class="text-xs font-extrabold text-purple-700 dark:text-purple-400 hover:underline">Pelajari Engine AI &rarr;</a>
+                <div class="pt-4 border-t border-slate-100">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] hover:underline flex items-center gap-1">
+                        <span>Konsultasi Pemeliharaan</span> &rarr;
+                    </a>
                 </div>
             </div>
 
-            <!-- Bento 4: Corporate Training & Speaker Profile -->
-            <div class="md:col-span-2 bento-card p-8 sm:p-10 flex flex-col justify-between group">
+            <!-- Card 4: Social Media Management -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 space-y-5 flex flex-col justify-between group">
                 <div class="space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-300 text-xs font-extrabold border border-amber-300 dark:border-amber-800">
-                        <span>Corporate Training & Keynote Speaker</span>
+                    <div class="w-16 h-16 rounded-2xl bg-pink-50 text-[#E83E8C] flex items-center justify-center text-3xl font-bold shadow-inner">
+                        📱
                     </div>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white">Pelatihan IT, Training for Trainer & Keynote Speaker</h3>
-                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed max-w-xl font-medium">
-                        Dipimpin langsung oleh Direktur Utama <strong class="text-slate-950 dark:text-white font-extrabold">Septa Ryan Hidayat, S.Kom</strong> (Narasumber Komdigi RI, Dosen Tamu Akamigas Palembang, & Dewan Pakar IGI). Pelatihan Vibe Coding, AI RAG, & Pembelajaran Koding Interaktif.
+                    <h3 class="text-2xl font-bold text-[#07153f] group-hover:text-[#3E5CE7] transition-colors">Social Media Management</h3>
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Pengelolaan konten media sosial profesional, desain feed & reels estetik, penulisan caption persuasif, dan kampanye interaktif.
                     </p>
+                    <ul class="space-y-2 text-xs font-semibold text-[#07153f] pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Desain Visual Grafis & Video Reels</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Riset Hashtag & Target Audience</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Jadwal Publikasi Konten Konsisten</span></li>
+                    </ul>
                 </div>
+                <div class="pt-4 border-t border-slate-100">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] hover:underline flex items-center gap-1">
+                        <span>Konsultasi Sosial Media</span> &rarr;
+                    </a>
+                </div>
+            </div>
 
-                <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between border-t border-slate-200 dark:border-slate-800 gap-3">
-                    <span class="text-xs font-extrabold text-slate-900 dark:text-slate-300">Narasumber: Septa Ryan Hidayat, S.Kom</span>
-                    <a href="{{ route('trainer.index') }}" class="text-xs font-extrabold text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1">
-                        <span>Lihat Profil Speaker & Jadwal Seminar</span> &rarr;
+            <!-- Card 5: Logo & Visual Branding -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 space-y-5 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-[#20C997] flex items-center justify-center text-3xl font-bold shadow-inner">
+                        🎨
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#07153f] group-hover:text-[#3E5CE7] transition-colors">Logo & Visual Branding</h3>
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Perancangan identitas visual merek, logo vektor modern, brand guidelines profesional, dan perlengkapan stationery bisnis.
+                    </p>
+                    <ul class="space-y-2 text-xs font-semibold text-[#07153f] pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">File Master Vektor (AI, SVG, PDF, PNG)</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Panduan Tipografi & Skema Warna</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Revisi Desain Fleksibel</span></li>
+                    </ul>
+                </div>
+                <div class="pt-4 border-t border-slate-100">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] hover:underline flex items-center gap-1">
+                        <span>Konsultasi Logo & Brand</span> &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: Google & Meta Ads -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 space-y-5 flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-16 h-16 rounded-2xl bg-cyan-50 text-[#17A2B8] flex items-center justify-center text-3xl font-bold shadow-inner">
+                        🎯
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#07153f] group-hover:text-[#3E5CE7] transition-colors">Google & Meta Ads</h3>
+                    <p class="text-sm text-[#4a4a4a] leading-relaxed">
+                        Kampanye iklan digital berbayar Google Search, YouTube, dan Instagram/Facebook Ads tertarget untuk mendatangkan omset nyata.
+                    </p>
+                    <ul class="space-y-2 text-xs font-semibold text-[#07153f] pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Target Demografi & Minat Akurat</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Pelacakan Pixel & Retargeting Leads</span></li>
+                        <li class="flex items-center gap-2 text-emerald-600">✓ <span class="text-[#4a4a4a]">Efisiensi Biaya Iklan Tertinggi (ROAS)</span></li>
+                    </ul>
+                </div>
+                <div class="pt-4 border-t border-slate-100">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] hover:underline flex items-center gap-1">
+                        <span>Konsultasi Iklan Ads</span> &rarr;
                     </a>
                 </div>
             </div>
 
         </div>
-
     </div>
 </section>
 
-<!-- Interactive Live Project Cost Estimator Calculator (Clean High-Contrast Surface) -->
-<section class="py-20 bg-white dark:bg-[#070A11] border-t border-slate-200 dark:border-slate-800"
-         x-data="{
-            serviceType: 'web',
-            scale: 'medium',
-            needAI: true,
-            needMobile: false,
-            calcPrice() {
-                let base = 2500000;
-                if (this.serviceType === 'web') base = 3500000;
-                if (this.serviceType === 'mobile') base = 6500000;
-                if (this.serviceType === 'village') base = 4000000;
-                
-                if (this.scale === 'large') base *= 1.8;
-                if (this.scale === 'enterprise') base *= 2.8;
-
-                if (this.needAI) base += 2000000;
-                if (this.needMobile) base += 3500000;
-
-                return new Intl.NumberFormat('id-ID').format(base);
-            }
-         }">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div class="text-center max-w-2xl mx-auto space-y-3">
-            <span class="px-4 py-1.5 rounded-full bg-cyan-100 dark:bg-cyan-950/80 text-cyan-900 dark:text-cyan-300 font-extrabold text-xs uppercase tracking-wider border border-cyan-300 dark:border-cyan-800">
-                Kalkulator Interaktif
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 dark:text-white font-heading">
-                Hitung Estimasi Anggaran Proyek Digital Anda
-            </h2>
-            <p class="text-slate-700 dark:text-slate-300 text-sm font-semibold">Pilih spesifikasi kebutuhan Anda dan dapatkan perkiraan biaya instan.</p>
-        </div>
-
-        <div class="bento-card p-8 sm:p-12 max-w-4xl mx-auto bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 shadow-xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Left: Controls -->
-                <div class="space-y-6">
-                    <div>
-                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-slate-300 mb-2">1. Jenis Kebutuhan Utama</label>
-                        <div class="grid grid-cols-3 gap-2">
-                            <button @click="serviceType = 'web'" :class="serviceType === 'web' ? 'bg-indigo-700 text-white font-extrabold shadow-md' : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-300 font-bold'" class="p-2.5 rounded-xl text-xs transition-all">Website</button>
-                            <button @click="serviceType = 'mobile'" :class="serviceType === 'mobile' ? 'bg-indigo-700 text-white font-extrabold shadow-md' : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-300 font-bold'" class="p-2.5 rounded-xl text-xs transition-all">Mobile App</button>
-                            <button @click="serviceType = 'village'" :class="serviceType === 'village' ? 'bg-indigo-700 text-white font-extrabold shadow-md' : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-300 font-bold'" class="p-2.5 rounded-xl text-xs transition-all">Desa/Sekolah</button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-slate-300 mb-2">2. Skala Fitur & Database</label>
-                        <div class="grid grid-cols-3 gap-2">
-                            <button @click="scale = 'medium'" :class="scale === 'medium' ? 'bg-cyan-700 text-white font-extrabold shadow-md' : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-300 font-bold'" class="p-2.5 rounded-xl text-xs transition-all">Standar</button>
-                            <button @click="scale = 'large'" :class="scale === 'large' ? 'bg-cyan-700 text-white font-extrabold shadow-md' : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-300 font-bold'" class="p-2.5 rounded-xl text-xs transition-all">Advanced</button>
-                            <button @click="scale = 'enterprise'" :class="scale === 'enterprise' ? 'bg-cyan-700 text-white font-extrabold shadow-md' : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-300 font-bold'" class="p-2.5 rounded-xl text-xs transition-all">Enterprise</button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-slate-300 mb-2">3. Fitur Tambahan (Add-ons)</label>
-                        <div class="space-y-2">
-                            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
-                                <input type="checkbox" x-model="needAI" class="rounded text-indigo-700 focus:ring-indigo-500 w-4 h-4">
-                                <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">Integrasi Engine AI Chatbot / RAG (+Rp 2 Juta)</span>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
-                                <input type="checkbox" x-model="needMobile" class="rounded text-indigo-700 focus:ring-indigo-500 w-4 h-4">
-                                <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">Aplikasi Mobile Flutter Pendamping (+Rp 3.5 Juta)</span>
-                            </label>
-                        </div>
-                    </div>
+<!-- SECTION 3: ABOUT US (FlyMotion Layout with Animated Floating Illustrations) -->
+<section class="py-20 bg-white border-t border-slate-100 transition-colors duration-300 relative overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="w-8 h-1 bg-[#3E5CE7] rounded-full"></span>
+                    <span class="text-sm font-bold tracking-wider uppercase text-[#3E5CE7]">About us</span>
                 </div>
+                
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] leading-tight">
+                    We develop digital strategies products and services.
+                </h2>
+                
+                <p class="text-base text-[#4a4a4a] leading-relaxed">
+                    <strong class="text-[#07153f] font-bold">CV. Beranda Teknologi Digital</strong> adalah Digital Creative Agency & Software House terpercaya yang mempunyai pengalaman pembuatan puluhan website bisnis, sistem informasi instansi, dan toko online secara elegan dan profesional. Kami hadir dengan desain website yang mengikuti tren terkini, user friendly, dan mudah dioperasikan.
+                </p>
 
-                <!-- Right: Estimated Result Box -->
-                <div class="p-6 sm:p-8 rounded-2xl bg-slate-950 text-white flex flex-col justify-between space-y-6 shadow-xl border border-slate-800">
-                    <div class="space-y-2">
-                        <span class="text-[11px] font-mono text-cyan-400 uppercase tracking-widest block font-bold">Hasil Kalkulasi Estimasi</span>
-                        <div class="text-3xl sm:text-4xl font-extrabold font-mono text-white flex items-baseline gap-1">
-                            <span class="text-lg text-slate-400">Rp</span>
-                            <span x-text="calcPrice()"></span>
-                        </div>
-                        <p class="text-xs text-slate-300 leading-relaxed font-medium">
-                            Termasuk domain, hosting SSD NVMe kecepatan tinggi, SSL enkripsi, pelatihan penggunaan, dan pemeliharaan teknis gratis 3 bulan.
-                        </p>
-                    </div>
-
-                    <div class="space-y-3">
-                        <a :href="`https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20dengan%20estimasi%20paket%20${serviceType}%20skala%20${scale}%20dengan%20perkiraan%20Rp%20${calcPrice()}`"
-                           target="_blank"
-                           class="block w-full text-center px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-xs shadow-lg transition-all">
-                            💬 Kunci Penawaran via WhatsApp &rarr;
-                        </a>
-                        <span class="text-[10px] text-center text-slate-400 block font-medium">Bisa disesuaikan dengan TOR / RAB instansi Anda.</span>
-                    </div>
+                <div class="pt-2">
+                    <a href="{{ route('services') }}" class="px-7 py-3.5 rounded-md bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase shadow-md inline-flex items-center gap-2 transition-all">
+                        <span>Learn More</span> &rarr;
+                    </a>
                 </div>
-
             </div>
+
+            <!-- Right Column: Interactive Illustration Showcase with Floating Shapes -->
+            <div class="lg:col-span-5 flex justify-center relative">
+                
+                <!-- Floating Decorative Shapes -->
+                <div class="absolute -top-6 -left-6 text-[#fe6000] text-3xl font-black anim-logo-top">✦</div>
+                <div class="absolute -bottom-6 -right-6 text-[#3E5CE7] text-4xl font-black anim-logo-bottom">~</div>
+
+                <div class="bg-[#f8faff] p-5 rounded-3xl border border-slate-100 shadow-xl max-w-md w-full relative">
+                    <div class="aspect-video rounded-2xl overflow-hidden border border-slate-100 bg-white shadow-xs p-2 flex items-center justify-center">
+                        <img src="/images/Ilustrasi-Homepage-1-1.png" alt="Beranda Digital Agency Showcase" class="w-full h-full object-contain" />
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
-<!-- Authentic Featured Portofolio Visualizer Section -->
-<section class="py-24 bg-slate-50/50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div class="space-y-2">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-700 dark:text-indigo-400">Portofolio & Screencapture Asli</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 dark:text-white font-heading">Proyek Nyata Yang Telah Berhasil Dibangun</h2>
+<!-- SECTION 4: PRODUCT ("Our Products" with FlyMotion Watermark & Landscape Thumbnails) -->
+<section class="py-20 bg-flymotion-soft border-t border-slate-100 transition-colors duration-300 relative overflow-hidden">
+    
+    <!-- Background Watermark Text "Product" -->
+    <div class="absolute top-8 left-8 text-8xl sm:text-9xl font-black text-slate-200/40 pointer-events-none select-none tracking-wider -z-0">
+        Product
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+        
+        <div class="space-y-2 text-left">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
+                <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">Product</span>
             </div>
-            <a href="{{ route('projects.index') }}" class="text-sm font-extrabold text-indigo-700 dark:text-indigo-400 hover:underline">
-                Lihat Semua Portofolio Klien &rarr;
-            </a>
+            <h2 class="text-4xl font-extrabold text-[#07153f]">Our Products</h2>
+            <p class="text-base text-[#4a4a4a]">Temukan berbagai produk digital berkualitas di sini! Nikmati koleksi kami dan jadikan proyek Anda terlihat trendi dan profesional.</p>
         </div>
 
+        <!-- Featured Projects Showcase Grid (16:9 Landscape Thumbnails) -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             @foreach($featuredProjects as $project)
-                <div class="bento-card overflow-hidden flex flex-col group border border-slate-200 dark:border-slate-800">
-                    <div class="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-950 relative border-b border-slate-200 dark:border-slate-800">
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col group">
+                    <div class="aspect-video overflow-hidden relative border-b border-slate-100 bg-slate-100">
                         <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute top-3 left-3">
-                            <span class="px-3 py-1 rounded-full bg-slate-950 text-white text-[10px] font-extrabold shadow-md">
+                            <span class="px-3 py-1 rounded-full bg-blue-50 text-[#3E5CE7] font-bold text-[10px]">
                                 {{ $project->category?->name ?? 'Proyek Klien' }}
                             </span>
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                         <div class="space-y-2">
-                            <h3 class="text-lg font-extrabold text-slate-950 dark:text-white group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors line-clamp-1">
+                            <h3 class="text-base font-bold text-[#07153f] group-hover:text-[#3E5CE7] transition-colors line-clamp-1">
                                 {{ $project->title }}
                             </h3>
-                            <p class="text-slate-700 dark:text-slate-300 text-xs line-clamp-2 leading-relaxed font-semibold">
+                            <p class="text-xs text-[#4a4a4a] line-clamp-2 leading-relaxed">
                                 {{ $project->summary }}
                             </p>
                         </div>
-                        <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs">
-                            <span class="font-extrabold text-indigo-700 dark:text-indigo-400">{{ $project->client_name }}</span>
-                            <a href="{{ route('projects.show', $project->slug) }}" class="font-extrabold text-slate-950 dark:text-white hover:text-indigo-700 dark:hover:text-indigo-400">
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <span class="font-bold text-[#3E5CE7]">{{ $project->client_name }}</span>
+                            <a href="{{ route('projects.show', $project->slug) }}" class="font-bold text-[#07153f] hover:text-[#3E5CE7]">
                                 Detail &rarr;
                             </a>
                         </div>
@@ -492,179 +406,315 @@
                 </div>
             @endforeach
         </div>
-    </div>
-</section>
 
-<!-- Dedicated Testimonials Section -->
-<section class="py-24 bg-white dark:bg-[#070A11] border-t border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        <div class="text-center max-w-3xl mx-auto space-y-3">
-            <span class="px-4 py-1.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-300 font-extrabold text-xs uppercase tracking-wider border border-amber-300 dark:border-amber-800">
-                Testimoni Klien & Mitra
-            </span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-950 dark:text-white font-heading">
-                Apa Kata Klien & Rekan Mitra Kami?
-            </h2>
-            <p class="text-slate-700 dark:text-slate-300 text-sm font-semibold">Ulasan autentik dari institusi pemerintah, akademisi, dan yayasan pendidikan.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Testimonial 1 -->
-            <div class="bento-card p-8 space-y-6 flex flex-col justify-between">
-                <div class="space-y-4">
-                    <div class="flex items-center gap-1 text-amber-500 font-extrabold text-sm">
-                        ★★★★★ <span>5.0</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 text-xs sm:text-sm leading-relaxed font-semibold italic">
-                        "Pelayanan pembuatan website dan aplikasi administrasi desa di Senuro Timur sangat cepat dan responsif. Pengurusan surat warga jadi jauh lebih efisien!"
-                    </p>
-                </div>
-                <div class="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-                    <img src="/images/img_testimonial_Home-E87QWM2.jpg" alt="Perangkat Desa" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-600" />
-                    <div>
-                        <h4 class="text-xs font-extrabold text-slate-950 dark:text-white">Perangkat Desa Senuro Timur</h4>
-                        <span class="text-[11px] font-bold text-indigo-700 dark:text-indigo-400">Pemerintah Desa Ogan Ilir</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="bento-card p-8 space-y-6 flex flex-col justify-between">
-                <div class="space-y-4">
-                    <div class="flex items-center gap-1 text-amber-500 font-extrabold text-sm">
-                        ★★★★★ <span>5.0</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 text-xs sm:text-sm leading-relaxed font-semibold italic">
-                        "Materi Vibe Coding & AI RAG yang dibawakan Pak Septa Ryan Hidayat sangat menginspirasi dosen Politeknik Akamigas Palembang. Praktis & langsung bisa diimplementasikan."
-                    </p>
-                </div>
-                <div class="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-                    <img src="/images/Wulan.jpg" alt="Dosen Akamigas" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-600" />
-                    <div>
-                        <h4 class="text-xs font-extrabold text-slate-950 dark:text-white">Tim Dosen & Akademisi</h4>
-                        <span class="text-[11px] font-bold text-indigo-700 dark:text-indigo-400">Politeknik Akamigas Palembang</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="bento-card p-8 space-y-6 flex flex-col justify-between">
-                <div class="space-y-4">
-                    <div class="flex items-center gap-1 text-amber-500 font-extrabold text-sm">
-                        ★★★★★ <span>5.0</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 text-xs sm:text-sm leading-relaxed font-semibold italic">
-                        "Sistem PPDB online dan website sekolah SIT Robbani sangat membantu proses penerimaan siswa baru. Dukungan teknis Beranda Digital sangat terpercaya!"
-                    </p>
-                </div>
-                <div class="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
-                    <img src="/images/testimonial_img-11.jpeg" alt="Kepala Sekolah" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-600" />
-                    <div>
-                        <h4 class="text-xs font-extrabold text-slate-950 dark:text-white">Pengelola Yayasan Pendidikan</h4>
-                        <span class="text-[11px] font-bold text-indigo-700 dark:text-indigo-400">SIT Robbani Ogan Ilir</span>
-                    </div>
-                </div>
-            </div>
+        <div class="text-left pt-2">
+            <a href="{{ route('projects.index') }}" class="px-7 py-3.5 rounded-md bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase shadow-md inline-flex items-center gap-2 transition-all">
+                <span>Lihat Katalog Produk</span> &rarr;
+            </a>
         </div>
     </div>
 </section>
 
-<!-- Founder Profile & Authentic Event Gallery Section -->
-<section class="py-24 bg-slate-50/50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+<!-- SECTION 5: CONTACT / INQUIRY & INTERACTIVE ESTIMATOR ("Punya Proyek di pikiran Anda ?") -->
+<section id="kalkulator" class="py-20 bg-white border-t border-slate-100 transition-colors duration-300 scroll-mt-20 relative overflow-hidden"
+         x-data="{
+            baseTier: 3000000,
+            tierName: 'Standard Website (Rp 3 Juta)',
+            addonPayment: false,
+            addonWhatsapp: false,
+            addonMultilang: false,
+            addonAI: false,
+
+            selectTier(price, name) {
+                this.baseTier = price;
+                this.tierName = name;
+            },
+
+            getTotal() {
+                let total = this.baseTier;
+                if (this.addonPayment) total += 1000000;
+                if (this.addonWhatsapp) total += 1000000;
+                if (this.addonMultilang) total += 500000;
+                if (this.addonAI) total += 2000000;
+                return new Intl.NumberFormat('id-ID').format(total);
+            }
+         }">
+    
+    <!-- Background Watermark Text "Client" -->
+    <div class="absolute top-10 left-10 text-8xl sm:text-9xl font-black text-slate-200/30 pointer-events-none select-none tracking-wider -z-0">
+        Client
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <!-- Direktur Utama Profile Card -->
-        <div class="bento-card p-8 sm:p-14 relative overflow-hidden bg-white dark:bg-slate-900 shadow-xl border-2 border-slate-200 dark:border-slate-800">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <div class="lg:col-span-4 flex justify-center">
-                    <div class="relative">
-                        <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-200 dark:border-slate-800">
-                            <img src="{{ $trainerAvatar }}" alt="{{ $trainerName }}" class="w-full h-full object-cover" />
-                        </div>
-                        <div class="absolute -bottom-3 -right-3 bg-amber-500 text-slate-950 font-extrabold text-xs px-4 py-2 rounded-2xl shadow-xl">
-                            ★ Founder & Direktur Utama
-                        </div>
-                    </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Left Column: Headline & Explanations -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
+                    <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">Client / Contact</span>
                 </div>
+                
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] leading-tight">
+                    Punya Proyek di pikiran Anda ?
+                </h2>
+                
+                <p class="text-base text-[#4a4a4a] leading-relaxed">
+                    Mari kita bicarakan. Tim kami terdiri dari web designer dan web developer professional yang sudah berpengalaman memberikan hasil terbaik. Dengan konsep engaging design untuk hasil website yang optimal untuk bisnis Anda.
+                </p>
 
-                <div class="lg:col-span-8 space-y-5 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-300 text-xs font-extrabold border border-amber-300 dark:border-amber-800">
-                        <span>Pimpinan Perusahaan & Trainer Nasional</span>
-                    </div>
-
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 dark:text-white font-heading">
-                        {{ $trainerName }}
-                    </h2>
-
-                    <p class="text-indigo-700 dark:text-indigo-400 font-extrabold text-sm sm:text-base">
-                        {{ $trainerTitle }}
-                    </p>
-
-                    <p class="text-slate-800 dark:text-slate-200 text-xs sm:text-sm leading-relaxed max-w-2xl font-semibold">
-                        {{ $trainerBio }}
-                    </p>
-
-                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-3">
-                        <a href="{{ route('trainer.index') }}" class="px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs shadow-md transition-all">
-                            Undang Trainer / Seminar &rarr;
-                        </a>
-                        <a href="https://wa.me/6289695249089" target="_blank" class="px-6 py-3 rounded-full bg-slate-900 text-white dark:bg-slate-800 font-extrabold text-xs transition-all">
-                            Hubungi via WhatsApp
-                        </a>
-                    </div>
+                <div class="p-6 rounded-2xl bg-[#f8faff] border border-slate-100 space-y-3 text-xs font-semibold">
+                    <div class="text-emerald-700 font-bold flex items-center gap-2">✓ Garansi 100% Proyek Selesai & Teruji</div>
+                    <div class="text-[#3E5CE7] font-bold flex items-center gap-2">✓ Domain .com & Server SSD NVMe (1 Tahun) Included</div>
+                    <div class="text-purple-700 font-bold flex items-center gap-2">✓ Sertifikat SSL Enkripsi & Free Technical Maintenance</div>
                 </div>
             </div>
+
+            <!-- Right Column: Interactive Project Cost Estimator Card -->
+            <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-2xl space-y-6">
+                
+                <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
+                    <h3 class="text-xl font-extrabold text-[#07153f]">Dapatkan Penawaran & Estimasi Biaya</h3>
+                    <span class="px-3 py-1 rounded-full bg-orange-50 text-[#fe6000] font-bold text-[10px]">Hitung Otomatis</span>
+                </div>
+
+                <!-- 1. Tier Selection Buttons (3jt, 5jt, 10juta) -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-[#07153f]">
+                        1. Pilih Nominal Skala Proyek Utama:
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <button type="button"
+                                @click="selectTier(3000000, 'Standard Website (Rp 3 Juta)')"
+                                :class="baseTier === 3000000 ? 'bg-[#fe6000] text-white font-bold shadow-md ring-2 ring-[#fe6000]/50' : 'bg-slate-50 text-slate-700 font-semibold hover:bg-slate-100'"
+                                class="p-3.5 rounded-xl text-left text-xs transition-all border border-slate-200 flex flex-col justify-between">
+                            <div class="text-sm font-extrabold">3 JUTA</div>
+                            <span class="text-[10px] opacity-90 block mt-1">Rp 3.000.000</span>
+                        </button>
+
+                        <button type="button"
+                                @click="selectTier(5000000, 'Advanced Web & System (Rp 5 Juta)')"
+                                :class="baseTier === 5000000 ? 'bg-[#fe6000] text-white font-bold shadow-md ring-2 ring-[#fe6000]/50' : 'bg-slate-50 text-slate-700 font-semibold hover:bg-slate-100'"
+                                class="p-3.5 rounded-xl text-left text-xs transition-all border border-slate-200 flex flex-col justify-between">
+                            <div class="text-sm font-extrabold">5 JUTA</div>
+                            <span class="text-[10px] opacity-90 block mt-1">Rp 5.000.000</span>
+                        </button>
+
+                        <button type="button"
+                                @click="selectTier(10000000, 'Enterprise Web, Mobile & AI (Rp 10 Juta)')"
+                                :class="baseTier === 10000000 ? 'bg-[#fe6000] text-white font-bold shadow-md ring-2 ring-[#fe6000]/50' : 'bg-slate-50 text-slate-700 font-semibold hover:bg-slate-100'"
+                                class="p-3.5 rounded-xl text-left text-xs transition-all border border-slate-200 flex flex-col justify-between">
+                            <div class="text-sm font-extrabold">10 JUTA</div>
+                            <span class="text-[10px] opacity-90 block mt-1">Rp 10.000.000</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package Specifications Breakdown -->
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-xs space-y-2">
+                    <div class="flex items-center justify-between font-bold text-[#07153f]">
+                        <span>Fitur Paket Bawaan:</span>
+                        <span x-text="tierName" class="text-[#3E5CE7]"></span>
+                    </div>
+                    <ul x-show="baseTier === 3000000" class="space-y-1.5 text-[11px] text-[#4a4a4a]">
+                        <li>✓ Website Landing Page / Company Profile Responsive</li>
+                        <li>✓ Domain .com & Server SSD Fast (1 Tahun) + SSL Enkripsi</li>
+                        <li>✓ Panel Admin CMS & Free Technical Support 3 Bulan</li>
+                    </ul>
+                    <ul x-show="baseTier === 5000000" class="space-y-1.5 text-[11px] text-[#4a4a4a]">
+                        <li>✓ Web App Dinamis Laravel 13 & Database Multi-role</li>
+                        <li>✓ System PPDB Sekolah / SIM Desa / E-Commerce + Ekspor Data</li>
+                        <li>✓ Garansi Maintenance & Technical Support Prioritas 6 Bulan</li>
+                    </ul>
+                    <ul x-show="baseTier === 10000000" class="space-y-1.5 text-[11px] text-[#4a4a4a]">
+                        <li>✓ Fullsuite Enterprise Web App + Mobile Flutter (iOS & Android)</li>
+                        <li>✓ Engine AI RAG Privat Pembaca Dokumen SOP Perusahaan</li>
+                        <li>✓ Full Source Code, Training Tim, & Support VIP 1 Tahun</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Add-on Options -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-[#07153f]">
+                        2. Fitur Tambahan (Add-ons):
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer">
+                            <span class="flex items-center gap-2 font-semibold text-[#07153f]">
+                                <input type="checkbox" x-model="addonPayment" class="rounded text-[#fe6000]">
+                                <span>Payment Gateway</span>
+                            </span>
+                            <span class="mono font-bold text-[#fe6000]">+1 JT</span>
+                        </label>
+
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer">
+                            <span class="flex items-center gap-2 font-semibold text-[#07153f]">
+                                <input type="checkbox" x-model="addonWhatsapp" class="rounded text-[#fe6000]">
+                                <span>WA Notification</span>
+                            </span>
+                            <span class="mono font-bold text-[#fe6000]">+1 JT</span>
+                        </label>
+
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer">
+                            <span class="flex items-center gap-2 font-semibold text-[#07153f]">
+                                <input type="checkbox" x-model="addonMultilang" class="rounded text-[#fe6000]">
+                                <span>Multi-Language</span>
+                            </span>
+                            <span class="mono font-bold text-[#fe6000]">+500 RB</span>
+                        </label>
+
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer">
+                            <span class="flex items-center gap-2 font-semibold text-[#07153f]">
+                                <input type="checkbox" x-model="addonAI" class="rounded text-[#fe6000]">
+                                <span>Engine AI RAG</span>
+                            </span>
+                            <span class="mono font-bold text-purple-600">+2 JT</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Total Calculated Output & Direct WhatsApp Action -->
+                <div class="p-5 rounded-2xl bg-[#07153f] text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+                    <div>
+                        <span class="text-[10px] text-slate-300 font-bold block">Total Perkiraan Biaya:</span>
+                        <div class="text-2xl sm:text-3xl font-extrabold mono text-white flex items-baseline gap-1">
+                            <span class="text-sm text-slate-400">Rp</span>
+                            <span x-text="getTotal()" class="text-cyan-300"></span>
+                        </div>
+                    </div>
+
+                    <a :href="`https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20dengan%20estimasi%20paket%20${encodeURIComponent(tierName)}%20dengan%20total%20perkiraan%20Rp%20${getTotal()}`"
+                       target="_blank"
+                       class="w-full sm:w-auto px-7 py-4 rounded-md bg-[#fe6000] hover:bg-[#e05400] text-white font-bold text-xs text-center shadow-lg transition-all uppercase tracking-wider">
+                        Send / Kunci Penawaran via WA &rarr;
+                    </a>
+                </div>
+
+            </div>
+
         </div>
+    </div>
+</section>
 
-        <!-- Authentic Relevant Posters & Event Gallery -->
-        <div class="space-y-8">
-            <div class="flex items-center justify-between">
-                <div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-700 dark:text-indigo-400">Dokumentasi Acara & Workshop</span>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white font-heading">Galeri Tampilan Website & Event Real</h3>
-                </div>
-                <a href="{{ route('trainer.index') }}" class="text-xs font-extrabold text-indigo-700 dark:text-indigo-400 hover:underline">Lihat Galeri Lengkap &rarr;</a>
+<!-- SECTION 6: PERFORMANCE / STATS COUNTER BAND -->
+<section class="py-16 bg-[#f8faff] border-t border-slate-100 transition-colors duration-300 relative overflow-hidden">
+    
+    <!-- Background Animated Graphic -->
+    <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-100/50 rounded-full blur-2xl pointer-events-none anim-logo-object"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            
+            <div class="p-6 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-1 hover:shadow-xl transition-shadow">
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] mono">150+</div>
+                <div class="text-xs font-bold text-[#07153f]">Happy Clients</div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                @foreach($galleries as $gallery)
-                    <div class="bento-card overflow-hidden group border border-slate-200 dark:border-slate-800">
-                        <div class="aspect-4/3 overflow-hidden relative">
-                            <img src="{{ $gallery->image_path }}" alt="{{ $gallery->title }}" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
-                            
-                            <div class="absolute bottom-3 left-3 right-3 text-white space-y-1">
-                                <span class="text-[10px] uppercase font-extrabold tracking-wider px-2 py-0.5 rounded bg-indigo-700">
-                                    {{ $gallery->category }}
-                                </span>
-                                <h4 class="text-xs font-extrabold line-clamp-1">{{ $gallery->title }}</h4>
-                                <p class="text-[10px] text-slate-200 line-clamp-1 font-medium">📍 {{ $gallery->location }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+            <div class="p-6 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-1 hover:shadow-xl transition-shadow">
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] mono">99+</div>
+                <div class="text-xs font-bold text-[#07153f]">Projects Done</div>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-1 hover:shadow-xl transition-shadow">
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] mono">85+</div>
+                <div class="text-xs font-bold text-[#07153f]">Top Reviews & Event</div>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-1 hover:shadow-xl transition-shadow">
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#fe6000] mono">10+</div>
+                <div class="text-xs font-bold text-[#07153f]">Years Experience</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 7: CLIENT SECTION (Pure Text Names - No Logos, No Icons) -->
+<section class="py-16 bg-white overflow-hidden border-t border-slate-100 marquee-pause relative">
+    
+    <!-- Watermark "Client" -->
+    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl font-black text-slate-100/60 pointer-events-none select-none tracking-wider -z-0">
+        Client
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-center relative z-10">
+        
+        <h2 class="text-3xl font-extrabold text-[#07153f]">Client & Partner Kami</h2>
+        
+        <p class="text-xs font-bold uppercase tracking-wider text-[#64748B] mono">
+            Dipercaya Oleh Instansi Pemerintah, Perguruan Tinggi & Perusahaan Mitra
+        </p>
+
+        <!-- Marquee Text List (Pure Text Names, Clean Rounded Cards) -->
+        <div class="relative w-full overflow-hidden marquee-mask pt-4">
+            <div class="marquee-track marquee-medium items-center gap-6 sm:gap-8">
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    Kementerian Komunikasi dan Digital RI (Komdigi RI)
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    Politeknik Akamigas Palembang
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    SIT Robbani Ogan Ilir
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    Pemerintah Desa Senuro Timur Ogan Ilir
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    Yayasan Pendidikan Islam Ash-Shaff
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    PT. Duta Solusi Rumput Palembang
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    Kabar32 News Media
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    PT. Heritage Papua Indonesia
+                </div>
+
+                <!-- Loop Duplicate for Infinite Loop -->
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    Kementerian Komunikasi dan Digital RI (Komdigi RI)
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    Politeknik Akamigas Palembang
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    SIT Robbani Ogan Ilir
+                </div>
+                <div class="h-12 px-6 py-2.5 bg-[#f8faff] border border-blue-100 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] shadow-xs">
+                    Pemerintah Desa Senuro Timur Ogan Ilir
+                </div>
             </div>
         </div>
 
     </div>
 </section>
 
-<!-- Glowing Futuristic CTA Banner with Permanent High-Contrast Pure White Text -->
-<section class="dark-banner py-20 text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading text-white">
-            Siap Merealisasikan Ide Digital Anda?
-        </h2>
-        <p class="text-slate-200 text-xs sm:text-base leading-relaxed font-semibold max-w-2xl mx-auto">
-            Konsultasikan rencana pembuatan website, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama tim profesional <strong class="text-white font-extrabold">CV. Beranda Teknologi Digital</strong>.
-        </p>
-        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="{{ route('contact') }}" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-extrabold text-xs sm:text-sm shadow-2xl hover:scale-105 transition-all">
-                Kalkulator Estimasi Biaya (Hitung Otomatis)
-            </a>
-            <a href="https://wa.me/6289695249089" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-xs sm:text-sm shadow-xl flex items-center justify-center gap-2 transition-all">
-                <span>Chat WhatsApp (0896 9524 9089)</span>
-            </a>
+<!-- SECTION 8: LET'S WORK TOGETHER (FlyMotion Blue Gradient Banner with Corner Effects) -->
+<section class="py-16 bg-white transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl bg-gradient-to-r from-[#3E5CE7] to-[#2A45C8] p-10 sm:p-16 text-center text-white space-y-6 shadow-2xl relative overflow-hidden">
+            
+            <!-- Corner Decorative Glows -->
+            <div class="absolute -top-12 -left-12 w-40 h-40 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+            <div class="absolute -bottom-12 -right-12 w-40 h-40 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                Let's Work Together
+            </h2>
+            
+            <p class="text-blue-100 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+                Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. itu juga mengubah cara kita belajar dan apa yang kita pelajari. Konsultasikan rencana pembuatan website, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.
+            </p>
+            
+            <div class="pt-4">
+                <a href="https://wa.me/6289695249089" target="_blank" class="px-8 py-4 rounded-md bg-white hover:bg-slate-100 text-[#3E5CE7] font-bold text-xs sm:text-sm shadow-xl inline-flex items-center gap-2 transition-all">
+                    <span>Contact Me</span> &rarr;
+                </a>
+            </div>
         </div>
     </div>
 </section>

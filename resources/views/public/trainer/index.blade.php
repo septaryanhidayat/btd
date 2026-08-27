@@ -1,177 +1,189 @@
 @extends('layouts.app')
 
-@section('title', 'Trainer & Keynote Speaker - Septa Ryan Hidayat, S.Kom | CV. Beranda Teknologi Digital')
+@section('title', 'Tentang Kami & Trainer - Septa Ryan Hidayat, S.Kom | CV. Beranda Teknologi Digital')
 
 @section('content')
-<section class="py-12 lg:py-16" x-data="{ activeImg: null, activeTitle: '', activeDesc: '' }">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+<!-- SECTION 1: ABOUT US & TRAINER HERO (FlyMotion About Layout with Illustration & Watermark) -->
+<section class="py-20 bg-flymotion-hero transition-colors duration-300 relative overflow-hidden">
+    
+    <!-- Watermark "About" -->
+    <div class="absolute top-6 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-100/70 pointer-events-none select-none tracking-wider -z-0">
+        About us
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
-        <!-- Header & Profile Card -->
-        <div class="bento-card p-8 sm:p-12 shadow-xl relative overflow-hidden bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-4 flex justify-center">
-                    <div class="relative">
-                        <div class="w-56 h-56 rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-200 dark:border-slate-700 rotate-1 hover:rotate-0 transition-transform duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left: Bio & Company Vision -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="flex items-center justify-center lg:justify-start gap-3">
+                    <span class="w-8 h-1 bg-[#3E5CE7] rounded-full"></span>
+                    <span class="text-xs sm:text-sm font-bold tracking-wider uppercase text-[#3E5CE7]">About us</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] leading-tight">
+                    We develop digital strategies products and services.
+                </h1>
+
+                <p class="text-base text-[#4a4a4a] leading-relaxed">
+                    <strong class="text-[#07153f] font-bold">CV. Beranda Teknologi Digital</strong> dipimpin oleh <strong class="text-[#07153f] font-bold">{{ $trainerName }}</strong> ({{ $trainerTitle }}), berpengalaman bertahun-tahun dalam perancangan arsitektur software enterprise, aplikasi mobile Flutter, implementasi Artificial Intelligence, serta narasumber workshop IT untuk Kementerian Komdigi RI, Politeknik Akamigas, dan berbagai kampus di Indonesia.
+                </p>
+
+                <!-- Stats Badges -->
+                <div class="pt-2 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                    <div class="p-4 rounded-2xl bg-white border border-slate-100 text-center shadow-xs">
+                        <div class="text-2xl font-black text-[#fe6000] mono">{{ $statsYears }}</div>
+                        <div class="text-xs text-[#64748b] font-bold">Pengalaman</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-white border border-slate-100 text-center shadow-xs">
+                        <div class="text-2xl font-black text-[#3E5CE7] mono">{{ $statsEvents }}</div>
+                        <div class="text-xs text-[#64748b] font-bold">Event & Workshop</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-white border border-slate-100 text-center shadow-xs">
+                        <div class="text-2xl font-black text-emerald-600 mono">{{ $statsAlumni }}</div>
+                        <div class="text-xs text-[#64748b] font-bold">Alumni Peserta</div>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <a href="{{ route('projects.index') }}" class="px-7 py-3.5 rounded-md bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase shadow-md inline-flex items-center gap-2 transition-all">
+                        <span>Lihat Portofolio</span> &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Trainer Profile Photo with Mac Frame -->
+            <div class="lg:col-span-5 flex justify-center relative">
+                <div class="relative w-full max-w-md">
+                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-2xl relative anim-logo-top">
+                        <div class="aspect-square rounded-2xl overflow-hidden bg-gradient-to-b from-blue-50 to-indigo-50 border border-slate-100 relative">
                             <img src="{{ $trainerAvatar }}" alt="{{ $trainerName }}" class="w-full h-full object-cover" />
-                        </div>
-                        <div class="absolute -bottom-3 -right-3 bg-amber-500 text-slate-950 font-extrabold text-xs px-4 py-2 rounded-2xl shadow-lg">
-                            ★ Certified Trainer & Speaker
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-8 space-y-5 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 text-xs font-bold border border-amber-200 dark:border-amber-800">
-                        <span>Profile Trainer & Keynote Speaker</span>
-                    </div>
-
-                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-950 dark:text-white font-heading">
-                        {{ $trainerName }}
-                    </h1>
-
-                    <p class="text-indigo-600 dark:text-indigo-400 font-extrabold text-sm sm:text-base">
-                        {{ $trainerTitle }}
-                    </p>
-
-                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed font-medium">
-                        {{ $trainerBio }}
-                    </p>
-
-                    <!-- Stats Badges -->
-                    <div class="pt-2 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
-                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
-                            <div class="text-2xl font-extrabold text-amber-500 font-heading">{{ $statsYears }}</div>
-                            <div class="text-xs text-slate-600 dark:text-slate-400 font-bold">Pengalaman</div>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
-                            <div class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 font-heading">{{ $statsEvents }}</div>
-                            <div class="text-xs text-slate-600 dark:text-slate-400 font-bold">Event & Seminar</div>
-                        </div>
-                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
-                            <div class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 font-heading">{{ $statsAlumni }}</div>
-                            <div class="text-xs text-slate-600 dark:text-slate-400 font-bold">Peserta Pelatihan</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section: Modul & Silabus Pelatihan IT -->
-        <div class="space-y-8">
-            <div class="text-center max-w-3xl mx-auto space-y-3">
-                <span class="px-4 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 font-extrabold text-xs uppercase tracking-wider border border-amber-200 dark:border-amber-800">
-                    Program & Silabus
-                </span>
-                <h2 class="text-3xl font-extrabold text-slate-950 dark:text-white font-heading">Modul Pelatihan Corporate & Bootcamp</h2>
-                <p class="text-slate-600 dark:text-slate-400 text-sm font-medium">Pilihan silabus materi pelatihan yang dirancang khusus untuk meningkatkan keahlian tim IT perusahaan Anda.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                @foreach($trainings as $training)
-                    <div class="bento-card p-8 space-y-6 flex flex-col justify-between hover:border-amber-500/50 transition-all border border-slate-200 dark:border-slate-800">
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between">
-                                <span class="px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 text-xs font-bold border border-amber-200 dark:border-amber-800">
-                                    {{ $training->level }}
-                                </span>
-                                <span class="text-xs text-slate-600 dark:text-slate-400 font-mono font-bold">{{ $training->duration }}</span>
-                            </div>
-
-                            <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">
-                                {{ $training->title }}
-                            </h3>
-
-                            <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-medium">
-                                {{ $training->summary }}
-                            </p>
-
-                            @if($training->syllabus)
-                                <div class="space-y-2 pt-2">
-                                    <span class="text-xs font-extrabold text-slate-950 dark:text-white uppercase tracking-wider block">Materi Pokok:</span>
-                                    <ul class="space-y-1.5 text-xs text-slate-700 dark:text-slate-300 font-medium">
-                                        @foreach($training->syllabus as $item)
-                                             <li class="flex items-start gap-2">
-                                                <span class="text-amber-500 font-bold">▶</span>
-                                                <span>{{ $item }}</span>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                        </div>
-
-                        <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
-                            <div>
-                                <span class="text-[10px] text-slate-500 uppercase block font-bold">Investasi / Peserta</span>
-                                <span class="text-lg font-extrabold text-slate-950 dark:text-white font-mono">Rp {{ number_format($training->price, 0, ',', '.') }}</span>
-                            </div>
-                            <a href="{{ route('contact') }}" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs shadow-md transition-all">
-                                Request Training Ini
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-        <!-- Section: Galeri Foto Kegiatan & Event Showcase -->
-        <div class="space-y-8 pt-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Dokumentasi Acara</span>
-                    <h2 class="text-3xl font-extrabold text-slate-950 dark:text-white font-heading">Galeri Foto Kegiatan & Workshop</h2>
-                </div>
-
-                <!-- Category Filters -->
-                <div class="flex flex-wrap gap-2">
-                    <a href="{{ route('trainer.index') }}" class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all {{ $categoryFilter === 'all' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200' }}">Semua</a>
-                    <a href="{{ route('trainer.index', ['category' => 'workshop']) }}" class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all {{ $categoryFilter === 'workshop' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200' }}">Workshop</a>
-                    <a href="{{ route('trainer.index', ['category' => 'keynote']) }}" class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all {{ $categoryFilter === 'keynote' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200' }}">Keynote</a>
-                    <a href="{{ route('trainer.index', ['category' => 'training']) }}" class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all {{ $categoryFilter === 'training' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200' }}">Corporate Training</a>
-                </div>
-            </div>
-
-            <!-- Gallery Cards Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                @foreach($galleries as $gal)
-                    <div @click="activeImg = '{{ $gal->image_path }}'; activeTitle = '{{ addslashes($gal->title) }}'; activeDesc = '{{ addslashes($gal->description) }}'" 
-                         class="bento-card rounded-2xl overflow-hidden cursor-pointer group hover:shadow-2xl hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800">
-                        <div class="aspect-4/3 overflow-hidden relative">
-                            <img src="{{ $gal->image_path }}" alt="{{ $gal->title }}" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
-                            
-                            <div class="absolute bottom-3 left-3 right-3 text-white space-y-1">
-                                <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-indigo-600">
-                                    {{ $gal->category }}
-                                </span>
-                                <h4 class="text-xs font-bold line-clamp-1 text-white">{{ $gal->title }}</h4>
-                                <p class="text-[10px] text-slate-200 line-clamp-1">📍 {{ $gal->location }}</p>
+                            <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#07153f]/90 backdrop-blur-md text-white text-xs text-center font-bold shadow-md">
+                                ★ Certified IT Trainer & Speaker
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
-        </div>
-
-        <!-- Lightbox Modal -->
-        <div x-show="activeImg" 
-             x-transition 
-             @click.self="activeImg = null" 
-             class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-            <div class="max-w-3xl w-full bento-card rounded-3xl overflow-hidden shadow-2xl relative space-y-4 p-4 bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800">
-                <button @click="activeImg = null" class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold">
-                    ✕
-                </button>
-                <div class="aspect-video rounded-2xl overflow-hidden bg-black">
-                    <img :src="activeImg" :alt="activeTitle" class="w-full h-full object-contain" />
-                </div>
-                <div class="p-2 space-y-1">
-                    <h3 class="text-lg font-extrabold text-slate-950 dark:text-white" x-text="activeTitle"></h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 font-medium" x-text="activeDesc"></p>
                 </div>
             </div>
+
         </div>
 
+    </div>
+</section>
+
+<!-- SECTION 2: SILABUS & MODUL WORKSHOP IT -->
+<section class="py-20 bg-white border-t border-slate-100 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <div class="text-left space-y-2">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#fe6000]">Program & Silabus</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f]">Modul Pelatihan Corporate & Bootcamp IT</h2>
+            <p class="text-sm text-[#4a4a4a]">Pilihan silabus materi pelatihan yang dirancang khusus untuk meningkatkan keahlian tim IT instansi Anda.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            @foreach($trainings as $training)
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-blue-50 text-[#3E5CE7] text-xs font-bold">
+                                {{ $training->level }}
+                            </span>
+                            <span class="text-xs text-slate-500 font-mono font-bold">{{ $training->duration }}</span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#07153f]">
+                            {{ $training->title }}
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-[#64748b] leading-relaxed">
+                            {{ $training->summary }}
+                        </p>
+
+                        @if($training->syllabus)
+                            <div class="space-y-2 pt-2">
+                                <span class="text-xs font-bold text-[#07153f] uppercase tracking-wider block">Materi Pokok:</span>
+                                <ul class="space-y-1.5 text-xs text-[#64748b] font-medium">
+                                    @foreach($training->syllabus as $item)
+                                         <li class="flex items-start gap-2">
+                                            <span class="text-[#fe6000] font-bold">▶</span>
+                                            <span>{{ $item }}</span>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100">
+                        <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20mengundang%20trainer%20untuk%20materi%20{{ urlencode($training->title) }}" 
+                           target="_blank" 
+                           class="block w-full text-center py-3.5 rounded-md bg-[#fe6000] hover:bg-[#e05400] text-white font-bold text-xs uppercase shadow-md transition-all">
+                            Undang Trainer / In-House Workshop &rarr;
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 3: GALERI EVENT PELATIHAN REAL -->
+<section class="py-20 bg-[#f8faff] border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <div class="text-left space-y-2">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-1 bg-[#3E5CE7] rounded-full"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-[#3E5CE7]">Dokumentasi Event</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f]">Galeri Pelatihan & Workshop IT</h2>
+            <p class="text-sm text-[#4a4a4a]">Dokumentasi kegiatan seminar, workshop Komdigi RI, Politeknik Akamigas, dan institusi pendidikan.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach($galleries as $gal)
+                <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+                    <div class="aspect-4/3 overflow-hidden relative bg-slate-100">
+                        <img src="{{ $gal->image_path }}" alt="{{ $gal->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#07153f]/90 via-transparent to-transparent"></div>
+                        
+                        <div class="absolute bottom-3 left-3 right-3 text-white space-y-1">
+                            <span class="px-2.5 py-0.5 rounded-full bg-[#fe6000] text-white text-[10px] font-bold">
+                                {{ $gal->category }}
+                            </span>
+                            <h4 class="text-xs font-bold text-white line-clamp-1">{{ $gal->title }}</h4>
+                            <p class="text-[10px] text-slate-200 line-clamp-1 font-medium">📍 {{ $gal->location }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 4: LET'S WORK TOGETHER BANNER (FlyMotion Style) -->
+<section class="py-16 bg-white transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl bg-gradient-to-r from-[#3E5CE7] to-[#2A45C8] p-10 sm:p-16 text-center text-white space-y-6 shadow-2xl relative overflow-hidden">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                Let's Work Together
+            </h2>
+            <p class="text-blue-100 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+                Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website, sistem informasi, atau pelatihan IT bersama kami.
+            </p>
+            <div class="pt-4">
+                <a href="https://wa.me/6289695249089" target="_blank" class="px-8 py-4 rounded-md bg-white hover:bg-slate-100 text-[#3E5CE7] font-bold text-sm shadow-xl inline-flex items-center gap-2 transition-all">
+                    <span>Contact Me</span> &rarr;
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 @endsection
