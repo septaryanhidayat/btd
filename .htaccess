@@ -1,3 +1,24 @@
+# ----------------------------------------------------------------------
+# 1. Force PHP 8.4 / 8.3 Execution on cPanel, CloudLinux & LiteSpeed
+# ----------------------------------------------------------------------
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php84 .php .php8 .phtml
+  AddHandler application/x-httpd-ea-php84___lsphp .php .php8 .phtml
+  AddHandler application/x-httpd-alt-php84 .php .php8 .phtml
+  AddHandler application/x-httpd-alt-php84___lsphp .php .php8 .phtml
+  AddHandler application/x-httpd-ea-php83 .php .php8 .phtml
+  AddHandler application/x-httpd-ea-php83___lsphp .php .php8 .phtml
+  AddHandler application/x-httpd-alt-php83 .php .php8 .phtml
+  AddHandler application/x-httpd-alt-php83___lsphp .php .php8 .phtml
+</IfModule>
+
+<FilesMatch "\.php$">
+  SetHandler application/x-httpd-ea-php84
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# 2. Apache URL Rewriting & Front Controller
+# ----------------------------------------------------------------------
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
