@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Security: Prevent direct access to sensitive files
+    <FilesMatch "^\.env|\.git|\.cpanel\.yml|composer\.(json|lock)|package(-lock)?\.json">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+    RewriteRule ^$ public/index.php [L]
+    RewriteRule ^((?!public/).*)$ public/$1 [L]
+</IfModule>
