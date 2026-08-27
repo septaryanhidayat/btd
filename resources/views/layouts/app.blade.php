@@ -40,16 +40,16 @@
     <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@@context": "https://schema.org",
+      "@@type": "ProfessionalService",
       "name": "CV. Beranda Teknologi Digital",
       "image": "{{ asset('images/Logo-BTD.png') }}",
-      "@id": "https://berandadigital.net",
+      "@@id": "https://berandadigital.net",
       "url": "https://berandadigital.net",
       "telephone": "+6289695249089",
       "priceRange": "Rp 3.000.000 - Rp 10.000.000",
       "address": {
-        "@type": "PostalAddress",
+        "@@type": "PostalAddress",
         "streetAddress": "Ogan Ilir & Palembang Hub",
         "addressLocality": "Ogan Ilir",
         "addressRegion": "Sumatera Selatan",
@@ -57,12 +57,12 @@
         "addressCountry": "ID"
       },
       "geo": {
-        "@type": "GeoCoordinates",
+        "@@type": "GeoCoordinates",
         "latitude": -3.2458,
         "longitude": 104.6644
       },
       "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
+        "@@type": "OpeningHoursSpecification",
         "dayOfWeek": [
           "Monday",
           "Tuesday",
