@@ -4,11 +4,6 @@
     </IfModule>
 
     RewriteEngine On
-    RewriteBase /
-
-    # Allow direct access to diagnostic and SEO files
-    RewriteCond %{REQUEST_URI} ^/(phpinfo\.php|favicon\.ico|favicon\.png|apple-touch-icon\.png|robots\.txt|sitemap\.xml)$ [NC]
-    RewriteRule ^ - [L]
 
     # Security: Protect sensitive hidden files
     <FilesMatch "^\.env|\.git|\.cpanel\.yml|composer\.(json|lock)|package(-lock)?\.json">
@@ -16,11 +11,21 @@
         Deny from all
     </FilesMatch>
 
-    # If file or folder exists inside public/, serve it directly
-    RewriteCond %{DOCUMENT_ROOT}/public/$1 -f [OR]
-    RewriteCond %{DOCUMENT_ROOT}/public/$1 -d
-    RewriteRule ^(.*)$ public/$1 [L]
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # Otherwise route everything through public/index.php
-    RewriteRule ^(.*)$ public/index.php [L]
+    # Handle X-XSRF-Token Header
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
 </IfModule>
