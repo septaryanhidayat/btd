@@ -30,11 +30,15 @@
                 </p>
 
                 <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
-                    <a href="{{ route('contact') }}" class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-gradient-to-r from-[#fe6000] to-[#ff7a29] hover:from-[#e05400] hover:to-[#fe6000] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 active:scale-98 transition-all text-center">
-                        <span>Konsultasi Proyek &rarr;</span>
+                    <a href="{{ route('contact') }}" 
+                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 active:scale-98 transition-all text-center border border-orange-400/50"
+                       style="background: linear-gradient(135deg, #fe6000 0%, #ff7a29 100%) !important; color: #ffffff !important;">
+                        <span class="font-bold" style="color: #ffffff !important;">Konsultasi Proyek &rarr;</span>
                     </a>
-                    <a href="{{ route('projects.index') }}" class="w-full sm:w-auto px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider shadow-md active:scale-98 transition-all text-center">
-                        <span>Lihat Portofolio</span>
+                    <a href="{{ route('projects.index') }}" 
+                       class="w-full sm:w-auto px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md active:scale-98 transition-all text-center border border-blue-400/40"
+                       style="background: #3E5CE7 !important; color: #ffffff !important;">
+                        <span class="font-bold" style="color: #ffffff !important;">Lihat Portofolio</span>
                     </a>
                 </div>
             </div>

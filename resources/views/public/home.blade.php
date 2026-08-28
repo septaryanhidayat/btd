@@ -63,21 +63,27 @@
                 <!-- Dual FlyMotion CTA Buttons (Ultra High-Contrast & Clearly Readable) -->
                 <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
                     <!-- Primary CTA: Konsultasi Sekarang -->
-                    <a href="#kalkulator" class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-gradient-to-r from-[#fe6000] to-[#ff7a29] hover:from-[#e05400] hover:to-[#fe6000] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-orange-500/30 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-orange-400/50">
-                        <span>KONSULTASI SEKARANG</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="#kalkulator" 
+                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-orange-500/40 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-orange-300"
+                       style="background: linear-gradient(135deg, #fe6000 0%, #ff7a29 100%) !important; color: #ffffff !important;">
+                        <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">KONSULTASI SEKARANG</span>
+                        <svg class="w-4 h-4" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </a>
                     
                     <div class="flex items-center gap-2.5 w-full sm:w-auto">
                         <!-- Secondary CTA: Portofolio -->
-                        <a href="{{ route('projects.index') }}" class="flex-1 sm:flex-none px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-blue-500/30 active:scale-98 transition-all text-center border border-blue-400/40">
-                            <span>PORTOFOLIO</span>
+                        <a href="{{ route('projects.index') }}" 
+                           class="flex-1 sm:flex-none px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-blue-500/30 active:scale-98 transition-all text-center border border-blue-400"
+                           style="background: #3E5CE7 !important; color: #ffffff !important;">
+                            <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">PORTOFOLIO</span>
                         </a>
                         <!-- WA Direct Button -->
-                        <a href="https://wa.me/6289695249089" target="_blank" class="flex-1 sm:flex-none px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-1.5 border border-emerald-400/40">
-                            <span>💬 WA Chat</span>
+                        <a href="https://wa.me/6289695249089" target="_blank" 
+                           class="flex-1 sm:flex-none px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-1.5 border border-emerald-400"
+                           style="background: #059669 !important; color: #ffffff !important;">
+                            <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">💬 WA Chat</span>
                         </a>
                     </div>
                 </div>
@@ -319,106 +325,105 @@
     </div>
 </section>
 
-<!-- SECTION 3: TECH STACK & EKOSISTEM TEKNOLOGI (Comprehensive Framework & Tools Ecosystem) -->
-<section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
+<!-- SECTION 3: TECH STACK & EKOSISTEM TEKNOLOGI (Compact, Elegant, Full Ecosystem) -->
+<section class="py-14 sm:py-16 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <!-- Watermark "Stack" -->
-    <div class="absolute top-6 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-100/70 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
-        TechStack
+    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-7xl sm:text-8xl font-black text-slate-100/60 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
+        Stack
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
         
-        <!-- Header Text -->
-        <div class="text-center space-y-3 max-w-2xl mx-auto reveal-on-scroll">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-800/50 text-[#3E5CE7] dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
-                <span>⚡ Modern & Scalable Ecosystem</span>
+        <!-- Header Text (Compact) -->
+        <div class="text-center space-y-2 max-w-xl mx-auto reveal-on-scroll">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-800/50 text-[#3E5CE7] dark:text-blue-400 text-[11px] font-extrabold uppercase tracking-wider">
+                <span>⚡ Ekosistem & Framework</span>
             </div>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#07153f] dark:text-white">
                 Teknologi yang Kami Gunakan
             </h2>
-            <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                Kami membangun solusi website, aplikasi mobile, sistem informasi, dan private AI menggunakan teknologi standar industri global yang cepat, aman, dan scalable.
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                Standar teknologi modern dan teruji untuk membangun website, mobile app, dan sistem enterprise.
             </p>
         </div>
 
-        <!-- Tech Stack Bento Cards categorized by Layer -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Compact 4-Card Grid Layout with WordPress Included -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             
-            <!-- Category 1: Frontend & UI -->
-            <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-100">
-                <div class="flex items-center gap-3">
-                    <span class="text-2xl">🎨</span>
+            <!-- 1. Frontend & UI -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-75">
+                <div class="flex items-center gap-2.5">
+                    <span class="text-xl">🎨</span>
                     <div>
-                        <h3 class="font-extrabold text-sm text-[#07153f] dark:text-white">Frontend & UI</h3>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400">User Interface & Interactivity</p>
+                        <h3 class="font-extrabold text-xs text-[#07153f] dark:text-white">Frontend & UI</h3>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400">User Interface & Layout</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-orange-600 dark:text-orange-400 shadow-2xs">HTML5</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-blue-600 dark:text-blue-400 shadow-2xs">CSS3</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-cyan-600 dark:text-cyan-400 shadow-2xs">Tailwind CSS</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-yellow-600 dark:text-yellow-400 shadow-2xs">JavaScript ES6+</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-blue-500 dark:text-blue-400 shadow-2xs">TypeScript</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-emerald-600 dark:text-emerald-400 shadow-2xs">Vue.js</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-cyan-500 dark:text-cyan-300 shadow-2xs">React</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-orange-600 dark:text-orange-400">HTML5</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-400">CSS3</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-cyan-600 dark:text-cyan-400">Tailwind</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-yellow-600 dark:text-yellow-400">JavaScript</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-500 dark:text-blue-400">TypeScript</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">Vue.js</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-cyan-500 dark:text-cyan-300">React</span>
                 </div>
             </div>
 
-            <!-- Category 2: Backend & Enterprise Frameworks -->
-            <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-150">
-                <div class="flex items-center gap-3">
-                    <span class="text-2xl">⚙️</span>
+            <!-- 2. Backend & CMS (Includes WordPress) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-100">
+                <div class="flex items-center gap-2.5">
+                    <span class="text-xl">⚙️</span>
                     <div>
-                        <h3 class="font-extrabold text-sm text-[#07153f] dark:text-white">Backend & Core</h3>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400">Enterprise Server Architecture</p>
+                        <h3 class="font-extrabold text-xs text-[#07153f] dark:text-white">Backend & CMS</h3>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Server & Content Engine</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-indigo-600 dark:text-indigo-400 shadow-2xs">PHP 8.4</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-red-600 dark:text-red-400 shadow-2xs">Laravel 13</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-orange-600 dark:text-orange-400 shadow-2xs">CodeIgniter</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-cyan-700 dark:text-cyan-300 shadow-2xs">Golang (Go)</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-blue-600 dark:text-blue-300 shadow-2xs">Python</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-emerald-600 dark:text-emerald-400 shadow-2xs">FastAPI / REST API</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-indigo-600 dark:text-indigo-400">PHP 8.4</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-red-600 dark:text-red-400">Laravel 13</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-orange-600 dark:text-orange-400">CodeIgniter</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-300">WordPress</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-cyan-700 dark:text-cyan-300">Golang</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-amber-600 dark:text-amber-300">Python</span>
                 </div>
             </div>
 
-            <!-- Category 3: Mobile Apps -->
-            <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-200">
-                <div class="flex items-center gap-3">
-                    <span class="text-2xl">📱</span>
+            <!-- 3. Mobile Apps -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-150">
+                <div class="flex items-center gap-2.5">
+                    <span class="text-xl">📱</span>
                     <div>
-                        <h3 class="font-extrabold text-sm text-[#07153f] dark:text-white">Mobile Apps</h3>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400">iOS & Android Solutions</p>
+                        <h3 class="font-extrabold text-xs text-[#07153f] dark:text-white">Mobile Apps</h3>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Android & iOS Solutions</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-sky-600 dark:text-sky-400 shadow-2xs">Flutter</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-blue-600 dark:text-blue-400 shadow-2xs">Dart</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-purple-600 dark:text-purple-400 shadow-2xs">Kotlin</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-cyan-600 dark:text-cyan-400 shadow-2xs">React Native</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-300 shadow-2xs">Android Studio</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-sky-600 dark:text-sky-400">Flutter</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-400">Dart</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-purple-600 dark:text-purple-400">Kotlin</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-cyan-600 dark:text-cyan-400">React Native</span>
                 </div>
             </div>
 
-            <!-- Category 4: Database, Cloud & DevOps -->
-            <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-250">
-                <div class="flex items-center gap-3">
-                    <span class="text-2xl">🗄️</span>
+            <!-- 4. Database & DevOps -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-200">
+                <div class="flex items-center gap-2.5">
+                    <span class="text-xl">🗄️</span>
                     <div>
-                        <h3 class="font-extrabold text-sm text-[#07153f] dark:text-white">Database & Cloud</h3>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400">Data Storage & High Availability</p>
+                        <h3 class="font-extrabold text-xs text-[#07153f] dark:text-white">Database & Tools</h3>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Data Storage & Versioning</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-blue-700 dark:text-blue-300 shadow-2xs">MySQL</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-blue-600 dark:text-blue-400 shadow-2xs">PostgreSQL</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-indigo-500 dark:text-indigo-300 shadow-2xs">SQLite</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-emerald-600 dark:text-emerald-400 shadow-2xs">NoSQL</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-red-600 dark:text-red-400 shadow-2xs">Redis</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-2xs">Git / GitHub</span>
-                    <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 text-xs font-bold text-sky-600 dark:text-sky-400 shadow-2xs">Docker</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-700 dark:text-blue-300">MySQL</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-400">PostgreSQL</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-indigo-500 dark:text-indigo-300">SQLite</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">NoSQL</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-red-600 dark:text-red-400">Redis</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-slate-800 dark:text-slate-200">Git / GitHub</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-sky-600 dark:text-sky-400">Docker</span>
                 </div>
             </div>
 
