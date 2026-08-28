@@ -179,8 +179,10 @@
                 Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website, sistem informasi, atau pelatihan IT bersama kami.
             </p>
             <div class="pt-4">
-                <a href="https://wa.me/6289695249089" target="_blank" class="px-8 py-4 rounded-md bg-white hover:bg-slate-100 text-[#3E5CE7] font-bold text-sm shadow-xl inline-flex items-center gap-2 transition-all">
-                    <span>Contact Me</span> &rarr;
+                <a href="https://wa.me/6289695249089" target="_blank" 
+                   class="px-8 py-4 rounded-xl font-bold text-sm shadow-xl inline-flex items-center gap-2 transition-all hover:scale-105"
+                   style="background: #ffffff !important; color: #3E5CE7 !important;">
+                    <span style="color: #3E5CE7 !important;" class="font-extrabold">Hubungi Kami (WhatsApp)</span> &rarr;
                 </a>
             </div>
         </div>

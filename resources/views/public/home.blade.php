@@ -819,18 +819,94 @@
          x-data="{ 
             activeTab: 'all',
             items: [
-                { id: 1, title: 'Insight Talks bersama Komdigi RI & Media Indonesia', category: 'webinar', image: '/images/Insight-Talks-Komdigi.jpeg', tag: 'Webinar Nasional' },
-                { id: 2, title: 'The Era of Vibe Coding - Politeknik Akamigas', category: 'pelatihan', image: '/images/485185738_958093913203613_4067422706425259653_n.jpg', tag: 'Pelatihan IT' },
-                { id: 3, title: 'Lecturer Development Program - Pemanfaatan AI', category: 'pelatihan', image: '/images/486603910_961047622908242_7404185485069841584_n.jpg', tag: 'Pelatihan Dosen' },
-                { id: 4, title: 'Pelatihan Coding & AI - IGI Ogan Ilir', category: 'pelatihan', image: '/images/495965916_995856726093998_1582227333173346053_n.jpg', tag: 'Pelatihan Guru' },
-                { id: 5, title: 'Pelatihan Coding & AI - Dinas Pendidikan OKU Timur', category: 'pelatihan', image: '/images/545410148_1090108853335451_8582489098678183559_n.jpg', tag: 'Pelatihan Pemda' },
-                { id: 6, title: 'Pelatihan Website & Aplikasi Surat Desa Senuro Timur', category: 'pelatihan', image: '/images/561378805_1119891467023856_3474954454940095689_n.jpg', tag: 'Digital Desa' },
-                { id: 7, title: 'Workshop Online Chatbot AI Python Sederhana', category: 'webinar', image: '/images/626271180_17940187239113665_1282635413631214268_n.jpg', tag: 'Workshop AI' },
-                { id: 8, title: 'Online Training Coding for Kids bersama IGI', category: 'pelatihan', image: '/images/631476506_1210308331315502_7735877304621369529_n.jpg', tag: 'Coding for Kids' },
-                { id: 9, title: 'Pelatihan Terbaru Coding for Kids Ogan Ilir', category: 'pelatihan', image: '/images/FlyerCoding-for-Kids2023-scaled.jpg', tag: 'Coding for Kids' },
-                { id: 10, title: 'Training for Trainer Coding for Kids Guru IT', category: 'pelatihan', image: '/images/Flyer-Coding-for-Kids-3.png', tag: 'Trainer Workshop' },
-                { id: 11, title: 'Augmented Reality for Education Media Belajar', category: 'webinar', image: '/images/Flyer-AR-New-1-scaled.jpg', tag: 'AR Workshop' },
-                { id: 12, title: 'Augmented Reality Interactive Training', category: 'webinar', image: '/images/Flyer-AR-New-scaled.jpg', tag: 'AR Webinar' }
+                { 
+                    id: 1, 
+                    title: 'Insight Talks Bersama Komdigi RI & Media Indonesia', 
+                    category: 'webinar', 
+                    image: '/images/Insight-Talks-Komdigi.jpeg', 
+                    tag: 'Webinar Nasional',
+                    organizer: 'Komdigi RI & Media Indonesia'
+                },
+                { 
+                    id: 2, 
+                    title: 'The Era of Vibe Coding: AI Pembelajaran & Manajemen Informasi', 
+                    category: 'pelatihan', 
+                    image: '/images/631476506_1210308331315502_7735877304621369529_n.jpg', 
+                    tag: 'Pelatihan Dosen IT',
+                    organizer: 'Politeknik Akamigas Palembang'
+                },
+                { 
+                    id: 3, 
+                    title: 'Lecturer Development Program: Pembuatan Aplikasi AI Tanpa Coding', 
+                    category: 'pelatihan', 
+                    image: '/images/626271180_17940187239113665_1282635413631214268_n.jpg', 
+                    tag: 'Pelatihan Dosen',
+                    organizer: 'Politeknik Akamigas Palembang'
+                },
+                { 
+                    id: 4, 
+                    title: 'Pelatihan Coding & AI Tenaga Pendidik SD & SMP OKU Timur', 
+                    category: 'pelatihan', 
+                    image: '/images/545410148_1090108853335451_8582489098678183559_n.jpg', 
+                    tag: 'Pelatihan Guru',
+                    organizer: 'Dinas Pendidikan OKU Timur'
+                },
+                { 
+                    id: 5, 
+                    title: 'Pelatihan Coding & AI Optimalisasi SDM SIT Robbani', 
+                    category: 'pelatihan', 
+                    image: '/images/561378805_1119891467023856_3474954454940095689_n.jpg', 
+                    tag: 'Pelatihan Guru',
+                    organizer: 'SIT Robbani Ogan Ilir'
+                },
+                { 
+                    id: 6, 
+                    title: 'Workshop Online: Menciptakan Chatbot AI dengan Python', 
+                    category: 'webinar', 
+                    image: '/images/486603910_961047622908242_7404185485069841584_n.jpg', 
+                    tag: 'Workshop Online 32 JP',
+                    organizer: 'IGI Kab. Ogan Ilir'
+                },
+                { 
+                    id: 7, 
+                    title: 'Online Training of Trainer: Coding for Kids IGI Ogan Ilir', 
+                    category: 'webinar', 
+                    image: '/images/485185738_958093913203613_4067422706425259653_n.jpg', 
+                    tag: 'Online Training 32 JP',
+                    organizer: 'IGI Kab. Ogan Ilir'
+                },
+                { 
+                    id: 8, 
+                    title: 'Pelatihan Website & Aplikasi Administrasi Surat Desa Senuro Timur', 
+                    category: 'pelatihan', 
+                    image: '/images/495965916_995856726093998_1582227333173346053_n.jpg', 
+                    tag: 'Digitalisasi Desa',
+                    organizer: 'Pemdes Senuro Timur'
+                },
+                { 
+                    id: 9, 
+                    title: 'Augmented Reality for Education: Pembuatan Media Pembelajaran AR', 
+                    category: 'pelatihan', 
+                    image: '/images/Flyer-AR-New-1-scaled.jpg', 
+                    tag: 'Workshop AR',
+                    organizer: 'Ralenta Learning Center'
+                },
+                { 
+                    id: 10, 
+                    title: 'Pelatihan Coding for Kids: Belajar Koding Mudah & Menyenangkan', 
+                    category: 'pelatihan', 
+                    image: '/images/FlyerCoding-for-Kids2023-scaled.jpg', 
+                    tag: 'Coding for Kids',
+                    organizer: 'Ralenta Learning Center'
+                },
+                { 
+                    id: 11, 
+                    title: 'Training for Trainer Coding for Kids Guru SIT Robbani', 
+                    category: 'pelatihan', 
+                    image: '/images/Flyer-Coding-for-Kids-3.png', 
+                    tag: 'ToT Guru Sekolah',
+                    organizer: 'SIT Robbani Ogan Ilir'
+                }
             ]
          }">
     

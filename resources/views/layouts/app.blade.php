@@ -148,29 +148,48 @@
         html.theme-dark .border-slate-100, html.theme-dark .border-slate-200 {
             border-color: rgba(255, 255, 255, 0.1) !important;
         }
-        html.dark .bg-slate-50, html.theme-dark .bg-slate-50 {
-            background-color: #1e293b !important;
-            color: #f8fafc !important;
+        /* ═══════════════════════ THEME LOGO SWITCHER ═══════════════════════ */
+        html.dark .logo-dark-mode, html.theme-dark .logo-dark-mode {
+            display: block !important;
+        }
+        html.dark .logo-light-mode, html.theme-dark .logo-light-mode {
+            display: none !important;
+        }
+        html:not(.dark):not(.theme-dark) .logo-dark-mode {
+            display: none !important;
+        }
+        html:not(.dark):not(.theme-dark) .logo-light-mode {
+            display: block !important;
         }
 
-        /* ═══════════════════════ SCROLL FADE-UP ANIMATIONS ═══════════════════════ */
-        .fade-up, .reveal-on-scroll {
+        /* ═══════════════════════ SCROLL FADE-UP ANIMATIONS (SmartNews Standard) ═══════════════════════ */
+        .fade-up-init, .fade-up, .reveal-on-scroll {
             opacity: 0;
-            transform: translateY(24px);
+            transform: translateY(28px);
             transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
-        .fade-up.in-view, .reveal-on-scroll.in-view {
+        .fade-up-init.fade-up-in, .fade-up.in-view, .reveal-on-scroll.in-view {
             opacity: 1 !important;
             transform: translateY(0) !important;
         }
-        .delay-75  { transition-delay: 75ms; }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-150 { transition-delay: 150ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-        .delay-400 { transition-delay: 400ms; }
-        .delay-500 { transition-delay: 500ms; }
+        .delay-75  { transition-delay: 0.075s; }
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up-init, .fade-up, .reveal-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
 
         @keyframes logo-object {
             0%, 100% { transform: translateY(-10px); }
@@ -294,9 +313,10 @@
             style="background-color: var(--bg-panel); border-color: var(--border); opacity: 0.98;">
         <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">
             
-            <!-- Official Brand Logo (Large & Clear without inflating Header Height) -->
+            <!-- Official Brand Logo (Light & Pure White Dark Mode) -->
             <a href="{{ route('home') }}" class="flex items-center py-0.5 group focus:outline-none shrink-0">
-                <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-xs" />
+                <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="logo-light-mode h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-xs" />
+                <img src="/images/Logo-BTD-white.png" alt="CV. Beranda Teknologi Digital" class="logo-dark-mode h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-md" />
             </a>
 
             <!-- Desktop Navigation Links -->
@@ -462,7 +482,8 @@
                 <!-- Column 1: Brand Info (2 columns on lg) -->
                 <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
                     <a href="{{ route('home') }}" class="inline-block py-1 group">
-                        <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-xs hover:scale-105 transition-transform" />
+                        <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="logo-light-mode h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-xs hover:scale-105 transition-transform" />
+                        <img src="/images/Logo-BTD-white.png" alt="CV. Beranda Teknologi Digital" class="logo-dark-mode h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-md hover:scale-105 transition-transform" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
                         <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> &bull; Mitra transformasi digital inovatif penyedia solusi website enterprise, aplikasi mobile Flutter, sistem informasi, solusi AI privat, dan pelatihan teknologi profesional.
@@ -530,12 +551,12 @@
         </div>
     </footer>
 
-    <!-- Floating Action Buttons -->
+    <!-- Fixed Floating Action Group (Scroll to Top + WA Direct Chat) -->
     <div x-data="{ showTop: false }" 
-         @scroll.window="showTop = (window.pageYOffset > 350)" 
-         class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2.5">
+         @scroll.window="showTop = (window.pageYOffset > 300)" 
+         class="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-center gap-2.5">
         
-        <!-- Scroll to Top Button -->
+        <!-- Back to Top Button -->
         <button x-show="showTop" 
                 x-transition 
                 @click="window.scrollTo({ top: 0, behavior: 'smooth' })" 
@@ -574,24 +595,33 @@
             }
         }
 
-        // Global Scroll Fade-Up Animation Observer
+        /* SmartNews Standard Scroll Fade-Up Intersection Observer */
         document.addEventListener('DOMContentLoaded', () => {
-            const scrollObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        // unobserve to keep animation active once triggered
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.05,
-                rootMargin: '0px 0px -25px 0px'
-            });
+            const animTargets = document.querySelectorAll(
+                'section, .fade-up-target, .reveal-on-scroll, .fade-up, .bento-card, .service-card, .article-card, .gallery-item, .tech-card'
+            );
 
-            document.querySelectorAll('.fade-up, .reveal-on-scroll').forEach(el => {
-                scrollObserver.observe(el);
-            });
+            if ('IntersectionObserver' in window) {
+                const fadeUpObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('fade-up-in', 'in-view');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    root: null,
+                    threshold: 0.08,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                animTargets.forEach(el => {
+                    el.classList.add('fade-up-init');
+                    fadeUpObserver.observe(el);
+                });
+            } else {
+                animTargets.forEach(el => el.classList.add('fade-up-in', 'in-view'));
+            }
         });
     </script>
     @stack('scripts')
