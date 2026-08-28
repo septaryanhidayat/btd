@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Tentang Kami & Trainer - Septa Ryan Hidayat, S.Kom | CV. Beranda Teknologi Digital')
+@section('title', 'Tentang Kami & Trainer IT - CV. Beranda Teknologi Digital')
 
 @section('content')
 <!-- SECTION 1: ABOUT US & TRAINER HERO (FlyMotion About Layout with Illustration & Watermark) -->
-<section class="py-20 bg-flymotion-hero transition-colors duration-300 relative overflow-hidden">
+<section class="py-14 sm:py-20 bg-flymotion-hero transition-colors duration-300 relative overflow-hidden">
     
     <!-- Watermark "About" -->
     <div class="absolute top-6 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-100/70 pointer-events-none select-none tracking-wider -z-0">
@@ -27,7 +27,7 @@
                 </h1>
 
                 <p class="text-base text-[#4a4a4a] leading-relaxed">
-                    <strong class="text-[#07153f] font-bold">CV. Beranda Teknologi Digital</strong> dipimpin oleh <strong class="text-[#07153f] font-bold">{{ $trainerName }}</strong> ({{ $trainerTitle }}), berpengalaman bertahun-tahun dalam perancangan arsitektur software enterprise, aplikasi mobile Flutter, implementasi Artificial Intelligence, serta narasumber workshop IT untuk Kementerian Komdigi RI, Politeknik Akamigas, dan berbagai kampus di Indonesia.
+                    <strong class="text-[#07153f] font-bold">CV. Beranda Teknologi Digital</strong> didukung oleh tim software engineer, UI/UX designer, dan AI specialist yang berpengalaman bertahun-tahun dalam perancangan arsitektur software enterprise, aplikasi mobile Flutter, implementasi Artificial Intelligence, serta narasumber workshop IT untuk Kementerian Komdigi RI, Politeknik Akamigas, dan berbagai instansi di Indonesia.
                 </p>
 
                 <!-- Stats Badges -->
@@ -56,11 +56,11 @@
             <!-- Right: Trainer Profile Photo with Mac Frame -->
             <div class="lg:col-span-5 flex justify-center relative">
                 <div class="relative w-full max-w-md">
-                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-2xl relative anim-logo-top">
-                        <div class="aspect-square rounded-2xl overflow-hidden bg-gradient-to-b from-blue-50 to-indigo-50 border border-slate-100 relative">
-                            <img src="{{ $trainerAvatar }}" alt="{{ $trainerName }}" class="w-full h-full object-cover" />
+                    <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-2xl relative anim-logo-top">
+                        <div class="aspect-square rounded-2xl overflow-hidden bg-gradient-to-b from-blue-50 to-indigo-50 border border-slate-100 relative flex items-center justify-center p-3">
+                            <img src="/images/hero-person-old.png" alt="Tim Trainer Beranda Digital" class="w-full h-full object-contain" />
                             <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#07153f]/90 backdrop-blur-md text-white text-xs text-center font-bold shadow-md">
-                                ★ Certified IT Trainer & Speaker
+                                ★ Tim Trainer & Konsultan IT Beranda Digital
                             </div>
                         </div>
                     </div>

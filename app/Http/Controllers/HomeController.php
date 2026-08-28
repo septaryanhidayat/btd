@@ -56,10 +56,10 @@ class HomeController extends Controller
         $heroTagline = Setting::getValue('hero_tagline', 'Bangun Usaha & Bisnis Anda Go Digital !');
         $heroDescription = Setting::getValue('hero_description', 'Beranda Teknologi Digital - Jasa pembuatan website, sistem informasi, aplikasi android & desain grafis.');
         
-        $trainerName = Setting::getValue('trainer_name', 'Septa Ryan Hidayat, S.Kom');
-        $trainerTitle = Setting::getValue('trainer_title', 'Direktur Utama CV. Beranda Teknologi Digital, Software Engineer & AI Speaker');
-        $trainerBio = Setting::getValue('trainer_bio', 'Direktur Utama & Lead Software Engineer di CV. Beranda Teknologi Digital. Dewan Pakar IGI Ogan Ilir, Narasumber Komdigi & Media Indonesia, serta Trainer Nasional.');
-        $trainerAvatar = Setting::getValue('trainer_avatar', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80');
+        $trainerName = Setting::getValue('trainer_name', 'Tim Ahli & Trainer Beranda Digital');
+        $trainerTitle = Setting::getValue('trainer_title', 'Software Engineer, UI/UX Designer & AI Specialist');
+        $trainerBio = Setting::getValue('trainer_bio', 'Tim profesional di CV. Beranda Teknologi Digital yang berpengalaman merancang arsitektur sistem skala besar dan memimpin pelatihan teknologi nasional.');
+        $trainerAvatar = Setting::getValue('trainer_avatar', '/images/hero-person-old.png');
 
         return view('public.home', compact(
             'featuredProjects',

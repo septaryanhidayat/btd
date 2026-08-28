@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs mt-4">
-                        <span class="font-bold text-[#64748b]">Oleh {{ $post->author?->name ?? 'Septa Ryan Hidayat' }}</span>
+                        <span class="font-bold text-[#64748b]">Oleh {{ $post->author?->name ?? 'Tim Beranda Digital' }}</span>
                         <a href="{{ route('blog.show', $post->slug) }}" class="font-bold text-[#3E5CE7] hover:underline">
                             Baca Artikel &rarr;
                         </a>
@@ -90,18 +90,18 @@
 </section>
 
 <!-- SECTION: LET'S WORK TOGETHER BANNER -->
-<section class="py-16 bg-[#f8faff] transition-colors duration-300">
+<section class="py-16 bg-[#f8faff] dark:bg-slate-900/50 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="rounded-3xl bg-gradient-to-r from-[#3E5CE7] to-[#2A45C8] p-10 sm:p-16 text-center text-white space-y-6 shadow-2xl relative overflow-hidden">
+        <div class="rounded-3xl bg-gradient-to-br from-[#07153f] via-[#0e2158] to-[#1e3a8a] p-8 sm:p-14 text-center text-white space-y-6 shadow-2xl relative overflow-hidden">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
                 Let's Work Together
             </h2>
-            <p class="text-blue-100 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+            <p class="text-slate-100 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
                 Konsultasikan rencana pembuatan website, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.
             </p>
             <div class="pt-4">
-                <a href="https://wa.me/6289695249089" target="_blank" class="px-8 py-4 rounded-md bg-white hover:bg-slate-100 text-[#3E5CE7] font-bold text-sm shadow-xl inline-flex items-center gap-2 transition-all">
-                    <span>Contact Me</span> &rarr;
+                <a href="https://wa.me/6289695249089" target="_blank" class="px-8 py-4 rounded-xl bg-white hover:bg-slate-100 text-[#07153f] font-bold text-xs sm:text-sm shadow-xl inline-flex items-center gap-2 transition-all">
+                    <span>💬 Hubungi Tim Kami (WhatsApp)</span> &rarr;
                 </a>
             </div>
         </div>

@@ -4,37 +4,37 @@
 
 @section('content')
 <!-- SECTION 1: HERO HEADER (FlyMotion Service Hero with Illustration) -->
-<section class="relative pt-12 pb-20 lg:pt-16 lg:pb-24 overflow-hidden bg-flymotion-hero transition-colors duration-300">
+<section class="relative pt-6 sm:pt-10 md:pt-14 pb-14 sm:pb-18 md:pb-24 lg:pt-16 lg:pb-24 overflow-hidden bg-flymotion-hero transition-colors duration-300">
     
     <!-- Organic Background Accents -->
     <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none anim-logo-object"></div>
     <div class="absolute top-1/2 -left-20 w-80 h-80 bg-orange-100/40 rounded-full blur-3xl pointer-events-none anim-logo-bottom"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             <!-- Left: Typography & CTAs -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
                 <div class="flex items-center justify-center lg:justify-start gap-3">
                     <span class="w-8 h-1 bg-[#3E5CE7] rounded-full"></span>
                     <span class="text-xs sm:text-sm font-bold tracking-wider uppercase text-[#3E5CE7]">Service</span>
                 </div>
 
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#07153f] leading-[1.15]">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#07153f] leading-[1.2]">
                     Jasa Pembuatan <br class="hidden sm:inline" />
                     <span class="text-[#3E5CE7]">Website & Aplikasi</span>
                 </h1>
 
-                <p class="text-base sm:text-lg text-[#4a4a4a] max-w-xl leading-relaxed">
+                <p class="text-xs sm:text-sm md:text-base text-[#4a4a4a] max-w-xl mx-auto lg:mx-0 leading-relaxed">
                     Anda ingin membuat website & aplikasi? Kami menyediakan solusi digital lengkap dengan tampilan desain yang menarik, user-friendly, responsive mobile, didukung dengan teknologi framework modern Laravel 13, Flutter, dan integrasi Artificial Intelligence.
                 </p>
 
-                <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                    <a href="{{ route('projects.index') }}" class="px-8 py-4 rounded-md bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-blue-600/30 transition-all flex items-center gap-2">
-                        <span>Portofolio &rarr;</span>
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+                    <a href="{{ route('contact') }}" class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-gradient-to-r from-[#fe6000] to-[#ff7a29] hover:from-[#e05400] hover:to-[#fe6000] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 active:scale-98 transition-all text-center">
+                        <span>Konsultasi Proyek &rarr;</span>
                     </a>
-                    <a href="{{ route('contact') }}" class="px-8 py-4 rounded-md bg-[#fe6000] hover:bg-[#e05400] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-orange-500/30 transition-all">
-                        <span>Konsultasi Proyek</span>
+                    <a href="{{ route('projects.index') }}" class="w-full sm:w-auto px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider shadow-md active:scale-98 transition-all text-center">
+                        <span>Lihat Portofolio</span>
                     </a>
                 </div>
             </div>

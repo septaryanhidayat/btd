@@ -11,10 +11,10 @@ class TrainerController extends Controller
 {
     public function index(Request $request)
     {
-        $trainerName = Setting::getValue('trainer_name', 'Ryan Beranda Digital');
-        $trainerTitle = Setting::getValue('trainer_title', 'Senior Software Architect, AI Specialist & Certified Corporate Trainer');
-        $trainerBio = Setting::getValue('trainer_bio', 'Berpengalaman lebih dari 8 tahun merancang arsitektur sistem skala besar dan memimpin pelatihan teknologi.');
-        $trainerAvatar = Setting::getValue('trainer_avatar', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80');
+        $trainerName = Setting::getValue('trainer_name', 'Tim Ahli & Trainer Beranda Digital');
+        $trainerTitle = Setting::getValue('trainer_title', 'Software Engineer, UI/UX Designer & AI Specialist');
+        $trainerBio = Setting::getValue('trainer_bio', 'Tim profesional di CV. Beranda Teknologi Digital yang berpengalaman merancang arsitektur sistem skala besar dan memimpin pelatihan teknologi nasional.');
+        $trainerAvatar = Setting::getValue('trainer_avatar', '/images/hero-person-old.png');
 
         $statsYears = Setting::getValue('trainer_stats_years', '8+');
         $statsEvents = Setting::getValue('trainer_stats_events', '65+');
