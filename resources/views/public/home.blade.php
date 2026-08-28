@@ -21,30 +21,30 @@
             <!-- Left Column: Typography & FlyMotion Action Buttons -->
             <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left reveal-on-scroll">
                 
-                <!-- Subtitle / Tagline Badge -->
+                <!-- Subtitle / Tagline Badge (Corporate Eyebrow) -->
                 <div class="flex items-center justify-center lg:justify-start">
-                    <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-orange-50/90 dark:bg-orange-950/50 border border-orange-200/80 dark:border-orange-800/60 text-[#fe6000] text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
-                        <span class="w-2 h-2 rounded-full bg-[#fe6000] animate-pulse"></span>
-                        <span>Jasa Web Design & Software House</span>
+                    <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-200/80 dark:border-blue-800/60 text-[#3E5CE7] dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
+                        <span class="w-2 h-2 rounded-full bg-[#3E5CE7] dark:bg-blue-400 animate-pulse"></span>
+                        <span>Digital Agency & Software House Terpercaya</span>
                     </div>
                 </div>
 
                 <!-- Main Dynamic Headline -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#07153f] dark:text-white leading-[1.2]">
-                    Jasa Pembuatan <br class="hidden sm:inline" />
-                    <span class="text-[#3E5CE7] dark:text-blue-400">Website Perusahaan</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#07153f] dark:text-white leading-[1.18]">
+                    Bangun Ekosistem Digital <br class="hidden sm:inline" />
+                    <span class="text-[#3E5CE7] dark:text-blue-400">yang Berdampak Nyata</span>
                 </h1>
 
                 <!-- Subtitle Description -->
                 <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                    CV. Beranda Teknologi Digital adalah Digital Creative Agency & Software House terpercaya di Indonesia. Kami menghadirkan <strong class="text-[#07153f] dark:text-white font-bold">Website Enterprise</strong>, <strong class="text-[#07153f] dark:text-white font-bold">Aplikasi Mobile Flutter</strong>, <strong class="text-[#07153f] dark:text-white font-bold">Engine AI Privat</strong>, dan <strong class="text-[#07153f] dark:text-white font-bold">Pelatihan IT Profesional</strong>.
+                    Kami mengintegrasikan solusi perangkat lunak mutakhir dan program edukasi untuk mentransformasi operasional bisnis Anda. Mulai dari perancangan web korporat, pengembangan aplikasi seluler, solusi otomasi cerdas, hingga penciptaan talenta digital profesional.
                 </p>
 
                 <!-- 4 Quick Feature / Service Circular Icons Row (FlyMotion Signature) -->
                 <div class="pt-1 pb-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3">
                     <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-800/60 text-[11px] font-extrabold text-[#3E5CE7] dark:text-blue-300 shadow-xs">
                         <span>🌐</span>
-                        <span>Web Design</span>
+                        <span>Web Enterprise</span>
                     </div>
                     <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50/90 dark:bg-orange-950/50 border border-orange-100 dark:border-orange-800/60 text-[11px] font-extrabold text-[#fe6000] dark:text-orange-400 shadow-xs">
                         <span>📱</span>
@@ -52,40 +52,34 @@
                     </div>
                     <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50/90 dark:bg-purple-950/50 border border-purple-100 dark:border-purple-800/60 text-[11px] font-extrabold text-purple-700 dark:text-purple-300 shadow-xs">
                         <span>🤖</span>
-                        <span>AI Solutions</span>
+                        <span>AI Automation</span>
                     </div>
                     <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50/90 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-800/60 text-[11px] font-extrabold text-emerald-700 dark:text-emerald-300 shadow-xs">
-                        <span>⚡</span>
-                        <span>Fast Cloud</span>
+                        <span>🎓</span>
+                        <span>IT Training</span>
                     </div>
                 </div>
 
-                <!-- Dual FlyMotion CTA Buttons (Ultra High-Contrast & Clearly Readable) -->
-                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
-                    <!-- Primary CTA: Konsultasi Sekarang -->
+                <!-- Strategic 2-CTA Hierarchy (Clear Road, High Conversion, Zero Clutter) -->
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+                    <!-- Primary CTA: Konsultasi Gratis (Solid Orange) -->
                     <a href="#kalkulator" 
-                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-orange-500/40 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-orange-300"
+                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 active:scale-98 transition-all flex items-center justify-center gap-2 border border-orange-300"
                        style="background: linear-gradient(135deg, #fe6000 0%, #ff7a29 100%) !important; color: #ffffff !important;">
-                        <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">KONSULTASI SEKARANG</span>
+                        <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">KONSULTASI GRATIS</span>
                         <svg class="w-4 h-4" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </a>
                     
-                    <div class="flex items-center gap-2.5 w-full sm:w-auto">
-                        <!-- Secondary CTA: Portofolio -->
-                        <a href="{{ route('projects.index') }}" 
-                           class="flex-1 sm:flex-none px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-blue-500/30 active:scale-98 transition-all text-center border border-blue-400"
-                           style="background: #3E5CE7 !important; color: #ffffff !important;">
-                            <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">PORTOFOLIO</span>
-                        </a>
-                        <!-- WA Direct Button -->
-                        <a href="https://wa.me/6289695249089" target="_blank" 
-                           class="flex-1 sm:flex-none px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-1.5 border border-emerald-400"
-                           style="background: #059669 !important; color: #ffffff !important;">
-                            <span class="font-black drop-shadow-xs" style="color: #ffffff !important;">💬 WA Chat</span>
-                        </a>
-                    </div>
+                    <!-- Secondary CTA: Lihat Portofolio (Clean Corporate Outline Button) -->
+                    <a href="{{ route('projects.index') }}" 
+                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3E5CE7] dark:border-blue-400 text-[#3E5CE7] dark:text-blue-400 hover:bg-[#3E5CE7] hover:text-white dark:hover:bg-blue-600 dark:hover:text-white active:scale-98 transition-all flex items-center justify-center gap-2 shadow-xs">
+                        <span>LIHAT PORTOFOLIO</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
                 </div>
 
                 <!-- Feature Mini Badges & Guarantee -->
