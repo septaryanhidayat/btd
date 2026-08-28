@@ -29,10 +29,10 @@
                     </div>
                 </div>
 
-                <!-- Main Dynamic Headline (Balanced 2-Line Flow) -->
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.18] max-w-2xl">
-                    <span class="inline-block whitespace-normal sm:whitespace-nowrap">Bangun Ekosistem Digital</span>
-                    <span class="block text-[#3E5CE7] dark:text-blue-400">yang Berdampak Nyata</span>
+                <!-- Main Dynamic Headline (Spacious & Balanced 2-Line Flow) -->
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.35] max-w-2xl">
+                    <span class="inline-block whitespace-normal sm:whitespace-nowrap pb-1">Bangun Ekosistem Digital</span>
+                    <span class="block text-[#3E5CE7] dark:text-blue-400 pt-1 sm:pt-1.5">yang Berdampak Nyata</span>
                 </h1>
 
                 <!-- Subtitle Description -->
