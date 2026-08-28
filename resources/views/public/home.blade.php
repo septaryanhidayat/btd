@@ -29,10 +29,10 @@
                     </div>
                 </div>
 
-                <!-- Main Dynamic Headline -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#07153f] dark:text-white leading-[1.18]">
-                    Bangun Ekosistem Digital <br class="hidden sm:inline" />
-                    <span class="text-[#3E5CE7] dark:text-blue-400">yang Berdampak Nyata</span>
+                <!-- Main Dynamic Headline (Balanced 2-Line Flow) -->
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.18] max-w-2xl">
+                    <span class="inline-block whitespace-normal sm:whitespace-nowrap">Bangun Ekosistem Digital</span>
+                    <span class="block text-[#3E5CE7] dark:text-blue-400">yang Berdampak Nyata</span>
                 </h1>
 
                 <!-- Subtitle Description -->
@@ -490,31 +490,33 @@
             <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">Temukan berbagai produk digital berkualitas di sini! Nikmati koleksi kami dan jadikan proyek Anda terlihat trendi dan profesional.</p>
         </div>
 
-        <!-- Featured Projects Showcase Grid (16:9 Landscape Thumbnails) -->
+        <!-- Featured Projects Showcase Grid (Exact Match to web.berandadigital.net) -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             @foreach($featuredProjects as $index => $project)
-                <div class="bg-white dark:bg-slate-800/90 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-700/70 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col group reveal-on-scroll delay-{{ ($index + 1) * 100 }}">
+                <div class="bg-white dark:bg-slate-800/90 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col group reveal-on-scroll delay-{{ ($index + 1) * 100 }}">
                     <div class="aspect-video overflow-hidden relative border-b border-slate-100 dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                         <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute top-3 left-3">
-                            <span class="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/80 text-[#3E5CE7] dark:text-blue-300 font-bold text-[10px] shadow-xs">
-                                {{ $project->category?->name ?? 'Proyek Klien' }}
+                            <span class="px-3 py-1 rounded-full bg-white/95 dark:bg-slate-900/95 text-[#3E5CE7] dark:text-blue-400 font-extrabold text-[10px] sm:text-[11px] border border-blue-100 dark:border-blue-900/50 shadow-xs">
+                                {{ $project->category?->name ?? 'Product' }}
                             </span>
                         </div>
                     </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                    <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between space-y-4">
                         <div class="space-y-2">
-                            <h3 class="text-base font-bold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors line-clamp-1">
+                            <h3 class="text-sm sm:text-base font-extrabold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors line-clamp-1">
                                 {{ $project->title }}
                             </h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed">
+                            <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed font-normal">
                                 {{ $project->summary }}
                             </p>
                         </div>
                         <div class="pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs">
-                            <span class="font-bold text-[#3E5CE7] dark:text-blue-400">{{ $project->client_name }}</span>
-                            <a href="{{ route('projects.show', $project->slug) }}" class="font-bold text-[#07153f] dark:text-slate-200 hover:text-[#3E5CE7] dark:hover:text-blue-400">
-                                Detail &rarr;
+                            <span class="font-extrabold text-[#3E5CE7] dark:text-blue-400 line-clamp-1">{{ $project->client_name }}</span>
+                            <a href="{{ $project->project_url ?? route('projects.show', $project->slug) }}" 
+                               target="{{ str_starts_with($project->project_url ?? '', 'http') ? '_blank' : '_self' }}"
+                               class="font-bold text-[#07153f] dark:text-slate-200 hover:text-[#3E5CE7] dark:hover:text-blue-400 flex items-center gap-0.5 shrink-0 ml-2">
+                                <span>Detail</span> <span class="text-sm">›</span>
                             </a>
                         </div>
                     </div>
