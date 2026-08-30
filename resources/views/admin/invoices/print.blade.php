@@ -364,7 +364,7 @@
             <div class="title-label">Invoiced To</div>
             <div class="client-type">{{ $invoice->client_type }}</div>
             @if($invoice->client_attn)
-                <div class="client-attn">{{ $invoice->client_attn }}</div>
+                <div class="client-attn">{{ str_starts_with(strtoupper(trim($invoice->client_attn)), 'ATTN') ? $invoice->client_attn : 'ATTN: ' . $invoice->client_attn }}</div>
             @else
                 <div class="client-attn">ATTN: {{ $invoice->client_name }}</div>
             @endif

@@ -105,6 +105,7 @@ class AdminInvoiceController extends Controller
     public function store(Request $request)
     {
         $this->ensureTableExists();
+
         $validated = $request->validate([
             'invoice_number' => 'required|string|max:50|unique:invoices,invoice_number',
             'invoice_date' => 'required|date',
@@ -114,47 +115,79 @@ class AdminInvoiceController extends Controller
             'client_name' => 'required|string|max:255',
             'client_attn' => 'nullable|string|max:255',
             'client_address' => 'nullable|string',
-            'items_raw' => 'required|string',
-            'transactions_raw' => 'nullable|string',
             'paid_amount' => 'required|numeric|min:0',
             'notes' => 'nullable|string',
         ]);
 
-        // Parse Items: Description | Amount
+        // Parse Items (support multi-items array or legacy items_raw)
         $items = [];
         $totalAmount = 0;
-        $lines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->items_raw))));
-        foreach ($lines as $line) {
-            $parts = array_map('trim', explode('|', $line));
-            $desc = $parts[0] ?? '';
-            $amt = isset($parts[1]) ? (float) str_replace(['.', ',', ' '], '', $parts[1]) : 0;
-            if (!empty($desc)) {
-                $items[] = [
-                    'description' => $desc,
-                    'amount' => $amt,
-                ];
-                $totalAmount += $amt;
+        if ($request->has('items') && is_array($request->items)) {
+            foreach ($request->items as $item) {
+                $desc = trim($item['description'] ?? '');
+                $amt = (float) ($item['amount'] ?? 0);
+                if (!empty($desc)) {
+                    $items[] = [
+                        'description' => $desc,
+                        'amount' => $amt,
+                    ];
+                    $totalAmount += $amt;
+                }
+            }
+        } elseif ($request->filled('items_raw')) {
+            $lines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->items_raw))));
+            foreach ($lines as $line) {
+                $parts = array_map('trim', explode('|', $line));
+                $desc = $parts[0] ?? '';
+                $amt = isset($parts[1]) ? (float) str_replace(['.', ',', ' '], '', $parts[1]) : 0;
+                if (!empty($desc)) {
+                    $items[] = [
+                        'description' => $desc,
+                        'amount' => $amt,
+                    ];
+                    $totalAmount += $amt;
+                }
             }
         }
 
-        // Parse Transactions: Date | PaymentMethod | TransactionID | Amount
+        // Parse Transactions (support separate fields or raw)
         $transactions = [];
-        if ($request->filled('transactions_raw')) {
+        if ($request->has('transactions') && is_array($request->transactions)) {
+            foreach ($request->transactions as $t) {
+                $tDate = trim($t['date'] ?? date('d/m/Y'));
+                $tMethod = trim($t['payment_method'] ?? 'Transfer Bank');
+                $tId = trim($t['transaction_id'] ?? '-');
+                $tAmt = (float) ($t['amount'] ?? 0);
+                if (!empty($tMethod) || !empty($tId) || $tAmt > 0) {
+                    $transactions[] = [
+                        'date' => $tDate,
+                        'payment_method' => $tMethod,
+                        'transaction_id' => $tId,
+                        'amount' => $tAmt,
+                    ];
+                }
+            }
+        } elseif ($request->filled('transactions_raw')) {
             $tLines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->transactions_raw))));
             foreach ($tLines as $tLine) {
                 $tParts = array_map('trim', explode('|', $tLine));
-                $tDate = $tParts[0] ?? date('d/m/Y');
-                $tMethod = $tParts[1] ?? 'Transfer Bank';
-                $tId = $tParts[2] ?? '-';
-                $tAmt = isset($tParts[3]) ? (float) str_replace(['.', ',', ' '], '', $tParts[3]) : 0;
-
                 $transactions[] = [
-                    'date' => $tDate,
-                    'payment_method' => $tMethod,
-                    'transaction_id' => $tId,
-                    'amount' => $tAmt,
+                    'date' => $tParts[0] ?? date('d/m/Y'),
+                    'payment_method' => $tParts[1] ?? 'Transfer Bank',
+                    'transaction_id' => $tParts[2] ?? '-',
+                    'amount' => isset($tParts[3]) ? (float) str_replace(['.', ',', ' '], '', $tParts[3]) : 0,
                 ];
             }
+        }
+
+        // Format ATTN: template automatically
+        $attn = trim($request->client_attn ?? '');
+        if (!empty($attn)) {
+            if (!str_starts_with(strtoupper($attn), 'ATTN:')) {
+                $attn = 'ATTN: ' . $attn;
+            }
+        } else {
+            $attn = 'ATTN: ' . $validated['client_name'];
         }
 
         $paidAmount = (float) $validated['paid_amount'];
@@ -167,7 +200,7 @@ class AdminInvoiceController extends Controller
             'status' => $validated['status'],
             'client_type' => $validated['client_type'],
             'client_name' => $validated['client_name'],
-            'client_attn' => $validated['client_attn'],
+            'client_attn' => $attn,
             'client_address' => $validated['client_address'],
             'items' => $items,
             'total_amount' => $totalAmount,
@@ -182,11 +215,14 @@ class AdminInvoiceController extends Controller
 
     public function edit(Invoice $invoice)
     {
+        $this->ensureTableExists();
         return view('admin.invoices.edit', compact('invoice'));
     }
 
     public function update(Request $request, Invoice $invoice)
     {
+        $this->ensureTableExists();
+
         $validated = $request->validate([
             'invoice_number' => 'required|string|max:50|unique:invoices,invoice_number,' . $invoice->id,
             'invoice_date' => 'required|date',
@@ -196,47 +232,79 @@ class AdminInvoiceController extends Controller
             'client_name' => 'required|string|max:255',
             'client_attn' => 'nullable|string|max:255',
             'client_address' => 'nullable|string',
-            'items_raw' => 'required|string',
-            'transactions_raw' => 'nullable|string',
             'paid_amount' => 'required|numeric|min:0',
             'notes' => 'nullable|string',
         ]);
 
-        // Parse Items: Description | Amount
+        // Parse Items (support multi-items array or legacy items_raw)
         $items = [];
         $totalAmount = 0;
-        $lines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->items_raw))));
-        foreach ($lines as $line) {
-            $parts = array_map('trim', explode('|', $line));
-            $desc = $parts[0] ?? '';
-            $amt = isset($parts[1]) ? (float) str_replace(['.', ',', ' '], '', $parts[1]) : 0;
-            if (!empty($desc)) {
-                $items[] = [
-                    'description' => $desc,
-                    'amount' => $amt,
-                ];
-                $totalAmount += $amt;
+        if ($request->has('items') && is_array($request->items)) {
+            foreach ($request->items as $item) {
+                $desc = trim($item['description'] ?? '');
+                $amt = (float) ($item['amount'] ?? 0);
+                if (!empty($desc)) {
+                    $items[] = [
+                        'description' => $desc,
+                        'amount' => $amt,
+                    ];
+                    $totalAmount += $amt;
+                }
+            }
+        } elseif ($request->filled('items_raw')) {
+            $lines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->items_raw))));
+            foreach ($lines as $line) {
+                $parts = array_map('trim', explode('|', $line));
+                $desc = $parts[0] ?? '';
+                $amt = isset($parts[1]) ? (float) str_replace(['.', ',', ' '], '', $parts[1]) : 0;
+                if (!empty($desc)) {
+                    $items[] = [
+                        'description' => $desc,
+                        'amount' => $amt,
+                    ];
+                    $totalAmount += $amt;
+                }
             }
         }
 
-        // Parse Transactions: Date | PaymentMethod | TransactionID | Amount
+        // Parse Transactions (support separate fields or raw)
         $transactions = [];
-        if ($request->filled('transactions_raw')) {
+        if ($request->has('transactions') && is_array($request->transactions)) {
+            foreach ($request->transactions as $t) {
+                $tDate = trim($t['date'] ?? date('d/m/Y'));
+                $tMethod = trim($t['payment_method'] ?? 'Transfer Bank');
+                $tId = trim($t['transaction_id'] ?? '-');
+                $tAmt = (float) ($t['amount'] ?? 0);
+                if (!empty($tMethod) || !empty($tId) || $tAmt > 0) {
+                    $transactions[] = [
+                        'date' => $tDate,
+                        'payment_method' => $tMethod,
+                        'transaction_id' => $tId,
+                        'amount' => $tAmt,
+                    ];
+                }
+            }
+        } elseif ($request->filled('transactions_raw')) {
             $tLines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->transactions_raw))));
             foreach ($tLines as $tLine) {
                 $tParts = array_map('trim', explode('|', $tLine));
-                $tDate = $tParts[0] ?? date('d/m/Y');
-                $tMethod = $tParts[1] ?? 'Transfer Bank';
-                $tId = $tParts[2] ?? '-';
-                $tAmt = isset($tParts[3]) ? (float) str_replace(['.', ',', ' '], '', $tParts[3]) : 0;
-
                 $transactions[] = [
-                    'date' => $tDate,
-                    'payment_method' => $tMethod,
-                    'transaction_id' => $tId,
-                    'amount' => $tAmt,
+                    'date' => $tParts[0] ?? date('d/m/Y'),
+                    'payment_method' => $tParts[1] ?? 'Transfer Bank',
+                    'transaction_id' => $tParts[2] ?? '-',
+                    'amount' => isset($tParts[3]) ? (float) str_replace(['.', ',', ' '], '', $tParts[3]) : 0,
                 ];
             }
+        }
+
+        // Format ATTN: template automatically
+        $attn = trim($request->client_attn ?? '');
+        if (!empty($attn)) {
+            if (!str_starts_with(strtoupper($attn), 'ATTN:')) {
+                $attn = 'ATTN: ' . $attn;
+            }
+        } else {
+            $attn = 'ATTN: ' . $validated['client_name'];
         }
 
         $paidAmount = (float) $validated['paid_amount'];
@@ -249,7 +317,7 @@ class AdminInvoiceController extends Controller
             'status' => $validated['status'],
             'client_type' => $validated['client_type'],
             'client_name' => $validated['client_name'],
-            'client_attn' => $validated['client_attn'],
+            'client_attn' => $attn,
             'client_address' => $validated['client_address'],
             'items' => $items,
             'total_amount' => $totalAmount,
@@ -264,12 +332,14 @@ class AdminInvoiceController extends Controller
 
     public function destroy(Invoice $invoice)
     {
+        $this->ensureTableExists();
         $invoice->delete();
         return redirect()->route('admin.invoices.index')->with('success', 'Invoice berhasil dihapus.');
     }
 
     public function print(Invoice $invoice)
     {
+        $this->ensureTableExists();
         return view('admin.invoices.print', compact('invoice'));
     }
 }
