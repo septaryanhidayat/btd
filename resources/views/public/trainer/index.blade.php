@@ -122,7 +122,7 @@
                     </div>
 
                     <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
-                        <a href="https://wa.me/6285267774878?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20mengundang%20trainer%20untuk%20materi%20{{ urlencode($training->title) }}" 
+                        <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20mengundang%20trainer%20untuk%20materi%20{{ urlencode($training->title) }}" 
                            target="_blank" 
                            style="background-color: #fe6000 !important; color: #ffffff !important;"
                            class="block w-full text-center py-3.5 rounded-xl font-bold text-xs uppercase shadow-md transition-all">
@@ -183,7 +183,7 @@
                 Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website, sistem informasi, atau pelatihan IT bersama kami.
             </p>
             <div class="pt-4">
-                <a href="https://wa.me/6285267774878" target="_blank" 
+                <a href="https://wa.me/6289695249089" target="_blank" 
                    class="px-8 py-4 rounded-xl font-bold text-sm shadow-xl inline-flex items-center gap-2 transition-all hover:scale-105"
                    style="background: #ffffff !important; color: #3E5CE7 !important;">
                     <span style="color: #3E5CE7 !important;" class="font-extrabold">Hubungi Kami (WhatsApp)</span> &rarr;

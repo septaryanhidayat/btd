@@ -87,13 +87,13 @@
 
         <!-- Contact Info Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="https://wa.me/6285267774878" target="_blank" class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex items-center gap-4">
+            <a href="https://wa.me/6289695249089" target="_blank" class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex items-center gap-4">
                 <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold text-2xl shrink-0">
                     💬
                 </div>
                 <div>
                     <h3 class="text-sm font-bold text-[#07153f] dark:text-white">WhatsApp Hotline</h3>
-                    <p class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">0852 6777 4878</p>
+                    <p class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">0896 9524 9089</p>
                     <span class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">Respon Cepat Konsultasi &rarr;</span>
                 </div>
             </a>
@@ -132,7 +132,7 @@
                 <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">⚡ Free Cloud SSD Hosting</span>
                 <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔒 Free SSL Let's Encrypt</span>
                 <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🎨 Free Desain Logo Sistem</span>
-                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔄 Garansi 5x Revisi</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔄 Revisi Sepuasnya Sampai Sesuai Keinginan</span>
                 <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">📱 Responsif Semua Device</span>
             </div>
         </div>

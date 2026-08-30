@@ -103,7 +103,7 @@
                 Konsultasikan rencana pembuatan website, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.
             </p>
             <div class="pt-4">
-                <a href="https://wa.me/6285267774878" target="_blank" 
+                <a href="https://wa.me/6289695249089" target="_blank" 
                    style="background: #ffffff !important; color: #07153f !important;"
                    class="px-8 py-4 rounded-xl font-bold text-xs sm:text-sm shadow-xl inline-flex items-center gap-2 transition-all hover:scale-105">
                     <span style="color: #07153f !important;" class="font-extrabold">💬 Hubungi Tim Kami (WhatsApp)</span> &rarr;

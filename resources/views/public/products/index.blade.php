@@ -154,7 +154,7 @@
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-white" style="color: #ffffff !important;">Akses Semua Produk & Template Tanpa Batas!</h3>
                 <p class="text-xs text-slate-300 max-w-xl font-medium" style="color: #cbd5e1 !important;">Dapatkan lisensi komersial dan pembaruan seumur hidup untuk seluruh produk software CV. Beranda Teknologi Digital.</p>
             </div>
-            <a href="https://wa.me/6285267774878?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20membership%20akses%20semua%20produk" 
+            <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20membership%20akses%20semua%20produk" 
                target="_blank" 
                style="background-color: #fe6000 !important; color: #ffffff !important;"
                class="px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shrink-0 shadow-lg hover:brightness-110 active:scale-95 transition-all relative z-10">

@@ -240,6 +240,16 @@ html.dark body::before, html.theme-dark body::before {
   100% { transform: translateX(-50%); }
 }
 
+@keyframes marquee-ltr {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes marquee-rtl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 @keyframes border-shimmer {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
@@ -255,7 +265,11 @@ html.dark body::before, html.theme-dark body::before {
 .marquee-slow { animation: marquee-x 40s linear infinite !important; }
 .marquee-medium { animation: marquee-x 26s linear infinite !important; }
 .marquee-fast { animation: marquee-x 18s linear infinite !important; }
-.marquee-pause:hover .marquee-track { animation-play-state: paused !important; }
+.marquee-ltr { animation: marquee-ltr 30s linear infinite !important; }
+.marquee-rtl { animation: marquee-rtl 30s linear infinite !important; }
+.marquee-pause:hover .marquee-track,
+.marquee-pause:hover .marquee-ltr,
+.marquee-pause:hover .marquee-rtl { animation-play-state: paused !important; }
 
 .marquee-mask {
   position: relative !important;

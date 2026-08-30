@@ -61,7 +61,7 @@
                             Live Demo &rarr;
                         </a>
                     @endif
-                    <a href="https://wa.me/6285267774878?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20membeli%20produk:%20{{ urlencode($product->title) }}" 
+                    <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20membeli%20produk:%20{{ urlencode($product->title) }}" 
                        target="_blank" 
                        style="background-color: #059669 !important; color: #ffffff !important;"
                        class="flex-1 sm:flex-none px-8 py-3.5 rounded-xl font-bold text-xs shadow-lg shadow-emerald-500/20 text-center hover:brightness-110 active:scale-95 transition-all">

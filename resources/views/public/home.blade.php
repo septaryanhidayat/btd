@@ -564,17 +564,13 @@
             </div>
 
             <!-- Card 4: E-Katalog LKPP RI (Pengadaan Pemerintah) -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-orange-400 dark:border-orange-500 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between relative overflow-hidden">
-                <div class="absolute -top-1 -right-1 bg-[#fe6000] text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-xl shadow-xs">
-                    Pengadaan Resmi
-                </div>
-
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between">
                 <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-orange-50 dark:bg-orange-950 text-[#fe6000] flex items-center justify-center text-2xl font-bold shadow-xs">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-bold shadow-xs">
                         🏛️
                     </div>
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#fe6000] block">LKPP Republik Indonesia</span>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">LKPP Republik Indonesia</span>
                         <h3 class="text-base font-black text-[#07153f] dark:text-white">Penyedia E-Katalog RI</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
                             ID Produk: 48939397
@@ -584,10 +580,8 @@
                         Memudahkan dinas, kampus negeri, dan BUMD melakukan transaksi langsung (e-purchasing) secara sah.
                     </p>
                 </div>
-                <div class="pt-3">
-                    <div class="w-full text-center px-4 py-2.5 rounded-xl bg-orange-50 dark:bg-orange-950/70 border border-orange-200 dark:border-orange-800 text-[#fe6000] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-2xs">
-                        <span>🛡️ Terdaftar Resmi E-Katalog LKPP</span>
-                    </div>
+                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                    <span>✓</span> <span>Terdaftar Resmi di E-Katalog LKPP RI</span>
                 </div>
             </div>
 
@@ -752,7 +746,7 @@
 
                     $sliderScreens = $project->slider_screens;
                     $slidesJson = json_encode($sliderScreens);
-                    $waProductUrl = "https://wa.me/6285267774878?text=" . urlencode("Halo CV. Beranda Teknologi Digital, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
+                    $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo CV. Beranda Teknologi Digital, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
                 @endphp
 
                 <div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group reveal-on-scroll">
@@ -884,7 +878,7 @@
                 <a href="#kalkulator" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl surface border border-slate-200 dark:border-slate-700 text-[#07153f] dark:text-white font-bold text-xs hover:border-[#3E5CE7] dark:hover:border-blue-400 transition-all shadow-xs">
                     <span>⚡ Hitung Estimasi Biaya</span>
                 </a>
-                <a href="https://wa.me/6285267774878?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem%20kustom" 
+                <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem%20kustom" 
                    target="_blank" 
                    style="background-color: #fe6000 !important; color: #ffffff !important;"
                    class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl font-bold text-xs uppercase shadow-md shadow-orange-600/25 hover:brightness-110 transition-all flex items-center justify-center gap-2">
@@ -1112,12 +1106,12 @@
                 let text = 'Halo CV. Beranda Teknologi Digital, saya ingin konsultasi estimasi proyek yang saya hitung di website:\n\n';
                 text += '📌 Platform: ' + this.platformName + '\n';
                 text += '⏱️ Waktu: ' + this.timelineName + '\n';
-                text += '✨ Fasilitas Gratis: Free Domain, Hosting SSD, SSL Let\'s Encrypt, Desain Logo, 5x Revisi, & Responsif Semua Device\n';
+                text += '✨ Fasilitas Gratis: Free Domain, Hosting SSD, SSL Let\'s Encrypt, Desain Logo, Revisi Sepuasnya Sampai Sesuai Keinginan, & Responsif Semua Device\n';
                 if (this.selectedAddonsSummary.length > 0) {
                     text += '⚡ Fitur Tambahan: ' + this.selectedAddonsSummary.join(', ') + '\n';
                 }
                 text += '\n💰 Perkiraan Investasi: Rp ' + this.formatRupiah(this.calculatedTotal) + ' (Kisaran: Rp ' + this.formatRupiah(this.calculatedMin) + ' - Rp ' + this.formatRupiah(this.calculatedMax) + ')\n\nMohon informasi jadwal diskusi dan penawaran resminya. Terima kasih!';
-                return 'https://wa.me/6285267774878?text=' + encodeURIComponent(text);
+                return 'https://wa.me/6289695249089?text=' + encodeURIComponent(text);
             }
          }">
     
@@ -1152,7 +1146,7 @@
                 <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">⚡ Free Cloud SSD Hosting</span>
                 <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔒 Free SSL Let's Encrypt</span>
                 <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🎨 Free Desain Logo Sistem</span>
-                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔄 Garansi 5x Revisi</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔄 Revisi Sepuasnya Sampai Sesuai Keinginan</span>
                 <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">📱 Responsif Semua Device</span>
             </div>
         </div>
@@ -1362,7 +1356,7 @@
                             <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free Domain Resmi & Hosting Cloud SSD 1 Thn</span></li>
                             <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free SSL Certificate Let's Encrypt (HTTPS)</span></li>
                             <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free Desain Logo & Identitas Visual Sistem</span></li>
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Garansi Revisi hingga 5x Sesuai Ekspektasi</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Garansi Revisi Sepuasnya Sampai Sesuai Keinginan</span></li>
                             <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Desain Responsif Semua Device (Mobile & Web)</span></li>
                         </ul>
                     </div>
@@ -1414,8 +1408,8 @@
                                 <span class="text-right font-bold text-emerald-600 dark:text-emerald-400">Included FREE</span>
                             </div>
                             <div class="flex items-start justify-between gap-2">
-                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Desain Logo & 5x Revisi:</span>
-                                <span class="text-right font-bold text-emerald-600 dark:text-emerald-400">Included FREE</span>
+                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Desain Logo & Revisi:</span>
+                                <span class="text-right font-bold text-emerald-600 dark:text-emerald-400">Sepuasnya (Included FREE)</span>
                             </div>
                             <div class="flex items-start justify-between gap-2">
                                 <span class="text-slate-500 dark:text-slate-400 shrink-0">Timeline:</span>
@@ -1458,7 +1452,7 @@
                         Ingin diskusi langsung atau presentasi sistem di kantor Anda? Tim kami siap hadir untuk konsultasi teknis dan demo aplikasi.
                     </p>
                     <div class="pt-0.5 font-mono font-bold text-slate-800 dark:text-slate-200">
-                        📞 Hotline / WA: 0852 6777 4878
+                        📞 Hotline / WA: 0896 9524 9089
                     </div>
                 </div>
 
@@ -1520,93 +1514,138 @@
 
         <!-- Marquee Text List (Rich Multi-Client Marquee Track) -->
         <div class="space-y-4 pt-4">
-            <!-- Row 1 (Track 1) -->
+            <!-- Row 1 (Track 1: Bergerak dari Kiri ke Kanan) -->
             <div class="relative w-full overflow-hidden marquee-mask">
-                <div class="marquee-track marquee-medium items-center gap-4 sm:gap-6">
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏛️</span> <span>Kementerian Komunikasi dan Digital RI (Komdigi)</span>
+                <div class="marquee-track marquee-ltr items-center gap-3 sm:gap-4">
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Kementerian Komunikasi dan Digital RI (Komdigi)
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🌏</span> <span>New Zealand BodyTalk Alliance (Selandia Baru)</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        New Zealand BodyTalk Alliance (Selandia Baru)
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🎓</span> <span>Universitas Sriwijaya (Unsri)</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Universitas Sriwijaya (Unsri)
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🎓</span> <span>Politeknik Akamigas Palembang</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Politeknik Akamigas Palembang
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏛️</span> <span>Dinas Koperasi Kab. Ogan Ilir</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Dinas Koperasi Kab. Ogan Ilir
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🌏</span> <span>Master Your Muscles (Kuala Lumpur, Malaysia)</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Master Your Muscles (Kuala Lumpur, Malaysia)
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏛️</span> <span>Pemerintah Desa Senuro Timur Ogan Ilir</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Pemerintah Desa Senuro Timur Ogan Ilir
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🎓</span> <span>Ikatan Guru Indonesia (IGI) Ogan Ilir</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Ikatan Guru Indonesia (IGI) Ogan Ilir
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏢</span> <span>PT. Duta Solusi Rumput Palembang</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        PT. Duta Solusi Rumput Palembang
                     </div>
 
                     <!-- Repeat for seamless loop -->
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏛️</span> <span>Kementerian Komunikasi dan Digital RI (Komdigi)</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Kementerian Komunikasi dan Digital RI (Komdigi)
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🌏</span> <span>New Zealand BodyTalk Alliance (Selandia Baru)</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        New Zealand BodyTalk Alliance (Selandia Baru)
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🎓</span> <span>Universitas Sriwijaya (Unsri)</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Universitas Sriwijaya (Unsri)
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Politeknik Akamigas Palembang
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Dinas Koperasi Kab. Ogan Ilir
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Master Your Muscles (Kuala Lumpur, Malaysia)
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Pemerintah Desa Senuro Timur Ogan Ilir
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Ikatan Guru Indonesia (IGI) Ogan Ilir
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        PT. Duta Solusi Rumput Palembang
                     </div>
                 </div>
             </div>
 
-            <!-- Row 2 (Track 2) -->
+            <!-- Row 2 (Track 2: Bergerak dari Kanan ke Kiri) -->
             <div class="relative w-full overflow-hidden marquee-mask">
-                <div class="marquee-track marquee-medium items-center gap-4 sm:gap-6" style="animation-direction: reverse;">
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏫</span> <span>Yayasan As-Salam Jayapura, Papua</span>
+                <div class="marquee-track marquee-rtl items-center gap-3 sm:gap-4">
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Yayasan As-Salam Jayapura, Papua
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏫</span> <span>SIT Robbani Ogan Ilir</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        SIT Robbani Ogan Ilir
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏢</span> <span>Dompet Sosial Robbani (DSRP)</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Dompet Sosial Robbani (DSRP)
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏫</span> <span>SMAIT Ishlahul Ummah Prabumulih</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        SMAIT Ishlahul Ummah Prabumulih
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏫</span> <span>SMAIT Raudhatul Ulum</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        SMAIT Raudhatul Ulum
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏫</span> <span>Yayasan Pendidikan Islam Ash-Shaff</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Yayasan Pendidikan Islam Ash-Shaff
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>📚</span> <span>Ralenta Learning Center</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Ralenta Learning Center
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏢</span> <span>Koperasi Pegawai Robbani</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Koperasi Pegawai Robbani
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>📚</span> <span>Penerbit Laya Aksara Jaya</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Penerbit Laya Aksara Jaya
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>📰</span> <span>Portal Berita Kabar32.com</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Portal Berita Kabar32.com
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🧁</span> <span>Iin's Cake (Katalog Kuliner & UMKM)</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Iin's Cake (Katalog Kuliner & UMKM)
                     </div>
 
                     <!-- Repeat for seamless loop -->
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏫</span> <span>Yayasan As-Salam Jayapura, Papua</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Yayasan As-Salam Jayapura, Papua
                     </div>
-                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
-                        <span>🏫</span> <span>SIT Robbani Ogan Ilir</span>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        SIT Robbani Ogan Ilir
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Dompet Sosial Robbani (DSRP)
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        SMAIT Ishlahul Ummah Prabumulih
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        SMAIT Raudhatul Ulum
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Yayasan Pendidikan Islam Ash-Shaff
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Ralenta Learning Center
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Koperasi Pegawai Robbani
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Penerbit Laya Aksara Jaya
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Portal Berita Kabar32.com
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        Iin's Cake (Katalog Kuliner & UMKM)
                     </div>
                 </div>
             </div>
@@ -1822,7 +1861,7 @@
             </p>
             
             <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 relative z-10">
-                <a href="https://wa.me/6285267774878" target="_blank" 
+                <a href="https://wa.me/6289695249089" target="_blank" 
                    style="background-color: #fe6000 !important; color: #ffffff !important;"
                    class="w-full sm:w-auto px-8 py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-2xl shadow-orange-500/50 hover:brightness-110 active:scale-95 transition-all inline-flex items-center justify-center gap-2 border border-orange-400">
                     <span style="color: #ffffff !important;">💬 Hubungi Tim Kami (WhatsApp)</span> &rarr;

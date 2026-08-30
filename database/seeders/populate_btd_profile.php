@@ -68,7 +68,7 @@ Setting::updateOrCreate(['key' => 'company_lkpp_url'], [
 
 Setting::updateOrCreate(['key' => 'contact_phone_wa_profile'], [
     'key' => 'contact_phone_wa_profile',
-    'value' => '0852 6777 4878',
+    'value' => '0896 9524 9089',
     'group' => 'contact',
     'label' => 'WhatsApp Resmi Profile',
     'type' => 'text'

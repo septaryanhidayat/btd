@@ -46,7 +46,7 @@
       "image": "{{ asset('images/Logo-BTD.png') }}",
       "@id": "https://berandadigital.net",
       "url": "https://berandadigital.net",
-      "telephone": "+6285267774878",
+      "telephone": "+6289695249089",
       "priceRange": "Rp 3.000.000 - Rp 10.000.000",
       "address": {
         "@@type": "PostalAddress",
@@ -298,8 +298,8 @@
                 <span class="inline sm:hidden text-slate-300 font-medium text-[11px] truncate">Software House & Solusi AI</span>
             </div>
             <div class="flex items-center gap-3 text-[11px] sm:text-xs font-bold shrink-0">
-                <a href="https://wa.me/6285267774878" target="_blank" class="text-amber-300 hover:text-amber-200 flex items-center gap-1.5 mono">
-                    <span>💬 <span class="hidden xs:inline">WhatsApp:</span> 0852 6777 4878</span>
+                <a href="https://wa.me/6289695249089" target="_blank" class="text-amber-300 hover:text-amber-200 flex items-center gap-1.5 mono">
+                    <span>💬 <span class="hidden xs:inline">WhatsApp:</span> 0896 9524 9089</span>
                 </a>
             </div>
         </div>
@@ -508,9 +508,9 @@
                     </div>
 
                     <div class="pt-1 space-y-1.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <a href="https://wa.me/6285267774878" target="_blank" class="flex items-center justify-center md:justify-start gap-2 hover:text-emerald-500 transition-colors">
+                        <a href="https://wa.me/6289695249089" target="_blank" class="flex items-center justify-center md:justify-start gap-2 hover:text-emerald-500 transition-colors">
                             <span class="text-emerald-500 font-bold">💬 WhatsApp:</span>
-                            <span class="mono font-bold" style="color: var(--text);">0852 6777 4878</span> / <span class="mono font-bold" style="color: var(--text);">0896 9524 9089</span>
+                            <span class="mono font-bold" style="color: var(--text);">0896 9524 9089</span>
                         </a>
                         <a href="mailto:info@berandadigital.net" class="flex items-center justify-center md:justify-start gap-2 hover:text-blue-500 transition-colors">
                             <span class="text-blue-500 font-bold">✉️ Email:</span>
@@ -554,7 +554,7 @@
                     <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
                         Diskusikan kebutuhan sistem Anda langsung dengan tim developer kami.
                     </p>
-                    <a href="https://wa.me/6285267774878" target="_blank" 
+                    <a href="https://wa.me/6289695249089" target="_blank" 
                        style="background-color: #fe6000 !important; color: #ffffff !important;"
                        class="w-full text-center px-4 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-md hover:scale-105 transition-all inline-block">
                         <span style="color: #ffffff !important;">Chat WhatsApp &rarr;</span>
@@ -592,10 +592,10 @@
         </button>
 
         <!-- Floating WhatsApp Launcher Button (Icon Only Circle) -->
-        <a href="https://wa.me/6285267774878?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem" 
+        <a href="https://wa.me/6289695249089?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem" 
            target="_blank" 
            aria-label="Chat WhatsApp Resmi"
-           title="Chat WhatsApp: 0852 6777 4878"
+           title="Chat WhatsApp: 0896 9524 9089"
            class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-2xl shadow-emerald-500/50 hover:scale-110 active:scale-95 transition-all">
             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
