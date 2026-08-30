@@ -54,73 +54,110 @@
         </div>
     </div>
 
-    <!-- Stats Bento Cards: 7 Columns with Centered Icons and Text (Super Compact & Clean) -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-3.5">
+    <!-- Stats Bento Cards: Professional Enterprise SVG Cards (Left-Aligned Desktop, Centered Mobile) -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
         
         <!-- 1. Projects -->
-        <a href="{{ route('admin.projects.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs hover:border-[#3E5CE7] hover:shadow-sm transition-all flex flex-col items-center justify-center text-center group block">
-            <div class="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-base shadow-2xs group-hover:scale-105 transition-transform mb-2">
-                📁
+        <a href="{{ route('admin.projects.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-[#3E5CE7] hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/60 text-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                </div>
+                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-blue-50 text-blue-600 text-[10px] font-extrabold uppercase tracking-wider">Total</span>
             </div>
-            <div class="text-xl sm:text-2xl font-black text-[#071330] mono leading-tight">{{ $projectCount }}</div>
-            <div class="text-[11px] text-slate-500 font-bold mt-0.5 truncate w-full">Portofolio</div>
+            <div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $projectCount }}</div>
+                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Portofolio Proyek</div>
+            </div>
         </a>
 
         <!-- 2. Products -->
-        <a href="{{ route('admin.products.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs hover:border-[#fe6000] hover:shadow-sm transition-all flex flex-col items-center justify-center text-center group block">
-            <div class="w-10 h-10 rounded-xl bg-[#fe6000] text-white flex items-center justify-center font-bold text-base shadow-2xs group-hover:scale-105 transition-transform mb-2">
-                🛒
+        <a href="{{ route('admin.products.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-[#fe6000] hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
+                <div class="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200/60 text-[#fe6000] flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                </div>
+                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-orange-50 text-[#fe6000] text-[10px] font-extrabold uppercase tracking-wider">Store</span>
             </div>
-            <div class="text-xl sm:text-2xl font-black text-[#071330] mono leading-tight">{{ $productCount }}</div>
-            <div class="text-[11px] text-slate-500 font-bold mt-0.5 truncate w-full">Produk Digital</div>
+            <div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $productCount }}</div>
+                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Produk Digital</div>
+            </div>
         </a>
 
         <!-- 3. Pelatihan IT -->
-        <a href="{{ route('admin.trainings.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs hover:border-purple-600 hover:shadow-sm transition-all flex flex-col items-center justify-center text-center group block">
-            <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold text-base shadow-2xs group-hover:scale-105 transition-transform mb-2">
-                🎓
+        <a href="{{ route('admin.trainings.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-purple-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200/60 text-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                </div>
+                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-purple-50 text-purple-600 text-[10px] font-extrabold uppercase tracking-wider">Modul</span>
             </div>
-            <div class="text-xl sm:text-2xl font-black text-[#071330] mono leading-tight">{{ $trainingCount }}</div>
-            <div class="text-[11px] text-slate-500 font-bold mt-0.5 truncate w-full">Pelatihan IT</div>
+            <div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $trainingCount }}</div>
+                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Pelatihan IT</div>
+            </div>
         </a>
 
         <!-- 4. Dokumentasi -->
-        <a href="{{ route('admin.galleries.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs hover:border-indigo-600 hover:shadow-sm transition-all flex flex-col items-center justify-center text-center group block">
-            <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-base shadow-2xs group-hover:scale-105 transition-transform mb-2">
-                🖼️
+        <a href="{{ route('admin.galleries.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-indigo-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
+                <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200/60 text-indigo-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-600 text-[10px] font-extrabold uppercase tracking-wider">Galeri</span>
             </div>
-            <div class="text-xl sm:text-2xl font-black text-[#071330] mono leading-tight">{{ $galleryCount }}</div>
-            <div class="text-[11px] text-slate-500 font-bold mt-0.5 truncate w-full">Dokumentasi</div>
+            <div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $galleryCount }}</div>
+                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Dokumentasi</div>
+            </div>
         </a>
 
         <!-- 5. Artikel Blog -->
-        <a href="{{ route('admin.posts.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs hover:border-cyan-600 hover:shadow-sm transition-all flex flex-col items-center justify-center text-center group block">
-            <div class="w-10 h-10 rounded-xl bg-cyan-600 text-white flex items-center justify-center font-bold text-base shadow-2xs group-hover:scale-105 transition-transform mb-2">
-                📰
+        <a href="{{ route('admin.posts.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-cyan-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200/60 text-cyan-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                </div>
+                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-cyan-50 text-cyan-600 text-[10px] font-extrabold uppercase tracking-wider">Terbit</span>
             </div>
-            <div class="text-xl sm:text-2xl font-black text-[#071330] mono leading-tight">{{ $postCount }}</div>
-            <div class="text-[11px] text-slate-500 font-bold mt-0.5 truncate w-full">Artikel Terbit</div>
+            <div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $postCount }}</div>
+                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Artikel Blog</div>
+            </div>
         </a>
 
         <!-- 6. Inquiries / Pesan Masuk -->
-        <a href="{{ route('admin.inquiries.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs hover:border-rose-600 hover:shadow-sm transition-all flex flex-col items-center justify-center text-center group block">
-            <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-bold text-base shadow-2xs group-hover:scale-105 transition-transform mb-2 relative">
-                <span>✉️</span>
-                @if($unreadInquiryCount > 0)
-                    <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-amber-400 border-2 border-white animate-pulse"></span>
-                @endif
+        <a href="{{ route('admin.inquiries.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-rose-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
+                <div class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200/60 text-rose-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0 relative">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    @if($unreadInquiryCount > 0)
+                        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-rose-500 border-2 border-white animate-pulse"></span>
+                    @endif
+                </div>
+                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md {{ $unreadInquiryCount > 0 ? 'bg-rose-500 text-white' : 'bg-rose-50 text-rose-600' }} text-[10px] font-extrabold uppercase tracking-wider">
+                    {{ $unreadInquiryCount > 0 ? $unreadInquiryCount . ' Baru' : 'Inbox' }}
+                </span>
             </div>
-            <div class="text-xl sm:text-2xl font-black text-[#071330] mono leading-tight">{{ $inquiryCount }}</div>
-            <div class="text-[11px] text-slate-500 font-bold mt-0.5 truncate w-full">Pesan Masuk</div>
+            <div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $inquiryCount }}</div>
+                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Pesan Masuk</div>
+            </div>
         </a>
 
         <!-- 7. INVOICE DICETAK -->
-        <a href="{{ route('admin.invoices.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border border-emerald-300 shadow-2xs hover:border-emerald-600 hover:shadow-sm transition-all flex flex-col items-center justify-center text-center group block col-span-2 sm:col-span-2 lg:col-span-1">
-            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-base shadow-2xs group-hover:scale-105 transition-transform mb-2">
-                🧾
+        <a href="{{ route('admin.invoices.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-emerald-300 shadow-2xs hover:border-emerald-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left col-span-2 sm:col-span-2 lg:col-span-1">
+            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/80 text-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-extrabold uppercase tracking-wider">{{ $paidInvoiceCount }} Paid</span>
             </div>
-            <div class="text-xl sm:text-2xl font-black text-emerald-700 mono leading-tight">{{ $invoiceCount }}</div>
-            <div class="text-[11px] text-slate-600 font-bold mt-0.5 truncate w-full">Invoice ({{ $paidInvoiceCount }} Paid)</div>
+            <div>
+                <div class="text-2xl sm:text-3xl font-black text-emerald-700 mono tracking-tight leading-none">{{ $invoiceCount }}</div>
+                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Faktur Invoice</div>
+            </div>
         </a>
 
     </div>

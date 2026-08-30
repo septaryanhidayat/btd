@@ -242,8 +242,8 @@
     <link rel="stylesheet" href="{{ asset('build/assets/app-DI5lHB4f.css') }}">
     <link rel="stylesheet" href="/build/assets/app-DI5lHB4f.css">
     
-    <!-- Tailwind Play CDN Fallback with Custom Palette & Typography (Deferred for non-blocking paint) -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <!-- Tailwind Play CDN Fallback with Custom Palette & Typography -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
