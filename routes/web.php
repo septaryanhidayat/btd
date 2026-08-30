@@ -57,11 +57,11 @@ Route::get('/sitemap.xml', function () {
 
 // Admin Authentication Routes
 Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
-Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.login.submit');
+Route::post('/admin/login', [AuthController::class, 'login'])->middleware('throttle:5,1')->name('admin.login.submit');
 Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
 
 // Protected Admin Dashboard & Management Routes
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     
     // Website Settings & Theme Customizer (Color Picker, Hero, Bio, Contact)

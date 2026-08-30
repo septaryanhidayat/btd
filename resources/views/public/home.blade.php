@@ -159,8 +159,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
         <!-- Section Title Header -->
-        <div class="space-y-2 text-left reveal-on-scroll">
-            <div class="flex items-center gap-3">
+        <div class="space-y-2 text-center sm:text-left reveal-on-scroll">
+            <div class="flex items-center justify-center sm:justify-start gap-3">
                 <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
                 <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">{{ $settings['services_badge'] ?? 'SERVICE' }}</span>
             </div>
@@ -1141,19 +1141,20 @@
 
         <!-- Standard Inclusions Banner (Always Included Free) -->
         <div style="background-color: #07153f !important; color: #ffffff !important;"
-             class="rounded-2xl p-4 sm:p-5 shadow-xl border border-slate-800 text-center max-w-4xl mx-auto space-y-2.5 reveal-on-scroll">
+             class="rounded-2xl p-4 sm:p-6 shadow-xl border border-slate-800 text-center max-w-4xl mx-auto space-y-3 reveal-on-scroll">
             <div class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
-                <span>✨</span> <span>SEMUA PAKET SUDAH OTOMATIS TERMASUK FASILITAS LENGKAP (FREE):</span>
+                <span>✨</span> <span>SEMUA PAKET SUDAH TERMASUK FASILITAS (FREE):</span>
             </div>
-            <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-semibold">
-                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🌐 Free Domain 1 Tahun</span>
-                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">⚡ Free Cloud SSD Hosting</span>
-                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔒 Free SSL Let's Encrypt</span>
-                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🎨 Free Desain Logo Sistem</span>
-                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔄 Revisi Sepuasnya Sampai Sesuai Keinginan</span>
-                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">📱 Responsif Semua Device</span>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-semibold">
+                <span class="px-3 py-1.5 rounded-full bg-white/10 text-white border border-white/15 text-center">🌐 Free Domain 1 Tahun</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/10 text-white border border-white/15 text-center">⚡ Free Cloud SSD Hosting</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/10 text-white border border-white/15 text-center">🔒 Free SSL Let's Encrypt</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/10 text-white border border-white/15 text-center">🎨 Free Desain Logo Sistem</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/10 text-white border border-white/15 text-center">🔄 Revisi Sepuasnya</span>
+                <span class="px-3 py-1.5 rounded-full bg-white/10 text-white border border-white/15 text-center">📱 Responsif Semua Device</span>
             </div>
         </div>
+
 
         <!-- Calculator Grid Layout -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -1399,25 +1400,25 @@
                     <div class="space-y-2 text-xs">
                         <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 block">Rincian Spesifikasi Terpilih:</span>
                         <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-2 text-slate-700 dark:text-slate-200">
-                            <div class="flex items-start justify-between gap-2">
-                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Platform:</span>
-                                <strong class="text-right text-[#07153f] dark:text-white" x-text="platformName"></strong>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
+                                <span class="text-slate-500 dark:text-slate-400 shrink-0 text-[10px] sm:text-xs">Platform:</span>
+                                <strong class="text-right text-[10px] sm:text-xs text-[#07153f] dark:text-white" x-text="platformName"></strong>
                             </div>
-                            <div class="flex items-start justify-between gap-2">
-                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Domain & Server SSD:</span>
-                                <span class="text-right font-bold text-emerald-600 dark:text-emerald-400">Included FREE (1 Tahun)</span>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
+                                <span class="text-slate-500 dark:text-slate-400 shrink-0 text-[10px] sm:text-xs">Domain & Server SSD:</span>
+                                <span class="text-right text-[10px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">Included FREE (1 Tahun)</span>
                             </div>
-                            <div class="flex items-start justify-between gap-2">
-                                <span class="text-slate-500 dark:text-slate-400 shrink-0">SSL Let's Encrypt:</span>
-                                <span class="text-right font-bold text-emerald-600 dark:text-emerald-400">Included FREE</span>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
+                                <span class="text-slate-500 dark:text-slate-400 shrink-0 text-[10px] sm:text-xs">SSL Let's Encrypt:</span>
+                                <span class="text-right text-[10px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">Included FREE</span>
                             </div>
-                            <div class="flex items-start justify-between gap-2">
-                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Desain Logo & Revisi:</span>
-                                <span class="text-right font-bold text-emerald-600 dark:text-emerald-400">Sepuasnya (Included FREE)</span>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
+                                <span class="text-slate-500 dark:text-slate-400 shrink-0 text-[10px] sm:text-xs">Desain Logo & Revisi:</span>
+                                <span class="text-right text-[10px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">Sepuasnya (FREE)</span>
                             </div>
-                            <div class="flex items-start justify-between gap-2">
-                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Timeline:</span>
-                                <span class="text-right text-[#07153f] dark:text-white" x-text="timelineName"></span>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
+                                <span class="text-slate-500 dark:text-slate-400 shrink-0 text-[10px] sm:text-xs">Timeline:</span>
+                                <span class="text-right text-[10px] sm:text-xs text-[#07153f] dark:text-white" x-text="timelineName"></span>
                             </div>
                             <div x-show="selectedAddonsSummary.length > 0" class="pt-2 border-t border-slate-200/60 dark:border-slate-700 space-y-1">
                                 <span class="text-slate-500 dark:text-slate-400 block">Fitur Tambahan:</span>
@@ -1474,26 +1475,26 @@
     <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-100/50 dark:bg-blue-950/30 rounded-full blur-2xl pointer-events-none anim-logo-object"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             
-            <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-100">
-                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_clients'] ?? '150+' }}</div>
-                <div class="text-xs font-bold text-[#07153f] dark:text-slate-200">Happy Clients</div>
+            <div class="p-4 sm:p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-100">
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_clients'] ?? '150+' }}</div>
+                <div class="text-[10px] sm:text-xs font-bold text-[#07153f] dark:text-slate-200">Happy Clients</div>
             </div>
 
-            <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-150">
-                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_projects'] ?? '99+' }}</div>
-                <div class="text-xs font-bold text-[#07153f] dark:text-slate-200">Projects Done</div>
+            <div class="p-4 sm:p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-150">
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_projects'] ?? '99+' }}</div>
+                <div class="text-[10px] sm:text-xs font-bold text-[#07153f] dark:text-slate-200">Projects Done</div>
             </div>
 
-            <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-200">
-                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_reviews'] ?? '85+' }}</div>
-                <div class="text-xs font-bold text-[#07153f] dark:text-slate-200">Top Reviews & Event</div>
+            <div class="p-4 sm:p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-200">
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_reviews'] ?? '85+' }}</div>
+                <div class="text-[10px] sm:text-xs font-bold text-[#07153f] dark:text-slate-200">Top Reviews & Event</div>
             </div>
 
-            <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-250">
-                <div class="text-3xl sm:text-4xl font-extrabold text-[#fe6000] mono">{{ $siteSettings['stats_experience'] ?? '10+' }}</div>
-                <div class="text-xs font-bold text-[#07153f] dark:text-slate-200">Years Experience</div>
+            <div class="p-4 sm:p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-250">
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#fe6000] mono">{{ $siteSettings['stats_experience'] ?? '10+' }}</div>
+                <div class="text-[10px] sm:text-xs font-bold text-[#07153f] dark:text-slate-200">Years Experience</div>
             </div>
 
         </div>

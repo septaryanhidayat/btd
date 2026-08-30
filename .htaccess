@@ -25,10 +25,57 @@ DirectoryIndex index.php
     RewriteEngine On
     RewriteBase /
 
-    # Security: Protect sensitive hidden files
-    <FilesMatch "^\.env|\.git|\.cpanel\.yml|composer\.(json|lock)|package(-lock)?\.json">
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 1: Block Access to Sensitive Files
+    # ══════════════════════════════════════════════════════════
+    <FilesMatch "\.(env|git|cpanel\.yml|sql|log|bak|old|swp|dist|orig|save|tmp|DS_Store)$">
         Require all denied
     </FilesMatch>
+
+    <FilesMatch "^(composer\.(json|lock)|package(-lock)?\.json|phpunit\.xml|\.gitignore|\.gitattributes|\.editorconfig|\.npmrc|artisan|berandadigital\.sql|phpinfo\.php|design\.md|README\.md)$">
+        Require all denied
+    </FilesMatch>
+
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 2: Block Direct Access to Sensitive Dirs
+    # ══════════════════════════════════════════════════════════
+    RewriteRule ^storage(/|$) - [F,L]
+    RewriteRule ^database(/|$) - [F,L]
+    RewriteRule ^bootstrap(/|$) - [F,L]
+    RewriteRule ^vendor(/|$) - [F,L]
+    RewriteRule ^config(/|$) - [F,L]
+    RewriteRule ^resources(/|$) - [F,L]
+    RewriteRule ^app(/|$) - [F,L]
+    RewriteRule ^routes(/|$) - [F,L]
+    RewriteRule ^tests(/|$) - [F,L]
+    RewriteRule ^node_modules(/|$) - [F,L]
+
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 3: Block Common Attack Patterns
+    # ══════════════════════════════════════════════════════════
+    # Block path traversal attempts
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.) [NC]
+    RewriteRule .* - [F,L]
+
+    # Block null byte injection
+    RewriteCond %{QUERY_STRING} %00 [NC]
+    RewriteRule .* - [F,L]
+
+    # Block common exploit scanners
+    RewriteCond %{REQUEST_URI} (wp-admin|wp-login|wp-content|xmlrpc\.php) [NC]
+    RewriteRule .* - [R=404,L]
+
+    # ══════════════════════════════════════════════════════════
+    # SECURITY LAYER 4: Apache Security Headers (Fallback)
+    # ══════════════════════════════════════════════════════════
+    <IfModule mod_headers.c>
+        Header always set X-Frame-Options "SAMEORIGIN"
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set X-XSS-Protection "1; mode=block"
+        Header always set Referrer-Policy "strict-origin-when-cross-origin"
+        Header always unset X-Powered-By
+        Header always unset Server
+    </IfModule>
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
@@ -53,3 +100,8 @@ DirectoryIndex index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# ----------------------------------------------------------------------
+# 3. Disable Server Signature & Directory Listing
+# ----------------------------------------------------------------------
+ServerSignature Off

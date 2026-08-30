@@ -47,7 +47,7 @@
       "@@type": "ProfessionalService",
       "name": "CV. Beranda Teknologi Digital",
       "image": "{{ asset('images/Logo-BTD.png') }}",
-      "@id": "https://berandadigital.net",
+      "@@id": "https://berandadigital.net",
       "url": "https://berandadigital.net",
       "telephone": "+6289695249089",
       "priceRange": "Rp 3.000.000 - Rp 10.000.000",
@@ -240,7 +240,6 @@
 
     <!-- Production Compiled Stylesheet & Vite Assets -->
     <link rel="stylesheet" href="{{ asset('build/assets/app-DI5lHB4f.css') }}">
-    <link rel="stylesheet" href="/build/assets/app-DI5lHB4f.css">
     
     <!-- Tailwind Play CDN Fallback with Custom Palette & Typography -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -476,103 +475,152 @@
         @yield('content')
     </main>
 
-    <!-- Permanent Professional Responsive Footer (Centered on Mobile, Multi-Column on Desktop) -->
-    <footer class="border-t pt-14 pb-10 transition-colors duration-300" style="background-color: var(--bg-deep); border-color: var(--border);">
+    <!-- Professional Responsive Footer -->
+    <footer class="border-t pt-16 pb-8 transition-colors duration-300" style="background-color: var(--bg-deep); border-color: var(--border);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Main Content Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-10 border-b text-center md:text-left" style="border-color: var(--border);">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 text-center md:text-left">
                 
-                <!-- Column 1: Brand Info (2 columns on lg) -->
-                <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
+                <!-- Column 1: Brand Info (5 cols on lg) -->
+                <div class="lg:col-span-5 space-y-5 flex flex-col items-center md:items-start">
                     <a href="{{ route('home') }}" class="inline-block py-1 group">
-                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-light-mode block dark:hidden h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-xs hover:scale-105 transition-transform" />
-                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-dark-mode hidden dark:block h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-md hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="200" height="56" loading="lazy" class="logo-light-mode block dark:hidden h-12 sm:h-14 w-auto object-contain mx-auto md:mx-0 drop-shadow-xs hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="200" height="56" loading="lazy" class="logo-dark-mode hidden dark:block h-12 sm:h-14 w-auto object-contain mx-auto md:mx-0 drop-shadow-md hover:scale-105 transition-transform" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
-                        <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> &bull; Digital Agency & Software House terpercaya penyedia solusi Website Enterprise, Mobile Apps (Android/iOS), Sistem Informasi Instansi, Virtual Reality, dan IT Training.
+                        <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya. Solusi Website Enterprise, Mobile Apps, Sistem Informasi, dan IT Training.
                     </p>
                     
                     <!-- Legalitas Singkat Badan Usaha -->
-                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-[11px] space-y-1 w-full max-w-sm text-left">
-                        <div class="font-bold text-[#07153f] dark:text-white flex items-center gap-1.5">
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-[11px] space-y-2 w-full max-w-sm text-left">
+                        <div class="font-bold text-[#07153f] dark:text-white flex items-center gap-2 text-xs">
                             <span>🏛️</span> <span>Badan Usaha Resmi Berbadan Hukum</span>
                         </div>
-                        <div class="text-slate-600 dark:text-slate-300">
-                            <strong>SK Kemenkumham:</strong> AHU-0003819-AH.01.14 Th 2022
+                        <div class="grid grid-cols-1 gap-1.5 text-slate-600 dark:text-slate-300">
+                            <div><strong class="text-[#07153f] dark:text-slate-200">SK Kemenkumham:</strong> AHU-0003819-AH.01.14 Th 2022</div>
+                            <div><strong class="text-[#07153f] dark:text-slate-200">NPWP:</strong> 63.100.018.9-312.000</div>
                         </div>
-                        <div class="text-slate-600 dark:text-slate-300">
-                            <strong>NPWP:</strong> 63.100.018.9-312.000
-                        </div>
-                        <div class="pt-1">
-                            <span class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-bold">
-                                <span>✓ Terdaftar di E-Katalog LKPP RI</span>
+                        <div class="pt-1 border-t border-slate-200/60 dark:border-slate-700/60">
+                            <span class="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span>Terdaftar di E-Katalog LKPP RI</span>
                             </span>
                         </div>
                     </div>
 
-                    <div class="pt-1 space-y-1.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <a href="https://wa.me/6289695249089" target="_blank" class="flex items-center justify-center md:justify-start gap-2 hover:text-emerald-500 transition-colors">
-                            <span class="text-emerald-500 font-bold">💬 WhatsApp:</span>
-                            <span class="mono font-bold" style="color: var(--text);">0896 9524 9089</span>
+                    <!-- Contact Info -->
+                    <div class="space-y-2.5 text-xs font-semibold w-full max-w-sm" style="color: var(--text-muted);">
+                        <a href="https://wa.me/6289695249089" target="_blank" class="flex items-center justify-center md:justify-start gap-2.5 hover:text-emerald-500 transition-colors p-2 rounded-lg hover:bg-emerald-50/50 dark:hover:bg-emerald-950/30">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm shrink-0">💬</span>
+                            <div class="text-left">
+                                <div class="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500">WhatsApp</div>
+                                <div class="mono font-bold" style="color: var(--text);">0896 9524 9089</div>
+                            </div>
                         </a>
-                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}" class="flex items-center justify-center md:justify-start gap-2 hover:text-blue-500 transition-colors">
-                            <span class="text-blue-500 font-bold">✉️ Email:</span>
-                            <span class="font-bold" style="color: var(--text);">{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}</span>
+                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}" class="flex items-center justify-center md:justify-start gap-2.5 hover:text-blue-500 transition-colors p-2 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/30">
+                            <span class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm shrink-0">✉️</span>
+                            <div class="text-left">
+                                <div class="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500">Email</div>
+                                <div class="font-bold" style="color: var(--text);">{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}</div>
+                            </div>
                         </a>
-                        <div class="flex items-start justify-center md:justify-start gap-2 text-left" style="color: var(--text-dim);">
-                            <span class="shrink-0 mt-0.5">📍</span>
-                            <span>{{ $siteSettings['contact_address'] ?? 'Jl. Sarjana Kel. Timbangan Blok A No. 15, Indralaya Utara, Ogan Ilir, Sumatera Selatan' }}</span>
+                        <div class="flex items-center justify-center md:justify-start gap-2.5 p-2 rounded-lg">
+                            <span class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 flex items-center justify-center text-sm shrink-0">📍</span>
+                            <div class="text-left text-[11px] leading-relaxed" style="color: var(--text-dim);">
+                                {{ $siteSettings['contact_address'] ?? 'Jl. Sarjana Kel. Timbangan Blok A No. 15, Indralaya Utara, Ogan Ilir, Sumatera Selatan' }}
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Column 2: Layanan Utama -->
-                <div class="space-y-3 flex flex-col items-center md:items-start">
-                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400">Layanan Utama</h4>
-                    <ul class="space-y-2 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors">Web App Enterprise & Portal</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors">Mobile App Android & iOS (Flutter)</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors">Custom AI Chatbot & RAG Engine</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors">Website Sekolah & Digital Desa</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors">Maintenance Server & SSL</a></li>
+                <!-- Column 2: Layanan Utama (2 cols on lg) -->
+                <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
+                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
+                        <span class="w-5 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
+                        Layanan Utama
+                    </h4>
+                    <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Web App Enterprise & Portal</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Mobile App Android & iOS</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Custom AI Chatbot & RAG</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Website Sekolah & Desa</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Maintenance Server & SSL</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Navigasi Cepat -->
-                <div class="space-y-3 flex flex-col items-center md:items-start">
-                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400">Navigasi</h4>
-                    <ul class="space-y-2 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('home') }}" class="hover:text-[#3E5CE7] transition-colors">Beranda</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors">Layanan</a></li>
-                        <li><a href="{{ route('projects.index') }}" class="hover:text-[#3E5CE7] transition-colors">Portofolio Proyek</a></li>
-                        <li><a href="{{ route('products.index') }}" class="hover:text-[#3E5CE7] transition-colors">Produk Digital</a></li>
-                        <li><a href="{{ route('trainer.index') }}" class="hover:text-[#3E5CE7] transition-colors">Trainer & Galeri</a></li>
-                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#3E5CE7] transition-colors">Informasi & Berita</a></li>
+                <!-- Column 3: Navigasi Cepat (2 cols on lg) -->
+                <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
+                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
+                        <span class="w-5 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
+                        Navigasi
+                    </h4>
+                    <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
+                        <li><a href="{{ route('home') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Beranda</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Layanan</a></li>
+                        <li><a href="{{ route('projects.index') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Portofolio Proyek</a></li>
+                        <li><a href="{{ route('products.index') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Produk Digital</a></li>
+                        <li><a href="{{ route('trainer.index') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Trainer & Galeri</a></li>
+                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Informasi & Berita</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 4: Konsultasi & Estimasi -->
-                <div class="space-y-3 flex flex-col items-center md:items-start">
-                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#fe6000]">Konsultasi Cepat</h4>
-                    <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
-                        Diskusikan kebutuhan sistem Anda langsung dengan tim developer kami.
+                <!-- Column 4: Konsultasi & Social (3 cols on lg) -->
+                <div class="lg:col-span-3 space-y-5 flex flex-col items-center md:items-start">
+                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#fe6000] flex items-center gap-2">
+                        <span class="w-5 h-0.5 bg-[#fe6000] rounded-full hidden md:block"></span>
+                        Mulai Proyek
+                    </h4>
+                    <p class="text-xs leading-relaxed max-w-xs" style="color: var(--text-muted);">
+                        Diskusikan kebutuhan sistem Anda langsung dengan tim developer kami. Konsultasi gratis tanpa komitmen.
                     </p>
-                    <a href="https://wa.me/6289695249089" target="_blank" 
-                       style="background-color: #fe6000 !important; color: #ffffff !important;"
-                       class="w-full text-center px-4 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-md hover:scale-105 transition-all inline-block">
-                        <span style="color: #ffffff !important;">Chat WhatsApp &rarr;</span>
-                    </a>
-                    <a href="{{ route('contact') }}" class="w-full text-center px-4 py-2.5 rounded-xl surface hover:border-[#3E5CE7] text-xs font-bold transition-all inline-block" style="color: var(--text);">
-                        Kalkulator Biaya
-                    </a>
+                    <div class="w-full max-w-xs space-y-2.5">
+                        <a href="https://wa.me/6289695249089" target="_blank" 
+                           style="background-color: #fe6000 !important; color: #ffffff !important;"
+                           class="w-full text-center px-5 py-3 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-[1.02] transition-all block">
+                            <span style="color: #ffffff !important;">💬 Chat WhatsApp Sekarang</span>
+                        </a>
+                        <a href="{{ route('contact') }}" class="w-full text-center px-5 py-3 rounded-xl surface hover:border-[#3E5CE7] text-xs font-bold transition-all block" style="color: var(--text);">
+                            🧮 Kalkulator Estimasi Biaya
+                        </a>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="pt-2 space-y-2.5 w-full max-w-xs">
+                        <span class="text-[10px] font-bold uppercase tracking-widest block" style="color: var(--text-dim);">Ikuti Kami</span>
+                        <div class="flex items-center justify-center md:justify-start gap-2.5">
+                            <a href="https://www.instagram.com/bteknologi_digital" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram @bteknologi_digital"
+                               class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 text-white flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 transition-all">
+                                <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            </a>
+                            <a href="https://linkedin.com/company/berandadigital" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn Beranda Digital"
+                               class="w-10 h-10 rounded-xl bg-[#0A66C2] text-white flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all">
+                                <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </a>
+                            <a href="https://github.com/septaryanhidayat/btd" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub Repository"
+                               class="w-10 h-10 rounded-xl bg-slate-800 dark:bg-slate-700 text-white flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-slate-500/30 transition-all">
+                                <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            </a>
+                            <a href="https://www.youtube.com/@berandadigital" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube Beranda Digital"
+                               class="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-red-500/30 transition-all">
+                                <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-            <!-- Bottom Copyright (Clean & Linked to Website) -->
-            <div class="pt-6 text-center text-xs font-medium" style="color: var(--text-dim);">
-                <p>&copy; {{ date('Y') }} <a href="{{ route('home') }}" class="font-bold hover:underline" style="color: var(--text);">Beranda Teknologi Digital</a>. All Rights Reserved.</p>
+            <!-- Gradient Divider -->
+            <div class="h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent my-6"></div>
+
+            <!-- Bottom Copyright -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium" style="color: var(--text-dim);">
+                <p>&copy; {{ date('Y') }} <a href="{{ route('home') }}" class="font-bold hover:underline hover:text-[#3E5CE7] transition-colors" style="color: var(--text);">CV. Beranda Teknologi Digital</a>. All Rights Reserved.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 text-[10px] font-bold tracking-wider" style="color: var(--text-dim);">🇮🇩 MADE IN INDONESIA</span>
+                    <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/60 dark:border-emerald-800/60 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold tracking-wider">🔒 SSL SECURED</span>
+                </div>
             </div>
         </div>
     </footer>
