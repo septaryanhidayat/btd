@@ -1,14 +1,193 @@
--- Database Dump for berandad_db_btd (cPanel)
--- Generated on: 2026-08-30 13:32:40
+-- ========================================================
+-- Full Database Dump for berandad_db_btd (cPanel / phpMyAdmin)
+-- Generated on: 2026-08-30 13:36:48
+-- ========================================================
+
 SET SQL_MODE = 'NO_AUTO_VALUE_ON_ZERO';
 START TRANSACTION;
 SET time_zone = '+00:00';
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- --------------------------------------------------------
--- Data for table `categories`
+-- Structure & Data for table `migrations`
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-TRUNCATE TABLE `categories`;
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '0001_01_01_000000_create_users_table', 1),
+(2, '0001_01_01_000001_create_cache_table', 1),
+(3, '0001_01_01_000002_create_jobs_table', 1),
+(4, '0001_01_01_000003_create_beranda_tables', 1),
+(5, '2026_08_19_000004_create_products_trainings_galleries_table', 1),
+(6, '2026_08_30_000005_add_slider_and_details_to_projects_table', 2);
+
+-- --------------------------------------------------------
+-- Structure & Data for table `users`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Septa Ryan Hidayat, S.Kom', 'admin@berandadigital.net', NULL, '$2y$12$unVblkDB1bH3PS.nSBaL9u4JvOtzXb4fDbohI3bVrZqKkvBNqVNeu', NULL, '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
+(2, 'Administrator Beranda Digital', 'info@berandadigital.net', NULL, '$2y$12$NB250se90qzUykOLnG//GuRy006OXsSY0rTuU.Hb/KnJz98jNDitO', NULL, '2026-08-30 13:24:51', '2026-08-30 13:24:51');
+
+-- --------------------------------------------------------
+-- Structure & Data for table `password_reset_tokens`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `password_reset_tokens`;
+CREATE TABLE `password_reset_tokens` (
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- Structure & Data for table `sessions`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `sessions`;
+CREATE TABLE `sessions` (
+  `id` varchar(255) NOT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `ip_address` varchar(45) DEFAULT NULL,
+  `user_agent` text DEFAULT NULL,
+  `payload` longtext NOT NULL,
+  `last_activity` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sessions_user_id_index` (`user_id`),
+  KEY `sessions_last_activity_index` (`last_activity`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('c3ptBNRDZvhjzFxnRHWGvlVx4nQ18txmug50yS3W', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Herd/1.30.0 Chrome/120.0.6099.291 Electron/28.2.5 Safari/537.36', 'eyJfdG9rZW4iOiJqajg2amxqdG1aZDZQOGFrazFEZjZXUllBMzZIT1ppTEY4dU5OT0NLIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcLz9oZXJkPXByZXZpZXciLCJyb3V0ZSI6ImhvbWUifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788090197),
+('hAQYd1ZCUk71vUwpqk0M5xD9vGyuFXLi4Hd1UIum', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Avast/150.0.0.0', 'eyJfdG9rZW4iOiJleW9tMVZReGYwdnFwNlh0TU5Eb2dCQzUwRXZ2SXA0OFR4RkhReXV3IiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3QiLCJyb3V0ZSI6ImhvbWUifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788090202),
+('wHgSSVAQgg4QXqZEYnfbArf2QQTFtw0B7JC0pLGX', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36', 'eyJfdG9rZW4iOiJQWFQ0S0tma2FMRUJRVG9XUW1VTVdYTnYxNVkza0NBV2NhNjNvS1VTIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3QiLCJyb3V0ZSI6ImhvbWUifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788096497),
+('IDXFWzhASh8z0kSDaeGsNSxnGdL0MY0X6QGcfhkn', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.22621.6133', 'eyJfdG9rZW4iOiJqSVc2UTBNVXh6M1loWGJHMnRJNnpjM1dUODhrQ0prQ3I0MnhKMHZ3IiwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788091051),
+('O2h3cOkSSfTZYFsA1oJLHYOQD2s43KQ8AEKCYOBu', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.22621.6133', 'eyJfdG9rZW4iOiJDTlJJY3NrWUdZcTN0NnZHTnh3cXVnOGkySjdRWUhPWmt0Y25WNVpFIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3QiLCJyb3V0ZSI6ImhvbWUifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788091092),
+('5rwKczfR9v42ZFH702dNQlKAMQ4F1rTiDGvMnEoJ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.22621.6133', 'eyJfdG9rZW4iOiJDd3A1TGNtanpBZXNjNFk4bG5yWmdWbElzOW5Dd0lJVW5vbHoybWI3IiwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788091498),
+('w1OPBKykyKa2Kcd6OGkE86z5RtscqGJia7i7qpiH', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJyZUpzRG9zZG5wUXZTRkZSOHM4N3dZV05rdmxoWnZVNUU3eG5ZbEJPIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3QiLCJyb3V0ZSI6ImhvbWUifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788091979),
+('cmboedz7cKGI2Y1phmtKH6ZHV14yeiBHYypRpqGp', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJMYTFqY3lBMFY1QmJUanFOZDlDaHBaUHIwOVFXR3dxY3Qwa3ZmTG9qIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3NlcnZpY2VzIiwicm91dGUiOiJzZXJ2aWNlcyJ9LCJfZmxhc2giOnsib2xkIjpbXSwibmV3IjpbXX19', 1788091981),
+('czNfdjuGQrjmjd4vzIFVqq4XeTiypXijuPgciHq9', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiI4MlR3S1JZUUVGd0VMdThyNHloVUJhWXQ4dHMzQXhUaFhvYklkdEE4IiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3BvcnRmb2xpbyIsInJvdXRlIjoicHJvamVjdHMuaW5kZXgifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788091982),
+('rhFA86jH6lQQr8evYe4Q9lv0EI3E9X7bAbPQTr3H', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJhN0xRaFNsdVV2YmIwaXFkZ21POXYxSXdaamZWRHZaWmNTWlU5bzVPIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3QiLCJyb3V0ZSI6ImhvbWUifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788093015),
+('Hcc0giOFnUIBBfWr9Czgc0Blqz0NfWZvRf3Oqisw', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJ6YnJNdVBucE1vbEpUa2R3V09VUk1TZGpScVdESmZzc3ludHFFZGZEIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3QiLCJyb3V0ZSI6ImhvbWUifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788093022),
+('GeSNqEoXWeqhVyJ3fBDJHttswNPwoWN93v8L4QzM', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJoZ25UNENJNU5QY0ZlRm1aaW5zcTBWSXNHZUtwZkpBMHhORGFSR1dTIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3NlcnZpY2VzIiwicm91dGUiOiJzZXJ2aWNlcyJ9LCJfZmxhc2giOnsib2xkIjpbXSwibmV3IjpbXX19', 1788093022),
+('xCmXm6r384d8qjckjMPOcfZOVmjRCe17klGoaqWY', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJUYUZnTWE0VlVaYUdkdm4zd0xYU0t0bmtTOVF3MFdURXJJWHVCTm11IiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3BvcnRmb2xpbyIsInJvdXRlIjoicHJvamVjdHMuaW5kZXgifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788093023),
+('b4HgVHRQ8gL7Q94Kw0aedP3E1zPRwUUmSaR8GBAx', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiI2Zm5iNURLdEdSbXo1YmFsa25lMGJ0MmVDRWZqaDUyZldseTVtclQ0IiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL2NvbnRhY3QiLCJyb3V0ZSI6ImNvbnRhY3QifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788093023),
+('xy4eZxbOhOq9NBQ7a44A8K74wXYPjpAgYiqsfXfo', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiIxcVJYczZDN051aW5KNEhSaFR4OVBJMUVkRWROYmFrRW05Q2t6bmIwIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3Byb2R1Y3RzIiwicm91dGUiOiJwcm9kdWN0cy5pbmRleCJ9LCJfZmxhc2giOnsib2xkIjpbXSwibmV3IjpbXX19', 1788093023),
+('smw7md5X7Ubdl1KEfERclquJDcit1qEsxrgswBiz', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJnRmVyWGtKenJHZGpCdHhLUkl4ZG1VUXdycmdiSUVYT2tHUWw1VmNwIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3RyYWluZXIiLCJyb3V0ZSI6InRyYWluZXIuaW5kZXgifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788093023),
+('CwUINQz7DGhXrKqnj58mEGMfvwTT761rfFUZnQF3', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiI5aDVwcXRkMzI3bUNTSXVObmlYR2hiUkZQdzBxMHo3S3N1OWtvQlZhIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL2Jsb2ciLCJyb3V0ZSI6ImJsb2cuaW5kZXgifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788093023),
+('R0Ht1KwUtjv22CnW7U20zqaADv5mWQwCXDok7Ges', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJpYkdyUUpjYlBYZjV3NTgyVzVJTHFvalQ3Tnp2ajJDREVWdEdTcXBSIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3QiLCJyb3V0ZSI6ImhvbWUifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788094031),
+('wekmiKOTWJDfkf93k5QpFCrXNfwF4nZbCMB96aOV', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJDWEZpa01GWHVleEJVam1ERzVmMnVKNVBSWlBBNFdXVGxqOWZvUzJtIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3NlcnZpY2VzIiwicm91dGUiOiJzZXJ2aWNlcyJ9LCJfZmxhc2giOnsib2xkIjpbXSwibmV3IjpbXX19', 1788094031),
+('9KbbQzZ7eXOaOEagEbDBvFJuwqAVGb3I0bBRa4mA', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJ2QlZuTWNEeXRjSmdQMmdkTUJWaVhLTGJ5M2ZQeTVtNTNGekFxY3FtIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3BvcnRmb2xpbyIsInJvdXRlIjoicHJvamVjdHMuaW5kZXgifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788094031),
+('CjavoEEBfVGtf80Adzrkf4oJPLLVlEe8uEGe2ZJc', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJmZnpveHI0anNWbHdieFNYWkRlOU9YNlBuMmRsQmVPTWxzRTBieDBFIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3Byb2R1Y3RzIiwicm91dGUiOiJwcm9kdWN0cy5pbmRleCJ9LCJfZmxhc2giOnsib2xkIjpbXSwibmV3IjpbXX19', 1788094031),
+('j8SUR9FUYIZyFlKsH3ZOLIX3LQY9AXVyab2ej3M1', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJUVlNySDFyb2xRMWFwMVZ0V1luVVl3dHZaSGJGeXRXUGwzSG8zT1N4IiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL3RyYWluZXIiLCJyb3V0ZSI6InRyYWluZXIuaW5kZXgifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788094031),
+('raFefAbNhY5VFUeTLi23PyOfq6eLlO3HFU9JyywT', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJVbE5uQVdycjRaZVA2R1U2dXlxemJaSDlqTWtpNno0TEFTWHVRQW1vIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL2Jsb2ciLCJyb3V0ZSI6ImJsb2cuaW5kZXgifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788094031),
+('z4NIl0Ly9LyvSspI8mwDTRLp2MdpNqNPpqIXr3A4', NULL, '127.0.0.1', '', 'eyJfdG9rZW4iOiJ1SmdjNlpBMTFmMTQ3RFBRcnZkRW9uQ2pSamdEajRicjZ0bUVFY1RFIiwiX3ByZXZpb3VzIjp7InVybCI6Imh0dHA6XC9cL2JlcmFuZGFkaWdpdGFsLnRlc3RcL2NvbnRhY3QiLCJyb3V0ZSI6ImNvbnRhY3QifSwiX2ZsYXNoIjp7Im9sZCI6W10sIm5ldyI6W119fQ==', 1788094031);
+
+-- --------------------------------------------------------
+-- Structure & Data for table `cache`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `cache`;
+CREATE TABLE `cache` (
+  `key` varchar(255) NOT NULL,
+  `value` mediumtext NOT NULL,
+  `expiration` int(11) NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- Structure & Data for table `cache_locks`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `cache_locks`;
+CREATE TABLE `cache_locks` (
+  `key` varchar(255) NOT NULL,
+  `owner` varchar(255) NOT NULL,
+  `expiration` int(11) NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- Structure & Data for table `jobs`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `jobs`;
+CREATE TABLE `jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `queue` varchar(255) NOT NULL,
+  `payload` longtext NOT NULL,
+  `attempts` tinyint(3) UNSIGNED NOT NULL,
+  `reserved_at` int(10) UNSIGNED DEFAULT NULL,
+  `available_at` int(10) UNSIGNED NOT NULL,
+  `created_at` int(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jobs_queue_index` (`queue`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- Structure & Data for table `job_batches`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `job_batches`;
+CREATE TABLE `job_batches` (
+  `id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `total_jobs` int(11) NOT NULL,
+  `pending_jobs` int(11) NOT NULL,
+  `failed_jobs` int(11) NOT NULL,
+  `failed_job_ids` longtext NOT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `cancelled_at` int(11) DEFAULT NULL,
+  `created_at` int(11) NOT NULL,
+  `finished_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- Structure & Data for table `failed_jobs`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `failed_jobs`;
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- Structure & Data for table `categories`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL DEFAULT 'project',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `categories_slug_unique` (`slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 INSERT INTO `categories` (`id`, `name`, `slug`, `type`, `created_at`, `updated_at`) VALUES
 (1, 'Website & System Information', 'website-system-info', 'project', '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
 (2, 'Mobile App (Android & iOS)', 'mobile-app-android-ios', 'project', '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
@@ -25,20 +204,58 @@ INSERT INTO `categories` (`id`, `name`, `slug`, `type`, `created_at`, `updated_a
 (13, 'Sistem Informasi', 'sistem-informasi', 'project', '2026-08-30 12:10:32', '2026-08-30 12:10:32');
 
 -- --------------------------------------------------------
--- Data for table `digital_products`
+-- Structure & Data for table `digital_products`
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS `digital_products`;
+CREATE TABLE `digital_products` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `category_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `badge` varchar(100) DEFAULT NULL,
+  `tagline` varchar(255) DEFAULT NULL,
+  `description` text NOT NULL,
+  `features` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`features`)),
+  `price` decimal(12,2) NOT NULL DEFAULT 0.00,
+  `price_type` varchar(255) NOT NULL DEFAULT 'one_time',
+  `demo_url` varchar(255) DEFAULT NULL,
+  `buy_url` varchar(255) DEFAULT NULL,
+  `thumbnail` varchar(255) DEFAULT NULL,
+  `is_featured` tinyint(1) NOT NULL DEFAULT 0,
+  `order` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `digital_products_slug_unique` (`slug`),
+  KEY `digital_products_category_id_foreign` (`category_id`),
+  CONSTRAINT `digital_products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-TRUNCATE TABLE `digital_products`;
 INSERT INTO `digital_products` (`id`, `category_id`, `title`, `slug`, `badge`, `tagline`, `description`, `features`, `price`, `price_type`, `demo_url`, `buy_url`, `thumbnail`, `is_featured`, `order`, `created_at`, `updated_at`) VALUES
 (1, 5, 'Sistem Aplikasi Administrasi Desa Digital (Smart Village)', 'sistem-aplikasi-administrasi-desa-digital', 'Smart Village', 'Platform Digitalisasi Surat Desa, Data Kependudukan & Portal Publik', 'Aplikasi web siap pakai untuk kantor desa yang membutuhkan sistem cetak surat otomatis, verifikasi QR code, dan portal informasi publik.', '["Modul Cetak Surat Otomatis 30+ Jenis Surat Desa","Otentikasi Tanda Tangan Digital QR Code","Database Kependudukan & Statistik RT\\/RW","Support SQLite untuk Server Desa & MySQL Online"]', 1990000, 'one_time', 'https://berandadigital.net', 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20Aplikasi%20Desa%20Digital', '/images/products/smart-village-mockup.jpg', 1, 1, '2026-08-19 10:57:35', '2026-08-30 11:56:44'),
 (2, 6, 'Enterprise Starter Kit Laravel 13 & Tailwind v4', 'enterprise-starter-kit-laravel-13', 'Boilerplate Script', 'Arsitektur Boilerplate Siap Pakai dengan Dark/Light Mode & RBAC', 'Boilerplate terlengkap untuk startup dan pengembang software. Dilengkapi sistem autentikasi, manajemen pengguna, log audit, dan tema ganda.', '["Laravel 13 & PHP 8.4 Support Out of The Box","Dukungan SQLite (Dev) & MySQL (Production)","Fitur Dual Theme: Light & Dark Mode Persisted","Role & Permission Management bawaan","Clean Architecture Standard"]', 499000, 'one_time', 'https://berandadigital.net', 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20Laravel%20Starter%20Kit', '/images/products/enterprise-web-mockup.jpg', 1, 2, '2026-08-19 10:57:35', '2026-08-30 11:56:44'),
 (3, 7, 'Jasa Pembuatan Video Ucapan & Profil Digital', 'jasa-pembuatan-video-ucapan-profil-digital', 'Media Studio', 'Layanan Pembuatan Video Profil & Ucapan Hari Besar', 'Layanan pembuatan video profil perusahaan, instansi, dan ucapan hari raya dengan animasi modern.', '["Animasi HD 1080p \\/ 4K Modern","Custom Voiceover & Backsound Lisensi Resmi","Revisi Hingga Puas & Format Siap Sosial Media","Pengerjaan Cepat 1-3 Hari"]', 750000, 'one_time', 'https://berandadigital.net', 'https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20tertarik%20membeli%20Jasa%20Video', '/images/products/school-portal-mockup.jpg', 1, 3, '2026-08-19 10:57:35', '2026-08-30 11:56:44');
 
 -- --------------------------------------------------------
--- Data for table `galleries`
+-- Structure & Data for table `galleries`
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS `galleries`;
+CREATE TABLE `galleries` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `event_name` varchar(255) DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `event_date` date DEFAULT NULL,
+  `category` varchar(100) NOT NULL DEFAULT 'workshop',
+  `image_path` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `is_featured` tinyint(1) NOT NULL DEFAULT 0,
+  `order` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-TRUNCATE TABLE `galleries`;
 INSERT INTO `galleries` (`id`, `title`, `event_name`, `location`, `event_date`, `category`, `image_path`, `description`, `is_featured`, `order`, `created_at`, `updated_at`) VALUES
 (1, 'Tampilan Beranda Website Resmi Beranda Teknologi Digital', 'Original Web Preview', 'berandadigital.net', '2026-08-19 00:00:00', 'preview', '/preview/screencapture-berandadigital-net-2026-08-19-17_31_05.png', 'Tampilan asli beranda utama website Beranda Teknologi Digital.', 1, 1, '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
 (2, 'Keynote Speaker: Insight Talks Vol. 3 Palembang (Komdigi RI & Media Indonesia)', 'Insight Talks Vol. 3 Palembang', 'Hotel Harper Palembang', '2026-04-14 00:00:00', 'keynote', '/images/Insight-Talks-Komdigi.jpeg', 'Septa Ryan Hidayat (CEO Beranda Teknologi Digital) menjadi narasumber bersama Plt. Direktur Komdigi RI dan Direktur Media Indonesia.', 1, 2, '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
@@ -46,18 +263,50 @@ INSERT INTO `galleries` (`id`, `title`, `event_name`, `location`, `event_date`, 
 (4, 'Halaman Profil Perusahaan & Bio Direktur Utama Septa Ryan Hidayat', 'Original Profile Preview', 'berandadigital.net/profile', '2026-08-19 00:00:00', 'preview', '/preview/screencapture-berandadigital-net-profile-2026-08-19-17_53_14.png', 'Tampilan halaman profil resmi CV. Beranda Teknologi Digital.', 1, 4, '2026-08-19 10:57:35', '2026-08-19 10:57:35');
 
 -- --------------------------------------------------------
--- Data for table `inquiries`
+-- Structure & Data for table `inquiries`
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS `inquiries`;
+CREATE TABLE `inquiries` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `message` text NOT NULL,
+  `is_read` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-TRUNCATE TABLE `inquiries`;
 INSERT INTO `inquiries` (`id`, `name`, `email`, `phone`, `subject`, `message`, `is_read`, `created_at`, `updated_at`) VALUES
 (1, 'Budi Santoso', 'budi@techcorp.id', '081299887766', 'Permintaan Penawaran Aplikasi Mobile & ERP', 'Halo Pak Septa Ryan & Tim Beranda Digital, kami berencana membangun aplikasi mobile dan ERP manufaktur. Mohon informasi jadwal diskusi.', 0, '2026-08-19 10:57:35', '2026-08-19 10:57:35');
 
 -- --------------------------------------------------------
--- Data for table `posts`
+-- Structure & Data for table `posts`
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE `posts` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `category_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `thumbnail` varchar(255) DEFAULT NULL,
+  `excerpt` text DEFAULT NULL,
+  `body` longtext NOT NULL,
+  `status` enum('draft','published') NOT NULL DEFAULT 'published',
+  `published_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `posts_slug_unique` (`slug`),
+  KEY `posts_category_id_foreign` (`category_id`),
+  KEY `posts_user_id_foreign` (`user_id`),
+  CONSTRAINT `posts_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL,
+  CONSTRAINT `posts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-TRUNCATE TABLE `posts`;
 INSERT INTO `posts` (`id`, `category_id`, `user_id`, `title`, `slug`, `thumbnail`, `excerpt`, `body`, `status`, `published_at`, `created_at`, `updated_at`) VALUES
 (1, 8, 1, 'Webinar Online : Masjid Go Digital', 'webinar-masjid-go-digital-6a858c1f6b1a7', '/images/Masjid-GO-1.png', '
 Assalamualaikum Warahmatullah,
@@ -497,10 +746,35 @@ Mari kita bangun ketahanan informasi nasional dengan menjadi pengguna teknologi 
 #Komdigi #MediaIndonesia #InsightTalks #LiterasiDigital #ArtificialIntelligence #PalembangEvent #CerdasBer-AI', 'published', '2026-04-13 09:00:12', '2026-08-19 10:57:35', '2026-08-19 10:57:35');
 
 -- --------------------------------------------------------
--- Data for table `projects`
+-- Structure & Data for table `projects`
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS `projects`;
+CREATE TABLE `projects` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `category_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `summary` text DEFAULT NULL,
+  `challenge` text DEFAULT NULL,
+  `solution` text DEFAULT NULL,
+  `features` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`features`)),
+  `app_type` varchar(50) NOT NULL DEFAULT 'web',
+  `status_badge` varchar(100) DEFAULT NULL,
+  `tech_stack` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`tech_stack`)),
+  `client_name` varchar(255) DEFAULT NULL,
+  `project_url` varchar(255) DEFAULT NULL,
+  `thumbnail` varchar(255) DEFAULT NULL,
+  `gallery` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`gallery`)),
+  `is_featured` tinyint(1) NOT NULL DEFAULT 0,
+  `order` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `projects_slug_unique` (`slug`),
+  KEY `projects_category_id_foreign` (`category_id`),
+  CONSTRAINT `projects_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-TRUNCATE TABLE `projects`;
 INSERT INTO `projects` (`id`, `category_id`, `title`, `slug`, `summary`, `challenge`, `solution`, `tech_stack`, `client_name`, `project_url`, `thumbnail`, `gallery`, `is_featured`, `order`, `created_at`, `updated_at`, `features`, `app_type`, `status_badge`) VALUES
 (1, 1, 'Website Enterprise & Portal Company Profile', 'portal-layanan-pembuatan-website-enterprise', 'Solusi website korporat berkecepatan tinggi dengan desain modern bento grid, CMS fleksibel, dan optimasi SEO Google standar industri.', 'Kebutuhan website bisnis modern dengan desain cepat, optimasi kecepatan, dan keamanan data.', 'Arsitektur website Laravel 13 & PHP 8.4 terhubung dengan CMS admin instan dan integrasi WhatsApp.', '["Laravel 13","PHP 8.4","MySQL","Tailwind CSS","Alpine.js"]', 'CV. Beranda Teknologi Digital', 'https://berandadigital.net', '/images/products/enterprise-web-mockup.jpg', '["\\/preview\\/screencapture-berandadigital-net-2026-08-19-17_31_05.png"]', 1, 1, '2026-08-19 10:57:35', '2026-08-30 11:56:44', NULL, 'web', NULL),
 (2, 2, 'Portal Sekolah, E-Learning & PPDB Online Terpadu', 'jasa-pembuatan-aplikasi-mobile-android-ios', 'Sistem informasi akademik all-in-one untuk registrasi siswa baru (PPDB Online), pengumuman kelulusan, dan raport digital terintegrasi WhatsApp.', 'Pengembangan aplikasi mobile dua platform (Android & iOS) sering memakan waktu dan biaya tinggi.', 'Solusi Flutter tunggal terhubung ke backend Laravel dengan fitur offline-first dan geolokalasi.', '["Flutter","RESTful API","Laravel","Firebase FCM"]', 'Lembaga Pendidikan & Sekolah Mitra', 'https://berandadigital.net', '/images/products/school-portal-mockup.jpg', '["\\/preview\\/screencapture-berandadigital-net-layanan-2026-08-19-17_52_22.png"]', 1, 2, '2026-08-19 10:57:35', '2026-08-30 11:56:44', NULL, 'web', NULL),
@@ -519,10 +793,22 @@ INSERT INTO `projects` (`id`, `category_id`, `title`, `slug`, `summary`, `challe
 (15, 13, 'Pengembangan Media Virtual Reality (VR) & Augmented Reality', 'virtual-reality-augmented-reality-learning', 'Solusi media imersif berbasis Virtual Reality (VR) dan Augmented Reality (AR) untuk simulasi praktikum, edukasi visual, dan promosi 3D interaktif.', 'Pembelajaran sains dan simulasi peralatan mahal sulit dilakukan tanpa laboratorium fisik canggih.', 'Aplikasi simulasi 3D dan virtual reality yang dapat dijalankan melalui headset VR maupun smartphone.', '["Unity 3D","WebXR","Blender","C#"]', 'Lembaga Pendidikan & Mitra Riset', 'https://berandadigital.net', '/btd/VR.png', '[{"url":"\\/btd\\/VR.png","title":"Simulasi Interaktif Virtual Reality","type":"web","caption":"Pengembangan konten 3D interaktif dan simulasi imersif"}]', 0, 15, '2026-08-30 12:10:32', '2026-08-30 12:10:32', '["Simulasi objek 3D interaktif 360 derajat","Kompatibel dengan headset VR dan mobile smartphone","Meningkatkan retensi pemahaman belajar hingga 80%"]', 'web', '🥽 Immersive Tech');
 
 -- --------------------------------------------------------
--- Data for table `settings`
+-- Structure & Data for table `settings`
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS `settings`;
+CREATE TABLE `settings` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `key` varchar(255) NOT NULL,
+  `value` text DEFAULT NULL,
+  `group` varchar(255) NOT NULL DEFAULT 'general',
+  `label` varchar(255) DEFAULT NULL,
+  `type` varchar(255) NOT NULL DEFAULT 'text',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `settings_key_unique` (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-TRUNCATE TABLE `settings`;
 INSERT INTO `settings` (`id`, `key`, `value`, `group`, `label`, `type`, `created_at`, `updated_at`) VALUES
 (1, 'site_name', 'CV. Beranda Teknologi Digital', 'general', 'Nama Perusahaan', 'text', '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
 (2, 'site_tagline', 'Jasa Pembuatan Website, Sistem Informasi, Aplikasi Android/iOS & AI Solution', 'general', 'Tagline Utama', 'text', '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
@@ -558,21 +844,31 @@ INSERT INTO `settings` (`id`, `key`, `value`, `group`, `label`, `type`, `created
 (32, 'cta_description', 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.', 'general', 'Deskripsi CTA Bawah', 'textarea', '2026-08-30 13:25:38', '2026-08-30 13:25:38');
 
 -- --------------------------------------------------------
--- Data for table `trainings`
+-- Structure & Data for table `trainings`
 -- --------------------------------------------------------
+DROP TABLE IF EXISTS `trainings`;
+CREATE TABLE `trainings` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `level` varchar(100) NOT NULL DEFAULT 'All Levels',
+  `duration` varchar(100) DEFAULT NULL,
+  `target_audience` varchar(255) DEFAULT NULL,
+  `summary` text NOT NULL,
+  `syllabus` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`syllabus`)),
+  `price` decimal(12,2) NOT NULL DEFAULT 0.00,
+  `thumbnail` varchar(255) DEFAULT NULL,
+  `is_featured` tinyint(1) NOT NULL DEFAULT 0,
+  `order` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `trainings_slug_unique` (`slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-TRUNCATE TABLE `trainings`;
 INSERT INTO `trainings` (`id`, `title`, `slug`, `level`, `duration`, `target_audience`, `summary`, `syllabus`, `price`, `thumbnail`, `is_featured`, `order`, `created_at`, `updated_at`) VALUES
 (1, 'Lecturer Development Program: Artificial Intelligence & Vibe Coding', 'lecturer-development-program-ai-vibe-coding', 'Executive & Dosen', '1 Hari Workshop Intensif', 'Dosen, Akademisi & Pengajar Perguruan Tinggi', 'Pelatihan Pemanfaatan Artificial Intelligence (AI) untuk pembuatan aplikasi praktis dan profesional tanpa coding, khusus bagi Dosen Politeknik Akamigas Palembang.', '["Pengenalan Konsep Vibe Coding & Generative AI","Pembuatan Prototype Aplikasi Tanpa Baris Kode","Pemanfaatan AI dalam Inovasi Pembelajaran Perguruan Tinggi","Studi Kasus Otomasi Administrasi Akademik"]', 1500000, '/preview/screencapture-berandadigital-test-trainer-2026-08-19-17_49_10.png', 1, 1, '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
 (2, 'Pelatihan Augmented Reality (AR) & Koding untuk Media Edukasi Interaktif', 'pelatihan-augmented-reality-ar-dan-koding', 'Guru & Praktisi Pendidikan', '1 Hari Workshop', 'Guru SD, SMP, SMA & Pengembang Media Pembelajaran', 'Pelatihan pembuatan aplikasi 3D Augmented Reality untuk visualisasi materi pelajaran interaktif di kelas.', '["Dasar 3D Modeling & AR Marker","Pengenalan Software AR Creator","Integrasi AR dengan Buku Pelajaran","Publishing Aplikasi AR ke Smartphone"]', 1200000, '/images/Flyer-AR-New-1-scaled.jpg', 1, 2, '2026-08-19 10:57:35', '2026-08-19 10:57:35');
 
--- --------------------------------------------------------
--- Data for table `users`
--- --------------------------------------------------------
-
-TRUNCATE TABLE `users`;
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Septa Ryan Hidayat, S.Kom', 'admin@berandadigital.net', NULL, '$2y$12$unVblkDB1bH3PS.nSBaL9u4JvOtzXb4fDbohI3bVrZqKkvBNqVNeu', NULL, '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
-(2, 'Administrator Beranda Digital', 'info@berandadigital.net', NULL, '$2y$12$NB250se90qzUykOLnG//GuRy006OXsSY0rTuU.Hb/KnJz98jNDitO', NULL, '2026-08-30 13:24:51', '2026-08-30 13:24:51');
-
+SET FOREIGN_KEY_CHECKS = 1;
 COMMIT;
