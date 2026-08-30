@@ -1,37 +1,77 @@
 @extends('layouts.app')
 
-@section('title', 'Hubungi Kami & Dapatkan Penawaran - CV. Beranda Teknologi Digital')
+@section('title', 'Hubungi Kami & Konsultasi Anggaran - CV. Beranda Teknologi Digital')
 
 @section('content')
-<!-- SECTION: CONTACT & ESTIMATOR (FlyMotion Contact Layout with Watermark) -->
-<section class="py-20 bg-white transition-colors duration-300 relative overflow-hidden" x-data="{
-    platformPrice: 3000000,
-    platformName: 'Standard Website (Rp 3 Juta)',
-    authFeature: 1000000,
-    paymentFeature: 0,
-    waFeature: 0,
-    aiFeature: 0,
+<!-- SECTION: CONTACT & MODULAR ESTIMATOR -->
+<section class="py-16 sm:py-20 bg-[#f8faff] dark:bg-slate-950 transition-colors duration-300 relative overflow-hidden" 
+         x-data="{
+            platform: 'company_profile',
+            platformName: 'Website Company Profile',
+            platformPrice: 2500000,
+            
+            design: 'standard',
+            designName: 'Template Modern Responsif',
+            designPrice: 0,
 
-    get totalPrice() {
-        let base = this.platformPrice + (this.authFeature ? 1000000 : 0) + (this.paymentFeature ? 1500000 : 0) + (this.waFeature ? 1000000 : 0) + (this.aiFeature ? 2500000 : 0);
-        return base;
-    },
+            server: 'cloud_ssd',
+            serverName: 'Cloud SSD Hosting + Domain (1 Tahun)',
+            serverPrice: 0,
 
-    formatCurrency(val) {
-        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(val);
-    }
-}">
+            addonPayment: false,
+            addonWhatsapp: false,
+            addonRoles: false,
+            addonAI: false,
+            addonExport: false,
+            addonSEO: false,
+
+            hasCalculated: false,
+            isCalculating: false,
+            calculatedTotal: 0,
+            calculatedMin: 0,
+            calculatedMax: 0,
+            selectedAddons: [],
+
+            calculate() {
+                this.isCalculating = true;
+                setTimeout(() => {
+                    let total = this.platformPrice + this.designPrice + this.serverPrice;
+                    let list = [];
+                    if (this.addonPayment) { total += 1000000; list.push('Payment Gateway QRIS/VA'); }
+                    if (this.addonWhatsapp) { total += 850000; list.push('WhatsApp Gateway Otomatis'); }
+                    if (this.addonRoles) { total += 750000; list.push('Multi-Role & Hak Akses'); }
+                    if (this.addonAI) { total += 2000000; list.push('Integrasi AI Assistant'); }
+                    if (this.addonExport) { total += 500000; list.push('Export Laporan Excel/PDF'); }
+                    if (this.addonSEO) { total += 600000; list.push('SEO Advanced Google'); }
+
+                    this.calculatedTotal = total;
+                    this.calculatedMin = Math.round((total * 0.9) / 50000) * 50000;
+                    this.calculatedMax = Math.round((total * 1.1) / 50000) * 50000;
+                    this.selectedAddons = list;
+                    this.isCalculating = false;
+                    this.hasCalculated = true;
+                }, 350);
+            },
+
+            formatRupiah(num) {
+                return new Intl.NumberFormat('id-ID').format(num);
+            },
+
+            getSubjectText() {
+                return 'Konsultasi: ' + this.platformName + (this.hasCalculated ? ' (Est: Rp ' + this.formatRupiah(this.calculatedTotal) + ')' : '');
+            }
+         }">
     
-    <!-- Watermark "Client" -->
-    <div class="absolute top-6 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-100/70 pointer-events-none select-none tracking-wider -z-0">
-        Client
+    <!-- Watermark "Contact" -->
+    <div class="absolute top-6 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-200/40 dark:text-slate-800/25 pointer-events-none select-none tracking-wider -z-0">
+        Contact
     </div>
 
     <!-- Floating Decorative Shapes -->
     <div class="absolute top-20 right-10 text-[#fe6000]/40 text-4xl font-black pointer-events-none select-none anim-logo-top">~ ~ ~</div>
     <div class="absolute bottom-20 left-10 text-[#3E5CE7]/30 text-5xl font-black pointer-events-none select-none anim-logo-bottom">✦</div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 relative z-10">
         
         <!-- Header -->
         <div class="text-left space-y-3">
@@ -39,44 +79,44 @@
                 <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
                 <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">Client / Contact</span>
             </div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-[#07153f]">Hubungi Tim Beranda Digital</h1>
-            <p class="text-base text-[#4a4a4a] leading-relaxed max-w-2xl">
-                Mari kita bicarakan. Tim kami terdiri dari web designer dan web developer professional yang sudah berpengalaman memberikan hasil terbaik. Dengan konsep engaging design untuk hasil website yang optimal untuk bisnis Anda.
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white">Hubungi Tim Beranda Digital</h1>
+            <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-medium">
+                Mari kita bicarakan ide digital Anda. Tim kami terdiri dari web designer dan software developer berpengalaman yang siap merancang solusi teknologi tepat guna sesuai kebutuhan instansi dan anggaran Anda.
             </p>
         </div>
 
-        <!-- Contact Info Cards (FlyMotion Pastel Cards) -->
+        <!-- Contact Info Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="https://wa.me/6289695249089" target="_blank" class="bg-[#f8faff] p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex items-center gap-4">
-                <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-2xl shrink-0">
+            <a href="https://wa.me/6285267774878" target="_blank" class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold text-2xl shrink-0">
                     💬
                 </div>
                 <div>
-                    <h3 class="text-sm font-bold text-[#07153f]">WhatsApp Support</h3>
-                    <p class="text-xs font-mono font-bold text-[#3E5CE7]">0896 9524 9089</p>
-                    <span class="text-[11px] text-emerald-600 font-bold">Respon Cepat 24/7 &rarr;</span>
+                    <h3 class="text-sm font-bold text-[#07153f] dark:text-white">WhatsApp Hotline</h3>
+                    <p class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">0852 6777 4878</p>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">Respon Cepat Konsultasi &rarr;</span>
                 </div>
             </a>
 
-            <a href="mailto:info@berandadigital.net" class="bg-[#f8faff] p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex items-center gap-4">
-                <div class="w-14 h-14 rounded-full bg-blue-100 text-[#3E5CE7] flex items-center justify-center font-bold text-2xl shrink-0">
+            <a href="mailto:info@berandadigital.net" class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center font-bold text-2xl shrink-0">
                     ✉️
                 </div>
                 <div>
-                    <h3 class="text-sm font-bold text-[#07153f]">Email Resmi</h3>
-                    <p class="text-xs font-mono font-bold text-[#3E5CE7]">info@berandadigital.net</p>
-                    <span class="text-[11px] text-[#3E5CE7] font-bold">Proposal & Penawaran &rarr;</span>
+                    <h3 class="text-sm font-bold text-[#07153f] dark:text-white">Email Resmi</h3>
+                    <p class="text-xs font-mono font-bold text-[#3E5CE7] dark:text-blue-400">info@berandadigital.net</p>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">Pengajuan Proposal & SPK &rarr;</span>
                 </div>
             </a>
 
-            <div class="bg-[#f8faff] p-6 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4">
-                <div class="w-14 h-14 rounded-full bg-amber-100 text-[#fe6000] flex items-center justify-center font-bold text-2xl shrink-0">
+            <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-950 text-[#fe6000] flex items-center justify-center font-bold text-2xl shrink-0">
                     🏢
                 </div>
                 <div>
-                    <h3 class="text-sm font-bold text-[#07153f]">CV. Beranda Teknologi Digital</h3>
-                    <p class="text-xs text-[#64748b] leading-tight font-medium">Ogan Ilir & Palembang, Sumsel</p>
-                    <span class="text-[11px] text-[#fe6000] font-bold">Sen - Sab (08.00 - 17.00)</span>
+                    <h3 class="text-sm font-bold text-[#07153f] dark:text-white">CV. Beranda Teknologi Digital</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-tight font-medium">Ogan Ilir & Palembang, Sumsel</p>
+                    <span class="text-[11px] text-[#fe6000] font-bold">Sen - Sab (08.00 - 17.00 WIB)</span>
                 </div>
             </div>
         </div>
@@ -84,139 +124,153 @@
         <!-- Two Columns: Project Cost Estimator (Left) & Form Inquiry (Right) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            <!-- Left: Interactive Estimator -->
-            <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-slate-100 shadow-2xl space-y-8">
-                <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
-                    <h2 class="text-xl font-bold text-[#07153f]">⚡ Kalkulator Estimasi Anggaran</h2>
-                    <span class="px-3 py-1 rounded-full bg-orange-50 text-[#fe6000] font-bold text-[10px]">Interaktif</span>
+            <!-- Left: Modular Estimator (No price until button pressed) -->
+            <div class="lg:col-span-7 bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+                
+                <div class="border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-lg font-black text-[#07153f] dark:text-white">Kalkulator Simulasi Proyek</h2>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400">Pilih kebutuhan sistem Anda di bawah ini:</p>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/60 text-[#fe6000] font-bold text-[10px]">
+                        Fleksibel & Terjangkau
+                    </span>
                 </div>
 
-                <!-- Step 1: Platform -->
-                <div class="space-y-3">
-                    <label class="text-xs font-bold uppercase tracking-wider block text-[#07153f]">1. Pilih Nominal Skala Proyek Utama</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- 1. Platform Type -->
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-wider block text-[#07153f] dark:text-white">1. Pilih Kategori Solusi Digital:</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                         <button type="button" 
-                                @click="platformPrice = 3000000; platformName = 'Standard Website (Rp 3 Juta)'"
-                                :class="platformPrice === 3000000 ? 'bg-[#fe6000] text-white font-bold shadow-md ring-2 ring-[#fe6000]/50' : 'bg-slate-50 text-slate-700 font-semibold hover:bg-slate-100'"
-                                class="p-4 rounded-xl text-left text-xs transition-all border border-slate-200 flex flex-col justify-between">
-                            <span class="font-extrabold text-sm">3 JUTA</span>
-                            <span class="text-[11px] opacity-90">Rp 3.000.000</span>
+                                @click="platform = 'company_profile'; platformName = 'Website Company Profile'; platformPrice = 2500000; hasCalculated = false"
+                                :class="platform === 'company_profile' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Web Company Profile</span>
+                            <span class="text-[10px] text-slate-500">Profil Usaha & Portofolio</span>
                         </button>
 
                         <button type="button" 
-                                @click="platformPrice = 5000000; platformName = 'Advanced Web & System (Rp 5 Juta)'"
-                                :class="platformPrice === 5000000 ? 'bg-[#fe6000] text-white font-bold shadow-md ring-2 ring-[#fe6000]/50' : 'bg-slate-50 text-slate-700 font-semibold hover:bg-slate-100'"
-                                class="p-4 rounded-xl text-left text-xs transition-all border border-slate-200 flex flex-col justify-between">
-                            <span class="font-extrabold text-sm">5 JUTA</span>
-                            <span class="text-[11px] opacity-90">Rp 5.000.000</span>
+                                @click="platform = 'web_sekolah'; platformName = 'Website Sekolah / Kampus'; platformPrice = 3000000; hasCalculated = false"
+                                :class="platform === 'web_sekolah' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Web Sekolah / PPDB</span>
+                            <span class="text-[10px] text-slate-500">Portal Informasi & Pendaftaran</span>
                         </button>
 
                         <button type="button" 
-                                @click="platformPrice = 10000000; platformName = 'Enterprise Web, Mobile & AI (Rp 10 Juta)'"
-                                :class="platformPrice === 10000000 ? 'bg-[#fe6000] text-white font-bold shadow-md ring-2 ring-[#fe6000]/50' : 'bg-slate-50 text-slate-700 font-semibold hover:bg-slate-100'"
-                                class="p-4 rounded-xl text-left text-xs transition-all border border-slate-200 flex flex-col justify-between">
-                            <span class="font-extrabold text-sm">10 JUTA</span>
-                            <span class="text-[11px] opacity-90">Rp 10.000.000</span>
+                                @click="platform = 'sim_instansi'; platformName = 'SIM Instansi / Desa Digital'; platformPrice = 5500000; hasCalculated = false"
+                                :class="platform === 'sim_instansi' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">SIM Instansi / Desa Digital</span>
+                            <span class="text-[10px] text-slate-500">Administrasi & Pelayanan Warga</span>
                         </button>
 
                         <button type="button" 
-                                @click="platformPrice = 7000000; platformName = 'AI RAG Document Solution'"
-                                :class="platformPrice === 7000000 ? 'bg-[#fe6000] text-white font-bold shadow-md ring-2 ring-[#fe6000]/50' : 'bg-slate-50 text-slate-700 font-semibold hover:bg-slate-100'"
-                                class="p-4 rounded-xl text-left text-xs transition-all border border-slate-200 flex flex-col justify-between">
-                            <span class="font-extrabold text-sm">7 JUTA</span>
-                            <span class="text-[11px] opacity-90">AI RAG Solution</span>
+                                @click="platform = 'mobile_flutter'; platformName = 'Aplikasi Mobile (Flutter)'; platformPrice = 5000000; hasCalculated = false"
+                                :class="platform === 'mobile_flutter' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
+                                class="p-3 rounded-xl border text-left transition-all">
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Aplikasi Mobile Flutter</span>
+                            <span class="text-[10px] text-slate-500">Android & iOS Multiplatform</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Step 2: Fitur Tambahan -->
-                <div class="space-y-3">
-                    <label class="text-xs font-bold uppercase tracking-wider block text-[#07153f]">2. Fitur Tambahan (Add-ons)</label>
-                    <div class="space-y-2">
-                        <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs cursor-pointer">
-                            <span class="flex items-center gap-2 font-semibold text-[#07153f]">
-                                <input type="checkbox" x-model="authFeature" class="rounded text-[#fe6000]" />
-                                <span>Multi-user Authentication & Role Permission</span>
-                            </span>
-                            <span class="mono font-bold text-[#fe6000]">+Rp 1.000.000</span>
+                <!-- 2. Addons -->
+                <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+                    <label class="text-xs font-bold uppercase tracking-wider block text-[#07153f] dark:text-white">2. Fitur Tambahan & Integrasi:</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" x-model="addonPayment" @change="hasCalculated = false" class="rounded text-[#fe6000]">
+                            <span class="text-slate-700 dark:text-slate-200">Payment Gateway (QRIS/VA)</span>
                         </label>
-
-                        <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs cursor-pointer">
-                            <span class="flex items-center gap-2 font-semibold text-[#07153f]">
-                                <input type="checkbox" x-model="paymentFeature" class="rounded text-[#fe6000]" />
-                                <span>Integrasi Payment Gateway (Midtrans/Xendit)</span>
-                            </span>
-                            <span class="mono font-bold text-[#fe6000]">+Rp 1.500.000</span>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" x-model="addonWhatsapp" @change="hasCalculated = false" class="rounded text-[#fe6000]">
+                            <span class="text-slate-700 dark:text-slate-200">WhatsApp Gateway Notif</span>
                         </label>
-
-                        <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs cursor-pointer">
-                            <span class="flex items-center gap-2 font-semibold text-[#07153f]">
-                                <input type="checkbox" x-model="waFeature" class="rounded text-[#fe6000]" />
-                                <span>WhatsApp Gateway Notifikasi Real-time</span>
-                            </span>
-                            <span class="mono font-bold text-[#fe6000]">+Rp 1.000.000</span>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" x-model="addonRoles" @change="hasCalculated = false" class="rounded text-[#fe6000]">
+                            <span class="text-slate-700 dark:text-slate-200">Multi-Role & Hak Akses</span>
                         </label>
-
-                        <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs cursor-pointer">
-                            <span class="flex items-center gap-2 font-semibold text-[#07153f]">
-                                <input type="checkbox" x-model="aiFeature" class="rounded text-[#fe6000]" />
-                                <span>Integrasi Engine AI RAG Privat</span>
-                            </span>
-                            <span class="mono font-bold text-purple-600">+Rp 2.500.000</span>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                            <input type="checkbox" x-model="addonAI" @change="hasCalculated = false" class="rounded text-[#fe6000]">
+                            <span class="text-slate-700 dark:text-slate-200">Engine AI Assistant</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Total Estimasi Display Box -->
-                <div class="p-6 rounded-2xl bg-[#07153f] text-white space-y-2 shadow-xl">
+                <!-- Trigger Calculate -->
+                <div class="pt-2">
+                    <button type="button" 
+                            @click="calculate()"
+                            style="background-color: #fe6000 !important; color: #ffffff !important;"
+                            class="w-full py-3.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-md hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2">
+                        <span x-show="!isCalculating">📊</span>
+                        <span x-show="isCalculating" class="inline-block animate-spin">⏳</span>
+                        <span x-text="isCalculating ? 'Menghitung Estimasi...' : 'Hitung Estimasi Biaya Sekarang'" style="color: #ffffff !important; font-weight: 900;"></span>
+                    </button>
+                </div>
+
+                <!-- Result Box (Hidden Until Pressed) -->
+                <div x-show="hasCalculated" 
+                     x-transition
+                     class="p-5 rounded-2xl bg-[#07153f] text-white space-y-3 shadow-xl border border-blue-900">
                     <div class="flex items-center justify-between text-xs text-slate-300">
-                        <span>Estimasi Total Investasi Proyek</span>
-                        <span x-text="platformName" class="font-bold text-amber-300"></span>
+                        <span>Hasil Perkiraan Anggaran:</span>
+                        <span x-text="platformName" class="font-bold text-amber-400"></span>
                     </div>
-                    <div class="text-3xl font-extrabold mono text-cyan-300" x-text="formatCurrency(totalPrice)"></div>
-                    <p class="text-[11px] text-slate-300 leading-tight pt-1">
-                        *Estimasi bersifat perkiraan awal. Biaya akhir disesuaikan dengan TOR / RAB instansi Anda.
+                    <div class="text-3xl font-black mono text-emerald-400 flex items-baseline gap-1">
+                        <span class="text-sm text-slate-400">Rp</span>
+                        <span x-text="formatRupiah(calculatedTotal)"></span>
+                    </div>
+                    <div class="text-xs text-slate-300">
+                        Rentang Estimasi: <strong class="text-white">Rp <span x-text="formatRupiah(calculatedMin)"></span> - Rp <span x-text="formatRupiah(calculatedMax)"></span></strong>
+                    </div>
+                    <p class="text-[10px] text-slate-400 pt-1 border-t border-white/10 leading-tight">
+                        *Estimasi ini bersifat fleksibel dan dapat dinegosiasikan sesuai kebutuhan riil instansi Anda.
                     </p>
                 </div>
+
             </div>
 
             <!-- Right: FlyMotion Inquiry Form ("Dapatkan Penawaran") -->
-            <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-100 shadow-2xl space-y-6">
+            <div class="lg:col-span-5 bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
                 <div>
-                    <h2 class="text-xl font-extrabold text-[#07153f]">Dapatkan Penawaran</h2>
-                    <p class="text-xs text-[#64748b]">Isi data diri dan kebutuhan proyek Anda untuk mendapatkan penawaran resmi.</p>
+                    <h2 class="text-xl font-extrabold text-[#07153f] dark:text-white">Dapatkan Penawaran Resmi</h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Kirimkan rincian kebutuhan Anda untuk mendapatkan surat penawaran & proposal resmi.</p>
                 </div>
 
                 <form action="{{ route('contact.store') }}" method="POST" class="space-y-4">
                     @csrf
                     
                     <div class="space-y-1">
-                        <label class="text-xs font-bold text-[#07153f]">Nama Lengkap *</label>
-                        <input type="text" name="name" required placeholder="Nama" class="w-full px-4 py-3 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                        <label class="text-xs font-bold text-[#07153f] dark:text-white">Nama Lengkap *</label>
+                        <input type="text" name="name" required placeholder="Nama Lengkap / Instansi" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                     </div>
 
                     <div class="space-y-1">
-                        <label class="text-xs font-bold text-[#07153f]">Email Utama *</label>
-                        <input type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                        <label class="text-xs font-bold text-[#07153f] dark:text-white">Email Aktif *</label>
+                        <input type="email" name="email" required placeholder="alamat@instansi.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                     </div>
 
                     <div class="space-y-1">
-                        <label class="text-xs font-bold text-[#07153f]">Nomor WhatsApp / HP</label>
-                        <input type="text" name="phone" placeholder="No. WhatsApp / No. HP" class="w-full px-4 py-3 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                        <label class="text-xs font-bold text-[#07153f] dark:text-white">Nomor WhatsApp / HP *</label>
+                        <input type="text" name="phone" required placeholder="08xxxxxxxxxx" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                     </div>
 
                     <div class="space-y-1">
-                        <label class="text-xs font-bold text-[#07153f]">Ide Proyek</label>
-                        <input type="text" name="subject" x-bind:value="'Permintaan Penawaran ' + platformName" class="w-full px-4 py-3 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                        <label class="text-xs font-bold text-[#07153f] dark:text-white">Topik Proyek / Sistem</label>
+                        <input type="text" name="subject" x-bind:value="getSubjectText()" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                     </div>
 
                     <div class="space-y-1">
-                        <label class="text-xs font-bold text-[#07153f]">Pesan / Kebutuhan *</label>
-                        <textarea name="message" rows="4" required placeholder="Pesan" class="w-full px-4 py-3 rounded-md border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none"></textarea>
+                        <label class="text-xs font-bold text-[#07153f] dark:text-white">Deskripsi Kebutuhan *</label>
+                        <textarea name="message" rows="4" required placeholder="Jelaskan kebutuhan fitur atau batasan anggaran proyek Anda..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-4 rounded-md bg-[#fe6000] hover:bg-[#e05400] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all">
-                        Send / Kirim Penawaran &rarr;
+                    <button type="submit" 
+                            style="background-color: #fe6000 !important; color: #ffffff !important;"
+                            class="w-full py-4 rounded-xl font-black text-xs uppercase tracking-wider shadow-md hover:brightness-110 transition-all">
+                        <span style="color: #ffffff !important;">Kirim Permintaan Penawaran &rarr;</span>
                     </button>
                 </form>
             </div>
