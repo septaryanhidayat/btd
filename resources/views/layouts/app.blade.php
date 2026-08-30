@@ -475,148 +475,154 @@
         @yield('content')
     </main>
 
-    <!-- Professional Responsive Footer -->
-    <footer class="border-t pt-16 pb-8 transition-colors duration-300" style="background-color: var(--bg-deep); border-color: var(--border);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Ultra-Sleek Symmetrical Enterprise Footer -->
+    <footer class="border-t pt-16 pb-8 transition-colors duration-300 relative overflow-hidden" style="background-color: var(--bg-deep); border-color: var(--border);">
+        <!-- Subtle ambient background glow -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-gradient-to-b from-[#3E5CE7]/5 via-transparent to-transparent pointer-events-none rounded-full blur-2xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
-            <!-- Main Content Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 text-center md:text-left">
+            <!-- Main Content Grid: 4 Balanced Columns with Clean Horizontal & Vertical Alignment -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-12 items-start text-center md:text-left">
                 
-                <!-- Column 1: Brand Info (5 cols on lg) -->
-                <div class="lg:col-span-5 space-y-5 flex flex-col items-center md:items-start">
+                <!-- Column 1: Brand & Legalitas (lg:col-span-4) -->
+                <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
                     <a href="{{ route('home') }}" class="inline-block py-1 group">
-                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="200" height="56" loading="lazy" decoding="async" class="logo-light-mode block dark:hidden h-12 sm:h-14 w-auto object-contain mx-auto md:mx-0 drop-shadow-xs hover:scale-105 transition-transform" />
-                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="200" height="56" loading="lazy" decoding="async" class="logo-dark-mode hidden dark:block h-12 sm:h-14 w-auto object-contain mx-auto md:mx-0 drop-shadow-md hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="50" loading="lazy" decoding="async" class="logo-light-mode block dark:hidden h-11 sm:h-12 w-auto object-contain mx-auto md:mx-0 drop-shadow-xs hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="50" loading="lazy" decoding="async" class="logo-dark-mode hidden dark:block h-11 sm:h-12 w-auto object-contain mx-auto md:mx-0 drop-shadow-md hover:scale-105 transition-transform" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
-                        <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya. Solusi Website Enterprise, Mobile Apps, Sistem Informasi, dan IT Training.
+                        <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Training.
                     </p>
                     
-                    <!-- Legalitas Singkat Badan Usaha -->
-                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-[11px] space-y-2 w-full max-w-sm text-left">
-                        <div class="font-bold text-[#07153f] dark:text-white flex items-center gap-2 text-xs">
-                            <span class="w-5 h-5 rounded-md bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] dark:text-blue-400 flex items-center justify-center text-xs shrink-0">🏛️</span>
-                            <span>Badan Usaha Resmi Berbadan Hukum</span>
-                        </div>
-                        <div class="grid grid-cols-1 gap-1 text-slate-600 dark:text-slate-300 pl-7">
-                            <div><strong class="text-[#07153f] dark:text-slate-200">SK Kemenkumham:</strong> AHU-0003819-AH.01.14 Th 2022</div>
-                            <div><strong class="text-[#07153f] dark:text-slate-200">NPWP:</strong> 63.100.018.9-312.000</div>
-                        </div>
-                        <div class="pt-1.5 border-t border-slate-200/60 dark:border-slate-700/60 pl-7">
-                            <span class="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                <span>Terdaftar di E-Katalog LKPP RI</span>
+                    <!-- Legalitas Badan Usaha Compact Pill Card -->
+                    <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-[11px] space-y-2 w-full max-w-sm text-left shadow-2xs">
+                        <div class="font-bold text-[#07153f] dark:text-white flex items-center justify-between text-xs">
+                            <span class="flex items-center gap-1.5">
+                                <span class="w-5 h-5 rounded-md bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] dark:text-blue-400 flex items-center justify-center text-xs shrink-0">🏛️</span>
+                                <span>Badan Usaha Resmi (CV)</span>
                             </span>
+                            <span class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-extrabold text-[10px] bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800">
+                                ✓ LKPP RI
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-1 gap-0.5 text-slate-600 dark:text-slate-300 text-[10px] pl-6.5">
+                            <div><strong class="text-slate-700 dark:text-slate-200">SK Kemenkumham:</strong> AHU-0003819-AH.01.14 Th 2022</div>
+                            <div><strong class="text-slate-700 dark:text-slate-200">NPWP:</strong> 63.100.018.9-312.000</div>
                         </div>
                     </div>
 
-                    <!-- Contact Info (Clean SVG Icons) -->
-                    <div class="space-y-2 text-xs font-semibold w-full max-w-sm" style="color: var(--text-muted);">
-                        <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center md:justify-start gap-3 hover:text-emerald-500 transition-colors p-2 rounded-xl hover:bg-emerald-50/50 dark:hover:bg-emerald-950/30">
-                            <span class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.07c-.24.68-1.2 1.25-1.65 1.33-.45.08-1.03.11-3.32-.84-2.75-1.14-4.52-3.95-4.66-4.14-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4.06.61.57.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.17 1.37 2.48 1.52.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.16.28.1 1.77.83 2.07.98.3.15.5.22.58.35.07.13.07.76-.17 1.44z"/></svg>
+                    <!-- Social Media Links Directly Under Brand Card -->
+                    <div class="pt-1 space-y-2 w-full max-w-sm">
+                        <div class="flex items-center justify-center md:justify-start gap-2.5">
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/bteknologi_digital" target="_blank" rel="noopener noreferrer" aria-label="Instagram @bteknologi_digital" title="Instagram @bteknologi_digital"
+                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-pink-500/25">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com/company/berandadigital" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Beranda Digital" title="LinkedIn Beranda Digital"
+                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#0A66C2] border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-blue-500/25">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </a>
+                            <!-- GitHub -->
+                            <a href="https://github.com/septaryanhidayat/btd" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" title="GitHub Repository"
+                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-slate-900 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-slate-500/25">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            </a>
+                            <!-- YouTube -->
+                            <a href="https://www.youtube.com/@berandadigital" target="_blank" rel="noopener noreferrer" aria-label="YouTube Beranda Digital" title="YouTube Beranda Digital"
+                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-red-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-red-500/25">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Layanan Utama (lg:col-span-2) -->
+                <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
+                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
+                        <span class="w-4 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
+                        Layanan
+                    </h4>
+                    <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Web App Enterprise</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Mobile Apps (Flutter)</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Custom AI Chatbot</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portal Desa & Sekolah</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Server & Cloud Setup</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Navigasi Cepat (lg:col-span-2) -->
+                <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
+                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
+                        <span class="w-4 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
+                        Navigasi
+                    </h4>
+                    <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
+                        <li><a href="{{ route('home') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Beranda</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Layanan IT</a></li>
+                        <li><a href="{{ route('projects.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portofolio</a></li>
+                        <li><a href="{{ route('products.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Produk Digital</a></li>
+                        <li><a href="{{ route('trainer.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Trainer & Event</a></li>
+                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Blog & Berita</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Kontak & Mulai Proyek (lg:col-span-4) -->
+                <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
+                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#fe6000] flex items-center gap-2">
+                        <span class="w-4 h-0.5 bg-[#fe6000] rounded-full hidden md:block"></span>
+                        Kontak & Kantor
+                    </h4>
+                    
+                    <!-- Compact Contact List with Clean SVGs -->
+                    <div class="space-y-2 text-xs font-medium w-full max-w-sm" style="color: var(--text-muted);">
+                        <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer" 
+                           class="flex items-center justify-center md:justify-start gap-2.5 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 border border-slate-200/60 dark:border-slate-700/60 hover:border-emerald-300 dark:hover:border-emerald-800 transition-all group">
+                            <span class="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.07c-.24.68-1.2 1.25-1.65 1.33-.45.08-1.03.11-3.32-.84-2.75-1.14-4.52-3.95-4.66-4.14-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4.06.61.57.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.17 1.37 2.48 1.52.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.16.28.1 1.77.83 2.07.98.3.15.5.22.58.35.07.13.07.76-.17 1.44z"/></svg>
                             </span>
-                            <div class="text-left">
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500">WhatsApp</div>
-                                <div class="mono font-bold" style="color: var(--text);">0896 9524 9089</div>
+                            <div class="text-left leading-tight">
+                                <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-bold">WhatsApp Resmi</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 mono text-xs">0896 9524 9089</span>
                             </div>
                         </a>
-                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}" class="flex items-center justify-center md:justify-start gap-3 hover:text-blue-500 transition-colors p-2 rounded-xl hover:bg-blue-50/50 dark:hover:bg-blue-950/30">
-                            <span class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+
+                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}" 
+                           class="flex items-center justify-center md:justify-start gap-2.5 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/40 border border-slate-200/60 dark:border-slate-700/60 hover:border-blue-300 dark:hover:border-blue-800 transition-all group">
+                            <span class="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </span>
-                            <div class="text-left">
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500">Email</div>
-                                <div class="font-bold" style="color: var(--text);">{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}</div>
+                            <div class="text-left leading-tight">
+                                <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-bold">Email Bisnis</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 text-xs">{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}</span>
                             </div>
                         </a>
-                        <div class="flex items-center justify-center md:justify-start gap-3 p-2 rounded-xl">
-                            <span class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 flex items-center justify-center shrink-0">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+
+                        <div class="flex items-start justify-center md:justify-start gap-2.5 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 text-left">
+                            <span class="w-7 h-7 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                             </span>
-                            <div class="text-left text-[11px] leading-relaxed" style="color: var(--text-dim);">
+                            <div class="text-[10px] leading-relaxed text-slate-600 dark:text-slate-300 font-medium">
                                 {{ $siteSettings['contact_address'] ?? 'Jl. Sarjana Kel. Timbangan Blok A No. 15, Indralaya Utara, Ogan Ilir, Sumatera Selatan' }}
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Column 2: Layanan Utama (2 cols on lg) -->
-                <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
-                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
-                        <span class="w-5 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
-                        Layanan Utama
-                    </h4>
-                    <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Web App Enterprise & Portal</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Mobile App Android & iOS</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Custom AI Chatbot & RAG</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Website Sekolah & Desa</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Maintenance Server & SSL</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Navigasi Cepat (2 cols on lg) -->
-                <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
-                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
-                        <span class="w-5 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
-                        Navigasi
-                    </h4>
-                    <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('home') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Beranda</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Layanan</a></li>
-                        <li><a href="{{ route('projects.index') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Portofolio Proyek</a></li>
-                        <li><a href="{{ route('products.index') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Produk Digital</a></li>
-                        <li><a href="{{ route('trainer.index') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Trainer & Galeri</a></li>
-                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#3E5CE7] transition-colors inline-flex items-center gap-1.5"><span class="text-slate-400">›</span> Informasi & Berita</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Mulai Proyek & Social Links (3 cols on lg) -->
-                <div class="lg:col-span-3 space-y-5 flex flex-col items-center md:items-start">
-                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#fe6000] flex items-center gap-2">
-                        <span class="w-5 h-0.5 bg-[#fe6000] rounded-full hidden md:block"></span>
-                        Mulai Proyek
-                    </h4>
-                    <p class="text-xs leading-relaxed max-w-xs" style="color: var(--text-muted);">
-                        Diskusikan kebutuhan sistem Anda langsung dengan tim developer kami. Konsultasi gratis tanpa komitmen.
-                    </p>
-                    <div class="w-full max-w-xs space-y-2.5">
+                    <!-- Dual Action CTA Buttons -->
+                    <div class="grid grid-cols-2 gap-2 w-full max-w-sm pt-1">
                         <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer"
                            style="background-color: #fe6000 !important; color: #ffffff !important;"
-                           class="w-full text-center px-5 py-3 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95 transition-all block">
-                            <span style="color: #ffffff !important;">💬 Chat WhatsApp Sekarang</span>
+                           class="text-center px-3 py-2.5 rounded-xl font-bold text-xs shadow-md shadow-orange-500/20 hover:shadow-orange-500/35 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1.5">
+                            <span>💬 Chat WA</span>
                         </a>
-                        <a href="{{ route('contact') }}" class="w-full text-center px-5 py-3 rounded-xl surface border border-slate-200 dark:border-slate-700 hover:border-[#3E5CE7] dark:hover:border-blue-400 text-xs font-bold transition-all block hover:scale-[1.02] active:scale-95 shadow-xs" style="color: var(--text);">
-                            🧮 Kalkulator Estimasi Biaya
+                        <a href="{{ route('contact') }}" 
+                           class="text-center px-3 py-2.5 rounded-xl surface border border-slate-200 dark:border-slate-700 hover:border-[#3E5CE7] dark:hover:border-blue-400 text-xs font-bold transition-all flex items-center justify-center gap-1.5 hover:scale-[1.02] active:scale-95 shadow-2xs" 
+                           style="color: var(--text);">
+                            <span>🧮 Hitung Biaya</span>
                         </a>
-                    </div>
-
-                    <!-- Sleek Modern Social Media Icon Buttons -->
-                    <div class="pt-2 space-y-2 w-full max-w-xs">
-                        <span class="text-[10px] font-bold uppercase tracking-widest block text-slate-400 dark:text-slate-500">Ikuti Kami</span>
-                        <div class="flex items-center justify-center md:justify-start gap-2.5">
-                            <!-- Instagram -->
-                            <a href="https://www.instagram.com/bteknologi_digital" target="_blank" rel="noopener noreferrer" aria-label="Instagram @bteknologi_digital" title="Instagram @bteknologi_digital"
-                               class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-pink-500/25">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                            </a>
-                            <!-- LinkedIn -->
-                            <a href="https://linkedin.com/company/berandadigital" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Beranda Digital" title="LinkedIn Beranda Digital"
-                               class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#0A66C2] border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-blue-500/25">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                            </a>
-                            <!-- GitHub -->
-                            <a href="https://github.com/septaryanhidayat/btd" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" title="GitHub Repository"
-                               class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-slate-900 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-slate-500/25">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                            </a>
-                            <!-- YouTube -->
-                            <a href="https://www.youtube.com/@berandadigital" target="_blank" rel="noopener noreferrer" aria-label="YouTube Beranda Digital" title="YouTube Beranda Digital"
-                               class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-red-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-red-500/25">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                            </a>
-                        </div>
                     </div>
                 </div>
 
@@ -635,7 +641,7 @@
             </div>
         </div>
     </footer>
-
+    
     <!-- Fixed Floating Action Group (Scroll to Top + WA Direct Chat) -->
     <div x-data="{ showTop: false }" 
          @scroll.window="showTop = (window.pageYOffset > 300)" 
