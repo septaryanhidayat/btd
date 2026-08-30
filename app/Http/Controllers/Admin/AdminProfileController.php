@@ -41,7 +41,7 @@ class AdminProfileController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,' . $user->id,
             'new_password' => 'nullable|min:6|confirmed',
-            'avatar_file' => 'nullable|image|max:3072',
+            'avatar_file' => 'nullable|image|max:25600',
         ]);
 
         $user->name = $validated['name'];

@@ -38,7 +38,7 @@ class AdminUserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|string|min:6',
-            'avatar_file' => 'nullable|image|max:3072',
+            'avatar_file' => 'nullable|image|max:25600',
         ]);
 
         $avatarPath = null;
@@ -63,7 +63,7 @@ class AdminUserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,' . $user->id,
             'password' => 'nullable|string|min:6',
-            'avatar_file' => 'nullable|image|max:3072',
+            'avatar_file' => 'nullable|image|max:25600',
         ]);
 
         $user->name = $validated['name'];

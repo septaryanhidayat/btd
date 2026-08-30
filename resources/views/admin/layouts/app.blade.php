@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Admin Dashboard') - CV. Beranda Teknologi Digital</title>
     
-    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    @php
+        $siteFavicon = \App\Models\Setting::where('key', 'site_favicon')->value('value') ?? 'favicon.png';
+    @endphp
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="{{ asset($siteFavicon) }}">
+    <link rel="shortcut icon" href="{{ asset($siteFavicon) }}">
+    <link rel="apple-touch-icon" href="{{ asset($siteFavicon) }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
