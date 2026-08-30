@@ -315,8 +315,8 @@
             
             <!-- Official Brand Logo (Light & Pure White Dark Mode) -->
             <a href="{{ route('home') }}" class="flex items-center py-0.5 group focus:outline-none shrink-0">
-                <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="logo-light-mode h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-xs" />
-                <img src="/images/Logo-BTD-white.png" alt="CV. Beranda Teknologi Digital" class="logo-dark-mode h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-md" />
+                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-light-mode block dark:hidden h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-xs" />
+                <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-dark-mode hidden dark:block h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-md" />
             </a>
 
             <!-- Desktop Navigation Links -->
@@ -482,8 +482,8 @@
                 <!-- Column 1: Brand Info (2 columns on lg) -->
                 <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
                     <a href="{{ route('home') }}" class="inline-block py-1 group">
-                        <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="logo-light-mode h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-xs hover:scale-105 transition-transform" />
-                        <img src="/images/Logo-BTD-white.png" alt="CV. Beranda Teknologi Digital" class="logo-dark-mode h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-md hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-light-mode block dark:hidden h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-xs hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-dark-mode hidden dark:block h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-md hover:scale-105 transition-transform" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
                         <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> &bull; Mitra transformasi digital inovatif penyedia solusi website enterprise, aplikasi mobile Flutter, sistem informasi, solusi AI privat, dan pelatihan teknologi profesional.

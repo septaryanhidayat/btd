@@ -53,7 +53,7 @@
             <!-- Logo & Brand Title -->
             <div class="text-center space-y-3">
                 <a href="{{ route('home') }}" class="inline-block hover:scale-105 transition-transform">
-                    <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="h-16 sm:h-20 w-auto mx-auto object-contain drop-shadow-xs" />
+                    <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" class="h-16 sm:h-20 w-auto mx-auto object-contain drop-shadow-xs" />
                 </a>
                 <div class="space-y-1">
                     <h1 class="text-xl font-extrabold text-[#07153f]">Admin Dashboard Portal</h1>

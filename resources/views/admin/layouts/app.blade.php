@@ -47,7 +47,7 @@
             <!-- Logo Brand -->
             <div class="flex items-center justify-between">
                 <a href="{{ route('admin.dashboard') }}" class="inline-block py-1">
-                    <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="h-14 sm:h-16 w-auto object-contain brightness-110 drop-shadow-xs" />
+                    <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" class="h-12 sm:h-14 w-auto object-contain drop-shadow-md" />
                 </a>
                 <button @click="sidebarOpen = false" class="lg:hidden text-slate-400 hover:text-white">
                     ✕
