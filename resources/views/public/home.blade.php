@@ -894,77 +894,62 @@
             <div class="flex items-center gap-3">
                 <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
                 <span class="text-xs sm:text-sm font-extrabold tracking-wider uppercase text-[#fe6000] mono">
-                    ⚡ SIAP PAKAI & BERLISENSI RESMI
+                    💼 REKAM JEJAK & PORTOFOLIO KARYA
                 </span>
             </div>
             
             <div class="space-y-2">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white leading-tight tracking-tight">
-                    Produk & Solusi Digital Unggulan
+                    Portofolio & Solusi Digital Unggulan
                 </h2>
-                <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Sistem informasi dan aplikasi enterprise yang dirancang khusus, teruji di lapangan, dan siap langsung diimplementasikan. <strong>Klik foto produk</strong> untuk melihat galeri tampilan layar (desktop & mobile).
+                <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                    Koleksi 12 karya dan sistem informasi enterprise terbaik yang telah kami kembangkan untuk instansi pemerintah, institusi pendidikan, dan perusahaan. <strong>Klik foto portofolio</strong> untuk melihat galeri tampilan layar aplikasi (desktop & mobile).
                 </p>
             </div>
 
             <!-- Value Highlights Pills -->
             <div class="flex flex-wrap items-center gap-2 sm:gap-3 pt-1">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-[#3E5CE7] dark:text-blue-400 text-xs font-bold shadow-2xs">
-                    <span>⚡</span> <span>Implementasi Instan & Cepat</span>
+                    <span>⚡</span> <span>Implementasi Instan & Teruji</span>
                 </span>
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400 text-xs font-bold shadow-2xs">
-                    <span>🔒</span> <span>QR Code Validasi Resmi</span>
+                    <span>🔒</span> <span>Keamanan Berstandar Tinggi</span>
                 </span>
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950/60 border border-amber-200/80 dark:border-amber-800/60 text-amber-700 dark:text-amber-400 text-xs font-bold shadow-2xs">
                     <span>💬</span> <span>Notifikasi Otomatis WhatsApp</span>
                 </span>
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-950/60 border border-purple-200/80 dark:border-purple-800/60 text-purple-700 dark:text-purple-400 text-xs font-bold shadow-2xs">
-                    <span>📱</span> <span>Responsif Web & Mobile</span>
+                    <span>📱</span> <span>Responsif Web & Mobile Flutter</span>
                 </span>
             </div>
         </div>
 
-        <!-- Featured Products Showcase Grid (Modern SaaS Architecture) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            @foreach($featuredProjects->take(3) as $index => $project)
+        <!-- 12 Portfolio Showcase Grid (4 Columns x 3 Rows) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            @foreach($featuredProjects->take(12) as $index => $project)
                 @php
-                    // Dynamic features and labels fallback from DB
                     $displayTitle = $project->title;
                     $displaySubtitle = $project->summary;
-                    $badgeCategory = $project->category?->name ?? 'Solusi Digital';
+                    $badgeCategory = $project->category?->name ?? 'Portofolio';
                     $statusBadge = $project->status_badge ?? '🟢 Siap Pakai';
 
-                    if ($index === 0) {
-                        $badgeCategory = '💼 Enterprise & Korporat';
-                        $statusBadge = $project->status_badge ?: '🚀 High Performance';
-                    } elseif ($index === 1) {
-                        $badgeCategory = '🎓 Sekolah & EduTech';
-                        $statusBadge = $project->status_badge ?: '⚡ All-in-One Portal';
-                    } else {
-                        $badgeCategory = '🏛️ Smart Village & Desa';
-                        $statusBadge = $project->status_badge ?: '🟢 Siap Diimplementasi';
-                    }
-
-                    // Key features checklist fallback
                     $keyFeatures = !empty($project->features) && is_array($project->features) 
-                        ? $project->features 
+                        ? array_slice($project->features, 0, 2)
                         : [
-                            'Antarmuka modern, cepat, dan mobile responsive',
-                            'Panel admin mudah tanpa perlu keahlian coding',
-                            'Terintegrasi database aman dan notifikasi WhatsApp'
+                            'Antarmuka modern & mobile responsive',
+                            'Integrasi database & proteksi keamanan'
                         ];
 
-                    // Tech stack pills fallback
                     $techPills = !empty($project->tech_stack) && is_array($project->tech_stack)
-                        ? $project->tech_stack
-                        : ['Laravel 13', 'Tailwind CSS', 'MySQL', 'REST API'];
+                        ? array_slice($project->tech_stack, 0, 3)
+                        : ['Laravel 13', 'Tailwind', 'MySQL'];
 
                     $sliderScreens = $project->slider_screens;
                     $slidesJson = json_encode($sliderScreens);
-                    $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo Beranda Digital, saya tertarik melihat demo langsung dan konsultasi sistem untuk: {$displayTitle}");
+                    $waProductUrl = "https://wa.me/6285267774878?text=" . urlencode("Halo CV. Beranda Teknologi Digital, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
                 @endphp
 
-                <div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group reveal-on-scroll delay-{{ ($index + 1) * 100 }}">
+                <div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group reveal-on-scroll">
                     
                     <!-- Top Visual Image Container with Interactive Click to Open Gallery Slider -->
                     <div>
@@ -974,69 +959,68 @@
                             
                             <img src="{{ asset($project->thumbnail) }}" 
                                  alt="{{ $displayTitle }}" 
-                                 class="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-700" />
+                                 class="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-700" />
                             
                             <!-- Overlay Gradient for contrast -->
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
 
                             <!-- Interactive Click Hover Prompt -->
-                            <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                                <span class="px-4 py-2 rounded-xl bg-white/95 dark:bg-slate-900/95 text-[#07153f] dark:text-white font-extrabold text-xs shadow-2xl flex items-center gap-2 transform translate-y-2 group-hover/img:translate-y-0 transition-transform">
+                            <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center p-3">
+                                <span class="px-3 py-1.5 rounded-xl bg-white/95 dark:bg-slate-900/95 text-[#07153f] dark:text-white font-extrabold text-[11px] shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover/img:translate-y-0 transition-transform">
                                     <span>🔍</span>
-                                    <span>Klik Buka Galeri ({{ count($sliderScreens) }} Layar)</span>
+                                    <span>Buka Galeri ({{ count($sliderScreens) }} Layar)</span>
                                 </span>
                             </div>
 
                             <!-- Floating Badges -->
-                            <div class="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-none z-10">
-                                <span class="px-3 py-1 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-[#3E5CE7] dark:text-blue-400 font-extrabold text-[10px] sm:text-[11px] border border-blue-100 dark:border-blue-900/60 shadow-md">
+                            <div class="absolute top-2.5 inset-x-2.5 flex items-center justify-between pointer-events-none z-10">
+                                <span class="px-2.5 py-0.5 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-[#3E5CE7] dark:text-blue-400 font-extrabold text-[10px] border border-blue-100 dark:border-blue-900/60 shadow-xs line-clamp-1 max-w-[65%]">
                                     {{ $badgeCategory }}
                                 </span>
-                                <span class="px-2.5 py-1 rounded-full bg-emerald-600/90 text-white font-bold text-[10px] shadow-md backdrop-blur-sm">
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-600/90 text-white font-bold text-[9px] shadow-xs backdrop-blur-sm shrink-0">
                                     {{ $statusBadge }}
                                 </span>
                             </div>
 
                             <!-- Client Badge Bottom Left & Layar Count Bottom Right -->
-                            <div class="absolute bottom-3 inset-x-3 flex items-center justify-between pointer-events-none z-10">
-                                <span class="text-[11px] font-semibold text-white/90 drop-shadow-md flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-lg border border-white/10">
+                            <div class="absolute bottom-2.5 inset-x-2.5 flex items-center justify-between pointer-events-none z-10">
+                                <span class="text-[10px] font-semibold text-white/95 drop-shadow-md flex items-center gap-1 bg-black/50 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/15 line-clamp-1 max-w-[70%]">
                                     <span>📍</span> <span>{{ $project->client_name }}</span>
                                 </span>
-                                <span class="text-[10px] font-bold text-white bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-lg border border-white/20 flex items-center gap-1 shadow-sm">
+                                <span class="text-[9px] font-bold text-white bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/20 flex items-center gap-1 shadow-xs shrink-0">
                                     <span>🖼️</span> <span>{{ count($sliderScreens) }} Foto</span>
                                 </span>
                             </div>
                         </div>
 
                         <!-- Card Content Body -->
-                        <div class="p-6 space-y-4">
+                        <div class="p-5 space-y-3">
                             
-                            <div class="space-y-1.5">
-                                <h3 class="text-base sm:text-lg font-extrabold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors leading-snug">
+                            <div class="space-y-1">
+                                <h3 class="text-sm sm:text-base font-extrabold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors leading-snug line-clamp-1" title="{{ $displayTitle }}">
                                     {{ $displayTitle }}
                                 </h3>
-                                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                                <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed font-normal line-clamp-2">
                                     {{ $displaySubtitle }}
                                 </p>
                             </div>
 
                             <!-- Feature Checklist Highlights -->
-                            <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800/80">
-                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400 block">Fitur Utama:</span>
-                                <ul class="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                            <div class="space-y-1.5 pt-2 border-t border-slate-100 dark:border-slate-800/80">
+                                <ul class="space-y-1 text-[11px] text-slate-700 dark:text-slate-300">
                                     @foreach($keyFeatures as $feat)
-                                        <li class="flex items-start gap-2">
+                                        <li class="flex items-start gap-1.5 line-clamp-1">
                                             <span class="text-emerald-500 font-bold shrink-0">✓</span>
-                                            <span class="leading-tight">{{ $feat }}</span>
+                                            <span class="leading-tight truncate">{{ $feat }}</span>
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
 
                             <!-- Tech Stack Pills -->
-                            <div class="flex flex-wrap gap-1.5 pt-1">
+                            <div class="flex flex-wrap gap-1 pt-1">
                                 @foreach($techPills as $tp)
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium text-[10px] mono">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium text-[9px] mono">
                                         {{ $tp }}
                                     </span>
                                 @endforeach
@@ -1044,29 +1028,36 @@
                         </div>
                     </div>
 
-                    <!-- Bottom Action Controls: Fixed High Contrast Solid CTA Button -->
-                    <div class="p-6 pt-0 space-y-3">
-                        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+                    <!-- Bottom Action Controls -->
+                    <div class="p-5 pt-0 space-y-2">
+                        <div class="pt-2.5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
                             <button type="button"
                                     @click="openModal('{{ addslashes($displayTitle) }}', '{{ addslashes($project->client_name) }}', '{{ $project->app_type ?? 'web' }}', '{{ $waProductUrl }}', {{ $slidesJson }})"
-                                    class="text-xs font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center gap-1">
-                                <span>🔍 Buka Layar UI</span>
-                                <span>›</span>
+                                    class="text-[11px] font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center gap-1">
+                                <span>🔍 Layar UI</span>
                             </button>
                             
-                            <!-- Guaranteed Solid High-Contrast Orange CTA Button -->
-                            <a href="{{ $waProductUrl }}" 
-                               target="_blank"
-                               style="background-color: #fe6000 !important; color: #ffffff !important;"
-                               class="px-4 py-2.5 rounded-xl font-extrabold text-xs shadow-md shadow-orange-500/25 hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-1.5 shrink-0">
-                                <span style="color: #ffffff !important;">💬</span>
-                                <span style="color: #ffffff !important; font-weight: 800;" class="whitespace-nowrap">Pesan Demo</span>
+                            <a href="{{ route('projects.show', $project->slug) }}" 
+                               style="background-color: #07153f !important; color: #ffffff !important;"
+                               class="px-3 py-1.5 rounded-xl font-bold text-[11px] hover:brightness-125 active:scale-95 transition-all flex items-center gap-1">
+                                <span style="color: #ffffff !important;">Detail</span>
+                                <span style="color: #ffffff !important;">&rarr;</span>
                             </a>
                         </div>
                     </div>
 
                 </div>
             @endforeach
+        </div>
+
+        <!-- Big Dedicated Portfolio Page Link Button -->
+        <div class="text-center pt-4">
+            <a href="{{ route('projects.index') }}" 
+               style="background-color: #3E5CE7 !important; color: #ffffff !important;"
+               class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-blue-500/25 hover:brightness-110 active:scale-98 transition-all">
+                <span style="color: #ffffff !important;">🚀 Lihat Semua 15+ Portofolio di Halaman Khusus Portofolio</span>
+                <span style="color: #ffffff !important;">&rarr;</span>
+            </a>
         </div>
 
         <!-- Interactive Custom Solution Callout Box -->
@@ -1076,9 +1067,9 @@
                     <span>💡 Solusi Kustom Sesuai Alur Organisasi</span>
                 </div>
                 <h3 class="text-xl sm:text-2xl font-extrabold text-[#07153f] dark:text-white">
-                    Punya Kebutuhan Sistem Khusus di Luar Produk di Atas?
+                    Punya Kebutuhan Sistem Khusus di Luar Portofolio di Atas?
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
                     Kami berpengalaman merancang sistem informasi terintegrasi sesuai SOP dan alur kerja instansi Anda. Diskusikan rencana dan dapatkan estimasi biaya transparan tanpa komitmen awal.
                 </p>
             </div>
@@ -1087,10 +1078,10 @@
                 <a href="#kalkulator" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl surface border border-slate-200 dark:border-slate-700 text-[#07153f] dark:text-white font-bold text-xs hover:border-[#3E5CE7] dark:hover:border-blue-400 transition-all shadow-xs">
                     <span>⚡ Hitung Estimasi Biaya</span>
                 </a>
-                <a href="https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem%20kustom" 
+                <a href="https://wa.me/6285267774878?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem%20kustom" 
                    target="_blank" 
-                   style="background-color: #3E5CE7 !important; color: #ffffff !important;"
-                   class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl font-bold text-xs uppercase shadow-md shadow-blue-600/25 hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                   style="background-color: #fe6000 !important; color: #ffffff !important;"
+                   class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl font-bold text-xs uppercase shadow-md shadow-orange-600/25 hover:brightness-110 transition-all flex items-center justify-center gap-2">
                     <span style="color: #ffffff !important;">💬 Konsultasi Sekarang</span>
                     <span style="color: #ffffff !important;">&rarr;</span>
                 </a>
@@ -2128,8 +2119,10 @@
             </p>
             
             <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 relative z-10">
-                <a href="https://wa.me/6289695249089" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#fe6000] to-[#ff7a29] hover:from-[#e05400] hover:to-[#fe6000] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-2xl shadow-orange-500/50 hover:scale-105 active:scale-95 transition-all inline-flex items-center justify-center gap-2 border border-orange-400">
-                    <span>💬 Hubungi Tim Kami (WhatsApp)</span> &rarr;
+                <a href="https://wa.me/6285267774878" target="_blank" 
+                   style="background-color: #fe6000 !important; color: #ffffff !important;"
+                   class="w-full sm:w-auto px-8 py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-2xl shadow-orange-500/50 hover:brightness-110 active:scale-95 transition-all inline-flex items-center justify-center gap-2 border border-orange-400">
+                    <span style="color: #ffffff !important;">💬 Hubungi Tim Kami (WhatsApp)</span> &rarr;
                 </a>
                 <a href="{{ route('contact') }}" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-slate-100 text-[#07153f] font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition-all inline-flex items-center justify-center">
                     <span>Kalkulator Estimasi Biaya</span>

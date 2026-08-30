@@ -217,13 +217,15 @@
 <section class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="bg-gradient-to-r from-[#07153f] to-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl space-y-8 text-center max-w-4xl mx-auto">
+        <div style="background-color: #07153f !important; color: #ffffff !important;" 
+             class="text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl space-y-8 text-center max-w-4xl mx-auto">
             
             <div class="space-y-3">
-                <span class="px-4 py-1.5 rounded-full bg-[#fe6000] text-white font-extrabold text-xs uppercase tracking-wider shadow-xs">
+                <span style="background-color: #fe6000 !important; color: #ffffff !important;" 
+                      class="px-4 py-1.5 rounded-full font-extrabold text-xs uppercase tracking-wider shadow-xs inline-block">
                     🧮 SIMULASI ANGGARAN FLEKSIBEL
                 </span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+                <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight" style="color: #ffffff !important;">
                     Sesuaikan Kebutuhan Sistem dengan Anggaran Anda
                 </h2>
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto font-medium">
@@ -241,7 +243,7 @@
                 <a href="https://wa.me/6285267774878" 
                    target="_blank" 
                    class="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all inline-flex items-center gap-2">
-                    <span>💬 Diskusi Langsung via WA</span>
+                    <span style="color: #ffffff !important;">💬 Diskusi Langsung via WA</span>
                 </a>
             </div>
 
@@ -269,9 +271,37 @@
                     Mari kita bicarakan. Tim kami terdiri dari web designer dan web developer professional yang sudah berpengalaman memberikan hasil terbaik. Dengan konsep engaging design untuk hasil website yang optimal untuk bisnis Anda.
                 </p>
 
-                <div class="p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2 text-xs font-semibold">
-                    <div class="text-emerald-700 dark:text-emerald-400 font-bold">✓ Garansi 100% Proyek Tepat Waktu</div>
-                    <div class="text-[#3E5CE7] dark:text-blue-400 font-bold">✓ Layanan Konsultasi & Blueprint Arsitektur Gratis</div>
+                <!-- Value Proposition Badges to perfectly balance the right column -->
+                <div class="space-y-3 pt-2">
+                    <div class="p-4 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-start gap-3.5">
+                        <span class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 font-black text-sm flex items-center justify-center shrink-0">
+                            🛡️
+                        </span>
+                        <div>
+                            <h4 class="text-xs font-bold text-[#07153f] dark:text-white">Garansi 100% Proyek Tepat Waktu & SPK Resmi</h4>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5">Dilindungi perjanjian kerja resmi berbadan hukum CV dan jaminan maintenance purna-jual.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-start gap-3.5">
+                        <span class="w-8 h-8 rounded-xl bg-blue-100 dark:bg-blue-950/70 text-[#3E5CE7] dark:text-blue-400 font-black text-sm flex items-center justify-center shrink-0">
+                            📐
+                        </span>
+                        <div>
+                            <h4 class="text-xs font-bold text-[#07153f] dark:text-white">Konsultasi & Blueprint Arsitektur Gratis</h4>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5">Diskusi mendalam mengenai alur kerja organisasi dan pemetaan modul tanpa biaya awal.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-start gap-3.5">
+                        <span class="w-8 h-8 rounded-xl bg-orange-100 dark:bg-orange-950/70 text-[#fe6000] font-black text-sm flex items-center justify-center shrink-0">
+                            ⚡
+                        </span>
+                        <div>
+                            <h4 class="text-xs font-bold text-[#07153f] dark:text-white">Infrastruktur Cloud High-Speed</h4>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5">Termasuk domain resmi 1 tahun, SSL grade A+, dan optimasi kecepatan akses.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 

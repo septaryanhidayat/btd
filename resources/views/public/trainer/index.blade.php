@@ -174,11 +174,12 @@
 <!-- SECTION 4: LET'S WORK TOGETHER BANNER (FlyMotion Style) -->
 <section class="py-16 bg-white dark:bg-slate-900 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="rounded-3xl bg-gradient-to-r from-[#3E5CE7] to-[#2A45C8] p-10 sm:p-16 text-center text-white space-y-6 shadow-2xl relative overflow-hidden">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+        <div style="background-color: #2A45C8 !important; color: #ffffff !important;" 
+             class="rounded-3xl p-10 sm:p-16 text-center text-white space-y-6 shadow-2xl relative overflow-hidden">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white" style="color: #ffffff !important;">
                 Let's Work Together
             </h2>
-            <p class="text-blue-100 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+            <p class="text-blue-100 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto font-medium" style="color: #dbeafe !important;">
                 Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website, sistem informasi, atau pelatihan IT bersama kami.
             </p>
             <div class="pt-4">

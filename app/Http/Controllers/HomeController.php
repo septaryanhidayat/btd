@@ -14,15 +14,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // 1. Featured Projects
+        // 1. Featured Projects (12 items for 4 columns x 3 rows showcase)
         $featuredProjects = Project::with('category')
-            ->where('is_featured', true)
             ->orderBy('order', 'asc')
-            ->take(6)
+            ->take(12)
             ->get();
 
-        if ($featuredProjects->isEmpty()) {
-            $featuredProjects = Project::with('category')->latest()->take(6)->get();
+        if ($featuredProjects->count() < 12) {
+            $extra = Project::with('category')->latest()->take(12)->get();
+            $featuredProjects = $featuredProjects->merge($extra)->unique('id')->take(12);
         }
 
         // 2. Featured Digital Products

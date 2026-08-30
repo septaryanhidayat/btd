@@ -94,16 +94,19 @@
 <!-- SECTION: LET'S WORK TOGETHER BANNER -->
 <section class="py-16 bg-[#f8faff] dark:bg-slate-900/50 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="rounded-3xl bg-gradient-to-br from-[#07153f] via-[#0e2158] to-[#1e3a8a] p-8 sm:p-14 text-center text-white space-y-6 shadow-2xl relative overflow-hidden">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+        <div style="background-color: #07153f !important; color: #ffffff !important;" 
+             class="rounded-3xl p-8 sm:p-14 text-center text-white space-y-6 shadow-2xl relative overflow-hidden border border-slate-800">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white" style="color: #ffffff !important;">
                 Let's Work Together
             </h2>
-            <p class="text-slate-100 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+            <p class="text-slate-200 text-xs sm:text-base leading-relaxed max-w-2xl mx-auto font-medium" style="color: #e2e8f0 !important;">
                 Konsultasikan rencana pembuatan website, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.
             </p>
             <div class="pt-4">
-                <a href="https://wa.me/6289695249089" target="_blank" class="px-8 py-4 rounded-xl bg-white hover:bg-slate-100 text-[#07153f] font-bold text-xs sm:text-sm shadow-xl inline-flex items-center gap-2 transition-all">
-                    <span>💬 Hubungi Tim Kami (WhatsApp)</span> &rarr;
+                <a href="https://wa.me/6285267774878" target="_blank" 
+                   style="background: #ffffff !important; color: #07153f !important;"
+                   class="px-8 py-4 rounded-xl font-bold text-xs sm:text-sm shadow-xl inline-flex items-center gap-2 transition-all hover:scale-105">
+                    <span style="color: #07153f !important;" class="font-extrabold">💬 Hubungi Tim Kami (WhatsApp)</span> &rarr;
                 </a>
             </div>
         </div>
