@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\UploadHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
@@ -41,12 +42,20 @@ class AdminPostController extends Controller
             $slug = "{$originalSlug}-" . $count++;
         }
 
+        $thumbnail = $validated['thumbnail'] ?? '/images/Insight-Talks-Komdigi.jpeg';
+        if ($request->hasFile('thumbnail_file')) {
+            $uploadedThumb = UploadHelper::upload($request->file('thumbnail_file'), 'posts');
+            if ($uploadedThumb) {
+                $thumbnail = $uploadedThumb;
+            }
+        }
+
         Post::create([
             'category_id' => $validated['category_id'],
             'user_id' => Auth::id(),
             'title' => $validated['title'],
             'slug' => $slug,
-            'thumbnail' => $validated['thumbnail'] ?? 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80',
+            'thumbnail' => $thumbnail,
             'excerpt' => $validated['excerpt'],
             'body' => $validated['body'],
             'status' => $validated['status'],
@@ -78,10 +87,20 @@ class AdminPostController extends Controller
             $publishedAt = now();
         }
 
+        $thumbnail = $post->thumbnail;
+        if ($request->hasFile('thumbnail_file')) {
+            $uploadedThumb = UploadHelper::upload($request->file('thumbnail_file'), 'posts');
+            if ($uploadedThumb) {
+                $thumbnail = $uploadedThumb;
+            }
+        } elseif ($request->filled('thumbnail')) {
+            $thumbnail = $request->thumbnail;
+        }
+
         $post->update([
             'category_id' => $validated['category_id'],
             'title' => $validated['title'],
-            'thumbnail' => $validated['thumbnail'] ?? $post->thumbnail,
+            'thumbnail' => $thumbnail,
             'excerpt' => $validated['excerpt'],
             'body' => $validated['body'],
             'status' => $validated['status'],

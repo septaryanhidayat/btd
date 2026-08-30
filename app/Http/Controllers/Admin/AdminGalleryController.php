@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\UploadHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
@@ -27,11 +28,19 @@ class AdminGalleryController extends Controller
             'location' => 'nullable|string|max:255',
             'event_date' => 'nullable|date',
             'category' => 'required|string|max:100',
-            'image_path' => 'required|string|max:255',
+            'image_path' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'is_featured' => 'nullable|boolean',
             'order' => 'nullable|integer',
         ]);
+
+        $imagePath = $validated['image_path'] ?? '/images/Insight-Talks-Komdigi.jpeg';
+        if ($request->hasFile('image_file')) {
+            $uploaded = UploadHelper::upload($request->file('image_file'), 'galleries');
+            if ($uploaded) {
+                $imagePath = $uploaded;
+            }
+        }
 
         Gallery::create([
             'title' => $validated['title'],
@@ -39,7 +48,7 @@ class AdminGalleryController extends Controller
             'location' => $validated['location'],
             'event_date' => $validated['event_date'],
             'category' => $validated['category'],
-            'image_path' => $validated['image_path'],
+            'image_path' => $imagePath,
             'description' => $validated['description'],
             'is_featured' => $request->boolean('is_featured'),
             'order' => $validated['order'] ?? 0,
@@ -61,11 +70,21 @@ class AdminGalleryController extends Controller
             'location' => 'nullable|string|max:255',
             'event_date' => 'nullable|date',
             'category' => 'required|string|max:100',
-            'image_path' => 'required|string|max:255',
+            'image_path' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'is_featured' => 'nullable|boolean',
             'order' => 'nullable|integer',
         ]);
+
+        $imagePath = $gallery->image_path;
+        if ($request->hasFile('image_file')) {
+            $uploaded = UploadHelper::upload($request->file('image_file'), 'galleries');
+            if ($uploaded) {
+                $imagePath = $uploaded;
+            }
+        } elseif ($request->filled('image_path')) {
+            $imagePath = $request->image_path;
+        }
 
         $gallery->update([
             'title' => $validated['title'],
@@ -73,7 +92,7 @@ class AdminGalleryController extends Controller
             'location' => $validated['location'],
             'event_date' => $validated['event_date'],
             'category' => $validated['category'],
-            'image_path' => $validated['image_path'],
+            'image_path' => $imagePath,
             'description' => $validated['description'],
             'is_featured' => $request->boolean('is_featured'),
             'order' => $validated['order'] ?? 0,

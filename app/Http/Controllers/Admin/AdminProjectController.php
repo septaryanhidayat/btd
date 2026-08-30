@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\UploadHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Project;
@@ -79,6 +80,28 @@ class AdminProjectController extends Controller
             }
         }
 
+        if ($request->hasFile('gallery_files')) {
+            foreach ($request->file('gallery_files') as $gFile) {
+                $gPath = UploadHelper::upload($gFile, 'projects');
+                if ($gPath) {
+                    $gallery[] = [
+                        'url' => $gPath,
+                        'title' => pathinfo($gFile->getClientOriginalName(), PATHINFO_FILENAME),
+                        'type' => $validated['app_type'] ?? 'web',
+                        'caption' => 'Screenshot Aplikasi',
+                    ];
+                }
+            }
+        }
+
+        $thumbnail = $validated['thumbnail'] ?? '/btd/sekolah.png';
+        if ($request->hasFile('thumbnail_file')) {
+            $uploadedThumb = UploadHelper::upload($request->file('thumbnail_file'), 'projects');
+            if ($uploadedThumb) {
+                $thumbnail = $uploadedThumb;
+            }
+        }
+
         Project::create([
             'category_id' => $validated['category_id'],
             'title' => $validated['title'],
@@ -93,7 +116,7 @@ class AdminProjectController extends Controller
             'tech_stack' => $techStack,
             'client_name' => $validated['client_name'],
             'project_url' => $validated['project_url'],
-            'thumbnail' => $validated['thumbnail'] ?? 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+            'thumbnail' => $thumbnail,
             'is_featured' => $request->boolean('is_featured'),
             'order' => $validated['order'] ?? 0,
         ]);
@@ -157,6 +180,30 @@ class AdminProjectController extends Controller
             }
         }
 
+        if ($request->hasFile('gallery_files')) {
+            foreach ($request->file('gallery_files') as $gFile) {
+                $gPath = UploadHelper::upload($gFile, 'projects');
+                if ($gPath) {
+                    $gallery[] = [
+                        'url' => $gPath,
+                        'title' => pathinfo($gFile->getClientOriginalName(), PATHINFO_FILENAME),
+                        'type' => $validated['app_type'] ?? 'web',
+                        'caption' => 'Screenshot Aplikasi',
+                    ];
+                }
+            }
+        }
+
+        $thumbnail = $project->thumbnail;
+        if ($request->hasFile('thumbnail_file')) {
+            $uploadedThumb = UploadHelper::upload($request->file('thumbnail_file'), 'projects');
+            if ($uploadedThumb) {
+                $thumbnail = $uploadedThumb;
+            }
+        } elseif ($request->filled('thumbnail')) {
+            $thumbnail = $request->thumbnail;
+        }
+
         $project->update([
             'category_id' => $validated['category_id'],
             'title' => $validated['title'],
@@ -170,7 +217,7 @@ class AdminProjectController extends Controller
             'tech_stack' => $techStack,
             'client_name' => $validated['client_name'],
             'project_url' => $validated['project_url'],
-            'thumbnail' => $validated['thumbnail'] ?? $project->thumbnail,
+            'thumbnail' => $thumbnail,
             'is_featured' => $request->boolean('is_featured'),
             'order' => $validated['order'] ?? 0,
         ]);

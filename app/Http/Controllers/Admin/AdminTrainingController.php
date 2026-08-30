@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\UploadHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Training;
 use Illuminate\Http\Request;
@@ -47,6 +48,14 @@ class AdminTrainingController extends Controller
             $syllabus = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->syllabus_raw))));
         }
 
+        $thumbnail = $validated['thumbnail'] ?? '/images/Insight-Talks-Komdigi.jpeg';
+        if ($request->hasFile('thumbnail_file')) {
+            $uploadedThumb = UploadHelper::upload($request->file('thumbnail_file'), 'trainings');
+            if ($uploadedThumb) {
+                $thumbnail = $uploadedThumb;
+            }
+        }
+
         Training::create([
             'title' => $validated['title'],
             'slug' => $slug,
@@ -56,7 +65,7 @@ class AdminTrainingController extends Controller
             'summary' => $validated['summary'],
             'syllabus' => $syllabus,
             'price' => $validated['price'] ?? 0,
-            'thumbnail' => $validated['thumbnail'] ?? '/images/Insight-Talks-Komdigi.jpeg',
+            'thumbnail' => $thumbnail,
             'is_featured' => $request->boolean('is_featured'),
             'order' => $validated['order'] ?? 0,
         ]);
@@ -89,6 +98,16 @@ class AdminTrainingController extends Controller
             $syllabus = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->syllabus_raw))));
         }
 
+        $thumbnail = $training->thumbnail;
+        if ($request->hasFile('thumbnail_file')) {
+            $uploadedThumb = UploadHelper::upload($request->file('thumbnail_file'), 'trainings');
+            if ($uploadedThumb) {
+                $thumbnail = $uploadedThumb;
+            }
+        } elseif ($request->filled('thumbnail')) {
+            $thumbnail = $request->thumbnail;
+        }
+
         $training->update([
             'title' => $validated['title'],
             'level' => $validated['level'],
@@ -97,7 +116,7 @@ class AdminTrainingController extends Controller
             'summary' => $validated['summary'],
             'syllabus' => $syllabus,
             'price' => $validated['price'] ?? 0,
-            'thumbnail' => $validated['thumbnail'] ?? $training->thumbnail,
+            'thumbnail' => $thumbnail,
             'is_featured' => $request->boolean('is_featured'),
             'order' => $validated['order'] ?? 0,
         ]);
@@ -108,6 +127,6 @@ class AdminTrainingController extends Controller
     public function destroy(Training $training)
     {
         $training->delete();
-        return redirect()->route('admin.trainings.index')->with('success', 'Modul pelatihan IT berhasil dihapus.');
+        return redirect()->route('admin.trainings.index')->with('success', 'Modul pelatihan berhasil dihapus.');
     }
 }

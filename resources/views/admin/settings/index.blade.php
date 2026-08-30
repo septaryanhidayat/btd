@@ -20,7 +20,7 @@
         </button>
     </div>
 
-    <form id="settingForm" action="{{ route('admin.settings.update') }}" method="POST" class="space-y-8">
+    <form id="settingForm" action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data" class="space-y-8">
         @csrf
 
         <!-- SECTION 1: THEME COLOR CUSTOMIZER (Live Preview Color Pickers) -->
@@ -213,9 +213,15 @@
                     <input type="text" name="trainer_stats_alumni" value="{{ $settings['trainer_stats_alumni']->value ?? '5,000+' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                 </div>
 
-                <div class="space-y-1.5">
-                    <label class="block text-xs font-bold text-[#07153f]">Path Foto Profil Trainer</label>
-                    <input type="text" name="trainer_avatar" value="{{ $settings['trainer_avatar']->value ?? '/images/Insight-Talks-Komdigi.jpeg' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                <div class="space-y-1.5 md:col-span-2">
+                    <label class="block text-xs font-bold text-[#07153f]">Foto Profil Trainer / Narasumber</label>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                        <img id="trainer_avatar_preview" src="{{ optional($settings['trainer_avatar'] ?? null)->value ?? '/images/Insight-Talks-Komdigi.jpeg' }}" alt="Preview" class="w-20 h-20 rounded-2xl object-cover border-2 border-white shadow-sm shrink-0" />
+                        <div class="space-y-2 flex-1">
+                            <input type="file" name="trainer_avatar_file" accept="image/*" onchange="previewImage(this, 'trainer_avatar_preview')" class="block w-full text-xs text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-extrabold file:bg-[#3E5CE7] file:text-white hover:file:bg-blue-700 cursor-pointer" />
+                            <input type="text" name="trainer_avatar" value="{{ optional($settings['trainer_avatar'] ?? null)->value ?? '/images/Insight-Talks-Komdigi.jpeg' }}" placeholder="Atau ketik path / URL gambar langsung" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-[11px] mono text-slate-600 focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -295,12 +301,12 @@
             <div class="grid grid-cols-1 gap-6">
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#07153f]">Headline CTA</label>
-                    <input type="text" name="cta_headline" value="{{ $settings['cta_headline']->value ?? \"Let's Work Together\" }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                    <input type="text" name="cta_headline" value="{{ optional($settings['cta_headline'] ?? null)->value ?? 'Let\'s Work Together' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
                 </div>
 
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#07153f]">Deskripsi CTA</label>
-                    <textarea name="cta_description" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">{{ $settings['cta_description']->value ?? 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.' }}</textarea>
+                    <textarea name="cta_description" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">{{ optional($settings['cta_description'] ?? null)->value ?? 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.' }}</textarea>
                 </div>
             </div>
         </div>
@@ -314,4 +320,16 @@
 
     </form>
 </div>
+
+<script>
+function previewImage(input, previewId) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById(previewId).src = e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
 @endsection
