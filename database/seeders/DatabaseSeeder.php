@@ -393,10 +393,10 @@ class DatabaseSeeder extends Seeder
         Inquiry::create([
             'name' => 'Budi Santoso',
             'email' => 'budi@techcorp.id',
-            'phone' => '081299887766',
-            'subject' => 'Permintaan Penawaran Aplikasi Mobile & ERP',
-            'message' => 'Halo Pak Septa Ryan & Tim Beranda Digital, kami berencana membangun aplikasi mobile dan ERP manufaktur. Mohon informasi jadwal diskusi.',
             'is_read' => false,
         ]);
+
+        // 10. Authentic Projects & Legal Profile from Company Proposal Document
+        require __DIR__ . '/populate_btd_profile.php';
     }
 }

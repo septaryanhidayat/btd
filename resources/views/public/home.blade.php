@@ -471,6 +471,346 @@
     </div>
 </section>
 
+<!-- SECTION 4.1: LEGALITAS & KREDIBILITAS BADAN USAHA (E-Katalog LKPP RI & Legal Documents) -->
+<section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
+    
+    <!-- Decorative Watermark "Legal" -->
+    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-100/60 dark:text-slate-800/25 pointer-events-none select-none tracking-wider -z-0">
+        Legality
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center space-y-3 max-w-3xl mx-auto reveal-on-scroll">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400 text-xs font-extrabold uppercase tracking-wider">
+                <span>🏛️ LEGALITAS & BADAN USAHA RESMI</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white leading-tight">
+                Kredibilitas Hukum Sah & Terdaftar di E-Katalog LKPP RI
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                CV. Beranda Teknologi Digital adalah badan usaha berbadan hukum resmi yang terdaftar di Kementerian Hukum dan HAM RI, memiliki NPWP perusahaan, serta terdaftar resmi sebagai penyedia barang/jasa di <strong>E-Katalog Lembaga Kebijakan Pengadaan Barang/Jasa Pemerintah (LKPP RI)</strong>.
+            </p>
+        </div>
+
+        <!-- 4 Legal Pillar Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Card 1: SK Kemenkumham -->
+            <div class="bg-[#f8faff] dark:bg-slate-800/90 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-75">
+                <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-950/80 text-[#3E5CE7] dark:text-blue-400 flex items-center justify-center text-2xl font-bold shadow-inner">
+                    📜
+                </div>
+                <div class="space-y-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-400 block">Kemenkumham RI</span>
+                    <h3 class="text-sm font-black text-[#07153f] dark:text-white">Nomor Pendirian SK</h3>
+                    <p class="text-xs font-mono font-bold text-[#3E5CE7] dark:text-blue-400 pt-1">
+                        AHU-0003819-AH.01.14 Tahun 2022
+                    </p>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-200/60 dark:border-slate-700">
+                    Pengesahan perseroan komanditer oleh Ditjen Administrasi Hukum Umum Kemenkumham Republik Indonesia.
+                </p>
+            </div>
+
+            <!-- Card 2: Akta Notaris -->
+            <div class="bg-[#f8faff] dark:bg-slate-800/90 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-150">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-bold shadow-inner">
+                    ⚖️
+                </div>
+                <div class="space-y-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-400 block">Notaris Pendirian</span>
+                    <h3 class="text-sm font-black text-[#07153f] dark:text-white">Akta Notaris & PPAT</h3>
+                    <p class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 pt-1">
+                        Akta No. 01 Tgl 29 Des 2021
+                    </p>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-200/60 dark:border-slate-700">
+                    Dibuat di hadapan Notaris Juwairiyah Handayani, S.H., M.Kn di Palembang & Ogan Ilir, Sumatera Selatan.
+                </p>
+            </div>
+
+            <!-- Card 3: NPWP Perusahaan -->
+            <div class="bg-[#f8faff] dark:bg-slate-800/90 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-200">
+                <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl font-bold shadow-inner">
+                    💳
+                </div>
+                <div class="space-y-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-400 block">Perpajakan Resmi</span>
+                    <h3 class="text-sm font-black text-[#07153f] dark:text-white">NPWP Badan Usaha</h3>
+                    <p class="text-xs font-mono font-bold text-amber-600 dark:text-amber-400 pt-1">
+                        63.100.018.9-312.000
+                    </p>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-200/60 dark:border-slate-700">
+                    Terdaftar aktif di KPP Pratama Kayu Agung. Siap menerbitkan faktur pajak resmi untuk transaksi instansi.
+                </p>
+            </div>
+
+            <!-- Card 4: E-Katalog LKPP RI -->
+            <div class="bg-gradient-to-br from-orange-500 to-amber-600 text-white p-6 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between">
+                <div class="space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-white/20 text-white flex items-center justify-center text-2xl font-bold backdrop-blur-md">
+                        🏛️
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-orange-200 block">Pengadaan Pemerintah</span>
+                        <h3 class="text-sm font-black text-white">E-Katalog LKPP RI</h3>
+                        <p class="text-[11px] font-semibold text-orange-100 pt-0.5">
+                            Penyedia Perangkat Lunak & Sistem Informasi
+                        </p>
+                    </div>
+                    <p class="text-[11px] text-orange-100/90 leading-relaxed pt-2 border-t border-white/20">
+                        Memudahkan dinas, sekolah negeri, dan BUMD melakukan pembelian langsung (e-purchasing) secara sah.
+                    </p>
+                </div>
+                <div class="pt-2">
+                    <a href="https://e-katalog.lkpp.go.id/katalog/produk/detail/48939397?type=regency" 
+                       target="_blank" 
+                       class="w-full text-center px-4 py-2 rounded-xl bg-white text-[#fe6000] font-black text-[11px] uppercase tracking-wider shadow-md hover:bg-orange-50 transition-all flex items-center justify-center gap-1">
+                        <span>Lihat di E-Katalog LKPP</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 5 Keunggulan Jasa Kami (Page 6 Profile) -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-[#f8faff] dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 space-y-6 reveal-on-scroll">
+            <div class="text-center sm:text-left space-y-1">
+                <span class="text-xs font-bold text-[#fe6000] uppercase tracking-wider mono">KENAPA MEMILIH KAMI</span>
+                <h3 class="text-lg sm:text-xl font-extrabold text-[#07153f] dark:text-white">5 Jaminan Keunggulan Layanan CV. Beranda Teknologi Digital</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
+                    <div class="text-2xl">⏱️</div>
+                    <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Pengerjaan Cepat</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Dikerjakan tim profesional berpengalaman dengan timeline pengerjaan terukur.</p>
+                </div>
+                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
+                    <div class="text-2xl">✨</div>
+                    <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Hasil Memuaskan</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Desain unik, responsif semua perangkat, modern, dan bebas bug.</p>
+                </div>
+                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
+                    <div class="text-2xl">🏷️</div>
+                    <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Harga Terjangkau</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Kualitas terbaik dengan penawaran bersaing dan fitur sesuai kebutuhan.</p>
+                </div>
+                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
+                    <div class="text-2xl">🤝</div>
+                    <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Konsultasi Gratis</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Diskusi arsitektur dan kebutuhan sistem tanpa ikatan komitmen awal.</p>
+                </div>
+                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
+                    <div class="text-2xl">🛡️</div>
+                    <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Legalitas Kuat</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Terdaftar resmi Kemenkumham, NPWP, Notaris, dan E-Katalog LKPP.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 4.2: KLIEN & MITRA KOLABORASI (Our Authentic Clients: Nasional & Internasional) -->
+<section class="py-16 sm:py-20 bg-[#f8faff] dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
+    
+    <!-- Watermark "Clients" -->
+    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-200/40 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
+        Clients
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center space-y-3 max-w-2xl mx-auto reveal-on-scroll">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/60 text-[#3E5CE7] dark:text-blue-400 text-xs font-extrabold uppercase tracking-wider">
+                <span>🤝 REKAM JEJAK PORTOFOLIO</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white leading-tight">
+                Klien & Mitra Kolaborasi Kami
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                Telah dipercaya oleh berbagai instansi pemerintahan daerah, institusi perguruan tinggi, lembaga pendidikan Islam, badan usaha, hingga klien internasional.
+            </p>
+        </div>
+
+        <!-- Clients Categories Bento Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Column 1: Internasional & Luar Negeri -->
+            <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-75">
+                <div class="flex items-center gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <span class="text-2xl">🌏</span>
+                    <div>
+                        <h3 class="text-xs font-extrabold text-[#07153f] dark:text-white uppercase tracking-wider">Klien Internasional</h3>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Global Partners</p>
+                    </div>
+                </div>
+                <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">New Zealand BodyTalk Alliance</strong>
+                            <span class="text-[10px] text-slate-400">Selandia Baru (New Zealand)</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Master Your Muscles</strong>
+                            <span class="text-[10px] text-slate-400">Kuala Lumpur, Malaysia</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Pemerintahan & Perguruan Tinggi -->
+            <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-150">
+                <div class="flex items-center gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <span class="text-2xl">🏛️</span>
+                    <div>
+                        <h3 class="text-xs font-extrabold text-[#07153f] dark:text-white uppercase tracking-wider">Pemerintah & Kampus</h3>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Instansi & Universitas</p>
+                    </div>
+                </div>
+                <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Dinas Koperasi Ogan Ilir</strong>
+                            <span class="text-[10px] text-slate-400">Pemerintah Kab. Ogan Ilir</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Universitas Sriwijaya (Unsri)</strong>
+                            <span class="text-[10px] text-slate-400">Kampus Sehat, Riset Dosen & Mahasiswa</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Pemerintah Desa Senuro Timur</strong>
+                            <span class="text-[10px] text-slate-400">Digitalisasi Administrasi Desa</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Ikatan Guru Indonesia (IGI)</strong>
+                            <span class="text-[10px] text-slate-400">Pengurus Daerah Ogan Ilir</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Sekolah & Yayasan -->
+            <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-200">
+                <div class="flex items-center gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <span class="text-2xl">🎓</span>
+                    <div>
+                        <h3 class="text-xs font-extrabold text-[#07153f] dark:text-white uppercase tracking-wider">Sekolah & Yayasan</h3>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Institusi Edukasi</p>
+                    </div>
+                </div>
+                <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Yayasan As-Salam Papua</strong>
+                            <span class="text-[10px] text-slate-400">SIT As-Salaam Jayapura, Papua</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">SIT Robbani Ogan Ilir</strong>
+                            <span class="text-[10px] text-slate-400">SMPIT, SMAIT & Yayasan Robbani</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">SMAIT Ishlahul Ummah</strong>
+                            <span class="text-[10px] text-slate-400">Kota Prabumulih</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">SMAIT Raudhatul Ulum</strong>
+                            <span class="text-[10px] text-slate-400">Pondok Pesantren Raudhatul Ulum</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Ralenta Learning Center</strong>
+                            <span class="text-[10px] text-slate-400">Pusat Bimbingan & Pelatihan</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Komersial, Bisnis & Media -->
+            <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-250">
+                <div class="flex items-center gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <span class="text-2xl">💼</span>
+                    <div>
+                        <h3 class="text-xs font-extrabold text-[#07153f] dark:text-white uppercase tracking-wider">Bisnis & Komersial</h3>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Koperasi, UMKM & Media</p>
+                    </div>
+                </div>
+                <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Dompet Sosial Robbani (DSRP)</strong>
+                            <span class="text-[10px] text-slate-400">Lembaga Zakat & Filantropi</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Koperasi Pegawai Robbani</strong>
+                            <span class="text-[10px] text-slate-400">Toko Online robbanimart.com</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Penerbit Laya Aksara Jaya</strong>
+                            <span class="text-[10px] text-slate-400">Percetakan & Publikasi Buku</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Portal Berita Kabar32.com</strong>
+                            <span class="text-[10px] text-slate-400">Media Online Publik</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold">✓</span>
+                        <div>
+                            <strong class="text-[#07153f] dark:text-white block">Iin's Cake</strong>
+                            <span class="text-[10px] text-slate-400">Katalog Kuliner & UMKM</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
 <!-- SECTION 5: PRODUCT & READY SOFTWARE SOLUTIONS ("Our Products & Solutions with Interactive UI Slider") -->
 <section id="produk-unggulan" 
          x-data="{
@@ -873,6 +1213,163 @@
             </div>
 
         </div>
+    </div>
+</section>
+
+<!-- SECTION 5.1: PAKET RINCIAN BIAYA PEMBUATAN WEBSITE & E-KLINIK (Halaman 10 & 11 Proposal Resmi BTD) -->
+<section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
+    
+    <!-- Watermark "Packages" -->
+    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-100/60 dark:text-slate-800/25 pointer-events-none select-none tracking-wider -z-0">
+        Packages
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center space-y-3 max-w-3xl mx-auto reveal-on-scroll">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 dark:bg-orange-950/60 border border-orange-200 dark:border-orange-800/60 text-[#fe6000] text-xs font-extrabold uppercase tracking-wider">
+                <span>💰 PAKET RESMI & TRANSPARAN</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white leading-tight">
+                Rincian Paket Pembuatan Website & E-Klinik
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                Paket pengembangan perangkat lunak bergaransi resmi dari CV. Beranda Teknologi Digital dengan spesifikasi modul lengkap, server cepat, dan dukungan teknis jangka panjang.
+            </p>
+        </div>
+
+        <!-- 2 Big Package Comparison Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            <!-- Paket 1: Website Company Profile (Rp 5 Jt) -->
+            <div class="bg-[#f8faff] dark:bg-slate-800/90 rounded-3xl p-7 sm:p-9 border border-slate-200/90 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-6 relative overflow-hidden reveal-on-scroll delay-75">
+                <div class="space-y-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] dark:text-blue-400 font-extrabold text-[10px] uppercase tracking-wider">
+                                Paket Website Instansi
+                            </span>
+                            <h3 class="text-2xl font-black text-[#07153f] dark:text-white pt-2">
+                                Company Profile
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 pt-0.5">
+                                Solusi website profil korporasi, yayasan, dan institusi pendidikan.
+                            </p>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-xs font-bold text-slate-400 block">Investasi</span>
+                            <span class="text-2xl sm:text-3xl font-black text-[#3E5CE7] mono">Rp. 5 Jt</span>
+                        </div>
+                    </div>
+
+                    <!-- Fasilitas & Spesifikasi Teknis -->
+                    <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/80 space-y-2">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-400 block">Fasilitas Termasuk:</span>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300 font-semibold">
+                            <div class="flex items-center gap-1.5">✓ <span>Free Domain & Cloud Hosting</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>SSL Security Protection</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>Desain Premium & Responsive</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>Multiple Platform Layout</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>Garansi Revisi 5x</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>Buku Modul Penggunaan</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Fitur Utama -->
+                    <div class="space-y-2.5">
+                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-400 block">Modul Fitur:</span>
+                        <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Sambutan Pimpinan & Informasi Profil Website</span></li>
+                            <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Visi Misi & Struktur Organisasi Lembaga</span></li>
+                            <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Program Kerja, Agenda Kegiatan & Informasi Layanan</span></li>
+                            <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Publikasi Artikel, Berita & Pengumuman Resmi</span></li>
+                            <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Layanan Pengaduan & Survey Kepuasan Masyarakat</span></li>
+                            <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Galeri Foto, Video & Integrasi Media Sosial</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200/60 dark:border-slate-700">
+                        Perpanjangan tahun berikutnya sebesar <strong>Rp. 1.500.000 / tahun</strong> (Support, Maintenance Server & Pembaruan Minor).
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <a href="https://wa.me/6285267774878?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20pesan%20Paket%20Website%20Company%20Profile%20Rp%205%20Jt" 
+                       target="_blank"
+                       style="background-color: #3E5CE7 !important; color: #ffffff !important;"
+                       class="w-full py-3.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-md hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2 text-center">
+                        <span style="color: #ffffff !important;">💬 Pesan Paket Company Profile (Rp 5 Jt)</span>
+                        <span style="color: #ffffff !important;">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Paket 2: Sistem Informasi E-Klinik (Rp 15 Jt) -->
+            <div class="bg-gradient-to-b from-[#07153f] to-slate-900 text-white rounded-3xl p-7 sm:p-9 border border-blue-900 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-6 relative overflow-hidden reveal-on-scroll delay-150">
+                <div class="space-y-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-[#fe6000] text-white font-extrabold text-[10px] uppercase tracking-wider shadow-xs">
+                                Solusi Spesialis Medis
+                            </span>
+                            <h3 class="text-2xl font-black text-white pt-2">
+                                E-Klinik & Rekam Medis (EMR)
+                            </h3>
+                            <p class="text-xs text-slate-300 pt-0.5">
+                                Sistem informasi klinik terpadu sesuai standar digitalisasi Kemenkes.
+                            </p>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-xs font-bold text-slate-400 block">Investasi</span>
+                            <span class="text-2xl sm:text-3xl font-black text-[#fe6000] mono">Rp. 15 Jt</span>
+                        </div>
+                    </div>
+
+                    <!-- Fasilitas & Spesifikasi Teknis -->
+                    <div class="p-4 rounded-2xl bg-white/10 border border-white/15 space-y-2 backdrop-blur-md">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-orange-300 block">Fasilitas Termasuk:</span>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-white font-semibold">
+                            <div class="flex items-center gap-1.5">✓ <span>Free Domain & Cloud Hosting</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>SSL Security & Enkripsi Data</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>Multi-User Role Dokter & Kasir</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>Garansi Revisi 5x</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>Pelatihan Petugas & Operator</span></div>
+                            <div class="flex items-center gap-1.5">✓ <span>Buku Modul Penggunaan</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Fitur Utama -->
+                    <div class="space-y-2.5">
+                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-orange-300 block">Modul Fitur Enterprise:</span>
+                        <ul class="space-y-1.5 text-xs text-slate-200">
+                            <li class="flex items-center gap-2 text-emerald-400">✓ <span class="text-white">Sistem Booking Jadwal Dokter, Tanggal, dan Antrean Online</span></li>
+                            <li class="flex items-center gap-2 text-emerald-400">✓ <span class="text-white">Portal Pasien (Akses Riwayat Medis, Hasil Lab & Resep Obat)</span></li>
+                            <li class="flex items-center gap-2 text-emerald-400">✓ <span class="text-white">Rekam Medis Elektronik (EMR / RME) Terstandar</span></li>
+                            <li class="flex items-center gap-2 text-emerald-400">✓ <span class="text-white">Konsultasi Telemedis Online & Formulir Persetujuan Pasien</span></li>
+                            <li class="flex items-center gap-2 text-emerald-400">✓ <span class="text-white">Pembayaran Digital Payment Gateway (QRIS, VA, E-Wallet)</span></li>
+                            <li class="flex items-center gap-2 text-emerald-400">✓ <span class="text-white">Analitik Manajemen: Monitoring Pasien, Kunjungan & Obat</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="text-[11px] text-slate-300 pt-2 border-t border-white/15">
+                        Perpanjangan tahun berikutnya sebesar <strong>Rp. 2.500.000 / tahun</strong> (Support, Maintenance Server Medis & Backup).
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <a href="https://wa.me/6285267774878?text=Halo%20CV.%20Beranda%20Teknologi%20Digital,%20saya%20tertarik%20pesan%20Paket%20Sistem%20Informasi%20E-Klinik%20Rp%2015%20Jt" 
+                       target="_blank"
+                       style="background-color: #fe6000 !important; color: #ffffff !important;"
+                       class="w-full py-3.5 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-orange-500/30 hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2 text-center">
+                        <span style="color: #ffffff !important;">💬 Pesan Paket E-Klinik (Rp 15 Jt)</span>
+                        <span style="color: #ffffff !important;">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </section>
 

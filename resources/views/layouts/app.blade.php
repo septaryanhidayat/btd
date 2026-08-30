@@ -486,19 +486,39 @@
                         <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-dark-mode hidden dark:block h-12 sm:h-14 md:h-16 w-auto object-contain mx-auto md:mx-0 drop-shadow-md hover:scale-105 transition-transform" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
-                        <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> &bull; Mitra transformasi digital inovatif penyedia solusi website enterprise, aplikasi mobile Flutter, sistem informasi, solusi AI privat, dan pelatihan teknologi profesional.
+                        <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> &bull; Digital Agency & Software House terpercaya penyedia solusi Website Enterprise, Mobile Apps (Android/iOS), Sistem Informasi Instansi, Virtual Reality, dan IT Training.
                     </p>
-                    <div class="pt-2 space-y-1.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <a href="https://wa.me/6289695249089" target="_blank" class="flex items-center justify-center md:justify-start gap-2 hover:text-emerald-500 transition-colors">
+                    
+                    <!-- Legalitas Singkat Badan Usaha -->
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-[11px] space-y-1 w-full max-w-sm text-left">
+                        <div class="font-bold text-[#07153f] dark:text-white flex items-center gap-1.5">
+                            <span>🏛️</span> <span>Badan Usaha Resmi Berbadan Hukum</span>
+                        </div>
+                        <div class="text-slate-600 dark:text-slate-300">
+                            <strong>SK Kemenkumham:</strong> AHU-0003819-AH.01.14 Th 2022
+                        </div>
+                        <div class="text-slate-600 dark:text-slate-300">
+                            <strong>NPWP:</strong> 63.100.018.9-312.000
+                        </div>
+                        <div class="pt-1">
+                            <a href="https://e-katalog.lkpp.go.id/katalog/produk/detail/48939397?type=regency" target="_blank" class="inline-flex items-center gap-1 text-[#3E5CE7] dark:text-blue-400 font-bold hover:underline">
+                                <span>Terdaftar di E-Katalog LKPP RI</span> <span>↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="pt-1 space-y-1.5 text-xs font-semibold" style="color: var(--text-muted);">
+                        <a href="https://wa.me/6285267774878" target="_blank" class="flex items-center justify-center md:justify-start gap-2 hover:text-emerald-500 transition-colors">
                             <span class="text-emerald-500 font-bold">💬 WhatsApp:</span>
-                            <span class="mono font-bold" style="color: var(--text);">0896 9524 9089</span>
+                            <span class="mono font-bold" style="color: var(--text);">0852 6777 4878</span> / <span class="mono font-bold" style="color: var(--text);">0896 9524 9089</span>
                         </a>
                         <a href="mailto:info@berandadigital.net" class="flex items-center justify-center md:justify-start gap-2 hover:text-blue-500 transition-colors">
                             <span class="text-blue-500 font-bold">✉️ Email:</span>
                             <span class="font-bold" style="color: var(--text);">info@berandadigital.net</span>
                         </a>
-                        <div class="flex items-center justify-center md:justify-start gap-2" style="color: var(--text-dim);">
-                            <span>📍 Sumatera Selatan, Indonesia</span>
+                        <div class="flex items-start justify-center md:justify-start gap-2 text-left" style="color: var(--text-dim);">
+                            <span class="shrink-0 mt-0.5">📍</span>
+                            <span>Jl. Sarjana Kel. Timbangan Blok A No. 15, Indralaya Utara, Ogan Ilir, Sumatera Selatan</span>
                         </div>
                     </div>
                 </div>
