@@ -137,10 +137,10 @@
                     </a>
                 </div>
 
-                <!-- Group 3: Interaksi & Leads -->
+                <!-- Group 3: Interaksi & Penagihan -->
                 <div class="space-y-1">
                     <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 px-3 pb-1">
-                        Pesan & Klien
+                        Pesan & Penagihan
                     </div>
                     <a href="{{ route('admin.inquiries.index') }}" 
                        class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.inquiries.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
@@ -155,6 +155,23 @@
                             </span>
                         @endif
                     </a>
+                    <a href="{{ route('admin.invoices.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.invoices.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.invoices.*') ? 'text-white' : 'text-emerald-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <span>Faktur & Invoice Klien</span>
+                    </a>
+                </div>
+
+                <!-- Group 4: Pengaturan Akun -->
+                <div class="space-y-1">
+                    <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 px-3 pb-1">
+                        Akun & Akses
+                    </div>
+                    <a href="{{ route('admin.profile.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.profile.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.profile.*') ? 'text-white' : 'text-cyan-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                        <span>Pengaturan Akun</span>
+                    </a>
                 </div>
             </div>
 
@@ -162,15 +179,16 @@
 
         <!-- Sidebar Bottom: User Profile & Quick Actions -->
         <div class="p-5 border-t border-white/10 bg-black/20 space-y-3">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#3E5CE7] to-[#fe6000] text-white flex items-center justify-center font-black text-sm shadow-md shrink-0">
+            <a href="{{ route('admin.profile.index') }}" class="flex items-center gap-3 p-1.5 -m-1.5 rounded-2xl hover:bg-white/10 transition-colors group" title="Buka Pengaturan Akun">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#3E5CE7] to-[#fe6000] text-white flex items-center justify-center font-black text-sm shadow-md shrink-0 group-hover:scale-105 transition-transform">
                     {{ strtoupper(substr(Auth::user()->name ?? 'A', 0, 1)) }}
                 </div>
                 <div class="overflow-hidden flex-1">
-                    <div class="text-xs font-bold text-white truncate">{{ Auth::user()->name ?? 'Administrator' }}</div>
+                    <div class="text-xs font-bold text-white group-hover:text-blue-300 transition-colors truncate">{{ Auth::user()->name ?? 'Administrator' }}</div>
                     <div class="text-[10px] text-slate-400 truncate mono">{{ Auth::user()->email ?? 'admin@berandadigital.net' }}</div>
                 </div>
-            </div>
+                <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
 
             <div class="flex items-center gap-2 pt-1">
                 <a href="{{ route('home') }}" target="_blank" class="flex-1 py-2 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-center text-[11px] font-bold text-slate-200 transition-all flex items-center justify-center gap-1.5">

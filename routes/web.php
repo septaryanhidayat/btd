@@ -3,8 +3,10 @@
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminInquiryController;
+use App\Http\Controllers\Admin\AdminInvoiceController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AdminProjectController;
 use App\Http\Controllers\Admin\AdminTrainingController;
 use App\Http\Controllers\Admin\AuthController;
@@ -76,4 +78,12 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/inquiries', [AdminInquiryController::class, 'index'])->name('inquiries.index');
     Route::get('/inquiries/{inquiry}', [AdminInquiryController::class, 'show'])->name('inquiries.show');
     Route::delete('/inquiries/{inquiry}', [AdminInquiryController::class, 'destroy'])->name('inquiries.destroy');
+
+    // Invoices & Billing Management + Print Feature
+    Route::get('/invoices/{invoice}/print', [AdminInvoiceController::class, 'print'])->name('invoices.print');
+    Route::resource('invoices', AdminInvoiceController::class);
+
+    // Profile & Account Settings
+    Route::get('/profile', [AdminProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile', [AdminProfileController::class, 'update'])->name('profile.update');
 });

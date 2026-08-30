@@ -870,5 +870,35 @@ INSERT INTO `trainings` (`id`, `title`, `slug`, `level`, `duration`, `target_aud
 (1, 'Lecturer Development Program: Artificial Intelligence & Vibe Coding', 'lecturer-development-program-ai-vibe-coding', 'Executive & Dosen', '1 Hari Workshop Intensif', 'Dosen, Akademisi & Pengajar Perguruan Tinggi', 'Pelatihan Pemanfaatan Artificial Intelligence (AI) untuk pembuatan aplikasi praktis dan profesional tanpa coding, khusus bagi Dosen Politeknik Akamigas Palembang.', '["Pengenalan Konsep Vibe Coding & Generative AI","Pembuatan Prototype Aplikasi Tanpa Baris Kode","Pemanfaatan AI dalam Inovasi Pembelajaran Perguruan Tinggi","Studi Kasus Otomasi Administrasi Akademik"]', 1500000, '/preview/screencapture-berandadigital-test-trainer-2026-08-19-17_49_10.png', 1, 1, '2026-08-19 10:57:35', '2026-08-19 10:57:35'),
 (2, 'Pelatihan Augmented Reality (AR) & Koding untuk Media Edukasi Interaktif', 'pelatihan-augmented-reality-ar-dan-koding', 'Guru & Praktisi Pendidikan', '1 Hari Workshop', 'Guru SD, SMP, SMA & Pengembang Media Pembelajaran', 'Pelatihan pembuatan aplikasi 3D Augmented Reality untuk visualisasi materi pelajaran interaktif di kelas.', '["Dasar 3D Modeling & AR Marker","Pengenalan Software AR Creator","Integrasi AR dengan Buku Pelajaran","Publishing Aplikasi AR ke Smartphone"]', 1200000, '/images/Flyer-AR-New-1-scaled.jpg', 1, 2, '2026-08-19 10:57:35', '2026-08-19 10:57:35');
 
+-- --------------------------------------------------------
+-- Structure & Data for table `invoices`
+-- --------------------------------------------------------
+DROP TABLE IF EXISTS `invoices`;
+CREATE TABLE `invoices` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `invoice_number` varchar(50) NOT NULL,
+  `invoice_date` date NOT NULL,
+  `due_date` date DEFAULT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'paid',
+  `client_type` varchar(100) NOT NULL DEFAULT 'Personal',
+  `client_name` varchar(255) NOT NULL,
+  `client_attn` varchar(255) DEFAULT NULL,
+  `client_address` text DEFAULT NULL,
+  `items` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`items`)),
+  `total_amount` decimal(15,2) NOT NULL DEFAULT 0.00,
+  `paid_amount` decimal(15,2) NOT NULL DEFAULT 0.00,
+  `remaining_amount` decimal(15,2) NOT NULL DEFAULT 0.00,
+  `transactions` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`transactions`)),
+  `notes` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `invoices_invoice_number_unique` (`invoice_number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `invoices` (`id`, `invoice_number`, `invoice_date`, `due_date`, `status`, `client_type`, `client_name`, `client_attn`, `client_address`, `items`, `total_amount`, `paid_amount`, `remaining_amount`, `transactions`, `notes`, `created_at`, `updated_at`) VALUES
+(1, '1675516', '2026-07-30', '2026-07-30', 'paid', 'Personal', 'Ibu Silvi Aryanti', 'ATTN: Ibu Silvi Aryanti', 'Palembang, Indonesia', '[{\"description\":\"Pelunasan Pembuatan Aplikasi https://sa-badmintonapp.com\",\"amount\":3000000}]', 3000000.00, 3000000.00, 0.00, '[{\"date\":\"20/07/2026\",\"payment_method\":\"ShopeePay\",\"transaction_id\":\"UWSK6XWZ6WF5OTDOV2CS61J4QDIKA\",\"amount\":1500000},{\"date\":\"30/07/2026\",\"payment_method\":\"ShopeePay\",\"transaction_id\":\"UWSMKOFZT6TTMFZKXI5FNEJJCD6QA\",\"amount\":1500000}]', 'Terima kasih atas kerja sama dan kepercayaan Anda bersama CV. Beranda Teknologi Digital.', '2026-08-30 14:00:00', '2026-08-30 14:00:00');
+
 SET FOREIGN_KEY_CHECKS = 1;
 COMMIT;
+

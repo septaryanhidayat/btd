@@ -11,7 +11,10 @@ class AdminCategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::latest()->paginate(15);
+        $categories = Category::withCount(['projects', 'posts', 'digitalProducts'])
+            ->latest()
+            ->paginate(20);
+
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -45,16 +48,32 @@ class AdminCategoryController extends Controller
             'type' => 'required|in:project,product,post',
         ]);
 
+        $slug = Str::slug($validated['name']);
+        if ($slug !== $category->slug) {
+            $originalSlug = $slug;
+            $count = 1;
+            while (Category::where('slug', $slug)->where('id', '!=', $category->id)->exists()) {
+                $slug = "{$originalSlug}-" . $count++;
+            }
+        }
+
         $category->update([
             'name' => $validated['name'],
+            'slug' => $slug,
             'type' => $validated['type'],
         ]);
 
-        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil diperbarui.');
+        return redirect()->route('admin.categories.index')->with('success', 'Kategori "' . $category->name . '" berhasil diperbarui.');
     }
 
     public function destroy(Category $category)
     {
+        // Check if category has associated content
+        $totalItems = $category->projects()->count() + $category->posts()->count() + $category->digitalProducts()->count();
+        if ($totalItems > 0) {
+            return redirect()->route('admin.categories.index')->with('error', "Kategori tidak dapat dihapus karena masih digunakan oleh {$totalItems} konten.");
+        }
+
         $category->delete();
         return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil dihapus.');
     }
