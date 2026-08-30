@@ -501,9 +501,9 @@
                             <strong>NPWP:</strong> 63.100.018.9-312.000
                         </div>
                         <div class="pt-1">
-                            <a href="https://e-katalog.lkpp.go.id/katalog/produk/detail/48939397?type=regency" target="_blank" class="inline-flex items-center gap-1 text-[#3E5CE7] dark:text-blue-400 font-bold hover:underline">
-                                <span>Terdaftar di E-Katalog LKPP RI</span> <span>↗</span>
-                            </a>
+                            <span class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-bold">
+                                <span>✓ Terdaftar di E-Katalog LKPP RI</span>
+                            </span>
                         </div>
                     </div>
 

@@ -585,13 +585,9 @@
                     </p>
                 </div>
                 <div class="pt-3">
-                    <a href="https://e-katalog.lkpp.go.id/katalog/produk/detail/48939397?type=regency" 
-                       target="_blank" 
-                       style="background-color: #fe6000 !important; color: #ffffff !important;"
-                       class="w-full text-center px-4 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md hover:brightness-110 transition-all flex items-center justify-center gap-1.5">
-                        <span style="color: #ffffff !important; font-weight: 800;">Cek di E-Katalog LKPP</span>
-                        <span style="color: #ffffff !important;">↗</span>
-                    </a>
+                    <div class="w-full text-center px-4 py-2.5 rounded-xl bg-orange-50 dark:bg-orange-950/70 border border-orange-200 dark:border-orange-800 text-[#fe6000] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-2xs">
+                        <span>🛡️ Terdaftar Resmi E-Katalog LKPP</span>
+                    </div>
                 </div>
             </div>
 
@@ -643,196 +639,6 @@
 
     </div>
 </section>
-
-<!-- SECTION 4.2: KLIEN & MITRA KOLABORASI (Our Authentic Clients: Nasional & Internasional) -->
-<section class="py-16 sm:py-20 bg-[#f8faff] dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
-    
-    <!-- Watermark "Clients" -->
-    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-200/40 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
-        Clients
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
-        
-        <!-- Header -->
-        <div class="text-center space-y-3 max-w-2xl mx-auto reveal-on-scroll">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/60 text-[#3E5CE7] dark:text-blue-400 text-xs font-extrabold uppercase tracking-wider">
-                <span>🤝 REKAM JEJAK PORTOFOLIO</span>
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white leading-tight">
-                Klien & Mitra Kolaborasi Kami
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                Telah dipercaya oleh berbagai instansi pemerintahan daerah, institusi perguruan tinggi, lembaga pendidikan Islam, badan usaha, hingga klien internasional.
-            </p>
-        </div>
-
-        <!-- Clients Categories Bento Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <!-- Column 1: Internasional & Luar Negeri -->
-            <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-75">
-                <div class="flex items-center gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
-                    <span class="text-2xl">🌏</span>
-                    <div>
-                        <h3 class="text-xs font-extrabold text-[#07153f] dark:text-white uppercase tracking-wider">Klien Internasional</h3>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Global Partners</p>
-                    </div>
-                </div>
-                <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">New Zealand BodyTalk Alliance</strong>
-                            <span class="text-[10px] text-slate-400">Selandia Baru (New Zealand)</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Master Your Muscles</strong>
-                            <span class="text-[10px] text-slate-400">Kuala Lumpur, Malaysia</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Column 2: Pemerintahan & Perguruan Tinggi -->
-            <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-150">
-                <div class="flex items-center gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
-                    <span class="text-2xl">🏛️</span>
-                    <div>
-                        <h3 class="text-xs font-extrabold text-[#07153f] dark:text-white uppercase tracking-wider">Pemerintah & Kampus</h3>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Instansi & Universitas</p>
-                    </div>
-                </div>
-                <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Dinas Koperasi Ogan Ilir</strong>
-                            <span class="text-[10px] text-slate-400">Pemerintah Kab. Ogan Ilir</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Universitas Sriwijaya (Unsri)</strong>
-                            <span class="text-[10px] text-slate-400">Kampus Sehat, Riset Dosen & Mahasiswa</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Pemerintah Desa Senuro Timur</strong>
-                            <span class="text-[10px] text-slate-400">Digitalisasi Administrasi Desa</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Ikatan Guru Indonesia (IGI)</strong>
-                            <span class="text-[10px] text-slate-400">Pengurus Daerah Ogan Ilir</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Sekolah & Yayasan -->
-            <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-200">
-                <div class="flex items-center gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
-                    <span class="text-2xl">🎓</span>
-                    <div>
-                        <h3 class="text-xs font-extrabold text-[#07153f] dark:text-white uppercase tracking-wider">Sekolah & Yayasan</h3>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Institusi Edukasi</p>
-                    </div>
-                </div>
-                <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Yayasan As-Salam Papua</strong>
-                            <span class="text-[10px] text-slate-400">SIT As-Salaam Jayapura, Papua</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">SIT Robbani Ogan Ilir</strong>
-                            <span class="text-[10px] text-slate-400">SMPIT, SMAIT & Yayasan Robbani</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">SMAIT Ishlahul Ummah</strong>
-                            <span class="text-[10px] text-slate-400">Kota Prabumulih</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">SMAIT Raudhatul Ulum</strong>
-                            <span class="text-[10px] text-slate-400">Pondok Pesantren Raudhatul Ulum</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Ralenta Learning Center</strong>
-                            <span class="text-[10px] text-slate-400">Pusat Bimbingan & Pelatihan</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Komersial, Bisnis & Media -->
-            <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-4 hover:shadow-xl transition-all reveal-on-scroll delay-250">
-                <div class="flex items-center gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
-                    <span class="text-2xl">💼</span>
-                    <div>
-                        <h3 class="text-xs font-extrabold text-[#07153f] dark:text-white uppercase tracking-wider">Bisnis & Komersial</h3>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Koperasi, UMKM & Media</p>
-                    </div>
-                </div>
-                <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Dompet Sosial Robbani (DSRP)</strong>
-                            <span class="text-[10px] text-slate-400">Lembaga Zakat & Filantropi</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Koperasi Pegawai Robbani</strong>
-                            <span class="text-[10px] text-slate-400">Toko Online robbanimart.com</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Penerbit Laya Aksara Jaya</strong>
-                            <span class="text-[10px] text-slate-400">Percetakan & Publikasi Buku</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Portal Berita Kabar32.com</strong>
-                            <span class="text-[10px] text-slate-400">Media Online Publik</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-emerald-500 font-bold">✓</span>
-                        <div>
-                            <strong class="text-[#07153f] dark:text-white block">Iin's Cake</strong>
-                            <span class="text-[10px] text-slate-400">Katalog Kuliner & UMKM</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
 
         </div>
 
@@ -1240,30 +1046,16 @@
          x-data="{
             // 1. Platform Type
             platform: 'company_profile',
-            platformName: 'Website Company Profile / Profil Usaha',
+            platformName: 'Website Company Profile / Lembaga',
             platformPrice: 2500000,
             
-            // 2. Design Scale
-            design: 'standard',
-            designName: 'Template Modern & Responsif Multi-Device',
-            designPrice: 0,
-            
-            // 3. Hosting & Domain
-            hosting: 'cloud_ssd',
-            hostingName: 'Cloud SSD Fast Hosting + Domain Resmi (1 Tahun)',
-            hostingPrice: 0,
-            
-            // 4. Modular Features
-            addonPayment: false,
+            // 2. Modular Addons
             addonWhatsapp: false,
-            addonMultilang: false,
+            addonPayment: false,
             addonRoles: false,
             addonAI: false,
-            addonExport: false,
-            addonSEO: false,
-            addonTraining: false,
             
-            // 5. Timeline
+            // 3. Timeline
             timeline: 'standard',
             timelineName: 'Pengerjaan Reguler (14 - 30 Hari Kerja)',
             timelinePrice: 0,
@@ -1283,20 +1075,6 @@
                 this.hasCalculated = false;
             },
             
-            setDesign(id, name, price) {
-                this.design = id;
-                this.designName = name;
-                this.designPrice = price;
-                this.hasCalculated = false;
-            },
-            
-            setHosting(id, name, price) {
-                this.hosting = id;
-                this.hostingName = name;
-                this.hostingPrice = price;
-                this.hasCalculated = false;
-            },
-            
             setTimeline(id, name, price) {
                 this.timeline = id;
                 this.timelineName = name;
@@ -1308,17 +1086,13 @@
                 this.isCalculating = true;
                 
                 setTimeout(() => {
-                    let total = this.platformPrice + this.designPrice + this.hostingPrice + this.timelinePrice;
+                    let total = this.platformPrice + this.timelinePrice;
                     let addons = [];
                     
+                    if (this.addonWhatsapp) { total += 850000; addons.push('Notifikasi Otomatis WhatsApp Gateway'); }
                     if (this.addonPayment) { total += 1000000; addons.push('Payment Gateway Otomatis (QRIS/VA)'); }
-                    if (this.addonWhatsapp) { total += 850000; addons.push('Notifikasi WhatsApp Gateway'); }
-                    if (this.addonMultilang) { total += 500000; addons.push('Multi-Bahasa (ID/EN)'); }
-                    if (this.addonRoles) { total += 750000; addons.push('Multi-Role & Hak Akses Berjenjang'); }
-                    if (this.addonAI) { total += 2000000; addons.push('Integrasi AI Assistant / Chatbot'); }
-                    if (this.addonExport) { total += 500000; addons.push('Rekap Laporan & Export Excel/PDF'); }
-                    if (this.addonSEO) { total += 600000; addons.push('Optimasi SEO & Google Analytics'); }
-                    if (this.addonTraining) { total += 750000; addons.push('Pelatihan Operator & Buku Panduan SOP'); }
+                    if (this.addonRoles) { total += 750000; addons.push('Multi-Role & Hak Akses User'); }
+                    if (this.addonAI) { total += 1500000; addons.push('Integrasi AI Assistant / Chatbot'); }
                     
                     this.calculatedTotal = total;
                     this.calculatedMin = Math.round((total * 0.9) / 50000) * 50000;
@@ -1327,7 +1101,7 @@
                     
                     this.isCalculating = false;
                     this.hasCalculated = true;
-                }, 350);
+                }, 300);
             },
             
             formatRupiah(number) {
@@ -1337,9 +1111,8 @@
             getWhatsAppLink() {
                 let text = 'Halo CV. Beranda Teknologi Digital, saya ingin konsultasi estimasi proyek yang saya hitung di website:\n\n';
                 text += '📌 Platform: ' + this.platformName + '\n';
-                text += '🎨 Desain: ' + this.designName + '\n';
-                text += '🌐 Server: ' + this.hostingName + '\n';
                 text += '⏱️ Waktu: ' + this.timelineName + '\n';
+                text += '✨ Fasilitas Gratis: Free Domain, Hosting SSD, SSL Let\'s Encrypt, Desain Logo, 5x Revisi, & Responsif Semua Device\n';
                 if (this.selectedAddonsSummary.length > 0) {
                     text += '⚡ Fitur Tambahan: ' + this.selectedAddonsSummary.join(', ') + '\n';
                 }
@@ -1353,334 +1126,208 @@
         Estimator
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
         
         <!-- Header -->
-        <div class="text-center space-y-3 max-w-3xl mx-auto reveal-on-scroll">
+        <div class="text-center space-y-2.5 max-w-3xl mx-auto reveal-on-scroll">
             <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-[#3E5CE7] dark:text-blue-400 text-xs font-extrabold uppercase tracking-wider">
-                <span>🧮 SIMULASI ANGGARAN & FITUR</span>
+                <span>🧮 SIMULASI ANGGARAN PROYEK</span>
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white leading-tight">
                 Kalkulator Estimasi Biaya Proyek Digital
             </h2>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                Sesuaikan spesifikasi website, aplikasi mobile, dan sistem informasi sesuai kebutuhan serta anggaran instansi Anda. Klik tombol <strong>Hitung Estimasi Biaya</strong> untuk melihat hasil kalkulasi.
+                Pilih kebutuhan sistem informasi Anda. Klik tombol <strong>Hitung Estimasi Biaya</strong> untuk melihat estimasi anggaran transparan.
             </p>
         </div>
 
+        <!-- Standard Inclusions Banner (Always Included Free) -->
+        <div style="background-color: #07153f !important; color: #ffffff !important;"
+             class="rounded-2xl p-4 sm:p-5 shadow-xl border border-slate-800 text-center max-w-4xl mx-auto space-y-2.5 reveal-on-scroll">
+            <div class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+                <span>✨</span> <span>SEMUA PAKET SUDAH OTOMATIS TERMASUK FASILITAS LENGKAP (FREE):</span>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-semibold">
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🌐 Free Domain 1 Tahun</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">⚡ Free Cloud SSD Hosting</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔒 Free SSL Let's Encrypt</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🎨 Free Desain Logo Sistem</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔄 Garansi 5x Revisi</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">📱 Responsif Semua Device</span>
+            </div>
+        </div>
+
+        <!-- Calculator Grid Layout -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            <!-- Left 7 Columns: Options Selector Menu -->
-            <div class="lg:col-span-7 bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-7 reveal-on-scroll">
+            <!-- Left 7 Columns: Compact Options Selector -->
+            <div class="lg:col-span-7 bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-6 reveal-on-scroll">
                 
-                <!-- 1. Pilihan Jenis Platform / Solusi (10 Pilihan) -->
-                <div class="space-y-3">
+                <!-- 1. Pilihan Solusi / Platform (6 Pilihan Populer) -->
+                <div class="space-y-2.5">
                     <div class="flex items-center justify-between">
                         <label class="text-xs font-black uppercase tracking-wider text-[#07153f] dark:text-white flex items-center gap-2">
                             <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">1</span>
-                            <span>Pilih Jenis Platform / Solusi Digital:</span>
+                            <span>Pilih Solusi / Platform Digital:</span>
                         </label>
                         <span class="text-[10px] text-slate-500 dark:text-slate-400">Pilih salah satu</span>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                         
                         <button type="button" 
-                                @click="setPlatform('company_profile', 'Website Company Profile / Profil Usaha', 2500000)"
+                                @click="setPlatform('company_profile', 'Website Company Profile / Lembaga', 2500000)"
                                 :class="platform === 'company_profile' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
                                 <strong class="block text-xs text-[#07153f] dark:text-white">Web Company Profile</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Profil Perusahaan & Lembaga</span>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Profil Usaha & Portofolio Lembaga</span>
                             </div>
-                            <span class="text-base">🏢</span>
+                            <span class="text-lg">🏢</span>
                         </button>
 
                         <button type="button" 
-                                @click="setPlatform('web_sekolah', 'Website Sekolah / Madrasah / Pesantren', 3000000)"
+                                @click="setPlatform('web_sekolah', 'Website Sekolah, Kampus & PPDB', 3000000)"
                                 :class="platform === 'web_sekolah' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
-                                <strong class="block text-xs text-[#07153f] dark:text-white">Web Sekolah / Kampus</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Portal Informasi & Berita Edukasi</span>
+                                <strong class="block text-xs text-[#07153f] dark:text-white">Web Sekolah / PPDB</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Portal Edukasi & Pendaftaran Baru</span>
                             </div>
-                            <span class="text-base">🎓</span>
+                            <span class="text-lg">🎓</span>
                         </button>
 
                         <button type="button" 
-                                @click="setPlatform('ppdb_online', 'Sistem Penerimaan Siswa Baru (PPDB Online)', 3500000)"
-                                :class="platform === 'ppdb_online' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
-                            <div>
-                                <strong class="block text-xs text-[#07153f] dark:text-white">PPDB Online Terpadu</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Form Pendaftaran, Verifikasi & Cetak</span>
-                            </div>
-                            <span class="text-base">📝</span>
-                        </button>
-
-                        <button type="button" 
-                                @click="setPlatform('portal_berita', 'Portal Berita / Media Publikasi Online', 3000000)"
-                                :class="platform === 'portal_berita' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
-                            <div>
-                                <strong class="block text-xs text-[#07153f] dark:text-white">Portal Media Berita</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Rubrik Berita, Iklan & Multi-Penulis</span>
-                            </div>
-                            <span class="text-base">📰</span>
-                        </button>
-
-                        <button type="button" 
-                                @click="setPlatform('ecommerce', 'Toko Online & Katalog E-Commerce', 4000000)"
+                                @click="setPlatform('ecommerce', 'Toko Online / Katalog Digital', 3500000)"
                                 :class="platform === 'ecommerce' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
                                 <strong class="block text-xs text-[#07153f] dark:text-white">Toko Online / Katalog</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Keranjang Belanja, Ongkir & Pesanan</span>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Produk, Keranjang & Checkout</span>
                             </div>
-                            <span class="text-base">🛍️</span>
+                            <span class="text-lg">🛍️</span>
                         </button>
 
                         <button type="button" 
-                                @click="setPlatform('siakad', 'Sistem Informasi Akademik (SIAKAD)', 5500000)"
-                                :class="platform === 'siakad' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
-                            <div>
-                                <strong class="block text-xs text-[#07153f] dark:text-white">SIAKAD / E-Rapor</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Nilai, Jadwal, Presensi & Portal Wali</span>
-                            </div>
-                            <span class="text-base">📚</span>
-                        </button>
-
-                        <button type="button" 
-                                @click="setPlatform('sim_desa', 'SIM Instansi / Desa Digital / ERP', 6000000)"
+                                @click="setPlatform('sim_desa', 'SIM Instansi / Desa Digital', 4500000)"
                                 :class="platform === 'sim_desa' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
                                 <strong class="block text-xs text-[#07153f] dark:text-white">SIM Instansi / Desa Digital</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Administrasi Surat, Warga & Inventaris</span>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Administrasi Surat & Layanan Warga</span>
                             </div>
-                            <span class="text-base">⚙️</span>
+                            <span class="text-lg">⚙️</span>
                         </button>
 
                         <button type="button" 
-                                @click="setPlatform('eklinik_emr', 'Sistem Informasi E-Klinik & Rekam Medis (EMR)', 9500000)"
-                                :class="platform === 'eklinik_emr' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
+                                @click="setPlatform('mobile_app', 'Aplikasi Mobile Android & iOS', 4500000)"
+                                :class="platform === 'mobile_app' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
-                                <strong class="block text-xs text-[#07153f] dark:text-white">E-Klinik & Rekam Medis (RME)</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Antrean, Dokter, Obat & RME Kemenkes</span>
+                                <strong class="block text-xs text-[#07153f] dark:text-white">Mobile App (Flutter)</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Aplikasi Android & iOS Responsif</span>
                             </div>
-                            <span class="text-base">🏥</span>
+                            <span class="text-lg">📱</span>
                         </button>
 
                         <button type="button" 
-                                @click="setPlatform('mobile_android', 'Aplikasi Mobile Android (Flutter APK)', 4500000)"
-                                :class="platform === 'mobile_android' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
+                                @click="setPlatform('custom_system', 'Sistem Kustom / E-Klinik EMR', 7500000)"
+                                :class="platform === 'custom_system' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
-                                <strong class="block text-xs text-[#07153f] dark:text-white">Mobile App Android</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Absensi GPS, Portal Warga / Siswa</span>
+                                <strong class="block text-xs text-[#07153f] dark:text-white">Sistem Kustom / E-Klinik</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Rekam Medis, ERP & Alur Khusus</span>
                             </div>
-                            <span class="text-base">📱</span>
-                        </button>
-
-                        <button type="button" 
-                                @click="setPlatform('mobile_multi', 'Aplikasi Mobile Multiplatform (Android + iOS)', 7500000)"
-                                :class="platform === 'mobile_multi' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
-                                class="p-3.5 rounded-2xl border text-left transition-all flex items-start justify-between gap-2">
-                            <div>
-                                <strong class="block text-xs text-[#07153f] dark:text-white">Android + iOS (Flutter)</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Multiplatform Siap PlayStore & AppStore</span>
-                            </div>
-                            <span class="text-base">⚡</span>
+                            <span class="text-lg">🏥</span>
                         </button>
 
                     </div>
                 </div>
 
-                <!-- 2. Pilihan Desain & Server -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
-                    
-                    <!-- Desain UI/UX -->
-                    <div class="space-y-2">
-                        <label class="text-xs font-black uppercase tracking-wider text-[#07153f] dark:text-white flex items-center gap-2">
-                            <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">2</span>
-                            <span>Konsep Desain UI/UX:</span>
-                        </label>
-                        <div class="space-y-2 text-xs">
-                            <button type="button" 
-                                    @click="setDesign('standard', 'Template Modern & Responsif Multi-Device', 0)"
-                                    :class="design === 'standard' ? 'border-[#3E5CE7] bg-blue-50/60 dark:bg-blue-950/40 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
-                                    class="w-full p-2.5 rounded-xl border text-left transition-all flex items-center justify-between">
-                                <div>
-                                    <strong class="text-xs block text-[#07153f] dark:text-white">Template Modern</strong>
-                                    <span class="text-[10px] text-slate-500">Ekonomis & Cepat Siap</span>
-                                </div>
-                                <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Included</span>
-                            </button>
-
-                            <button type="button" 
-                                    @click="setDesign('custom_figma', 'Custom UI/UX Eksklusif Figma & Brand Identity', 1500000)"
-                                    :class="design === 'custom_figma' ? 'border-[#3E5CE7] bg-blue-50/60 dark:bg-blue-950/40 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
-                                    class="w-full p-2.5 rounded-xl border text-left transition-all flex items-center justify-between">
-                                <div>
-                                    <strong class="text-xs block text-[#07153f] dark:text-white">Custom Eksklusif</strong>
-                                    <span class="text-[10px] text-slate-500">Figma Prototype & Desain Unik</span>
-                                </div>
-                                <span class="text-[10px] font-bold text-slate-500">+ Custom</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Server & Hosting -->
-                    <div class="space-y-2">
-                        <label class="text-xs font-black uppercase tracking-wider text-[#07153f] dark:text-white flex items-center gap-2">
-                            <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">3</span>
-                            <span>Infrastruktur Server:</span>
-                        </label>
-                        <div class="space-y-2 text-xs">
-                            <button type="button" 
-                                    @click="setHosting('cloud_ssd', 'Cloud SSD Fast Hosting + Domain Resmi (1 Tahun)', 0)"
-                                    :class="hosting === 'cloud_ssd' ? 'border-[#3E5CE7] bg-blue-50/60 dark:bg-blue-950/40 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
-                                    class="w-full p-2.5 rounded-xl border text-left transition-all flex items-center justify-between">
-                                <div>
-                                    <strong class="text-xs block text-[#07153f] dark:text-white">Cloud SSD + Domain</strong>
-                                    <span class="text-[10px] text-slate-500">Free 1 Tahun + SSL</span>
-                                </div>
-                                <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Included</span>
-                            </button>
-
-                            <button type="button" 
-                                    @click="setHosting('vps_cloud', 'Dedicated Cloud VPS Server High Traffic', 1800000)"
-                                    :class="hosting === 'vps_cloud' ? 'border-[#3E5CE7] bg-blue-50/60 dark:bg-blue-950/40 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
-                                    class="w-full p-2.5 rounded-xl border text-left transition-all flex items-center justify-between">
-                                <div>
-                                    <strong class="text-xs block text-[#07153f] dark:text-white">Dedicated Cloud VPS</strong>
-                                    <span class="text-[10px] text-slate-500">High Traffic & Database Besar</span>
-                                </div>
-                                <span class="text-[10px] font-bold text-slate-500">+ Server</span>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- 3. Fitur Tambahan & Integrasi (Checkboxes - Pilihan Sesuai Anggaran) -->
-                <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <!-- 2. Fitur Tambahan & Integrasi (Opsional - 4 Opsi Ringkas) -->
+                <div class="space-y-2.5 pt-3 border-t border-slate-100 dark:border-slate-800">
                     <div class="flex items-center justify-between">
                         <label class="text-xs font-black uppercase tracking-wider text-[#07153f] dark:text-white flex items-center gap-2">
-                            <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">4</span>
-                            <span>Fitur Tambahan & Modul Integrasi (Opsional):</span>
+                            <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">2</span>
+                            <span>Fitur Tambahan (Opsional):</span>
                         </label>
-                        <span class="text-[10px] text-slate-500 dark:text-slate-400">Pilih yang diperlukan</span>
+                        <span class="text-[10px] text-slate-500 dark:text-slate-400">Sesuai kebutuhan</span>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                         
-                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
-                            <input type="checkbox" x-model="addonPayment" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
-                            <div>
-                                <strong class="text-xs text-[#07153f] dark:text-white block">Payment Gateway</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">QRIS, VA Bank & E-Wallet</span>
-                            </div>
-                        </label>
-
-                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
+                        <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
                             <input type="checkbox" x-model="addonWhatsapp" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
                             <div>
                                 <strong class="text-xs text-[#07153f] dark:text-white block">WhatsApp Gateway</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Notifikasi WA Otomatis Transaksi</span>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Notifikasi WA otomatis transaksi</span>
                             </div>
                         </label>
 
-                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
+                        <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
+                            <input type="checkbox" x-model="addonPayment" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
+                            <div>
+                                <strong class="text-xs text-[#07153f] dark:text-white block">Payment Gateway</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">QRIS, Virtual Account & Transfer</span>
+                            </div>
+                        </label>
+
+                        <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
                             <input type="checkbox" x-model="addonRoles" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
                             <div>
-                                <strong class="text-xs text-[#07153f] dark:text-white block">Hak Akses Multi-User</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Role Admin, Staf, & User</span>
+                                <strong class="text-xs text-[#07153f] dark:text-white block">Multi-Role & User</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Hak akses Admin, Operator, & User</span>
                             </div>
                         </label>
 
-                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
-                            <input type="checkbox" x-model="addonExport" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
-                            <div>
-                                <strong class="text-xs text-[#07153f] dark:text-white block">Rekap & Export Data</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Download Laporan Excel & PDF</span>
-                            </div>
-                        </label>
-
-                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
-                            <input type="checkbox" x-model="addonMultilang" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
-                            <div>
-                                <strong class="text-xs text-[#07153f] dark:text-white block">Multi-Bahasa (Bilingual)</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Bahasa Indonesia & English</span>
-                            </div>
-                        </label>
-
-                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
+                        <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
                             <input type="checkbox" x-model="addonAI" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
                             <div>
-                                <strong class="text-xs text-[#07153f] dark:text-white block">Engine AI Assistant</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Smart AI Chatbot Dokumen / SOP</span>
-                            </div>
-                        </label>
-
-                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
-                            <input type="checkbox" x-model="addonSEO" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
-                            <div>
-                                <strong class="text-xs text-[#07153f] dark:text-white block">SEO & Google Analytics</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Optimasi Ranking & Statistik Web</span>
-                            </div>
-                        </label>
-
-                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
-                            <input type="checkbox" x-model="addonTraining" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
-                            <div>
-                                <strong class="text-xs text-[#07153f] dark:text-white block">Pelatihan Staf & SOP</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Bimbingan Operator & Panduan Manual</span>
+                                <strong class="text-xs text-[#07153f] dark:text-white block">Engine AI Chatbot</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Smart AI Assistant tanya jawab SOP</span>
                             </div>
                         </label>
 
                     </div>
                 </div>
 
-                <!-- 4. Timeline Pengerjaan -->
-                <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <!-- 3. Target Waktu Pengerjaan -->
+                <div class="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800">
                     <label class="text-xs font-black uppercase tracking-wider text-[#07153f] dark:text-white flex items-center gap-2">
-                        <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">5</span>
-                        <span>Prioritas Target Waktu Pengerjaan:</span>
+                        <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">3</span>
+                        <span>Target Waktu Pengerjaan:</span>
                     </label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                         <button type="button" 
                                 @click="setTimeline('standard', 'Pengerjaan Reguler (14 - 30 Hari Kerja)', 0)"
                                 :class="timeline === 'standard' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
-                                class="p-3 rounded-xl border text-left transition-all flex items-center justify-between">
+                                class="p-2.5 rounded-xl border text-left transition-all flex items-center justify-between">
                             <div>
                                 <strong class="text-xs block text-[#07153f] dark:text-white">Pengerjaan Standar</strong>
                                 <span class="text-[10px] text-slate-500">14 - 30 Hari Kerja</span>
                             </div>
-                            <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Reguler</span>
+                            <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded-full">Included</span>
                         </button>
 
                         <button type="button" 
                                 @click="setTimeline('fast', 'Prioritas Express Kilat (7 - 14 Hari Kerja)', 1000000)"
                                 :class="timeline === 'fast' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
-                                class="p-3 rounded-xl border text-left transition-all flex items-center justify-between">
+                                class="p-2.5 rounded-xl border text-left transition-all flex items-center justify-between">
                             <div>
                                 <strong class="text-xs block text-[#07153f] dark:text-white">Prioritas Express</strong>
                                 <span class="text-[10px] text-slate-500">7 - 14 Hari Kerja</span>
                             </div>
-                            <span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">Kilat</span>
+                            <span class="text-[10px] font-bold text-amber-600 bg-amber-50 dark:bg-amber-950 px-2 py-0.5 rounded-full">+ Express</span>
                         </button>
                     </div>
                 </div>
 
                 <!-- Tombol Hitung Estimasi Biaya (TRIGGER UTAMA) -->
-                <div class="pt-3">
+                <div class="pt-2">
                     <button type="button" 
                             @click="calculateEstimate()"
                             style="background-color: #fe6000 !important; color: #ffffff !important;"
-                            class="w-full py-4 rounded-2xl font-black text-sm uppercase tracking-wider shadow-xl shadow-orange-500/25 hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2">
+                            class="w-full py-3.5 rounded-2xl font-black text-sm uppercase tracking-wider shadow-xl shadow-orange-500/25 hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2">
                         <span x-show="!isCalculating">📊</span>
                         <span x-show="isCalculating" class="inline-block animate-spin">⏳</span>
                         <span x-text="isCalculating ? 'Mengkalkulasi Estimasi...' : 'Hitung Estimasi Biaya Sekarang'" style="color: #ffffff !important; font-weight: 900;"></span>
@@ -1693,29 +1340,30 @@
             <!-- Right 5 Columns: Result Display Box (Hidden Until Calculated!) -->
             <div class="lg:col-span-5 space-y-6">
                 
-                <!-- 1. State: Sebelum Ditekan (Panduan & Jaminan) -->
-                <div x-show="!hasCalculated" class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-center space-y-5">
-                    <div class="w-16 h-16 mx-auto rounded-3xl bg-orange-50 dark:bg-orange-950/60 text-[#fe6000] flex items-center justify-center text-3xl font-black shadow-inner">
+                <!-- 1. State: Sebelum Ditekan (Panduan & Fasilitas Free) -->
+                <div x-show="!hasCalculated" class="bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-center space-y-4">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-orange-50 dark:bg-orange-950/60 text-[#fe6000] flex items-center justify-center text-2xl font-black shadow-inner">
                         🧮
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-1.5">
                         <h3 class="text-base sm:text-lg font-black text-[#07153f] dark:text-white">
                             Estimasi Belum Dihitung
                         </h3>
                         <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed max-w-sm mx-auto font-medium">
-                            Pilih spesifikasi platform, desain, dan fitur tambahan di sebelah kiri, kemudian tekan tombol <strong>"Hitung Estimasi Biaya Sekarang"</strong> untuk melihat rincian kisaran anggaran.
+                            Pilih solusi platform di sebelah kiri, kemudian tekan tombol <strong>"Hitung Estimasi Biaya Sekarang"</strong> untuk melihat rincian anggaran.
                         </p>
                     </div>
 
-                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-left space-y-2.5 text-xs">
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-left space-y-2 text-xs">
                         <div class="font-bold text-[#07153f] dark:text-white flex items-center gap-1.5">
-                            <span>✨</span> <span>Jaminan Setiap Proyek:</span>
+                            <span>✨</span> <span>Fasilitas Standar Sudah Termasuk:</span>
                         </div>
                         <ul class="space-y-1.5 text-slate-600 dark:text-slate-300 text-[11px]">
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free Domain & Server SSD Cloud 1 Tahun</span></li>
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Sertifikat SSL Enkripsi & Proteksi Cyber</span></li>
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Garansi Bebas Bug & Maintenance Rutin</span></li>
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">SPK Kontrak Resmi & Faktur Legal CV</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free Domain Resmi & Hosting Cloud SSD 1 Thn</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free SSL Certificate Let's Encrypt (HTTPS)</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free Desain Logo & Identitas Visual Sistem</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Garansi Revisi hingga 5x Sesuai Ekspektasi</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Desain Responsif Semua Device (Mobile & Web)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -1725,7 +1373,7 @@
                      x-transition:enter="transition ease-out duration-300"
                      x-transition:enter-start="opacity-0 translate-y-4"
                      x-transition:enter-end="opacity-100 translate-y-0"
-                     class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border-2 border-emerald-500 shadow-2xl space-y-6 relative overflow-hidden">
+                     class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border-2 border-emerald-500 shadow-2xl space-y-5 relative overflow-hidden">
                     
                     <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
                         <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 font-extrabold text-[10px] uppercase tracking-wider">
@@ -1737,7 +1385,8 @@
                     </div>
 
                     <!-- Nominal Perkiraan Investasi -->
-                    <div class="space-y-1.5 p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-[#07153f] text-white shadow-lg text-center sm:text-left">
+                    <div style="background-color: #07153f !important; color: #ffffff !important;" 
+                         class="space-y-1.5 p-5 rounded-2xl text-white shadow-lg text-center sm:text-left">
                         <span class="text-[11px] font-bold text-slate-300 uppercase tracking-wider block">Perkiraan Nilai Investasi:</span>
                         <div class="text-3xl sm:text-4xl font-black mono text-emerald-400 flex items-baseline justify-center sm:justify-start gap-1">
                             <span class="text-sm font-bold text-slate-400">Rp</span>
@@ -1757,12 +1406,16 @@
                                 <strong class="text-right text-[#07153f] dark:text-white" x-text="platformName"></strong>
                             </div>
                             <div class="flex items-start justify-between gap-2">
-                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Desain:</span>
-                                <span class="text-right text-[#07153f] dark:text-white" x-text="designName"></span>
+                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Domain & Server SSD:</span>
+                                <span class="text-right font-bold text-emerald-600 dark:text-emerald-400">Included FREE (1 Tahun)</span>
                             </div>
                             <div class="flex items-start justify-between gap-2">
-                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Server:</span>
-                                <span class="text-right text-[#07153f] dark:text-white" x-text="hostingName"></span>
+                                <span class="text-slate-500 dark:text-slate-400 shrink-0">SSL Let's Encrypt:</span>
+                                <span class="text-right font-bold text-emerald-600 dark:text-emerald-400">Included FREE</span>
+                            </div>
+                            <div class="flex items-start justify-between gap-2">
+                                <span class="text-slate-500 dark:text-slate-400 shrink-0">Desain Logo & 5x Revisi:</span>
+                                <span class="text-right font-bold text-emerald-600 dark:text-emerald-400">Included FREE</span>
                             </div>
                             <div class="flex items-start justify-between gap-2">
                                 <span class="text-slate-500 dark:text-slate-400 shrink-0">Timeline:</span>
@@ -1780,13 +1433,13 @@
                     </div>
 
                     <!-- Direct WhatsApp Button With Pre-Filled Specification -->
-                    <div class="pt-2">
+                    <div class="pt-1">
                         <a :href="getWhatsAppLink()" 
                            target="_blank"
                            style="background-color: #10b981 !important; color: #ffffff !important;"
-                           class="w-full py-4 rounded-2xl font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/25 hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2 text-center">
+                           class="w-full py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/25 hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2 text-center">
                             <span style="color: #ffffff !important; font-size: 1.1rem;">💬</span>
-                            <span style="color: #ffffff !important; font-weight: 900;">Konsultasikan Hasil Ini via WhatsApp</span>
+                            <span style="color: #ffffff !important; font-weight: 900;">Konsultasikan Hasil via WhatsApp</span>
                             <span style="color: #ffffff !important;">&rarr;</span>
                         </a>
                         <p class="text-[10px] text-center text-slate-500 dark:text-slate-400 pt-2">
@@ -1797,14 +1450,14 @@
                 </div>
 
                 <!-- Contact Direct Quick Card -->
-                <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 text-xs">
+                <div class="p-5 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2.5 text-xs">
                     <h4 class="font-extrabold text-sm text-[#07153f] dark:text-white flex items-center gap-2">
                         <span>🏢</span> <span>Kantor Operasional & Tim Teknis</span>
                     </h4>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-[11px]">
                         Ingin diskusi langsung atau presentasi sistem di kantor Anda? Tim kami siap hadir untuk konsultasi teknis dan demo aplikasi.
                     </p>
-                    <div class="pt-1 font-mono font-bold text-slate-800 dark:text-slate-200">
+                    <div class="pt-0.5 font-mono font-bold text-slate-800 dark:text-slate-200">
                         📞 Hotline / WA: 0852 6777 4878
                     </div>
                 </div>
@@ -1865,46 +1518,96 @@
             Dipercaya Oleh Instansi Pemerintah, Perguruan Tinggi & Perusahaan Mitra
         </p>
 
-        <!-- Marquee Text List (Pure Text Names, Clean Rounded Cards) -->
-        <div class="relative w-full overflow-hidden marquee-mask pt-4">
-            <div class="marquee-track marquee-medium items-center gap-6 sm:gap-8">
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    Kementerian Komunikasi dan Digital RI (Komdigi RI)
-                </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    Politeknik Akamigas Palembang
-                </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    SIT Robbani Ogan Ilir
-                </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    Pemerintah Desa Senuro Timur Ogan Ilir
-                </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    Yayasan Pendidikan Islam Ash-Shaff
-                </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    PT. Duta Solusi Rumput Palembang
-                </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    Kabar32 News Media
-                </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    PT. Heritage Papua Indonesia
-                </div>
+        <!-- Marquee Text List (Rich Multi-Client Marquee Track) -->
+        <div class="space-y-4 pt-4">
+            <!-- Row 1 (Track 1) -->
+            <div class="relative w-full overflow-hidden marquee-mask">
+                <div class="marquee-track marquee-medium items-center gap-4 sm:gap-6">
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏛️</span> <span>Kementerian Komunikasi dan Digital RI (Komdigi)</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🌏</span> <span>New Zealand BodyTalk Alliance (Selandia Baru)</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🎓</span> <span>Universitas Sriwijaya (Unsri)</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🎓</span> <span>Politeknik Akamigas Palembang</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏛️</span> <span>Dinas Koperasi Kab. Ogan Ilir</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🌏</span> <span>Master Your Muscles (Kuala Lumpur, Malaysia)</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏛️</span> <span>Pemerintah Desa Senuro Timur Ogan Ilir</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🎓</span> <span>Ikatan Guru Indonesia (IGI) Ogan Ilir</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏢</span> <span>PT. Duta Solusi Rumput Palembang</span>
+                    </div>
 
-                <!-- Loop Duplicate for Infinite Loop -->
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    Kementerian Komunikasi dan Digital RI (Komdigi RI)
+                    <!-- Repeat for seamless loop -->
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏛️</span> <span>Kementerian Komunikasi dan Digital RI (Komdigi)</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🌏</span> <span>New Zealand BodyTalk Alliance (Selandia Baru)</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🎓</span> <span>Universitas Sriwijaya (Unsri)</span>
+                    </div>
                 </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    Politeknik Akamigas Palembang
-                </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    SIT Robbani Ogan Ilir
-                </div>
-                <div class="h-12 px-6 py-2.5 bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-700 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-xs">
-                    Pemerintah Desa Senuro Timur Ogan Ilir
+            </div>
+
+            <!-- Row 2 (Track 2) -->
+            <div class="relative w-full overflow-hidden marquee-mask">
+                <div class="marquee-track marquee-medium items-center gap-4 sm:gap-6" style="animation-direction: reverse;">
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏫</span> <span>Yayasan As-Salam Jayapura, Papua</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏫</span> <span>SIT Robbani Ogan Ilir</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏢</span> <span>Dompet Sosial Robbani (DSRP)</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏫</span> <span>SMAIT Ishlahul Ummah Prabumulih</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏫</span> <span>SMAIT Raudhatul Ulum</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏫</span> <span>Yayasan Pendidikan Islam Ash-Shaff</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>📚</span> <span>Ralenta Learning Center</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏢</span> <span>Koperasi Pegawai Robbani</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>📚</span> <span>Penerbit Laya Aksara Jaya</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>📰</span> <span>Portal Berita Kabar32.com</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🧁</span> <span>Iin's Cake (Katalog Kuliner & UMKM)</span>
+                    </div>
+
+                    <!-- Repeat for seamless loop -->
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏫</span> <span>Yayasan As-Salam Jayapura, Papua</span>
+                    </div>
+                    <div class="h-11 px-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 shrink-0 font-bold text-xs text-[#07153f] dark:text-slate-200 shadow-2xs">
+                        <span>🏫</span> <span>SIT Robbani Ogan Ilir</span>
+                    </div>
                 </div>
             </div>
         </div>

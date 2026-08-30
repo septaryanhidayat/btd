@@ -121,6 +121,22 @@
             </div>
         </div>
 
+        <!-- Standard Inclusions Banner (Always Included Free) -->
+        <div style="background-color: #07153f !important; color: #ffffff !important;"
+             class="rounded-2xl p-4 sm:p-5 shadow-xl border border-slate-800 text-center space-y-2.5">
+            <div class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+                <span>✨</span> <span>SEMUA PAKET SUDAH OTOMATIS TERMASUK FASILITAS LENGKAP (FREE):</span>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-semibold">
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🌐 Free Domain 1 Tahun</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">⚡ Free Cloud SSD Hosting</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔒 Free SSL Let's Encrypt</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🎨 Free Desain Logo Sistem</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">🔄 Garansi 5x Revisi</span>
+                <span class="px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">📱 Responsif Semua Device</span>
+            </div>
+        </div>
+
         <!-- Two Columns: Project Cost Estimator (Left) & Form Inquiry (Right) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
@@ -133,7 +149,7 @@
                         <p class="text-[11px] text-slate-500 dark:text-slate-400">Pilih kebutuhan sistem Anda di bawah ini:</p>
                     </div>
                     <span class="px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/60 text-[#fe6000] font-bold text-[10px]">
-                        Fleksibel & Terjangkau
+                        Included Free Facilities
                     </span>
                 </div>
 
