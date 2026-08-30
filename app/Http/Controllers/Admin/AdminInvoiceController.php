@@ -90,10 +90,13 @@ class AdminInvoiceController extends Controller
     public function create()
     {
         $this->ensureTableExists();
-        // Suggest next invoice number
-        $nextNumber = rand(1600000, 1999999);
-        while (Invoice::where('invoice_number', $nextNumber)->exists()) {
-            $nextNumber = rand(1600000, 1999999);
+        
+        // Nomor invoice lanjut berurutan dari invoice terakhir
+        $lastInvoice = Invoice::orderBy('id', 'desc')->first();
+        if ($lastInvoice && !empty($lastInvoice->invoice_number) && is_numeric($lastInvoice->invoice_number)) {
+            $nextNumber = (string) (((int) $lastInvoice->invoice_number) + 1);
+        } else {
+            $nextNumber = '1675517';
         }
 
         return view('admin.invoices.create', compact('nextNumber'));

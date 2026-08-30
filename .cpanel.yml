@@ -6,3 +6,5 @@ deployment:
     - /bin/cp -R public/* $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp index.php $DEPLOYPATH
+    - cd $DEPLOYPATH && php artisan migrate --force
+    - cd $DEPLOYPATH && php artisan optimize:clear
