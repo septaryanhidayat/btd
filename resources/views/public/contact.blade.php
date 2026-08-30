@@ -174,11 +174,11 @@
                         </button>
 
                         <button type="button" 
-                                @click="platform = 'sim_instansi'; platformName = 'SIM Instansi / Desa Digital'; platformPrice = 5500000; hasCalculated = false"
+                                @click="platform = 'sim_instansi'; platformName = 'Sistem Informasi Digital (Surat, Akademik, Absensi)'; platformPrice = 5500000; hasCalculated = false"
                                 :class="platform === 'sim_instansi' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'"
                                 class="p-3 rounded-xl border text-left transition-all">
-                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">SIM Instansi / Desa Digital</span>
-                            <span class="text-[10px] text-slate-500">Administrasi & Pelayanan Warga</span>
+                            <span class="font-extrabold block text-xs text-[#07153f] dark:text-white">Sistem Informasi Digital</span>
+                            <span class="text-[10px] text-slate-500">Surat, Akademik, Absensi</span>
                         </button>
 
                         <button type="button" 

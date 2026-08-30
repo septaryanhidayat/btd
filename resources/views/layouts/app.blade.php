@@ -512,13 +512,13 @@
                             <span class="text-emerald-500 font-bold">💬 WhatsApp:</span>
                             <span class="mono font-bold" style="color: var(--text);">0896 9524 9089</span>
                         </a>
-                        <a href="mailto:info@berandadigital.net" class="flex items-center justify-center md:justify-start gap-2 hover:text-blue-500 transition-colors">
+                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}" class="flex items-center justify-center md:justify-start gap-2 hover:text-blue-500 transition-colors">
                             <span class="text-blue-500 font-bold">✉️ Email:</span>
-                            <span class="font-bold" style="color: var(--text);">info@berandadigital.net</span>
+                            <span class="font-bold" style="color: var(--text);">{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}</span>
                         </a>
                         <div class="flex items-start justify-center md:justify-start gap-2 text-left" style="color: var(--text-dim);">
                             <span class="shrink-0 mt-0.5">📍</span>
-                            <span>Jl. Sarjana Kel. Timbangan Blok A No. 15, Indralaya Utara, Ogan Ilir, Sumatera Selatan</span>
+                            <span>{{ $siteSettings['contact_address'] ?? 'Jl. Sarjana Kel. Timbangan Blok A No. 15, Indralaya Utara, Ogan Ilir, Sumatera Selatan' }}</span>
                         </div>
                     </div>
                 </div>

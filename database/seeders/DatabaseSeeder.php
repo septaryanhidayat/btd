@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // 1. Admin User
-        $admin = User::firstOrCreate(
-            ['email' => 'admin@berandadigital.net'],
+        $admin = User::updateOrCreate(
+            ['email' => 'info@berandadigital.net'],
             [
-                'name' => 'Septa Ryan Hidayat, S.Kom',
-                'password' => Hash::make('password123'),
+                'name' => 'Administrator Beranda Digital',
+                'password' => Hash::make('P4l3mb4ng123!'),
             ]
         );
 

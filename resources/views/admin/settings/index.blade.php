@@ -220,6 +220,91 @@
             </div>
         </div>
 
+        <!-- SECTION 5: LEGALITAS PERUSAHAAN & LKPP RI -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-3">
+                <h2 class="text-base font-extrabold text-[#07153f]">⚖️ Legalitas Perusahaan & Pengadaan LKPP RI</h2>
+                <p class="text-xs text-slate-400">Data legalitas badan hukum yang ditampilkan pada section legalitas dan footer</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Nama Badan Usaha Resmi</label>
+                    <input type="text" name="company_legal_name" value="{{ $settings['company_legal_name']->value ?? 'CV. Beranda Teknologi Digital' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Nomor SK Kemenkumham RI (AHU)</label>
+                    <input type="text" name="company_ahu" value="{{ $settings['company_ahu']->value ?? 'AHU-0003819-AH.01.14 Tahun 2022' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Nomor Pokok Wajib Pajak (NPWP)</label>
+                    <input type="text" name="company_npwp" value="{{ $settings['company_npwp']->value ?? '63.100.018.9-312.000' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Akta Notaris Pendirian</label>
+                    <input type="text" name="company_notaris" value="{{ $settings['company_notaris']->value ?? 'Juwairiyah Handayani, S.H., M.Kn (Salinan Akta No. 01 Tanggal 29 Desember 2021)' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+
+                <div class="space-y-1.5 md:col-span-2">
+                    <label class="block text-xs font-bold text-[#07153f]">Status E-Katalog LKPP RI</label>
+                    <input type="text" name="company_lkpp_status" value="{{ $settings['company_lkpp_status']->value ?? 'Terdaftar Resmi di E-Katalog LKPP RI' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: STATISTIK COUNTER BERANDA -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-3">
+                <h2 class="text-base font-extrabold text-[#07153f]">📊 Statistik Angka & Pencapaian (Counter Band)</h2>
+                <p class="text-xs text-slate-400">Angka pencapaian yang tampil pada pita statistik di halaman Beranda</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Happy Clients</label>
+                    <input type="text" name="stats_clients" value="{{ $settings['stats_clients']->value ?? '150+' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono font-bold focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Projects Done</label>
+                    <input type="text" name="stats_projects" value="{{ $settings['stats_projects']->value ?? '99+' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono font-bold focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Top Reviews & Events</label>
+                    <input type="text" name="stats_reviews" value="{{ $settings['stats_reviews']->value ?? '85+' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono font-bold focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Years Experience</label>
+                    <input type="text" name="stats_experience" value="{{ $settings['stats_experience']->value ?? '10+' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono font-bold focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: CALL TO ACTION (CTA) BANNER BAWAH -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-3">
+                <h2 class="text-base font-extrabold text-[#07153f]">📢 Call to Action (CTA Banner Bawah)</h2>
+                <p class="text-xs text-slate-400">Teks ajakan bertindak di bagian paling bawah halaman website</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6">
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Headline CTA</label>
+                    <input type="text" name="cta_headline" value="{{ $settings['cta_headline']->value ?? \"Let's Work Together\" }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#07153f]">Deskripsi CTA</label>
+                    <textarea name="cta_description" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">{{ $settings['cta_description']->value ?? 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.' }}</textarea>
+                </div>
+            </div>
+        </div>
+
         <!-- Submit Button Bottom -->
         <div class="flex justify-end">
             <button type="submit" class="px-8 py-4 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-blue-600/30 transition-all">

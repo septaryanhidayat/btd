@@ -507,7 +507,7 @@
                         <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#3E5CE7] dark:text-blue-400 block">Kemenkumham RI</span>
                         <h3 class="text-base font-black text-[#07153f] dark:text-white">Pengesahan Badan Usaha</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            AHU-0003819-AH.01.14 Th 2022
+                            {{ $siteSettings['company_ahu'] ?? 'AHU-0003819-AH.01.14 Tahun 2022' }}
                         </p>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
@@ -528,8 +528,8 @@
                     <div class="space-y-1">
                         <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">Notaris & PPAT</span>
                         <h3 class="text-base font-black text-[#07153f] dark:text-white">Akta Pendirian Resmi</h3>
-                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            Akta Pendirian Badan Hukum CV
+                        <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5 truncate" title="{{ $siteSettings['company_notaris'] ?? 'Juwairiyah Handayani, S.H., M.Kn' }}">
+                            {{ $siteSettings['company_notaris'] ?? 'Akta Pendirian Badan Hukum CV' }}
                         </p>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
@@ -551,7 +551,7 @@
                         <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Direktorat Jenderal Pajak</span>
                         <h3 class="text-base font-black text-[#07153f] dark:text-white">NPWP Perusahaan Aktif</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            63.100.***.*-312.000
+                            {{ $siteSettings['company_npwp'] ?? '63.100.018.9-312.000' }}
                         </p>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
@@ -573,7 +573,7 @@
                         <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">LKPP Republik Indonesia</span>
                         <h3 class="text-base font-black text-[#07153f] dark:text-white">Penyedia E-Katalog RI</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
-                            ID Produk: 48939397
+                            {{ $siteSettings['company_lkpp_status'] ?? 'Terdaftar Resmi di E-Katalog LKPP RI' }}
                         </p>
                     </div>
                     <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-700">
@@ -581,7 +581,7 @@
                     </p>
                 </div>
                 <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
-                    <span>✓</span> <span>Terdaftar Resmi di E-Katalog LKPP RI</span>
+                    <span>✓</span> <span>{{ $siteSettings['company_lkpp_status'] ?? 'Terdaftar Resmi di E-Katalog LKPP RI' }}</span>
                 </div>
             </div>
 
@@ -1203,12 +1203,12 @@
                         </button>
 
                         <button type="button" 
-                                @click="setPlatform('sim_desa', 'SIM Instansi / Desa Digital', 4500000)"
+                                @click="setPlatform('sim_desa', 'Sistem Informasi Digital (Surat, Akademik, Absensi)', 4500000)"
                                 :class="platform === 'sim_desa' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
                                 class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
-                                <strong class="block text-xs text-[#07153f] dark:text-white">SIM Instansi / Desa Digital</strong>
-                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Administrasi Surat & Layanan Warga</span>
+                                <strong class="block text-xs text-[#07153f] dark:text-white">Sistem Informasi Digital</strong>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-400">Surat, Akademik, Absensi</span>
                             </div>
                             <span class="text-lg">⚙️</span>
                         </button>
@@ -1473,22 +1473,22 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             
             <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-100">
-                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">150+</div>
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_clients'] ?? '150+' }}</div>
                 <div class="text-xs font-bold text-[#07153f] dark:text-slate-200">Happy Clients</div>
             </div>
 
             <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-150">
-                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">99+</div>
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_projects'] ?? '99+' }}</div>
                 <div class="text-xs font-bold text-[#07153f] dark:text-slate-200">Projects Done</div>
             </div>
 
             <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-200">
-                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">85+</div>
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_reviews'] ?? '85+' }}</div>
                 <div class="text-xs font-bold text-[#07153f] dark:text-slate-200">Top Reviews & Event</div>
             </div>
 
             <div class="p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-250">
-                <div class="text-3xl sm:text-4xl font-extrabold text-[#fe6000] mono">10+</div>
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#fe6000] mono">{{ $siteSettings['stats_experience'] ?? '10+' }}</div>
                 <div class="text-xs font-bold text-[#07153f] dark:text-slate-200">Years Experience</div>
             </div>
 
@@ -1852,12 +1852,12 @@
                     <span>⚡ Transformasi Digital Terpercaya</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">
-                    Let's Work Together
+                    {{ $siteSettings['cta_headline'] ?? "Let's Work Together" }}
                 </h2>
             </div>
             
             <p class="text-white text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-md opacity-100">
-                Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Itu juga mengubah cara kita belajar dan apa yang kita pelajari. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.
+                {{ $siteSettings['cta_description'] ?? 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.' }}
             </p>
             
             <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 relative z-10">
