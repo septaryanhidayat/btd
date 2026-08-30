@@ -471,64 +471,210 @@
     </div>
 </section>
 
-<!-- SECTION 5: PRODUCT ("Our Products" with FlyMotion Watermark & Landscape Thumbnails) -->
-<section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
+<!-- SECTION 5: PRODUCT & READY SOFTWARE SOLUTIONS ("Our Products & Solutions") -->
+<section id="produk-unggulan" class="py-20 bg-[#f8faff] dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <!-- Background Watermark Text "Product" -->
     <div class="absolute top-8 left-8 text-8xl sm:text-9xl font-black text-slate-200/40 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
-        Product
+        Products
     </div>
+
+    <!-- Ambient Decorative Gradients -->
+    <div class="absolute top-1/4 right-0 w-96 h-96 bg-blue-400/10 dark:bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 left-1/4 w-80 h-80 bg-orange-400/10 dark:bg-orange-600/5 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
-        <div class="space-y-2 text-left reveal-on-scroll">
+        <!-- Section Header -->
+        <div class="space-y-4 text-left reveal-on-scroll max-w-3xl">
             <div class="flex items-center gap-3">
                 <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
-                <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">Product</span>
+                <span class="text-xs sm:text-sm font-extrabold tracking-wider uppercase text-[#fe6000] mono">
+                    ⚡ SIAP PAKAI & BERLISENSI RESMI
+                </span>
             </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white">Our Products</h2>
-            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">Temukan berbagai produk digital berkualitas di sini! Nikmati koleksi kami dan jadikan proyek Anda terlihat trendi dan profesional.</p>
+            
+            <div class="space-y-2">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white leading-tight tracking-tight">
+                    Produk & Solusi Digital Unggulan
+                </h2>
+                <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Sistem informasi dan aplikasi enterprise yang dirancang khusus, teruji di lapangan, dan siap langsung diimplementasikan untuk instansi pemerintahan desa, sekolah, yayasan, hingga korporasi bisnis.
+                </p>
+            </div>
+
+            <!-- Value Highlights Pills -->
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3 pt-1">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-[#3E5CE7] dark:text-blue-400 text-xs font-bold shadow-2xs">
+                    <span>⚡</span> <span>Implementasi Instan & Cepat</span>
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400 text-xs font-bold shadow-2xs">
+                    <span>🔒</span> <span>QR Code Validasi Resmi</span>
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950/60 border border-amber-200/80 dark:border-amber-800/60 text-amber-700 dark:text-amber-400 text-xs font-bold shadow-2xs">
+                    <span>💬</span> <span>Notifikasi Otomatis WhatsApp</span>
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-950/60 border border-purple-200/80 dark:border-purple-800/60 text-purple-700 dark:text-purple-400 text-xs font-bold shadow-2xs">
+                    <span>📱</span> <span>Responsif Semua Perangkat</span>
+                </span>
+            </div>
         </div>
 
-        <!-- Featured Projects Showcase Grid (Exact Match to web.berandadigital.net) -->
+        <!-- Featured Products Showcase Grid (Modern SaaS Architecture) -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            @foreach($featuredProjects as $index => $project)
-                <div class="bg-white dark:bg-slate-800/90 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col group reveal-on-scroll delay-{{ ($index + 1) * 100 }}">
-                    <div class="aspect-video overflow-hidden relative border-b border-slate-100 dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
-                        <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute top-3 left-3">
-                            <span class="px-3 py-1 rounded-full bg-white/95 dark:bg-slate-900/95 text-[#3E5CE7] dark:text-blue-400 font-extrabold text-[10px] sm:text-[11px] border border-blue-100 dark:border-blue-900/50 shadow-xs">
-                                {{ $project->category?->name ?? 'Product' }}
-                            </span>
+            @foreach($featuredProjects->take(3) as $index => $project)
+                @php
+                    // Dynamic features based on project index/type
+                    if ($index === 0) {
+                        $badgeCategory = '💼 Enterprise & Korporat';
+                        $statusBadge = '🚀 High Performance';
+                        $displayTitle = 'Website Enterprise & Portal Korporat';
+                        $displaySubtitle = 'Solusi website company profile profesional, katalog digital, dan portal berita berkecepatan tinggi.';
+                        $keyFeatures = [
+                            'Kecepatan loading ultra-cepat (< 1 detik) & mobile responsive',
+                            'Dashboard CMS admin mudah tanpa perlu keahlian coding',
+                            'SEO score 95+ teroptimasi pencarian Google & terhubung WhatsApp'
+                        ];
+                        $techPills = ['Laravel 13', 'Tailwind CSS', 'SEO Pro', 'Fast CDN'];
+                    } elseif ($index === 1) {
+                        $badgeCategory = '🎓 Sekolah & EduTech';
+                        $statusBadge = '⚡ All-in-One Portal';
+                        $displayTitle = 'Portal PPDB Online & Sistem Akademik';
+                        $displaySubtitle = 'Sistem informasi sekolah terpadu untuk registrasi siswa baru, pengumuman kelulusan, dan raport digital.';
+                        $keyFeatures = [
+                            'Formulir pendaftaran PPDB online mandiri dengan cetak bukti PDF',
+                            'Notifikasi otomatis status pendaftaran & biaya via WhatsApp',
+                            'Manajemen guru, jadwal pelajaran, bank soal & e-learning terpadu'
+                        ];
+                        $techPills = ['Multi-Role', 'WhatsApp API', 'PDF Engine', 'E-Learning'];
+                    } else {
+                        $badgeCategory = '🏛️ Smart Village & Desa';
+                        $statusBadge = '🟢 Siap Diimplementasi';
+                        $displayTitle = 'Sistem Informasi Desa Digital (Smart Village)';
+                        $displaySubtitle = 'Platform administrasi desa untuk pelayanan surat online mandiri, sensus penduduk, dan validasi dokumen resmi.';
+                        $keyFeatures = [
+                            'Otomasi cetak 30+ jenis format surat resmi desa & RT/RW',
+                            'Tanda tangan digital berotentikasi QR Code terverifikasi',
+                            'Buku induk sensus kependudukan & grafik statistik realtime'
+                        ];
+                        $techPills = ['Database Desa', 'QR Auth', 'Export Excel', 'Offline/Online'];
+                    }
+                    $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo Beranda Digital, saya tertarik melihat demo langsung dan konsultasi sistem untuk: {$displayTitle}");
+                @endphp
+
+                <div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group reveal-on-scroll delay-{{ ($index + 1) * 100 }}">
+                    
+                    <!-- Top Visual Image Container with Realistic Device Mockup -->
+                    <div>
+                        <div class="aspect-video overflow-hidden relative border-b border-slate-100 dark:border-slate-800 bg-slate-950">
+                            <img src="{{ asset($project->thumbnail) }}" 
+                                 alt="{{ $displayTitle }}" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+                            
+                            <!-- Overlay Gradient for contrast -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+
+                            <!-- Floating Badges -->
+                            <div class="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-[#3E5CE7] dark:text-blue-400 font-extrabold text-[10px] sm:text-[11px] border border-blue-100 dark:border-blue-900/60 shadow-md">
+                                    {{ $badgeCategory }}
+                                </span>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-600/90 text-white font-bold text-[10px] shadow-md backdrop-blur-sm">
+                                    {{ $statusBadge }}
+                                </span>
+                            </div>
+
+                            <!-- Client Badge Bottom Left -->
+                            <div class="absolute bottom-3 left-3 pointer-events-none">
+                                <span class="text-[11px] font-semibold text-white/90 drop-shadow-md flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-lg border border-white/10">
+                                    <span>📍</span> <span>{{ $project->client_name }}</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Card Content Body -->
+                        <div class="p-6 space-y-4">
+                            
+                            <div class="space-y-1.5">
+                                <h3 class="text-base sm:text-lg font-extrabold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors leading-snug">
+                                    {{ $displayTitle }}
+                                </h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                                    {{ $displaySubtitle }}
+                                </p>
+                            </div>
+
+                            <!-- Feature Checklist Highlights -->
+                            <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800/80">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400 block">Fitur Utama:</span>
+                                <ul class="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                                    @foreach($keyFeatures as $feat)
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-emerald-500 font-bold shrink-0">✓</span>
+                                            <span class="leading-tight">{{ $feat }}</span>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+
+                            <!-- Tech Stack Pills -->
+                            <div class="flex flex-wrap gap-1.5 pt-1">
+                                @foreach($techPills as $tp)
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium text-[10px] mono">
+                                        {{ $tp }}
+                                    </span>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
-                    <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div class="space-y-2">
-                            <h3 class="text-sm sm:text-base font-extrabold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors line-clamp-1">
-                                {{ $project->title }}
-                            </h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed font-normal">
-                                {{ $project->summary }}
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs">
-                            <span class="font-extrabold text-[#3E5CE7] dark:text-blue-400 line-clamp-1">{{ $project->client_name }}</span>
-                            <a href="{{ $project->project_url ?? route('projects.show', $project->slug) }}" 
-                               target="{{ str_starts_with($project->project_url ?? '', 'http') ? '_blank' : '_self' }}"
-                               class="font-bold text-[#07153f] dark:text-slate-200 hover:text-[#3E5CE7] dark:hover:text-blue-400 flex items-center gap-0.5 shrink-0 ml-2">
-                                <span>Detail</span> <span class="text-sm">›</span>
+
+                    <!-- Bottom Action Controls -->
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+                            <a href="{{ route('projects.show', $project->slug) }}" 
+                               class="text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors flex items-center gap-1">
+                                <span>Detail Sistem</span>
+                                <span>›</span>
+                            </a>
+                            <a href="{{ $waProductUrl }}" 
+                               target="_blank"
+                               class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#fe6000] to-[#ff7a29] hover:from-[#e05400] hover:to-[#ea6c1d] text-white font-bold text-xs shadow-md shadow-orange-500/20 hover:shadow-orange-500/35 transition-all flex items-center gap-1.5">
+                                <span>💬 Pesan Demo</span>
                             </a>
                         </div>
                     </div>
+
                 </div>
             @endforeach
         </div>
 
-        <div class="text-left pt-2 reveal-on-scroll">
-            <a href="{{ route('projects.index') }}" class="px-7 py-3.5 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase shadow-md inline-flex items-center gap-2 transition-all">
-                <span>Lihat Katalog Produk</span> &rarr;
-            </a>
+        <!-- Interactive Custom Solution Callout Box -->
+        <div class="rounded-3xl p-6 sm:p-8 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6 reveal-on-scroll">
+            <div class="space-y-2 text-center lg:text-left max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/50 text-[#fe6000] text-xs font-bold border border-orange-200/60 dark:border-orange-900/50">
+                    <span>💡 Solusi Kustom Sesuai Alur Organisasi</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-[#07153f] dark:text-white">
+                    Punya Kebutuhan Sistem Khusus di Luar Produk di Atas?
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Kami berpengalaman merancang sistem informasi terintegrasi sesuai SOP dan alur kerja instansi Anda. Diskusikan rencana dan dapatkan estimasi biaya transparan tanpa komitmen awal.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full lg:w-auto">
+                <a href="#kalkulator" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl surface border border-slate-200 dark:border-slate-700 text-[#07153f] dark:text-white font-bold text-xs hover:border-[#3E5CE7] dark:hover:border-blue-400 transition-all shadow-xs">
+                    <span>⚡ Hitung Estimasi Biaya</span>
+                </a>
+                <a href="https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem%20kustom" 
+                   target="_blank" 
+                   class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase shadow-md shadow-blue-600/25 transition-all flex items-center justify-center gap-2">
+                    <span>💬 Konsultasi Sekarang</span>
+                    <span>&rarr;</span>
+                </a>
+            </div>
         </div>
+
     </div>
 </section>
 
