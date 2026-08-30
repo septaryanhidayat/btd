@@ -346,15 +346,15 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             
             <!-- 1. Frontend & UI -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-75">
-                <div class="flex items-center gap-2.5">
-                    <span class="text-xl">🎨</span>
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-75 flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div class="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-2.5">
+                    <span class="text-2xl sm:text-xl">🎨</span>
                     <div>
                         <h3 class="font-extrabold text-xs text-[#07153f] dark:text-white">Frontend & UI</h3>
                         <p class="text-[10px] text-slate-500 dark:text-slate-400">User Interface & Layout</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-1.5 pt-1">
+                <div class="flex flex-wrap justify-center sm:justify-start gap-1.5 pt-1 w-full">
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-orange-600 dark:text-orange-400">HTML5</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-400">CSS3</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-cyan-600 dark:text-cyan-400">Tailwind</span>
@@ -366,15 +366,15 @@
             </div>
 
             <!-- 2. Backend & CMS (Includes WordPress) -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-100">
-                <div class="flex items-center gap-2.5">
-                    <span class="text-xl">⚙️</span>
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-100 flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div class="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-2.5">
+                    <span class="text-2xl sm:text-xl">⚙️</span>
                     <div>
                         <h3 class="font-extrabold text-xs text-[#07153f] dark:text-white">Backend & CMS</h3>
                         <p class="text-[10px] text-slate-500 dark:text-slate-400">Server & Content Engine</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-1.5 pt-1">
+                <div class="flex flex-wrap justify-center sm:justify-start gap-1.5 pt-1 w-full">
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-indigo-600 dark:text-indigo-400">PHP 8.4</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-red-600 dark:text-red-400">Laravel 13</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-orange-600 dark:text-orange-400">CodeIgniter</span>
@@ -385,15 +385,15 @@
             </div>
 
             <!-- 3. Mobile Apps -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-150">
-                <div class="flex items-center gap-2.5">
-                    <span class="text-xl">📱</span>
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-150 flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div class="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-2.5">
+                    <span class="text-2xl sm:text-xl">📱</span>
                     <div>
                         <h3 class="font-extrabold text-xs text-[#07153f] dark:text-white">Mobile Apps</h3>
                         <p class="text-[10px] text-slate-500 dark:text-slate-400">Android & iOS Solutions</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-1.5 pt-1">
+                <div class="flex flex-wrap justify-center sm:justify-start gap-1.5 pt-1 w-full">
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-sky-600 dark:text-sky-400">Flutter</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-400">Dart</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-purple-600 dark:text-purple-400">Kotlin</span>
@@ -401,16 +401,16 @@
                 </div>
             </div>
 
-            <!-- 4. Database & DevOps -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-200">
-                <div class="flex items-center gap-2.5">
-                    <span class="text-xl">🗄️</span>
+            <!-- 4. Database & Tools -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-[#f8faff] dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700/80 shadow-xs space-y-3 hover:shadow-md transition-all reveal-on-scroll delay-200 flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div class="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-2.5">
+                    <span class="text-2xl sm:text-xl">🗄️</span>
                     <div>
                         <h3 class="font-extrabold text-xs text-[#07153f] dark:text-white">Database & Tools</h3>
                         <p class="text-[10px] text-slate-500 dark:text-slate-400">Data Storage & Versioning</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-1.5 pt-1">
+                <div class="flex flex-wrap justify-center sm:justify-start gap-1.5 pt-1 w-full">
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-700 dark:text-blue-300">MySQL</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-400">PostgreSQL</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-indigo-500 dark:text-indigo-300">SQLite</span>
@@ -498,9 +498,9 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <!-- Card 1: SK Kemenkumham -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-75 flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950 text-[#3E5CE7] dark:text-blue-400 flex items-center justify-center text-2xl font-bold shadow-xs">
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-75 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
+                <div class="space-y-3 w-full">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950 text-[#3E5CE7] dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         📜
                     </div>
                     <div class="space-y-1">
@@ -514,15 +514,15 @@
                         Pengesahan perseroan komanditer resmi oleh Ditjen Administrasi Hukum Umum Kemenkumham RI.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
                     <span>✓</span> <span>Status Sah & Terdaftar Aktif</span>
                 </div>
             </div>
 
             <!-- Card 2: Akta Notaris Pendirian -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-150 flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-bold shadow-xs">
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-150 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
+                <div class="space-y-3 w-full">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         ⚖️
                     </div>
                     <div class="space-y-1">
@@ -536,15 +536,15 @@
                         Diresmikan di hadapan Pejabat Notaris Berwenang di Sumatera Selatan dengan klausul usaha IT.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
                     <span>✓</span> <span>Badan Usaha Resmi Berbadan Hukum</span>
                 </div>
             </div>
 
             <!-- Card 3: Perpajakan Resmi NPWP (Aman & Tervalidasi) -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-200 flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl font-bold shadow-xs">
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-200 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
+                <div class="space-y-3 w-full">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         💳
                     </div>
                     <div class="space-y-1">
@@ -558,15 +558,15 @@
                         Terdaftar aktif di KPP Pratama. Siap menerbitkan faktur dan dokumen perpajakan resmi instansi.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
                     <span>✓</span> <span>Kepatuhan Pajak & Validasi Ditjen Pajak</span>
                 </div>
             </div>
 
             <!-- Card 4: E-Katalog LKPP RI (Pengadaan Pemerintah) -->
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-bold shadow-xs">
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
+                <div class="space-y-3 w-full">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         🏛️
                     </div>
                     <div class="space-y-1">
@@ -580,7 +580,7 @@
                         Memudahkan dinas, kampus negeri, dan BUMD melakukan transaksi langsung (e-purchasing) secara sah.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
                     <span>✓</span> <span>{{ $siteSettings['company_lkpp_status'] ?? 'Terdaftar Resmi di E-Katalog LKPP RI' }}</span>
                 </div>
             </div>
@@ -588,7 +588,7 @@
         </div>
 
         <!-- Security & Legal Data Protection Notice Banner -->
-        <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-start sm:items-center gap-3 text-xs text-slate-600 dark:text-slate-300">
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center sm:items-start gap-3 text-xs text-slate-600 dark:text-slate-300 text-center sm:text-left">
             <span class="text-2xl shrink-0">🔒</span>
             <div class="leading-relaxed font-medium">
                 <strong class="text-[#07153f] dark:text-white font-bold">Keamanan & Kerahasiaan Dokumen Perusahaan:</strong> Untuk mencegah pencatutan identitas oleh pihak yang tidak bertanggung jawab, salinan resmi dokumen legalitas lengkap (SK Kemenkumham, Akta Notaris, NPWP Perusahaan, NIB OSS, dan Rekening Bank Perusahaan) dilampirkan resmi saat penyerahan dokumen proposal teknis / SPK kontrak kerja sama.
@@ -598,33 +598,33 @@
         <!-- 5 Keunggulan Jasa Kami (Page 6 Profile) -->
         <div class="p-6 sm:p-8 rounded-3xl bg-[#f8faff] dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 space-y-6 reveal-on-scroll">
             <div class="text-center sm:text-left space-y-1">
-                <span class="text-xs font-bold text-[#fe6000] uppercase tracking-wider mono">KENAPA MEMILIH KAMI</span>
+                <span class="text-xs font-bold text-[#fe6000] uppercase tracking-wider mono block text-center sm:text-left">KENAPA MEMILIH KAMI</span>
                 <h3 class="text-lg sm:text-xl font-extrabold text-[#07153f] dark:text-white">5 Jaminan Keunggulan Layanan CV. Beranda Teknologi Digital</h3>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
-                    <div class="text-2xl">⏱️</div>
+                <div class="space-y-2 p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs text-center sm:text-left flex flex-col items-center sm:items-start">
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-2xs">⏱️</div>
                     <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Pengerjaan Cepat</h4>
                     <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Dikerjakan tim profesional berpengalaman dengan timeline pengerjaan terukur.</p>
                 </div>
-                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
-                    <div class="text-2xl">✨</div>
+                <div class="space-y-2 p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs text-center sm:text-left flex flex-col items-center sm:items-start">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-2xs">✨</div>
                     <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Hasil Memuaskan</h4>
                     <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Desain unik, responsif semua perangkat, modern, dan bebas bug.</p>
                 </div>
-                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
-                    <div class="text-2xl">🏷️</div>
+                <div class="space-y-2 p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs text-center sm:text-left flex flex-col items-center sm:items-start">
+                    <div class="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-950/60 text-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-2xs">🏷️</div>
                     <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Harga Terjangkau</h4>
                     <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Kualitas terbaik dengan penawaran bersaing dan fitur sesuai kebutuhan.</p>
                 </div>
-                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
-                    <div class="text-2xl">🤝</div>
+                <div class="space-y-2 p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs text-center sm:text-left flex flex-col items-center sm:items-start">
+                    <div class="w-10 h-10 rounded-xl bg-yellow-50 dark:bg-yellow-950/60 text-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-2xs">🤝</div>
                     <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Konsultasi Gratis</h4>
                     <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Diskusi arsitektur dan kebutuhan sistem tanpa ikatan komitmen awal.</p>
                 </div>
-                <div class="space-y-1.5 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs">
-                    <div class="text-2xl">🛡️</div>
+                <div class="space-y-2 p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 shadow-2xs text-center sm:text-left flex flex-col items-center sm:items-start">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-2xs">🛡️</div>
                     <h4 class="font-extrabold text-xs text-[#07153f] dark:text-white">Legalitas Kuat</h4>
                     <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Terdaftar resmi Kemenkumham, NPWP, Notaris, dan E-Katalog LKPP.</p>
                 </div>
@@ -690,8 +690,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
         <!-- Section Header -->
-        <div class="space-y-4 text-left reveal-on-scroll max-w-3xl">
-            <div class="flex items-center gap-3">
+        <div class="space-y-4 text-center sm:text-left reveal-on-scroll max-w-3xl mx-auto sm:mx-0">
+            <div class="flex items-center justify-center sm:justify-start gap-3">
                 <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
                 <span class="text-xs sm:text-sm font-extrabold tracking-wider uppercase text-[#fe6000] mono">
                     💼 REKAM JEJAK & PORTOFOLIO KARYA
@@ -708,7 +708,7 @@
             </div>
 
             <!-- Value Highlights Pills -->
-            <div class="flex flex-wrap items-center gap-2 sm:gap-3 pt-1">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 pt-1">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-[#3E5CE7] dark:text-blue-400 text-xs font-bold shadow-2xs">
                     <span>⚡</span> <span>Implementasi Instan & Teruji</span>
                 </span>
