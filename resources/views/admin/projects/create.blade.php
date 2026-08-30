@@ -70,9 +70,35 @@
                 <input type="url" name="project_url" value="{{ old('project_url') }}" placeholder="https://..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
             </div>
 
+            <div class="space-y-1.5">
+                <label class="block text-xs font-bold text-[#07153f]">Tipe Tampilan Aplikasi (Aspect Ratio Slider)</label>
+                <select name="app_type" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">
+                    <option value="web" {{ old('app_type') == 'web' ? 'selected' : '' }}>🖥️ Web Desktop / SaaS (Ukuran Landscape 16:9)</option>
+                    <option value="mobile" {{ old('app_type') == 'mobile' ? 'selected' : '' }}>📱 Mobile App (Ukuran Smartphone Portrait 9:16)</option>
+                    <option value="both" {{ old('app_type') == 'both' ? 'selected' : '' }}>💻📱 Hybrid / Keduanya (Responsive)</option>
+                </select>
+            </div>
+
+            <div class="space-y-1.5">
+                <label class="block text-xs font-bold text-[#07153f]">Badge Status / Keunggulan</label>
+                <input type="text" name="status_badge" placeholder="Contoh: 🟢 Siap Diimplementasi" value="{{ old('status_badge') }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+            </div>
+
+            <div class="space-y-1.5 md:col-span-2">
+                <label class="block text-xs font-bold text-[#07153f]">Poin Fitur Utama (Satu baris satu poin fitur)</label>
+                <textarea name="features_raw" rows="3" placeholder="Contoh:&#10;Otomasi cetak 30+ surat desa ber-QR code&#10;Database kependudukan & sensus RT/RW&#10;Notifikasi otomatis via WhatsApp" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">{{ old('features_raw') }}</textarea>
+                <span class="text-[11px] text-slate-400">Poin-poin ini akan ditampilkan dengan ikon centang hijau (✓) pada kartu depan produk.</span>
+            </div>
+
+            <div class="space-y-1.5 md:col-span-2">
+                <label class="block text-xs font-bold text-[#07153f]">Galeri Screenshot Tambahan (Slider Foto saat Thumbnail Diklik)</label>
+                <textarea name="gallery_raw" rows="4" placeholder="Format per baris: Path Gambar | Judul Layar | Tipe (web/mobile) | Keterangan&#10;Contoh:&#10;/images/products/smart-village-mockup.jpg | Dashboard Pelayanan | web | Antarmuka desktop staf desa&#10;/images/surat.png | Format Surat Resmi | web | Otomasi cetak dokumen ber-QR code" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs mono focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none">{{ old('gallery_raw') }}</textarea>
+                <span class="text-[11px] text-slate-400">Masukkan path foto screenshot antarmuka lain (satu baris satu foto). Format: <code>Path | Judul | web/mobile | Keterangan</code>.</span>
+            </div>
+
             <div class="flex items-center gap-6 md:col-span-2 pt-2">
                 <label class="flex items-center gap-2 cursor-pointer text-xs font-bold text-[#07153f]">
-                    <input type="checkbox" name="is_featured" value="1" {{ old('is_featured') ? 'checked' : '' }} class="rounded text-[#3E5CE7]" />
+                    <input type="checkbox" name="is_featured" value="1" {{ old('is_featured', true) ? 'checked' : '' }} class="rounded text-[#3E5CE7]" />
                     <span>Tampilkan sebagai Proyek Unggulan (Featured)</span>
                 </label>
             </div>

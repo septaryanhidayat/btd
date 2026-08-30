@@ -30,6 +30,10 @@ class AdminProjectController extends Controller
             'summary' => 'nullable|string',
             'challenge' => 'nullable|string',
             'solution' => 'nullable|string',
+            'features_raw' => 'nullable|string',
+            'app_type' => 'nullable|string|in:web,mobile,both',
+            'status_badge' => 'nullable|string|max:100',
+            'gallery_raw' => 'nullable|string',
             'tech_stack_raw' => 'nullable|string',
             'client_name' => 'nullable|string|max:255',
             'project_url' => 'nullable|url|max:255',
@@ -50,6 +54,31 @@ class AdminProjectController extends Controller
             $techStack = array_filter(array_map('trim', explode(',', $request->tech_stack_raw)));
         }
 
+        $features = [];
+        if ($request->filled('features_raw')) {
+            $features = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->features_raw))));
+        }
+
+        $gallery = [];
+        if ($request->filled('gallery_raw')) {
+            $lines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->gallery_raw))));
+            foreach ($lines as $line) {
+                $parts = array_map('trim', explode('|', $line));
+                $url = $parts[0] ?? '';
+                if (!empty($url)) {
+                    $title = $parts[1] ?? '';
+                    $type = isset($parts[2]) && in_array(strtolower($parts[2]), ['web', 'mobile']) ? strtolower($parts[2]) : ($request->app_type ?? 'web');
+                    $caption = $parts[3] ?? '';
+                    $gallery[] = [
+                        'url' => $url,
+                        'title' => $title,
+                        'type' => $type,
+                        'caption' => $caption,
+                    ];
+                }
+            }
+        }
+
         Project::create([
             'category_id' => $validated['category_id'],
             'title' => $validated['title'],
@@ -57,6 +86,10 @@ class AdminProjectController extends Controller
             'summary' => $validated['summary'],
             'challenge' => $validated['challenge'],
             'solution' => $validated['solution'],
+            'features' => $features,
+            'app_type' => $validated['app_type'] ?? 'web',
+            'status_badge' => $validated['status_badge'] ?? null,
+            'gallery' => $gallery,
             'tech_stack' => $techStack,
             'client_name' => $validated['client_name'],
             'project_url' => $validated['project_url'],
@@ -82,6 +115,10 @@ class AdminProjectController extends Controller
             'summary' => 'nullable|string',
             'challenge' => 'nullable|string',
             'solution' => 'nullable|string',
+            'features_raw' => 'nullable|string',
+            'app_type' => 'nullable|string|in:web,mobile,both',
+            'status_badge' => 'nullable|string|max:100',
+            'gallery_raw' => 'nullable|string',
             'tech_stack_raw' => 'nullable|string',
             'client_name' => 'nullable|string|max:255',
             'project_url' => 'nullable|url|max:255',
@@ -95,12 +132,41 @@ class AdminProjectController extends Controller
             $techStack = array_filter(array_map('trim', explode(',', $request->tech_stack_raw)));
         }
 
+        $features = [];
+        if ($request->filled('features_raw')) {
+            $features = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->features_raw))));
+        }
+
+        $gallery = [];
+        if ($request->filled('gallery_raw')) {
+            $lines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $request->gallery_raw))));
+            foreach ($lines as $line) {
+                $parts = array_map('trim', explode('|', $line));
+                $url = $parts[0] ?? '';
+                if (!empty($url)) {
+                    $title = $parts[1] ?? '';
+                    $type = isset($parts[2]) && in_array(strtolower($parts[2]), ['web', 'mobile']) ? strtolower($parts[2]) : ($request->app_type ?? 'web');
+                    $caption = $parts[3] ?? '';
+                    $gallery[] = [
+                        'url' => $url,
+                        'title' => $title,
+                        'type' => $type,
+                        'caption' => $caption,
+                    ];
+                }
+            }
+        }
+
         $project->update([
             'category_id' => $validated['category_id'],
             'title' => $validated['title'],
             'summary' => $validated['summary'],
             'challenge' => $validated['challenge'],
             'solution' => $validated['solution'],
+            'features' => $features,
+            'app_type' => $validated['app_type'] ?? 'web',
+            'status_badge' => $validated['status_badge'] ?? null,
+            'gallery' => $gallery,
             'tech_stack' => $techStack,
             'client_name' => $validated['client_name'],
             'project_url' => $validated['project_url'],

@@ -471,8 +471,44 @@
     </div>
 </section>
 
-<!-- SECTION 5: PRODUCT & READY SOFTWARE SOLUTIONS ("Our Products & Solutions") -->
-<section id="produk-unggulan" class="py-20 bg-[#f8faff] dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
+<!-- SECTION 5: PRODUCT & READY SOFTWARE SOLUTIONS ("Our Products & Solutions with Interactive UI Slider") -->
+<section id="produk-unggulan" 
+         x-data="{
+             modalOpen: false,
+             activeTitle: '',
+             activeClient: '',
+             activeType: 'web',
+             activeUrl: '',
+             activeSlides: [],
+             currentSlide: 0,
+
+             openModal(title, client, type, url, slides) {
+                 this.activeTitle = title;
+                 this.activeClient = client;
+                 this.activeType = type || 'web';
+                 this.activeUrl = url;
+                 this.activeSlides = (slides && Array.isArray(slides) && slides.length > 0) ? slides : [];
+                 this.currentSlide = 0;
+                 this.modalOpen = true;
+             },
+             closeModal() {
+                 this.modalOpen = false;
+             },
+             nextSlide() {
+                 if (this.activeSlides.length > 0) {
+                     this.currentSlide = (this.currentSlide + 1) % this.activeSlides.length;
+                 }
+             },
+             prevSlide() {
+                 if (this.activeSlides.length > 0) {
+                     this.currentSlide = (this.currentSlide - 1 + this.activeSlides.length) % this.activeSlides.length;
+                 }
+             }
+         }"
+         @keydown.escape.window="closeModal()"
+         @keydown.arrow-right.window="if (modalOpen) nextSlide()"
+         @keydown.arrow-left.window="if (modalOpen) prevSlide()"
+         class="py-20 bg-[#f8faff] dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <!-- Background Watermark Text "Product" -->
     <div class="absolute top-8 left-8 text-8xl sm:text-9xl font-black text-slate-200/40 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
@@ -499,7 +535,7 @@
                     Produk & Solusi Digital Unggulan
                 </h2>
                 <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Sistem informasi dan aplikasi enterprise yang dirancang khusus, teruji di lapangan, dan siap langsung diimplementasikan untuk instansi pemerintahan desa, sekolah, yayasan, hingga korporasi bisnis.
+                    Sistem informasi dan aplikasi enterprise yang dirancang khusus, teruji di lapangan, dan siap langsung diimplementasikan. <strong>Klik foto produk</strong> untuk melihat galeri tampilan layar (desktop & mobile).
                 </p>
             </div>
 
@@ -515,7 +551,7 @@
                     <span>💬</span> <span>Notifikasi Otomatis WhatsApp</span>
                 </span>
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-950/60 border border-purple-200/80 dark:border-purple-800/60 text-purple-700 dark:text-purple-400 text-xs font-bold shadow-2xs">
-                    <span>📱</span> <span>Responsif Semua Perangkat</span>
+                    <span>📱</span> <span>Responsif Web & Mobile</span>
                 </span>
             </div>
         </div>
@@ -524,58 +560,67 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             @foreach($featuredProjects->take(3) as $index => $project)
                 @php
-                    // Dynamic features based on project index/type
+                    // Dynamic features and labels fallback from DB
+                    $displayTitle = $project->title;
+                    $displaySubtitle = $project->summary;
+                    $badgeCategory = $project->category?->name ?? 'Solusi Digital';
+                    $statusBadge = $project->status_badge ?? '🟢 Siap Pakai';
+
                     if ($index === 0) {
                         $badgeCategory = '💼 Enterprise & Korporat';
-                        $statusBadge = '🚀 High Performance';
-                        $displayTitle = 'Website Enterprise & Portal Korporat';
-                        $displaySubtitle = 'Solusi website company profile profesional, katalog digital, dan portal berita berkecepatan tinggi.';
-                        $keyFeatures = [
-                            'Kecepatan loading ultra-cepat (< 1 detik) & mobile responsive',
-                            'Dashboard CMS admin mudah tanpa perlu keahlian coding',
-                            'SEO score 95+ teroptimasi pencarian Google & terhubung WhatsApp'
-                        ];
-                        $techPills = ['Laravel 13', 'Tailwind CSS', 'SEO Pro', 'Fast CDN'];
+                        $statusBadge = $project->status_badge ?: '🚀 High Performance';
                     } elseif ($index === 1) {
                         $badgeCategory = '🎓 Sekolah & EduTech';
-                        $statusBadge = '⚡ All-in-One Portal';
-                        $displayTitle = 'Portal PPDB Online & Sistem Akademik';
-                        $displaySubtitle = 'Sistem informasi sekolah terpadu untuk registrasi siswa baru, pengumuman kelulusan, dan raport digital.';
-                        $keyFeatures = [
-                            'Formulir pendaftaran PPDB online mandiri dengan cetak bukti PDF',
-                            'Notifikasi otomatis status pendaftaran & biaya via WhatsApp',
-                            'Manajemen guru, jadwal pelajaran, bank soal & e-learning terpadu'
-                        ];
-                        $techPills = ['Multi-Role', 'WhatsApp API', 'PDF Engine', 'E-Learning'];
+                        $statusBadge = $project->status_badge ?: '⚡ All-in-One Portal';
                     } else {
                         $badgeCategory = '🏛️ Smart Village & Desa';
-                        $statusBadge = '🟢 Siap Diimplementasi';
-                        $displayTitle = 'Sistem Informasi Desa Digital (Smart Village)';
-                        $displaySubtitle = 'Platform administrasi desa untuk pelayanan surat online mandiri, sensus penduduk, dan validasi dokumen resmi.';
-                        $keyFeatures = [
-                            'Otomasi cetak 30+ jenis format surat resmi desa & RT/RW',
-                            'Tanda tangan digital berotentikasi QR Code terverifikasi',
-                            'Buku induk sensus kependudukan & grafik statistik realtime'
-                        ];
-                        $techPills = ['Database Desa', 'QR Auth', 'Export Excel', 'Offline/Online'];
+                        $statusBadge = $project->status_badge ?: '🟢 Siap Diimplementasi';
                     }
+
+                    // Key features checklist fallback
+                    $keyFeatures = !empty($project->features) && is_array($project->features) 
+                        ? $project->features 
+                        : [
+                            'Antarmuka modern, cepat, dan mobile responsive',
+                            'Panel admin mudah tanpa perlu keahlian coding',
+                            'Terintegrasi database aman dan notifikasi WhatsApp'
+                        ];
+
+                    // Tech stack pills fallback
+                    $techPills = !empty($project->tech_stack) && is_array($project->tech_stack)
+                        ? $project->tech_stack
+                        : ['Laravel 13', 'Tailwind CSS', 'MySQL', 'REST API'];
+
+                    $sliderScreens = $project->slider_screens;
+                    $slidesJson = json_encode($sliderScreens);
                     $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo Beranda Digital, saya tertarik melihat demo langsung dan konsultasi sistem untuk: {$displayTitle}");
                 @endphp
 
                 <div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group reveal-on-scroll delay-{{ ($index + 1) * 100 }}">
                     
-                    <!-- Top Visual Image Container with Realistic Device Mockup -->
+                    <!-- Top Visual Image Container with Interactive Click to Open Gallery Slider -->
                     <div>
-                        <div class="aspect-video overflow-hidden relative border-b border-slate-100 dark:border-slate-800 bg-slate-950">
+                        <div class="aspect-video overflow-hidden relative border-b border-slate-100 dark:border-slate-800 bg-slate-950 cursor-pointer group/img"
+                             @click="openModal('{{ addslashes($displayTitle) }}', '{{ addslashes($project->client_name) }}', '{{ $project->app_type ?? 'web' }}', '{{ $waProductUrl }}', {{ $slidesJson }})"
+                             title="Klik untuk membuka slider screenshot antarmuka">
+                            
                             <img src="{{ asset($project->thumbnail) }}" 
                                  alt="{{ $displayTitle }}" 
-                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+                                 class="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-700" />
                             
                             <!-- Overlay Gradient for contrast -->
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
 
+                            <!-- Interactive Click Hover Prompt -->
+                            <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                                <span class="px-4 py-2 rounded-xl bg-white/95 dark:bg-slate-900/95 text-[#07153f] dark:text-white font-extrabold text-xs shadow-2xl flex items-center gap-2 transform translate-y-2 group-hover/img:translate-y-0 transition-transform">
+                                    <span>🔍</span>
+                                    <span>Klik Buka Galeri ({{ count($sliderScreens) }} Layar)</span>
+                                </span>
+                            </div>
+
                             <!-- Floating Badges -->
-                            <div class="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-none">
+                            <div class="absolute top-3 inset-x-3 flex items-center justify-between pointer-events-none z-10">
                                 <span class="px-3 py-1 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-[#3E5CE7] dark:text-blue-400 font-extrabold text-[10px] sm:text-[11px] border border-blue-100 dark:border-blue-900/60 shadow-md">
                                     {{ $badgeCategory }}
                                 </span>
@@ -584,10 +629,13 @@
                                 </span>
                             </div>
 
-                            <!-- Client Badge Bottom Left -->
-                            <div class="absolute bottom-3 left-3 pointer-events-none">
+                            <!-- Client Badge Bottom Left & Layar Count Bottom Right -->
+                            <div class="absolute bottom-3 inset-x-3 flex items-center justify-between pointer-events-none z-10">
                                 <span class="text-[11px] font-semibold text-white/90 drop-shadow-md flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-lg border border-white/10">
                                     <span>📍</span> <span>{{ $project->client_name }}</span>
+                                </span>
+                                <span class="text-[10px] font-bold text-white bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-lg border border-white/20 flex items-center gap-1 shadow-sm">
+                                    <span>🖼️</span> <span>{{ count($sliderScreens) }} Foto</span>
                                 </span>
                             </div>
                         </div>
@@ -628,18 +676,23 @@
                         </div>
                     </div>
 
-                    <!-- Bottom Action Controls -->
+                    <!-- Bottom Action Controls: Fixed High Contrast Solid CTA Button -->
                     <div class="p-6 pt-0 space-y-3">
                         <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
-                            <a href="{{ route('projects.show', $project->slug) }}" 
-                               class="text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors flex items-center gap-1">
-                                <span>Detail Sistem</span>
+                            <button type="button"
+                                    @click="openModal('{{ addslashes($displayTitle) }}', '{{ addslashes($project->client_name) }}', '{{ $project->app_type ?? 'web' }}', '{{ $waProductUrl }}', {{ $slidesJson }})"
+                                    class="text-xs font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center gap-1">
+                                <span>🔍 Buka Layar UI</span>
                                 <span>›</span>
-                            </a>
+                            </button>
+                            
+                            <!-- Guaranteed Solid High-Contrast Orange CTA Button -->
                             <a href="{{ $waProductUrl }}" 
                                target="_blank"
-                               class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#fe6000] to-[#ff7a29] hover:from-[#e05400] hover:to-[#ea6c1d] text-white font-bold text-xs shadow-md shadow-orange-500/20 hover:shadow-orange-500/35 transition-all flex items-center gap-1.5">
-                                <span>💬 Pesan Demo</span>
+                               style="background-color: #fe6000 !important; color: #ffffff !important;"
+                               class="px-4 py-2.5 rounded-xl font-extrabold text-xs shadow-md shadow-orange-500/25 hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-1.5 shrink-0">
+                                <span style="color: #ffffff !important;">💬</span>
+                                <span style="color: #ffffff !important; font-weight: 800;" class="whitespace-nowrap">Pesan Demo</span>
                             </a>
                         </div>
                     </div>
@@ -668,13 +721,158 @@
                 </a>
                 <a href="https://wa.me/6289695249089?text=Halo%20Beranda%20Digital,%20saya%20ingin%20konsultasi%20pembuatan%20sistem%20kustom" 
                    target="_blank" 
-                   class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase shadow-md shadow-blue-600/25 transition-all flex items-center justify-center gap-2">
-                    <span>💬 Konsultasi Sekarang</span>
-                    <span>&rarr;</span>
+                   style="background-color: #3E5CE7 !important; color: #ffffff !important;"
+                   class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl font-bold text-xs uppercase shadow-md shadow-blue-600/25 hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                    <span style="color: #ffffff !important;">💬 Konsultasi Sekarang</span>
+                    <span style="color: #ffffff !important;">&rarr;</span>
                 </a>
             </div>
         </div>
 
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- INTERACTIVE PRODUCT GALLERY SLIDER MODAL (Responsive Web & Mobile Frame)   -->
+    <!-- ========================================================================= -->
+    <div x-show="modalOpen" 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-2.5 sm:p-6 overflow-y-auto" 
+         style="display: none;">
+        
+        <div @click.away="closeModal()" 
+             x-show="modalOpen"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95"
+             x-transition:enter-end="opacity-100 scale-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 scale-100"
+             x-transition:leave-end="opacity-0 scale-95"
+             class="w-full max-w-5xl bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col my-auto relative max-h-[95vh]">
+            
+            <!-- Modal Header Bar -->
+            <div class="px-5 py-3.5 sm:px-7 sm:py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/70 dark:bg-slate-900/90 shrink-0">
+                <div class="space-y-0.5 pr-4">
+                    <div class="flex items-center gap-2">
+                        <h3 class="text-sm sm:text-base font-extrabold text-[#07153f] dark:text-white" x-text="activeTitle"></h3>
+                        <span x-show="activeSlides[currentSlide]?.type === 'mobile'" class="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 text-[10px] font-extrabold shrink-0">
+                            📱 Smartphone Frame
+                        </span>
+                        <span x-show="activeSlides[currentSlide]?.type !== 'mobile'" class="px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 text-[10px] font-extrabold shrink-0">
+                            🖥️ Desktop Web Frame
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400" x-text="activeClient"></p>
+                </div>
+
+                <div class="flex items-center gap-3 shrink-0">
+                    <span class="text-xs font-mono font-bold text-slate-400 dark:text-slate-500 hidden sm:inline">
+                        <span x-text="currentSlide + 1"></span> / <span x-text="activeSlides.length"></span>
+                    </span>
+                    <button type="button" 
+                            @click="closeModal()" 
+                            class="w-8 h-8 rounded-full bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-rose-500 hover:text-white flex items-center justify-center font-bold text-sm transition-all"
+                            title="Tutup (Esc)">
+                        ✕
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Body Screen View (Simulated Web Desktop vs Smartphone Frame) -->
+            <div class="bg-slate-950 p-4 sm:p-8 flex items-center justify-center min-h-[320px] sm:min-h-[480px] overflow-hidden relative select-none flex-grow">
+                
+                <!-- PREV BUTTON -->
+                <button type="button" 
+                        @click.stop="prevSlide()" 
+                        x-show="activeSlides.length > 1" 
+                        class="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-[#fe6000] text-white backdrop-blur-md flex items-center justify-center font-bold text-lg shadow-2xl transition-all z-30"
+                        title="Foto Sebelumnya">
+                    ❮
+                </button>
+
+                <!-- NEXT BUTTON -->
+                <button type="button" 
+                        @click.stop="nextSlide()" 
+                        x-show="activeSlides.length > 1" 
+                        class="absolute right-2 sm:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-[#fe6000] text-white backdrop-blur-md flex items-center justify-center font-bold text-lg shadow-2xl transition-all z-30"
+                        title="Foto Selanjutnya">
+                    ❯
+                </button>
+
+                <!-- 1. DESKTOP WEB FRAME (16:9 Landscape) -->
+                <div x-show="activeSlides[currentSlide]?.type !== 'mobile'" 
+                     class="w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-slate-700 bg-slate-900 shadow-2xl transition-all">
+                    <!-- Browser Simulated Titlebar -->
+                    <div class="h-7 bg-slate-800 border-b border-slate-700 px-3 flex items-center gap-2">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/90"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/90"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/90"></span>
+                        </div>
+                        <div class="flex-grow max-w-xs mx-auto bg-slate-900/80 rounded-md py-0.5 px-3 text-[10px] text-slate-400 font-mono truncate text-center">
+                            https://berandadigital.net/system-preview
+                        </div>
+                    </div>
+                    <!-- Image Content -->
+                    <div class="relative bg-slate-950 flex items-center justify-center">
+                        <img :src="activeSlides[currentSlide]?.url" 
+                             :alt="activeSlides[currentSlide]?.title" 
+                             class="w-full h-auto max-h-[58vh] object-contain mx-auto" />
+                    </div>
+                </div>
+
+                <!-- 2. SMARTPHONE MOBILE FRAME (9:16 Portrait) -->
+                <div x-show="activeSlides[currentSlide]?.type === 'mobile'" 
+                     class="w-full max-w-[280px] sm:max-w-[320px] mx-auto rounded-[2.5rem] border-[5px] border-slate-700 bg-black shadow-2xl p-2 relative transition-all">
+                    <!-- Smartphone Notch / Dynamic Island -->
+                    <div class="w-24 h-4 bg-black rounded-full mx-auto mb-2 border border-slate-800"></div>
+                    <!-- Screen Image -->
+                    <div class="rounded-[1.8rem] overflow-hidden bg-slate-900 flex items-center justify-center">
+                        <img :src="activeSlides[currentSlide]?.url" 
+                             :alt="activeSlides[currentSlide]?.title" 
+                             class="w-full h-auto max-h-[58vh] object-contain mx-auto" />
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer Caption & Action Bar -->
+            <div class="px-5 py-4 sm:px-7 sm:py-5 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 shrink-0">
+                <div class="space-y-1 text-center sm:text-left">
+                    <h4 class="text-xs sm:text-sm font-extrabold text-[#07153f] dark:text-white" x-text="activeSlides[currentSlide]?.title"></h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 max-w-xl" x-text="activeSlides[currentSlide]?.caption"></p>
+                </div>
+
+                <!-- Dots Slider Indicators -->
+                <div class="flex items-center gap-1.5" x-show="activeSlides.length > 1">
+                    <template x-for="(slide, idx) in activeSlides" :key="idx">
+                        <button type="button" 
+                                @click="currentSlide = idx" 
+                                :class="currentSlide === idx ? 'w-6 bg-[#fe6000]' : 'w-2 bg-slate-300 dark:bg-slate-700'" 
+                                class="h-2 rounded-full transition-all duration-200"
+                                :title="'Lompat ke slide ' + (idx + 1)">
+                        </button>
+                    </template>
+                </div>
+
+                <!-- WhatsApp Direct Order CTA from inside the modal -->
+                <div class="shrink-0 w-full sm:w-auto text-center sm:text-right">
+                    <a :href="activeUrl" 
+                       target="_blank"
+                       style="background-color: #fe6000 !important; color: #ffffff !important;"
+                       class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-extrabold text-xs shadow-md shadow-orange-500/25 hover:brightness-110 transition-all">
+                        <span style="color: #ffffff !important;">💬</span>
+                        <span style="color: #ffffff !important; font-weight: 800;">Pesan & Tanya Sistem Ini (WA)</span>
+                        <span style="color: #ffffff !important;">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 

@@ -72,35 +72,87 @@ class DatabaseSeeder extends Seeder
             Setting::updateOrCreate(['key' => $s['key']], $s);
         }
 
-        // 4. Authentic Projects & Products Mapped to High-Tech Mockups
+        // 4. Authentic Projects & Products Mapped to High-Tech Mockups with Interactive Slider Screens
         Project::create([
             'category_id' => $catWeb->id,
-            'title' => 'Website Enterprise & Portal Company Profile',
+            'title' => 'Website Enterprise & Portal Korporat',
             'slug' => 'website-enterprise-portal-company-profile',
-            'summary' => 'Solusi website korporat berkecepatan tinggi dengan desain modern bento grid, CMS fleksibel, dan optimasi SEO Google standar industri.',
+            'summary' => 'Solusi website company profile profesional, katalog digital, dan portal berita berkecepatan tinggi.',
             'challenge' => 'Kebutuhan website bisnis modern dengan desain cepat, optimasi kecepatan, dan keamanan data.',
             'solution' => 'Arsitektur website Laravel 13 & PHP 8.4 terhubung dengan CMS admin instan dan integrasi WhatsApp.',
+            'features' => [
+                'Kecepatan loading ultra-cepat (< 1 detik) & mobile responsive',
+                'Dashboard CMS admin mudah tanpa perlu keahlian coding',
+                'SEO score 95+ teroptimasi pencarian Google & terhubung WhatsApp',
+            ],
+            'app_type' => 'web',
+            'status_badge' => '🚀 High Performance',
             'tech_stack' => ['Laravel 13', 'PHP 8.4', 'MySQL', 'Tailwind CSS', 'Alpine.js'],
             'client_name' => 'CV. Beranda Teknologi Digital',
             'project_url' => 'https://berandadigital.net',
             'thumbnail' => '/images/products/enterprise-web-mockup.jpg',
-            'gallery' => ['/images/products/enterprise-web-mockup.jpg'],
+            'gallery' => [
+                [
+                    'url' => '/images/products/enterprise-web-mockup.jpg',
+                    'title' => 'Tampilan Desktop & Mobile Korporat',
+                    'type' => 'web',
+                    'caption' => 'Desain modern bento grid dengan metrik kinerja bisnis'
+                ],
+                [
+                    'url' => '/images/portofolio-web-1.webp',
+                    'title' => 'Layout Halaman Depan & Profil',
+                    'type' => 'web',
+                    'caption' => 'Katalog layanan dan visual identity korporat'
+                ],
+                [
+                    'url' => '/images/Portofolio-sim.webp',
+                    'title' => 'Dashboard Manajemen & Analitik',
+                    'type' => 'web',
+                    'caption' => 'Panel admin lengkap untuk pengelolaan konten dan inquiry'
+                ]
+            ],
             'is_featured' => true,
             'order' => 1,
         ]);
 
         Project::create([
             'category_id' => $catEdu->id,
-            'title' => 'Portal Sekolah, E-Learning & PPDB Online Terpadu',
+            'title' => 'Portal PPDB Online & Sistem Akademik',
             'slug' => 'portal-sekolah-elearning-ppdb-online',
-            'summary' => 'Sistem informasi akademik all-in-one untuk registrasi siswa baru (PPDB Online), pengumuman kelulusan, dan raport digital terintegrasi WhatsApp.',
+            'summary' => 'Sistem informasi sekolah terpadu untuk registrasi siswa baru, pengumuman kelulusan, dan raport digital.',
             'challenge' => 'Sistem PPDB manual sering menyebabkan antrean panjang dan kesalahan pencatatan data calon siswa.',
             'solution' => 'Portal web responsif dengan formulir PPDB online, verifikasi dokumen, dan pengiriman notifikasi otomatis.',
+            'features' => [
+                'Formulir pendaftaran PPDB online mandiri dengan cetak bukti PDF',
+                'Notifikasi otomatis status pendaftaran & biaya via WhatsApp',
+                'Manajemen guru, jadwal pelajaran, bank soal & e-learning terpadu',
+            ],
+            'app_type' => 'web',
+            'status_badge' => '⚡ All-in-One Portal',
             'tech_stack' => ['Laravel 13', 'MySQL', 'Tailwind CSS', 'Alpine.js'],
             'client_name' => 'Lembaga Pendidikan & Sekolah Mitra',
             'project_url' => 'https://berandadigital.net',
             'thumbnail' => '/images/products/school-portal-mockup.jpg',
-            'gallery' => ['/images/products/school-portal-mockup.jpg'],
+            'gallery' => [
+                [
+                    'url' => '/images/products/school-portal-mockup.jpg',
+                    'title' => 'Dashboard SIAKAD & Kartu Siswa QR',
+                    'type' => 'web',
+                    'caption' => 'Monitoring pendaftaran PPDB, absensi dan kartu pelajar digital'
+                ],
+                [
+                    'url' => '/images/ppdb.png',
+                    'title' => 'Formulir Pendaftaran Siswa Baru (PPDB)',
+                    'type' => 'web',
+                    'caption' => 'Alur pendaftaran mandiri yang mudah diakses orang tua dari HP'
+                ],
+                [
+                    'url' => '/images/ELEARNING.png',
+                    'title' => 'Portal E-Learning & Raport Online',
+                    'type' => 'web',
+                    'caption' => 'Akses materi belajar, kuis interaktif, dan rekap nilai siswa'
+                ]
+            ],
             'is_featured' => true,
             'order' => 2,
         ]);
@@ -109,14 +161,40 @@ class DatabaseSeeder extends Seeder
             'category_id' => $catProdSaas->id,
             'title' => 'Sistem Informasi Desa Digital (Smart Village)',
             'slug' => 'sistem-informasi-administrasi-surating-desa-digital',
-            'summary' => 'Platform digitalisasi desa untuk cetak mandiri 30+ surat resmi desa, otentikasi tanda tangan QR Code, dan database kependudukan terpadu.',
+            'summary' => 'Platform administrasi desa untuk pelayanan surat online mandiri, sensus penduduk, dan validasi dokumen resmi.',
             'challenge' => 'Pelayanan pengurusan surat administrasi desa membutuhkan waktu lama karena pencatatan arsip fisik yang manual.',
             'solution' => 'Beranda Teknologi Digital membangun portal web desa responsif terhubung dengan generator surat otomatis berbasis QR Code verifikasi.',
+            'features' => [
+                'Otomasi cetak 30+ jenis format surat resmi desa & RT/RW',
+                'Tanda tangan digital berotentikasi QR Code terverifikasi',
+                'Buku induk sensus kependudukan & grafik statistik realtime',
+            ],
+            'app_type' => 'web',
+            'status_badge' => '🟢 Siap Diimplementasi',
             'tech_stack' => ['Laravel 13', 'PHP 8.4', 'MySQL', 'Tailwind CSS'],
             'client_name' => 'Pemerintah Desa Senuro Timur, Kab. Ogan Ilir',
             'project_url' => 'https://berandadigital.net',
             'thumbnail' => '/images/products/smart-village-mockup.jpg',
-            'gallery' => ['/images/products/smart-village-mockup.jpg'],
+            'gallery' => [
+                [
+                    'url' => '/images/products/smart-village-mockup.jpg',
+                    'title' => 'Dashboard Pelayanan Administrasi Desa',
+                    'type' => 'web',
+                    'caption' => 'Statistik kependudukan dan monitoring permohonan surat warga'
+                ],
+                [
+                    'url' => '/images/surat.png',
+                    'title' => 'Otomasi Cetak 30+ Format Surat Resmi',
+                    'type' => 'web',
+                    'caption' => 'Dokumen resmi desa otomatis terbit dalam hitungan detik'
+                ],
+                [
+                    'url' => '/images/ss-asalam.png',
+                    'title' => 'Buku Induk Kependudukan & Data RT/RW',
+                    'type' => 'web',
+                    'caption' => 'Database warga terenkripsi dan pencarian data cepat'
+                ]
+            ],
             'is_featured' => true,
             'order' => 3,
         ]);
