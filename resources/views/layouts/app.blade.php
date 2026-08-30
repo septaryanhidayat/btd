@@ -12,30 +12,30 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="{{ url()->current() }}">
 
-    <!-- Favicon & App Icons -->
-    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+    <!-- Favicon & App Icons (Dynamic from Settings) -->
+    <link rel="icon" type="image/png" href="{{ asset($settings['site_favicon'] ?? 'favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset($settings['site_favicon'] ?? 'apple-touch-icon.png') }}">
+    <link rel="shortcut icon" href="{{ asset($settings['site_favicon'] ?? 'favicon.png') }}">
 
     <!-- OpenGraph (OG) Meta Tags for WhatsApp, Facebook, LinkedIn, Telegram -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('title', 'CV. Beranda Teknologi Digital - Software House, Mobile App & Solusi AI')">
-    <meta property="og:description" content="@yield('meta_description', 'CV. Beranda Teknologi Digital adalah agensi teknologi digital modern di Indonesia. Jasa pembuatan website, aplikasi Android/iOS, solusi AI privat, dan workshop IT profesional.')">
-    <meta property="og:image" content="{{ asset('images/Logo-BTD.png') }}">
-    <meta property="og:image:secure_url" content="{{ asset('images/Logo-BTD.png') }}">
+    <meta property="og:title" content="@yield('title', ($settings['site_title'] ?? 'CV. Beranda Teknologi Digital') . ' - Software House, Mobile App & Solusi AI')">
+    <meta property="og:description" content="@yield('meta_description', $settings['site_description'] ?? 'CV. Beranda Teknologi Digital adalah agensi teknologi digital modern di Indonesia. Jasa pembuatan website, aplikasi Android/iOS, solusi AI privat, dan workshop IT profesional.')">
+    <meta property="og:image" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/Logo-BTD.png') }}">
+    <meta property="og:image:secure_url" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/Logo-BTD.png') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Logo Resmi CV. Beranda Teknologi Digital">
-    <meta property="og:site_name" content="CV. Beranda Teknologi Digital">
+    <meta property="og:image:alt" content="{{ $settings['site_title'] ?? 'CV. Beranda Teknologi Digital' }}">
+    <meta property="og:site_name" content="{{ $settings['site_title'] ?? 'CV. Beranda Teknologi Digital' }}">
     <meta property="og:locale" content="id_ID">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url()->current() }}">
-    <meta name="twitter:title" content="@yield('title', 'CV. Beranda Teknologi Digital - Software House & Solusi AI')">
-    <meta name="twitter:description" content="@yield('meta_description', 'Jasa pembuatan website enterprise, aplikasi mobile Flutter, sistem informasi, solusi AI privat, dan pelatihan IT.')">
-    <meta name="twitter:image" content="{{ asset('images/Logo-BTD.png') }}">
+    <meta name="twitter:title" content="@yield('title', ($settings['site_title'] ?? 'CV. Beranda Teknologi Digital') . ' - Software House & Solusi AI')">
+    <meta name="twitter:description" content="@yield('meta_description', $settings['site_description'] ?? 'Jasa pembuatan website enterprise, aplikasi mobile Flutter, sistem informasi, solusi AI privat, dan pelatihan IT.')">
+    <meta name="twitter:image" content="{{ asset($settings['og_image'] ?? $settings['site_logo'] ?? 'images/Logo-BTD.png') }}">
 
     <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
     <script type="application/ld+json">

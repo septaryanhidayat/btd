@@ -25,19 +25,19 @@
                 <div class="flex items-center justify-center lg:justify-start">
                     <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-200/80 dark:border-blue-800/60 text-[#3E5CE7] dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
                         <span class="w-2 h-2 rounded-full bg-[#3E5CE7] dark:bg-blue-400 animate-pulse"></span>
-                        <span>Digital Agency & Software House Terpercaya</span>
+                        <span>{{ $settings['hero_badge'] ?? 'Digital Agency & Software House Terpercaya' }}</span>
                     </div>
                 </div>
 
                 <!-- Main Dynamic Headline (Spacious & Balanced 2-Line Flow) -->
                 <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.35] max-w-2xl">
-                    <span class="inline-block whitespace-normal sm:whitespace-nowrap pb-1">Bangun Ekosistem Digital</span>
-                    <span class="block text-[#3E5CE7] dark:text-blue-400 pt-1 sm:pt-1.5">yang Berdampak Nyata</span>
+                    <span class="inline-block whitespace-normal sm:whitespace-nowrap pb-1">{{ $settings['hero_title_1'] ?? 'Bangun Ekosistem Digital' }}</span>
+                    <span class="block text-[#3E5CE7] dark:text-blue-400 pt-1 sm:pt-1.5">{{ $settings['hero_title_2'] ?? 'yang Berdampak Nyata' }}</span>
                 </h1>
 
                 <!-- Subtitle Description -->
                 <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                    Kami mengintegrasikan solusi perangkat lunak mutakhir dan program edukasi untuk mentransformasi operasional bisnis Anda. Mulai dari perancangan web korporat, pengembangan aplikasi seluler, solusi otomasi cerdas, hingga penciptaan talenta digital profesional.
+                    {{ $settings['hero_description'] ?? 'Kami mengintegrasikan solusi perangkat lunak mutakhir dan program edukasi untuk mentransformasi operasional bisnis Anda. Mulai dari perancangan web korporat, pengembangan aplikasi seluler, solusi otomasi cerdas, hingga penciptaan talenta digital profesional.' }}
                 </p>
 
                 <!-- 4 Quick Feature / Service Circular Icons Row (FlyMotion Signature) -->
@@ -116,7 +116,7 @@
 
                         <!-- Hero Image -->
                         <div class="relative rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-blue-50 via-slate-50 to-indigo-50/60 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 p-2 sm:p-3 border border-slate-100 dark:border-slate-800 flex items-center justify-center">
-                            <img src="/images/hero-person-old.png" alt="CV. Beranda Teknologi Digital Hero" class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+                            <img src="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.png') }}" alt="{{ $settings['site_title'] ?? 'CV. Beranda Teknologi Digital' }} Hero" class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
                             
                             <!-- Bottom Verified Badge -->
                             <div class="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-xl bg-[#07153f]/95 dark:bg-slate-950/95 backdrop-blur-md text-white text-xs space-y-0.5 shadow-xl border border-white/10">
@@ -703,7 +703,7 @@
                     Portofolio & Solusi Digital Unggulan
                 </h2>
                 <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                    Koleksi 12 karya dan sistem informasi enterprise terbaik yang telah kami kembangkan untuk instansi pemerintah, institusi pendidikan, dan perusahaan. <strong>Klik foto portofolio</strong> untuk melihat galeri tampilan layar aplikasi (desktop & mobile).
+                    {!! $settings['portfolio_description'] ?? 'Eksplorasi portofolio proyek dan sistem informasi enterprise inovatif yang kami rancang dan kembangkan untuk berbagai instansi pemerintah, institusi pendidikan, dan perusahaan nasional. <strong>Klik foto portofolio</strong> untuk melihat galeri tampilan layar aplikasi.' !!}
                 </p>
             </div>
 

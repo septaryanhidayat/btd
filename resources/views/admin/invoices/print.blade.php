@@ -340,14 +340,14 @@
         <!-- Header: Logo & Company Address -->
         <div class="invoice-header">
             <div class="company-logo-area">
-                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-img" />
+                <img src="{{ asset($settings['site_logo'] ?? 'images/Logo-BTD.png') }}" alt="{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}" class="logo-img" />
             </div>
 
             <div class="company-meta-area">
-                <div class="company-name">CV. Beranda Teknologi Digital</div>
-                <div>Jl. Sarjana, Timbangan, Ogan Ilir</div>
-                <div>Sumatera Selatan, Indonesia</div>
-                <div>30862</div>
+                <div class="company-name">{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}</div>
+                <div>{{ $settings['company_address_line1'] ?? 'Jl. Sarjana, Timbangan, Ogan Ilir' }}</div>
+                <div>{{ $settings['company_address_line2'] ?? 'Sumatera Selatan, Indonesia' }}</div>
+                <div>{{ $settings['company_postal_code'] ?? '30862' }}</div>
             </div>
         </div>
 
@@ -460,13 +460,13 @@
 
         <!-- Footer Notice -->
         <div class="invoice-footer">
-            <div class="company-name-bottom">CV. Beranda Teknologi Digital</div>
-            <div class="address-line">Jalan Sarjana Blok A No. 25 Timbangan, Ogan Ilir, 30862</div>
-            <div class="website-line">www.berandadigital.net</div>
+            <div class="company-name-bottom">{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}</div>
+            <div class="address-line">{{ $settings['company_address'] ?? 'Jalan Sarjana Blok A No. 25 Timbangan, Ogan Ilir, 30862' }}</div>
+            <div class="website-line">{{ $settings['site_website'] ?? 'www.berandadigital.net' }}</div>
             
             <div class="dotted-divider"></div>
             
-            <div class="country-bottom">Indonesia</div>
+            <div class="country-bottom">{{ $settings['company_country'] ?? 'Indonesia' }}</div>
         </div>
 
     </div>

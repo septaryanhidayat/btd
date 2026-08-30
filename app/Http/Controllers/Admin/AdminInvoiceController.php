@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Invoice;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schema;
@@ -340,6 +341,7 @@ class AdminInvoiceController extends Controller
     public function print(Invoice $invoice)
     {
         $this->ensureTableExists();
-        return view('admin.invoices.print', compact('invoice'));
+        $settings = Setting::all()->keyBy('key')->map(fn($s) => $s->value);
+        return view('admin.invoices.print', compact('invoice', 'settings'));
     }
 }

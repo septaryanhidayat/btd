@@ -44,6 +44,17 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->middleware('throttle:6,1')->name('contact.store');
 
+// SEO XML Sitemap
+Route::get('/sitemap.xml', function () {
+    $projects = \App\Models\Project::where('is_featured', true)->orWhere('status', 'published')->get();
+    $products = \App\Models\DigitalProduct::all();
+    $trainings = \App\Models\Training::all();
+    $posts = \App\Models\Post::where('status', 'published')->get();
+
+    $content = view('public.sitemap', compact('projects', 'products', 'trainings', 'posts'));
+    return response($content, 200)->header('Content-Type', 'text/xml');
+})->name('sitemap');
+
 // Admin Authentication Routes
 Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.login.submit');

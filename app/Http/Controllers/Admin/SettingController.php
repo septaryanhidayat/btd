@@ -17,12 +17,22 @@ class SettingController extends Controller
 
     public function update(Request $request)
     {
-        $data = $request->except(['_token', '_method', 'trainer_avatar_file']);
+        $fileFields = [
+            'site_logo_file' => 'site_logo',
+            'site_favicon_file' => 'site_favicon',
+            'og_image_file' => 'og_image',
+            'hero_image_file' => 'hero_image',
+            'trainer_avatar_file' => 'trainer_avatar',
+        ];
 
-        if ($request->hasFile('trainer_avatar_file')) {
-            $path = UploadHelper::upload($request->file('trainer_avatar_file'), 'settings');
-            if ($path) {
-                $data['trainer_avatar'] = $path;
+        $data = $request->except(array_merge(['_token', '_method'], array_keys($fileFields)));
+
+        foreach ($fileFields as $inputName => $settingKey) {
+            if ($request->hasFile($inputName)) {
+                $path = UploadHelper::upload($request->file($inputName), 'settings');
+                if ($path) {
+                    $data[$settingKey] = $path;
+                }
             }
         }
 
@@ -33,6 +43,6 @@ class SettingController extends Controller
             );
         }
 
-        return redirect()->route('admin.settings.index')->with('success', 'Pengaturan website dan skema warna berhasil disimpan.');
+        return redirect()->route('admin.settings.index')->with('success', 'Pengaturan tema, SEO, favicon, dan banner hero berhasil disimpan.');
     }
 }
