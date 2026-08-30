@@ -337,6 +337,7 @@
                 <button onclick="toggleTheme()" 
                         type="button" 
                         title="Beralih Mode Tampilan"
+                        aria-label="Beralih Mode Tampilan"
                         class="w-10 h-10 rounded-full surface flex items-center justify-center hover:scale-105 transition-all shadow-xs"
                         style="color: var(--text);">
                     <svg class="w-5 h-5 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -467,7 +468,7 @@
                         </svg>
                         <span class="text-xs font-extrabold" style="color: var(--text);">{{ session('success') }}</span>
                     </div>
-                    <button @click="show = false" class="font-extrabold" style="color: var(--text);">✕</button>
+                    <button @click="show = false" aria-label="Tutup notifikasi" class="font-extrabold" style="color: var(--text);">✕</button>
                 </div>
             </div>
         @endif

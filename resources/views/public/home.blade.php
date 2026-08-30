@@ -162,10 +162,10 @@
         <div class="space-y-2 text-left reveal-on-scroll">
             <div class="flex items-center gap-3">
                 <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
-                <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">SERVICE</span>
+                <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">{{ $settings['services_badge'] ?? 'SERVICE' }}</span>
             </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white">What We Do</h2>
-            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">Solusi komprehensif teknologi informasi, pengembangan software, dan pemasaran digital untuk bisnis Anda.</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white">{{ $settings['services_title'] ?? 'What We Do' }}</h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">{{ $settings['services_description'] ?? 'Solusi komprehensif teknologi informasi, pengembangan software, dan pemasaran digital untuk bisnis Anda.' }}</p>
         </div>
 
         <!-- 6 Bento Cards Grid (Icons Centered on Mobile, Clean Typography & Border Dark Mode) -->
@@ -435,20 +435,20 @@
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-on-scroll">
                 <div class="flex items-center justify-center lg:justify-start gap-3">
                     <span class="w-8 h-1 bg-[#3E5CE7] rounded-full"></span>
-                    <span class="text-sm font-bold tracking-wider uppercase text-[#3E5CE7]">About us</span>
+                    <span class="text-sm font-bold tracking-wider uppercase text-[#3E5CE7]">{{ $settings['about_badge'] ?? 'About us' }}</span>
                 </div>
                 
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white leading-tight">
-                    We develop digital strategies products and services.
+                    {{ $settings['about_title'] ?? 'We develop digital strategies products and services.' }}
                 </h2>
                 
                 <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                    <strong class="text-[#07153f] dark:text-white font-bold">CV. Beranda Teknologi Digital</strong> adalah Digital Creative Agency & Software House terpercaya yang mempunyai pengalaman pembuatan puluhan website bisnis, sistem informasi instansi, dan toko online secara elegan dan profesional. Kami hadir dengan desain website yang mengikuti tren terkini, user friendly, dan mudah dioperasikan.
+                    {!! nl2br(e($settings['about_description'] ?? 'CV. Beranda Teknologi Digital adalah Digital Creative Agency & Software House terpercaya yang mempunyai pengalaman pembuatan puluhan website bisnis, sistem informasi instansi, dan toko online secara elegan dan profesional. Kami hadir dengan desain website yang mengikuti tren terkini, user friendly, dan mudah dioperasikan.')) !!}
                 </p>
 
                 <div class="pt-2 flex justify-center lg:justify-start">
-                    <a href="{{ route('services') }}" class="px-7 py-3.5 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase shadow-md inline-flex items-center gap-2 transition-all">
-                        <span>Pelajari Selengkapnya</span> &rarr;
+                    <a href="{{ $settings['about_button_url'] ?? route('services') }}" class="px-7 py-3.5 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-bold text-xs uppercase shadow-md inline-flex items-center gap-2 transition-all">
+                        <span>{{ $settings['about_button_text'] ?? 'Pelajari Selengkapnya' }}</span> &rarr;
                     </a>
                 </div>
             </div>
@@ -462,7 +462,7 @@
 
                 <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-xl max-w-md w-full relative">
                     <div class="aspect-video rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shadow-xs p-2 flex items-center justify-center">
-                        <img src="/images/Ilustrasi-Homepage-1-1.png" alt="Beranda Digital Agency Showcase" loading="lazy" decoding="async" width="400" height="225" class="w-full h-full object-contain" />
+                        <img src="{{ asset($settings['about_image'] ?? 'images/Ilustrasi-Homepage-1-1.png') }}" alt="{{ $settings['about_title'] ?? 'Beranda Digital Agency Showcase' }}" loading="lazy" decoding="async" width="400" height="225" class="w-full h-full object-contain" />
                     </div>
                 </div>
             </div>
@@ -1856,12 +1856,12 @@
                     <span>⚡ Transformasi Digital Terpercaya</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">
-                    {{ $siteSettings['cta_headline'] ?? "Let's Work Together" }}
+                    {{ $settings['cta_headline'] ?? $siteSettings['cta_headline'] ?? "Let's Work Together" }}
                 </h2>
             </div>
             
             <p class="text-white text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-md opacity-100">
-                {{ $siteSettings['cta_description'] ?? 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.' }}
+                {{ $settings['cta_description'] ?? $siteSettings['cta_description'] ?? 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.' }}
             </p>
             
             <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 relative z-10">

@@ -22,6 +22,7 @@ class SettingController extends Controller
             'site_favicon_file' => 'site_favicon',
             'og_image_file' => 'og_image',
             'hero_image_file' => 'hero_image',
+            'about_image_file' => 'about_image',
             'trainer_avatar_file' => 'trainer_avatar',
         ];
 

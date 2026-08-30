@@ -180,6 +180,96 @@
             </div>
         </div>
 
+        <!-- SECTION 2.5: SECTION ABOUT US (TENTANG KAMI & SHOWCASE ILUSTRASI) -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
+                <div>
+                    <h2 class="text-base font-extrabold text-[#071330] flex items-center gap-2">
+                        <span>🏢</span>
+                        <span>Section Tentang Kami (About Us & Digital Strategies)</span>
+                    </h2>
+                    <p class="text-xs text-slate-400 font-medium">Kustomisasi judul, teks profil perusahaan, tombol aksi, dan gambar ilustrasi di homepage</p>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-bold text-[10px]">Homepage Section 4</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- Left: Texts Inputs -->
+                <div class="lg:col-span-8 space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="space-y-1.5 sm:col-span-1">
+                            <label class="block text-xs font-bold text-[#071330]">Badge Kategori</label>
+                            <input type="text" name="about_badge" value="{{ $settings['about_badge']->value ?? 'About us' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-bold text-[#3E5CE7]" />
+                        </div>
+                        <div class="space-y-1.5 sm:col-span-2">
+                            <label class="block text-xs font-bold text-[#071330]">Judul Utama Section *</label>
+                            <input type="text" name="about_title" value="{{ $settings['about_title']->value ?? 'We develop digital strategies products and services.' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-black text-[#071330]" />
+                        </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="block text-xs font-bold text-[#071330]">Deskripsi Panjang Profil Perusahaan *</label>
+                        <textarea name="about_description" rows="4" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none leading-relaxed">{{ $settings['about_description']->value ?? 'CV. Beranda Teknologi Digital adalah Digital Creative Agency & Software House terpercaya yang mempunyai pengalaman pembuatan puluhan website bisnis, sistem informasi instansi, dan toko online secara elegan dan profesional. Kami hadir dengan desain website yang mengikuti tren terkini, user friendly, dan mudah dioperasikan.' }}</textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-100">
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-bold text-[#071330]">Teks Tombol Aksi</label>
+                            <input type="text" name="about_button_text" value="{{ $settings['about_button_text']->value ?? 'Pelajari Selengkapnya' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-bold" />
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-bold text-[#071330]">URL / Link Tujuan Tombol</label>
+                            <input type="text" name="about_button_url" value="{{ $settings['about_button_url']->value ?? '/services' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Foto / Ilustrasi Showcase -->
+                <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                    <label class="block text-xs font-extrabold text-[#071330] uppercase tracking-wider">
+                        Gambar Ilustrasi Showcase
+                    </label>
+
+                    <div class="aspect-video rounded-xl border-2 border-dashed border-slate-300 bg-white p-2 flex items-center justify-center overflow-hidden">
+                        <img id="preview_about_image" src="{{ asset($settings['about_image']->value ?? 'images/Ilustrasi-Homepage-1-1.png') }}" alt="About Image Preview" class="max-w-full max-h-full object-contain drop-shadow-md" />
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <input type="file" name="about_image_file" accept="image/*" onchange="previewImage(this, 'preview_about_image')" class="block w-full text-xs text-slate-500 file:mr-2 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer" />
+                        <p class="text-[11px] text-slate-400">Otomatis dikonversi ke WebP &le; 100KB untuk menjaga kecepatan loading.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECTION 2.6: SECTION CALL TO ACTION (BANNER AJAKAN KERJASAMA) -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
+                <div>
+                    <h2 class="text-base font-extrabold text-[#071330] flex items-center gap-2">
+                        <span>🤝</span>
+                        <span>Section Banner Ajakan Kerjasama (Call to Action)</span>
+                    </h2>
+                    <p class="text-xs text-slate-400 font-medium">Kustomisasi judul ajakan, deskripsi konsultasi, dan nomor kontak di banner penutup</p>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-orange-50 text-[#fe6000] font-bold text-[10px]">Homepage Penutup</span>
+            </div>
+
+            <div class="space-y-4">
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#071330]">Judul Utama Ajakan (Headline CTA) *</label>
+                    <input type="text" name="cta_headline" value="{{ $settings['cta_headline']->value ?? 'Let\'s Work Together' }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#fe6000] focus:outline-none font-black text-[#071330]" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#071330]">Deskripsi Panjang Ajakan Konsultasi *</label>
+                    <textarea name="cta_description" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#fe6000] focus:outline-none leading-relaxed">{{ $settings['cta_description']->value ?? 'Revolusi Teknologi mengubah aspek kehidupan kita, dan struktur masyarakat itu sendiri. Konsultasikan rencana pembuatan website perusahaan, aplikasi mobile Flutter, sistem informasi, atau pelatihan IT bersama CV. Beranda Teknologi Digital.' }}</textarea>
+                </div>
+            </div>
+        </div>
+
         <!-- SECTION 3: THEME COLOR SCHEME -->
         <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
             <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
