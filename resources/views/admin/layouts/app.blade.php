@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="{{ asset('build/assets/app-B9ThRUf5.css') }}">
-    <link rel="stylesheet" href="/build/assets/app-B9ThRUf5.css">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-DI5lHB4f.css') }}">
+    <link rel="stylesheet" href="/build/assets/app-DI5lHB4f.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
     @if (file_exists(public_path('build/manifest.json')) || file_exists(base_path('public/build/manifest.json')) || file_exists(base_path('build/manifest.json')))

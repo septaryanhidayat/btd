@@ -62,7 +62,7 @@ class DashboardController extends Controller
 
         if (file_exists($logFile)) {
             $fileSize = filesize($logFile);
-            $readSize = min($fileSize, 80000);
+            $readSize = min($fileSize, 100000);
             $fp = @fopen($logFile, 'r');
             if ($fp) {
                 if ($fileSize > $readSize) {
@@ -72,21 +72,29 @@ class DashboardController extends Controller
                 @fclose($fp);
 
                 if ($logContent) {
-                    preg_match_all('/\[(\d{4}-\d{2}-\d{2}[^\]]+)\]\s+([a-zA-Z0-9_\.]+)\.([A-Z]+):\s+([^\{\[\r\n]+)/', $logContent, $matches, PREG_SET_ORDER);
+                    // Regex captures timestamp, environment, log level, and the complete error message line
+                    preg_match_all('/\[(\d{4}-\d{2}-\d{2}[^\]]+)\]\s+([a-zA-Z0-9_\.]+)\.([A-Z]+):\s+([^\r\n]+)/', $logContent, $matches, PREG_SET_ORDER);
                     
                     $matches = array_reverse($matches);
                     $count = 0;
                     foreach ($matches as $m) {
-                        if ($count >= 6) break;
+                        if ($count >= 5) break;
                         $level = strtoupper($m[3] ?? 'INFO');
                         if (in_array($level, ['ERROR', 'CRITICAL', 'ALERT', 'EMERGENCY'])) {
                             $errorCount++;
                         }
+                        
+                        $rawMessage = trim($m[4] ?? '');
+                        // Clean up verbose SQL/Exception traces to keep it human readable
+                        $cleanMessage = preg_replace('/\{\"exception\".*$/', '', $rawMessage);
+                        $cleanMessage = preg_replace('/#\d+\s.*$/', '', $cleanMessage);
+                        $cleanMessage = trim($cleanMessage);
+
                         $systemLogs[] = [
                             'timestamp' => $m[1] ?? '',
                             'env' => $m[2] ?? 'production',
                             'level' => $level,
-                            'message' => Str::limit(trim($m[4] ?? ''), 110),
+                            'message' => Str::limit($cleanMessage, 110),
                         ];
                         $count++;
                     }

@@ -12,6 +12,9 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="{{ url()->current() }}">
 
+    <!-- Preload Critical LCP Hero Image -->
+    <link rel="preload" as="image" href="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.webp') }}" type="image/webp" fetchpriority="high">
+
     <!-- Favicon & App Icons (Dynamic from Settings) -->
     <link rel="icon" type="image/png" href="{{ asset($settings['site_favicon'] ?? 'favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset($settings['site_favicon'] ?? 'apple-touch-icon.png') }}">
@@ -236,11 +239,11 @@
     </style>
 
     <!-- Production Compiled Stylesheet & Vite Assets -->
-    <link rel="stylesheet" href="{{ asset('build/assets/app-B9ThRUf5.css') }}">
-    <link rel="stylesheet" href="/build/assets/app-B9ThRUf5.css">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-DI5lHB4f.css') }}">
+    <link rel="stylesheet" href="/build/assets/app-DI5lHB4f.css">
     
-    <!-- Tailwind Play CDN Fallback with Custom Palette & Typography -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Play CDN Fallback with Custom Palette & Typography (Deferred for non-blocking paint) -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -315,8 +318,8 @@
             
             <!-- Official Brand Logo (Light & Pure White Dark Mode) -->
             <a href="{{ route('home') }}" class="flex items-center py-0.5 group focus:outline-none shrink-0">
-                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-light-mode block dark:hidden h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-xs" />
-                <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" class="logo-dark-mode hidden dark:block h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-md" />
+                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="200" height="56" class="logo-light-mode block dark:hidden h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-xs" />
+                <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="200" height="56" class="logo-dark-mode hidden dark:block h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-md" />
             </a>
 
             <!-- Desktop Navigation Links -->

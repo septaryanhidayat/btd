@@ -116,7 +116,7 @@
 
                         <!-- Hero Image -->
                         <div class="relative rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-blue-50 via-slate-50 to-indigo-50/60 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 p-2 sm:p-3 border border-slate-100 dark:border-slate-800 flex items-center justify-center">
-                            <img src="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.png') }}" alt="{{ $settings['site_title'] ?? 'CV. Beranda Teknologi Digital' }} Hero" class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+                            <img src="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.webp') }}" alt="{{ $settings['site_title'] ?? 'CV. Beranda Teknologi Digital' }} Hero" fetchpriority="high" loading="eager" decoding="async" width="500" height="500" class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
                             
                             <!-- Bottom Verified Badge -->
                             <div class="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-xl bg-[#07153f]/95 dark:bg-slate-950/95 backdrop-blur-md text-white text-xs space-y-0.5 shadow-xl border border-white/10">
@@ -462,7 +462,7 @@
 
                 <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-xl max-w-md w-full relative">
                     <div class="aspect-video rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shadow-xs p-2 flex items-center justify-center">
-                        <img src="/images/Ilustrasi-Homepage-1-1.png" alt="Beranda Digital Agency Showcase" class="w-full h-full object-contain" />
+                        <img src="/images/Ilustrasi-Homepage-1-1.png" alt="Beranda Digital Agency Showcase" loading="lazy" decoding="async" width="400" height="225" class="w-full h-full object-contain" />
                     </div>
                 </div>
             </div>
@@ -759,6 +759,10 @@
                             
                             <img src="{{ asset($project->thumbnail) }}" 
                                  alt="{{ $displayTitle }}" 
+                                 loading="lazy"
+                                 decoding="async"
+                                 width="600"
+                                 height="338"
                                  class="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-700" />
                             
                             <!-- Overlay Gradient for contrast -->
