@@ -162,7 +162,7 @@
                     </a>
                 </div>
 
-                <!-- Group 4: Pengaturan Akun -->
+                <!-- Group 4: Pengaturan Akun & Akses -->
                 <div class="space-y-1">
                     <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 px-3 pb-1">
                         Akun & Akses
@@ -170,7 +170,12 @@
                     <a href="{{ route('admin.profile.index') }}" 
                        class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.profile.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
                         <svg class="w-4 h-4 {{ request()->routeIs('admin.profile.*') ? 'text-white' : 'text-cyan-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                        <span>Pengaturan Akun</span>
+                        <span>Profil Akun Saya</span>
+                    </a>
+                    <a href="{{ route('admin.users.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.users.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.users.*') ? 'text-white' : 'text-blue-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        <span>Manajemen Semua User</span>
                     </a>
                 </div>
             </div>

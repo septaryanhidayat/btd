@@ -5,17 +5,91 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schema;
 
 class AdminInvoiceController extends Controller
 {
+    private function ensureTableExists(): void
+    {
+        if (!Schema::hasTable('invoices')) {
+            try {
+                Artisan::call('migrate', ['--force' => true]);
+            } catch (\Throwable $e) {
+                // Ignore migration command failure if table exists
+            }
+
+            if (!Schema::hasTable('invoices')) {
+                Schema::create('invoices', function ($table) {
+                    $table->id();
+                    $table->string('invoice_number')->unique();
+                    $table->date('invoice_date');
+                    $table->date('due_date')->nullable();
+                    $table->string('status')->default('paid');
+                    $table->string('client_type')->default('Personal');
+                    $table->string('client_name');
+                    $table->string('client_attn')->nullable();
+                    $table->text('client_address')->nullable();
+                    $table->json('items')->nullable();
+                    $table->decimal('total_amount', 15, 2)->default(0);
+                    $table->decimal('paid_amount', 15, 2)->default(0);
+                    $table->decimal('remaining_amount', 15, 2)->default(0);
+                    $table->json('transactions')->nullable();
+                    $table->text('notes')->nullable();
+                    $table->timestamps();
+                });
+            }
+
+            // Seed initial sample invoice #1675516 if not exists
+            if (Invoice::count() === 0) {
+                Invoice::create([
+                    'invoice_number' => '1675516',
+                    'invoice_date' => '2026-07-30',
+                    'due_date' => '2026-07-30',
+                    'status' => 'paid',
+                    'client_type' => 'Personal',
+                    'client_name' => 'Ibu Silvi Aryanti',
+                    'client_attn' => 'ATTN: Ibu Silvi Aryanti',
+                    'client_address' => 'Palembang, Indonesia',
+                    'items' => [
+                        [
+                            'description' => 'Pelunasan Pembuatan Aplikasi https://sa-badmintonapp.com',
+                            'amount' => 3000000,
+                        ],
+                    ],
+                    'total_amount' => 3000000,
+                    'paid_amount' => 3000000,
+                    'remaining_amount' => 0,
+                    'transactions' => [
+                        [
+                            'date' => '20/07/2026',
+                            'payment_method' => 'ShopeePay',
+                            'transaction_id' => 'UWSK6XWZ6WF5OTDOV2CS61J4QDIKA',
+                            'amount' => 1500000,
+                        ],
+                        [
+                            'date' => '30/07/2026',
+                            'payment_method' => 'ShopeePay',
+                            'transaction_id' => 'UWSMKOFZT6TTMFZKXI5FNEJJCD6QA',
+                            'amount' => 1500000,
+                        ],
+                    ],
+                    'notes' => 'Terima kasih atas kerja sama dan kepercayaan Anda bersama CV. Beranda Teknologi Digital.',
+                ]);
+            }
+        }
+    }
+
     public function index()
     {
+        $this->ensureTableExists();
         $invoices = Invoice::latest()->paginate(15);
         return view('admin.invoices.index', compact('invoices'));
     }
 
     public function create()
     {
+        $this->ensureTableExists();
         // Suggest next invoice number
         $nextNumber = rand(1600000, 1999999);
         while (Invoice::where('invoice_number', $nextNumber)->exists()) {
@@ -27,6 +101,7 @@ class AdminInvoiceController extends Controller
 
     public function store(Request $request)
     {
+        $this->ensureTableExists();
         $validated = $request->validate([
             'invoice_number' => 'required|string|max:50|unique:invoices,invoice_number',
             'invoice_date' => 'required|date',

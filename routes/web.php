@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AdminProjectController;
 use App\Http\Controllers\Admin\AdminTrainingController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SettingController;
@@ -86,4 +87,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     // Profile & Account Settings
     Route::get('/profile', [AdminProfileController::class, 'index'])->name('profile.index');
     Route::put('/profile', [AdminProfileController::class, 'update'])->name('profile.update');
+
+    // Users & Administrator Management
+    Route::resource('users', AdminUserController::class)->only(['index', 'store', 'update', 'destroy']);
 });
