@@ -5,45 +5,43 @@
 @section('content')
 <div class="space-y-8">
     
-    <!-- Executive Welcome Banner (High Contrast & Sharp Typography) -->
-    <div class="rounded-3xl bg-gradient-to-br from-[#071330] via-[#0c1f58] to-[#1e3fae] p-8 sm:p-10 text-white shadow-xl relative overflow-hidden border border-blue-400/20">
-        <!-- Ambient Radial Lighting -->
-        <div class="absolute -right-10 -top-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute right-1/4 -bottom-10 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl pointer-events-none"></div>
-        
+    <!-- Executive Welcome Banner (Ultra-High Contrast Solid Navy & Sharp Typography) -->
+    <div class="rounded-3xl bg-[#071330] p-7 sm:p-9 text-white shadow-xl border-2 border-slate-700/80 relative overflow-hidden">
         <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div class="space-y-3 max-w-2xl">
+            <div class="space-y-3.5 max-w-2xl">
                 <div class="flex flex-wrap items-center gap-2.5">
-                    <span class="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-black uppercase tracking-wider text-white border border-white/20">
-                        🗓️ {{ \Carbon\Carbon::now()->isoFormat('dddd, D MMMM Y') }}
+                    <span class="px-3.5 py-1.5 rounded-full bg-slate-800/90 text-slate-200 text-[11px] font-extrabold uppercase tracking-wider border border-slate-700/90 flex items-center gap-1.5 shadow-xs">
+                        <span>🗓️</span>
+                        <span>{{ \Carbon\Carbon::now()->isoFormat('dddd, D MMMM Y') }}</span>
                     </span>
                     @if($unreadInquiryCount > 0)
                         <span class="px-3.5 py-1.5 rounded-full bg-[#fe6000] text-white text-[11px] font-black tracking-wide shadow-md flex items-center gap-1.5">
                             <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-                            {{ $unreadInquiryCount }} Pesan Baru Menunggu Respon
+                            <span>{{ $unreadInquiryCount }} Pesan Baru Menunggu Respon</span>
                         </span>
                     @else
-                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-200 text-[11px] font-bold border border-emerald-400/30">
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold border border-emerald-500/30">
                             ✓ Semua Pesan Terbaca
                         </span>
                     @endif
                 </div>
                 
-                <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                    Selamat Datang, {{ Auth::user()->name ?? 'Administrator' }}! 👋
+                <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight flex flex-wrap items-center gap-2">
+                    <span>Selamat Datang, {{ Auth::user()->name ?? 'Administrator' }}!</span>
+                    <span class="inline-block">👋</span>
                 </h1>
                 
-                <p class="text-xs sm:text-sm text-blue-100 font-normal leading-relaxed">
+                <p class="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed">
                     Pusat Komando <strong>CV. Beranda Teknologi Digital</strong>. Pantau metrik website, terbitkan portofolio terbaru, kelola modul pelatihan, dan cetak invoice resmi klien dalam satu dasbor terpadu.
                 </p>
             </div>
 
-            <div class="flex flex-wrap items-center gap-3">
-                <a href="{{ route('admin.projects.create') }}" class="px-5 py-3 rounded-2xl bg-white hover:bg-slate-100 text-[#071330] font-black text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition-all flex items-center gap-2 hover:-translate-y-0.5">
-                    <svg class="w-4 h-4 text-blue-600 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+            <div class="flex flex-wrap items-center gap-3 shrink-0">
+                <a href="{{ route('admin.projects.create') }}" class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg hover:shadow-blue-600/30 transition-all flex items-center gap-2 hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 text-white font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
                     <span>+ Proyek Baru</span>
                 </a>
-                <a href="{{ route('admin.settings.index') }}" class="px-5 py-3 rounded-2xl bg-[#fe6000] hover:bg-[#e05400] text-white font-black text-xs uppercase tracking-wider shadow-lg hover:shadow-orange-600/30 transition-all flex items-center gap-2 hover:-translate-y-0.5">
+                <a href="{{ route('admin.settings.index') }}" class="px-5 py-3 rounded-xl bg-[#fe6000] hover:bg-[#e05400] text-white font-extrabold text-xs uppercase tracking-wider shadow-lg hover:shadow-orange-600/30 transition-all flex items-center gap-2 hover:-translate-y-0.5">
                     <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
                     <span>Atur Tema Web</span>
                 </a>

@@ -185,8 +185,12 @@
         <!-- Sidebar Bottom: User Profile & Quick Actions -->
         <div class="p-5 border-t border-white/10 bg-black/20 space-y-3">
             <a href="{{ route('admin.profile.index') }}" class="flex items-center gap-3 p-1.5 -m-1.5 rounded-2xl hover:bg-white/10 transition-colors group" title="Buka Pengaturan Akun">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#3E5CE7] to-[#fe6000] text-white flex items-center justify-center font-black text-sm shadow-md shrink-0 group-hover:scale-105 transition-transform">
-                    {{ strtoupper(substr(Auth::user()->name ?? 'A', 0, 1)) }}
+                <div class="w-10 h-10 rounded-xl overflow-hidden bg-gradient-to-br from-[#3E5CE7] to-[#fe6000] text-white flex items-center justify-center font-black text-sm shadow-md shrink-0 group-hover:scale-105 transition-transform border border-white/20">
+                    @if(Auth::user()->avatar)
+                        <img src="{{ asset(Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}" class="w-full h-full object-cover" />
+                    @else
+                        <span>{{ strtoupper(substr(Auth::user()->name ?? 'A', 0, 1)) }}</span>
+                    @endif
                 </div>
                 <div class="overflow-hidden flex-1">
                     <div class="text-xs font-bold text-white group-hover:text-blue-300 transition-colors truncate">{{ Auth::user()->name ?? 'Administrator' }}</div>
