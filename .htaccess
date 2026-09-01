@@ -25,6 +25,10 @@ DirectoryIndex index.php
     RewriteEngine On
     RewriteBase /
 
+    # Force HTTPS Redirect
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     # ══════════════════════════════════════════════════════════
     # SECURITY LAYER 1: Block Access to Sensitive Files
     # ══════════════════════════════════════════════════════════
