@@ -19,7 +19,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             
             <!-- Left Column: Typography & FlyMotion Action Buttons -->
-            <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left reveal-on-scroll">
+            <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left hero-content">
                 
                 <!-- Subtitle / Tagline Badge (Corporate Eyebrow) -->
                 <div class="flex items-center justify-center lg:justify-start">
@@ -94,7 +94,7 @@
             </div>
 
             <!-- Right Column: FlyMotion Hero Person Showcase with Multi-layer Animation -->
-            <div class="lg:col-span-5 flex justify-center relative mt-4 lg:mt-0 reveal-on-scroll delay-200">
+            <div class="lg:col-span-5 flex justify-center relative mt-4 lg:mt-0 hero-image">
                 <div class="relative w-full max-w-[310px] sm:max-w-sm md:max-w-md">
                     
                     <!-- Background Ambient Disk -->

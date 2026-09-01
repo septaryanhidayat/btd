@@ -239,38 +239,7 @@
     </style>
 
     <!-- Production Compiled Stylesheet & Vite Assets -->
-    <link rel="stylesheet" href="{{ asset('build/assets/app-DI5lHB4f.css') }}">
-    
-    <!-- Tailwind Play CDN Fallback with Custom Palette & Typography -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#3E5CE7',
-                            orange: '#fe6000',
-                            navy: '#07153f',
-                            pink: '#E83E8C',
-                            teal: '#20C997'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(base_path('public/build/manifest.json')) || file_exists(base_path('build/manifest.json')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @endif
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script>
         // High-Contrast Theme Script with persistence (SmartFeed Light/Dark System)
@@ -686,10 +655,10 @@
             }
         }
 
-        /* SmartNews Standard Scroll Fade-Up Intersection Observer */
+        /* Scroll Fade-Up Intersection Observer (Excluding Hero Section for Instant LCP) */
         document.addEventListener('DOMContentLoaded', () => {
             const animTargets = document.querySelectorAll(
-                'section, .fade-up-target, .reveal-on-scroll, .fade-up, .bento-card, .service-card, .article-card, .gallery-item, .tech-card'
+                'section:not(:first-of-type), .fade-up-target, .bento-card, .service-card, .article-card, .gallery-item, .tech-card'
             );
 
             if ('IntersectionObserver' in window) {
@@ -702,8 +671,8 @@
                     });
                 }, {
                     root: null,
-                    threshold: 0.08,
-                    rootMargin: '0px 0px -30px 0px'
+                    threshold: 0.05,
+                    rootMargin: '0px 0px -20px 0px'
                 });
 
                 animTargets.forEach(el => {

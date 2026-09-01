@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
+@source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
 @theme {
     --font-sans: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', Consolas, monospace;
+    --color-brand-blue: #3E5CE7;
+    --color-brand-orange: #fe6000;
+    --color-brand-navy: #07153f;
+    --color-brand-pink: #E83E8C;
+    --color-brand-teal: #20C997;
 }
 
 /* ═══════════════════════ SMARTFEED THEME TOKENS ═══════════════════════ */
