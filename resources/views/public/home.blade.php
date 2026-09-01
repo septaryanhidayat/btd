@@ -183,9 +183,9 @@
                         Jasa pembuatan website company profile, portal berita instansi, sistem informasi desa & sekolah, hingga web application Laravel.
                     </p>
                     <ul class="space-y-2 text-xs font-semibold pt-2 border-t border-slate-100 dark:border-slate-700">
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Desain Engaging & 100% Mobile Responsive</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Panel Admin CMS Mudah Digunakan</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Gratis Domain .com & Server SSD Fast</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Desain Engaging & 100% Mobile Responsive</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Panel Admin CMS Mudah Digunakan</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Gratis Domain .com & Server SSD Fast</span></li>
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
@@ -207,9 +207,9 @@
                         Strategi pemasaran digital, SEO optimasi mesin pencari, dan promosi online terukur untuk mempercepat pertumbuhan bisnis Anda.
                     </p>
                     <ul class="space-y-2 text-xs font-semibold pt-2 border-t border-slate-100 dark:border-slate-700">
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Optimasi Kata Kunci Masuk Halaman 1 Google</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Audit Kecepatan & Performa Situs</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Laporan Analisis Trafik Pengunjung</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Optimasi Kata Kunci Masuk Halaman 1 Google</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Audit Kecepatan & Performa Situs</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Laporan Analisis Trafik Pengunjung</span></li>
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
@@ -231,9 +231,9 @@
                         Layanan pemeliharaan teknis berkala, keamanan sertifikat SSL, pembaruan server cloud hosting, dan perbaikan bug sistem.
                     </p>
                     <ul class="space-y-2 text-xs font-semibold pt-2 border-t border-slate-100 dark:border-slate-700">
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Backup Rutin Berkala & Anti-Malware</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Update Patch Keamanan & Server</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Bantuan Teknis Prioritas 24/7</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Backup Rutin Berkala & Anti-Malware</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Update Patch Keamanan & Server</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Bantuan Teknis Prioritas 24/7</span></li>
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
@@ -255,9 +255,9 @@
                         Pengelolaan konten media sosial profesional, desain feed & reels estetik, penulisan caption persuasif, dan kampanye interaktif.
                     </p>
                     <ul class="space-y-2 text-xs font-semibold pt-2 border-t border-slate-100 dark:border-slate-700">
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Desain Visual Grafis & Video Reels</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Riset Hashtag & Target Audience</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Jadwal Publikasi Konten Konsisten</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Desain Visual Grafis & Video Reels</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Riset Hashtag & Target Audience</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Jadwal Publikasi Konten Konsisten</span></li>
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
@@ -279,9 +279,9 @@
                         Perancangan identitas visual merek, logo vektor modern, brand guidelines profesional, dan perlengkapan stationery bisnis.
                     </p>
                     <ul class="space-y-2 text-xs font-semibold pt-2 border-t border-slate-100 dark:border-slate-700">
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">File Master Vektor (AI, SVG, PDF, PNG)</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Panduan Tipografi & Skema Warna</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Revisi Desain Fleksibel</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">File Master Vektor (AI, SVG, PDF, PNG)</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Panduan Tipografi & Skema Warna</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Revisi Desain Fleksibel</span></li>
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
@@ -303,9 +303,9 @@
                         Kampanye iklan digital berbayar Google Search, YouTube, dan Instagram/Facebook Ads tertarget untuk mendatangkan omset nyata.
                     </p>
                     <ul class="space-y-2 text-xs font-semibold pt-2 border-t border-slate-100 dark:border-slate-700">
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Target Demografi & Minat Akurat</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Pelacakan Pixel & Retargeting Leads</span></li>
-                        <li class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Efisiensi Biaya Iklan Tertinggi (ROAS)</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Target Demografi & Minat Akurat</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Pelacakan Pixel & Retargeting Leads</span></li>
+                        <li class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-600 dark:text-slate-300">Efisiensi Biaya Iklan Tertinggi (ROAS)</span></li>
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
@@ -355,12 +355,12 @@
                     </div>
                 </div>
                 <div class="flex flex-wrap justify-center sm:justify-start gap-1.5 pt-1 w-full">
-                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-orange-600 dark:text-orange-400">HTML5</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-400">CSS3</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-orange-700 dark:text-orange-400 dark:text-orange-400">HTML5</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400">CSS3</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-cyan-600 dark:text-cyan-400">Tailwind</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-yellow-600 dark:text-yellow-400">JavaScript</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-500 dark:text-blue-400">TypeScript</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">Vue.js</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">Vue.js</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-cyan-500 dark:text-cyan-300">React</span>
                 </div>
             </div>
@@ -377,10 +377,10 @@
                 <div class="flex flex-wrap justify-center sm:justify-start gap-1.5 pt-1 w-full">
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-indigo-600 dark:text-indigo-400">PHP 8.4</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-red-600 dark:text-red-400">Laravel 13</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-orange-600 dark:text-orange-400">CodeIgniter</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-300">WordPress</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-orange-700 dark:text-orange-400 dark:text-orange-400">CodeIgniter</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-700 dark:text-blue-400 dark:text-blue-300">WordPress</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-cyan-700 dark:text-cyan-300">Golang</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-amber-600 dark:text-amber-300">Python</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-amber-700 dark:text-amber-400 dark:text-amber-300">Python</span>
                 </div>
             </div>
 
@@ -395,7 +395,7 @@
                 </div>
                 <div class="flex flex-wrap justify-center sm:justify-start gap-1.5 pt-1 w-full">
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-sky-600 dark:text-sky-400">Flutter</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-400">Dart</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400">Dart</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-purple-600 dark:text-purple-400">Kotlin</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-cyan-600 dark:text-cyan-400">React Native</span>
                 </div>
@@ -412,9 +412,9 @@
                 </div>
                 <div class="flex flex-wrap justify-center sm:justify-start gap-1.5 pt-1 w-full">
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-700 dark:text-blue-300">MySQL</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-600 dark:text-blue-400">PostgreSQL</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400">PostgreSQL</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-indigo-500 dark:text-indigo-300">SQLite</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">NoSQL</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">NoSQL</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-red-600 dark:text-red-400">Redis</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-slate-800 dark:text-slate-200">Git / GitHub</span>
                     <span class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[11px] font-bold text-sky-600 dark:text-sky-400">Docker</span>
@@ -514,7 +514,7 @@
                         Pengesahan perseroan komanditer resmi oleh Ditjen Administrasi Hukum Umum Kemenkumham RI.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
+                <div class="pt-2 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
                     <span>✓</span> <span>Status Sah & Terdaftar Aktif</span>
                 </div>
             </div>
@@ -522,11 +522,11 @@
             <!-- Card 2: Akta Notaris Pendirian -->
             <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-150 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         ⚖️
                     </div>
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">Notaris & PPAT</span>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 block">Notaris & PPAT</span>
                         <h3 class="text-base font-black text-[#07153f] dark:text-white">Akta Pendirian Resmi</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5 truncate" title="{{ $siteSettings['company_notaris'] ?? 'Juwairiyah Handayani, S.H., M.Kn' }}">
                             {{ $siteSettings['company_notaris'] ?? 'Akta Pendirian Badan Hukum CV' }}
@@ -536,7 +536,7 @@
                         Diresmikan di hadapan Pejabat Notaris Berwenang di Sumatera Selatan dengan klausul usaha IT.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
+                <div class="pt-2 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
                     <span>✓</span> <span>Badan Usaha Resmi Berbadan Hukum</span>
                 </div>
             </div>
@@ -544,11 +544,11 @@
             <!-- Card 3: Perpajakan Resmi NPWP (Aman & Tervalidasi) -->
             <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-200 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-400 dark:text-amber-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         💳
                     </div>
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Direktorat Jenderal Pajak</span>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-400 dark:text-amber-400 block">Direktorat Jenderal Pajak</span>
                         <h3 class="text-base font-black text-[#07153f] dark:text-white">NPWP Perusahaan Aktif</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
                             {{ $siteSettings['company_npwp'] ?? '63.100.018.9-312.000' }}
@@ -558,7 +558,7 @@
                         Terdaftar aktif di KPP Pratama. Siap menerbitkan faktur dan dokumen perpajakan resmi instansi.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
+                <div class="pt-2 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
                     <span>✓</span> <span>Kepatuhan Pajak & Validasi Ditjen Pajak</span>
                 </div>
             </div>
@@ -566,11 +566,11 @@
             <!-- Card 4: E-Katalog LKPP RI (Pengadaan Pemerintah) -->
             <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-250 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         🏛️
                     </div>
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">LKPP Republik Indonesia</span>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 block">LKPP Republik Indonesia</span>
                         <h3 class="text-base font-black text-[#07153f] dark:text-white">Penyedia E-Katalog RI</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
                             {{ $siteSettings['company_lkpp_status'] ?? 'Terdaftar Resmi di E-Katalog LKPP RI' }}
@@ -580,7 +580,7 @@
                         Memudahkan dinas, kampus negeri, dan BUMD melakukan transaksi langsung (e-purchasing) secara sah.
                     </p>
                 </div>
-                <div class="pt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
+                <div class="pt-2 text-[10px] font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 w-full">
                     <span>✓</span> <span>{{ $siteSettings['company_lkpp_status'] ?? 'Terdaftar Resmi di E-Katalog LKPP RI' }}</span>
                 </div>
             </div>
@@ -1305,7 +1305,7 @@
                                 <strong class="text-xs block text-[#07153f] dark:text-white">Pengerjaan Standar</strong>
                                 <span class="text-[10px] text-slate-500">14 - 30 Hari Kerja</span>
                             </div>
-                            <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded-full">Included</span>
+                            <span class="text-[10px] font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded-full">Included</span>
                         </button>
 
                         <button type="button" 
@@ -1316,7 +1316,7 @@
                                 <strong class="text-xs block text-[#07153f] dark:text-white">Prioritas Express</strong>
                                 <span class="text-[10px] text-slate-500">7 - 14 Hari Kerja</span>
                             </div>
-                            <span class="text-[10px] font-bold text-amber-600 bg-amber-50 dark:bg-amber-950 px-2 py-0.5 rounded-full">+ Express</span>
+                            <span class="text-[10px] font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 px-2 py-0.5 rounded-full">+ Express</span>
                         </button>
                     </div>
                 </div>
@@ -1358,11 +1358,11 @@
                             <span>✨</span> <span>Fasilitas Standar Sudah Termasuk:</span>
                         </div>
                         <ul class="space-y-1.5 text-slate-600 dark:text-slate-300 text-[11px]">
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free Domain Resmi & Hosting Cloud SSD 1 Thn</span></li>
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free SSL Certificate Let's Encrypt (HTTPS)</span></li>
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free Desain Logo & Identitas Visual Sistem</span></li>
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Garansi Revisi Sepuasnya Sampai Sesuai Keinginan</span></li>
-                            <li class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Desain Responsif Semua Device (Mobile & Web)</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free Domain Resmi & Hosting Cloud SSD 1 Thn</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free SSL Certificate Let's Encrypt (HTTPS)</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Free Desain Logo & Identitas Visual Sistem</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Garansi Revisi Sepuasnya Sampai Sesuai Keinginan</span></li>
+                            <li class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">✓ <span class="text-slate-700 dark:text-slate-300">Desain Responsif Semua Device (Mobile & Web)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -1375,7 +1375,7 @@
                      class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border-2 border-emerald-500 shadow-2xl space-y-5 relative overflow-hidden">
                     
                     <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-                        <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 font-extrabold text-[10px] uppercase tracking-wider">
+                        <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 dark:text-emerald-400 font-extrabold text-[10px] uppercase tracking-wider">
                             ✓ Hasil Estimasi Biaya
                         </span>
                         <button type="button" @click="hasCalculated = false" class="text-[11px] text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 underline">
@@ -1406,15 +1406,15 @@
                             </div>
                             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
                                 <span class="text-slate-500 dark:text-slate-400 shrink-0 text-[10px] sm:text-xs">Domain & Server SSD:</span>
-                                <span class="text-right text-[10px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">Included FREE (1 Tahun)</span>
+                                <span class="text-right text-[10px] sm:text-xs font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">Included FREE (1 Tahun)</span>
                             </div>
                             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
                                 <span class="text-slate-500 dark:text-slate-400 shrink-0 text-[10px] sm:text-xs">SSL Let's Encrypt:</span>
-                                <span class="text-right text-[10px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">Included FREE</span>
+                                <span class="text-right text-[10px] sm:text-xs font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">Included FREE</span>
                             </div>
                             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
                                 <span class="text-slate-500 dark:text-slate-400 shrink-0 text-[10px] sm:text-xs">Desain Logo & Revisi:</span>
-                                <span class="text-right text-[10px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">Sepuasnya (FREE)</span>
+                                <span class="text-right text-[10px] sm:text-xs font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">Sepuasnya (FREE)</span>
                             </div>
                             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1">
                                 <span class="text-slate-500 dark:text-slate-400 shrink-0 text-[10px] sm:text-xs">Timeline:</span>
