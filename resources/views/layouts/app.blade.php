@@ -182,27 +182,48 @@
             }
         }
 
-        /* ═══════════════════════ SCROLL FADE-UP ANIMATIONS (Safe & Always Visible) ═══════════════════════ */
-        .fade-up-init, .fade-up, .reveal-on-scroll {
-            opacity: 1 !important;
-            transform: none !important;
+        /* ═══════════════════════ SCROLL ENTRANCE ANIMATIONS ═══════════════════════ */
+        .reveal-on-scroll, .fade-up, .fade-up-target {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
         }
-        .fade-up-init.fade-up-in, .fade-up.in-view, .reveal-on-scroll.in-view {
+        .reveal-on-scroll.is-visible, .fade-up.is-visible, .fade-up-target.is-visible,
+        .reveal-on-scroll.in-view, .fade-up.in-view, .fade-up-target.in-view {
             opacity: 1 !important;
-            transform: none !important;
+            transform: translateY(0) !important;
+        }
+        .delay-75  { transition-delay: 0.075s; }
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-on-scroll, .fade-up, .fade-up-target {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
         }
 
+        /* ═══════════════════════ FLOATING MICRO-ANIMATIONS ═══════════════════════ */
         @keyframes logo-object {
-            0%, 100% { transform: translateY(-10px); }
-            50% { transform: translateY(10px); }
+            0%, 100% { transform: translateY(-8px); }
+            50% { transform: translateY(8px); }
         }
         @keyframes logo-object-top {
-            0%, 100% { transform: translateX(-8px) translateY(-5px); }
-            50% { transform: translateX(8px) translateY(5px); }
+            0%, 100% { transform: translateY(-6px) translateX(-4px); }
+            50% { transform: translateY(6px) translateX(4px); }
         }
         @keyframes logo-object-bottom {
-            0%, 100% { transform: translateX(-6px) rotate(-3deg); }
-            50% { transform: translateX(6px) rotate(3deg); }
+            0%, 100% { transform: translateY(6px) translateX(-4px) rotate(-2deg); }
+            50% { transform: translateY(-6px) translateX(4px) rotate(2deg); }
         }
         @keyframes shape-rotate {
             0% { transform: rotate(0deg); }
@@ -643,11 +664,35 @@
         }
         window.toggleTheme = toggleTheme;
 
-        // Ensure all content is rendered immediately and reliably
+        // Smooth Intersection Observer for Scroll Entrance Animations
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.fade-up, .reveal-on-scroll, .fade-up-target').forEach(el => {
-                el.classList.add('fade-up-in', 'in-view');
-            });
+            const targets = document.querySelectorAll('.reveal-on-scroll, .fade-up, .fade-up-target');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible', 'in-view');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    root: null,
+                    threshold: 0.08,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                targets.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    // If element is already in the viewport on load, show immediately
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('is-visible', 'in-view');
+                    } else {
+                        observer.observe(el);
+                    }
+                });
+            } else {
+                targets.forEach(el => el.classList.add('is-visible', 'in-view'));
+            }
         });
     </script>
     @stack('scripts')
