@@ -92,10 +92,10 @@
     }
     </script>
 
-    <!-- Google Fonts: Poppins, Inter & JetBrains Mono -->
+    <!-- Google Fonts: Poppins, Inter & JetBrains Mono (Optimized with display=optional to eliminate font swap CLS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=optional" rel="stylesheet">
 
     @php
         try {
@@ -173,12 +173,13 @@
             display: block !important;
         }
 
-        /* Brand Logo Responsive Sizing */
+        /* Brand Logo Responsive Sizing with Perfect Aspect-Ratio */
         .logo-light-mode, .logo-dark-mode {
-            height: 40px !important;
+            height: 42px !important;
             max-height: 44px !important;
             width: auto !important;
             max-width: 190px !important;
+            aspect-ratio: 393 / 164 !important;
             object-fit: contain !important;
         }
         @media (min-width: 640px) {
@@ -186,6 +187,7 @@
                 height: 46px !important;
                 max-height: 48px !important;
                 max-width: 220px !important;
+                aspect-ratio: 393 / 164 !important;
             }
         }
 
@@ -293,15 +295,15 @@
     <!-- Floating Glassmorphic Header Navigation Bar -->
     <header x-data="{ open: false, scrolled: false }" 
             @scroll.window="scrolled = (window.pageYOffset > 20)"
-            :class="scrolled ? 'backdrop-blur-xl shadow-lg py-2 sm:py-2.5' : 'backdrop-blur-md py-2.5 sm:py-3.5'"
-            class="sticky top-0 inset-x-0 z-50 transition-all duration-300 border-b"
+            :class="scrolled ? 'backdrop-blur-xl shadow-lg border-b' : 'backdrop-blur-md border-b'"
+            class="sticky top-0 inset-x-0 z-50 py-2.5 sm:py-3 transition-colors duration-300"
             style="background-color: var(--bg-panel); border-color: var(--border); opacity: 0.98;">
         <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">
             
             <!-- Official Brand Logo (Light & Pure White Dark Mode) -->
-            <a href="{{ route('home') }}" class="flex items-center py-0.5 group focus:outline-none shrink-0">
-                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="48" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" />
-                <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="48" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" />
+            <a href="{{ route('home') }}" class="flex items-center py-0.5 group focus:outline-none shrink-0" aria-label="CV. Beranda Teknologi Digital Home">
+                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="393" height="164" fetchpriority="high" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" />
+                <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" />
             </a>
 
             <!-- Desktop Navigation Links -->
@@ -470,9 +472,9 @@
                 
                 <!-- Column 1: Brand & Legalitas (lg:col-span-4) -->
                 <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
-                    <a href="{{ route('home') }}" class="inline-block py-1 group">
-                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="48" loading="lazy" decoding="async" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" />
-                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="48" loading="lazy" decoding="async" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" />
+                    <a href="{{ route('home') }}" class="inline-block py-1 group" aria-label="CV. Beranda Teknologi Digital">
+                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="393" height="164" loading="lazy" decoding="async" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" loading="lazy" decoding="async" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
                         <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Training.
@@ -524,41 +526,41 @@
 
                 <!-- Column 2: Layanan Utama (lg:col-span-2) -->
                 <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
-                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
+                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
                         <span class="w-4 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
                         Layanan
-                    </h4>
+                    </p>
                     <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Web App Enterprise</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Mobile Apps (Flutter)</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Custom AI Chatbot</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portal Desa & Sekolah</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Server & Cloud Setup</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Web App Enterprise</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Mobile Apps (Flutter)</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Custom AI Chatbot</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portal Desa & Sekolah</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Server & Cloud Setup</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Navigasi Cepat (lg:col-span-2) -->
                 <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
-                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
+                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
                         <span class="w-4 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
                         Navigasi
-                    </h4>
+                    </p>
                     <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('home') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Beranda</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Layanan IT</a></li>
-                        <li><a href="{{ route('projects.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portofolio</a></li>
-                        <li><a href="{{ route('products.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Produk Digital</a></li>
-                        <li><a href="{{ route('trainer.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Trainer & Event</a></li>
-                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Blog & Berita</a></li>
+                        <li><a href="{{ route('home') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Beranda</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Layanan IT</a></li>
+                        <li><a href="{{ route('projects.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portofolio</a></li>
+                        <li><a href="{{ route('products.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Produk Digital</a></li>
+                        <li><a href="{{ route('trainer.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Trainer & Event</a></li>
+                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Blog & Berita</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 4: Kontak & Mulai Proyek (lg:col-span-4) -->
                 <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
-                    <h4 class="font-extrabold text-xs tracking-wider uppercase mono text-[#fe6000] flex items-center gap-2">
+                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-[#fe6000] flex items-center gap-2">
                         <span class="w-4 h-0.5 bg-[#fe6000] rounded-full hidden md:block"></span>
                         Kontak & Kantor
-                    </h4>
+                    </p>
                     
                     <!-- Compact Contact List with Clean SVGs -->
                     <div class="space-y-2 text-xs font-medium w-full max-w-sm" style="color: var(--text-muted);">
@@ -568,7 +570,7 @@
                                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.07c-.24.68-1.2 1.25-1.65 1.33-.45.08-1.03.11-3.32-.84-2.75-1.14-4.52-3.95-4.66-4.14-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4.06.61.57.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.17 1.37 2.48 1.52.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.16.28.1 1.77.83 2.07.98.3.15.5.22.58.35.07.13.07.76-.17 1.44z"/></svg>
                             </span>
                             <div class="text-left leading-tight">
-                                <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-bold">WhatsApp Resmi</span>
+                                <span class="text-[9px] uppercase tracking-wider text-slate-600 dark:text-slate-400 block font-bold">WhatsApp Resmi</span>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 mono text-xs">0896 9524 9089</span>
                             </div>
                         </a>
@@ -579,7 +581,7 @@
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </span>
                             <div class="text-left leading-tight">
-                                <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-bold">Email Bisnis</span>
+                                <span class="text-[9px] uppercase tracking-wider text-slate-600 dark:text-slate-400 block font-bold">Email Bisnis</span>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 text-xs">{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}</span>
                             </div>
                         </a>
