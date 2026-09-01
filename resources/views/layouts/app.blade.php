@@ -175,7 +175,7 @@
 
         /* Brand Logo Responsive Sizing with Perfect Aspect-Ratio */
         .logo-light-mode, .logo-dark-mode {
-            height: 42px !important;
+            height: 40px !important;
             max-height: 44px !important;
             width: auto !important;
             max-width: 190px !important;
@@ -184,55 +184,32 @@
         }
         @media (min-width: 640px) {
             .logo-light-mode, .logo-dark-mode {
-                height: 46px !important;
+                height: 44px !important;
                 max-height: 48px !important;
                 max-width: 220px !important;
                 aspect-ratio: 393 / 164 !important;
             }
         }
 
-        /* ═══════════════════════ SCROLL ENTRANCE ANIMATIONS ═══════════════════════ */
+        /* ═══════════════════════ SCROLL ENTRANCE ANIMATIONS (ZERO LAYOUT SHIFT) ═══════════════════════ */
         .reveal-on-scroll, .fade-up, .fade-up-target {
-            opacity: 0;
-            transform: translateY(22px);
-            transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-        .reveal-on-scroll.is-visible, .fade-up.is-visible, .fade-up-target.is-visible,
-        .reveal-on-scroll.in-view, .fade-up.in-view, .fade-up-target.in-view {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-        .delay-75  { transition-delay: 0.075s; }
-        .delay-100 { transition-delay: 0.1s; }
-        .delay-150 { transition-delay: 0.15s; }
-        .delay-200 { transition-delay: 0.2s; }
-        .delay-250 { transition-delay: 0.25s; }
-        .delay-300 { transition-delay: 0.3s; }
-        .delay-350 { transition-delay: 0.35s; }
-        .delay-400 { transition-delay: 0.4s; }
-        .delay-500 { transition-delay: 0.5s; }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal-on-scroll, .fade-up, .fade-up-target {
-                opacity: 1 !important;
-                transform: none !important;
-                transition: none !important;
-            }
+            opacity: 1;
+            transform: none;
+            will-change: transform, opacity;
         }
 
-        /* ═══════════════════════ FLOATING MICRO-ANIMATIONS ═══════════════════════ */
+        /* ═══════════════════════ FLOATING MICRO-ANIMATIONS (ZERO INITIAL SHIFT) ═══════════════════════ */
         @keyframes logo-object {
-            0%, 100% { transform: translateY(-8px); }
-            50% { transform: translateY(8px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
         }
         @keyframes logo-object-top {
-            0%, 100% { transform: translateY(-6px) translateX(-4px); }
-            50% { transform: translateY(6px) translateX(4px); }
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(5px) translateX(3px); }
         }
         @keyframes logo-object-bottom {
-            0%, 100% { transform: translateY(6px) translateX(-4px) rotate(-2deg); }
-            50% { transform: translateY(-6px) translateX(4px) rotate(2deg); }
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            50% { transform: translateY(-5px) translateX(3px) rotate(1deg); }
         }
         @keyframes shape-rotate {
             0% { transform: rotate(0deg); }
@@ -240,9 +217,11 @@
         }
         .anim-logo-object {
             animation: logo-object 4s ease-in-out infinite !important;
+            will-change: transform;
         }
         .anim-logo-top {
             animation: logo-object-top 5s ease-in-out infinite !important;
+            will-change: transform;
         }
         .anim-logo-bottom {
             animation: logo-object-bottom 6s ease-in-out infinite !important;
@@ -302,8 +281,8 @@
             
             <!-- Official Brand Logo (Light & Pure White Dark Mode) -->
             <a href="{{ route('home') }}" class="flex items-center py-0.5 group focus:outline-none shrink-0" aria-label="CV. Beranda Teknologi Digital Home">
-                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="393" height="164" fetchpriority="high" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" />
-                <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" />
+                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="393" height="164" fetchpriority="high" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" style="height: 40px; width: auto; aspect-ratio: 393 / 164;" />
+                <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" style="height: 40px; width: auto; aspect-ratio: 394 / 164;" />
             </a>
 
             <!-- Desktop Navigation Links -->
@@ -473,8 +452,8 @@
                 <!-- Column 1: Brand & Legalitas (lg:col-span-4) -->
                 <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
                     <a href="{{ route('home') }}" class="inline-block py-1 group" aria-label="CV. Beranda Teknologi Digital">
-                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="393" height="164" loading="lazy" decoding="async" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" />
-                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" loading="lazy" decoding="async" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="393" height="164" loading="lazy" decoding="async" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" style="height: 40px; width: auto; aspect-ratio: 393 / 164;" />
+                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" loading="lazy" decoding="async" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" style="height: 40px; width: auto; aspect-ratio: 394 / 164;" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
                         <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Training.
