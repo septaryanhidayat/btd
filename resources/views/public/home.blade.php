@@ -7,13 +7,13 @@
 <section class="relative pt-6 sm:pt-10 md:pt-14 pb-14 sm:pb-18 md:pb-24 lg:pt-16 lg:pb-28 overflow-hidden bg-flymotion-hero transition-colors duration-300">
     
     <!-- Organic Background Wave & Animated SVG Elements (Constrained to prevent mobile overflow) -->
-    <div class="absolute -top-20 -right-20 sm:-top-24 sm:-right-24 w-72 h-72 sm:w-[500px] sm:h-[500px] bg-gradient-to-br from-blue-200/40 via-indigo-100/30 to-orange-100/30 dark:from-blue-900/20 dark:to-orange-950/20 rounded-full blur-3xl pointer-events-none anim-logo-object"></div>
-    <div class="absolute top-1/2 -left-16 sm:-left-20 w-60 h-60 sm:w-80 sm:h-80 bg-orange-100/50 dark:bg-orange-900/10 rounded-full blur-3xl pointer-events-none anim-logo-bottom"></div>
+    <div class="absolute -top-20 -right-20 sm:-top-24 sm:-right-24 w-72 h-72 sm:w-[500px] sm:h-[500px] bg-gradient-to-br from-blue-200/40 via-indigo-100/30 to-orange-100/30 dark:from-blue-900/20 dark:to-orange-950/20 rounded-full blur-3xl pointer-events-none anim-logo-object" aria-hidden="true"></div>
+    <div class="absolute top-1/2 -left-16 sm:-left-20 w-60 h-60 sm:w-80 sm:h-80 bg-orange-100/50 dark:bg-orange-900/10 rounded-full blur-3xl pointer-events-none anim-logo-bottom" aria-hidden="true"></div>
     
     <!-- Floating Decorative Dotted Grids & Shapes -->
-    <div class="hidden sm:block absolute top-12 left-10 text-slate-300 dark:text-slate-700 text-xs pointer-events-none select-none tracking-widest anim-logo-top">••••••••••••••••</div>
-    <div class="hidden sm:block absolute bottom-20 left-1/3 text-[#fe6000]/40 text-4xl font-black pointer-events-none select-none anim-logo-bottom">~</div>
-    <div class="hidden sm:block absolute top-20 right-20 text-[#3E5CE7]/30 text-5xl font-black pointer-events-none select-none anim-shape-rotate">✦</div>
+    <div class="hidden sm:block absolute top-12 left-10 text-slate-300 dark:text-slate-700 text-xs pointer-events-none select-none tracking-widest anim-logo-top" aria-hidden="true">••••••••••••••••</div>
+    <div class="hidden sm:block absolute bottom-20 left-1/3 text-orange-700 dark:text-orange-400/40 text-4xl font-black pointer-events-none select-none anim-logo-bottom" aria-hidden="true">~</div>
+    <div class="hidden sm:block absolute top-20 right-20 text-blue-700 dark:text-blue-400/30 text-5xl font-black pointer-events-none select-none anim-shape-rotate" aria-hidden="true">✦</div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
@@ -23,7 +23,7 @@
                 
                 <!-- Subtitle / Tagline Badge (Corporate Eyebrow) -->
                 <div class="flex items-center justify-center lg:justify-start">
-                    <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-200/80 dark:border-blue-800/60 text-[#3E5CE7] dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
+                    <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-400 dark:text-blue-400 text-[11px] sm:text-xs font-extrabold tracking-wide uppercase shadow-xs">
                         <span class="w-2 h-2 rounded-full bg-[#3E5CE7] dark:bg-blue-400 animate-pulse"></span>
                         <span>{{ $settings['hero_badge'] ?? 'Digital Agency & Software House Terpercaya' }}</span>
                     </div>
@@ -32,7 +32,7 @@
                 <!-- Main Dynamic Headline (Spacious & Balanced 2-Line Flow) -->
                 <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black tracking-tight text-[#07153f] dark:text-white leading-[1.35] max-w-2xl">
                     <span class="inline-block whitespace-normal sm:whitespace-nowrap pb-1">{{ $settings['hero_title_1'] ?? 'Bangun Ekosistem Digital' }}</span>
-                    <span class="block text-[#3E5CE7] dark:text-blue-400 pt-1 sm:pt-1.5">{{ $settings['hero_title_2'] ?? 'yang Berdampak Nyata' }}</span>
+                    <span class="block text-blue-700 dark:text-blue-400 dark:text-blue-400 pt-1 sm:pt-1.5">{{ $settings['hero_title_2'] ?? 'yang Berdampak Nyata' }}</span>
                 </h1>
 
                 <!-- Subtitle Description -->
@@ -42,11 +42,11 @@
 
                 <!-- 4 Quick Feature / Service Circular Icons Row (FlyMotion Signature) -->
                 <div class="pt-1 pb-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3">
-                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-800/60 text-[11px] font-extrabold text-[#3E5CE7] dark:text-blue-300 shadow-xs">
+                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-800/60 text-[11px] font-extrabold text-blue-700 dark:text-blue-400 dark:text-blue-300 shadow-xs">
                         <span>🌐</span>
                         <span>Web Enterprise</span>
                     </div>
-                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50/90 dark:bg-orange-950/50 border border-orange-100 dark:border-orange-800/60 text-[11px] font-extrabold text-[#fe6000] dark:text-orange-400 shadow-xs">
+                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50/90 dark:bg-orange-950/50 border border-orange-100 dark:border-orange-800/60 text-[11px] font-extrabold text-orange-700 dark:text-orange-400 dark:text-orange-400 shadow-xs">
                         <span>📱</span>
                         <span>Mobile Flutter</span>
                     </div>
@@ -74,7 +74,7 @@
                     
                     <!-- Secondary CTA: Lihat Portofolio (Clean Corporate Outline Button) -->
                     <a href="{{ route('projects.index') }}" 
-                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3E5CE7] dark:border-blue-400 text-[#3E5CE7] dark:text-blue-400 hover:bg-[#3E5CE7] hover:text-white dark:hover:bg-blue-600 dark:hover:text-white active:scale-98 transition-all flex items-center justify-center gap-2 shadow-xs">
+                       class="w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-[#3E5CE7] dark:border-blue-400 text-blue-700 dark:text-blue-400 dark:text-blue-400 hover:bg-[#3E5CE7] hover:text-white dark:hover:bg-blue-600 dark:hover:text-white active:scale-98 transition-all flex items-center justify-center gap-2 shadow-xs">
                         <span>LIHAT PORTOFOLIO</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
@@ -98,7 +98,7 @@
                 <div class="relative w-full max-w-[310px] sm:max-w-sm md:max-w-md">
                     
                     <!-- Background Ambient Disk -->
-                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-300/40 via-purple-200/30 to-orange-200/40 dark:from-blue-800/20 dark:via-purple-900/20 dark:to-orange-900/20 rounded-full blur-2xl opacity-80 anim-logo-object"></div>
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-300/40 via-purple-200/30 to-orange-200/40 dark:from-blue-800/20 dark:via-purple-900/20 dark:to-orange-900/20 rounded-full blur-2xl opacity-80 anim-logo-object" aria-hidden="true"></div>
                     
                     <!-- Hero Person Card Container -->
                     <div class="relative bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-2xl border border-slate-100 dark:border-slate-800">
@@ -111,7 +111,7 @@
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
                                 <span class="font-bold text-[#07153f] dark:text-slate-200 ml-1.5 text-[10px] sm:text-[11px] mono">berandadigital.net</span>
                             </div>
-                            <span class="px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/70 text-[#3E5CE7] dark:text-blue-300 font-bold text-[9px] sm:text-[10px]">Official Agency</span>
+                            <span class="px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-400 dark:text-blue-300 font-bold text-[9px] sm:text-[10px]">Official Agency</span>
                         </div>
 
                         <!-- Hero Image (Explicit aspect ratio 700/617 to prevent CLS) -->
@@ -129,15 +129,15 @@
                         </div>
 
                         <!-- Floating Badges (Contained & Responsive) -->
-                        <div class="absolute -top-3 left-2 sm:-top-4 sm:-left-4 bg-white dark:bg-slate-800 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-[#fe6000] anim-logo-top">
+                        <div class="absolute -top-3 left-2 sm:-top-4 sm:-left-4 bg-white dark:bg-slate-800 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-orange-700 dark:text-orange-400 anim-logo-top" aria-hidden="true">
                             <span>🎨 Figma UI Design</span>
                         </div>
 
-                        <div class="absolute -top-3 right-2 sm:-top-4 sm:-right-4 bg-white dark:bg-slate-800 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-pink-600 dark:text-pink-400 anim-logo-bottom">
+                        <div class="absolute -top-3 right-2 sm:-top-4 sm:-right-4 bg-white dark:bg-slate-800 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-pink-600 dark:text-pink-400 anim-logo-bottom" aria-hidden="true">
                             <span>⚡ Web Builder</span>
                         </div>
 
-                        <div class="absolute -bottom-3 right-2 sm:-bottom-4 sm:-right-4 bg-white dark:bg-slate-800 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-[#3E5CE7] dark:text-blue-400 anim-logo-top">
+                        <div class="absolute -bottom-3 right-2 sm:-bottom-4 sm:-right-4 bg-white dark:bg-slate-800 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400 anim-logo-top" aria-hidden="true">
                             <span>🚀 Laravel & Flutter</span>
                         </div>
 
@@ -153,8 +153,8 @@
 <section class="py-20 bg-[#f8faff] dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <!-- Background Floating Accents -->
-    <div class="absolute top-10 right-10 text-slate-200 dark:text-slate-800 text-xs pointer-events-none select-none tracking-widest anim-logo-bottom">••••••••••••</div>
-    <div class="absolute bottom-10 left-10 text-blue-200/40 dark:text-blue-900/20 text-6xl font-black pointer-events-none select-none anim-logo-top">✦</div>
+    <div class="absolute top-10 right-10 text-slate-200 dark:text-slate-800 text-xs pointer-events-none select-none tracking-widest anim-logo-bottom" aria-hidden="true">••••••••••••</div>
+    <div class="absolute bottom-10 left-10 text-blue-200/40 dark:text-blue-900/20 text-6xl font-black pointer-events-none select-none anim-logo-top" aria-hidden="true">✦</div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
@@ -162,7 +162,7 @@
         <div class="space-y-2 text-center sm:text-left reveal-on-scroll">
             <div class="flex items-center justify-center sm:justify-start gap-3">
                 <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
-                <span class="text-sm font-bold tracking-wider uppercase text-[#fe6000]">{{ $settings['services_badge'] ?? 'SERVICE' }}</span>
+                <span class="text-sm font-bold tracking-wider uppercase text-orange-700 dark:text-orange-400">{{ $settings['services_badge'] ?? 'SERVICE' }}</span>
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white">{{ $settings['services_title'] ?? 'What We Do' }}</h2>
             <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">{{ $settings['services_description'] ?? 'Solusi komprehensif teknologi informasi, pengembangan software, dan pemasaran digital untuk bisnis Anda.' }}</p>
@@ -175,10 +175,10 @@
             <div class="bg-white dark:bg-slate-800/90 p-6 sm:p-8 rounded-3xl border border-slate-100 dark:border-slate-700/70 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 space-y-5 flex flex-col justify-between group reveal-on-scroll delay-100">
                 <div class="space-y-4">
                     <!-- Icon Centered on Mobile (mx-auto sm:mx-0) -->
-                    <div class="w-16 h-16 rounded-2xl bg-orange-50 dark:bg-orange-950/50 text-[#fe6000] flex items-center justify-center text-3xl font-bold shadow-inner mx-auto sm:mx-0">
+                    <div class="w-16 h-16 rounded-2xl bg-orange-50 dark:bg-orange-950/50 text-orange-700 dark:text-orange-400 flex items-center justify-center text-3xl font-bold shadow-inner mx-auto sm:mx-0">
                         💻
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Web Development</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Web Development</h3>
                     <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-center sm:text-left">
                         Jasa pembuatan website company profile, portal berita instansi, sistem informasi desa & sekolah, hingga web application Laravel.
                     </p>
@@ -189,7 +189,7 @@
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
-                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
                         <span>Konsultasi Web Development</span> &rarr;
                     </a>
                 </div>
@@ -199,10 +199,10 @@
             <div class="bg-white dark:bg-slate-800/90 p-6 sm:p-8 rounded-3xl border border-slate-100 dark:border-slate-700/70 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 space-y-5 flex flex-col justify-between group reveal-on-scroll delay-150">
                 <div class="space-y-4">
                     <!-- Icon Centered on Mobile (mx-auto sm:mx-0) -->
-                    <div class="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-950/50 text-[#3E5CE7] dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-inner mx-auto sm:mx-0">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-inner mx-auto sm:mx-0">
                         🚀
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Web Promotion</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Web Promotion</h3>
                     <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-center sm:text-left">
                         Strategi pemasaran digital, SEO optimasi mesin pencari, dan promosi online terukur untuk mempercepat pertumbuhan bisnis Anda.
                     </p>
@@ -213,7 +213,7 @@
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
-                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
                         <span>Konsultasi SEO & Promosi</span> &rarr;
                     </a>
                 </div>
@@ -226,7 +226,7 @@
                     <div class="w-16 h-16 rounded-2xl bg-amber-50 dark:bg-amber-950/50 text-amber-500 flex items-center justify-center text-3xl font-bold shadow-inner mx-auto sm:mx-0">
                         🛠️
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Web Maintenance</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Web Maintenance</h3>
                     <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-center sm:text-left">
                         Layanan pemeliharaan teknis berkala, keamanan sertifikat SSL, pembaruan server cloud hosting, dan perbaikan bug sistem.
                     </p>
@@ -237,7 +237,7 @@
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
-                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
                         <span>Konsultasi Pemeliharaan</span> &rarr;
                     </a>
                 </div>
@@ -250,7 +250,7 @@
                     <div class="w-16 h-16 rounded-2xl bg-pink-50 dark:bg-pink-950/50 text-[#E83E8C] flex items-center justify-center text-3xl font-bold shadow-inner mx-auto sm:mx-0">
                         📱
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Social Media Management</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Social Media Management</h3>
                     <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-center sm:text-left">
                         Pengelolaan konten media sosial profesional, desain feed & reels estetik, penulisan caption persuasif, dan kampanye interaktif.
                     </p>
@@ -261,7 +261,7 @@
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
-                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
                         <span>Konsultasi Sosial Media</span> &rarr;
                     </a>
                 </div>
@@ -274,7 +274,7 @@
                     <div class="w-16 h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 text-[#20C997] flex items-center justify-center text-3xl font-bold shadow-inner mx-auto sm:mx-0">
                         🎨
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Logo & Visual Branding</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Logo & Visual Branding</h3>
                     <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-center sm:text-left">
                         Perancangan identitas visual merek, logo vektor modern, brand guidelines profesional, dan perlengkapan stationery bisnis.
                     </p>
@@ -285,7 +285,7 @@
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
-                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
                         <span>Konsultasi Logo & Brand</span> &rarr;
                     </a>
                 </div>
@@ -298,7 +298,7 @@
                     <div class="w-16 h-16 rounded-2xl bg-cyan-50 dark:bg-cyan-950/50 text-[#17A2B8] flex items-center justify-center text-3xl font-bold shadow-inner mx-auto sm:mx-0">
                         🎯
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Google & Meta Ads</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#07153f] dark:text-white group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-400 transition-colors text-center sm:text-left">Google & Meta Ads</h3>
                     <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-center sm:text-left">
                         Kampanye iklan digital berbayar Google Search, YouTube, dan Instagram/Facebook Ads tertarget untuk mendatangkan omset nyata.
                     </p>
@@ -309,7 +309,7 @@
                     </ul>
                 </div>
                 <div class="pt-4 border-t border-slate-100 dark:border-slate-700">
-                    <a href="{{ route('services') }}" class="text-xs font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
+                    <a href="{{ route('services') }}" class="text-xs font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400 hover:underline flex items-center justify-center sm:justify-start gap-1">
                         <span>Konsultasi Iklan Ads</span> &rarr;
                     </a>
                 </div>
@@ -323,7 +323,7 @@
 <section class="py-14 sm:py-16 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <!-- Watermark "Stack" -->
-    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-7xl sm:text-8xl font-black text-slate-100/60 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
+    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-7xl sm:text-8xl font-black text-slate-100/60 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0" aria-hidden="true">
         Stack
     </div>
 
@@ -331,7 +331,7 @@
         
         <!-- Header Text (Compact) -->
         <div class="text-center space-y-2 max-w-xl mx-auto reveal-on-scroll">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-800/50 text-[#3E5CE7] dark:text-blue-400 text-[11px] font-extrabold uppercase tracking-wider">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-800/50 text-blue-700 dark:text-blue-400 dark:text-blue-400 text-[11px] font-extrabold uppercase tracking-wider">
                 <span>⚡ Ekosistem & Framework</span>
             </div>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-[#07153f] dark:text-white">
@@ -435,7 +435,7 @@
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-on-scroll">
                 <div class="flex items-center justify-center lg:justify-start gap-3">
                     <span class="w-8 h-1 bg-[#3E5CE7] rounded-full"></span>
-                    <span class="text-sm font-bold tracking-wider uppercase text-[#3E5CE7]">{{ $settings['about_badge'] ?? 'About us' }}</span>
+                    <span class="text-sm font-bold tracking-wider uppercase text-blue-700 dark:text-blue-400">{{ $settings['about_badge'] ?? 'About us' }}</span>
                 </div>
                 
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white leading-tight">
@@ -457,8 +457,8 @@
             <div class="lg:col-span-5 flex justify-center relative reveal-on-scroll delay-200">
                 
                 <!-- Floating Decorative Shapes -->
-                <div class="absolute -top-6 -left-6 text-[#fe6000] text-3xl font-black anim-logo-top">✦</div>
-                <div class="absolute -bottom-6 -right-6 text-[#3E5CE7] text-4xl font-black anim-logo-bottom">~</div>
+                <div class="absolute -top-6 -left-6 text-orange-700 dark:text-orange-400 text-3xl font-black anim-logo-top" aria-hidden="true">✦</div>
+                <div class="absolute -bottom-6 -right-6 text-blue-700 dark:text-blue-400 text-4xl font-black anim-logo-bottom" aria-hidden="true">~</div>
 
                 <div class="bg-white dark:bg-slate-800 p-5 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-xl max-w-md w-full relative">
                     <div class="aspect-video rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 shadow-xs p-2 flex items-center justify-center">
@@ -475,7 +475,7 @@
 <section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <!-- Decorative Watermark "Legal" -->
-    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-100/60 dark:text-slate-800/25 pointer-events-none select-none tracking-wider -z-0">
+    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-100/60 dark:text-slate-800/25 pointer-events-none select-none tracking-wider -z-0" aria-hidden="true">
         Legality
     </div>
 
@@ -500,11 +500,11 @@
             <!-- Card 1: SK Kemenkumham -->
             <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border-2 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3 reveal-on-scroll delay-75 flex flex-col justify-between items-center sm:items-stretch text-center sm:text-left">
                 <div class="space-y-3 w-full">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950 text-[#3E5CE7] dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-400 dark:text-blue-400 flex items-center justify-center text-3xl font-bold shadow-xs mx-auto sm:mx-0">
                         📜
                     </div>
                     <div class="space-y-1">
-                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#3E5CE7] dark:text-blue-400 block">Kemenkumham RI</span>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-blue-700 dark:text-blue-400 dark:text-blue-400 block">Kemenkumham RI</span>
                         <h3 class="text-base font-black text-[#07153f] dark:text-white">Pengesahan Badan Usaha</h3>
                         <p class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 pt-0.5">
                             {{ $siteSettings['company_ahu'] ?? 'AHU-0003819-AH.01.14 Tahun 2022' }}
@@ -598,7 +598,7 @@
         <!-- 5 Keunggulan Jasa Kami (Page 6 Profile) -->
         <div class="p-6 sm:p-8 rounded-3xl bg-[#f8faff] dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 space-y-6 reveal-on-scroll">
             <div class="text-center sm:text-left space-y-1">
-                <span class="text-xs font-bold text-[#fe6000] uppercase tracking-wider mono block text-center sm:text-left">KENAPA MEMILIH KAMI</span>
+                <span class="text-xs font-bold text-orange-700 dark:text-orange-400 uppercase tracking-wider mono block text-center sm:text-left">KENAPA MEMILIH KAMI</span>
                 <h3 class="text-lg sm:text-xl font-extrabold text-[#07153f] dark:text-white">5 Jaminan Keunggulan Layanan CV. Beranda Teknologi Digital</h3>
             </div>
             
@@ -679,7 +679,7 @@
          class="py-20 bg-[#f8faff] dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <!-- Background Watermark Text "Product" -->
-    <div class="absolute top-8 left-8 text-8xl sm:text-9xl font-black text-slate-200/40 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
+    <div class="absolute top-8 left-8 text-8xl sm:text-9xl font-black text-slate-200/40 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0" aria-hidden="true">
         Products
     </div>
 
@@ -693,7 +693,7 @@
         <div class="space-y-4 text-center sm:text-left reveal-on-scroll max-w-3xl mx-auto sm:mx-0">
             <div class="flex items-center justify-center sm:justify-start gap-3">
                 <span class="w-8 h-1 bg-[#fe6000] rounded-full"></span>
-                <span class="text-xs sm:text-sm font-extrabold tracking-wider uppercase text-[#fe6000] mono">
+                <span class="text-xs sm:text-sm font-extrabold tracking-wider uppercase text-orange-700 dark:text-orange-400 mono">
                     💼 REKAM JEJAK & PORTOFOLIO KARYA
                 </span>
             </div>
@@ -709,7 +709,7 @@
 
             <!-- Value Highlights Pills -->
             <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 pt-1">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-[#3E5CE7] dark:text-blue-400 text-xs font-bold shadow-2xs">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-blue-700 dark:text-blue-400 dark:text-blue-400 text-xs font-bold shadow-2xs">
                     <span>⚡</span> <span>Implementasi Instan & Teruji</span>
                 </span>
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400 text-xs font-bold shadow-2xs">
@@ -778,7 +778,7 @@
 
                             <!-- Floating Badges -->
                             <div class="absolute top-2.5 inset-x-2.5 flex items-center justify-between pointer-events-none z-10">
-                                <span class="px-2.5 py-0.5 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-[#3E5CE7] dark:text-blue-400 font-extrabold text-[10px] border border-blue-100 dark:border-blue-900/60 shadow-xs line-clamp-1 max-w-[65%]">
+                                <span class="px-2.5 py-0.5 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-blue-700 dark:text-blue-400 dark:text-blue-400 font-extrabold text-[10px] border border-blue-100 dark:border-blue-900/60 shadow-xs line-clamp-1 max-w-[65%]">
                                     {{ $badgeCategory }}
                                 </span>
                                 <span class="px-2 py-0.5 rounded-full bg-emerald-600/90 text-white font-bold text-[9px] shadow-xs backdrop-blur-sm shrink-0">
@@ -801,7 +801,7 @@
                         <div class="p-5 space-y-3">
                             
                             <div class="space-y-1">
-                                <h3 class="text-sm sm:text-base font-extrabold text-[#07153f] dark:text-white group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors leading-snug line-clamp-1" title="{{ $displayTitle }}">
+                                <h3 class="text-sm sm:text-base font-extrabold text-[#07153f] dark:text-white group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-400 transition-colors leading-snug line-clamp-1" title="{{ $displayTitle }}">
                                     {{ $displayTitle }}
                                 </h3>
                                 <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed font-normal line-clamp-2">
@@ -837,7 +837,7 @@
                         <div class="pt-2.5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
                             <button type="button"
                                     @click="openModal('{{ addslashes($displayTitle) }}', '{{ addslashes($project->client_name) }}', '{{ $project->app_type ?? 'web' }}', '{{ $waProductUrl }}', {{ $slidesJson }})"
-                                    class="text-[11px] font-bold text-[#3E5CE7] dark:text-blue-400 hover:underline flex items-center gap-1">
+                                    class="text-[11px] font-bold text-blue-700 dark:text-blue-400 dark:text-blue-400 hover:underline flex items-center gap-1">
                                 <span>🔍 Layar UI</span>
                             </button>
                             
@@ -867,7 +867,7 @@
         <!-- Interactive Custom Solution Callout Box -->
         <div class="rounded-3xl p-6 sm:p-8 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6 reveal-on-scroll">
             <div class="space-y-2 text-center lg:text-left max-w-2xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/50 text-[#fe6000] text-xs font-bold border border-orange-200/60 dark:border-orange-900/50">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/50 text-orange-700 dark:text-orange-400 text-xs font-bold border border-orange-200/60 dark:border-orange-900/50">
                     <span>💡 Solusi Kustom Sesuai Alur Organisasi</span>
                 </div>
                 <h3 class="text-xl sm:text-2xl font-extrabold text-[#07153f] dark:text-white">
@@ -1120,7 +1120,7 @@
          }">
     
     <!-- Watermark "Estimator" -->
-    <div class="absolute top-6 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-200/40 dark:text-slate-800/25 pointer-events-none select-none tracking-wider -z-0">
+    <div class="absolute top-6 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-200/40 dark:text-slate-800/25 pointer-events-none select-none tracking-wider -z-0" aria-hidden="true">
         Estimator
     </div>
 
@@ -1128,7 +1128,7 @@
         
         <!-- Header -->
         <div class="text-center space-y-2.5 max-w-3xl mx-auto reveal-on-scroll">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-[#3E5CE7] dark:text-blue-400 text-xs font-extrabold uppercase tracking-wider">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-400 dark:text-blue-400 text-xs font-extrabold uppercase tracking-wider">
                 <span>🧮 SIMULASI ANGGARAN PROYEK</span>
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-[#07153f] dark:text-white leading-tight">
@@ -1166,7 +1166,7 @@
                 <div class="space-y-2.5">
                     <div class="flex items-center justify-between">
                         <label class="text-xs font-black uppercase tracking-wider text-[#07153f] dark:text-white flex items-center gap-2">
-                            <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">1</span>
+                            <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400 flex items-center justify-center text-[10px]">1</span>
                             <span>Pilih Solusi / Platform Digital:</span>
                         </label>
                         <span class="text-[10px] text-slate-500 dark:text-slate-400">Pilih salah satu</span>
@@ -1176,7 +1176,7 @@
                         
                         <button type="button" 
                                 @click="setPlatform('company_profile', 'Website Company Profile / Lembaga', 2500000)"
-                                :class="platform === 'company_profile' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                :class="platform === 'company_profile' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
                                 class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
                                 <strong class="block text-xs text-[#07153f] dark:text-white">Web Company Profile</strong>
@@ -1187,7 +1187,7 @@
 
                         <button type="button" 
                                 @click="setPlatform('web_sekolah', 'Website Sekolah, Kampus & PPDB', 3000000)"
-                                :class="platform === 'web_sekolah' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                :class="platform === 'web_sekolah' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
                                 class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
                                 <strong class="block text-xs text-[#07153f] dark:text-white">Web Sekolah / PPDB</strong>
@@ -1198,7 +1198,7 @@
 
                         <button type="button" 
                                 @click="setPlatform('ecommerce', 'Toko Online / Katalog Digital', 3500000)"
-                                :class="platform === 'ecommerce' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                :class="platform === 'ecommerce' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
                                 class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
                                 <strong class="block text-xs text-[#07153f] dark:text-white">Toko Online / Katalog</strong>
@@ -1209,7 +1209,7 @@
 
                         <button type="button" 
                                 @click="setPlatform('sim_desa', 'Sistem Informasi Digital (Surat, Akademik, Absensi)', 4500000)"
-                                :class="platform === 'sim_desa' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                :class="platform === 'sim_desa' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
                                 class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
                                 <strong class="block text-xs text-[#07153f] dark:text-white">Sistem Informasi Digital</strong>
@@ -1220,7 +1220,7 @@
 
                         <button type="button" 
                                 @click="setPlatform('mobile_app', 'Aplikasi Mobile Android & iOS', 4500000)"
-                                :class="platform === 'mobile_app' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                :class="platform === 'mobile_app' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
                                 class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
                                 <strong class="block text-xs text-[#07153f] dark:text-white">Mobile App (Flutter)</strong>
@@ -1231,7 +1231,7 @@
 
                         <button type="button" 
                                 @click="setPlatform('custom_system', 'Sistem Kustom / E-Klinik EMR', 7500000)"
-                                :class="platform === 'custom_system' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
+                                :class="platform === 'custom_system' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold ring-2 ring-blue-500/30' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:border-blue-300'"
                                 class="p-3 rounded-2xl border text-left transition-all flex items-center justify-between gap-2">
                             <div>
                                 <strong class="block text-xs text-[#07153f] dark:text-white">Sistem Kustom / E-Klinik</strong>
@@ -1247,7 +1247,7 @@
                 <div class="space-y-2.5 pt-3 border-t border-slate-100 dark:border-slate-800">
                     <div class="flex items-center justify-between">
                         <label class="text-xs font-black uppercase tracking-wider text-[#07153f] dark:text-white flex items-center gap-2">
-                            <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">2</span>
+                            <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400 flex items-center justify-center text-[10px]">2</span>
                             <span>Fitur Tambahan (Opsional):</span>
                         </label>
                         <span class="text-[10px] text-slate-500 dark:text-slate-400">Sesuai kebutuhan</span>
@@ -1256,7 +1256,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                         
                         <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
-                            <input type="checkbox" x-model="addonWhatsapp" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
+                            <input type="checkbox" x-model="addonWhatsapp" @change="hasCalculated = false" class="w-4 h-4 rounded text-orange-700 dark:text-orange-400 focus:ring-orange-400">
                             <div>
                                 <strong class="text-xs text-[#07153f] dark:text-white block">WhatsApp Gateway</strong>
                                 <span class="text-[10px] text-slate-500 dark:text-slate-400">Notifikasi WA otomatis transaksi</span>
@@ -1264,7 +1264,7 @@
                         </label>
 
                         <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
-                            <input type="checkbox" x-model="addonPayment" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
+                            <input type="checkbox" x-model="addonPayment" @change="hasCalculated = false" class="w-4 h-4 rounded text-orange-700 dark:text-orange-400 focus:ring-orange-400">
                             <div>
                                 <strong class="text-xs text-[#07153f] dark:text-white block">Payment Gateway</strong>
                                 <span class="text-[10px] text-slate-500 dark:text-slate-400">QRIS, Virtual Account & Transfer</span>
@@ -1272,7 +1272,7 @@
                         </label>
 
                         <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
-                            <input type="checkbox" x-model="addonRoles" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
+                            <input type="checkbox" x-model="addonRoles" @change="hasCalculated = false" class="w-4 h-4 rounded text-orange-700 dark:text-orange-400 focus:ring-orange-400">
                             <div>
                                 <strong class="text-xs text-[#07153f] dark:text-white block">Multi-Role & User</strong>
                                 <span class="text-[10px] text-slate-500 dark:text-slate-400">Hak akses Admin, Operator, & User</span>
@@ -1280,7 +1280,7 @@
                         </label>
 
                         <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 cursor-pointer hover:border-blue-400 transition-colors">
-                            <input type="checkbox" x-model="addonAI" @change="hasCalculated = false" class="w-4 h-4 rounded text-[#fe6000] focus:ring-orange-400">
+                            <input type="checkbox" x-model="addonAI" @change="hasCalculated = false" class="w-4 h-4 rounded text-orange-700 dark:text-orange-400 focus:ring-orange-400">
                             <div>
                                 <strong class="text-xs text-[#07153f] dark:text-white block">Engine AI Chatbot</strong>
                                 <span class="text-[10px] text-slate-500 dark:text-slate-400">Smart AI Assistant tanya jawab SOP</span>
@@ -1293,13 +1293,13 @@
                 <!-- 3. Target Waktu Pengerjaan -->
                 <div class="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800">
                     <label class="text-xs font-black uppercase tracking-wider text-[#07153f] dark:text-white flex items-center gap-2">
-                        <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] flex items-center justify-center text-[10px]">3</span>
+                        <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400 flex items-center justify-center text-[10px]">3</span>
                         <span>Target Waktu Pengerjaan:</span>
                     </label>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                         <button type="button" 
                                 @click="setTimeline('standard', 'Pengerjaan Reguler (14 - 30 Hari Kerja)', 0)"
-                                :class="timeline === 'standard' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
+                                :class="timeline === 'standard' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
                                 class="p-2.5 rounded-xl border text-left transition-all flex items-center justify-between">
                             <div>
                                 <strong class="text-xs block text-[#07153f] dark:text-white">Pengerjaan Standar</strong>
@@ -1310,7 +1310,7 @@
 
                         <button type="button" 
                                 @click="setTimeline('fast', 'Prioritas Express Kilat (7 - 14 Hari Kerja)', 1000000)"
-                                :class="timeline === 'fast' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-[#3E5CE7] font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
+                                :class="timeline === 'fast' ? 'border-[#3E5CE7] bg-blue-50/70 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 font-bold' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200'"
                                 class="p-2.5 rounded-xl border text-left transition-all flex items-center justify-between">
                             <div>
                                 <strong class="text-xs block text-[#07153f] dark:text-white">Prioritas Express</strong>
@@ -1341,7 +1341,7 @@
                 
                 <!-- 1. State: Sebelum Ditekan (Panduan & Fasilitas Free) -->
                 <div x-show="!hasCalculated" class="bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-center space-y-4">
-                    <div class="w-14 h-14 mx-auto rounded-2xl bg-orange-50 dark:bg-orange-950/60 text-[#fe6000] flex items-center justify-center text-2xl font-black shadow-inner">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-orange-50 dark:bg-orange-950/60 text-orange-700 dark:text-orange-400 flex items-center justify-center text-2xl font-black shadow-inner">
                         🧮
                     </div>
                     <div class="space-y-1.5">
@@ -1424,7 +1424,7 @@
                                 <span class="text-slate-500 dark:text-slate-400 block">Fitur Tambahan:</span>
                                 <div class="flex flex-wrap gap-1">
                                     <template x-for="item in selectedAddonsSummary" :key="item">
-                                        <span class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[10px] font-semibold text-[#3E5CE7] dark:text-blue-400" x-text="item"></span>
+                                        <span class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-[10px] font-semibold text-blue-700 dark:text-blue-400 dark:text-blue-400" x-text="item"></span>
                                     </template>
                                 </div>
                             </div>
@@ -1472,28 +1472,28 @@
 <section class="py-16 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
     
     <!-- Background Animated Graphic -->
-    <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-100/50 dark:bg-blue-950/30 rounded-full blur-2xl pointer-events-none anim-logo-object"></div>
+    <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-100/50 dark:bg-blue-950/30 rounded-full blur-2xl pointer-events-none anim-logo-object" aria-hidden="true"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             
             <div class="p-4 sm:p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-100">
-                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_clients'] ?? '150+' }}</div>
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-blue-700 dark:text-blue-400 dark:text-blue-400 mono">{{ $siteSettings['stats_clients'] ?? '150+' }}</div>
                 <div class="text-[10px] sm:text-xs font-bold text-[#07153f] dark:text-slate-200">Happy Clients</div>
             </div>
 
             <div class="p-4 sm:p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-150">
-                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_projects'] ?? '99+' }}</div>
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-blue-700 dark:text-blue-400 dark:text-blue-400 mono">{{ $siteSettings['stats_projects'] ?? '99+' }}</div>
                 <div class="text-[10px] sm:text-xs font-bold text-[#07153f] dark:text-slate-200">Projects Done</div>
             </div>
 
             <div class="p-4 sm:p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-200">
-                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#3E5CE7] dark:text-blue-400 mono">{{ $siteSettings['stats_reviews'] ?? '85+' }}</div>
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-blue-700 dark:text-blue-400 dark:text-blue-400 mono">{{ $siteSettings['stats_reviews'] ?? '85+' }}</div>
                 <div class="text-[10px] sm:text-xs font-bold text-[#07153f] dark:text-slate-200">Top Reviews & Event</div>
             </div>
 
             <div class="p-4 sm:p-6 rounded-3xl bg-[#f8faff] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm space-y-1 hover:shadow-xl transition-shadow reveal-on-scroll delay-250">
-                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#fe6000] mono">{{ $siteSettings['stats_experience'] ?? '10+' }}</div>
+                <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-orange-700 dark:text-orange-400 mono">{{ $siteSettings['stats_experience'] ?? '10+' }}</div>
                 <div class="text-[10px] sm:text-xs font-bold text-[#07153f] dark:text-slate-200">Years Experience</div>
             </div>
 
@@ -1505,7 +1505,7 @@
 <section class="py-16 bg-[#f8faff] dark:bg-slate-950 overflow-hidden border-t border-slate-100 dark:border-slate-800 marquee-pause relative">
     
     <!-- Watermark "Client" -->
-    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl font-black text-slate-100/60 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
+    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-8xl font-black text-slate-100/60 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0" aria-hidden="true">
         Client
     </div>
 
@@ -1756,7 +1756,7 @@
          }">
     
     <!-- Watermark Background -->
-    <div class="absolute top-6 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-200/30 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0">
+    <div class="absolute top-6 left-1/2 -translate-x-1/2 text-8xl sm:text-9xl font-black text-slate-200/30 dark:text-slate-800/30 pointer-events-none select-none tracking-wider -z-0" aria-hidden="true">
         Gallery
     </div>
 
@@ -1764,7 +1764,7 @@
         
         <!-- Header Text (Centered Style matching File 2) -->
         <div class="text-center space-y-2 reveal-on-scroll">
-            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#3E5CE7] dark:text-blue-400">
+            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-700 dark:text-blue-400 dark:text-blue-400">
                 <span>—</span>
                 <span>Berita & Dokumentasi Terbaru</span>
                 <span>—</span>
@@ -1825,10 +1825,10 @@
 
                     <!-- Caption & Details -->
                     <div class="p-4 space-y-1.5 flex-grow flex flex-col justify-between">
-                        <h3 class="text-xs sm:text-sm font-bold text-[#07153f] dark:text-slate-100 line-clamp-2 group-hover:text-[#3E5CE7] dark:group-hover:text-blue-400 transition-colors"
+                        <h3 class="text-xs sm:text-sm font-bold text-[#07153f] dark:text-slate-100 line-clamp-2 group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-400 transition-colors"
                             x-text="item.title">
                         </h3>
-                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-[11px] font-semibold text-[#3E5CE7] dark:text-blue-400">
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-[11px] font-semibold text-blue-700 dark:text-blue-400 dark:text-blue-400">
                             <span>CV. Beranda Teknologi Digital</span>
                             <span class="text-xs">&rarr;</span>
                         </div>

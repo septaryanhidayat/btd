@@ -92,10 +92,14 @@
     }
     </script>
 
-    <!-- Google Fonts: Poppins, Inter & JetBrains Mono (Optimized with display=optional to eliminate font swap CLS) -->
+    <!-- Preload Critical Fonts for Zero-CLS Initial Paint -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc4.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=optional" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
     @php
         try {
@@ -108,13 +112,21 @@
     @endphp
 
     <style>
+        @font-face {
+            font-family: 'Poppins-Fallback';
+            src: local('Segoe UI'), local('Arial'), local('Helvetica');
+            ascent-override: 105%;
+            descent-override: 35%;
+            line-gap-override: 10%;
+            size-adjust: 108%;
+        }
         :root {
             --e-global-color-primary: {{ $sitePrimaryColor }};
             --e-global-color-accent: {{ $siteAccentColor }};
             --accent: {{ $siteAccentColor }};
         }
         body, button, input, select, textarea {
-            font-family: 'Poppins', 'Inter', sans-serif !important;
+            font-family: 'Poppins', 'Poppins-Fallback', system-ui, -apple-system, sans-serif !important;
         }
         .bg-flymotion-hero {
             background: radial-gradient(ellipse at 85% 20%, #e0e9ff 0%, #fff1eb 30%, #f0f4ff 60%, #ffffff 100%) !important;
@@ -536,7 +548,7 @@
 
                 <!-- Column 4: Kontak & Mulai Proyek (lg:col-span-4) -->
                 <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
-                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-[#fe6000] flex items-center gap-2">
+                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-orange-700 dark:text-orange-400 flex items-center gap-2">
                         <span class="w-4 h-0.5 bg-[#fe6000] rounded-full hidden md:block"></span>
                         Kontak & Kantor
                     </p>
