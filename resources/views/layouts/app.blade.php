@@ -151,6 +151,7 @@
         html.theme-dark .border-slate-100, html.theme-dark .border-slate-200 {
             border-color: rgba(255, 255, 255, 0.1) !important;
         }
+
         /* ═══════════════════════ THEME LOGO SWITCHER ═══════════════════════ */
         html.dark .logo-dark-mode, html.theme-dark .logo-dark-mode {
             display: block !important;
@@ -163,6 +164,22 @@
         }
         html:not(.dark):not(.theme-dark) .logo-light-mode {
             display: block !important;
+        }
+
+        /* Brand Logo Responsive Sizing */
+        .logo-light-mode, .logo-dark-mode {
+            height: 40px !important;
+            max-height: 44px !important;
+            width: auto !important;
+            max-width: 190px !important;
+            object-fit: contain !important;
+        }
+        @media (min-width: 640px) {
+            .logo-light-mode, .logo-dark-mode {
+                height: 46px !important;
+                max-height: 48px !important;
+                max-width: 220px !important;
+            }
         }
 
         /* ═══════════════════════ SCROLL FADE-UP ANIMATIONS (Safe & Always Visible) ═══════════════════════ */
@@ -191,20 +208,6 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        /* Universal Image & Layout Fail-safe Constraints */
-        *, ::before, ::after {
-            box-sizing: border-box;
-        }
-        img, svg, video {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-        img.h-16, img.h-18, img.h-20, img.h-22, img.h-26 {
-            max-height: 5rem !important;
-            width: auto !important;
-            object-fit: contain !important;
-        }
         .anim-logo-object {
             animation: logo-object 4s ease-in-out infinite !important;
         }
@@ -223,16 +226,18 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script>
-        // High-Contrast Theme Script with persistence (SmartFeed Light/Dark System)
+        // High-Contrast Theme Script with persistence - LIGHT MODE IS DEFAULT
         (function() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
-                document.documentElement.classList.add('theme-dark', 'dark');
-                document.documentElement.classList.remove('theme-light', 'light');
+                document.documentElement.classList.add('dark', 'theme-dark');
+                document.documentElement.classList.remove('light', 'theme-light');
             } else {
-                document.documentElement.classList.remove('theme-dark', 'dark');
-                document.documentElement.classList.add('theme-light', 'light');
-                localStorage.setItem('theme', 'light');
+                document.documentElement.classList.remove('dark', 'theme-dark');
+                document.documentElement.classList.add('light', 'theme-light');
+                if (!savedTheme) {
+                    localStorage.setItem('theme', 'light');
+                }
             }
         })();
     </script>
@@ -267,8 +272,8 @@
             
             <!-- Official Brand Logo (Light & Pure White Dark Mode) -->
             <a href="{{ route('home') }}" class="flex items-center py-0.5 group focus:outline-none shrink-0">
-                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="200" height="56" class="logo-light-mode block dark:hidden h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-xs" />
-                <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="200" height="56" class="logo-dark-mode hidden dark:block h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[200px] sm:max-w-xs md:max-w-none object-contain hover:scale-105 transition-transform drop-shadow-md" />
+                <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="48" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" />
+                <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="48" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain hover:scale-105 transition-transform" />
             </a>
 
             <!-- Desktop Navigation Links -->
@@ -438,8 +443,8 @@
                 <!-- Column 1: Brand & Legalitas (lg:col-span-4) -->
                 <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
                     <a href="{{ route('home') }}" class="inline-block py-1 group">
-                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="50" loading="lazy" decoding="async" class="logo-light-mode block dark:hidden h-11 sm:h-12 w-auto object-contain mx-auto md:mx-0 drop-shadow-xs hover:scale-105 transition-transform" />
-                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="50" loading="lazy" decoding="async" class="logo-dark-mode hidden dark:block h-11 sm:h-12 w-auto object-contain mx-auto md:mx-0 drop-shadow-md hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="48" loading="lazy" decoding="async" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="180" height="48" loading="lazy" decoding="async" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
                         <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Training.
@@ -624,17 +629,19 @@
 
     <script>
         function toggleTheme() {
-            const isDark = document.documentElement.classList.contains('theme-dark') || document.documentElement.classList.contains('dark');
+            const html = document.documentElement;
+            const isDark = html.classList.contains('dark') || html.classList.contains('theme-dark');
             if (isDark) {
-                document.documentElement.classList.remove('theme-dark', 'dark');
-                document.documentElement.classList.add('theme-light', 'light');
+                html.classList.remove('dark', 'theme-dark');
+                html.classList.add('light', 'theme-light');
                 localStorage.setItem('theme', 'light');
             } else {
-                document.documentElement.classList.remove('theme-light', 'light');
-                document.documentElement.classList.add('theme-dark', 'dark');
+                html.classList.remove('light', 'theme-light');
+                html.classList.add('dark', 'theme-dark');
                 localStorage.setItem('theme', 'dark');
             }
         }
+        window.toggleTheme = toggleTheme;
 
         // Ensure all content is rendered immediately and reliably
         document.addEventListener('DOMContentLoaded', () => {
