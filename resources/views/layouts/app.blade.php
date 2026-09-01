@@ -165,33 +165,14 @@
             display: block !important;
         }
 
-        /* ═══════════════════════ SCROLL FADE-UP ANIMATIONS (SmartNews Standard) ═══════════════════════ */
+        /* ═══════════════════════ SCROLL FADE-UP ANIMATIONS (Safe & Always Visible) ═══════════════════════ */
         .fade-up-init, .fade-up, .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
+            opacity: 1 !important;
+            transform: none !important;
         }
         .fade-up-init.fade-up-in, .fade-up.in-view, .reveal-on-scroll.in-view {
             opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-        .delay-75  { transition-delay: 0.075s; }
-        .delay-100 { transition-delay: 0.1s; }
-        .delay-150 { transition-delay: 0.15s; }
-        .delay-200 { transition-delay: 0.2s; }
-        .delay-250 { transition-delay: 0.25s; }
-        .delay-300 { transition-delay: 0.3s; }
-        .delay-350 { transition-delay: 0.35s; }
-        .delay-400 { transition-delay: 0.4s; }
-        .delay-500 { transition-delay: 0.5s; }
-
-        @media (prefers-reduced-motion: reduce) {
-            .fade-up-init, .fade-up, .reveal-on-scroll {
-                opacity: 1 !important;
-                transform: none !important;
-                transition: none !important;
-            }
+            transform: none !important;
         }
 
         @keyframes logo-object {
@@ -655,33 +636,11 @@
             }
         }
 
-        /* Scroll Fade-Up Intersection Observer (Excluding Hero Section for Instant LCP) */
+        // Ensure all content is rendered immediately and reliably
         document.addEventListener('DOMContentLoaded', () => {
-            const animTargets = document.querySelectorAll(
-                'section:not(:first-of-type), .fade-up-target, .bento-card, .service-card, .article-card, .gallery-item, .tech-card'
-            );
-
-            if ('IntersectionObserver' in window) {
-                const fadeUpObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('fade-up-in', 'in-view');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    root: null,
-                    threshold: 0.05,
-                    rootMargin: '0px 0px -20px 0px'
-                });
-
-                animTargets.forEach(el => {
-                    el.classList.add('fade-up-init');
-                    fadeUpObserver.observe(el);
-                });
-            } else {
-                animTargets.forEach(el => el.classList.add('fade-up-in', 'in-view'));
-            }
+            document.querySelectorAll('.fade-up, .reveal-on-scroll, .fade-up-target').forEach(el => {
+                el.classList.add('fade-up-in', 'in-view');
+            });
         });
     </script>
     @stack('scripts')
