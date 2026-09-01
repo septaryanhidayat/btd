@@ -12,6 +12,13 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="{{ url()->current() }}">
 
+    <meta name="theme-color" content="#3E5CE7">
+    <meta name="color-scheme" content="light dark">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Beranda Digital">
+
     <!-- Preload Critical LCP Hero Image -->
     <link rel="preload" as="image" href="{{ asset($settings['hero_image'] ?? 'images/hero-person-old.webp') }}" type="image/webp" fetchpriority="high">
 
