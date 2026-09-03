@@ -32,7 +32,10 @@
             font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
         .mono {
-            font-family: 'JetBrains Mono', monospace !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" 1, "zero" 0;
+            letter-spacing: 0.1px;
         }
         /* Custom scrollbars */
         ::-webkit-scrollbar {

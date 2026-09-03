@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Invoice #{{ $invoice->invoice_number }} - CV. Beranda Teknologi Digital</title>
     
-    <!-- Google Fonts: Inter / Plus Jakarta Sans -->
+    <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -26,8 +26,13 @@
             print-color-adjust: exact !important;
         }
 
+        /* Clear, modern, non-ambiguous tabular numeral font */
         .mono {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum" 1, "zero" 0;
+            letter-spacing: 0.15px;
+            font-weight: 700;
         }
 
         /* Screen Wrapper */
@@ -89,29 +94,30 @@
 
         /* Green / Red Ribbon in Top Right Corner */
         .ribbon-wrapper {
-            width: 170px;
-            height: 170px;
+            width: 140px;
+            height: 140px;
             overflow: hidden;
             position: absolute;
             top: 0;
             right: 0;
             pointer-events: none;
+            z-index: 20;
         }
         .ribbon {
-            font-size: 22px;
+            font-size: 16px;
             font-weight: 900;
             letter-spacing: 2px;
             color: #fff;
             text-transform: uppercase;
             text-align: center;
-            line-height: 44px;
+            line-height: 36px;
             transform: rotate(45deg);
             position: relative;
             padding: 0 0;
             left: -5px;
-            top: 36px;
-            width: 230px;
-            box-shadow: 0 3px 10px -2px rgba(0,0,0,0.2);
+            top: 28px;
+            width: 200px;
+            box-shadow: 0 3px 8px -2px rgba(0,0,0,0.25);
         }
         .ribbon-paid {
             background-color: #8cd635; /* Bright vivid green like sample */
@@ -145,16 +151,18 @@
         }
         .company-meta-area {
             text-align: right;
-            padding-right: 35px; /* Offset from corner ribbon */
+            padding-right: 90px; /* Safe clearance from top-right corner ribbon */
             color: #1e293b;
-            font-size: 12.5px;
+            font-size: 12px;
             line-height: 1.45;
+            max-width: 360px;
         }
         .company-meta-area .company-name {
-            font-size: 15px;
-            font-weight: 700;
+            font-size: 14.5px;
+            font-weight: 800;
             color: #0f172a;
             margin-bottom: 3px;
+            white-space: nowrap;
         }
 
         /* Invoice Number & Date */
@@ -309,13 +317,16 @@
             }
             .invoice-page {
                 margin: 0 !important;
-                padding: 40px 50px !important;
+                padding: 35px 45px !important;
                 box-shadow: none !important;
                 max-width: 100% !important;
                 min-height: auto !important;
             }
+            .company-meta-area {
+                padding-right: 95px !important;
+            }
             @page {
-                margin: 10mm;
+                margin: 8mm 10mm;
                 size: A4 portrait;
             }
         }
