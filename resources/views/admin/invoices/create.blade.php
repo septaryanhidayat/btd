@@ -198,23 +198,28 @@
             <!-- Dynamic Items Rows -->
             <div class="space-y-3">
                 <template x-for="(item, index) in items" :key="index">
-                    <div class="p-4 rounded-2xl border border-slate-200 bg-slate-50/50 flex flex-col md:flex-row items-start md:items-center gap-3">
-                        <div class="w-7 h-7 rounded-lg bg-[#071330] text-white flex items-center justify-center font-bold text-xs shrink-0" x-text="index + 1"></div>
+                    <div class="p-4 rounded-2xl border border-slate-200 bg-slate-50/50 flex flex-col md:flex-row items-start gap-3">
+                        <div class="w-7 h-7 rounded-lg bg-[#071330] text-white flex items-center justify-center font-bold text-xs shrink-0 mt-1" x-text="index + 1"></div>
                         
                         <!-- Deskripsi Item -->
-                        <div class="flex-1 w-full">
-                            <label class="block text-[10px] font-extrabold uppercase text-slate-500 mb-1">Deskripsi Item / Layanan</label>
-                            <input type="text" :name="'items[' + index + '][description]'" x-model="item.description" required placeholder="Deskripsi nama layanan atau aplikasi..." class="w-full px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
+                        <div class="flex-1 w-full space-y-1">
+                            <div class="flex items-center justify-between">
+                                <label class="block text-[10px] font-extrabold uppercase text-slate-500">Deskripsi Item / Layanan</label>
+                                <button type="button" @click="item.description = (item.description ? item.description + '\n• ' : '• ')" class="text-[10px] text-blue-600 hover:text-blue-800 font-bold flex items-center gap-1 hover:underline">
+                                    <span>+ Sisipkan Poin (•)</span>
+                                </button>
+                            </div>
+                            <textarea :name="'items[' + index + '][description]'" x-model="item.description" rows="3" required placeholder="Tuliskan nama layanan atau rincian poin (gunakan simbol • atau enter untuk baris ke bawah)..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium leading-relaxed resize-y"></textarea>
                         </div>
 
                         <!-- Nominal Item -->
-                        <div class="w-full md:w-56">
-                            <label class="block text-[10px] font-extrabold uppercase text-slate-500 mb-1">Nominal (Rp)</label>
-                            <input type="number" :name="'items[' + index + '][amount]'" x-model.number="item.amount" required min="0" step="1000" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-xs font-mono font-bold text-[#071330] focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none text-right" />
+                        <div class="w-full md:w-56 space-y-1">
+                            <label class="block text-[10px] font-extrabold uppercase text-slate-500">Nominal (Rp)</label>
+                            <input type="number" :name="'items[' + index + '][amount]'" x-model.number="item.amount" required min="0" step="1000" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-mono font-bold text-[#071330] focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none text-right" />
                         </div>
 
                         <!-- Hapus Button -->
-                        <div class="shrink-0 md:pt-4">
+                        <div class="shrink-0 md:pt-6">
                             <button type="button" @click="removeItem(index)" x-show="items.length > 1" class="p-2 rounded-lg text-rose-500 hover:bg-rose-100 transition-colors" title="Hapus baris item">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                             </button>

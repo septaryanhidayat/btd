@@ -221,7 +221,7 @@
             border: 1px solid #e2e8f0;
             padding: 10px 14px;
             color: #1e293b;
-            vertical-align: middle;
+            vertical-align: top;
         }
         .table-custom td.text-right {
             text-align: right;
@@ -231,6 +231,29 @@
         }
         .table-custom .row-summary td {
             font-weight: 700;
+            vertical-align: middle;
+        }
+
+        /* Item Description Styling for Structured Bullets */
+        .item-desc-intro {
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .item-desc-bullets {
+            margin: 0;
+            padding-left: 18px;
+            list-style-type: disc;
+            line-height: 1.6;
+            color: #334155;
+        }
+        .item-desc-bullets li {
+            margin-bottom: 4px;
+            padding-left: 2px;
+        }
+        .item-desc-bullets li:last-child {
+            margin-bottom: 0;
         }
 
         /* Section Heading */
@@ -373,6 +396,82 @@
             @endif
         </div>
 
+@php
+    if (!function_exists('formatInvoiceDescription')) {
+        function formatInvoiceDescription($text) {
+            if (empty($text)) return '-';
+            
+            $text = trim($text);
+            
+            // 1. Text contains explicit bullet '•'
+            if (str_contains($text, '•')) {
+                $parts = explode('•', $text);
+                $intro = trim(array_shift($parts));
+                $bullets = array_values(array_filter(array_map('trim', $parts)));
+                
+                $html = '';
+                if (!empty($intro)) {
+                    $html .= '<div class="item-desc-intro">' . nl2br(e($intro)) . '</div>';
+                }
+                if (count($bullets) > 0) {
+                    $html .= '<ul class="item-desc-bullets">';
+                    foreach ($bullets as $b) {
+                        $html .= '<li>' . e($b) . '</li>';
+                    }
+                    $html .= '</ul>';
+                }
+                return $html;
+            }
+            
+            // 2. Text contains newlines
+            if (str_contains($text, "\n")) {
+                $lines = explode("\n", str_replace("\r", "", $text));
+                $intro = '';
+                $bullets = [];
+                $hasBullets = false;
+                
+                foreach ($lines as $line) {
+                    $trimmed = trim($line);
+                    if (empty($trimmed)) continue;
+                    
+                    if (preg_match('/^[-*•]\s*(.*)$/u', $trimmed, $m)) {
+                        $hasBullets = true;
+                        $bullets[] = $m[1];
+                    } elseif (preg_match('/^(\d+[\.\)])\s*(.*)$/u', $trimmed, $m)) {
+                        $hasBullets = true;
+                        $bullets[] = $trimmed;
+                    } else {
+                        if (!$hasBullets && empty($bullets)) {
+                            $intro .= ($intro ? "<br>" : "") . e($trimmed);
+                        } else {
+                            $bullets[] = $trimmed;
+                        }
+                    }
+                }
+                
+                if ($hasBullets || count($bullets) > 0) {
+                    $html = '';
+                    if (!empty($intro)) {
+                        $html .= '<div class="item-desc-intro">' . $intro . '</div>';
+                    }
+                    if (count($bullets) > 0) {
+                        $html .= '<ul class="item-desc-bullets">';
+                        foreach ($bullets as $b) {
+                            $html .= '<li>' . e($b) . '</li>';
+                        }
+                        $html .= '</ul>';
+                    }
+                    return $html;
+                }
+                
+                return '<div style="white-space: pre-line; line-height: 1.5;">' . e($text) . '</div>';
+            }
+            
+            return '<div style="line-height: 1.5;">' . e($text) . '</div>';
+        }
+    }
+@endphp
+
         <!-- Items Table -->
         <table class="table-custom">
             <thead>
@@ -382,16 +481,16 @@
                 </tr>
             </thead>
             <tbody>
-                @if(is_array($invoice->items))
+                @if(is_array($invoice->items) && count($invoice->items) > 0)
                     @foreach($invoice->items as $item)
                         <tr>
-                            <td>{{ $item['description'] ?? '-' }}</td>
+                            <td>{!! formatInvoiceDescription($item['description'] ?? '-') !!}</td>
                             <td class="text-right mono">Rp {{ number_format($item['amount'] ?? 0, 2, ',', '.') }}</td>
                         </tr>
                     @endforeach
                 @else
                     <tr>
-                        <td>Pelunasan Pembuatan Aplikasi</td>
+                        <td>{!! formatInvoiceDescription('Pelunasan Pembuatan Aplikasi') !!}</td>
                         <td class="text-right mono">Rp {{ number_format($invoice->total_amount, 2, ',', '.') }}</td>
                     </tr>
                 @endif

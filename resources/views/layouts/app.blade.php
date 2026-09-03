@@ -204,25 +204,48 @@
             }
         }
 
-        /* ═══════════════════════ SCROLL ENTRANCE ANIMATIONS (ZERO LAYOUT SHIFT) ═══════════════════════ */
+        /* ═══════════════════════ SCROLL ENTRANCE ANIMATIONS ═══════════════════════ */
         .reveal-on-scroll, .fade-up, .fade-up-target {
-            opacity: 1;
-            transform: none;
-            will-change: transform, opacity;
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-on-scroll.is-visible, .fade-up.is-visible, .fade-up-target.is-visible,
+        .reveal-on-scroll.in-view, .fade-up.in-view, .fade-up-target.in-view {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        .delay-75  { transition-delay: 0.075s; }
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-on-scroll, .fade-up, .fade-up-target {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
         }
 
-        /* ═══════════════════════ FLOATING MICRO-ANIMATIONS (ZERO INITIAL SHIFT) ═══════════════════════ */
+        /* ═══════════════════════ FLOATING MICRO-ANIMATIONS ═══════════════════════ */
         @keyframes logo-object {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(6px); }
+            0%, 100% { transform: translateY(-8px); }
+            50% { transform: translateY(8px); }
         }
         @keyframes logo-object-top {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(5px) translateX(3px); }
+            0%, 100% { transform: translateY(-6px) translateX(-4px); }
+            50% { transform: translateY(6px) translateX(4px); }
         }
         @keyframes logo-object-bottom {
-            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
-            50% { transform: translateY(-5px) translateX(3px) rotate(1deg); }
+            0%, 100% { transform: translateY(6px) translateX(-4px) rotate(-2deg); }
+            50% { transform: translateY(-6px) translateX(4px) rotate(2deg); }
         }
         @keyframes shape-rotate {
             0% { transform: rotate(0deg); }
@@ -238,9 +261,11 @@
         }
         .anim-logo-bottom {
             animation: logo-object-bottom 6s ease-in-out infinite !important;
+            will-change: transform;
         }
         .anim-shape-rotate {
             animation: shape-rotate 25s linear infinite !important;
+            will-change: transform;
         }
     </style>
 
