@@ -175,8 +175,8 @@
                         ATTN / Kontak Penerima (Otomatis diberi awalan "ATTN : ")
                     </label>
                     <div class="flex items-center">
-                        <span class="inline-flex items-center px-3.5 py-2.5 rounded-l-xl border border-r-0 border-slate-200 bg-slate-100 text-slate-700 font-extrabold text-xs">
-                            ATTN :
+                        <span class="inline-flex items-center px-4 py-2.5 rounded-l-xl border border-r-0 border-slate-200 bg-slate-100 text-slate-700 font-extrabold text-xs whitespace-nowrap shrink-0 select-none">
+                            ATTN:
                         </span>
                         <input type="text" name="client_attn" placeholder="Pak Wardoyo (cukup ketik nama saja)" class="w-full px-4 py-2.5 rounded-r-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none font-medium" />
                     </div>

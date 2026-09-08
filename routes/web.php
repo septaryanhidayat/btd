@@ -22,10 +22,14 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TrainerController;
 use Illuminate\Support\Facades\Route;
 
-// Public Invoice Verification (QR Code & Direct Link)
+// Public Invoice Verification & Official Printable View (Anti-500, Client-Accessible)
+Route::get('/invoices/{invoice_number}/print', [InvoiceVerificationController::class, 'print'])->where('invoice_number', '.*')->name('invoices.public-print');
 Route::get('/invoices/{invoice_number}/verify', [InvoiceVerificationController::class, 'verify'])->where('invoice_number', '.*')->name('invoices.verify');
 Route::get('/invoices/{invoice_number}/verif', [InvoiceVerificationController::class, 'verify'])->where('invoice_number', '.*');
 Route::get('/invoices/{invoice_number}', [InvoiceVerificationController::class, 'verify'])->where('invoice_number', '.*');
+
+// Standard Authentication Fallback
+Route::get('/login', fn() => redirect()->route('admin.login'))->name('login');
 
 // Public Front-Facing Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -97,8 +101,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->g
     Route::get('/inquiries/{inquiry}', [AdminInquiryController::class, 'show'])->name('inquiries.show');
     Route::delete('/inquiries/{inquiry}', [AdminInquiryController::class, 'destroy'])->name('inquiries.destroy');
 
-    // Invoices & Billing Management + Print Feature
-    Route::get('/invoices/{invoice}/print', [AdminInvoiceController::class, 'print'])->name('invoices.print');
+    // Invoices & Billing Management + Print Feature (Accessible without auth to allow client PDF preview)
+    Route::get('/invoices/{invoice}/print', [AdminInvoiceController::class, 'print'])->withoutMiddleware(['auth'])->name('invoices.print');
     Route::post('/invoices/{invoice}/send-email', [AdminInvoiceController::class, 'sendEmail'])->name('invoices.send-email');
     Route::resource('invoices', AdminInvoiceController::class);
 

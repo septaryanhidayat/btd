@@ -101,15 +101,33 @@
                     @endif
                 </table>
 
-                <!-- Payment Note -->
-                <div style="background-color: #f8fafc; border-left: 3px solid #269DB9; padding: 12px 16px; border-radius: 4px; margin-bottom: 25px; font-size: 12px; color: #475569;">
-                    <strong>Petunjuk Pembayaran:</strong><br>
+                <!-- Payment Note & Transfer Channels -->
+                <div style="background-color: #f8fafc; border-left: 3.5px solid #269DB9; padding: 14px 18px; border-radius: 6px; margin-bottom: 25px; font-size: 12px; color: #334155; line-height: 1.6;">
+                    <div style="font-weight: 800; color: #0f172a; margin-bottom: 6px; font-size: 13px;">
+                        💳 Channel Pembayaran / Transfer:
+                    </div>
                     @if(!empty($invoice->notes))
-                        {{ $invoice->notes }}
-                    @else
-                        Pembayaran dapat ditransfer ke rekening resmi <strong>CV. Beranda Teknologi Digital</strong>.<br>
-                        Setelah transfer, mohon kirimkan konfirmasi melalui WhatsApp ke <strong>{{ $settings['contact_phone'] ?? '0896 9524 9089' }}</strong>.
+                        <div style="margin-bottom: 8px; font-weight: 600; color: #1e293b;">{{ $invoice->notes }}</div>
                     @endif
+                    <div style="margin-bottom: 8px;">
+                        Pembayaran dapat ditransfer ke salah satu rekening atau e-wallet berikut:
+                    </div>
+                    <table style="width: 100%; font-size: 12px; margin-bottom: 8px; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 3px 0; width: 45%;"><strong>BSI:</strong> <code style="font-family: monospace; font-size: 13px; font-weight: bold; color: #0f172a;">8926301510</code></td>
+                            <td style="padding: 3px 0; width: 55%;"><strong>BRI:</strong> <code style="font-family: monospace; font-size: 13px; font-weight: bold; color: #0f172a;">563701043113533</code></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px 0;"><strong>Bank Jago:</strong> <code style="font-family: monospace; font-size: 13px; font-weight: bold; color: #0f172a;">504724018833</code></td>
+                            <td style="padding: 3px 0;"><strong>SeaBank:</strong> <code style="font-family: monospace; font-size: 13px; font-weight: bold; color: #0f172a;">901020639279</code></td>
+                        </tr>
+                    </table>
+                    <div style="margin-bottom: 6px;">
+                        <strong>E-wallet (ShopeePay / DANA / OVO / GoPay):</strong> <code style="font-family: monospace; font-size: 13px; font-weight: bold; color: #0f172a;">085267774878</code>
+                    </div>
+                    <div style="font-size: 11px; color: #64748b; border-top: 1px dashed #cbd5e1; padding-top: 6px; margin-top: 6px;">
+                        Semua a.n. <strong style="color: #0f172a;">Septa Ryan Hidayat</strong> &bull; Konfirmasi WA ke <strong>{{ $settings['contact_phone'] ?? '0896 9524 9089' }}</strong>
+                    </div>
                 </div>
 
                 <!-- Action Button -->

@@ -366,7 +366,35 @@
         .payment-box-desc {
             font-size: 11.5px;
             color: #555b5e;
-            line-height: 1.5;
+            line-height: 1.45;
+        }
+        .bank-accounts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 10px;
+            font-size: 11px;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+        .bank-item strong {
+            color: #269DB9;
+            font-weight: 800;
+        }
+        .ewallet-line {
+            font-size: 11px;
+            color: #1e293b;
+            margin-bottom: 3px;
+        }
+        .ewallet-line strong {
+            color: #269DB9;
+            font-weight: 800;
+        }
+        .account-holder-line {
+            font-size: 10.5px;
+            color: #64748b;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 3px;
+            margin-top: 3px;
         }
 
         /* QR Validation Card */
@@ -805,14 +833,26 @@
         <!-- Payment Instruction & Official Digital QR Verification -->
         <div class="payment-validation-section">
             <div class="payment-box-left">
-                <div class="payment-box-title">Petunjuk Pembayaran / Bank Transfer</div>
+                <div class="payment-box-title">Petunjuk Pembayaran / Channel Transfer</div>
                 <div class="payment-box-desc">
                     @if(!empty($invoice->notes))
-                        <div>{{ $invoice->notes }}</div>
-                    @else
-                        <div>Pembayaran tagihan dapat ditransfer ke rekening resmi <strong>CV. Beranda Teknologi Digital</strong>.<br>
-                        Konfirmasi pembayaran melalui WhatsApp ke <strong>{{ $formattedPhone }}</strong>.</div>
+                        <div style="margin-bottom: 5px; font-weight: 600; color: #22282a;">{{ $invoice->notes }}</div>
                     @endif
+                    <div style="font-size: 11px; margin-bottom: 4px; color: #334155;">
+                        Pembayaran dapat ditransfer ke salah satu rekening/e-wallet berikut:
+                    </div>
+                    <div class="bank-accounts-grid">
+                        <div class="bank-item"><strong>BSI:</strong> <span class="mono">8926301510</span></div>
+                        <div class="bank-item"><strong>BRI:</strong> <span class="mono">563701043113533</span></div>
+                        <div class="bank-item"><strong>Bank Jago:</strong> <span class="mono">504724018833</span></div>
+                        <div class="bank-item"><strong>SeaBank:</strong> <span class="mono">901020639279</span></div>
+                    </div>
+                    <div class="ewallet-line">
+                        <strong>E-wallet:</strong> ShopeePay / DANA / OVO / GoPay (<span class="mono">085267774878</span>)
+                    </div>
+                    <div class="account-holder-line">
+                        Semua a.n. <strong>Septa Ryan Hidayat</strong> &bull; Konfirmasi WA: <strong>{{ $formattedPhone }}</strong>
+                    </div>
                 </div>
             </div>
 

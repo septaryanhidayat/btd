@@ -293,9 +293,47 @@
                 </div>
             @endif
 
+            <!-- Payment Channel Box -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 16px; margin-top: 18px; text-align: left; font-size: 12px;">
+                <div style="font-weight: 800; color: #0f172a; margin-bottom: 6px; font-size: 12.5px; display: flex; align-items: center; gap: 6px;">
+                    💳 <span>Channel Pembayaran & Transfer:</span>
+                </div>
+                <div style="color: #475569; font-size: 11.5px; margin-bottom: 10px;">
+                    Pembayaran dapat ditransfer ke salah satu rekening / e-wallet berikut:
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 6px 10px;">
+                        <div style="font-size: 10px; font-weight: 800; color: #269DB9;">BSI</div>
+                        <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">8926301510</div>
+                    </div>
+                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 6px 10px;">
+                        <div style="font-size: 10px; font-weight: 800; color: #269DB9;">BRI</div>
+                        <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">563701043113533</div>
+                    </div>
+                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 6px 10px;">
+                        <div style="font-size: 10px; font-weight: 800; color: #269DB9;">Bank Jago</div>
+                        <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">504724018833</div>
+                    </div>
+                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 6px 10px;">
+                        <div style="font-size: 10px; font-weight: 800; color: #269DB9;">SeaBank</div>
+                        <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">901020639279</div>
+                    </div>
+                </div>
+
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 7px 10px; margin-bottom: 8px;">
+                    <div style="font-size: 10px; font-weight: 800; color: #269DB9;">E-wallet (ShopeePay / DANA / OVO / GoPay)</div>
+                    <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">085267774878</div>
+                </div>
+
+                <div style="font-size: 11px; color: #64748b; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
+                    Semua a.n. <strong style="color: #0f172a;">Septa Ryan Hidayat</strong>
+                </div>
+            </div>
+
             <!-- Action Buttons -->
             <div class="action-group">
-                <a href="{{ route('admin.invoices.print', $invoice->id) }}" target="_blank" class="btn btn-primary">
+                <a href="{{ route('invoices.public-print', $invoice->invoice_number) }}" target="_blank" class="btn btn-primary">
                     🖨️ Lihat / Cetak Invoice Asli
                 </a>
                 <a href="https://wa.me/6289695249089?text={{ urlencode('Halo CV. Beranda Teknologi Digital, saya ingin konfirmasi perihal Invoice #' . $invoice->invoice_number . ' atas nama ' . $invoice->client_name) }}" target="_blank" class="btn btn-secondary">
