@@ -16,6 +16,7 @@ class Invoice extends Model
         'status',
         'client_type',
         'client_name',
+        'client_email',
         'client_attn',
         'client_address',
         'items',

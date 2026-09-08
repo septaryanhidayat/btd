@@ -492,6 +492,10 @@
     $rawPhone = $settings['contact_phone'] ?? '0896 9524 9089';
     $cleanPhone = str_replace('-', ' ', $rawPhone);
     $formattedPhone = trim(preg_replace('/\s+/', ' ', $cleanPhone));
+
+    // Guaranteed Logo Embedding via Base64 or Asset
+    $logoFile = public_path('images/Logo-BTD.png');
+    $logoSrc = file_exists($logoFile) ? 'data:image/png;base64,' . base64_encode(file_get_contents($logoFile)) : asset('images/Logo-BTD.png');
 @endphp
 
     <!-- Screen Control Bar -->
@@ -506,6 +510,14 @@
         </div>
 
         <div style="display: flex; align-items: center; gap: 10px;">
+            @if(!empty($invoice->client_email))
+                <form action="{{ route('admin.invoices.send-email', $invoice->id) }}" method="POST" class="inline" onsubmit="return confirm('Kirimkan invoice ini ke email klien {{ $invoice->client_email }}?');">
+                    @csrf
+                    <button type="submit" class="btn-back" style="background: rgba(38, 157, 185, 0.25); border-color: #269DB9; color: #269DB9; font-weight: 700;">
+                        ✉️ Kirim ke Email Klien
+                    </button>
+                </form>
+            @endif
             <a href="{{ route('admin.invoices.edit', $invoice->id) }}" class="btn-back">
                 ✏️ Edit Invoice
             </a>
@@ -534,7 +546,7 @@
         <!-- Header: Logo & Company Address (Symmetrical, Email on Top, Flush Right) -->
         <div class="invoice-header">
             <div class="company-logo-area">
-                <img src="{{ asset($settings['site_logo'] ?? 'images/Logo-BTD.png') }}" alt="{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}" class="logo-img" />
+                <img src="{{ $logoSrc }}" alt="{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}" class="logo-img" />
             </div>
 
             <!-- Kop Nama CV di Kanan Atas: Rapi, Email Proporsional & Rata Kanan -->
@@ -751,9 +763,9 @@
                 </div>
             </div>
 
-            <!-- QR Code Validasi Resmi -->
+            <!-- QR Code Validasi Resmi (Hitam Solid Normal agar mudah terbaca kamera HP) -->
             <div class="qr-validation-card">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=2&color=269DB9&data={{ urlencode(url('/invoices/' . $invoice->invoice_number . '/verify')) }}" 
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=2&color=000000&data={{ urlencode(route('invoices.verify', $invoice->invoice_number)) }}" 
                      alt="QR Code Validasi Invoice #{{ $invoice->invoice_number }}" 
                      class="qr-img" />
                 <div class="qr-info">

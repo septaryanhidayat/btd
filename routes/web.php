@@ -17,9 +17,15 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DigitalProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InvoiceVerificationController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TrainerController;
 use Illuminate\Support\Facades\Route;
+
+// Public Invoice Verification (QR Code & Direct Link)
+Route::get('/invoices/{invoice_number}/verify', [InvoiceVerificationController::class, 'verify'])->name('invoices.verify');
+Route::get('/invoices/{invoice_number}/verif', [InvoiceVerificationController::class, 'verify']);
+Route::get('/invoices/{invoice_number}', [InvoiceVerificationController::class, 'verify']);
 
 // Public Front-Facing Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -93,6 +99,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->g
 
     // Invoices & Billing Management + Print Feature
     Route::get('/invoices/{invoice}/print', [AdminInvoiceController::class, 'print'])->name('invoices.print');
+    Route::post('/invoices/{invoice}/send-email', [AdminInvoiceController::class, 'sendEmail'])->name('invoices.send-email');
     Route::resource('invoices', AdminInvoiceController::class);
 
     // Profile & Account Settings

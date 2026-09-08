@@ -169,7 +169,17 @@
                 <!-- Nama Instansi / Klien -->
                 <div class="space-y-1.5">
                     <label class="block text-xs font-bold text-[#071330]">Nama Klien / Instansi *</label>
-                    <input type="text" name="client_name" required value="{{ old('client_name', $invoice->client_name) }}" placeholder="Contoh: APPI Sumsel / PT Maju" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />
+                    <input type="text" name="client_name" required value="{{ old('client_name', $invoice->client_name) }}" placeholder="Contoh: APPI Sumsel / PT Maju" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#269DB9] focus:outline-none" />
+                </div>
+
+                <!-- Email Klien (Otomatis Kirim) -->
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-[#071330]">Email Klien (Opsional)</label>
+                    <input type="email" name="client_email" value="{{ old('client_email', $invoice->client_email) }}" placeholder="klien@instansi.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#269DB9] focus:outline-none" />
+                    <label class="inline-flex items-center gap-1.5 mt-1 cursor-pointer">
+                        <input type="checkbox" name="send_email_now" value="1" class="rounded text-[#269DB9] focus:ring-[#269DB9]">
+                        <span class="text-[11px] text-slate-500 font-medium">Kirimkan invoice yang diperbarui ke email ini</span>
+                    </label>
                 </div>
 
                 <!-- Template ATTN (User hanya isi nama saja) -->

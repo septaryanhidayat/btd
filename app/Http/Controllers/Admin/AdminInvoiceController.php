@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\InvoiceClientMail;
 use App\Models\Invoice;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Schema;
 
 class AdminInvoiceController extends Controller
@@ -29,6 +32,7 @@ class AdminInvoiceController extends Controller
                     $table->string('status')->default('paid');
                     $table->string('client_type')->default('Personal');
                     $table->string('client_name');
+                    $table->string('client_email')->nullable();
                     $table->string('client_attn')->nullable();
                     $table->text('client_address')->nullable();
                     $table->json('items')->nullable();
@@ -40,6 +44,15 @@ class AdminInvoiceController extends Controller
                     $table->timestamps();
                 });
             }
+        } elseif (!Schema::hasColumn('invoices', 'client_email')) {
+            try {
+                Schema::table('invoices', function ($table) {
+                    $table->string('client_email')->nullable()->after('client_name');
+                });
+            } catch (\Throwable $e) {
+                // Ignore if already exists
+            }
+        }
 
             // Seed initial sample invoice #1675516 if not exists
             if (Invoice::count() === 0) {
@@ -78,7 +91,6 @@ class AdminInvoiceController extends Controller
                     'notes' => 'Terima kasih atas kerja sama dan kepercayaan Anda bersama CV. Beranda Teknologi Digital.',
                 ]);
             }
-        }
     }
 
     public function index()
@@ -114,6 +126,7 @@ class AdminInvoiceController extends Controller
             'status' => 'required|in:paid,unpaid,partial,cancelled',
             'client_type' => 'required|string|max:100',
             'client_name' => 'required|string|max:255',
+            'client_email' => 'nullable|email|max:191',
             'client_attn' => 'nullable|string|max:255',
             'client_address' => 'nullable|string',
             'paid_amount' => 'required|numeric|min:0',
@@ -201,6 +214,7 @@ class AdminInvoiceController extends Controller
             'status' => $validated['status'],
             'client_type' => $validated['client_type'],
             'client_name' => $validated['client_name'],
+            'client_email' => $validated['client_email'] ?? null,
             'client_attn' => $attn,
             'client_address' => $validated['client_address'],
             'items' => $items,
@@ -211,7 +225,18 @@ class AdminInvoiceController extends Controller
             'notes' => $validated['notes'],
         ]);
 
-        return redirect()->route('admin.invoices.index')->with('success', "Invoice #{$invoice->invoice_number} berhasil dibuat.");
+        $emailMsg = '';
+        if (!empty($invoice->client_email) && $request->boolean('send_email_now', true)) {
+            try {
+                Mail::to($invoice->client_email)->send(new InvoiceClientMail($invoice));
+                $emailMsg = " dan notifikasi invoice otomatis terkirim ke {$invoice->client_email}";
+            } catch (\Throwable $e) {
+                Log::warning("Gagal mengirim email otomatis invoice: " . $e->getMessage());
+                $emailMsg = " (namun email otomatis gagal terkirim: silakan cek konfigurasi email)";
+            }
+        }
+
+        return redirect()->route('admin.invoices.index')->with('success', "Invoice #{$invoice->invoice_number} berhasil dibuat{$emailMsg}.");
     }
 
     public function edit(Invoice $invoice)
@@ -231,6 +256,7 @@ class AdminInvoiceController extends Controller
             'status' => 'required|in:paid,unpaid,partial,cancelled',
             'client_type' => 'required|string|max:100',
             'client_name' => 'required|string|max:255',
+            'client_email' => 'nullable|email|max:191',
             'client_attn' => 'nullable|string|max:255',
             'client_address' => 'nullable|string',
             'paid_amount' => 'required|numeric|min:0',
@@ -318,6 +344,7 @@ class AdminInvoiceController extends Controller
             'status' => $validated['status'],
             'client_type' => $validated['client_type'],
             'client_name' => $validated['client_name'],
+            'client_email' => $validated['client_email'] ?? null,
             'client_attn' => $attn,
             'client_address' => $validated['client_address'],
             'items' => $items,
@@ -328,7 +355,18 @@ class AdminInvoiceController extends Controller
             'notes' => $validated['notes'],
         ]);
 
-        return redirect()->route('admin.invoices.index')->with('success', "Invoice #{$invoice->invoice_number} berhasil diperbarui.");
+        $emailMsg = '';
+        if (!empty($invoice->client_email) && $request->boolean('send_email_now')) {
+            try {
+                Mail::to($invoice->client_email)->send(new InvoiceClientMail($invoice));
+                $emailMsg = " dan invoice berhasil dikirim ke {$invoice->client_email}";
+            } catch (\Throwable $e) {
+                Log::warning("Gagal mengirim email update invoice: " . $e->getMessage());
+                $emailMsg = " (namun pengiriman email gagal: silakan cek konfigurasi email)";
+            }
+        }
+
+        return redirect()->route('admin.invoices.index')->with('success', "Invoice #{$invoice->invoice_number} berhasil diperbarui{$emailMsg}.");
     }
 
     public function destroy(Invoice $invoice)
@@ -336,6 +374,23 @@ class AdminInvoiceController extends Controller
         $this->ensureTableExists();
         $invoice->delete();
         return redirect()->route('admin.invoices.index')->with('success', 'Invoice berhasil dihapus.');
+    }
+
+    public function sendEmail(Invoice $invoice)
+    {
+        $this->ensureTableExists();
+
+        if (empty($invoice->client_email)) {
+            return back()->with('error', "Invoice #{$invoice->invoice_number} belum memiliki alamat email klien. Silakan isi email terlebih dahulu pada menu Edit.");
+        }
+
+        try {
+            Mail::to($invoice->client_email)->send(new InvoiceClientMail($invoice));
+            return back()->with('success', "Invoice #{$invoice->invoice_number} berhasil dikirim ke {$invoice->client_email}.");
+        } catch (\Throwable $e) {
+            Log::error("Gagal mengirim email invoice: " . $e->getMessage());
+            return back()->with('error', "Gagal mengirim email: " . $e->getMessage());
+        }
     }
 
     public function print(Invoice $invoice)

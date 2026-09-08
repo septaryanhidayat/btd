@@ -54,7 +54,7 @@
     <!-- Top Minimal Navigation -->
     <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between z-20">
         <a href="/" class="flex items-center gap-3 group">
-            <img src="/images/Logo-BTD-Blue.png" alt="CV. Beranda Teknologi Digital" class="h-10 w-auto object-contain dark:hidden transition-transform group-hover:scale-105" />
+            <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="h-10 w-auto object-contain dark:hidden transition-transform group-hover:scale-105" />
             <img src="/images/Logo-BTD-white.png" alt="CV. Beranda Teknologi Digital" class="h-10 w-auto object-contain hidden dark:block transition-transform group-hover:scale-105" />
         </a>
 
