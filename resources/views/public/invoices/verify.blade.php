@@ -211,6 +211,121 @@
             font-size: 11px;
             color: #94a3b8;
         }
+
+        /* Bank & E-Wallet Symmetrical Cards */
+        .bank-grid-verify {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 10px 0 8px 0;
+        }
+        @media (max-width: 480px) {
+            .bank-grid-verify {
+                grid-template-columns: 1fr;
+            }
+        }
+        .bank-card-verify {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        .bank-card-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 0;
+        }
+        .bank-logo-verify {
+            width: 42px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .bank-info-verify {
+            line-height: 1.2;
+            min-width: 0;
+        }
+        .bank-info-verify .name {
+            font-size: 9.5px;
+            font-weight: 800;
+            color: #269DB9;
+            text-transform: uppercase;
+        }
+        .bank-info-verify .num {
+            font-size: 12px;
+            font-weight: 800;
+            color: #0f172a;
+            white-space: nowrap;
+        }
+        .btn-copy {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 10.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .btn-copy:hover {
+            background: #269DB9;
+            color: #ffffff;
+            border-color: #269DB9;
+        }
+        .btn-copy.copied {
+            background: #10b981 !important;
+            color: #ffffff !important;
+            border-color: #10b981 !important;
+        }
+        .ewallet-card-verify {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .ewallet-left-verify {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+            flex-wrap: wrap;
+        }
+        .ewallet-logos-row-verify {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ewallet-logo-verify {
+            height: 14px;
+            max-width: 38px;
+            object-fit: contain;
+        }
+        .ewallet-info-verify {
+            line-height: 1.2;
+        }
+        .ewallet-info-verify .name {
+            font-size: 9.5px;
+            font-weight: 700;
+            color: #64748b;
+        }
+        .ewallet-info-verify .num {
+            font-size: 12px;
+            font-weight: 800;
+            color: #0f172a;
+        }
     </style>
 </head>
 <body>
@@ -221,6 +336,18 @@
         $logoPath = public_path('images/Logo-BTD.png');
     }
     $logoSrc = file_exists($logoPath) ? 'data:image/png;base64,' . base64_encode(file_get_contents($logoPath)) : asset('images/Logo-BTD.png');
+
+    // Helper for SVG base64
+    $getBankLogo = function($name) {
+        $path = public_path("images/banks/{$name}.svg");
+        if (file_exists($path)) {
+            $svgContent = @file_get_contents($path);
+            if ($svgContent !== false) {
+                return 'data:image/svg+xml;base64,' . base64_encode($svgContent);
+            }
+        }
+        return asset("images/banks/{$name}.svg");
+    };
 @endphp
 
     <div class="verify-card">
@@ -293,43 +420,108 @@
                 </div>
             @endif
 
-            <!-- Payment Channel Box -->
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 16px; margin-top: 18px; text-align: left; font-size: 12px;">
-                <div style="font-weight: 800; color: #0f172a; margin-bottom: 6px; font-size: 12.5px; display: flex; align-items: center; gap: 6px;">
-                    💳 <span>Channel Pembayaran & Transfer:</span>
-                </div>
-                <div style="color: #475569; font-size: 11.5px; margin-bottom: 10px;">
-                    Pembayaran dapat ditransfer ke salah satu rekening / e-wallet berikut:
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
-                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 6px 10px;">
-                        <div style="font-size: 10px; font-weight: 800; color: #269DB9;">BSI</div>
-                        <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">8926301510</div>
+            <!-- Payment Channel Box / Paid Status Banner -->
+            @if($invoice->status === 'paid')
+                <div style="background: #ecfdf5; border: 1.5px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-top: 18px; text-align: left;">
+                    <div style="font-weight: 800; color: #047857; font-size: 13px; display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                        <span>✓</span> <span>TAGIHAN TELAH LUNAS (PAID)</span>
                     </div>
-                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 6px 10px;">
-                        <div style="font-size: 10px; font-weight: 800; color: #269DB9;">BRI</div>
-                        <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">563701043113533</div>
-                    </div>
-                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 6px 10px;">
-                        <div style="font-size: 10px; font-weight: 800; color: #269DB9;">Bank Jago</div>
-                        <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">504724018833</div>
-                    </div>
-                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 6px 10px;">
-                        <div style="font-size: 10px; font-weight: 800; color: #269DB9;">SeaBank</div>
-                        <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">901020639279</div>
+                    <div style="color: #065f46; font-size: 12px; line-height: 1.45;">
+                        Terima kasih, seluruh pembayaran telah diterima dengan baik. Dokumen invoice ini merupakan bukti transaksi yang sah dari <strong>{{ $settings['company_legal_name'] ?? 'CV. Beranda Teknologi Digital' }}</strong>.
                     </div>
                 </div>
+            @else
+                <div id="payment-channels" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 16px; margin-top: 18px; text-align: left; font-size: 12px;">
+                    <div style="font-weight: 800; color: #0f172a; margin-bottom: 4px; font-size: 12.5px; display: flex; align-items: center; gap: 6px;">
+                        💳 <span>Channel Pembayaran & Transfer Resmi:</span>
+                    </div>
+                    <div style="color: #475569; font-size: 11.5px; margin-bottom: 8px;">
+                        Pembayaran dapat ditransfer ke salah satu rekening bank atau e-wallet berikut:
+                    </div>
+                    
+                    <!-- 4 Rekening Bank Resmi (Grid Simetris dengan Logo Resmi & Tombol Salin) -->
+                    <div class="bank-grid-verify">
+                        <!-- BSI -->
+                        <div class="bank-card-verify">
+                            <div class="bank-card-left">
+                                <img src="{{ $getBankLogo('bsi') }}" alt="BSI" class="bank-logo-verify" />
+                                <div class="bank-info-verify">
+                                    <div class="name">BSI</div>
+                                    <div class="mono num">8926301510</div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="copyAccount('8926301510', this)" class="btn-copy" title="Salin Nomor Rekening BSI">
+                                📋 Salin
+                            </button>
+                        </div>
 
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 7px 10px; margin-bottom: 8px;">
-                    <div style="font-size: 10px; font-weight: 800; color: #269DB9;">E-wallet (ShopeePay / DANA / OVO / GoPay)</div>
-                    <div class="mono" style="font-size: 12px; font-weight: 700; color: #1e293b;">085267774878</div>
-                </div>
+                        <!-- BRI -->
+                        <div class="bank-card-verify">
+                            <div class="bank-card-left">
+                                <img src="{{ $getBankLogo('bri') }}" alt="BRI" class="bank-logo-verify" />
+                                <div class="bank-info-verify">
+                                    <div class="name">BRI</div>
+                                    <div class="mono num">563701043113533</div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="copyAccount('563701043113533', this)" class="btn-copy" title="Salin Nomor Rekening BRI">
+                                📋 Salin
+                            </button>
+                        </div>
 
-                <div style="font-size: 11px; color: #64748b; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
-                    Semua a.n. <strong style="color: #0f172a;">Septa Ryan Hidayat</strong>
+                        <!-- Bank Jago -->
+                        <div class="bank-card-verify">
+                            <div class="bank-card-left">
+                                <img src="{{ $getBankLogo('jago') }}" alt="Bank Jago" class="bank-logo-verify" />
+                                <div class="bank-info-verify">
+                                    <div class="name">Bank Jago</div>
+                                    <div class="mono num">504724018833</div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="copyAccount('504724018833', this)" class="btn-copy" title="Salin Nomor Rekening Bank Jago">
+                                📋 Salin
+                            </button>
+                        </div>
+
+                        <!-- SeaBank -->
+                        <div class="bank-card-verify">
+                            <div class="bank-card-left">
+                                <img src="{{ $getBankLogo('seabank') }}" alt="SeaBank" class="bank-logo-verify" />
+                                <div class="bank-info-verify">
+                                    <div class="name">SeaBank</div>
+                                    <div class="mono num">901020639279</div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="copyAccount('901020639279', this)" class="btn-copy" title="Salin Nomor Rekening SeaBank">
+                                📋 Salin
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- E-Wallet ShopeePay / DANA / OVO / GoPay -->
+                    <div class="ewallet-card-verify">
+                        <div class="ewallet-left-verify">
+                            <div class="ewallet-logos-row-verify">
+                                <img src="{{ $getBankLogo('shopeepay') }}" alt="ShopeePay" class="ewallet-logo-verify" />
+                                <img src="{{ $getBankLogo('dana') }}" alt="DANA" class="ewallet-logo-verify" />
+                                <img src="{{ $getBankLogo('ovo') }}" alt="OVO" class="ewallet-logo-verify" />
+                                <img src="{{ $getBankLogo('gopay') }}" alt="GoPay" class="ewallet-logo-verify" />
+                            </div>
+                            <div class="ewallet-info-verify">
+                                <div class="name">E-Wallet (ShopeePay/DANA/OVO/GoPay)</div>
+                                <div class="mono num">085267774878</div>
+                            </div>
+                        </div>
+                        <button type="button" onclick="copyAccount('085267774878', this)" class="btn-copy" title="Salin Nomor E-Wallet">
+                            📋 Salin
+                        </button>
+                    </div>
+
+                    <div style="font-size: 11px; color: #64748b; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
+                        Semua a.n. <strong style="color: #0f172a;">Septa Ryan Hidayat</strong>
+                    </div>
                 </div>
-            </div>
+            @endif
 
             <!-- Action Buttons -->
             <div class="action-group">
@@ -350,5 +542,58 @@
         &copy; {{ date('Y') }} CV. Beranda Teknologi Digital &bull; Sistem Verifikasi Dokumen Digital
     </div>
 
+    <!-- SweetAlert2 & 1-Click Clipboard Copy Handler -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function copyAccount(text, btn) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => showCopied(btn, text)).catch(() => fallbackCopy(text, btn));
+            } else {
+                fallbackCopy(text, btn);
+            }
+        }
+
+        function fallbackCopy(text, btn) {
+            const input = document.createElement('input');
+            input.setAttribute('value', text);
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            showCopied(btn, text);
+        }
+
+        function showCopied(btn, text) {
+            if (btn) {
+                const orig = btn.innerHTML;
+                btn.innerHTML = '✓ Tersalin!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = orig;
+                    btn.classList.remove('copied');
+                }, 2500);
+            }
+            if (window.Swal) {
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Nomor ' + text + ' berhasil disalin!',
+                    showConfirmButton: false,
+                    timer: 2500,
+                    timerProgressBar: true
+                });
+            }
+        }
+
+        // Auto copy if redirected with query param ?copy=...
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const copyVal = urlParams.get('copy');
+            if (copyVal) {
+                copyAccount(copyVal, null);
+            }
+        });
+    </script>
 </body>
 </html>
