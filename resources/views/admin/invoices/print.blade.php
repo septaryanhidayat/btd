@@ -22,6 +22,9 @@
             color: #22282a;
             font-size: 12.5px;
             line-height: 1.5;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
@@ -455,6 +458,49 @@
             margin-top: 0;
         }
 
+        /* Mobile & Small Screen Responsive Preview */
+        @media screen and (max-width: 768px) {
+            .invoice-screen-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding: 12px 16px;
+            }
+            .invoice-screen-bar > div {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .invoice-page {
+                margin: 12px 8px 30px 8px !important;
+                padding: 24px 16px !important;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            .invoice-header {
+                flex-direction: column;
+                gap: 14px;
+                align-items: flex-start;
+            }
+            .company-meta-area {
+                text-align: left !important;
+                margin-left: 0 !important;
+                max-width: 100%;
+            }
+            .ribbon-wrapper {
+                display: none;
+            }
+            .payment-validation-section {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .table-custom {
+                font-size: 11.5px;
+            }
+            .table-custom th, .table-custom td {
+                padding: 7px 8px;
+            }
+        }
+
         /* Print Media Styles: Single Page Safe */
         @media print {
             body {
@@ -494,8 +540,92 @@
     $formattedPhone = trim(preg_replace('/\s+/', ' ', $cleanPhone));
 
     // Guaranteed Logo Embedding via Base64 or Asset
+    $logoSrc = asset('images/Logo-BTD.png');
     $logoFile = public_path('images/Logo-BTD.png');
-    $logoSrc = file_exists($logoFile) ? 'data:image/png;base64,' . base64_encode(file_get_contents($logoFile)) : asset('images/Logo-BTD.png');
+    if (file_exists($logoFile)) {
+        $content = @file_get_contents($logoFile);
+        if ($content !== false) {
+            $logoSrc = 'data:image/png;base64,' . base64_encode($content);
+        }
+    }
+
+    // Safe Date Formatter Closure
+    $formatDate = function($date) {
+        if (empty($date)) return '-';
+        if ($date instanceof \DateTimeInterface) return $date->format('d/m/Y');
+        try {
+            return \Carbon\Carbon::parse($date)->format('d/m/Y');
+        } catch (\Throwable $e) {
+            return (string) $date;
+        }
+    };
+
+    // Safe Description Formatter Closure
+    $formatInvoiceDescription = function($text) {
+        if (empty($text)) return '-';
+        $text = trim($text);
+        if (str_contains($text, '•')) {
+            $parts = explode('•', $text);
+            $intro = trim(array_shift($parts));
+            $bullets = array_values(array_filter(array_map('trim', $parts)));
+            $html = '';
+            if (!empty($intro)) {
+                $html .= '<div class="item-desc-intro">' . nl2br(e($intro)) . '</div>';
+            }
+            if (count($bullets) > 0) {
+                $html .= '<ul class="item-desc-bullets">';
+                foreach ($bullets as $b) {
+                    $html .= '<li>' . e($b) . '</li>';
+                }
+                $html .= '</ul>';
+            }
+            return $html;
+        }
+        if (str_contains($text, "\n")) {
+            $lines = explode("\n", str_replace("\r", "", $text));
+            $intro = '';
+            $bullets = [];
+            $hasBullets = false;
+            foreach ($lines as $line) {
+                $trimmed = trim($line);
+                if (empty($trimmed)) continue;
+                if (preg_match('/^[-*•]\s*(.*)$/u', $trimmed, $m)) {
+                    $hasBullets = true;
+                    $bullets[] = $m[1];
+                } elseif (preg_match('/^(\d+[\.\)])\s*(.*)$/u', $trimmed, $m)) {
+                    $hasBullets = true;
+                    $bullets[] = $trimmed;
+                } else {
+                    if (!$hasBullets && empty($bullets)) {
+                        $intro .= ($intro ? "<br>" : "") . e($trimmed);
+                    } else {
+                        $bullets[] = $trimmed;
+                    }
+                }
+            }
+            if ($hasBullets || count($bullets) > 0) {
+                $html = '';
+                if (!empty($intro)) {
+                    $html .= '<div class="item-desc-intro">' . $intro . '</div>';
+                }
+                if (count($bullets) > 0) {
+                    $html .= '<ul class="item-desc-bullets">';
+                    foreach ($bullets as $b) {
+                        $html .= '<li>' . e($b) . '</li>';
+                    }
+                    $html .= '</ul>';
+                }
+                return $html;
+            }
+            return '<div style="white-space: pre-line; line-height: 1.5;">' . e($text) . '</div>';
+        }
+        return '<div style="line-height: 1.5;">' . e($text) . '</div>';
+    };
+
+    // Safe Verification URL Generator
+    $verifyUrl = \Illuminate\Support\Facades\Route::has('invoices.verify')
+        ? route('invoices.verify', ['invoice_number' => $invoice->invoice_number])
+        : url('/invoices/' . urlencode($invoice->invoice_number) . '/verify');
 @endphp
 
     <!-- Screen Control Bar -->
@@ -549,11 +679,10 @@
                 <img src="{{ $logoSrc }}" alt="{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}" class="logo-img" />
             </div>
 
-            <!-- Kop Nama CV di Kanan Atas: Rapi, Email Proporsional & Rata Kanan -->
+            <!-- Kop Nama CV di Kanan Atas: Rapi, Alamat Jl. Sarjana Timbangan Ogan Ilir Sekali Saja -->
             <div class="company-meta-area">
                 <div class="company-name">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</div>
-                <div class="company-addr">{{ $settings['company_address_line1'] ?? 'Jl. Sarjana, Timbangan, Ogan Ilir' }}</div>
-                <div class="company-addr">{{ $settings['company_address_line2'] ?? 'Sumatera Selatan, Indonesia' }} {{ $settings['company_postal_code'] ?? '30862' }}</div>
+                <div class="company-addr">Jl. Sarjana, Timbangan, Ogan Ilir</div>
                 <div class="company-email">{{ $settings['contact_email'] ?? 'info@berandadigital.net' }}</div>
                 <div class="company-phone">{{ $formattedPhone }}</div>
             </div>
@@ -563,11 +692,11 @@
         <div class="invoice-title-block">
             <h1>Invoice <span class="invoice-num">#{{ $invoice->invoice_number }}</span></h1>
             <div class="invoice-date">
-                <span>Invoice Date:</span> {{ optional($invoice->invoice_date)->format('d/m/Y') }}
+                <span>Invoice Date:</span> {{ $formatDate($invoice->invoice_date) }}
             </div>
             @if($invoice->due_date)
                 <div class="invoice-due-date">
-                    <span>Due Date:</span> {{ optional($invoice->due_date)->format('d/m/Y') }}
+                    <span>Due Date:</span> {{ $formatDate($invoice->due_date) }}
                 </div>
             @endif
         </div>
@@ -588,82 +717,6 @@
             @endif
         </div>
 
-@php
-    if (!function_exists('formatInvoiceDescription')) {
-        function formatInvoiceDescription($text) {
-            if (empty($text)) return '-';
-            
-            $text = trim($text);
-            
-            // 1. Text contains explicit bullet '•'
-            if (str_contains($text, '•')) {
-                $parts = explode('•', $text);
-                $intro = trim(array_shift($parts));
-                $bullets = array_values(array_filter(array_map('trim', $parts)));
-                
-                $html = '';
-                if (!empty($intro)) {
-                    $html .= '<div class="item-desc-intro">' . nl2br(e($intro)) . '</div>';
-                }
-                if (count($bullets) > 0) {
-                    $html .= '<ul class="item-desc-bullets">';
-                    foreach ($bullets as $b) {
-                        $html .= '<li>' . e($b) . '</li>';
-                    }
-                    $html .= '</ul>';
-                }
-                return $html;
-            }
-            
-            // 2. Text contains newlines
-            if (str_contains($text, "\n")) {
-                $lines = explode("\n", str_replace("\r", "", $text));
-                $intro = '';
-                $bullets = [];
-                $hasBullets = false;
-                
-                foreach ($lines as $line) {
-                    $trimmed = trim($line);
-                    if (empty($trimmed)) continue;
-                    
-                    if (preg_match('/^[-*•]\s*(.*)$/u', $trimmed, $m)) {
-                        $hasBullets = true;
-                        $bullets[] = $m[1];
-                    } elseif (preg_match('/^(\d+[\.\)])\s*(.*)$/u', $trimmed, $m)) {
-                        $hasBullets = true;
-                        $bullets[] = $trimmed;
-                    } else {
-                        if (!$hasBullets && empty($bullets)) {
-                            $intro .= ($intro ? "<br>" : "") . e($trimmed);
-                        } else {
-                            $bullets[] = $trimmed;
-                        }
-                    }
-                }
-                
-                if ($hasBullets || count($bullets) > 0) {
-                    $html = '';
-                    if (!empty($intro)) {
-                        $html .= '<div class="item-desc-intro">' . $intro . '</div>';
-                    }
-                    if (count($bullets) > 0) {
-                        $html .= '<ul class="item-desc-bullets">';
-                        foreach ($bullets as $b) {
-                            $html .= '<li>' . e($b) . '</li>';
-                        }
-                        $html .= '</ul>';
-                    }
-                    return $html;
-                }
-                
-                return '<div style="white-space: pre-line; line-height: 1.5;">' . e($text) . '</div>';
-            }
-            
-            return '<div style="line-height: 1.5;">' . e($text) . '</div>';
-        }
-    }
-@endphp
-
         <!-- Items Table -->
         <table class="table-custom">
             <thead>
@@ -676,13 +729,13 @@
                 @if(is_array($invoice->items) && count($invoice->items) > 0)
                     @foreach($invoice->items as $item)
                         <tr>
-                            <td>{!! formatInvoiceDescription($item['description'] ?? '-') !!}</td>
+                            <td>{!! $formatInvoiceDescription($item['description'] ?? '-') !!}</td>
                             <td class="text-right mono">Rp {{ number_format($item['amount'] ?? 0, 2, ',', '.') }}</td>
                         </tr>
                     @endforeach
                 @else
                     <tr>
-                        <td>{!! formatInvoiceDescription('Pelunasan Pembuatan Aplikasi') !!}</td>
+                        <td>{!! $formatInvoiceDescription('Pelunasan Pembuatan Aplikasi') !!}</td>
                         <td class="text-right mono">Rp {{ number_format($invoice->total_amount, 2, ',', '.') }}</td>
                     </tr>
                 @endif
@@ -736,7 +789,7 @@
                     </tr>
                 @else
                     <tr>
-                        <td class="text-center">{{ optional($invoice->invoice_date)->format('d/m/Y') }}</td>
+                        <td class="text-center">{{ $formatDate($invoice->invoice_date) }}</td>
                         <td>Transfer Bank / QRIS</td>
                         <td class="mono" style="color: #94a3b8;">-</td>
                         <td class="text-right mono">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</td>
@@ -765,7 +818,7 @@
 
             <!-- QR Code Validasi Resmi (Hitam Solid Normal agar mudah terbaca kamera HP) -->
             <div class="qr-validation-card">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=2&color=000000&data={{ urlencode(route('invoices.verify', $invoice->invoice_number)) }}" 
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=2&color=000000&data={{ urlencode($verifyUrl) }}" 
                      alt="QR Code Validasi Invoice #{{ $invoice->invoice_number }}" 
                      class="qr-img" />
                 <div class="qr-info">
@@ -778,10 +831,9 @@
             </div>
         </div>
 
-        <!-- Footer Notice -->
+        <!-- Footer Notice (Alamat tidak diulang di sini, hanya tampil sekali di kop atas) -->
         <div class="invoice-footer">
             <div class="company-name-bottom">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</div>
-            <div class="address-line">{{ $settings['company_address'] ?? 'Jalan Sarjana Blok A No. 25 Timbangan, Ogan Ilir, 30862' }}</div>
             <div class="website-line">
                 <a href="https://{{ $settings['site_website'] ?? 'www.berandadigital.net' }}" target="_blank">{{ $settings['site_website'] ?? 'www.berandadigital.net' }}</a>
             </div>

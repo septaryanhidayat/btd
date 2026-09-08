@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="h-full">
+<html lang="id" class="min-h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
         .mono {
             font-family: 'JetBrains Mono', monospace;
@@ -49,10 +51,10 @@
         }
     </script>
 </head>
-<body class="h-full bg-[#f4f7fe] dark:bg-[#070d1e] text-slate-800 dark:text-slate-100 flex flex-col justify-between transition-colors duration-300 antialiased selection:bg-[#3E5CE7] selection:text-white">
+<body class="min-h-screen bg-[#f4f7fe] dark:bg-[#070d1e] text-slate-800 dark:text-slate-100 flex flex-col justify-between transition-colors duration-300 antialiased selection:bg-[#3E5CE7] selection:text-white">
 
     <!-- Top Minimal Navigation -->
-    <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between z-20">
+    <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between z-20 shrink-0">
         <a href="/" class="flex items-center gap-3 group">
             <img src="/images/Logo-BTD.png" alt="CV. Beranda Teknologi Digital" class="h-10 w-auto object-contain dark:hidden transition-transform group-hover:scale-105" />
             <img src="/images/Logo-BTD-white.png" alt="CV. Beranda Teknologi Digital" class="h-10 w-auto object-contain hidden dark:block transition-transform group-hover:scale-105" />
@@ -71,7 +73,7 @@
     </header>
 
     <!-- Main Content Area -->
-    <main class="flex-1 flex items-center justify-center px-4 sm:px-6 py-8 relative overflow-hidden">
+    <main class="flex-1 flex items-center justify-center px-4 sm:px-6 py-8 relative">
         
         <!-- Background Ambient Glow -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-blue-500/15 to-orange-500/10 dark:from-blue-600/10 dark:to-orange-500/10 rounded-full blur-3xl pointer-events-none -z-0"></div>

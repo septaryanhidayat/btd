@@ -23,9 +23,9 @@ use App\Http\Controllers\TrainerController;
 use Illuminate\Support\Facades\Route;
 
 // Public Invoice Verification (QR Code & Direct Link)
-Route::get('/invoices/{invoice_number}/verify', [InvoiceVerificationController::class, 'verify'])->name('invoices.verify');
-Route::get('/invoices/{invoice_number}/verif', [InvoiceVerificationController::class, 'verify']);
-Route::get('/invoices/{invoice_number}', [InvoiceVerificationController::class, 'verify']);
+Route::get('/invoices/{invoice_number}/verify', [InvoiceVerificationController::class, 'verify'])->where('invoice_number', '.*')->name('invoices.verify');
+Route::get('/invoices/{invoice_number}/verif', [InvoiceVerificationController::class, 'verify'])->where('invoice_number', '.*');
+Route::get('/invoices/{invoice_number}', [InvoiceVerificationController::class, 'verify'])->where('invoice_number', '.*');
 
 // Public Front-Facing Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');

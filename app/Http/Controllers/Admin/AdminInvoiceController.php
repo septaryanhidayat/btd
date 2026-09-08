@@ -227,13 +227,10 @@ class AdminInvoiceController extends Controller
 
         $emailMsg = '';
         if (!empty($invoice->client_email) && $request->boolean('send_email_now', true)) {
-            try {
-                Mail::to($invoice->client_email)->send(new InvoiceClientMail($invoice));
-                $emailMsg = " dan notifikasi invoice otomatis terkirim ke {$invoice->client_email}";
-            } catch (\Throwable $e) {
-                Log::warning("Gagal mengirim email otomatis invoice: " . $e->getMessage());
-                $emailMsg = " (namun email otomatis gagal terkirim: silakan cek konfigurasi email)";
-            }
+            $delivery = $this->deliverInvoiceEmail($invoice);
+            $emailMsg = $delivery['status'] 
+                ? " dan {$delivery['message']}" 
+                : " (namun pengiriman email gagal: {$delivery['message']})";
         }
 
         return redirect()->route('admin.invoices.index')->with('success', "Invoice #{$invoice->invoice_number} berhasil dibuat{$emailMsg}.");
@@ -357,13 +354,10 @@ class AdminInvoiceController extends Controller
 
         $emailMsg = '';
         if (!empty($invoice->client_email) && $request->boolean('send_email_now')) {
-            try {
-                Mail::to($invoice->client_email)->send(new InvoiceClientMail($invoice));
-                $emailMsg = " dan invoice berhasil dikirim ke {$invoice->client_email}";
-            } catch (\Throwable $e) {
-                Log::warning("Gagal mengirim email update invoice: " . $e->getMessage());
-                $emailMsg = " (namun pengiriman email gagal: silakan cek konfigurasi email)";
-            }
+            $delivery = $this->deliverInvoiceEmail($invoice);
+            $emailMsg = $delivery['status'] 
+                ? " dan {$delivery['message']}" 
+                : " (namun pengiriman email gagal: {$delivery['message']})";
         }
 
         return redirect()->route('admin.invoices.index')->with('success', "Invoice #{$invoice->invoice_number} berhasil diperbarui{$emailMsg}.");
@@ -384,12 +378,48 @@ class AdminInvoiceController extends Controller
             return back()->with('error', "Invoice #{$invoice->invoice_number} belum memiliki alamat email klien. Silakan isi email terlebih dahulu pada menu Edit.");
         }
 
+        $delivery = $this->deliverInvoiceEmail($invoice);
+        if ($delivery['status']) {
+            return back()->with('success', "Invoice #{$invoice->invoice_number}: {$delivery['message']}");
+        }
+
+        return back()->with('error', "Gagal mengirim email: {$delivery['message']}");
+    }
+
+    private function deliverInvoiceEmail(Invoice $invoice): array
+    {
+        if (empty($invoice->client_email)) {
+            return ['status' => false, 'message' => 'Alamat email klien belum diisi.'];
+        }
+
+        $defaultMailer = config('mail.default');
+
+        // Jika mailer default masih 'log' (umum terjadi jika .env server cPanel belum diset SMTP),
+        // coba kirimkan via sendmail driver bawaan server cPanel/Linux terlebih dahulu
+        if ($defaultMailer === 'log') {
+            try {
+                Mail::mailer('sendmail')->to($invoice->client_email)->send(new InvoiceClientMail($invoice));
+                return ['status' => true, 'message' => "notifikasi invoice terkirim ke {$invoice->client_email} via mail server"];
+            } catch (\Throwable $e) {
+                // Jika sendmail gagal (misal di local Windows), fallback catat ke log driver
+                Mail::to($invoice->client_email)->send(new InvoiceClientMail($invoice));
+                return ['status' => true, 'message' => "notifikasi invoice dicatat ke log sistem. (Driver email: log. Atur MAIL_MAILER=smtp di file .env server agar langsung ke inbox klien)"];
+            }
+        }
+
+        // Coba kirim via mailer default (SMTP)
         try {
             Mail::to($invoice->client_email)->send(new InvoiceClientMail($invoice));
-            return back()->with('success', "Invoice #{$invoice->invoice_number} berhasil dikirim ke {$invoice->client_email}.");
+            return ['status' => true, 'message' => "invoice berhasil dikirim ke {$invoice->client_email}"];
         } catch (\Throwable $e) {
-            Log::error("Gagal mengirim email invoice: " . $e->getMessage());
-            return back()->with('error', "Gagal mengirim email: " . $e->getMessage());
+            // Jika SMTP gagal terhubung, lakukan fallback ke sendmail
+            try {
+                Mail::mailer('sendmail')->to($invoice->client_email)->send(new InvoiceClientMail($invoice));
+                return ['status' => true, 'message' => "invoice berhasil dikirim ke {$invoice->client_email} (via fallback sendmail)"];
+            } catch (\Throwable $fallbackEx) {
+                Log::error("Gagal kirim email invoice: " . $e->getMessage() . " | Fallback sendmail: " . $fallbackEx->getMessage());
+                return ['status' => false, 'message' => "Gagal terhubung ke mail server ({$e->getMessage()})"];
+            }
         }
     }
 

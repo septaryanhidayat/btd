@@ -290,5 +290,91 @@
 
     </div>
 
-</body>
+    <!-- SweetAlert2 Library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Notifikasi SweetAlert2 saat berhasil simpan/ubah/hapus data CRUD
+            @if (session('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil!',
+                    text: {!! json_encode(session('success')) !!},
+                    timer: 4500,
+                    timerProgressBar: true,
+                    showConfirmButton: true,
+                    confirmButtonColor: '#269DB9',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        popup: 'rounded-3xl shadow-2xl border border-slate-100',
+                        confirmButton: 'rounded-xl px-6 py-2.5 font-bold text-xs uppercase tracking-wider'
+                    }
+                });
+            @endif
+
+            // 2. Notifikasi SweetAlert2 saat terjadi error / kendala
+            @if (session('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Pemberitahuan Sistem',
+                    text: {!! json_encode(session('error')) !!},
+                    confirmButtonColor: '#e11d48',
+                    confirmButtonText: 'Tutup',
+                    customClass: {
+                        popup: 'rounded-3xl shadow-2xl border border-slate-100',
+                        confirmButton: 'rounded-xl px-6 py-2.5 font-bold text-xs uppercase tracking-wider'
+                    }
+                });
+            @endif
+
+            // 3. Notifikasi SweetAlert2 saat validasi input form gagal
+            @if ($errors->any())
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validasi Input Belum Lengkap',
+                    html: '<div style="text-align: left; font-size: 13px; line-height: 1.6;">{!! implode("<br>", array_map("e", $errors->all())) !!}</div>',
+                    confirmButtonColor: '#f59e0b',
+                    confirmButtonText: 'Periksa Formulir',
+                    customClass: {
+                        popup: 'rounded-3xl shadow-2xl border border-slate-100',
+                        confirmButton: 'rounded-xl px-6 py-2.5 font-bold text-xs uppercase tracking-wider'
+                    }
+                });
+            @endif
+
+            // 4. Intercept konfirmasi hapus data CRUD dengan modal SweetAlert2 interaktif
+            document.addEventListener('submit', function(e) {
+                const form = e.target;
+                if (!form || !form.tagName || form.tagName.toLowerCase() !== 'form') return;
+
+                const isDelete = form.querySelector('input[name="_method"][value="DELETE"]') !== null;
+                if (isDelete && !form.dataset.confirmed) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+
+                    Swal.fire({
+                        title: 'Konfirmasi Hapus Data',
+                        text: 'Apakah Anda yakin ingin menghapus data ini? Data yang telah dihapus tidak dapat dipulihkan kembali.',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#e11d48',
+                        cancelButtonColor: '#64748b',
+                        confirmButtonText: 'Ya, Hapus Sekarang!',
+                        cancelButtonText: 'Batal',
+                        reverseButtons: true,
+                        customClass: {
+                            popup: 'rounded-3xl shadow-2xl border border-slate-100',
+                            confirmButton: 'rounded-xl px-5 py-2.5 font-bold text-xs',
+                            cancelButton: 'rounded-xl px-5 py-2.5 font-semibold text-xs'
+                        }
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.dataset.confirmed = 'true';
+                            form.submit();
+                        }
+                    });
+                }
+            }, true);
+        });
+    </script>
 </html>

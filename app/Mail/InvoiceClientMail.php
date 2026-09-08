@@ -28,7 +28,16 @@ class InvoiceClientMail extends Mailable
         $companyName = $this->settings['company_name'] ?? 'CV. Beranda Teknologi Digital';
         $statusText = $this->invoice->status === 'paid' ? 'LUNAS' : 'TAGIHAN';
 
+        $configuredFrom = config('mail.from.address');
+        $fromEmail = (!empty($configuredFrom) && $configuredFrom !== 'hello@example.com')
+            ? $configuredFrom
+            : ($this->settings['contact_email'] ?? 'info@berandadigital.net');
+
         return new Envelope(
+            from: new \Illuminate\Mail\Mailables\Address($fromEmail, $companyName),
+            replyTo: [
+                new \Illuminate\Mail\Mailables\Address($fromEmail, $companyName)
+            ],
             subject: "[$statusText] Invoice #{$this->invoice->invoice_number} - {$companyName}",
         );
     }

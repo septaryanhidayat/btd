@@ -721,6 +721,40 @@
             }
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Pesan Terkirim!',
+                    text: {!! json_encode(session('success')) !!},
+                    timer: 5000,
+                    timerProgressBar: true,
+                    confirmButtonColor: '#3E5CE7',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        popup: 'rounded-3xl shadow-2xl border border-slate-100',
+                        confirmButton: 'rounded-xl px-6 py-2.5 font-bold text-xs uppercase tracking-wider'
+                    }
+                });
+            @endif
+
+            @if (session('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Pemberitahuan',
+                    text: {!! json_encode(session('error')) !!},
+                    confirmButtonColor: '#e11d48',
+                    confirmButtonText: 'Tutup',
+                    customClass: {
+                        popup: 'rounded-3xl shadow-2xl border border-slate-100',
+                        confirmButton: 'rounded-xl px-6 py-2.5 font-bold text-xs uppercase tracking-wider'
+                    }
+                });
+            @endif
+        });
+    </script>
     @stack('scripts')
 </body>
 </html>
