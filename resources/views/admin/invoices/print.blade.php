@@ -18,15 +18,15 @@
         }
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #e2e8f0;
+            background-color: #f1f5f9;
             color: #1e293b;
-            font-size: 13px;
+            font-size: 12.5px;
             line-height: 1.5;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
 
-        /* Clear, modern, non-ambiguous tabular numeral font */
+        /* Tabular Numeral for Accurate Financial Alignment */
         .mono {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
             font-variant-numeric: tabular-nums;
@@ -35,7 +35,7 @@
             font-weight: 700;
         }
 
-        /* Screen Wrapper */
+        /* Top Screen Navigation Bar */
         .invoice-screen-bar {
             background: #071330;
             color: white;
@@ -46,10 +46,10 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
         }
         .btn-print {
-            background: #10b981;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             font-weight: 700;
             padding: 8px 18px;
@@ -61,175 +61,300 @@
             align-items: center;
             gap: 6px;
             text-decoration: none;
+            box-shadow: 0 2px 4px rgba(16, 185, 129, 0.25);
+            transition: all 0.2s;
         }
         .btn-print:hover {
-            background: #059669;
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-1px);
         }
         .btn-back {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.12);
             color: white;
             font-weight: 600;
             padding: 8px 14px;
             border-radius: 8px;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             cursor: pointer;
             font-size: 13px;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
         }
         .btn-back:hover {
-            background: rgba(255,255,255,0.25);
+            background: rgba(255, 255, 255, 0.22);
         }
 
-        /* Invoice Container (A4 Proportions) */
+        /* Printable Invoice Container */
         .invoice-page {
             max-width: 820px;
-            margin: 30px auto;
+            margin: 28px auto 40px auto;
             background: #ffffff;
-            padding: 50px 60px 40px 60px;
+            padding: 42px 48px 36px 48px;
             position: relative;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
-            min-height: 1100px;
+            border-radius: 12px;
+            box-shadow: 0 12px 35px -5px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
             overflow: hidden;
         }
 
-        /* Green / Red Ribbon in Top Right Corner */
-        .ribbon-wrapper {
-            width: 140px;
-            height: 140px;
-            overflow: hidden;
-            position: absolute;
-            top: 0;
-            right: 0;
-            pointer-events: none;
-            z-index: 20;
-        }
-        .ribbon {
-            font-size: 16px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: #fff;
-            text-transform: uppercase;
-            text-align: center;
-            line-height: 36px;
-            transform: rotate(45deg);
-            position: relative;
-            padding: 0 0;
-            left: -5px;
-            top: 28px;
-            width: 200px;
-            box-shadow: 0 3px 8px -2px rgba(0,0,0,0.25);
-        }
-        .ribbon-paid {
-            background-color: #8cd635; /* Bright vivid green like sample */
-        }
-        .ribbon-unpaid {
-            background-color: #ef4444;
-        }
-        .ribbon-partial {
-            background-color: #f59e0b;
-        }
-        .ribbon-cancelled {
-            background-color: #64748b;
-        }
-
-        /* Header Layout */
+        /* Header Layout: Logo on Left, CV Details Flush Right */
         .invoice-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 35px;
+            gap: 24px;
+            margin-bottom: 20px;
         }
         .company-logo-area {
             display: flex;
-            align-items: center;
-            gap: 14px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
         }
         .logo-img {
-            height: 60px;
+            height: 54px;
             width: auto;
-            object-contain: fit;
+            object-fit: contain;
+            display: block;
         }
+        .company-tagline {
+            font-size: 11px;
+            font-weight: 600;
+            color: #64748b;
+            letter-spacing: 0.2px;
+        }
+        
+        /* Kop Nama CV di Kanan Atas (Rata Kanan Penuh / Flush Right) */
         .company-meta-area {
             text-align: right;
-            padding-right: 90px; /* Safe clearance from top-right corner ribbon */
-            color: #1e293b;
+            margin-left: auto;
+            color: #334155;
             font-size: 12px;
             line-height: 1.45;
-            max-width: 360px;
+            max-width: 380px;
         }
         .company-meta-area .company-name {
-            font-size: 14.5px;
+            font-size: 16px;
             font-weight: 800;
             color: #0f172a;
-            margin-bottom: 3px;
-            white-space: nowrap;
+            margin-bottom: 4px;
+            letter-spacing: -0.2px;
+        }
+        .company-meta-area .company-addr {
+            color: #475569;
+            font-weight: 500;
+        }
+        .company-meta-area .company-contact {
+            color: #2563eb;
+            font-weight: 600;
+            margin-top: 3px;
+            font-size: 11.5px;
         }
 
-        /* Invoice Number & Date */
-        .invoice-title-block {
-            margin-bottom: 35px;
+        /* Decorative Brand Accent Divider */
+        .brand-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb 0%, #06b6d4 45%, #e2e8f0 100%);
+            border-radius: 9999px;
+            margin-bottom: 24px;
         }
-        .invoice-title-block h1 {
+
+        /* Hero Meta Section: 2 Modern Dimensioned Cards */
+        .invoice-meta-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .meta-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px 20px;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+        .meta-card-label {
+            font-size: 10.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .invoice-main-title {
             font-size: 22px;
             font-weight: 800;
             color: #0f172a;
-            margin-bottom: 4px;
             letter-spacing: -0.5px;
-        }
-        .invoice-title-block .invoice-date {
-            font-size: 13px;
-            color: #334155;
-            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
-        /* Invoiced To Block */
-        .invoiced-to-block {
-            margin-bottom: 35px;
-            font-size: 13px;
-            line-height: 1.5;
+        .meta-dates-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 12px;
+            color: #475569;
         }
-        .invoiced-to-block .title-label {
-            font-size: 14px;
+        .meta-dates-row .date-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .meta-dates-row strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        /* Invoiced To Section */
+        .client-name-title {
+            font-size: 15px;
             font-weight: 800;
             color: #0f172a;
             margin-bottom: 4px;
         }
-        .invoiced-to-block .client-type {
-            color: #1e293b;
+        .client-type-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+            color: #334155;
+            margin-bottom: 6px;
         }
-        .invoiced-to-block .client-attn {
-            color: #1e293b;
-        }
-        .invoiced-to-block .client-city {
-            color: #1e293b;
+        .client-meta-details {
+            font-size: 12px;
+            color: #475569;
+            line-height: 1.45;
         }
 
-        /* Tables (Clean Border & Gray Header like sample) */
+        /* Modern Status Badge (Pill with Dot Indicator) */
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            line-height: 1;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        .status-pill .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+        }
+        .status-pill.unpaid {
+            background-color: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .status-pill.unpaid .dot {
+            background-color: #ef4444;
+        }
+        .status-pill.paid {
+            background-color: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+        }
+        .status-pill.paid .dot {
+            background-color: #10b981;
+        }
+        .status-pill.partial {
+            background-color: #fffbeb;
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+        .status-pill.partial .dot {
+            background-color: #f59e0b;
+        }
+        .status-pill.cancelled {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+        .status-pill.cancelled .dot {
+            background-color: #64748b;
+        }
+
+        /* Subtle Watermark Stamp for Official Authenticity */
+        .watermark-stamp {
+            position: absolute;
+            right: 48px;
+            top: 215px;
+            border: 3px dashed #ef4444;
+            color: #ef4444;
+            font-size: 26px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            padding: 6px 20px;
+            border-radius: 8px;
+            opacity: 0.12;
+            transform: rotate(-12deg);
+            pointer-events: none;
+            user-select: none;
+        }
+        .watermark-stamp.paid {
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        /* Table Styling (Modern, Non-Flat, Elevated) */
         .table-custom {
             width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 35px;
-            font-size: 12px;
-        }
-        .table-custom th {
-            background-color: #f8fafc;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
             border: 1px solid #e2e8f0;
-            padding: 10px 14px;
+        }
+        .table-custom thead th {
+            background-color: #0f172a;
+            color: #ffffff;
             font-weight: 700;
-            color: #0f172a;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 11px 16px;
+            border: none;
             text-align: left;
         }
-        .table-custom th.text-right {
+        .table-custom thead th.text-right {
             text-align: right;
         }
-        .table-custom th.text-center {
+        .table-custom thead th.text-center {
             text-align: center;
         }
-        .table-custom td {
-            border: 1px solid #e2e8f0;
-            padding: 10px 14px;
+        .table-custom tbody td {
+            padding: 12px 16px;
             color: #1e293b;
+            font-size: 12.5px;
+            border-top: 1px solid #f1f5f9;
             vertical-align: top;
+            background-color: #ffffff;
+        }
+        .table-custom tbody tr:nth-child(even) td {
+            background-color: #fafbfc;
         }
         .table-custom td.text-right {
             text-align: right;
@@ -237,12 +362,8 @@
         .table-custom td.text-center {
             text-align: center;
         }
-        .table-custom .row-summary td {
-            font-weight: 700;
-            vertical-align: middle;
-        }
 
-        /* Item Description Styling for Structured Bullets */
+        /* Item Description Formatting */
         .item-desc-intro {
             font-weight: 600;
             color: #0f172a;
@@ -264,49 +385,130 @@
             margin-bottom: 0;
         }
 
-        /* Section Heading */
-        .section-heading {
+        /* Financial Summary Panel (Non-Flat, Structured Block) */
+        .summary-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 24px;
+        }
+        .summary-box {
+            width: 330px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 14px 18px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            font-size: 12px;
+            color: #475569;
+        }
+        .summary-row.bold {
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .summary-row.highlight-remaining {
+            color: #b91c1c;
+            font-weight: 700;
+            background: #fef2f2;
+            padding: 6px 8px;
+            border-radius: 6px;
+            margin: 3px -8px;
+        }
+        .summary-divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 8px 0;
+        }
+        .summary-total-card {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            box-shadow: 0 3px 6px -1px rgba(15, 23, 42, 0.2);
+        }
+        .summary-total-card .label {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #94a3b8;
+        }
+        .summary-total-card .amount {
             font-size: 15px;
             font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 12px;
+            color: #38bdf8;
+            letter-spacing: 0.2px;
         }
 
-        /* Footer */
-        .invoice-footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            color: #334155;
-            font-size: 11.5px;
-            line-height: 1.5;
-        }
-        .invoice-footer .company-name-bottom {
+        /* Section Headings */
+        .section-title {
+            font-size: 13px;
             font-weight: 800;
             color: #0f172a;
-            margin-bottom: 14px;
-            font-size: 12px;
-        }
-        .invoice-footer .address-line {
-            color: #334155;
-            font-weight: 600;
-        }
-        .invoice-footer .website-line {
-            color: #475569;
-            margin-bottom: 25px;
-        }
-        .dotted-divider {
-            border-top: 1.5px dotted #cbd5e1;
-            margin: 20px 0;
-            width: 100%;
-        }
-        .country-bottom {
-            text-align: right;
-            color: #94a3b8;
-            font-size: 11px;
-            margin-top: 150px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        /* Print Media Styles */
+        /* Bottom Info Grid: Bank/Payment & Official Credential Bar */
+        .bottom-info-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 22px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .info-col-title {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+        .info-col-content {
+            font-size: 11.5px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* Modern Official Footer */
+        .invoice-footer {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        .invoice-footer .company-signature {
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .invoice-footer .footer-right {
+            text-align: right;
+        }
+        .footer-website {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Print Media Optimizations: Pure 1-Page Layout Guarantee */
         @media print {
             body {
                 background: #ffffff !important;
@@ -317,13 +519,21 @@
             }
             .invoice-page {
                 margin: 0 !important;
-                padding: 35px 45px !important;
+                padding: 24px 34px !important;
                 box-shadow: none !important;
+                border: none !important;
+                border-radius: 0 !important;
                 max-width: 100% !important;
                 min-height: auto !important;
+                overflow: visible !important;
+                page-break-inside: avoid !important;
             }
             .company-meta-area {
-                padding-right: 95px !important;
+                padding-right: 0 !important;
+                margin-left: auto !important;
+            }
+            .watermark-stamp {
+                opacity: 0.08 !important;
             }
             @page {
                 margin: 8mm 10mm;
@@ -336,7 +546,7 @@
 
     <!-- Screen Control Bar -->
     <div class="invoice-screen-bar">
-        <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
             <a href="{{ route('admin.invoices.index') }}" class="btn-back">
                 &larr; Kembali ke Daftar Invoice
             </a>
@@ -358,53 +568,94 @@
     <!-- Main Printable Invoice Sheet -->
     <div class="invoice-page">
 
-        <!-- Top Right Diagonal Ribbon Banner -->
-        <div class="ribbon-wrapper">
-            @if($invoice->status === 'paid')
-                <div class="ribbon ribbon-paid">PAID</div>
-            @elseif($invoice->status === 'partial')
-                <div class="ribbon ribbon-partial">PARTIAL</div>
-            @elseif($invoice->status === 'cancelled')
-                <div class="ribbon ribbon-cancelled">VOID</div>
-            @else
-                <div class="ribbon ribbon-unpaid">UNPAID</div>
-            @endif
-        </div>
+        <!-- Watermark Stamp for Official Authenticity -->
+        @if($invoice->status === 'paid')
+            <div class="watermark-stamp paid">LUNAS</div>
+        @elseif($invoice->status === 'partial')
+            <div class="watermark-stamp" style="border-color: #f59e0b; color: #f59e0b;">SEBAGIAN</div>
+        @elseif($invoice->status === 'cancelled')
+            <div class="watermark-stamp" style="border-color: #64748b; color: #64748b;">BATAL</div>
+        @else
+            <div class="watermark-stamp">BELUM LUNAS</div>
+        @endif
 
-        <!-- Header: Logo & Company Address -->
+        <!-- Header: Logo on Left, CV Details Flush Right -->
         <div class="invoice-header">
             <div class="company-logo-area">
                 <img src="{{ asset($settings['site_logo'] ?? 'images/Logo-BTD.png') }}" alt="{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}" class="logo-img" />
+                <div class="company-tagline">Software House &bull; Mobile Apps &bull; AI Solutions</div>
             </div>
 
+            <!-- Kop Nama CV di Kanan Atas: Rata Kanan Presisi (Flush Right) -->
             <div class="company-meta-area">
-                <div class="company-name">{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}</div>
-                <div>{{ $settings['company_address_line1'] ?? 'Jl. Sarjana, Timbangan, Ogan Ilir' }}</div>
-                <div>{{ $settings['company_address_line2'] ?? 'Sumatera Selatan, Indonesia' }}</div>
-                <div>{{ $settings['company_postal_code'] ?? '30862' }}</div>
+                <div class="company-name">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</div>
+                <div class="company-addr">{{ $settings['company_address_line1'] ?? 'Jl. Sarjana, Timbangan, Ogan Ilir' }}</div>
+                <div class="company-addr">{{ $settings['company_address_line2'] ?? 'Sumatera Selatan, Indonesia' }} {{ $settings['company_postal_code'] ?? '30862' }}</div>
+                <div class="company-contact">{{ $settings['contact_email'] ?? 'info@berandadigital.net' }} &bull; {{ $settings['contact_phone'] ?? '0896 9524 9089' }}</div>
             </div>
         </div>
 
-        <!-- Invoice Title & Date -->
-        <div class="invoice-title-block">
-            <h1>Invoice #{{ $invoice->invoice_number }}</h1>
-            <div class="invoice-date">
-                Invoice Date: {{ optional($invoice->invoice_date)->format('d/m/Y') }}
-            </div>
-        </div>
+        <!-- Decorative Brand Divider -->
+        <div class="brand-divider"></div>
 
-        <!-- Invoiced To -->
-        <div class="invoiced-to-block">
-            <div class="title-label">Invoiced To</div>
-            <div class="client-type">{{ $invoice->client_type }}</div>
-            @if($invoice->client_attn)
-                <div class="client-attn">{{ str_starts_with(strtoupper(trim($invoice->client_attn)), 'ATTN') ? $invoice->client_attn : 'ATTN: ' . $invoice->client_attn }}</div>
-            @else
-                <div class="client-attn">ATTN: {{ $invoice->client_name }}</div>
-            @endif
-            @if($invoice->client_address)
-                <div class="client-city">{{ $invoice->client_address }}</div>
-            @endif
+        <!-- Hero Meta Grid: Invoice Details & Invoiced To -->
+        <div class="invoice-meta-grid">
+            
+            <!-- Left Card: Invoice Meta & Status -->
+            <div class="meta-card">
+                <div class="meta-card-label">
+                    <span>Informasi Tagihan</span>
+                    <!-- Modern Status Pill Badge -->
+                    @if($invoice->status === 'paid')
+                        <span class="status-pill paid"><span class="dot"></span> LUNAS</span>
+                    @elseif($invoice->status === 'partial')
+                        <span class="status-pill partial"><span class="dot"></span> SEBAGIAN</span>
+                    @elseif($invoice->status === 'cancelled')
+                        <span class="status-pill cancelled"><span class="dot"></span> BATAL</span>
+                    @else
+                        <span class="status-pill unpaid"><span class="dot"></span> BELUM LUNAS</span>
+                    @endif
+                </div>
+
+                <div class="invoice-main-title">
+                    Invoice #{{ $invoice->invoice_number }}
+                </div>
+
+                <div class="meta-dates-row">
+                    <div class="date-item">
+                        <span>Tanggal Terbit:</span>
+                        <strong>{{ optional($invoice->invoice_date)->format('d/m/Y') }}</strong>
+                    </div>
+                    @if($invoice->due_date)
+                        <div class="date-item">
+                            <span>Jatuh Tempo:</span>
+                            <strong>{{ optional($invoice->due_date)->format('d/m/Y') }}</strong>
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <!-- Right Card: Ditujukan Kepada (Invoiced To) -->
+            <div class="meta-card">
+                <div class="meta-card-label">
+                    <span>Ditujukan Kepada</span>
+                    <span class="client-type-badge">{{ $invoice->client_type ?? 'Personal' }}</span>
+                </div>
+
+                <div class="client-name-title">
+                    {{ $invoice->client_name }}
+                </div>
+
+                <div class="client-meta-details">
+                    @if($invoice->client_attn && $invoice->client_attn !== $invoice->client_name)
+                        <div>{{ str_starts_with(strtoupper(trim($invoice->client_attn)), 'ATTN') ? $invoice->client_attn : 'ATTN: ' . $invoice->client_attn }}</div>
+                    @endif
+                    @if($invoice->client_address)
+                        <div>{{ $invoice->client_address }}</div>
+                    @endif
+                </div>
+            </div>
+
         </div>
 
 @php
@@ -483,12 +734,12 @@
     }
 @endphp
 
-        <!-- Items Table -->
+        <!-- Items Table (Modern Dark Header, Clean Borders) -->
         <table class="table-custom">
             <thead>
                 <tr>
-                    <th style="width: 72%;">Description</th>
-                    <th class="text-right" style="width: 28%;">Total</th>
+                    <th style="width: 72%;">Deskripsi Item / Layanan</th>
+                    <th class="text-right" style="width: 28%;">Total (IDR)</th>
                 </tr>
             </thead>
             <tbody>
@@ -505,36 +756,52 @@
                         <td class="text-right mono">Rp {{ number_format($invoice->total_amount, 2, ',', '.') }}</td>
                     </tr>
                 @endif
-
-                <!-- Paid Row -->
-                <tr class="row-summary">
-                    <td class="text-right">Paid</td>
-                    <td class="text-right mono">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</td>
-                </tr>
-
-                <!-- Remaining Payment Row -->
-                <tr class="row-summary">
-                    <td class="text-right">Remaining Payment</td>
-                    <td class="text-right mono">Rp {{ number_format($invoice->remaining_amount, 2, ',', '.') }}</td>
-                </tr>
-
-                <!-- Total Row -->
-                <tr class="row-summary">
-                    <td class="text-right">Total</td>
-                    <td class="text-right mono">Rp {{ number_format($invoice->total_amount, 2, ',', '.') }}</td>
-                </tr>
             </tbody>
         </table>
 
+        <!-- Summary Panel (Non-Flat Structured Highlight) -->
+        <div class="summary-container">
+            <div class="summary-box">
+                <div class="summary-row">
+                    <span>Subtotal / Biaya:</span>
+                    <span class="mono">Rp {{ number_format($invoice->total_amount, 2, ',', '.') }}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Sudah Dibayar (Paid):</span>
+                    <span class="mono" style="color: #059669;">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</span>
+                </div>
+                @if($invoice->remaining_amount > 0)
+                    <div class="summary-row highlight-remaining">
+                        <span>Sisa Tagihan (Remaining):</span>
+                        <span class="mono">Rp {{ number_format($invoice->remaining_amount, 2, ',', '.') }}</span>
+                    </div>
+                @else
+                    <div class="summary-row">
+                        <span>Sisa Tagihan (Remaining):</span>
+                        <span class="mono">Rp {{ number_format($invoice->remaining_amount, 2, ',', '.') }}</span>
+                    </div>
+                @endif
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-total-card">
+                    <span class="label">Total Akhir</span>
+                    <span class="amount mono">Rp {{ number_format($invoice->total_amount, 2, ',', '.') }}</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Transactions Section -->
-        <div class="section-heading">Transactions</div>
-        <table class="table-custom">
+        <div class="section-title">
+            <span>Riwayat Transaksi</span>
+        </div>
+        <table class="table-custom" style="margin-bottom: 22px;">
             <thead>
                 <tr>
-                    <th style="width: 22%;">Transaction Date</th>
-                    <th style="width: 22%;">Payment</th>
-                    <th style="width: 32%;">Transaction ID</th>
-                    <th class="text-right" style="width: 24%;">Amount</th>
+                    <th style="width: 22%;" class="text-center">Tanggal</th>
+                    <th style="width: 26%;">Metode Pembayaran</th>
+                    <th style="width: 28%;">ID Transaksi</th>
+                    <th class="text-right" style="width: 24%;">Jumlah (IDR)</th>
                 </tr>
             </thead>
             <tbody>
@@ -549,34 +816,59 @@
                             <td class="text-right mono">Rp {{ number_format($t['amount'] ?? 0, 2, ',', '.') }}</td>
                         </tr>
                     @endforeach
-                    <tr class="row-summary">
-                        <td colspan="3" class="text-right">Balance</td>
-                        <td class="text-right mono">Rp {{ number_format($sumTrans, 2, ',', '.') }}</td>
+                    <tr>
+                        <td colspan="3" class="text-right" style="font-weight: 700; color: #475569; background-color: #f8fafc;">Total Terbayar (Balance)</td>
+                        <td class="text-right mono" style="font-weight: 800; color: #059669; background-color: #f8fafc;">Rp {{ number_format($sumTrans, 2, ',', '.') }}</td>
                     </tr>
                 @else
                     <tr>
                         <td class="text-center">{{ optional($invoice->invoice_date)->format('d/m/Y') }}</td>
                         <td>Transfer Bank / QRIS</td>
-                        <td class="mono">-</td>
+                        <td class="mono" style="color: #94a3b8;">-</td>
                         <td class="text-right mono">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</td>
                     </tr>
-                    <tr class="row-summary">
-                        <td colspan="3" class="text-right">Balance</td>
-                        <td class="text-right mono">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</td>
+                    <tr>
+                        <td colspan="3" class="text-right" style="font-weight: 700; color: #475569; background-color: #f8fafc;">Total Terbayar (Balance)</td>
+                        <td class="text-right mono" style="font-weight: 800; color: #059669; background-color: #f8fafc;">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</td>
                     </tr>
                 @endif
             </tbody>
         </table>
 
-        <!-- Footer Notice -->
+        <!-- Official Payment & Legal Information Box -->
+        <div class="bottom-info-card">
+            <div>
+                <div class="info-col-title">Informasi Pembayaran</div>
+                <div class="info-col-content">
+                    @if(!empty($invoice->notes))
+                        <div>{{ $invoice->notes }}</div>
+                    @else
+                        <div>Pembayaran tagihan dapat dilakukan melalui transfer rekening resmi perusahaan <strong>CV. Beranda Teknologi Digital</strong>.</div>
+                    @endif
+                </div>
+            </div>
+
+            <div>
+                <div class="info-col-title">Legalitas & Konfirmasi</div>
+                <div class="info-col-content">
+                    <div><strong>NIB:</strong> {{ $settings['company_nib'] ?? '1203000102148 / KBLI 62019' }}</div>
+                    <div><strong>NPWP:</strong> {{ $settings['company_npwp'] ?? '63.100.018.9-312.000' }}</div>
+                    <div><strong>Konfirmasi:</strong> {{ $settings['contact_phone'] ?? '0896 9524 9089' }}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modern Footer (Single Page Safe, No Spillover) -->
         <div class="invoice-footer">
-            <div class="company-name-bottom">{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}</div>
-            <div class="address-line">{{ $settings['company_address'] ?? 'Jalan Sarjana Blok A No. 25 Timbangan, Ogan Ilir, 30862' }}</div>
-            <div class="website-line">{{ $settings['site_website'] ?? 'www.berandadigital.net' }}</div>
+            <div>
+                <div class="company-signature">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</div>
+                <div>{{ $settings['company_address'] ?? 'Jalan Sarjana Blok A No. 25 Timbangan, Ogan Ilir, 30862' }}</div>
+            </div>
             
-            <div class="dotted-divider"></div>
-            
-            <div class="country-bottom">{{ $settings['company_country'] ?? 'Indonesia' }}</div>
+            <div class="footer-right">
+                <div class="footer-website">{{ $settings['site_website'] ?? 'www.berandadigital.net' }}</div>
+                <div>{{ $settings['company_country'] ?? 'Indonesia' }}</div>
+            </div>
         </div>
 
     </div>
