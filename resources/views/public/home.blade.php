@@ -749,73 +749,82 @@
                     $waProductUrl = "https://wa.me/6289695249089?text=" . urlencode("Halo CV. Beranda Teknologi Digital, saya tertarik konsultasi portofolio sistem: {$displayTitle}");
                 @endphp
 
-                <div class="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group reveal-on-scroll">
+                <div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group reveal-on-scroll">
                     
-                    <!-- Top Visual Image Container: View Gambar Lebih Besar & Bersih Tanpa Tertutupi Tulisan -->
+                    <!-- Top Visual Image Container with Interactive Click to Open Gallery Slider (Auto Fit Lebar, Tidak Terpotong) -->
                     <div>
-                        <div class="h-48 sm:h-52 w-full overflow-hidden relative border-b border-slate-100 dark:border-slate-800 bg-slate-950 cursor-pointer group/img"
+                        <div class="aspect-video overflow-hidden relative border-b border-slate-100 dark:border-slate-800 bg-slate-950 cursor-pointer group/img"
                              @click="openModal('{{ addslashes($displayTitle) }}', '{{ addslashes($project->client_name) }}', '{{ $project->app_type ?? 'web' }}', '{{ $waProductUrl }}', {{ $slidesJson }})"
-                             title="Klik untuk membuka slider screenshot antarmuka">
+                             title="Klik untuk membuka preview screenshot antarmuka">
                             
                             <img src="{{ asset($project->thumbnail) }}" 
                                  alt="{{ $displayTitle }}" 
                                  loading="lazy"
                                  decoding="async"
-                                 class="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500" />
+                                 width="600"
+                                 height="338"
+                                 class="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-700" />
                             
-                            <!-- Subtle Gradient for Contrast -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/15 pointer-events-none"></div>
+                            <!-- Overlay Gradient for contrast -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
 
                             <!-- Interactive Click Hover Prompt -->
-                            <div class="absolute inset-0 bg-slate-950/40 backdrop-blur-[1.5px] opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center p-3">
+                            <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center p-3">
                                 <span class="px-3.5 py-1.5 rounded-xl bg-white/95 dark:bg-slate-900/95 text-[#07153f] dark:text-white font-extrabold text-[11px] shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover/img:translate-y-0 transition-transform">
-                                    <span>🔍</span>
-                                    <span>Buka Galeri ({{ count($sliderScreens) }} Layar)</span>
+                                    <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m-3-3h6"/>
+                                    </svg>
+                                    <span>Preview ({{ count($sliderScreens) }} Layar)</span>
                                 </span>
                             </div>
 
-                            <!-- Floating Badge Top Left: Kategori Sistem -->
-                            <div class="absolute top-2.5 left-2.5 z-10 pointer-events-none">
-                                <span class="px-2.5 py-0.5 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-blue-700 dark:text-blue-400 font-extrabold text-[10px] border border-blue-100 dark:border-blue-900/60 shadow-xs line-clamp-1 max-w-[180px]">
+                            <!-- Floating Badges Top -->
+                            <div class="absolute top-2.5 inset-x-2.5 flex items-center justify-between pointer-events-none z-10">
+                                <span class="px-2.5 py-0.5 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-blue-700 dark:text-blue-400 font-extrabold text-[10px] border border-blue-100 dark:border-blue-900/60 shadow-xs line-clamp-1 max-w-[65%]">
                                     {{ $badgeCategory }}
                                 </span>
-                            </div>
-
-                            <!-- Floating Badge Top Right: Jumlah Layar -->
-                            @if(count($sliderScreens) > 1)
-                                <div class="absolute top-2.5 right-2.5 z-10 pointer-events-none">
-                                    <span class="text-[9px] font-bold text-white bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/20 flex items-center gap-1 shadow-xs">
-                                        <span>🖼️</span> <span>{{ count($sliderScreens) }} Layar</span>
-                                    </span>
-                                </div>
-                            @endif
-                        </div>
-
-                        <!-- Card Content Body: Rapi & Bersih Tanpa Beban Teks Berlebih -->
-                        <div class="p-4 sm:p-5 space-y-2.5">
-                            
-                            <!-- Client & Status Row -->
-                            <div class="flex items-center justify-between text-[11px]">
-                                <span class="font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1 truncate max-w-[70%]">
-                                    <span>📍</span> <span class="truncate">{{ $project->client_name }}</span>
-                                </span>
-                                <span class="text-[9px] font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-200/70 dark:border-emerald-800/40 shrink-0">
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-600/90 text-white font-bold text-[9px] shadow-xs backdrop-blur-sm shrink-0">
                                     {{ $statusBadge }}
                                 </span>
                             </div>
 
-                            <!-- Title -->
-                            <h3 class="text-sm sm:text-[15px] font-extrabold text-[#07153f] dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors leading-snug line-clamp-1" title="{{ $displayTitle }}">
-                                {{ $displayTitle }}
-                            </h3>
+                            <!-- Client Badge Bottom Left & Layar Count Bottom Right -->
+                            <div class="absolute bottom-2.5 inset-x-2.5 flex items-center justify-between pointer-events-none z-10">
+                                <span class="text-[10px] font-semibold text-white/95 drop-shadow-md flex items-center gap-1 bg-black/50 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/15 line-clamp-1 max-w-[70%]">
+                                    <span>📍</span> <span>{{ $project->client_name }}</span>
+                                </span>
+                                <span class="text-[9px] font-bold text-white bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/20 flex items-center gap-1 shadow-xs shrink-0">
+                                    <span>🖼️</span> <span>{{ count($sliderScreens) }} Foto</span>
+                                </span>
+                            </div>
+                        </div>
 
-                            <!-- Short Summary -->
-                            <p class="text-[11.5px] text-slate-600 dark:text-slate-300 leading-relaxed font-normal line-clamp-2">
-                                {{ $displaySubtitle }}
-                            </p>
+                        <!-- Card Content Body (Versi Lama yang Rapi & Lengkap Sesuai Permintaan) -->
+                        <div class="p-5 space-y-3">
+                            
+                            <div class="space-y-1">
+                                <h3 class="text-sm sm:text-base font-extrabold text-[#07153f] dark:text-white group-hover:text-blue-700 dark:text-blue-400 transition-colors leading-snug line-clamp-1" title="{{ $displayTitle }}">
+                                    {{ $displayTitle }}
+                                </h3>
+                                <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed font-normal line-clamp-2">
+                                    {{ $displaySubtitle }}
+                                </p>
+                            </div>
+
+                            <!-- Feature Checklist Highlights (Versi Lama) -->
+                            <div class="space-y-1.5 pt-2 border-t border-slate-100 dark:border-slate-800/80">
+                                <ul class="space-y-1 text-[11px] text-slate-700 dark:text-slate-300">
+                                    @foreach($keyFeatures as $feat)
+                                        <li class="flex items-start gap-1.5 line-clamp-1">
+                                            <span class="text-emerald-500 font-bold shrink-0">✓</span>
+                                            <span class="leading-tight truncate">{{ $feat }}</span>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
 
                             <!-- Tech Stack Pills -->
-                            <div class="flex flex-wrap gap-1 pt-0.5">
+                            <div class="flex flex-wrap gap-1 pt-1">
                                 @foreach($techPills as $tp)
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium text-[9px] mono">
                                         {{ $tp }}
@@ -825,18 +834,21 @@
                         </div>
                     </div>
 
-                    <!-- Bottom Action Controls -->
-                    <div class="p-4 sm:p-5 pt-0 space-y-2">
+                    <!-- Bottom Action Controls: Ganti Layar UI Menjadi Icon Kaca Pembesar / Zoom + Preview -->
+                    <div class="p-5 pt-0 space-y-2">
                         <div class="pt-2.5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
                             <button type="button"
                                     @click="openModal('{{ addslashes($displayTitle) }}', '{{ addslashes($project->client_name) }}', '{{ $project->app_type ?? 'web' }}', '{{ $waProductUrl }}', {{ $slidesJson }})"
-                                    class="text-[11.5px] font-bold text-blue-700 dark:text-blue-400 hover:underline flex items-center gap-1">
-                                <span>🔍 Layar UI</span>
+                                    class="text-[11.5px] font-bold text-blue-700 dark:text-blue-400 hover:underline flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m-3-3h6"/>
+                                </svg>
+                                <span>Preview</span>
                             </button>
                             
                             <a href="{{ route('projects.show', $project->slug) }}" 
                                style="background-color: #07153f !important; color: #ffffff !important;"
-                               class="px-3.5 py-1.5 rounded-xl font-bold text-[11px] hover:brightness-125 active:scale-95 transition-all flex items-center gap-1 shadow-2xs">
+                               class="px-3 py-1.5 rounded-xl font-bold text-[11px] hover:brightness-125 active:scale-95 transition-all flex items-center gap-1">
                                 <span style="color: #ffffff !important;">Detail</span>
                                 <span style="color: #ffffff !important;">&rarr;</span>
                             </a>

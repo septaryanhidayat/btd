@@ -24,7 +24,7 @@
 
         <!-- Featured Banner Image -->
         <div class="rounded-3xl overflow-hidden shadow-xl aspect-video bg-slate-200 dark:bg-slate-800">
-            <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}" class="w-full h-full object-cover" />
+            <img src="{{ asset($project->thumbnail) }}" alt="{{ $project->title }}" class="w-full h-full object-cover" />
         </div>
 
         <!-- Problem & Solution Grid -->
@@ -55,7 +55,7 @@
                 <div class="flex flex-wrap gap-2">
                     @foreach($project->tech_stack as $tech)
                         <span class="px-3 py-1.5 rounded-xl bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 font-mono text-xs font-semibold">
-                            {{ $tech }}
+                            {{ is_array($tech) ? json_encode($tech) : $tech }}
                         </span>
                     @endforeach
                 </div>
@@ -63,14 +63,33 @@
         @endif
 
         <!-- Screenshot Gallery Lightbox -->
-        @if($project->gallery)
+        @if(!empty($project->gallery) && is_array($project->gallery))
             <div class="space-y-4">
                 <h3 class="text-xl font-bold text-slate-900 dark:text-white">Tampilan & Screenshot Sistem</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     @foreach($project->gallery as $img)
-                        <div class="rounded-2xl overflow-hidden glass-card shadow-sm aspect-video">
-                            <img src="{{ $img }}" alt="Gallery Screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform" />
-                        </div>
+                        @php
+                            $imgUrl = is_array($img) ? ($img['url'] ?? '') : $img;
+                            $imgTitle = is_array($img) ? ($img['title'] ?? 'Tampilan Sistem') : 'Tampilan Sistem';
+                            $imgCaption = is_array($img) ? ($img['caption'] ?? '') : '';
+                        @endphp
+                        @if(!empty($imgUrl))
+                            <div class="rounded-2xl overflow-hidden glass-card shadow-sm border border-slate-200/80 dark:border-slate-800 flex flex-col">
+                                <div class="aspect-video overflow-hidden bg-slate-950">
+                                    <img src="{{ asset($imgUrl) }}" alt="{{ $imgTitle }}" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
+                                </div>
+                                @if(!empty($imgTitle) || !empty($imgCaption))
+                                    <div class="p-4 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+                                        @if(!empty($imgTitle))
+                                            <div class="font-bold text-sm text-slate-900 dark:text-white leading-snug">{{ $imgTitle }}</div>
+                                        @endif
+                                        @if(!empty($imgCaption))
+                                            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{{ $imgCaption }}</div>
+                                        @endif
+                                    </div>
+                                @endif
+                            </div>
+                        @endif
                     @endforeach
                 </div>
             </div>
