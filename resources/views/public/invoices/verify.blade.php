@@ -469,16 +469,16 @@
                             </button>
                         </div>
 
-                        <!-- Bank Jago -->
+                        <!-- Bank Jago Syariah -->
                         <div class="bank-card-verify">
                             <div class="bank-card-left">
-                                <img src="{{ $getBankLogo('jago') }}" alt="Bank Jago" class="bank-logo-verify" />
+                                <img src="{{ $getBankLogo('jago') }}" alt="Bank Jago Syariah" class="bank-logo-verify" />
                                 <div class="bank-info-verify">
-                                    <div class="name">Bank Jago</div>
+                                    <div class="name">Bank Jago Syariah</div>
                                     <div class="mono num">504724018833</div>
                                 </div>
                             </div>
-                            <button type="button" onclick="copyAccount('504724018833', this)" class="btn-copy" title="Salin Nomor Rekening Bank Jago">
+                            <button type="button" onclick="copyAccount('504724018833', this)" class="btn-copy" title="Salin Nomor Rekening Bank Jago Syariah">
                                 📋 Salin
                             </button>
                         </div>

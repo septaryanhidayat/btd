@@ -167,15 +167,15 @@
                                 </td>
                             </tr>
                             <tr>
-                                <!-- Bank Jago -->
+                                <!-- Bank Jago Syariah -->
                                 <td width="50%" style="background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 10px; vertical-align: middle;">
                                     <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
                                         <tr>
-                                            <td width="48" style="vertical-align: middle;">
-                                                <img src="{{ asset('images/banks/jago.png') }}" alt="Bank Jago" height="18" style="max-height: 18px; max-width: 46px; display: block; border: 0;" />
+                                            <td width="52" style="vertical-align: middle;">
+                                                <img src="{{ asset('images/banks/jago.png') }}" alt="Bank Jago Syariah" height="18" style="max-height: 18px; max-width: 50px; display: block; border: 0;" />
                                             </td>
                                             <td style="vertical-align: middle; padding-left: 6px;">
-                                                <div style="font-size: 9px; font-weight: 800; color: #269DB9; text-transform: uppercase;">Bank Jago</div>
+                                                <div style="font-size: 8.5px; font-weight: 800; color: #269DB9; text-transform: uppercase;">Bank Jago Syariah</div>
                                                 <div style="font-family: monospace; font-size: 12px; font-weight: bold; color: #0f172a;">504724018833</div>
                                             </td>
                                             <td align="right" style="vertical-align: middle;">

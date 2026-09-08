@@ -342,79 +342,96 @@
             margin-bottom: 10px;
         }
 
-        /* Payment Instruction & QR Validation Section */
-        .payment-validation-section {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 14px;
+        /* Payment Instruction Box (Full Width 100%) */
+        .payment-box-full {
+            width: 100%;
             background: #fbfdfe;
             border: 1px solid #e2e8f0;
             border-left: 3.5px solid #269DB9;
             border-radius: 8px;
-            padding: 10px 14px;
-            margin-bottom: 24px;
-            align-items: center;
+            padding: 11px 16px;
+            margin-bottom: 20px;
+        }
+        .payment-box-header {
+            margin-bottom: 9px;
         }
         .payment-box-title {
-            font-size: 10.5px;
+            font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #22282a;
             margin-bottom: 4px;
         }
-        .payment-box-desc {
+        .payment-box-note {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+        .payment-box-subtext {
             font-size: 11px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .payment-box-desc {
+            font-size: 11.5px;
             color: #555b5e;
-            line-height: 1.4;
+            line-height: 1.45;
         }
         .bank-accounts-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5px 8px;
-            margin: 5px 0;
+            gap: 8px 16px;
+            margin: 8px 0;
         }
         .bank-card {
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 4px 7px;
+            border-radius: 8px;
+            padding: 7px 14px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .bank-card-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         .bank-logo-wrap {
-            width: 44px;
-            height: 20px;
+            width: 52px;
+            height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
         .bank-logo-img {
-            max-width: 44px;
-            max-height: 18px;
+            max-width: 52px;
+            max-height: 22px;
             object-fit: contain;
             display: block;
         }
         .bank-acc-info {
             display: flex;
             flex-direction: column;
-            line-height: 1.15;
-            min-width: 0;
+            line-height: 1.2;
         }
         .bank-acc-label {
-            font-size: 9px;
+            font-size: 9.5px;
             font-weight: 800;
             color: #269DB9;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.4px;
         }
         .bank-acc-num {
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 800;
-            color: #1e293b;
-            letter-spacing: 0.2px;
+            color: #0f172a;
+            letter-spacing: 0.4px;
             white-space: nowrap;
         }
         .ewallet-card {
@@ -423,65 +440,105 @@
             justify-content: space-between;
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 4px 8px;
-            margin-top: 4px;
+            border-radius: 8px;
+            padding: 7px 14px;
+            margin-top: 6px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .ewallet-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
         .ewallet-logos-row {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
             flex-shrink: 0;
         }
         .ewallet-logo-img {
-            height: 13px;
-            max-width: 36px;
+            height: 15px;
+            max-width: 48px;
             object-fit: contain;
             display: block;
         }
-        .ewallet-acc-info {
-            text-align: right;
-            line-height: 1.15;
-        }
         .ewallet-acc-label {
-            font-size: 8.5px;
+            font-size: 10px;
             font-weight: 700;
             color: #64748b;
         }
         .ewallet-acc-num {
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 800;
-            color: #1e293b;
+            color: #0f172a;
+            letter-spacing: 0.4px;
         }
         .account-holder-line {
-            font-size: 10px;
+            font-size: 11px;
             color: #64748b;
             border-top: 1px dashed #cbd5e1;
-            padding-top: 3px;
-            margin-top: 4px;
+            padding-top: 6px;
+            margin-top: 8px;
         }
         .paid-reassurance-box {
             background: #ffffff;
             border: 1px solid #bbf7d0;
-            border-radius: 6px;
-            padding: 10px 12px;
+            border-radius: 8px;
+            padding: 12px 16px;
         }
         .paid-reassurance-title {
-            font-size: 11.5px;
+            font-size: 12px;
             font-weight: 800;
             color: #15803d;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             display: flex;
             align-items: center;
             gap: 6px;
         }
         .paid-reassurance-desc {
-            font-size: 10.5px;
+            font-size: 11.5px;
             color: #475569;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
-        /* QR Validation Card */
+        /* Footer Container with QR Code in Right Corner */
+        .invoice-footer-container {
+            margin-top: 15px;
+            padding-top: 10px;
+        }
+        .invoice-footer-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .footer-left {
+            flex: 1;
+            color: #555b5e;
+            font-size: 11.5px;
+            line-height: 1.5;
+        }
+        .footer-left .company-name-bottom {
+            font-weight: 800;
+            color: #22282a;
+            margin-bottom: 2px;
+            font-size: 13px;
+        }
+        .footer-left .website-line a {
+            color: #269DB9;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        .footer-left .doc-legal-note {
+            font-size: 10px;
+            color: #94a3b8;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+        .footer-right-qr {
+            flex-shrink: 0;
+        }
         .qr-validation-card {
             display: flex;
             align-items: center;
@@ -490,14 +547,16 @@
             border: 1px solid #dcebf0;
             border-radius: 8px;
             padding: 8px 12px;
-            box-shadow: 0 1px 3px rgba(38, 157, 185, 0.05);
+            box-shadow: 0 1px 3px rgba(38, 157, 185, 0.06);
+            width: 310px;
         }
         .qr-img {
-            width: 70px;
-            height: 70px;
+            width: 64px;
+            height: 64px;
             object-fit: contain;
             display: block;
             border-radius: 4px;
+            flex-shrink: 0;
         }
         .qr-info {
             display: flex;
@@ -506,7 +565,7 @@
         }
         .qr-status-tag {
             display: inline-block;
-            font-size: 9px;
+            font-size: 8.5px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -530,33 +589,9 @@
             color: #22282a;
         }
         .qr-desc {
-            font-size: 10px;
+            font-size: 9.5px;
             color: #64748b;
             line-height: 1.35;
-        }
-
-        /* Footer */
-        .invoice-footer {
-            margin-top: 15px;
-            padding-top: 15px;
-            color: #555b5e;
-            font-size: 11.5px;
-            line-height: 1.5;
-        }
-        .invoice-footer .company-name-bottom {
-            font-weight: 800;
-            color: #22282a;
-            margin-bottom: 4px;
-            font-size: 12px;
-        }
-        .invoice-footer .address-line {
-            color: #555b5e;
-            font-weight: 500;
-        }
-        .invoice-footer .website-line a {
-            color: #269DB9;
-            text-decoration: none;
-            font-weight: 600;
         }
         .dotted-divider {
             border-top: 1.5px dotted #cbd5e1;
@@ -927,115 +962,129 @@
             </tbody>
         </table>
 
-        <!-- Payment Instruction & Official Digital QR Verification -->
-        <div class="payment-validation-section">
-            <div class="payment-box-left">
-                @if($invoice->status === 'paid')
-                    <!-- Tampilan Khusus Invoice Lunas: Rekening & E-Wallet Disembunyikan Sesuai Permintaan -->
-                    <div class="paid-reassurance-box">
-                        <div class="paid-reassurance-title">
-                            <span>✓</span> <span>TAGIHAN TELAH LUNAS (PAID)</span>
-                        </div>
-                        <div class="paid-reassurance-desc">
-                            Seluruh kewajiban pembayaran telah diselesaikan dengan penuh. Dokumen ini adalah bukti transaksi resmi yang diterbitkan secara sah oleh <strong>{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</strong>.
-                        </div>
-                    </div>
-                @else
-                    <!-- Tampilan Invoice Belum Lunas / Baru DP: Symmetrical Official Bank & E-Wallet Grid -->
-                    <div class="payment-box-title">Petunjuk Pembayaran / Channel Transfer</div>
-                    <div class="payment-box-desc">
-                        @if(!empty($invoice->notes))
-                            <div style="margin-bottom: 3px; font-weight: 600; color: #22282a;">{{ $invoice->notes }}</div>
-                        @endif
-                        <div style="font-size: 10.5px; margin-bottom: 3px; color: #475569;">
-                            Pembayaran dapat ditransfer ke salah satu rekening atau e-wallet resmi berikut:
-                        </div>
-                        
-                        <!-- 4 Rekening Bank Resmi (Grid 2x2 Simetris dengan Logo Resmi) -->
-                        <div class="bank-accounts-grid">
-                            <div class="bank-card">
-                                <div class="bank-logo-wrap">
-                                    <img src="{{ $getBankLogo('bsi') }}" alt="BSI" class="bank-logo-img" />
-                                </div>
-                                <div class="bank-acc-info">
-                                    <span class="bank-acc-label">BSI</span>
-                                    <span class="mono bank-acc-num">8926301510</span>
-                                </div>
-                            </div>
-                            <div class="bank-card">
-                                <div class="bank-logo-wrap">
-                                    <img src="{{ $getBankLogo('bri') }}" alt="BRI" class="bank-logo-img" />
-                                </div>
-                                <div class="bank-acc-info">
-                                    <span class="bank-acc-label">BRI</span>
-                                    <span class="mono bank-acc-num">563701043113533</span>
-                                </div>
-                            </div>
-                            <div class="bank-card">
-                                <div class="bank-logo-wrap">
-                                    <img src="{{ $getBankLogo('jago') }}" alt="Bank Jago" class="bank-logo-img" />
-                                </div>
-                                <div class="bank-acc-info">
-                                    <span class="bank-acc-label">Bank Jago</span>
-                                    <span class="mono bank-acc-num">504724018833</span>
-                                </div>
-                            </div>
-                            <div class="bank-card">
-                                <div class="bank-logo-wrap">
-                                    <img src="{{ $getBankLogo('seabank') }}" alt="SeaBank" class="bank-logo-img" />
-                                </div>
-                                <div class="bank-acc-info">
-                                    <span class="bank-acc-label">SeaBank</span>
-                                    <span class="mono bank-acc-num">901020639279</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- E-Wallet Resmi (ShopeePay, DANA, OVO, GoPay) Simetris -->
-                        <div class="ewallet-card">
-                            <div class="ewallet-logos-row">
-                                <img src="{{ $getBankLogo('shopeepay') }}" alt="ShopeePay" class="ewallet-logo-img" />
-                                <img src="{{ $getBankLogo('dana') }}" alt="DANA" class="ewallet-logo-img" />
-                                <img src="{{ $getBankLogo('ovo') }}" alt="OVO" class="ewallet-logo-img" />
-                                <img src="{{ $getBankLogo('gopay') }}" alt="GoPay" class="ewallet-logo-img" />
-                            </div>
-                            <div class="ewallet-acc-info">
-                                <div class="ewallet-acc-label">E-Wallet (ShopeePay/DANA/OVO/GoPay)</div>
-                                <div class="mono ewallet-acc-num">085267774878</div>
-                            </div>
-                        </div>
-
-                        <div class="account-holder-line">
-                            Semua a.n. <strong>Septa Ryan Hidayat</strong> &bull; Konfirmasi WA: <strong>{{ $formattedPhone }}</strong>
-                        </div>
-                    </div>
-                @endif
-            </div>
-
-            <!-- QR Code Validasi Resmi (Hitam Solid Normal agar mudah terbaca kamera HP) -->
-            <div class="qr-validation-card">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=2&color=000000&data={{ urlencode($verifyUrl) }}" 
-                     alt="QR Code Validasi Invoice #{{ $invoice->invoice_number }}" 
-                     class="qr-img" />
-                <div class="qr-info">
-                    <span class="qr-status-tag {{ $invoice->status === 'paid' ? 'paid' : 'unpaid' }}">
-                        {{ $invoice->status === 'paid' ? '✓ DOKUMEN VALID' : '● MENUNGGU BAYAR' }}
-                    </span>
-                    <div class="qr-title">Validasi Dokumen Digital</div>
-                    <div class="qr-desc">Scan QR Code untuk verifikasi keabsahan dokumen invoice ini di sistem.</div>
+        <!-- Payment Instruction (Full Width 100%) -->
+        @if($invoice->status === 'paid')
+            <!-- Tampilan Khusus Invoice Lunas: Rekening & E-Wallet Disembunyikan Sesuai Permintaan -->
+            <div class="paid-reassurance-box">
+                <div class="paid-reassurance-title">
+                    <span>✓</span> <span>TAGIHAN TELAH LUNAS (PAID)</span>
+                </div>
+                <div class="paid-reassurance-desc">
+                    Seluruh kewajiban pembayaran telah diselesaikan dengan penuh. Dokumen ini adalah bukti transaksi resmi yang diterbitkan secara sah oleh <strong>{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</strong>.
                 </div>
             </div>
-        </div>
+        @else
+            <!-- Tampilan Invoice Belum Lunas / Baru DP: Symmetrical Official Bank & E-Wallet Grid (Full Width 100%) -->
+            <div class="payment-box-full">
+                <div class="payment-box-header">
+                    <div class="payment-box-title">Petunjuk Pembayaran / Channel Transfer</div>
+                    @if(!empty($invoice->notes))
+                        <div class="payment-box-note">{{ $invoice->notes }}</div>
+                    @endif
+                    <div class="payment-box-subtext">
+                        Pembayaran dapat ditransfer ke salah satu rekening atau e-wallet resmi berikut:
+                    </div>
+                </div>
 
-        <!-- Footer Notice (Alamat tidak diulang di sini, hanya tampil sekali di kop atas) -->
-        <div class="invoice-footer">
-            <div class="company-name-bottom">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</div>
-            <div class="website-line">
-                <a href="https://{{ $settings['site_website'] ?? 'www.berandadigital.net' }}" target="_blank">{{ $settings['site_website'] ?? 'www.berandadigital.net' }}</a>
+                <!-- 4 Rekening Bank Resmi (Grid 2x2 Simetris Penuh 100% Lebar dengan Logo Resmi) -->
+                <div class="bank-accounts-grid">
+                    <div class="bank-card">
+                        <div class="bank-card-left">
+                            <div class="bank-logo-wrap">
+                                <img src="{{ $getBankLogo('bsi') }}" alt="BSI" class="bank-logo-img" />
+                            </div>
+                            <div class="bank-acc-info">
+                                <span class="bank-acc-label">BSI</span>
+                            </div>
+                        </div>
+                        <span class="mono bank-acc-num">8926301510</span>
+                    </div>
+                    <div class="bank-card">
+                        <div class="bank-card-left">
+                            <div class="bank-logo-wrap">
+                                <img src="{{ $getBankLogo('bri') }}" alt="BRI" class="bank-logo-img" />
+                            </div>
+                            <div class="bank-acc-info">
+                                <span class="bank-acc-label">BRI</span>
+                            </div>
+                        </div>
+                        <span class="mono bank-acc-num">563701043113533</span>
+                    </div>
+                    <div class="bank-card">
+                        <div class="bank-card-left">
+                            <div class="bank-logo-wrap">
+                                <img src="{{ $getBankLogo('jago') }}" alt="Bank Jago Syariah" class="bank-logo-img" />
+                            </div>
+                            <div class="bank-acc-info">
+                                <span class="bank-acc-label">Bank Jago Syariah</span>
+                            </div>
+                        </div>
+                        <span class="mono bank-acc-num">504724018833</span>
+                    </div>
+                    <div class="bank-card">
+                        <div class="bank-card-left">
+                            <div class="bank-logo-wrap">
+                                <img src="{{ $getBankLogo('seabank') }}" alt="SeaBank" class="bank-logo-img" />
+                            </div>
+                            <div class="bank-acc-info">
+                                <span class="bank-acc-label">SeaBank</span>
+                            </div>
+                        </div>
+                        <span class="mono bank-acc-num">901020639279</span>
+                    </div>
+                </div>
+
+                <!-- E-Wallet Resmi (ShopeePay, DANA, OVO, GoPay) Simetris Penuh -->
+                <div class="ewallet-card">
+                    <div class="ewallet-left">
+                        <div class="ewallet-logos-row">
+                            <img src="{{ $getBankLogo('shopeepay') }}" alt="ShopeePay" class="ewallet-logo-img" />
+                            <img src="{{ $getBankLogo('dana') }}" alt="DANA" class="ewallet-logo-img" />
+                            <img src="{{ $getBankLogo('ovo') }}" alt="OVO" class="ewallet-logo-img" />
+                            <img src="{{ $getBankLogo('gopay') }}" alt="GoPay" class="ewallet-logo-img" />
+                        </div>
+                        <div class="ewallet-acc-label">E-Wallet (ShopeePay / DANA / OVO / GoPay)</div>
+                    </div>
+                    <div class="mono ewallet-acc-num">085267774878</div>
+                </div>
+
+                <div class="account-holder-line">
+                    Semua rekening & e-wallet a.n. <strong>Septa Ryan Hidayat</strong> &bull; Konfirmasi WA: <strong>{{ $formattedPhone }}</strong>
+                </div>
             </div>
-            
+        @endif
+
+        <!-- Footer Notice with Digital QR Verification in Bottom-Right Corner -->
+        <div class="invoice-footer-container">
+            <div class="invoice-footer-row">
+                <div class="footer-left">
+                    <div class="company-name-bottom">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</div>
+                    <div class="website-line">
+                        <a href="https://{{ $settings['site_website'] ?? 'www.berandadigital.net' }}" target="_blank">{{ $settings['site_website'] ?? 'www.berandadigital.net' }}</a>
+                    </div>
+                    <div class="doc-legal-note">
+                        Dokumen ini diterbitkan resmi melalui sistem komputerisasi dan sah tanpa tanda tangan basah.
+                    </div>
+                </div>
+
+                <div class="footer-right-qr">
+                    <div class="qr-validation-card">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=2&color=000000&data={{ urlencode($verifyUrl) }}" 
+                             alt="QR Code Validasi Invoice #{{ $invoice->invoice_number }}" 
+                             class="qr-img" />
+                        <div class="qr-info">
+                            <span class="qr-status-tag {{ $invoice->status === 'paid' ? 'paid' : 'unpaid' }}">
+                                {{ $invoice->status === 'paid' ? '✓ DOKUMEN VALID' : '● MENUNGGU BAYAR' }}
+                            </span>
+                            <div class="qr-title">Validasi Dokumen Digital</div>
+                            <div class="qr-desc">Scan QR Code untuk verifikasi keabsahan dokumen invoice ini di sistem.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="dotted-divider"></div>
-            
+
             <div class="country-bottom">{{ $settings['company_country'] ?? 'Indonesia' }}</div>
         </div>
 
