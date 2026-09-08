@@ -194,47 +194,54 @@
             margin-top: 1px;
         }
 
-        /* Invoice Number & Date Block */
-        .invoice-title-block {
-            margin-bottom: 28px;
+        /* Invoice Meta & Client Info Row (Side by Side: Left & Right Balanced) */
+        .invoice-info-row {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 24px;
+            align-items: flex-start;
+            margin-bottom: 18px;
         }
-        .invoice-title-block h1 {
+        .invoice-title-col h1 {
             font-size: 22px;
             font-weight: 800;
             color: #22282a;
             margin-bottom: 4px;
             letter-spacing: -0.5px;
+            line-height: 1.2;
         }
-        .invoice-title-block h1 .invoice-num {
+        .invoice-title-col h1 .invoice-num {
             color: #269DB9;
         }
-        .invoice-title-block .invoice-date,
-        .invoice-title-block .invoice-due-date {
-            font-size: 12.5px;
+        .invoice-title-col .invoice-date,
+        .invoice-title-col .invoice-due-date {
+            font-size: 12px;
             color: #555b5e;
             font-weight: 500;
+            line-height: 1.45;
         }
-        .invoice-title-block .invoice-date span,
-        .invoice-title-block .invoice-due-date span {
+        .invoice-title-col .invoice-date span,
+        .invoice-title-col .invoice-due-date span {
             color: #22282a;
             font-weight: 700;
         }
-
-        /* Invoiced To Block */
-        .invoiced-to-block {
-            margin-bottom: 28px;
-            font-size: 12.5px;
-            line-height: 1.5;
+        .invoiced-to-col {
+            font-size: 12px;
+            line-height: 1.45;
+            padding-left: 14px;
+            border-left: 2px solid #e2e8f0;
         }
-        .invoiced-to-block .title-label {
-            font-size: 13.5px;
-            font-weight: 800;
-            color: #22282a;
-            margin-bottom: 4px;
-        }
-        .invoiced-to-block .client-type-tag {
-            display: inline-block;
+        .invoiced-to-col .title-label {
             font-size: 10px;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 2px;
+        }
+        .invoiced-to-col .client-type-tag {
+            display: inline-block;
+            font-size: 9.5px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -243,15 +250,16 @@
             border: 1px solid #bee3eb;
             padding: 1px 7px;
             border-radius: 4px;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
-        .invoiced-to-block .client-name {
-            color: #22282a;
-            font-weight: 700;
-            font-size: 13px;
+        .invoiced-to-col .client-name {
+            color: #0f172a;
+            font-weight: 800;
+            font-size: 13.5px;
         }
-        .invoiced-to-block .client-city {
-            color: #555b5e;
+        .invoiced-to-col .client-city {
+            color: #475569;
+            font-size: 11.5px;
         }
 
         /* Tables (Warna Seirama dengan Logo BTD: Teal #269DB9 & Charcoal #424444) */
@@ -787,29 +795,37 @@
         : url('/invoices/' . urlencode($invoice->invoice_number) . '/verify');
 @endphp
 
-    <!-- Screen Control Bar -->
+    <!-- Screen Control Bar (Hanya Tampilkan Aksi Admin jika Login sebagai Admin) -->
     <div class="invoice-screen-bar">
         <div style="display: flex; align-items: center; gap: 12px;">
-            <a href="{{ route('admin.invoices.index') }}" class="btn-back">
-                &larr; Kembali ke Daftar Invoice
-            </a>
+            @if(auth()->check())
+                <a href="{{ route('admin.invoices.index') }}" class="btn-back">
+                    &larr; Kembali ke Daftar Invoice
+                </a>
+            @else
+                <a href="{{ route('invoices.verify', $invoice->invoice_number) }}" class="btn-back">
+                    &larr; Cek Status Validasi Resmi
+                </a>
+            @endif
             <span style="font-size: 13px; font-weight: 700; color: #cbd5e1;">
                 Invoice #{{ $invoice->invoice_number }} &bull; {{ $invoice->client_name }}
             </span>
         </div>
 
         <div style="display: flex; align-items: center; gap: 10px;">
-            @if(!empty($invoice->client_email))
-                <form action="{{ route('admin.invoices.send-email', $invoice->id) }}" method="POST" class="inline" onsubmit="return confirm('Kirimkan invoice ini ke email klien {{ $invoice->client_email }}?');">
-                    @csrf
-                    <button type="submit" class="btn-back" style="background: rgba(38, 157, 185, 0.25); border-color: #269DB9; color: #269DB9; font-weight: 700;">
-                        ✉️ Kirim ke Email Klien
-                    </button>
-                </form>
+            @if(auth()->check())
+                @if(!empty($invoice->client_email))
+                    <form action="{{ route('admin.invoices.send-email', $invoice->id) }}" method="POST" class="inline" onsubmit="return confirm('Kirimkan invoice ini ke email klien {{ $invoice->client_email }}?');">
+                        @csrf
+                        <button type="submit" class="btn-back" style="background: rgba(38, 157, 185, 0.25); border-color: #269DB9; color: #269DB9; font-weight: 700;">
+                            ✉️ Kirim ke Email Klien
+                        </button>
+                    </form>
+                @endif
+                <a href="{{ route('admin.invoices.edit', $invoice->id) }}" class="btn-back">
+                    ✏️ Edit Invoice
+                </a>
             @endif
-            <a href="{{ route('admin.invoices.edit', $invoice->id) }}" class="btn-back">
-                ✏️ Edit Invoice
-            </a>
             <button onclick="window.print()" class="btn-print">
                 🖨️ Cetak / Simpan PDF
             </button>
@@ -848,33 +864,34 @@
             </div>
         </div>
 
-        <!-- Invoice Title & Date Block -->
-        <div class="invoice-title-block">
-            <h1>Invoice <span class="invoice-num">#{{ $invoice->invoice_number }}</span></h1>
-            <div class="invoice-date">
-                <span>Invoice Date:</span> {{ $formatDate($invoice->invoice_date) }}
-            </div>
-            @if($invoice->due_date)
-                <div class="invoice-due-date">
-                    <span>Due Date:</span> {{ $formatDate($invoice->due_date) }}
+        <!-- Invoice Meta & Client Info (Bersebelahan: Nomor & Tanggal di Kiri, Ditujukan ke Siapa di Kanan) -->
+        <div class="invoice-info-row">
+            <div class="invoice-title-col">
+                <h1>Invoice <span class="invoice-num">#{{ $invoice->invoice_number }}</span></h1>
+                <div class="invoice-date">
+                    <span>Invoice Date:</span> {{ $formatDate($invoice->invoice_date) }}
                 </div>
-            @endif
-        </div>
-
-        <!-- Invoiced To Block -->
-        <div class="invoiced-to-block">
-            <div class="title-label">Invoiced To</div>
-            <div class="client-type-tag">{{ $invoice->client_type ?? 'Personal' }}</div>
-            <div class="client-name">
-                @if($invoice->client_attn)
-                    {{ str_starts_with(strtoupper(trim($invoice->client_attn)), 'ATTN') ? $invoice->client_attn : 'ATTN: ' . $invoice->client_attn }}
-                @else
-                    ATTN: {{ $invoice->client_name }}
+                @if($invoice->due_date)
+                    <div class="invoice-due-date">
+                        <span>Due Date:</span> {{ $formatDate($invoice->due_date) }}
+                    </div>
                 @endif
             </div>
-            @if($invoice->client_address)
-                <div class="client-city">{{ $invoice->client_address }}</div>
-            @endif
+
+            <div class="invoiced-to-col">
+                <div class="title-label">Invoiced To</div>
+                <div class="client-type-tag">{{ $invoice->client_type ?? 'Personal' }}</div>
+                <div class="client-name">
+                    @if($invoice->client_attn)
+                        {{ str_starts_with(strtoupper(trim($invoice->client_attn)), 'ATTN') ? $invoice->client_attn : 'ATTN: ' . $invoice->client_attn }}
+                    @else
+                        ATTN: {{ $invoice->client_name }}
+                    @endif
+                </div>
+                @if($invoice->client_address)
+                    <div class="client-city">{{ $invoice->client_address }}</div>
+                @endif
+            </div>
         </div>
 
         <!-- Items Table -->
