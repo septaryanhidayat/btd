@@ -19,14 +19,14 @@
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #f1f5f9;
-            color: #1e293b;
+            color: #22282a;
             font-size: 12.5px;
             line-height: 1.5;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
 
-        /* Clear, modern, non-ambiguous tabular numeral font */
+        /* Clear, modern tabular numeral font */
         .mono {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
             font-variant-numeric: tabular-nums;
@@ -37,7 +37,7 @@
 
         /* Screen Wrapper */
         .invoice-screen-bar {
-            background: #071330;
+            background: #22282a;
             color: white;
             padding: 12px 24px;
             display: flex;
@@ -49,7 +49,7 @@
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.15);
         }
         .btn-print {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            background: linear-gradient(135deg, #269DB9 0%, #1f859d 100%);
             color: white;
             font-weight: 700;
             padding: 8px 18px;
@@ -61,11 +61,11 @@
             align-items: center;
             gap: 6px;
             text-decoration: none;
-            box-shadow: 0 2px 4px rgba(16, 185, 129, 0.25);
+            box-shadow: 0 2px 4px rgba(38, 157, 185, 0.3);
             transition: all 0.2s;
         }
         .btn-print:hover {
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            background: linear-gradient(135deg, #1f859d 0%, #17687b 100%);
         }
         .btn-back {
             background: rgba(255,255,255,0.12);
@@ -152,37 +152,43 @@
             gap: 14px;
         }
         .logo-img {
-            height: 56px;
+            height: 58px;
             width: auto;
             object-fit: contain;
         }
         
-        /* Kop Nama CV di Kanan Atas: Rata Kanan Presisi, Rapi & Simetris */
+        /* Kop Nama CV di Kanan Atas: Rapi, Proporsional, Simetris & Rata Kanan */
         .company-meta-area {
             text-align: right;
             margin-left: auto;
-            color: #334155;
+            color: #555b5e;
             font-size: 12px;
             line-height: 1.5;
             max-width: 380px;
         }
         .company-meta-area .company-name {
-            font-size: 15px;
+            font-size: 15.5px;
             font-weight: 800;
-            color: #071330;
+            color: #22282a;
             margin-bottom: 3px;
             letter-spacing: -0.2px;
             white-space: nowrap;
         }
         .company-meta-area .company-addr {
-            color: #475569;
+            color: #555b5e;
             font-size: 12px;
         }
-        .company-meta-area .company-contact {
-            color: #2563eb;
-            font-size: 11.5px;
+        .company-meta-area .company-email {
+            color: #269DB9;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 3px;
+        }
+        .company-meta-area .company-phone {
+            color: #424444;
+            font-size: 12px;
             font-weight: 600;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
         /* Invoice Number & Date Block */
@@ -192,23 +198,23 @@
         .invoice-title-block h1 {
             font-size: 22px;
             font-weight: 800;
-            color: #071330;
+            color: #22282a;
             margin-bottom: 4px;
             letter-spacing: -0.5px;
         }
         .invoice-title-block h1 .invoice-num {
-            color: #2563eb;
+            color: #269DB9;
         }
         .invoice-title-block .invoice-date,
         .invoice-title-block .invoice-due-date {
             font-size: 12.5px;
-            color: #475569;
+            color: #555b5e;
             font-weight: 500;
         }
         .invoice-title-block .invoice-date span,
         .invoice-title-block .invoice-due-date span {
-            color: #071330;
-            font-weight: 600;
+            color: #22282a;
+            font-weight: 700;
         }
 
         /* Invoiced To Block */
@@ -220,7 +226,7 @@
         .invoiced-to-block .title-label {
             font-size: 13.5px;
             font-weight: 800;
-            color: #071330;
+            color: #22282a;
             margin-bottom: 4px;
         }
         .invoiced-to-block .client-type-tag {
@@ -229,23 +235,23 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #2563eb;
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
+            color: #269DB9;
+            background: #f0f9fb;
+            border: 1px solid #bee3eb;
             padding: 1px 7px;
             border-radius: 4px;
             margin-bottom: 4px;
         }
         .invoiced-to-block .client-name {
-            color: #0f172a;
+            color: #22282a;
             font-weight: 700;
             font-size: 13px;
         }
         .invoiced-to-block .client-city {
-            color: #475569;
+            color: #555b5e;
         }
 
-        /* Tables (Seirama dengan Logo: Electric Blue & Soft Ice Blue Tint) */
+        /* Tables (Warna Seirama dengan Logo BTD: Teal #269DB9 & Charcoal #424444) */
         .table-custom {
             width: 100%;
             border-collapse: collapse;
@@ -253,14 +259,14 @@
             font-size: 12px;
         }
         .table-custom th {
-            background-color: #f0f7ff;
-            border-top: 1px solid #bfdbfe;
-            border-bottom: 2px solid #2563eb;
+            background-color: #f0f9fb;
+            border-top: 1px solid #bee3eb;
+            border-bottom: 2px solid #269DB9;
             border-left: 1px solid #e2e8f0;
             border-right: 1px solid #e2e8f0;
             padding: 10px 14px;
             font-weight: 700;
-            color: #071330;
+            color: #22282a;
             text-align: left;
         }
         .table-custom th.text-right {
@@ -272,7 +278,7 @@
         .table-custom td {
             border: 1px solid #e2e8f0;
             padding: 10px 14px;
-            color: #1e293b;
+            color: #22282a;
             vertical-align: top;
             background-color: #ffffff;
         }
@@ -288,14 +294,14 @@
             background-color: #ffffff;
         }
         .table-custom .row-summary-total td {
-            background-color: #f0f7ff !important;
-            border-top: 2px solid #2563eb;
+            background-color: #f0f9fb !important;
+            border-top: 2px solid #269DB9;
             font-weight: 800;
-            color: #071330;
+            color: #22282a;
             font-size: 13px;
         }
         .table-custom .row-summary-total td.mono {
-            color: #2563eb;
+            color: #269DB9;
             font-size: 13.5px;
         }
         .table-custom .row-remaining-unpaid td {
@@ -306,7 +312,7 @@
         /* Item Description Styling for Structured Bullets */
         .item-desc-intro {
             font-weight: 600;
-            color: #0f172a;
+            color: #22282a;
             margin-bottom: 6px;
             line-height: 1.5;
         }
@@ -315,7 +321,7 @@
             padding-left: 18px;
             list-style-type: disc;
             line-height: 1.6;
-            color: #334155;
+            color: #424444;
         }
         .item-desc-bullets li {
             margin-bottom: 4px;
@@ -329,64 +335,111 @@
         .section-heading {
             font-size: 14px;
             font-weight: 800;
-            color: #071330;
+            color: #22282a;
             margin-bottom: 10px;
         }
 
-        /* Official Payment & Legal Information Box */
-        .payment-info-box {
-            background: #f8fafc;
+        /* Payment Instruction & QR Validation Section */
+        .payment-validation-section {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr;
+            gap: 16px;
+            background: #fbfdfe;
             border: 1px solid #e2e8f0;
-            border-left: 3px solid #2563eb;
-            border-radius: 6px;
-            padding: 10px 14px;
+            border-left: 3.5px solid #269DB9;
+            border-radius: 8px;
+            padding: 12px 16px;
             margin-bottom: 24px;
-            font-size: 11.5px;
-            line-height: 1.5;
+            align-items: center;
         }
-        .payment-info-title {
+        .payment-box-title {
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #071330;
+            color: #22282a;
             margin-bottom: 6px;
         }
-        .payment-info-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 14px;
-            color: #475569;
+        .payment-box-desc {
+            font-size: 11.5px;
+            color: #555b5e;
+            line-height: 1.5;
         }
-        .payment-info-right {
-            text-align: right;
+
+        /* QR Validation Card */
+        .qr-validation-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            border: 1px solid #dcebf0;
+            border-radius: 8px;
+            padding: 8px 12px;
+            box-shadow: 0 1px 3px rgba(38, 157, 185, 0.05);
+        }
+        .qr-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            display: block;
+            border-radius: 4px;
+        }
+        .qr-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .qr-status-tag {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            width: fit-content;
+        }
+        .qr-status-tag.paid {
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+        }
+        .qr-status-tag.unpaid {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .qr-title {
             font-size: 11px;
-            line-height: 1.55;
+            font-weight: 800;
+            color: #22282a;
         }
-        .payment-info-right strong {
-            color: #071330;
+        .qr-desc {
+            font-size: 10px;
+            color: #64748b;
+            line-height: 1.35;
         }
 
         /* Footer */
         .invoice-footer {
             margin-top: 15px;
             padding-top: 15px;
-            color: #475569;
+            color: #555b5e;
             font-size: 11.5px;
             line-height: 1.5;
         }
         .invoice-footer .company-name-bottom {
             font-weight: 800;
-            color: #071330;
+            color: #22282a;
             margin-bottom: 4px;
             font-size: 12px;
         }
         .invoice-footer .address-line {
-            color: #475569;
+            color: #555b5e;
             font-weight: 500;
         }
         .invoice-footer .website-line a {
-            color: #2563eb;
+            color: #269DB9;
             text-decoration: none;
             font-weight: 600;
         }
@@ -434,6 +487,13 @@
 </head>
 <body>
 
+@php
+    // Clean and format phone number without hyphens
+    $rawPhone = $settings['contact_phone'] ?? '0896 9524 9089';
+    $cleanPhone = str_replace('-', ' ', $rawPhone);
+    $formattedPhone = trim(preg_replace('/\s+/', ' ', $cleanPhone));
+@endphp
+
     <!-- Screen Control Bar -->
     <div class="invoice-screen-bar">
         <div style="display: flex; align-items: center; gap: 12px;">
@@ -471,18 +531,19 @@
             @endif
         </div>
 
-        <!-- Header: Logo & Company Address (Symmetrical & Flush Right) -->
+        <!-- Header: Logo & Company Address (Symmetrical, Email on Top, Flush Right) -->
         <div class="invoice-header">
             <div class="company-logo-area">
                 <img src="{{ asset($settings['site_logo'] ?? 'images/Logo-BTD.png') }}" alt="{{ $settings['company_name'] ?? 'CV. Beranda Teknologi Digital' }}" class="logo-img" />
             </div>
 
-            <!-- Kop Nama CV di Kanan Atas: Rapi, Rata Kanan Presisi & Simetris -->
+            <!-- Kop Nama CV di Kanan Atas: Rapi, Email Proporsional & Rata Kanan -->
             <div class="company-meta-area">
                 <div class="company-name">{{ $settings['company_legal_name'] ?? ($settings['company_name'] ?? 'CV. Beranda Teknologi Digital') }}</div>
                 <div class="company-addr">{{ $settings['company_address_line1'] ?? 'Jl. Sarjana, Timbangan, Ogan Ilir' }}</div>
                 <div class="company-addr">{{ $settings['company_address_line2'] ?? 'Sumatera Selatan, Indonesia' }} {{ $settings['company_postal_code'] ?? '30862' }}</div>
-                <div class="company-contact">{{ $settings['contact_email'] ?? 'info@berandadigital.net' }} &bull; {{ $settings['contact_phone'] ?? '0896 9524 9089' }}</div>
+                <div class="company-email">{{ $settings['contact_email'] ?? 'info@berandadigital.net' }}</div>
+                <div class="company-phone">{{ $formattedPhone }}</div>
             </div>
         </div>
 
@@ -617,7 +678,7 @@
                 <!-- Paid Row -->
                 <tr class="row-summary">
                     <td class="text-right">Paid</td>
-                    <td class="text-right mono" style="color: #059669;">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</td>
+                    <td class="text-right mono" style="color: #10b981;">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</td>
                 </tr>
 
                 <!-- Remaining Payment Row -->
@@ -659,7 +720,7 @@
                     @endforeach
                     <tr class="row-summary">
                         <td colspan="3" class="text-right" style="background-color: #f8fafc;">Balance</td>
-                        <td class="text-right mono" style="background-color: #f8fafc; color: #059669;">Rp {{ number_format($sumTrans, 2, ',', '.') }}</td>
+                        <td class="text-right mono" style="background-color: #f8fafc; color: #10b981;">Rp {{ number_format($sumTrans, 2, ',', '.') }}</td>
                     </tr>
                 @else
                     <tr>
@@ -670,27 +731,37 @@
                     </tr>
                     <tr class="row-summary">
                         <td colspan="3" class="text-right" style="background-color: #f8fafc;">Balance</td>
-                        <td class="text-right mono" style="background-color: #f8fafc; color: #059669;">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</td>
+                        <td class="text-right mono" style="background-color: #f8fafc; color: #10b981;">Rp {{ number_format($invoice->paid_amount, 2, ',', '.') }}</td>
                     </tr>
                 @endif
             </tbody>
         </table>
 
-        <!-- Official Payment Instructions & Company Legal Credentials -->
-        <div class="payment-info-box">
-            <div class="payment-info-title">Informasi Pembayaran & Legalitas Perusahaan</div>
-            <div class="payment-info-grid">
-                <div class="payment-info-left">
+        <!-- Payment Instruction & Official Digital QR Verification -->
+        <div class="payment-validation-section">
+            <div class="payment-box-left">
+                <div class="payment-box-title">Petunjuk Pembayaran / Bank Transfer</div>
+                <div class="payment-box-desc">
                     @if(!empty($invoice->notes))
                         <div>{{ $invoice->notes }}</div>
                     @else
-                        <div>Pembayaran tagihan dapat ditransfer ke rekening resmi <strong>CV. Beranda Teknologi Digital</strong>. Bukti transfer mohon dikonfirmasi melalui WhatsApp ke <strong>{{ $settings['contact_phone'] ?? '0896 9524 9089' }}</strong>.</div>
+                        <div>Pembayaran tagihan dapat ditransfer ke rekening resmi <strong>CV. Beranda Teknologi Digital</strong>.<br>
+                        Konfirmasi pembayaran melalui WhatsApp ke <strong>{{ $formattedPhone }}</strong>.</div>
                     @endif
                 </div>
-                <div class="payment-info-right">
-                    <div><strong>NIB:</strong> {{ $settings['company_nib'] ?? '1203000102148 / KBLI 62019' }}</div>
-                    <div><strong>NPWP:</strong> {{ $settings['company_npwp'] ?? '63.100.018.9-312.000' }}</div>
-                    <div><strong>Email:</strong> {{ $settings['contact_email'] ?? 'info@berandadigital.net' }}</div>
+            </div>
+
+            <!-- QR Code Validasi Resmi -->
+            <div class="qr-validation-card">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=2&color=269DB9&data={{ urlencode(url('/invoices/' . $invoice->invoice_number . '/verify')) }}" 
+                     alt="QR Code Validasi Invoice #{{ $invoice->invoice_number }}" 
+                     class="qr-img" />
+                <div class="qr-info">
+                    <span class="qr-status-tag {{ $invoice->status === 'paid' ? 'paid' : 'unpaid' }}">
+                        {{ $invoice->status === 'paid' ? '✓ DOKUMEN VALID' : '● MENUNGGU BAYAR' }}
+                    </span>
+                    <div class="qr-title">Validasi Dokumen Digital</div>
+                    <div class="qr-desc">Scan QR Code untuk verifikasi keabsahan dokumen invoice ini di sistem.</div>
                 </div>
             </div>
         </div>
