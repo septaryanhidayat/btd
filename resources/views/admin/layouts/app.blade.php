@@ -160,6 +160,7 @@
                     $isAnalyticsActive = request()->routeIs('admin.analytics.*') || request()->is('admin/analytics*');
                     $isFinancesActive = request()->routeIs('admin.finances.*') || request()->is('admin/finances*');
                     $isInvoicesActive = request()->routeIs('admin.invoices.*') || request()->is('admin/invoices*');
+                    $isDomainsActive = request()->routeIs('admin.domain-renewals.*') || request()->is('admin/domain-renewals*');
                     $isInquiriesActive = request()->routeIs('admin.inquiries.*') || request()->is('admin/inquiries*');
                     $isProjectsActive = request()->routeIs('admin.projects.*') || request()->is('admin/projects*');
                     $isProductsActive = request()->routeIs('admin.products.*') || request()->is('admin/products*');
@@ -233,6 +234,28 @@
                             <span class="{{ $isInvoicesActive ? 'font-bold text-white' : '' }}">Faktur & Invoice Klien</span>
                         </div>
                         @if($isInvoicesActive)
+                            <span class="w-2 h-2 rounded-full bg-white shadow-xs"></span>
+                        @endif
+                    </a>
+
+                    <!-- Aset Domain & Hosting (Multi-Provider Tracker) -->
+                    <a href="{{ route('admin.domain-renewals.index') }}" 
+                       class="side-nav-link {{ $isDomainsActive ? 'active-blue' : '' }}"
+                       style="{{ $isDomainsActive ? 'background-color: #2563eb !important; color: #ffffff !important;' : '' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 {{ $isDomainsActive ? 'text-white' : 'text-cyan-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                            <span class="{{ $isDomainsActive ? 'font-bold text-white' : '' }}">Aset Domain & Hosting</span>
+                        </div>
+                        @php
+                            $critExpCount = \Illuminate\Support\Facades\Schema::hasTable('domain_renewals')
+                                ? \App\Models\DomainRenewal::where('expiry_date', '<=', \Carbon\Carbon::today()->addDays(7)->format('Y-m-d'))->count()
+                                : 0;
+                        @endphp
+                        @if($critExpCount > 0)
+                            <span class="px-2 py-0.5 rounded-full bg-rose-600 text-white text-[10px] font-black shadow-xs animate-pulse">
+                                {{ $critExpCount }}
+                            </span>
+                        @elseif($isDomainsActive)
                             <span class="w-2 h-2 rounded-full bg-white shadow-xs"></span>
                         @endif
                     </a>

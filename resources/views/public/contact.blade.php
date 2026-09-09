@@ -258,6 +258,12 @@
                 <form action="{{ route('contact.store') }}" method="POST" class="space-y-4">
                     @csrf
                     
+                    {{-- Anti-Bot Honeypot Field (Invisible to human users) --}}
+                    <div style="display: none !important; opacity: 0; position: absolute; left: -9999px;" aria-hidden="true">
+                        <label for="_hp_company">Do not fill this field</label>
+                        <input type="text" id="_hp_company" name="_hp_company" value="" tabindex="-1" autocomplete="off" />
+                    </div>
+
                     <div class="space-y-1">
                         <label class="text-xs font-bold text-[#07153f] dark:text-white">Nama Lengkap *</label>
                         <input type="text" name="name" required placeholder="Nama Lengkap / Instansi" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white text-xs focus:ring-2 focus:ring-[#3E5CE7] focus:outline-none" />

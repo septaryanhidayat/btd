@@ -19,15 +19,33 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
+        // ══════════════════════════════════════════════════════
+        // ANTI-BOT HONEYPOT CHECK
+        // If hidden honeypot field is filled, silently discard bot submission
+        // ══════════════════════════════════════════════════════
+        if ($request->filled('_hp_company')) {
+            \Log::info("Bot inquiry submission quietly dropped via honeypot from IP: " . $request->ip());
+            return redirect()->back()->with('success', 'Pesan Anda telah berhasil dikirim! Tim Beranda Digital akan segera menghubungi Anda.');
+        }
+
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone' => 'nullable|string|max:50',
-            'subject' => 'nullable|string|max:255',
-            'message' => 'required|string',
+            'name' => 'required|string|max:150',
+            'email' => 'required|email:rfc,dns|max:191',
+            'phone' => 'nullable|string|max:40',
+            'subject' => 'nullable|string|max:200',
+            'message' => 'required|string|max:5000',
         ]);
 
-        Inquiry::create($validated);
+        // Input Sanitization against XSS and header injections
+        $cleanData = [
+            'name' => strip_tags(trim($validated['name'])),
+            'email' => filter_var(trim($validated['email']), FILTER_SANITIZE_EMAIL),
+            'phone' => isset($validated['phone']) ? preg_replace('/[^\d\+\-\s\(\)]/', '', trim($validated['phone'])) : null,
+            'subject' => isset($validated['subject']) ? strip_tags(trim($validated['subject'])) : 'Permintaan Penawaran',
+            'message' => htmlspecialchars(strip_tags(trim($validated['message'])), ENT_QUOTES, 'UTF-8'),
+        ];
+
+        Inquiry::create($cleanData);
 
         return redirect()->back()->with('success', 'Pesan Anda telah berhasil dikirim! Tim Beranda Digital akan segera menghubungi Anda.');
     }

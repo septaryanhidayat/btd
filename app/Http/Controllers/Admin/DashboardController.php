@@ -74,6 +74,30 @@ class DashboardController extends Controller
             $onlineVisitors = \App\Models\VisitorLog::getRealOnlineCount();
         }
 
+        // Domain & Hosting Asset Tracking Metrics
+        $domainCount = 0;
+        $domainCriticalCount = 0;
+        $domainWarningCount = 0;
+        $domainExpiringSoonList = collect();
+
+        if (Schema::hasTable('domain_renewals')) {
+            $today = \Carbon\Carbon::today()->format('Y-m-d');
+            $in7Days = \Carbon\Carbon::today()->addDays(7)->format('Y-m-d');
+            $in30Days = \Carbon\Carbon::today()->addDays(30)->format('Y-m-d');
+
+            $domainCount = \App\Models\DomainRenewal::count();
+            $domainCriticalCount = \App\Models\DomainRenewal::where('expiry_date', '>=', $today)
+                ->where('expiry_date', '<=', $in7Days)
+                ->count();
+            $domainWarningCount = \App\Models\DomainRenewal::where('expiry_date', '>', $in7Days)
+                ->where('expiry_date', '<=', $in30Days)
+                ->count();
+            
+            $domainExpiringSoonList = \App\Models\DomainRenewal::orderBy('expiry_date', 'asc')
+                ->take(4)
+                ->get();
+        }
+
         $recentInquiries = Inquiry::latest()->take(5)->get();
         $recentProjects = Project::with('category')->latest()->take(4)->get();
         $recentProducts = DigitalProduct::latest()->take(4)->get();
@@ -160,6 +184,10 @@ class DashboardController extends Controller
             'financeTotalInflow',
             'financeTotalExpenses',
             'financeNetProfit',
+            'domainCount',
+            'domainCriticalCount',
+            'domainWarningCount',
+            'domainExpiringSoonList',
             'totalVisitors',
             'onlineVisitors',
             'recentInvoices',

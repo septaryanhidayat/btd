@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAnalyticsController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminDomainRenewalController;
 use App\Http\Controllers\Admin\AdminFinanceController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminInquiryController;
@@ -114,8 +115,15 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->g
     Route::get('/inquiries/{inquiry}', [AdminInquiryController::class, 'show'])->name('inquiries.show');
     Route::delete('/inquiries/{inquiry}', [AdminInquiryController::class, 'destroy'])->name('inquiries.destroy');
 
-    // Invoices & Billing Management + Print Feature (Accessible without auth to allow client PDF preview)
-    Route::get('/invoices/{invoice}/print', [AdminInvoiceController::class, 'print'])->withoutMiddleware(['auth'])->name('invoices.print');
+    // Multi-Provider Domain & Hosting Asset Tracking & Expiry Reminders
+    Route::get('/domain-renewals', [AdminDomainRenewalController::class, 'index'])->name('domain-renewals.index');
+    Route::post('/domain-renewals', [AdminDomainRenewalController::class, 'store'])->name('domain-renewals.store');
+    Route::put('/domain-renewals/{id}', [AdminDomainRenewalController::class, 'update'])->name('domain-renewals.update');
+    Route::delete('/domain-renewals/{id}', [AdminDomainRenewalController::class, 'destroy'])->name('domain-renewals.destroy');
+    Route::post('/domain-renewals/{id}/renew-one-year', [AdminDomainRenewalController::class, 'renewOneYear'])->name('domain-renewals.renew-one-year');
+
+    // Invoices & Billing Management + Print Feature (Strictly Authenticated)
+    Route::get('/invoices/{invoice}/print', [AdminInvoiceController::class, 'print'])->name('invoices.print');
     Route::post('/invoices/{invoice}/send-email', [AdminInvoiceController::class, 'sendEmail'])->name('invoices.send-email');
     Route::resource('invoices', AdminInvoiceController::class);
 

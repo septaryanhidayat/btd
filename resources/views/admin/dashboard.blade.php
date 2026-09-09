@@ -50,6 +50,10 @@
                     <span>💰</span>
                     <span>Kas & Finansial</span>
                 </a>
+                <a href="{{ route('admin.domain-renewals.index') }}" class="px-3 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-cyan-600/30 transition-all flex items-center gap-1.5">
+                    <span>🌐</span>
+                    <span>Domain & Hosting</span>
+                </a>
                 <a href="{{ route('admin.settings.index') }}" class="px-3 py-2 rounded-xl bg-[#fe6000] hover:bg-[#e05400] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-orange-600/30 transition-all flex items-center gap-1.5">
                     <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
                     <span>Pengaturan Web</span>
@@ -57,6 +61,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Alert Banner: Expiring Domains & Hosting (< 7 Days) -->
+    @if(isset($domainCriticalCount) && $domainCriticalCount > 0)
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-rose-600 via-rose-500 to-amber-600 text-white shadow-lg shadow-rose-900/20 border border-rose-400 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-pulse">
+            <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-xl shrink-0 backdrop-blur-xs">
+                    🚨
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 rounded-md bg-white text-rose-700 text-[10px] font-black uppercase tracking-wider">Perhatian</span>
+                        <h2 class="text-sm sm:text-base font-black text-white">Ada {{ $domainCriticalCount }} Layanan Domain / Hosting Akan Kedaluwarsa Dalam < 7 Hari!</h2>
+                    </div>
+                    <p class="text-xs text-rose-100 mt-0.5">Segera hubungi klien terkait atau buka konsol provider sebelum layanan terhenti.</p>
+                </div>
+            </div>
+            <a href="{{ route('admin.domain-renewals.index', ['tab' => 'critical']) }}" class="px-4 py-2 rounded-xl bg-white text-rose-700 hover:bg-rose-50 font-black text-xs shrink-0 text-center transition-all shadow-md">
+                Kelola Domain Kritis &rarr;
+            </a>
+        </div>
+    @endif
 
     <!-- Stats Bento Cards: 8 Logical System KPIs (Spacious 4-Column Layout, High Contrast, No Truncation) -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -253,7 +278,7 @@
                             ● SISTEM TERLINDUNGI
                         </span>
                     </h3>
-                    <p class="text-[11px] text-slate-400 font-normal">Audit berlapis: WAF, kompresi WebP &le;100KB, anti brute-force, dan HSTS encryption</p>
+                    <p class="text-[11px] text-slate-400 font-normal">Audit berlapis: WAF rate-limiting, uploads .htaccess RCE shield, honeypot anti-spam, dan HSTS SSL preload</p>
                 </div>
             </div>
 
@@ -272,38 +297,117 @@
                 <div class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Proteksi Firewall & WAF</div>
                 <div class="text-xs font-bold text-emerald-400 flex items-center gap-1">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span>{{ $securityStatus['firewall'] }}</span>
+                    <span>Rate Limiter & Anti-Traversal</span>
                 </div>
-                <div class="text-[10px] text-slate-400">Rate Limiter (60 req/menit)</div>
+                <div class="text-[10px] text-slate-400">60 req/mnt & blokade null-byte</div>
             </div>
 
             <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/80 space-y-0.5">
-                <div class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Anti Brute-Force Login</div>
+                <div class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Upload Shield & RCE Shield</div>
                 <div class="text-xs font-bold text-emerald-400 flex items-center gap-1">
-                    <span>✓</span>
-                    <span>Proteksi Maks 5 Percobaan</span>
+                    <span>🛡️</span>
+                    <span>Uploads .htaccess Active</span>
                 </div>
-                <div class="text-[10px] text-slate-400">Auto-lockout percobaan peretasan</div>
+                <div class="text-[10px] text-slate-400">Eksekusi script PHP/CGI dilarang</div>
             </div>
 
             <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/80 space-y-0.5">
-                <div class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Filter Upload Media</div>
+                <div class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Anti-Bot & Form Trap</div>
                 <div class="text-xs font-bold text-cyan-300 flex items-center gap-1">
                     <span>⚡</span>
-                    <span>Auto WebP &le; 100KB</span>
+                    <span>Honeypot Filter Aktif</span>
                 </div>
-                <div class="text-[10px] text-slate-400">Sterilisasi file gambar otomatis</div>
+                <div class="text-[10px] text-slate-400">Spam bot kontak dibuang hening</div>
             </div>
 
             <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/80 space-y-0.5">
-                <div class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Ancaman Kritis / Intrusi</div>
+                <div class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Brute-Force & HSTS SSL</div>
                 <div class="text-xs font-bold text-emerald-400 flex items-center gap-1">
-                    <span>0 Terdeteksi</span>
+                    <span>✓</span>
+                    <span>Maks 5 Login + HSTS Preload</span>
                 </div>
-                <div class="text-[10px] text-slate-400">Database & Server Sehat</div>
+                <div class="text-[10px] text-slate-400">Enkripsi ketat 1 tahun penuh</div>
             </div>
         </div>
     </div>
+
+    <!-- PELACAK & PENGINGAT MASA AKTIF DOMAIN & HOSTING TERDEKAT -->
+    @if(isset($domainExpiringSoonList) && $domainExpiringSoonList->count() > 0)
+        <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-blue-50 text-[#2563eb] flex items-center justify-center text-base shrink-0">
+                        🌐
+                    </div>
+                    <div>
+                        <h2 class="text-sm font-bold text-[#071330] flex items-center gap-2">
+                            <span>Pelacak & Pengingat Masa Aktif Domain & Hosting</span>
+                            @if(isset($domainCriticalCount) && $domainCriticalCount > 0)
+                                <span class="px-2 py-0.5 rounded-full bg-rose-600 text-white text-[9px] font-black animate-pulse">
+                                    {{ $domainCriticalCount }} Kritis
+                                </span>
+                            @endif
+                        </h2>
+                        <p class="text-[11px] text-slate-500 font-medium">Daftar domain & server dengan batas waktu perpanjangan terdekat lintas provider.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <a href="{{ route('admin.domain-renewals.index') }}" class="px-3 py-1.5 rounded-xl bg-[#2563eb] text-white text-xs font-bold hover:brightness-110 transition-all flex items-center gap-1.5 shadow-sm">
+                        <span>Lihat Semua ({{ $domainCount }}) &rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                @foreach($domainExpiringSoonList as $d)
+                    @php
+                        $days = $d->days_remaining;
+                        $urg = $d->urgency_level;
+                    @endphp
+                    <div class="p-3.5 rounded-xl border {{ $urg === 'critical' ? 'border-rose-300 bg-rose-50/40' : ($urg === 'warning' ? 'border-amber-300 bg-amber-50/20' : ($urg === 'expired' ? 'border-rose-900/40 bg-rose-950/10' : 'border-slate-200 bg-slate-50/60')) }} flex flex-col justify-between space-y-2.5">
+                        <div>
+                            <div class="flex items-center justify-between gap-1 mb-1">
+                                <span class="px-2 py-0.5 rounded-md text-[9px] font-extrabold uppercase bg-white border border-slate-200 text-slate-700">
+                                    {{ $d->provider }}
+                                </span>
+                                @if($urg === 'expired')
+                                    <span class="px-2 py-0.5 rounded-md bg-rose-950 text-rose-200 text-[9px] font-bold">⛔ Expired</span>
+                                @elseif($urg === 'critical')
+                                    <span class="px-2 py-0.5 rounded-md bg-rose-600 text-white text-[9px] font-black animate-pulse">🚨 {{ $days }} Hari</span>
+                                @elseif($urg === 'warning')
+                                    <span class="px-2 py-0.5 rounded-md bg-amber-500 text-white text-[9px] font-bold">⚠️ {{ $days }} Hari</span>
+                                @else
+                                    <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[9px] font-bold">✅ {{ $days }} Hari</span>
+                                @endif
+                            </div>
+                            
+                            <a href="https://{{ $d->domain_name }}" target="_blank" class="font-extrabold text-xs text-[#071330] hover:text-[#2563eb] transition-colors truncate block">
+                                {{ $d->domain_name }}
+                            </a>
+                            <div class="text-[10px] text-slate-500 truncate mt-0.5">
+                                Klien: <strong>{{ $d->client_name ?: 'Internal BTD' }}</strong>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 border-t border-slate-200/80 flex items-center justify-between text-[11px]">
+                            <span class="font-mono font-bold text-slate-900">{{ $d->formatted_price }}</span>
+                            <div class="flex items-center gap-1.5">
+                                @if($d->client_whatsapp)
+                                    <a href="{{ $d->whatsapp_url }}" target="_blank" class="p-1 rounded-md bg-emerald-50 text-emerald-600 hover:bg-emerald-100 transition-colors" title="Kirim WA Klien">
+                                        💬
+                                    </a>
+                                @endif
+                                <a href="{{ $d->portal_url }}" target="_blank" class="px-2 py-0.5 rounded-md bg-blue-50 text-[#2563eb] hover:bg-blue-100 font-bold text-[10px] transition-colors" title="Buka Konsol Provider">
+                                    Konsol ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    @endif
 
     <!-- Two Columns: Recent Invoices & Recent Inquiries -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start">
