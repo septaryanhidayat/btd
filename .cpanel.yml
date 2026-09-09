@@ -1,14 +1,13 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/berandad/public_html/
-    - /bin/cp -R * $DEPLOYPATH
-    - /bin/cp -R public/* $DEPLOYPATH
-    - /bin/cp .htaccess $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp index.php $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -f .env $DEPLOYPATH/.env 2>/dev/null || true
+    - export DEPLOYPATH=/home/berandad/public_html
+    - /bin/cp -R * $DEPLOYPATH/
+    - /bin/cp -R public/* $DEPLOYPATH/
+    - /bin/cp .htaccess $DEPLOYPATH/ 2>/dev/null || true
     - /bin/mkdir -p $DEPLOYPATH/storage/framework/sessions $DEPLOYPATH/storage/framework/views $DEPLOYPATH/storage/framework/cache $DEPLOYPATH/storage/logs $DEPLOYPATH/bootstrap/cache
     - /bin/chmod -R 775 $DEPLOYPATH/storage $DEPLOYPATH/bootstrap/cache
-    - "/bin/sh -c 'php $DEPLOYPATH/artisan optimize:clear || /usr/local/bin/php $DEPLOYPATH/artisan optimize:clear || true'"
+    - /bin/rm -rf $DEPLOYPATH/storage/framework/views/*.php $DEPLOYPATH/bootstrap/cache/*.php
+    - php $DEPLOYPATH/artisan optimize:clear 2>/dev/null || true
 
 
