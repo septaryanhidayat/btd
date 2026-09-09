@@ -37,128 +37,199 @@
                 </p>
             </div>
 
-            <div class="flex flex-wrap items-center gap-2.5 shrink-0">
-                <a href="{{ route('admin.projects.create') }}" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-blue-600/30 transition-all flex items-center gap-1.5">
+            <div class="flex flex-wrap items-center gap-2 shrink-0">
+                <a href="{{ route('admin.projects.create') }}" class="px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-blue-600/30 transition-all flex items-center gap-1.5">
                     <svg class="w-3.5 h-3.5 text-white font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
                     <span>+ Proyek</span>
                 </a>
-                <a href="{{ route('admin.invoices.create') }}" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-emerald-600/30 transition-all flex items-center gap-1.5">
+                <a href="{{ route('admin.invoices.create') }}" class="px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-emerald-600/30 transition-all flex items-center gap-1.5">
                     <span>🧾</span>
                     <span>+ Invoice</span>
                 </a>
-                <a href="{{ route('admin.settings.index') }}" class="px-4 py-2.5 rounded-xl bg-[#fe6000] hover:bg-[#e05400] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-orange-600/30 transition-all flex items-center gap-1.5">
+                <a href="{{ route('admin.finances.index') }}" class="px-3 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-teal-600/30 transition-all flex items-center gap-1.5">
+                    <span>💰</span>
+                    <span>Kas & Finansial</span>
+                </a>
+                <a href="{{ route('admin.settings.index') }}" class="px-3 py-2 rounded-xl bg-[#fe6000] hover:bg-[#e05400] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-orange-600/30 transition-all flex items-center gap-1.5">
                     <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-                    <span>Atur Tema</span>
+                    <span>Pengaturan Web</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Stats Bento Cards: Professional Enterprise SVG Cards (Left-Aligned Desktop, Centered Mobile) -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
+    <!-- Stats Bento Cards: 8 Logical System KPIs -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-3.5">
         
         <!-- 1. Projects -->
-        <a href="{{ route('admin.projects.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-[#3E5CE7] hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
-            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
-                <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/60 text-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        <a href="{{ route('admin.projects.index') }}" class="bg-white p-3.5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-[#3E5CE7] hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2">
+                <div class="w-9 h-9 rounded-xl bg-blue-50 border border-blue-200/60 text-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
                 </div>
-                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-blue-50 text-blue-600 text-[10px] font-extrabold uppercase tracking-wider">Total</span>
+                <span class="hidden sm:inline-block px-1.5 py-0.5 rounded-md bg-blue-50 text-blue-600 text-[9px] font-extrabold uppercase">Total</span>
             </div>
             <div>
-                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $projectCount }}</div>
-                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Portofolio Proyek</div>
+                <div class="text-xl sm:text-2xl font-black text-slate-900 mono tracking-tight leading-none">{{ $projectCount }}</div>
+                <div class="text-[10px] sm:text-[11px] text-slate-500 font-bold mt-1 truncate">Portofolio</div>
             </div>
         </a>
 
         <!-- 2. Products -->
-        <a href="{{ route('admin.products.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-[#fe6000] hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
-            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
-                <div class="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200/60 text-[#fe6000] flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <a href="{{ route('admin.products.index') }}" class="bg-white p-3.5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-[#fe6000] hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2">
+                <div class="w-9 h-9 rounded-xl bg-orange-50 border border-orange-200/60 text-[#fe6000] flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
                 </div>
-                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-orange-50 text-[#fe6000] text-[10px] font-extrabold uppercase tracking-wider">Store</span>
+                <span class="hidden sm:inline-block px-1.5 py-0.5 rounded-md bg-orange-50 text-[#fe6000] text-[9px] font-extrabold uppercase">Store</span>
             </div>
             <div>
-                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $productCount }}</div>
-                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Produk Digital</div>
+                <div class="text-xl sm:text-2xl font-black text-slate-900 mono tracking-tight leading-none">{{ $productCount }}</div>
+                <div class="text-[10px] sm:text-[11px] text-slate-500 font-bold mt-1 truncate">Produk Digital</div>
             </div>
         </a>
 
         <!-- 3. Pelatihan IT -->
-        <a href="{{ route('admin.trainings.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-purple-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
-            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
-                <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200/60 text-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        <a href="{{ route('admin.trainings.index') }}" class="bg-white p-3.5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-purple-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2">
+                <div class="w-9 h-9 rounded-xl bg-purple-50 border border-purple-200/60 text-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
                 </div>
-                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-purple-50 text-purple-600 text-[10px] font-extrabold uppercase tracking-wider">Modul</span>
+                <span class="hidden sm:inline-block px-1.5 py-0.5 rounded-md bg-purple-50 text-purple-600 text-[9px] font-extrabold uppercase">Modul</span>
             </div>
             <div>
-                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $trainingCount }}</div>
-                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Pelatihan IT</div>
+                <div class="text-xl sm:text-2xl font-black text-slate-900 mono tracking-tight leading-none">{{ $trainingCount }}</div>
+                <div class="text-[10px] sm:text-[11px] text-slate-500 font-bold mt-1 truncate">Pelatihan IT</div>
             </div>
         </a>
 
         <!-- 4. Dokumentasi -->
-        <a href="{{ route('admin.galleries.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-indigo-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
-            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
-                <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200/60 text-indigo-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <a href="{{ route('admin.galleries.index') }}" class="bg-white p-3.5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-indigo-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2">
+                <div class="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-200/60 text-indigo-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 </div>
-                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-600 text-[10px] font-extrabold uppercase tracking-wider">Galeri</span>
+                <span class="hidden sm:inline-block px-1.5 py-0.5 rounded-md bg-indigo-50 text-indigo-600 text-[9px] font-extrabold uppercase">Galeri</span>
             </div>
             <div>
-                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $galleryCount }}</div>
-                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Dokumentasi</div>
+                <div class="text-xl sm:text-2xl font-black text-slate-900 mono tracking-tight leading-none">{{ $galleryCount }}</div>
+                <div class="text-[10px] sm:text-[11px] text-slate-500 font-bold mt-1 truncate">Dokumentasi</div>
             </div>
         </a>
 
         <!-- 5. Artikel Blog -->
-        <a href="{{ route('admin.posts.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-cyan-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
-            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
-                <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200/60 text-cyan-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+        <a href="{{ route('admin.posts.index') }}" class="bg-white p-3.5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-cyan-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2">
+                <div class="w-9 h-9 rounded-xl bg-cyan-50 border border-cyan-200/60 text-cyan-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
                 </div>
-                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-cyan-50 text-cyan-600 text-[10px] font-extrabold uppercase tracking-wider">Terbit</span>
+                <span class="hidden sm:inline-block px-1.5 py-0.5 rounded-md bg-cyan-50 text-cyan-600 text-[9px] font-extrabold uppercase">Terbit</span>
             </div>
             <div>
-                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $postCount }}</div>
-                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Artikel Blog</div>
+                <div class="text-xl sm:text-2xl font-black text-slate-900 mono tracking-tight leading-none">{{ $postCount }}</div>
+                <div class="text-[10px] sm:text-[11px] text-slate-500 font-bold mt-1 truncate">Artikel Blog</div>
             </div>
         </a>
 
-        <!-- 6. Inquiries / Pesan Masuk -->
-        <a href="{{ route('admin.inquiries.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-rose-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
-            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
-                <div class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200/60 text-rose-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0 relative">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <!-- 6. Pengunjung Web (Live) -->
+        <a href="{{ route('admin.analytics.index') }}" class="bg-white p-3.5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-orange-500 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2">
+                <div class="w-9 h-9 rounded-xl bg-orange-50 border border-orange-200/60 text-orange-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                </div>
+                <span class="hidden sm:inline-block px-1.5 py-0.5 rounded-md bg-orange-100 text-orange-800 text-[9px] font-extrabold uppercase">{{ $onlineVisitors }} Online</span>
+            </div>
+            <div>
+                <div class="text-xl sm:text-2xl font-black text-orange-600 mono tracking-tight leading-none">{{ number_format($totalVisitors, 0, ',', '.') }}</div>
+                <div class="text-[10px] sm:text-[11px] text-slate-500 font-bold mt-1 truncate">Pengunjung Web</div>
+            </div>
+        </a>
+
+        <!-- 7. Invoices Dicetak -->
+        <a href="{{ route('admin.invoices.index') }}" class="bg-white p-3.5 rounded-2xl border-2 border-emerald-300 shadow-2xs hover:border-emerald-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2">
+                <div class="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-200/80 text-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <span class="hidden sm:inline-block px-1.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[9px] font-extrabold uppercase">{{ $paidInvoiceCount }} Paid</span>
+            </div>
+            <div>
+                <div class="text-xl sm:text-2xl font-black text-emerald-700 mono tracking-tight leading-none">{{ $invoiceCount }}</div>
+                <div class="text-[10px] sm:text-[11px] text-slate-500 font-bold mt-1 truncate">Faktur Invoice</div>
+            </div>
+        </a>
+
+        <!-- 8. Inquiries / Pesan Masuk -->
+        <a href="{{ route('admin.inquiries.index') }}" class="bg-white p-3.5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-rose-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left">
+            <div class="flex items-center justify-between w-full mb-2">
+                <div class="w-9 h-9 rounded-xl bg-rose-50 border border-rose-200/60 text-rose-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0 relative">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     @if($unreadInquiryCount > 0)
                         <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-rose-500 border-2 border-white animate-pulse"></span>
                     @endif
                 </div>
-                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md {{ $unreadInquiryCount > 0 ? 'bg-rose-500 text-white' : 'bg-rose-50 text-rose-600' }} text-[10px] font-extrabold uppercase tracking-wider">
+                <span class="hidden sm:inline-block px-1.5 py-0.5 rounded-md {{ $unreadInquiryCount > 0 ? 'bg-rose-500 text-white' : 'bg-rose-50 text-rose-600' }} text-[9px] font-extrabold uppercase">
                     {{ $unreadInquiryCount > 0 ? $unreadInquiryCount . ' Baru' : 'Inbox' }}
                 </span>
             </div>
             <div>
-                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $inquiryCount }}</div>
-                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Pesan Masuk</div>
+                <div class="text-xl sm:text-2xl font-black text-slate-900 mono tracking-tight leading-none">{{ $inquiryCount }}</div>
+                <div class="text-[10px] sm:text-[11px] text-slate-500 font-bold mt-1 truncate">Pesan Masuk</div>
             </div>
         </a>
 
-        <!-- 7. INVOICE DICETAK -->
-        <a href="{{ route('admin.invoices.index') }}" class="bg-white p-3.5 sm:p-4 rounded-2xl border-2 border-emerald-300 shadow-2xs hover:border-emerald-600 hover:shadow-md transition-all group flex flex-col items-center sm:items-stretch text-center sm:text-left col-span-2 sm:col-span-2 lg:col-span-1">
-            <div class="flex items-center justify-between w-full mb-2 sm:mb-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/80 text-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs mx-auto sm:mx-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+    </div>
+
+    <!-- SNAPSHOT ANALISA FINANSIAL LEMBAGA & ARUS KAS BTD -->
+    <div class="bg-gradient-to-r from-[#071330] via-[#0b1d44] to-[#071330] rounded-2xl p-5 sm:p-6 text-white border-2 border-slate-700 shadow-xl space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3.5">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                    💰
                 </div>
-                <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-extrabold uppercase tracking-wider">{{ $paidInvoiceCount }} Paid</span>
+                <div>
+                    <h3 class="text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
+                        <span>Ikhtisar Finansial Lembaga & Pertimbangan Kebijakan</span>
+                        <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[9px] font-black border border-emerald-500/40">
+                            Cash Intelligence
+                        </span>
+                    </h3>
+                    <p class="text-xs text-slate-300 font-medium">Realisasi kas masuk invoice, beban operasional kas, dan saldo laba bersih lembaga</p>
+                </div>
             </div>
-            <div>
-                <div class="text-2xl sm:text-3xl font-black text-emerald-700 mono tracking-tight leading-none">{{ $invoiceCount }}</div>
-                <div class="text-[11px] sm:text-xs text-slate-500 font-bold mt-1 truncate">Faktur Invoice</div>
+
+            <a href="{{ route('admin.finances.index') }}" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-2 self-start sm:self-auto shrink-0">
+                <span>Buka Analisa Lengkap & Laporan</span>
+                <span>&rarr;</span>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 space-y-1">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Total Kas Masuk Riil</span>
+                <div class="text-lg sm:text-xl font-black text-emerald-400 mono">Rp {{ number_format($financeTotalInflow, 0, ',', '.') }}</div>
+                <span class="text-[10px] text-slate-300">Invoice paid & kas jasa</span>
             </div>
-        </a>
+
+            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 space-y-1">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Total Beban Operasional</span>
+                <div class="text-lg sm:text-xl font-black text-rose-400 mono">Rp {{ number_format($financeTotalExpenses, 0, ',', '.') }}</div>
+                <span class="text-[10px] text-slate-300">Server, lisensi AI & tim</span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 space-y-1">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Laba Bersih Kas</span>
+                <div class="text-lg sm:text-xl font-black {{ $financeNetProfit >= 0 ? 'text-blue-300' : 'text-rose-400' }} mono">Rp {{ number_format($financeNetProfit, 0, ',', '.') }}</div>
+                <span class="text-[10px] text-slate-300">{{ $financeNetProfit >= 0 ? 'Surplus Operasional' : 'Defisit Kas' }}</span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 space-y-1">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Sisa Piutang Klien</span>
+                <div class="text-lg sm:text-xl font-black text-amber-300 mono">Rp {{ number_format($totalInvoiceRemaining, 0, ',', '.') }}</div>
+                <span class="text-[10px] text-slate-300">Invoice belum terlunasi</span>
+            </div>
+        </div>
+    </div>
 
     </div>
 

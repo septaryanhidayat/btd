@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAnalyticsController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminFinanceController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminInquiryController;
 use App\Http\Controllers\Admin\AdminInvoiceController;
@@ -78,6 +79,13 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->g
     // Comprehensive Visitor Analytics & Reader Trends (Branding & Real-Time)
     Route::get('/analytics', [AdminAnalyticsController::class, 'index'])->name('analytics.index');
     Route::post('/analytics/clean-logs', [AdminAnalyticsController::class, 'cleanOldLogs'])->name('analytics.clean-logs');
+
+    // Institutional Finance, Cash Flow & Policy Maker Analytics
+    Route::get('/finances', [AdminFinanceController::class, 'index'])->name('finances.index');
+    Route::post('/finances', [AdminFinanceController::class, 'store'])->name('finances.store');
+    Route::put('/finances/{id}', [AdminFinanceController::class, 'update'])->name('finances.update');
+    Route::delete('/finances/{id}', [AdminFinanceController::class, 'destroy'])->name('finances.destroy');
+    Route::get('/finances/print', [AdminFinanceController::class, 'printReport'])->name('finances.print');
 
     // Website Settings & Theme Customizer (Color Picker, Hero, Bio, Contact)
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');

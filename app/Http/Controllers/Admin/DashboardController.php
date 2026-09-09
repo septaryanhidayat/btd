@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\DigitalProduct;
+use App\Models\FinancialRecord;
 use App\Models\Gallery;
 use App\Models\Inquiry;
 use App\Models\Invoice;
@@ -41,10 +42,36 @@ class DashboardController extends Controller
 
         if (Schema::hasTable('invoices')) {
             $invoiceCount = Invoice::count();
-            $paidInvoiceCount = Invoice::where('status', 'PAID')->count();
-            $unpaidInvoiceCount = Invoice::whereIn('status', ['UNPAID', 'PARTIAL'])->count();
+            $paidInvoiceCount = Invoice::where('status', 'paid')->orWhere('status', 'PAID')->count();
+            $unpaidInvoiceCount = Invoice::whereIn('status', ['unpaid', 'pending', 'overdue', 'UNPAID', 'PARTIAL', 'partial'])->count();
             $totalInvoiceAmount = (float) Invoice::sum('total_amount');
+            $totalInvoicePaid = (float) Invoice::sum('paid_amount');
+            $totalInvoiceRemaining = (float) Invoice::sum('remaining_amount');
             $recentInvoices = Invoice::latest()->take(5)->get();
+        } else {
+            $totalInvoicePaid = 0;
+            $totalInvoiceRemaining = 0;
+        }
+
+        // Institutional Finance & Kas Summary
+        $financeTotalInflow = $totalInvoicePaid;
+        $financeTotalExpenses = 0;
+        $financeNetProfit = 0;
+
+        if (Schema::hasTable('financial_records')) {
+            $manualIncome = (float) FinancialRecord::where('type', 'income')->sum('amount');
+            $financeTotalExpenses = (float) FinancialRecord::where('type', 'expense')->sum('amount');
+            $financeTotalInflow += $manualIncome;
+            $financeNetProfit = $financeTotalInflow - $financeTotalExpenses;
+        }
+
+        // Live Visitors Count
+        $totalVisitors = 153563;
+        $onlineVisitors = 1;
+        if (Schema::hasTable('visitor_logs')) {
+            $baseOffset = (int) (\App\Models\Setting::getValue('visitor_offset', '153563') ?: 153563);
+            $totalVisitors = $baseOffset + \App\Models\VisitorLog::count();
+            $onlineVisitors = \App\Models\VisitorLog::getRealOnlineCount();
         }
 
         $recentInquiries = Inquiry::latest()->take(5)->get();
@@ -128,6 +155,13 @@ class DashboardController extends Controller
             'paidInvoiceCount',
             'unpaidInvoiceCount',
             'totalInvoiceAmount',
+            'totalInvoicePaid',
+            'totalInvoiceRemaining',
+            'financeTotalInflow',
+            'financeTotalExpenses',
+            'financeNetProfit',
+            'totalVisitors',
+            'onlineVisitors',
             'recentInvoices',
             'recentInquiries',
             'recentProjects',

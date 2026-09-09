@@ -90,20 +90,21 @@
                 <span class="text-[10px] text-slate-500 mono font-bold">v2.4 Live</span>
             </div>
 
-            <!-- Menu Navigation Links -->
+            <!-- Menu Navigation Links (Reorganized & Polished) -->
             <div class="space-y-6">
-                <!-- Group 1: Master Overview -->
+                <!-- Group 1: Ringkasan & Analitik Bisnis -->
                 <div class="space-y-1">
-                    <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 px-3 pb-1">
-                        Ikhtisar Sistem
+                    <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 px-3 pb-1 flex items-center justify-between">
+                        <span>Ikhtisar & Analitik</span>
+                        <span class="text-[9px] text-blue-400 font-mono">LIVE</span>
                     </div>
                     <a href="{{ route('admin.dashboard') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.dashboard') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg shadow-blue-900/30' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.dashboard') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg shadow-blue-900/30 font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
                         <svg class="w-4 h-4 {{ request()->routeIs('admin.dashboard') ? 'text-white' : 'text-blue-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
                         <span>Dashboard Utama</span>
                     </a>
                     <a href="{{ route('admin.analytics.index') }}" 
-                       class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.analytics.*') ? 'bg-gradient-to-r from-[#fe6000] to-[#d44f00] text-white shadow-lg shadow-orange-950/30' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                       class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.analytics.*') ? 'bg-gradient-to-r from-[#fe6000] to-[#d44f00] text-white shadow-lg shadow-orange-950/30 font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
                         <div class="flex items-center gap-3">
                             <svg class="w-4 h-4 {{ request()->routeIs('admin.analytics.*') ? 'text-white' : 'text-orange-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
                             <span>Analitik Pengunjung</span>
@@ -112,60 +113,33 @@
                             <span class="w-1.5 h-1.5 rounded-full bg-orange-400 animate-ping"></span> Live
                         </span>
                     </a>
-                    <a href="{{ route('admin.settings.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.settings.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
-                        <svg class="w-4 h-4 {{ request()->routeIs('admin.settings.*') ? 'text-white' : 'text-slate-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-                        <span>Tema & Pengaturan Web</span>
+                    <a href="{{ route('admin.finances.index') }}" 
+                       class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.finances.*') ? 'bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-lg shadow-emerald-950/30 font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 {{ request()->routeIs('admin.finances.*') ? 'text-white' : 'text-emerald-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span>Analisa Keuangan BTD</span>
+                        </div>
+                        <span class="px-1.5 py-0.5 rounded-full text-[9px] font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                            Kas
+                        </span>
                     </a>
                 </div>
 
-                <!-- Group 2: Content Management -->
+                <!-- Group 2: Penagihan & Interaksi Klien -->
                 <div class="space-y-1">
                     <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 px-3 pb-1">
-                        Manajemen Konten
+                        Transaksi & Klien
                     </div>
-                    <a href="{{ route('admin.projects.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.projects.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
-                        <svg class="w-4 h-4 {{ request()->routeIs('admin.projects.*') ? 'text-white' : 'text-blue-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-                        <span>Portofolio Proyek</span>
+                    <a href="{{ route('admin.invoices.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.invoices.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.invoices.*') ? 'text-white' : 'text-emerald-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <span>Faktur & Invoice Klien</span>
                     </a>
-                    <a href="{{ route('admin.products.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.products.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
-                        <svg class="w-4 h-4 {{ request()->routeIs('admin.products.*') ? 'text-white' : 'text-amber-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-                        <span>Produk Digital & Store</span>
-                    </a>
-                    <a href="{{ route('admin.trainings.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.trainings.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
-                        <svg class="w-4 h-4 {{ request()->routeIs('admin.trainings.*') ? 'text-white' : 'text-purple-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-                        <span>Modul Pelatihan IT</span>
-                    </a>
-                    <a href="{{ route('admin.galleries.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.galleries.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
-                        <svg class="w-4 h-4 {{ request()->routeIs('admin.galleries.*') ? 'text-white' : 'text-emerald-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        <span>Galeri Dokumentasi</span>
-                    </a>
-                    <a href="{{ route('admin.posts.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.posts.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
-                        <svg class="w-4 h-4 {{ request()->routeIs('admin.posts.*') ? 'text-white' : 'text-cyan-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
-                        <span>Artikel & Berita</span>
-                    </a>
-                    <a href="{{ route('admin.categories.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.categories.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
-                        <svg class="w-4 h-4 {{ request()->routeIs('admin.categories.*') ? 'text-white' : 'text-slate-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
-                        <span>Kategori Konten</span>
-                    </a>
-                </div>
-
-                <!-- Group 3: Interaksi & Penagihan -->
-                <div class="space-y-1">
-                    <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 px-3 pb-1">
-                        Pesan & Penagihan
-                    </div>
                     <a href="{{ route('admin.inquiries.index') }}" 
-                       class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.inquiries.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                       class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.inquiries.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
                         <span class="flex items-center gap-3">
                             <svg class="w-4 h-4 {{ request()->routeIs('admin.inquiries.*') ? 'text-white' : 'text-rose-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            <span>Pesan Masuk</span>
+                            <span>Pesan Masuk Klien</span>
                         </span>
                         @php $unread = \App\Models\Inquiry::where('is_read', false)->count(); @endphp
                         @if($unread > 0)
@@ -174,25 +148,62 @@
                             </span>
                         @endif
                     </a>
-                    <a href="{{ route('admin.invoices.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.invoices.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
-                        <svg class="w-4 h-4 {{ request()->routeIs('admin.invoices.*') ? 'text-white' : 'text-emerald-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                        <span>Faktur & Invoice Klien</span>
+                </div>
+
+                <!-- Group 3: Karya, Produk & Edukasi -->
+                <div class="space-y-1">
+                    <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 px-3 pb-1">
+                        Karya & Layanan
+                    </div>
+                    <a href="{{ route('admin.projects.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.projects.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.projects.*') ? 'text-white' : 'text-blue-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                        <span>Portofolio Proyek</span>
+                    </a>
+                    <a href="{{ route('admin.products.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.products.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.products.*') ? 'text-white' : 'text-amber-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                        <span>Produk Digital & Store</span>
+                    </a>
+                    <a href="{{ route('admin.trainings.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.trainings.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.trainings.*') ? 'text-white' : 'text-purple-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                        <span>Modul Pelatihan IT</span>
+                    </a>
+                    <a href="{{ route('admin.galleries.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.galleries.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.galleries.*') ? 'text-white' : 'text-emerald-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <span>Galeri Dokumentasi</span>
+                    </a>
+                    <a href="{{ route('admin.posts.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.posts.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.posts.*') ? 'text-white' : 'text-cyan-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                        <span>Artikel & Berita</span>
+                    </a>
+                    <a href="{{ route('admin.categories.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.categories.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.categories.*') ? 'text-white' : 'text-slate-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+                        <span>Kategori Konten</span>
                     </a>
                 </div>
 
-                <!-- Group 4: Pengaturan Akun & Akses -->
+                <!-- Group 4: Pengaturan & Akun -->
                 <div class="space-y-1">
                     <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 px-3 pb-1">
-                        Akun & Akses
+                        Sistem & Akun
                     </div>
+                    <a href="{{ route('admin.settings.index') }}" 
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.settings.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.settings.*') ? 'text-white' : 'text-slate-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                        <span>Tema & Pengaturan Web</span>
+                    </a>
                     <a href="{{ route('admin.profile.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.profile.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.profile.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
                         <svg class="w-4 h-4 {{ request()->routeIs('admin.profile.*') ? 'text-white' : 'text-cyan-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                         <span>Profil Akun Saya</span>
                     </a>
                     <a href="{{ route('admin.users.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.users.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.users.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg font-bold' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
                         <svg class="w-4 h-4 {{ request()->routeIs('admin.users.*') ? 'text-white' : 'text-blue-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
                         <span>Manajemen Semua User</span>
                     </a>
