@@ -375,6 +375,55 @@
             </div>
         </div>
 
+        <!-- SECTION 5: PENGATURAN COUNTER PENGUNJUNG (BRANDING) -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
+                <div>
+                    <h2 class="text-base font-extrabold text-[#071330] flex items-center gap-2">
+                        <span class="text-orange-500 font-black">👥</span>
+                        <span>Pengaturan Counter Pengunjung & Branding Publik</span>
+                    </h2>
+                    <p class="text-xs text-slate-400 font-medium">Kustomisasi baseline angka awal widget counter pengunjung yang tampil di footer web publik</p>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-orange-50 text-[#fe6000] font-bold text-[10px] border border-orange-200">
+                    Live Counter
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-5 rounded-2xl bg-orange-50/50 border border-orange-100 space-y-3">
+                    <label class="block text-xs font-bold text-[#071330] uppercase tracking-wider">
+                        Offset Baseline Pengunjung (Angka Awal) *
+                    </label>
+                    <div class="relative">
+                        <input type="number" name="visitor_offset" value="{{ $settings['visitor_offset']->value ?? '153563' }}" min="0" step="1" required class="w-full px-4 py-3 rounded-xl border border-orange-200 text-lg font-mono font-black text-orange-600 focus:ring-2 focus:ring-[#fe6000] focus:outline-none bg-white shadow-xs" />
+                    </div>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-medium">
+                        Setiap kunjungan publik baru (meskipun dari IP yang sama) akan langsung menambahkan counter ini ke atas secara otomatis demi kebutuhan branding & kredibilitas.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-900 text-white flex flex-col justify-between space-y-3">
+                    <div>
+                        <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 block">Pratinjau Tampilan Footer Publik</span>
+                        <div class="mt-2 flex items-center gap-2">
+                            <span class="text-orange-500 font-black text-lg">Pengunjung</span>
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-orange-950 text-orange-400 border border-orange-600/40 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-ping"></span> Live
+                            </span>
+                        </div>
+                        <div class="text-3xl font-black font-mono tracking-tight text-white mt-1">
+                            {{ number_format((\App\Models\VisitorLog::getDisplayVisitorCount()), 0, ',', '.') }}
+                        </div>
+                    </div>
+                    <div class="text-[11px] text-slate-400 flex items-center gap-2 border-t border-white/10 pt-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>{{ \App\Models\VisitorLog::getRealOnlineCount() }} Pengunjung Aktif Saat Ini (Real Online)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Submit Button Bottom -->
         <div class="flex justify-end">
             <button type="submit" class="px-8 py-4 rounded-xl bg-[#3E5CE7] hover:bg-blue-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-blue-600/30 transition-all flex items-center gap-2">

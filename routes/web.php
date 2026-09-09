@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAnalyticsController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminInquiryController;
@@ -74,6 +75,10 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.log
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     
+    // Comprehensive Visitor Analytics & Reader Trends (Branding & Real-Time)
+    Route::get('/analytics', [AdminAnalyticsController::class, 'index'])->name('analytics.index');
+    Route::post('/analytics/clean-logs', [AdminAnalyticsController::class, 'cleanOldLogs'])->name('analytics.clean-logs');
+
     // Website Settings & Theme Customizer (Color Picker, Hero, Bio, Contact)
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');

@@ -630,6 +630,103 @@
 
             </div>
 
+            <!-- Official Visitor Counter Badge & Live Online Status (Sesuai Desain Gambar 1 & Permintaan User) -->
+            <div class="mt-10 pt-8 border-t border-slate-200/60 dark:border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Branding Social Proof Text -->
+                <div class="space-y-1.5 text-center md:text-left max-w-xl">
+                    <div class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-xs font-black uppercase tracking-widest text-[#3E5CE7] dark:text-blue-400 flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            Trafik Website Terverifikasi
+                        </span>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                            Aktif & Terbuka
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
+                        Kepercayaan klien dan mitra enterprise adalah komitmen utama kami. Angka pengunjung dihitung secara dinamis dan real-time untuk transparansi layanan digital.
+                    </p>
+                </div>
+
+                <!-- Dark Card Counter (Sesuai Referensi Gambar 1 & Permintaan User) -->
+                <div x-data="{
+                        target: {{ $visitorTotalCount ?? 153563 }},
+                        current: Math.max(0, {{ ($visitorTotalCount ?? 153563) - 200 }}),
+                        animated: false,
+                        startCount() {
+                            if (this.animated) return;
+                            this.animated = true;
+                            const duration = 1800;
+                            const start = this.current;
+                            const end = this.target;
+                            const startTime = performance.now();
+                            const animate = (now) => {
+                                const elapsed = now - startTime;
+                                const progress = Math.min(elapsed / duration, 1);
+                                // Ease out quad
+                                const ease = 1 - (1 - progress) * (1 - progress);
+                                this.current = Math.floor(start + (end - start) * ease);
+                                if (progress < 1) {
+                                    requestAnimationFrame(animate);
+                                } else {
+                                    this.current = end;
+                                }
+                            };
+                            requestAnimationFrame(animate);
+                        },
+                        get formatted() {
+                            return new Intl.NumberFormat('id-ID').format(this.current);
+                        }
+                     }"
+                     x-init="
+                        const obs = new IntersectionObserver((entries) => {
+                            if (entries[0].isIntersecting) {
+                                startCount();
+                                obs.disconnect();
+                            }
+                        }, { threshold: 0.2 });
+                        obs.observe($el);
+                     "
+                     class="w-full sm:w-auto min-w-[280px] p-6 rounded-3xl bg-[#090e1a] border border-orange-500/30 shadow-2xl shadow-orange-950/20 relative overflow-hidden group hover:border-orange-500/60 transition-all">
+                    
+                    <!-- Glow effect -->
+                    <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-[#fe6000]/15 rounded-full blur-2xl pointer-events-none group-hover:bg-[#fe6000]/25 transition-all"></div>
+
+                    <!-- Row 1: Pengunjung + Live Badge (Sesuai Gambar 1) -->
+                    <div class="flex items-center justify-between gap-4">
+                        <span class="text-xl font-black text-[#fe6000] tracking-tight">
+                            Pengunjung
+                        </span>
+                        
+                        <!-- Capsule Live Badge -->
+                        <div class="px-3 py-1 rounded-full text-xs font-bold bg-[#331805]/80 text-[#fe6000] border border-[#fe6000]/40 flex items-center gap-1.5 shadow-xs">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#fe6000]"></span>
+                            </span>
+                            <span class="text-white font-bold text-[11px] tracking-wide">Live</span>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Large Bold White Counter Number with Count-Up Animation (Sesuai Gambar 1) -->
+                    <div class="text-4xl md:text-5xl font-black text-white tracking-tight font-mono mt-3 select-all"
+                         x-text="formatted">
+                        {{ $visitorFormattedCount ?? '153.563' }}
+                    </div>
+
+                    <!-- Row 3: Status Pengunjung Online Real (Sesuai Permintaan User) -->
+                    <div class="mt-3.5 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-medium text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span class="text-slate-300">
+                                <strong class="text-emerald-400 font-bold font-mono">{{ $visitorOnlineCount ?? 1 }}</strong> Pengunjung Online
+                            </span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider font-mono">Real-Time</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Gradient Divider -->
             <div class="h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent my-6"></div>
 

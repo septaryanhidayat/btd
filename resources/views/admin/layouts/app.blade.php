@@ -102,9 +102,19 @@
                         <svg class="w-4 h-4 {{ request()->routeIs('admin.dashboard') ? 'text-white' : 'text-blue-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
                         <span>Dashboard Utama</span>
                     </a>
+                    <a href="{{ route('admin.analytics.index') }}" 
+                       class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.analytics.*') ? 'bg-gradient-to-r from-[#fe6000] to-[#d44f00] text-white shadow-lg shadow-orange-950/30' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 {{ request()->routeIs('admin.analytics.*') ? 'text-white' : 'text-orange-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                            <span>Analitik Pengunjung</span>
+                        </div>
+                        <span class="px-1.5 py-0.5 rounded-full text-[9px] font-extrabold bg-orange-500/20 text-orange-300 border border-orange-500/30 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-orange-400 animate-ping"></span> Live
+                        </span>
+                    </a>
                     <a href="{{ route('admin.settings.index') }}" 
-                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.settings.*') ? 'bg-gradient-to-r from-[#fe6000] to-[#d44f00] text-white shadow-lg shadow-orange-950/30' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
-                        <svg class="w-4 h-4 {{ request()->routeIs('admin.settings.*') ? 'text-white' : 'text-orange-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                       class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group {{ request()->routeIs('admin.settings.*') ? 'bg-gradient-to-r from-[#3E5CE7] to-[#2B44BA] text-white shadow-lg' : 'text-slate-300 hover:bg-white/[0.06] hover:text-white' }}">
+                        <svg class="w-4 h-4 {{ request()->routeIs('admin.settings.*') ? 'text-white' : 'text-slate-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
                         <span>Tema & Pengaturan Web</span>
                     </a>
                 </div>

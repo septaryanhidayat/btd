@@ -9,3 +9,6 @@ deployment:
     - /bin/cp -f .env $DEPLOYPATH/.env
     - /bin/mkdir -p $DEPLOYPATH/storage/framework/sessions $DEPLOYPATH/storage/framework/views $DEPLOYPATH/storage/framework/cache $DEPLOYPATH/storage/logs $DEPLOYPATH/bootstrap/cache
     - /bin/chmod -R 775 $DEPLOYPATH/storage $DEPLOYPATH/bootstrap/cache
+    - php $DEPLOYPATH/artisan migrate --force || /usr/local/bin/php $DEPLOYPATH/artisan migrate --force || true
+    - php $DEPLOYPATH/artisan optimize:clear || /usr/local/bin/php $DEPLOYPATH/artisan optimize:clear || true
+
