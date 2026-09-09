@@ -630,127 +630,85 @@
 
             </div>
 
-            <!-- Official Visitor Counter Badge & Live Online Status (100% Solid, High Contrast & Perfectly Symmetric) -->
-            <div class="mt-10 pt-8 border-t border-slate-200/80 dark:border-slate-800">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 items-stretch max-w-6xl mx-auto">
-                    
-                    <!-- Left Card: Social Proof & Verifikasi Trafik (Solid & Symmetrical) -->
-                    <div style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 24px; padding: 26px;"
-                         class="flex flex-col justify-between space-y-4 shadow-sm">
-                        <div class="space-y-2.5">
-                            <div class="flex items-center gap-2">
-                                <span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-[#3E5CE7] bg-blue-100/70 border border-blue-200">
-                                    Statistik Resmi
-                                </span>
-                                <span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-emerald-700 bg-emerald-100/70 border border-emerald-200 flex items-center gap-1">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Terverifikasi
-                                </span>
-                            </div>
-                            <h3 class="text-base sm:text-lg font-black text-slate-900 tracking-tight">
-                                Transparansi Trafik & Akuntabilitas Digital
-                            </h3>
-                            <p class="text-xs text-slate-600 font-medium leading-relaxed">
-                                Kepercayaan klien dan mitra enterprise adalah komitmen utama kami. Angka tayangan dihitung secara dinamis demi kredibilitas layanan teknologi CV. Beranda Teknologi Digital.
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-200/80 text-[11px] font-bold text-slate-500">
-                            <span class="flex items-center gap-1.5">
-                                <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                                <span>Anti-Bot Filtered</span>
-                            </span>
-                            <span class="text-slate-300">&bull;</span>
-                            <span class="flex items-center gap-1.5">
-                                <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                                <span>SSL Encrypted</span>
-                            </span>
-                            <span class="text-slate-300">&bull;</span>
-                            <span class="flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                                <span>Real-Time Engine</span>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Right Card: Solid Dark Visitor Counter (Sesuai Referensi Gambar 1: 100% Solid Dark, Anti-Kaca, Jelas & Kontras Tinggi) -->
-                    <div x-data="{
-                            target: {{ $visitorTotalCount ?? 153563 }},
-                            current: Math.max(0, {{ ($visitorTotalCount ?? 153563) - 200 }}),
-                            animated: false,
-                            startCount() {
-                                if (this.animated) return;
-                                this.animated = true;
-                                const duration = 1800;
-                                const start = this.current;
-                                const end = this.target;
-                                const startTime = performance.now();
-                                const animate = (now) => {
-                                    const elapsed = now - startTime;
-                                    const progress = Math.min(elapsed / duration, 1);
-                                    const ease = 1 - (1 - progress) * (1 - progress);
-                                    this.current = Math.floor(start + (end - start) * ease);
-                                    if (progress < 1) {
-                                        requestAnimationFrame(animate);
-                                    } else {
-                                        this.current = end;
-                                    }
-                                };
-                                requestAnimationFrame(animate);
-                            },
-                            get formatted() {
-                                return new Intl.NumberFormat('id-ID').format(this.current);
-                            }
-                         }"
-                         x-init="
-                            const obs = new IntersectionObserver((entries) => {
-                                if (entries[0].isIntersecting) {
-                                    startCount();
-                                    obs.disconnect();
+            <!-- Visitor Counter Badge (Simple, Rapi & Menyatu ke Footer Sesuai Referensi Gambar 1) -->
+            <div class="mt-8 pt-6 border-t border-slate-200/70 dark:border-slate-800/80 flex justify-center">
+                <div x-data="{
+                        target: {{ $visitorTotalCount ?? 153563 }},
+                        current: Math.max(0, {{ ($visitorTotalCount ?? 153563) - 200 }}),
+                        animated: false,
+                        startCount() {
+                            if (this.animated) return;
+                            this.animated = true;
+                            const duration = 1800;
+                            const start = this.current;
+                            const end = this.target;
+                            const startTime = performance.now();
+                            const animate = (now) => {
+                                const elapsed = now - startTime;
+                                const progress = Math.min(elapsed / duration, 1);
+                                const ease = 1 - (1 - progress) * (1 - progress);
+                                this.current = Math.floor(start + (end - start) * ease);
+                                if (progress < 1) {
+                                    requestAnimationFrame(animate);
+                                } else {
+                                    this.current = end;
                                 }
-                            }, { threshold: 0.1 });
-                            obs.observe($el);
-                         "
-                         style="background-color: #070b14 !important; background: #070b14 !important; border: 2px solid #fe6000 !important; border-radius: 24px; padding: 26px; color: #ffffff !important; box-shadow: 0 12px 35px -5px rgba(254, 96, 0, 0.25) !important;"
-                         class="flex flex-col justify-between relative overflow-hidden group">
+                            };
+                            requestAnimationFrame(animate);
+                        },
+                        get formatted() {
+                            return new Intl.NumberFormat('id-ID').format(this.current);
+                        }
+                     }"
+                     x-init="
+                        const obs = new IntersectionObserver((entries) => {
+                            if (entries[0].isIntersecting) {
+                                startCount();
+                                obs.disconnect();
+                            }
+                        }, { threshold: 0.1 });
+                        obs.observe($el);
+                     "
+                     style="background-color: #070b14 !important; background: #070b14 !important; border: 1.5px solid #fe6000 !important; border-radius: 20px; padding: 18px 24px; color: #ffffff !important; box-shadow: 0 10px 30px -5px rgba(254, 96, 0, 0.25) !important;"
+                     class="w-full max-w-[280px] sm:max-w-[300px] relative overflow-hidden group">
+                    
+                    <!-- Row 1: Pengunjung (Orange) + Live Capsule Badge (Sesuai Gambar 1) -->
+                    <div class="flex items-center justify-between gap-3">
+                        <span style="color: #fe6000 !important; font-size: 19px; font-weight: 900; letter-spacing: -0.02em;">
+                            Pengunjung
+                        </span>
                         
-                        <!-- Top Row: Pengunjung (Orange) + Live Capsule Badge (Sesuai Gambar 1) -->
-                        <div class="flex items-center justify-between gap-4">
-                            <span style="color: #fe6000 !important; font-size: 22px; font-weight: 900; letter-spacing: -0.02em;">
-                                Pengunjung
+                        <!-- Capsule Live Badge with Glow -->
+                        <div style="background-color: rgba(254, 96, 0, 0.15) !important; border: 1.5px solid #fe6000 !important; color: #ffffff !important; padding: 3px 12px; border-radius: 9999px;"
+                             class="flex items-center gap-2 shadow-xs">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#fe6000]"></span>
                             </span>
-                            
-                            <!-- Capsule Live Badge with Glow -->
-                            <div style="background-color: rgba(254, 96, 0, 0.15) !important; border: 1.5px solid #fe6000 !important; color: #ffffff !important; padding: 4px 14px; border-radius: 9999px;"
-                                 class="flex items-center gap-2 shadow-xs">
-                                <span class="relative flex h-2.5 w-2.5">
-                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#fe6000]"></span>
-                                </span>
-                                <span style="color: #ffffff !important; font-weight: 800; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase;">Live</span>
-                            </div>
-                        </div>
-
-                        <!-- Middle Row: Giant Crisp Bold White Number with Count-Up (Sesuai Gambar 1) -->
-                        <div style="color: #ffffff !important; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important; font-size: clamp(38px, 5vw, 48px); font-weight: 900; line-height: 1.1; margin-top: 10px; margin-bottom: 12px;"
-                             class="tracking-tight select-all drop-shadow-md"
-                             x-text="formatted">
-                            {{ $visitorFormattedCount ?? '153.563' }}
-                        </div>
-
-                        <!-- Bottom Row: Real-Time Online Active Users (Sesuai Permintaan User) -->
-                        <div style="border-top: 1px solid rgba(255, 255, 255, 0.15) !important; padding-top: 12px;"
-                             class="flex items-center justify-between text-xs">
-                            <div class="flex items-center gap-2">
-                                <span style="background-color: #10b981 !important; width: 8px; height: 8px; border-radius: 9999px;" class="animate-pulse shrink-0"></span>
-                                <span style="color: #e2e8f0 !important; font-size: 12px; font-weight: 600;">
-                                    <strong style="color: #34d399 !important; font-weight: 900; font-family: monospace; font-size: 14px;">{{ $visitorOnlineCount ?? 1 }}</strong> Pengunjung Online
-                                </span>
-                            </div>
-                            <span style="color: #94a3b8 !important; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; font-family: monospace;">
-                                Real-Time
-                            </span>
+                            <span style="color: #ffffff !important; font-weight: 800; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase;">Live</span>
                         </div>
                     </div>
 
+                    <!-- Row 2: Giant Crisp Bold White Number with Count-Up (Sesuai Gambar 1) -->
+                    <div style="color: #ffffff !important; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important; font-size: 40px; font-weight: 900; line-height: 1.1; margin-top: 10px; margin-bottom: 12px;"
+                         class="tracking-tight select-all drop-shadow-md"
+                         x-text="formatted">
+                        {{ $visitorFormattedCount ?? '153.563' }}
+                    </div>
+
+                    <!-- Row 3: Status Pengunjung Online Real (Sesuai Permintaan User) -->
+                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.15) !important; padding-top: 10px;"
+                         class="flex items-center justify-between text-xs">
+                        <div class="flex items-center gap-2">
+                            <span style="background-color: #10b981 !important; width: 8px; height: 8px; border-radius: 9999px;" class="animate-pulse shrink-0"></span>
+                            <span style="color: #e2e8f0 !important; font-size: 12px; font-weight: 600;">
+                                <strong style="color: #34d399 !important; font-weight: 900; font-family: monospace; font-size: 13px;">{{ $visitorOnlineCount ?? 1 }}</strong> Pengunjung Online
+                            </span>
+                        </div>
+                        <span style="color: #94a3b8 !important; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; font-family: monospace;">
+                            Real-Time
+                        </span>
+                    </div>
                 </div>
             </div>
 
