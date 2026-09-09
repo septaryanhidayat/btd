@@ -484,102 +484,66 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
-            <!-- Main Content Grid: 4 Balanced Columns with Clean Horizontal & Vertical Alignment -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-12 items-start text-center md:text-left">
+            <!-- Main Content Grid: 1 Baris Horizontal Simetris Terbagi Menjadi 4 Bagian (Brand, Layanan, Kontak, Visitor Live) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 pb-6 items-start text-center md:text-left">
                 
-                <!-- Column 1: Brand & Legalitas (lg:col-span-4) -->
+                <!-- Bagian 1: Brand & Profil (lg:col-span-4) -->
                 <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
                     <a href="{{ route('home') }}" class="inline-block py-1 group" aria-label="CV. Beranda Teknologi Digital">
                         <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="393" height="164" loading="lazy" decoding="async" class="logo-light-mode block h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" style="height: 40px; width: auto; aspect-ratio: 393 / 164;" />
                         <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" loading="lazy" decoding="async" class="logo-dark-mode hidden h-10 sm:h-11 w-auto max-w-[180px] sm:max-w-[210px] object-contain mx-auto md:mx-0 hover:scale-105 transition-transform" style="height: 40px; width: auto; aspect-ratio: 394 / 164;" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed max-w-sm font-medium" style="color: var(--text-muted);">
-                        <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Training.
+                        <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Solution.
                     </p>
-                    
-                    <!-- Legalitas Badan Usaha Compact Pill Card -->
-                    <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-[11px] space-y-2 w-full max-w-sm text-left shadow-2xs">
-                        <div class="font-bold text-[#07153f] dark:text-white flex items-center justify-between text-xs">
-                            <span class="flex items-center gap-1.5">
-                                <span class="w-5 h-5 rounded-md bg-blue-100 dark:bg-blue-950 text-[#3E5CE7] dark:text-blue-400 flex items-center justify-center text-xs shrink-0">🏛️</span>
-                                <span>Badan Usaha Resmi (CV)</span>
-                            </span>
-                            <span class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-extrabold text-[10px] bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800">
-                                ✓ LKPP RI
-                            </span>
-                        </div>
-                        <div class="grid grid-cols-1 gap-0.5 text-slate-600 dark:text-slate-300 text-[10px] pl-6.5">
-                            <div><strong class="text-slate-700 dark:text-slate-200">SK Kemenkumham:</strong> AHU-0003819-AH.01.14 Th 2022</div>
-                            <div><strong class="text-slate-700 dark:text-slate-200">NPWP:</strong> 63.100.018.9-312.000</div>
-                        </div>
-                    </div>
 
-                    <!-- Social Media Links Directly Under Brand Card -->
-                    <div class="pt-1 space-y-2 w-full max-w-sm">
-                        <div class="flex items-center justify-center md:justify-start gap-2.5">
-                            <!-- Instagram -->
-                            <a href="https://www.instagram.com/bteknologi_digital" target="_blank" rel="noopener noreferrer" aria-label="Instagram @bteknologi_digital" title="Instagram @bteknologi_digital"
-                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-pink-500/25">
-                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                            </a>
-                            <!-- LinkedIn -->
-                            <a href="https://linkedin.com/company/berandadigital" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Beranda Digital" title="LinkedIn Beranda Digital"
-                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#0A66C2] border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-blue-500/25">
-                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                            </a>
-                            <!-- GitHub -->
-                            <a href="https://github.com/septaryanhidayat/btd" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" title="GitHub Repository"
-                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-slate-900 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-slate-500/25">
-                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                            </a>
-                            <!-- YouTube -->
-                            <a href="https://www.youtube.com/@berandadigital" target="_blank" rel="noopener noreferrer" aria-label="YouTube Beranda Digital" title="YouTube Beranda Digital"
-                               class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-red-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-red-500/25">
-                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                            </a>
-                        </div>
+                    <!-- Social Media Links Directly Under Brand Info -->
+                    <div class="pt-1 flex items-center justify-center md:justify-start gap-2.5">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/bteknologi_digital" target="_blank" rel="noopener noreferrer" aria-label="Instagram @bteknologi_digital" title="Instagram @bteknologi_digital"
+                           class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-pink-500/25">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/company/berandadigital" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Beranda Digital" title="LinkedIn Beranda Digital"
+                           class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#0A66C2] border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-blue-500/25">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <!-- GitHub -->
+                        <a href="https://github.com/septaryanhidayat/btd" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" title="GitHub Repository"
+                           class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-slate-900 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-slate-500/25">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@berandadigital" target="_blank" rel="noopener noreferrer" aria-label="YouTube Beranda Digital" title="YouTube Beranda Digital"
+                           class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-red-600 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-red-500/25">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Column 2: Layanan Utama (lg:col-span-2) -->
+                <!-- Bagian 2: Layanan (lg:col-span-2) -->
                 <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
                     <p class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
                         <span class="w-4 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
                         Layanan
                     </p>
                     <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Web App Enterprise</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Mobile Apps (Flutter)</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Custom AI Chatbot</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portal Desa & Sekolah</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Server & Cloud Setup</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Web App Enterprise</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Mobile Apps (Flutter)</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Custom AI Chatbot</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portal Desa & Sekolah</a></li>
+                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Server & Cloud Setup</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Navigasi Cepat (lg:col-span-2) -->
-                <div class="lg:col-span-2 space-y-4 flex flex-col items-center md:items-start">
-                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-[#3E5CE7] dark:text-blue-400 flex items-center gap-2">
-                        <span class="w-4 h-0.5 bg-[#3E5CE7] dark:bg-blue-400 rounded-full hidden md:block"></span>
-                        Navigasi
-                    </p>
-                    <ul class="space-y-2.5 text-xs font-semibold" style="color: var(--text-muted);">
-                        <li><a href="{{ route('home') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Beranda</a></li>
-                        <li><a href="{{ route('services') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Layanan IT</a></li>
-                        <li><a href="{{ route('projects.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Portofolio</a></li>
-                        <li><a href="{{ route('products.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Produk Digital</a></li>
-                        <li><a href="{{ route('trainer.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Trainer & Event</a></li>
-                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#3E5CE7] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5 group"><span class="text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform">›</span> Blog & Berita</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Kontak & Mulai Proyek (lg:col-span-4) -->
-                <div class="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start">
-                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-orange-700 dark:text-orange-400 flex items-center gap-2">
+                <!-- Bagian 3: Kontak & Kantor (lg:col-span-3) -->
+                <div class="lg:col-span-3 space-y-4 flex flex-col items-center md:items-start w-full">
+                    <p class="font-extrabold text-xs tracking-wider uppercase mono text-orange-600 dark:text-orange-400 flex items-center gap-2">
                         <span class="w-4 h-0.5 bg-[#fe6000] rounded-full hidden md:block"></span>
                         Kontak & Kantor
                     </p>
                     
-                    <!-- Compact Contact List with Clean SVGs -->
                     <div class="space-y-2 text-xs font-medium w-full max-w-sm" style="color: var(--text-muted);">
                         <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer" 
                            class="flex items-center justify-center md:justify-start gap-2.5 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 border border-slate-200/60 dark:border-slate-700/60 hover:border-emerald-300 dark:hover:border-emerald-800 transition-all group">
@@ -587,7 +551,7 @@
                                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.07c-.24.68-1.2 1.25-1.65 1.33-.45.08-1.03.11-3.32-.84-2.75-1.14-4.52-3.95-4.66-4.14-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4.06.61.57.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.17 1.37 2.48 1.52.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.16.28.1 1.77.83 2.07.98.3.15.5.22.58.35.07.13.07.76-.17 1.44z"/></svg>
                             </span>
                             <div class="text-left leading-tight">
-                                <span class="text-[9px] uppercase tracking-wider text-slate-600 dark:text-slate-400 block font-bold">WhatsApp Resmi</span>
+                                <span class="text-[9px] uppercase tracking-wider text-slate-500 dark:text-slate-400 block font-bold">WhatsApp Resmi</span>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 mono text-xs">0896 9524 9089</span>
                             </div>
                         </a>
@@ -598,7 +562,7 @@
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </span>
                             <div class="text-left leading-tight">
-                                <span class="text-[9px] uppercase tracking-wider text-slate-600 dark:text-slate-400 block font-bold">Email Bisnis</span>
+                                <span class="text-[9px] uppercase tracking-wider text-slate-500 dark:text-slate-400 block font-bold">Email Bisnis</span>
                                 <span class="font-bold text-slate-800 dark:text-slate-200 text-xs">{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}</span>
                             </div>
                         </a>
@@ -613,103 +577,98 @@
                         </div>
                     </div>
 
-                    <!-- Dual Action CTA Buttons -->
-                    <div class="grid grid-cols-2 gap-2 w-full max-w-sm pt-1">
+                    <!-- Quick Action Button -->
+                    <div class="w-full max-w-sm pt-0.5">
                         <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer"
                            style="background-color: #fe6000 !important; color: #ffffff !important;"
-                           class="text-center px-3 py-2.5 rounded-xl font-bold text-xs shadow-md shadow-orange-500/20 hover:shadow-orange-500/35 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1.5">
-                            <span>💬 Chat WA</span>
-                        </a>
-                        <a href="{{ route('contact') }}" 
-                           class="text-center px-3 py-2.5 rounded-xl surface border border-slate-200 dark:border-slate-700 hover:border-[#3E5CE7] dark:hover:border-blue-400 text-xs font-bold transition-all flex items-center justify-center gap-1.5 hover:scale-[1.02] active:scale-95 shadow-2xs" 
-                           style="color: var(--text);">
-                            <span>🧮 Hitung Biaya</span>
+                           class="w-full text-center px-3 py-2 rounded-xl font-bold text-xs shadow-md shadow-orange-500/20 hover:shadow-orange-500/35 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1.5">
+                            <span>💬 Chat WhatsApp Kami</span>
                         </a>
                     </div>
                 </div>
 
-            </div>
-
-            <!-- Visitor Counter Badge (Simple, Rapi & Menyatu ke Footer Sesuai Referensi Gambar 1) -->
-            <div class="mt-8 pt-6 border-t border-slate-200/70 dark:border-slate-800/80 flex justify-center">
-                <div x-data="{
-                        target: {{ $visitorTotalCount ?? 153563 }},
-                        current: Math.max(0, {{ ($visitorTotalCount ?? 153563) - 200 }}),
-                        animated: false,
-                        startCount() {
-                            if (this.animated) return;
-                            this.animated = true;
-                            const duration = 1800;
-                            const start = this.current;
-                            const end = this.target;
-                            const startTime = performance.now();
-                            const animate = (now) => {
-                                const elapsed = now - startTime;
-                                const progress = Math.min(elapsed / duration, 1);
-                                const ease = 1 - (1 - progress) * (1 - progress);
-                                this.current = Math.floor(start + (end - start) * ease);
-                                if (progress < 1) {
-                                    requestAnimationFrame(animate);
-                                } else {
-                                    this.current = end;
-                                }
-                            };
-                            requestAnimationFrame(animate);
-                        },
-                        get formatted() {
-                            return new Intl.NumberFormat('id-ID').format(this.current);
-                        }
-                     }"
-                     x-init="
-                        const obs = new IntersectionObserver((entries) => {
-                            if (entries[0].isIntersecting) {
-                                startCount();
-                                obs.disconnect();
+                <!-- Bagian 4: Pengunjung Live (lg:col-span-3) -->
+                <div class="lg:col-span-3 flex flex-col items-center md:items-start w-full">
+                    <div x-data="{
+                            target: {{ $visitorTotalCount ?? 153563 }},
+                            current: Math.max(0, {{ ($visitorTotalCount ?? 153563) - 200 }}),
+                            animated: false,
+                            startCount() {
+                                if (this.animated) return;
+                                this.animated = true;
+                                const duration = 1800;
+                                const start = this.current;
+                                const end = this.target;
+                                const startTime = performance.now();
+                                const animate = (now) => {
+                                    const elapsed = now - startTime;
+                                    const progress = Math.min(elapsed / duration, 1);
+                                    const ease = 1 - (1 - progress) * (1 - progress);
+                                    this.current = Math.floor(start + (end - start) * ease);
+                                    if (progress < 1) {
+                                        requestAnimationFrame(animate);
+                                    } else {
+                                        this.current = end;
+                                    }
+                                };
+                                requestAnimationFrame(animate);
+                            },
+                            get formatted() {
+                                return new Intl.NumberFormat('id-ID').format(this.current);
                             }
-                        }, { threshold: 0.1 });
-                        obs.observe($el);
-                     "
-                     style="background-color: #070b14 !important; background: #070b14 !important; border: 1.5px solid #fe6000 !important; border-radius: 20px; padding: 18px 24px; color: #ffffff !important; box-shadow: 0 10px 30px -5px rgba(254, 96, 0, 0.25) !important;"
-                     class="w-full max-w-[280px] sm:max-w-[300px] relative overflow-hidden group">
-                    
-                    <!-- Row 1: Pengunjung (Orange) + Live Capsule Badge (Sesuai Gambar 1) -->
-                    <div class="flex items-center justify-between gap-3">
-                        <span style="color: #fe6000 !important; font-size: 19px; font-weight: 900; letter-spacing: -0.02em;">
-                            Pengunjung
-                        </span>
+                         }"
+                         x-init="
+                            const obs = new IntersectionObserver((entries) => {
+                                if (entries[0].isIntersecting) {
+                                    startCount();
+                                    obs.disconnect();
+                                }
+                            }, { threshold: 0.1 });
+                            obs.observe($el);
+                         "
+                         style="background-color: #070b14 !important; background: #070b14 !important; border: 1.5px solid #fe6000 !important; border-radius: 20px; padding: 18px 20px; color: #ffffff !important; box-shadow: 0 10px 30px -5px rgba(254, 96, 0, 0.25) !important;"
+                         class="w-full max-w-[280px] sm:max-w-[290px] relative overflow-hidden group">
                         
-                        <!-- Capsule Live Badge with Glow -->
-                        <div style="background-color: rgba(254, 96, 0, 0.15) !important; border: 1.5px solid #fe6000 !important; color: #ffffff !important; padding: 3px 12px; border-radius: 9999px;"
-                             class="flex items-center gap-2 shadow-xs">
-                            <span class="relative flex h-2 w-2">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#fe6000]"></span>
+                        <!-- Row 1: Pengunjung (Orange) + Live Capsule Badge (Sesuai Gambar 1) -->
+                        <div class="flex items-center justify-between gap-2">
+                            <span style="color: #fe6000 !important; font-size: 18px; font-weight: 900; letter-spacing: -0.02em;">
+                                Pengunjung
                             </span>
-                            <span style="color: #ffffff !important; font-weight: 800; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase;">Live</span>
+                            
+                            <!-- Capsule Live Badge with Glow -->
+                            <div style="background-color: rgba(254, 96, 0, 0.15) !important; border: 1.5px solid #fe6000 !important; color: #ffffff !important; padding: 2px 10px; border-radius: 9999px;"
+                                 class="flex items-center gap-1.5 shadow-xs">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-[#fe6000]"></span>
+                                </span>
+                                <span style="color: #ffffff !important; font-weight: 800; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase;">Live</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Row 2: Giant Crisp Bold White Number with Count-Up (Sesuai Gambar 1) -->
-                    <div style="color: #ffffff !important; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important; font-size: 40px; font-weight: 900; line-height: 1.1; margin-top: 10px; margin-bottom: 12px;"
-                         class="tracking-tight select-all drop-shadow-md"
-                         x-text="formatted">
-                        {{ $visitorFormattedCount ?? '153.563' }}
-                    </div>
+                        <!-- Row 2: Giant Crisp Bold White Number with Count-Up (Sesuai Gambar 1) -->
+                        <div style="color: #ffffff !important; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important; font-size: 38px; font-weight: 900; line-height: 1.1; margin-top: 10px; margin-bottom: 12px;"
+                             class="tracking-tight select-all drop-shadow-md text-left"
+                             x-text="formatted">
+                            {{ $visitorFormattedCount ?? '153.563' }}
+                        </div>
 
-                    <!-- Row 3: Status Pengunjung Online Real (Sesuai Permintaan User) -->
-                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.15) !important; padding-top: 10px;"
-                         class="flex items-center justify-between text-xs">
-                        <div class="flex items-center gap-2">
-                            <span style="background-color: #10b981 !important; width: 8px; height: 8px; border-radius: 9999px;" class="animate-pulse shrink-0"></span>
-                            <span style="color: #e2e8f0 !important; font-size: 12px; font-weight: 600;">
-                                <strong style="color: #34d399 !important; font-weight: 900; font-family: monospace; font-size: 13px;">{{ $visitorOnlineCount ?? 1 }}</strong> Pengunjung Online
+                        <!-- Row 3: Status Pengunjung Online Real (Sesuai Permintaan User) -->
+                        <div style="border-top: 1px solid rgba(255, 255, 255, 0.15) !important; padding-top: 10px;"
+                             class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span style="background-color: #10b981 !important; width: 8px; height: 8px; border-radius: 9999px;" class="animate-pulse shrink-0"></span>
+                                <span style="color: #e2e8f0 !important; font-size: 11px; font-weight: 600;">
+                                    <strong style="color: #34d399 !important; font-weight: 900; font-family: monospace; font-size: 12px;">{{ $visitorOnlineCount ?? 1 }}</strong> Online
+                                </span>
+                            </div>
+                            <span style="color: #94a3b8 !important; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; font-family: monospace;">
+                                Real-Time
                             </span>
                         </div>
-                        <span style="color: #94a3b8 !important; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; font-family: monospace;">
-                            Real-Time
-                        </span>
                     </div>
                 </div>
+
             </div>
 
             <!-- Gradient Divider -->

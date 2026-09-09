@@ -295,7 +295,7 @@
         <!-- Admin Footer -->
         <footer class="py-4 px-8 border-t border-slate-200 text-center text-xs text-slate-400 bg-white flex flex-col sm:flex-row items-center justify-between gap-2">
             <span>&copy; {{ date('Y') }} <strong>CV. Beranda Teknologi Digital</strong> &bull; All rights reserved.</span>
-            <span class="text-[11px] mono text-slate-400">Laravel v12 &bull; PHP v8.3+</span>
+            <span class="text-[11px] mono text-slate-400">Laravel v{{ app()->version() }} &bull; PHP v{{ PHP_VERSION }}</span>
         </footer>
 
     </div>
