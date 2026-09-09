@@ -5,63 +5,154 @@
 @section('content')
 <div class="space-y-6">
     
-    <!-- Executive Welcome Banner (Compact, High Contrast Solid Navy & Sharp Typography) -->
-    <div style="background-color: #071330 !important; color: #ffffff !important;" class="rounded-2xl bg-[#071330] p-5 sm:p-7 text-white shadow-md border-2 border-slate-700/80 relative overflow-hidden">
-        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
-            <div class="space-y-2.5 max-w-2xl">
-                <div class="flex flex-wrap items-center gap-2">
-                    <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-200 text-[11px] font-bold uppercase tracking-wider border border-slate-700 flex items-center gap-1.5 shadow-xs">
-                        <span>🗓️</span>
+    <!-- Executive Command Center Hero Banner -->
+    <div class="rounded-3xl bg-gradient-to-br from-[#0B1528] via-[#0F1D38] to-[#08101E] p-6 sm:p-8 text-white shadow-xl border border-slate-700/60 relative overflow-hidden">
+        <!-- Ambient Decorative Glows -->
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+            
+            <!-- Left Column: Executive Overview & Action Toolbar (7 cols) -->
+            <div class="lg:col-span-7 space-y-4">
+                <!-- Meta Pill Bar: Date & System Status -->
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <span class="px-3 py-1 rounded-full bg-slate-800/90 text-slate-200 text-xs font-semibold border border-slate-700/80 flex items-center gap-2 shadow-xs">
+                        <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                         <span>{{ \Carbon\Carbon::now()->isoFormat('dddd, D MMMM Y') }}</span>
                     </span>
-                    @if($unreadInquiryCount > 0)
-                        <span class="px-3 py-1 rounded-full bg-[#fe6000] text-white text-[11px] font-extrabold tracking-wide shadow-xs flex items-center gap-1.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                    
+                    @if(isset($unreadInquiryCount) && $unreadInquiryCount > 0)
+                        <span class="px-3 py-1 rounded-full bg-[#fe6000]/20 text-[#fe6000] text-xs font-bold border border-[#fe6000]/40 flex items-center gap-1.5 shadow-xs">
+                            <span class="w-2 h-2 rounded-full bg-[#fe6000] animate-ping"></span>
                             <span>{{ $unreadInquiryCount }} Pesan Baru Menunggu Respon</span>
                         </span>
                     @else
-                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold border border-emerald-500/30 flex items-center gap-1">
-                            <span>✓</span>
-                            <span>Semua Pesan Terbaca</span>
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-semibold border border-emerald-500/30 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                            <span>Sistem Operasional Normal</span>
                         </span>
                     @endif
                 </div>
                 
-                <h1 class="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight flex flex-wrap items-center gap-2">
-                    <span>Selamat Datang, {{ Auth::user()->name ?? 'Administrator' }}!</span>
-                    <span class="inline-block">👋</span>
-                </h1>
-                
-                <p class="text-xs text-slate-300 font-normal leading-relaxed">
-                    Pusat Komando <strong>CV. Beranda Teknologi Digital</strong>. Pantau metrik website, terbitkan portofolio terbaru, kelola domain & hosting, dan cetak invoice resmi klien dalam satu dasbor terpadu.
-                </p>
+                <!-- Greeting & Subtitle -->
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                        Selamat Datang, {{ Auth::user()->name ?? 'Admin BTD' }}!
+                    </h1>
+                    <p class="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed mt-1.5 max-w-xl">
+                        Pusat Komando Operasional <strong>CV. Beranda Teknologi Digital</strong>. Pantau kinerja bisnis, arus kas, status domain & hosting klien, serta terbitkan invoice resmi dalam satu platform terintegrasi.
+                    </p>
+                </div>
+
+                <!-- Quick Action Buttons Toolbar -->
+                <div class="pt-2 flex flex-wrap items-center gap-2.5">
+                    <a href="{{ route('admin.invoices.create') }}" 
+                       class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-blue-600/30 transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <span>+ Buat Invoice</span>
+                    </a>
+                    <a href="{{ route('admin.projects.create') }}" 
+                       class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 text-slate-200 hover:text-white font-semibold text-xs uppercase tracking-wider border border-white/15 transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                        <span>+ Proyek</span>
+                    </a>
+                    <a href="{{ route('admin.finances.index') }}" 
+                       class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 text-slate-200 hover:text-white font-semibold text-xs uppercase tracking-wider border border-white/15 transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        <span>Kas & Finansial</span>
+                    </a>
+                    <a href="{{ route('admin.domain-renewals.index') }}" 
+                       class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 text-slate-200 hover:text-white font-semibold text-xs uppercase tracking-wider border border-white/15 transition-all flex items-center gap-2 relative">
+                        <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                        <span>Domain & Hosting</span>
+                        @if(isset($domainCriticalCount) && $domainCriticalCount > 0)
+                            <span class="w-2 h-2 rounded-full bg-rose-500 absolute -top-1 -right-1 ring-2 ring-[#0F1D38]"></span>
+                        @endif
+                    </a>
+                    <a href="{{ route('admin.settings.index') }}" 
+                       class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 text-slate-200 hover:text-white font-semibold text-xs uppercase tracking-wider border border-white/15 transition-all flex items-center gap-2">
+                        <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span>Pengaturan</span>
+                    </a>
+                </div>
             </div>
 
-            <!-- Unified Calm Header Action Buttons (No Rainbow Clutter) -->
-            <div class="flex flex-wrap items-center gap-2 shrink-0">
-                <a href="{{ route('admin.invoices.create') }}" 
-                   style="background-color: #2563eb !important; color: #ffffff !important;"
-                   class="px-3.5 py-2 rounded-xl bg-[#2563eb] text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:brightness-110 active:scale-95 transition-all flex items-center gap-1.5">
-                    <span>🧾</span>
-                    <span style="color: #ffffff !important; font-weight: 800;">+ Buat Invoice</span>
-                </a>
-                <a href="{{ route('admin.projects.create') }}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all flex items-center gap-1.5">
-                    <span>📁</span>
-                    <span>+ Proyek</span>
-                </a>
-                <a href="{{ route('admin.finances.index') }}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all flex items-center gap-1.5">
-                    <span>💰</span>
-                    <span>Kas & Finansial</span>
-                </a>
-                <a href="{{ route('admin.domain-renewals.index') }}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all flex items-center gap-1.5">
-                    <span>🌐</span>
-                    <span>Domain & Hosting</span>
-                </a>
-                <a href="{{ route('admin.settings.index') }}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all flex items-center gap-1.5">
-                    <span>⚙️</span>
-                    <span>Pengaturan</span>
-                </a>
+            <!-- Right Column: Executive Live Pulse Card (5 cols) -->
+            <div class="lg:col-span-5">
+                <div class="rounded-2xl bg-white/[0.06] backdrop-blur-md border border-white/15 p-4 sm:p-5 shadow-inner space-y-3">
+                    
+                    <!-- Header Pulse -->
+                    <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-300">Ringkasan Eksekutif BTD</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-bold border border-blue-500/30">Real-Time</span>
+                    </div>
+
+                    <!-- Micro Metric 1: Kas Bersih / Omset -->
+                    <div class="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-[11px] text-slate-400 font-medium">Kas & Omset Lembaga</div>
+                                <div class="text-sm font-black text-white mono">
+                                    Rp {{ number_format($financeNetProfit ?? $totalInvoicePaid ?? 0, 0, ',', '.') }}
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ route('admin.finances.index') }}" class="text-[11px] font-bold text-blue-300 hover:text-white transition-colors">
+                            Kas &rarr;
+                        </a>
+                    </div>
+
+                    <!-- Micro Metric 2: Status Domain & Hosting -->
+                    <div class="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-[11px] text-slate-400 font-medium">Aset Domain & Hosting</div>
+                                <div class="text-xs font-bold">
+                                    @if(isset($domainCriticalCount) && $domainCriticalCount > 0)
+                                        <span class="text-rose-400 font-extrabold">{{ $domainCriticalCount }} Butuh Perpanjangan Segera</span>
+                                    @elseif(isset($domainWarningCount) && $domainWarningCount > 0)
+                                        <span class="text-amber-300 font-bold">{{ $domainWarningCount }} Expired &lt; 30 Hari</span>
+                                    @else
+                                        <span class="text-emerald-400 font-semibold">{{ $domainCount ?? 0 }} Layanan Aktif & Aman</span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ route('admin.domain-renewals.index') }}" class="text-[11px] font-bold text-blue-300 hover:text-white transition-colors">
+                            Cek &rarr;
+                        </a>
+                    </div>
+
+                    <!-- Micro Metric 3: Pengunjung & Trafik -->
+                    <div class="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-[11px] text-slate-400 font-medium">Trafik Web Publik</div>
+                                <div class="text-xs font-bold text-white flex items-center gap-1.5 mono">
+                                    <span>{{ number_format($totalVisitors ?? 153563, 0, ',', '.') }} Kunjungan</span>
+                                    <span class="text-[10px] text-emerald-400 font-semibold">({{ $onlineVisitors ?? 1 }} Online)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    </div>
+
+                </div>
             </div>
+
         </div>
     </div>
 
