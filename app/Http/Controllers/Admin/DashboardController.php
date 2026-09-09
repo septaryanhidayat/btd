@@ -94,7 +94,7 @@ class DashboardController extends Controller
                 ->count();
             
             $domainExpiringSoonList = \App\Models\DomainRenewal::orderBy('expiry_date', 'asc')
-                ->take(4)
+                ->take(6)
                 ->get();
         }
 

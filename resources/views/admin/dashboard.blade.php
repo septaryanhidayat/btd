@@ -5,8 +5,8 @@
 @section('content')
 <div class="space-y-6">
     
-    <!-- Executive Welcome Banner (Compact, Ultra-High Contrast Solid Navy & Sharp Typography) -->
-    <div style="background-color: #071330 !important; color: #ffffff !important;" class="rounded-2xl bg-[#071330] p-5 sm:p-7 text-white shadow-xl border-2 border-slate-700/80 relative overflow-hidden">
+    <!-- Executive Welcome Banner (Compact, High Contrast Solid Navy & Sharp Typography) -->
+    <div style="background-color: #071330 !important; color: #ffffff !important;" class="rounded-2xl bg-[#071330] p-5 sm:p-7 text-white shadow-md border-2 border-slate-700/80 relative overflow-hidden">
         <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
             <div class="space-y-2.5 max-w-2xl">
                 <div class="flex flex-wrap items-center gap-2">
@@ -15,7 +15,7 @@
                         <span>{{ \Carbon\Carbon::now()->isoFormat('dddd, D MMMM Y') }}</span>
                     </span>
                     @if($unreadInquiryCount > 0)
-                        <span class="px-3 py-1 rounded-full bg-[#fe6000] text-white text-[11px] font-extrabold tracking-wide shadow-md flex items-center gap-1.5">
+                        <span class="px-3 py-1 rounded-full bg-[#fe6000] text-white text-[11px] font-extrabold tracking-wide shadow-xs flex items-center gap-1.5">
                             <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
                             <span>{{ $unreadInquiryCount }} Pesan Baru Menunggu Respon</span>
                         </span>
@@ -33,235 +33,552 @@
                 </h1>
                 
                 <p class="text-xs text-slate-300 font-normal leading-relaxed">
-                    Pusat Komando <strong>CV. Beranda Teknologi Digital</strong>. Pantau metrik website, terbitkan portofolio terbaru, kelola modul pelatihan, dan cetak invoice resmi klien dalam satu dasbor terpadu.
+                    Pusat Komando <strong>CV. Beranda Teknologi Digital</strong>. Pantau metrik website, terbitkan portofolio terbaru, kelola domain & hosting, dan cetak invoice resmi klien dalam satu dasbor terpadu.
                 </p>
             </div>
 
+            <!-- Unified Calm Header Action Buttons (No Rainbow Clutter) -->
             <div class="flex flex-wrap items-center gap-2 shrink-0">
-                <a href="{{ route('admin.projects.create') }}" class="px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-blue-600/30 transition-all flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-white font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+                <a href="{{ route('admin.invoices.create') }}" 
+                   style="background-color: #2563eb !important; color: #ffffff !important;"
+                   class="px-3.5 py-2 rounded-xl bg-[#2563eb] text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:brightness-110 active:scale-95 transition-all flex items-center gap-1.5">
+                    <span>🧾</span>
+                    <span style="color: #ffffff !important; font-weight: 800;">+ Buat Invoice</span>
+                </a>
+                <a href="{{ route('admin.projects.create') }}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all flex items-center gap-1.5">
+                    <span>📁</span>
                     <span>+ Proyek</span>
                 </a>
-                <a href="{{ route('admin.invoices.create') }}" class="px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-emerald-600/30 transition-all flex items-center gap-1.5">
-                    <span>🧾</span>
-                    <span>+ Invoice</span>
-                </a>
-                <a href="{{ route('admin.finances.index') }}" class="px-3 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-teal-600/30 transition-all flex items-center gap-1.5">
+                <a href="{{ route('admin.finances.index') }}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all flex items-center gap-1.5">
                     <span>💰</span>
                     <span>Kas & Finansial</span>
                 </a>
-                <a href="{{ route('admin.domain-renewals.index') }}" class="px-3 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-cyan-600/30 transition-all flex items-center gap-1.5">
+                <a href="{{ route('admin.domain-renewals.index') }}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all flex items-center gap-1.5">
                     <span>🌐</span>
                     <span>Domain & Hosting</span>
                 </a>
-                <a href="{{ route('admin.settings.index') }}" class="px-3 py-2 rounded-xl bg-[#fe6000] hover:bg-[#e05400] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-orange-600/30 transition-all flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-                    <span>Pengaturan Web</span>
+                <a href="{{ route('admin.settings.index') }}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider border border-white/20 transition-all flex items-center gap-1.5">
+                    <span>⚙️</span>
+                    <span>Pengaturan</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Alert Banner: Expiring Domains & Hosting (< 7 Days) -->
+    <!-- Calm & Dignified Alert Banner: Expiring Domains & Hosting (< 7 Days) -->
     @if(isset($domainCriticalCount) && $domainCriticalCount > 0)
-        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-rose-600 via-rose-500 to-amber-600 text-white shadow-lg shadow-rose-900/20 border border-rose-400 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-pulse">
-            <div class="flex items-center gap-3.5">
-                <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-xl shrink-0 backdrop-blur-xs">
+        <div class="p-4 sm:p-5 rounded-2xl bg-white border-l-4 border-rose-600 border-y border-r border-slate-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-start sm:items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center text-xl shrink-0">
                     🚨
                 </div>
                 <div>
-                    <div class="flex items-center gap-2">
-                        <span class="px-2 py-0.5 rounded-md bg-white text-rose-700 text-[10px] font-black uppercase tracking-wider">Perhatian</span>
-                        <h2 class="text-sm sm:text-base font-black text-white">Ada {{ $domainCriticalCount }} Layanan Domain / Hosting Akan Kedaluwarsa Dalam < 7 Hari!</h2>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span class="px-2 py-0.5 rounded bg-rose-100 text-rose-800 text-[10px] font-extrabold uppercase tracking-wider">Perhatian Khusus</span>
+                        <h2 class="text-sm sm:text-base font-extrabold text-slate-900">
+                            Ada {{ $domainCriticalCount }} Layanan Domain / Hosting Akan Kedaluwarsa Dalam &lt; 7 Hari
+                        </h2>
                     </div>
-                    <p class="text-xs text-rose-100 mt-0.5">Segera hubungi klien terkait atau buka konsol provider sebelum layanan terhenti.</p>
+                    <p class="text-xs text-slate-600 font-medium mt-0.5">Segera hubungi klien terkait atau buka konsol provider sebelum masa aktif layanan berakhir.</p>
                 </div>
             </div>
-            <a href="{{ route('admin.domain-renewals.index', ['tab' => 'critical']) }}" class="px-4 py-2 rounded-xl bg-white text-rose-700 hover:bg-rose-50 font-black text-xs shrink-0 text-center transition-all shadow-md">
+            <a href="{{ route('admin.domain-renewals.index', ['tab' => 'critical']) }}" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shrink-0 text-center transition-all shadow-xs">
                 Kelola Domain Kritis &rarr;
             </a>
         </div>
     @endif
 
-    <!-- Stats Bento Cards: 8 Logical System KPIs (Spacious 4-Column Layout, High Contrast, No Truncation) -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <!-- Stats Bento Cards: 9 Symmetrical Core Pillars (Clean 3x3 Grid, Crisp Tabular Numbers, Zero Orphans) -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4">
         
         <!-- 1. Projects -->
-        <a href="{{ route('admin.projects.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-[#3E5CE7] hover:shadow-md transition-all group flex flex-col justify-between">
+        <a href="{{ route('admin.projects.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-[#3E5CE7] hover:shadow-sm transition-all group flex flex-col justify-between">
             <div class="flex items-center justify-between w-full mb-3">
-                <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                <div class="w-9 h-9 rounded-xl bg-blue-50 border border-blue-200/80 text-blue-600 flex items-center justify-center text-base">
+                    📁
                 </div>
-                <span class="px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 text-[10px] font-extrabold uppercase tracking-wider border border-blue-200">Portofolio</span>
+                <span class="px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 text-[10px] font-bold border border-blue-200/60 uppercase">Portofolio</span>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $projectCount }}</div>
-                <div class="text-xs font-bold text-slate-700 mt-1.5">Portofolio Selesai</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1.5">Portofolio Selesai</div>
             </div>
         </a>
 
         <!-- 2. Products -->
-        <a href="{{ route('admin.products.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-[#fe6000] hover:shadow-md transition-all group flex flex-col justify-between">
+        <a href="{{ route('admin.products.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-[#fe6000] hover:shadow-sm transition-all group flex flex-col justify-between">
             <div class="flex items-center justify-between w-full mb-3">
-                <div class="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200 text-[#fe6000] flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                <div class="w-9 h-9 rounded-xl bg-orange-50 border border-orange-200/80 text-[#fe6000] flex items-center justify-center text-base">
+                    📦
                 </div>
-                <span class="px-2 py-0.5 rounded-md bg-orange-50 text-orange-700 text-[10px] font-extrabold uppercase tracking-wider border border-orange-200">Store</span>
+                <span class="px-2 py-0.5 rounded-md bg-orange-50 text-orange-700 text-[10px] font-bold border border-orange-200/60 uppercase">Store</span>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $productCount }}</div>
-                <div class="text-xs font-bold text-slate-700 mt-1.5">Produk Digital & SaaS</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1.5">Produk Digital & SaaS</div>
             </div>
         </a>
 
         <!-- 3. Pelatihan IT -->
-        <a href="{{ route('admin.trainings.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-purple-600 hover:shadow-md transition-all group flex flex-col justify-between">
+        <a href="{{ route('admin.trainings.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-purple-600 hover:shadow-sm transition-all group flex flex-col justify-between">
             <div class="flex items-center justify-between w-full mb-3">
-                <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                <div class="w-9 h-9 rounded-xl bg-purple-50 border border-purple-200/80 text-purple-600 flex items-center justify-center text-base">
+                    🎓
                 </div>
-                <span class="px-2 py-0.5 rounded-md bg-purple-50 text-purple-700 text-[10px] font-extrabold uppercase tracking-wider border border-purple-200">Silabus</span>
+                <span class="px-2 py-0.5 rounded-md bg-purple-50 text-purple-700 text-[10px] font-bold border border-purple-200/60 uppercase">Silabus</span>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $trainingCount }}</div>
-                <div class="text-xs font-bold text-slate-700 mt-1.5">Modul Pelatihan IT</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1.5">Modul Pelatihan IT</div>
             </div>
         </a>
 
         <!-- 4. Dokumentasi -->
-        <a href="{{ route('admin.galleries.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-indigo-600 hover:shadow-md transition-all group flex flex-col justify-between">
+        <a href="{{ route('admin.galleries.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-indigo-600 hover:shadow-sm transition-all group flex flex-col justify-between">
             <div class="flex items-center justify-between w-full mb-3">
-                <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <div class="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-200/80 text-indigo-600 flex items-center justify-center text-base">
+                    📸
                 </div>
-                <span class="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 text-[10px] font-extrabold uppercase tracking-wider border border-indigo-200">Galeri</span>
+                <span class="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 text-[10px] font-bold border border-indigo-200/60 uppercase">Galeri</span>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $galleryCount }}</div>
-                <div class="text-xs font-bold text-slate-700 mt-1.5">Dokumentasi & Event</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1.5">Dokumentasi & Event</div>
             </div>
         </a>
 
         <!-- 5. Artikel Blog -->
-        <a href="{{ route('admin.posts.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-cyan-600 hover:shadow-md transition-all group flex flex-col justify-between">
+        <a href="{{ route('admin.posts.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-cyan-600 hover:shadow-sm transition-all group flex flex-col justify-between">
             <div class="flex items-center justify-between w-full mb-3">
-                <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                <div class="w-9 h-9 rounded-xl bg-cyan-50 border border-cyan-200/80 text-cyan-600 flex items-center justify-center text-base">
+                    📰
                 </div>
-                <span class="px-2 py-0.5 rounded-md bg-cyan-50 text-cyan-700 text-[10px] font-extrabold uppercase tracking-wider border border-cyan-200">Terbit</span>
+                <span class="px-2 py-0.5 rounded-md bg-cyan-50 text-cyan-700 text-[10px] font-bold border border-cyan-200/60 uppercase">Terbit</span>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $postCount }}</div>
-                <div class="text-xs font-bold text-slate-700 mt-1.5">Artikel & Wawasan</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1.5">Artikel & Wawasan</div>
             </div>
         </a>
 
         <!-- 6. Pengunjung Web (Live) -->
-        <a href="{{ route('admin.analytics.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-orange-500 hover:shadow-md transition-all group flex flex-col justify-between">
+        <a href="{{ route('admin.analytics.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-orange-500 hover:shadow-sm transition-all group flex flex-col justify-between">
             <div class="flex items-center justify-between w-full mb-3">
-                <div class="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200 text-orange-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <div class="w-9 h-9 rounded-xl bg-orange-50 border border-orange-200/80 text-orange-600 flex items-center justify-center text-base">
+                    📊
                 </div>
-                <span class="px-2 py-0.5 rounded-md bg-orange-100 text-orange-800 text-[10px] font-extrabold uppercase tracking-wider border border-orange-300 flex items-center gap-1">
+                <span class="px-2 py-0.5 rounded-md bg-orange-50 text-orange-800 text-[10px] font-bold border border-orange-200/60 flex items-center gap-1 uppercase">
                     <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-ping"></span> {{ $onlineVisitors }} Online
                 </span>
             </div>
             <div>
-                <div class="text-2xl sm:text-3xl font-black text-orange-600 mono tracking-tight leading-none">{{ number_format($totalVisitors, 0, ',', '.') }}</div>
-                <div class="text-xs font-bold text-slate-700 mt-1.5">Total Pembaca Web</div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ number_format($totalVisitors, 0, ',', '.') }}</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1.5">Total Pembaca Web</div>
             </div>
         </a>
 
         <!-- 7. Invoices Dicetak -->
-        <a href="{{ route('admin.invoices.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border-2 border-emerald-300 shadow-2xs hover:border-emerald-600 hover:shadow-md transition-all group flex flex-col justify-between">
+        <a href="{{ route('admin.invoices.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-emerald-600 hover:shadow-sm transition-all group flex flex-col justify-between">
             <div class="flex items-center justify-between w-full mb-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <div class="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-200/80 text-emerald-600 flex items-center justify-center text-base">
+                    🧾
                 </div>
-                <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-extrabold uppercase tracking-wider border border-emerald-300">{{ $paidInvoiceCount }} Lunas</span>
+                <span class="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 text-[10px] font-bold border border-emerald-200/60 uppercase">{{ $paidInvoiceCount }} Lunas</span>
             </div>
             <div>
-                <div class="text-2xl sm:text-3xl font-black text-emerald-700 mono tracking-tight leading-none">{{ $invoiceCount }}</div>
-                <div class="text-xs font-bold text-slate-700 mt-1.5">Faktur Tagihan Klien</div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $invoiceCount }}</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1.5">Faktur Tagihan Klien</div>
             </div>
         </a>
 
         <!-- 8. Inquiries / Pesan Masuk -->
-        <a href="{{ route('admin.inquiries.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border-2 border-slate-200/90 shadow-2xs hover:border-rose-600 hover:shadow-md transition-all group flex flex-col justify-between">
+        <a href="{{ route('admin.inquiries.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-rose-600 hover:shadow-sm transition-all group flex flex-col justify-between">
             <div class="flex items-center justify-between w-full mb-3">
-                <div class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs relative">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    @if($unreadInquiryCount > 0)
-                        <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-rose-500 border-2 border-white animate-pulse"></span>
-                    @endif
+                <div class="w-9 h-9 rounded-xl bg-rose-50 border border-rose-200/80 text-rose-600 flex items-center justify-center text-base">
+                    ✉️
                 </div>
-                <span class="px-2 py-0.5 rounded-md {{ $unreadInquiryCount > 0 ? 'bg-rose-500 text-white' : 'bg-rose-50 text-rose-700 border border-rose-200' }} text-[10px] font-extrabold uppercase tracking-wider">
+                <span class="px-2 py-0.5 rounded-md {{ $unreadInquiryCount > 0 ? 'bg-rose-100 text-rose-800 border border-rose-200 font-extrabold' : 'bg-slate-100 text-slate-600 border border-slate-200 font-bold' }} text-[10px] uppercase">
                     {{ $unreadInquiryCount > 0 ? $unreadInquiryCount . ' Baru' : 'Inbox' }}
                 </span>
             </div>
             <div>
                 <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $inquiryCount }}</div>
-                <div class="text-xs font-bold text-slate-700 mt-1.5">Pesan Konsultasi Klien</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1.5">Pesan Konsultasi Klien</div>
+            </div>
+        </a>
+
+        <!-- 9. Aset Domain & Hosting (Multi-Registrar) -->
+        <a href="{{ route('admin.domain-renewals.index') }}" class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-blue-600 hover:shadow-sm transition-all group flex flex-col justify-between">
+            <div class="flex items-center justify-between w-full mb-3">
+                <div class="w-9 h-9 rounded-xl bg-cyan-50 border border-cyan-200/80 text-[#2563eb] flex items-center justify-center text-base">
+                    🌐
+                </div>
+                @if(isset($domainCriticalCount) && $domainCriticalCount > 0)
+                    <span class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-800 text-[10px] font-extrabold uppercase tracking-wider border border-rose-200">
+                        {{ $domainCriticalCount }} Kritis
+                    </span>
+                @else
+                    <span class="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider border border-emerald-200">
+                        Semua Aktif
+                    </span>
+                @endif
+            </div>
+            <div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 mono tracking-tight leading-none">{{ $domainCount }}</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1.5">Domain & Server Terdaftar</div>
             </div>
         </a>
 
     </div>
 
-    <!-- SNAPSHOT ANALISA FINANSIAL LEMBAGA & ARUS KAS BTD (High-Contrast Clean White Container) -->
-    <div class="bg-white rounded-2xl p-5 sm:p-6 border-2 border-slate-300 shadow-sm space-y-5">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-slate-100 pb-4">
+    <!-- SNAPSHOT ANALISA FINANSIAL LEMBAGA & ARUS KAS BTD (Clean & Executive) -->
+    <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
             <div class="flex items-center gap-3">
-                <div class="w-11 h-11 rounded-xl bg-emerald-100 border-2 border-emerald-300 text-emerald-800 flex items-center justify-center text-2xl shrink-0 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center text-xl shrink-0">
                     💰
                 </div>
                 <div>
                     <div class="flex items-center gap-2 flex-wrap">
-                        <h3 class="text-base font-black text-slate-900">
+                        <h3 class="text-base font-extrabold text-slate-900">
                             Ikhtisar Finansial Lembaga & Pertimbangan Kebijakan
                         </h3>
-                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 text-[10px] font-black border border-emerald-300 uppercase tracking-wider">
+                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-extrabold border border-emerald-200 uppercase tracking-wider">
                             Cash Intelligence
                         </span>
                     </div>
-                    <p class="text-xs text-slate-600 font-semibold mt-0.5">Realisasi kas masuk invoice, beban operasional kas, dan saldo laba bersih lembaga</p>
+                    <p class="text-xs text-slate-500 font-medium mt-0.5">Realisasi kas masuk invoice, beban operasional kas, dan saldo laba bersih lembaga</p>
                 </div>
             </div>
 
-            <a href="{{ route('admin.finances.index') }}" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-emerald-600/30 transition-all flex items-center gap-2 self-start sm:self-auto shrink-0">
-                <span>Buka Analisa Lengkap & Laporan</span>
+            <a href="{{ route('admin.finances.index') }}" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-[#2563eb] hover:text-white text-slate-800 font-bold text-xs uppercase tracking-wider border border-slate-200 transition-all flex items-center gap-1.5 self-start sm:self-auto shrink-0">
+                <span>Buka Analisa Lengkap</span>
                 <span>&rarr;</span>
             </a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <!-- Inflow Box -->
-            <div class="p-4 rounded-xl bg-emerald-50/90 border-2 border-emerald-300 space-y-1.5 shadow-2xs">
+            <div class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
                 <span class="text-[11px] font-extrabold text-emerald-900 uppercase tracking-wider block">Total Kas Masuk Riil</span>
                 <div class="text-xl sm:text-2xl font-black text-emerald-700 mono">Rp {{ number_format($financeTotalInflow, 0, ',', '.') }}</div>
-                <span class="text-xs text-emerald-950 font-semibold block">Invoice paid & kas jasa</span>
+                <span class="text-[11px] text-emerald-900/80 font-medium block">Invoice paid & kas jasa</span>
             </div>
 
             <!-- Outflow Box -->
-            <div class="p-4 rounded-xl bg-rose-50/90 border-2 border-rose-300 space-y-1.5 shadow-2xs">
+            <div class="p-4 rounded-xl bg-rose-50/70 border border-rose-200 space-y-1">
                 <span class="text-[11px] font-extrabold text-rose-900 uppercase tracking-wider block">Total Beban Operasional</span>
                 <div class="text-xl sm:text-2xl font-black text-rose-700 mono">Rp {{ number_format($financeTotalExpenses, 0, ',', '.') }}</div>
-                <span class="text-xs text-rose-950 font-semibold block">Server, lisensi AI & tim</span>
+                <span class="text-[11px] text-rose-900/80 font-medium block">Server, lisensi AI & tim</span>
             </div>
 
             <!-- Net Profit Box -->
-            <div class="p-4 rounded-xl bg-blue-50/90 border-2 border-blue-300 space-y-1.5 shadow-2xs">
-                <span class="text-[11px] font-extrabold text-blue-900 uppercase tracking-wider block">Laba Bersih Kas</span>
-                <div class="text-xl sm:text-2xl font-black {{ $financeNetProfit >= 0 ? 'text-blue-700' : 'text-rose-700' }} mono">Rp {{ number_format($financeNetProfit, 0, ',', '.') }}</div>
-                <span class="text-xs text-blue-950 font-semibold block">{{ $financeNetProfit >= 0 ? 'Surplus Operasional' : 'Defisit Kas' }}</span>
+            <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200 space-y-1">
+                <span class="text-[11px] font-extrabold text-blue-900 uppercase tracking-wider block">Laba Bersih Kas (Surplus)</span>
+                <div class="text-xl sm:text-2xl font-black text-blue-700 mono">Rp {{ number_format($financeNetProfit, 0, ',', '.') }}</div>
+                <span class="text-[11px] text-blue-900/80 font-medium block">Cadangan kas lembaga</span>
             </div>
 
-            <!-- Receivables Box -->
-            <div class="p-4 rounded-xl bg-amber-50/90 border-2 border-amber-300 space-y-1.5 shadow-2xs">
+            <!-- Outstanding Receivables -->
+            <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
                 <span class="text-[11px] font-extrabold text-amber-900 uppercase tracking-wider block">Sisa Piutang Klien</span>
                 <div class="text-xl sm:text-2xl font-black text-amber-800 mono">Rp {{ number_format($totalInvoiceRemaining, 0, ',', '.') }}</div>
-                <span class="text-xs text-amber-950 font-semibold block">Invoice belum terlunasi</span>
+                <span class="text-[11px] text-amber-900/80 font-medium block">Invoice belum terlunasi</span>
             </div>
         </div>
+    </div>
+
+    <!-- FIRST-CLASS SECTION: PELACAK & PENGINGAT MASA AKTIF DOMAIN & HOSTING (Combined on Main Dashboard) -->
+    <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-xs space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3.5">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-[#2563eb] flex items-center justify-center text-xl shrink-0">
+                    🌐
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h2 class="text-base font-extrabold text-slate-900">
+                            Pelacak & Pengingat Masa Aktif Domain & Hosting
+                        </h2>
+                        @if(isset($domainCriticalCount) && $domainCriticalCount > 0)
+                            <span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[10px] font-extrabold border border-rose-200">
+                                {{ $domainCriticalCount }} Kritis (&lt;7 Hari)
+                            </span>
+                        @else
+                            <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold border border-emerald-200">
+                                Status Terkendali
+                            </span>
+                        @endif
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium mt-0.5">
+                        Monitoring batas waktu jatuh tempo, status registrar (Rumahweb, Spaceship, IDwebhost, Porkbun, dll), dan notifikasi tagihan klien.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 shrink-0">
+                <a href="{{ route('admin.domain-renewals.index') }}" class="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-[#2563eb] hover:text-white text-slate-800 font-bold text-xs uppercase tracking-wider border border-slate-200 transition-all flex items-center gap-1.5">
+                    <span>Buka Modul Lengkap ({{ $domainCount }})</span>
+                    <span>&rarr;</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Domain Tracking Table (Generous Spacing, Zero Truncation, Tabular Typography) -->
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                    <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-extrabold uppercase tracking-wider text-[10px]">
+                        <th class="py-3 px-4 min-w-[240px]">Domain & Layanan</th>
+                        <th class="py-3 px-4 min-w-[150px]">Provider / Registrar</th>
+                        <th class="py-3 px-4 min-w-[170px]">Masa Aktif & Status</th>
+                        <th class="py-3 px-4 min-w-[190px]">Klien & Kontak</th>
+                        <th class="py-3 px-4 min-w-[140px]">Biaya Perpanjang</th>
+                        <th class="py-3 px-4 text-right min-w-[130px]">Aksi Cepat</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-medium">
+                    @forelse($domainExpiringSoonList as $d)
+                        @php
+                            $days = $d->days_remaining;
+                            $urg = $d->urgency_level;
+                        @endphp
+                        <tr class="hover:bg-slate-50/70 transition-colors {{ $urg === 'critical' ? 'bg-rose-50/25' : ($urg === 'warning' ? 'bg-amber-50/15' : '') }}">
+                            
+                            <!-- Domain Name & Type -->
+                            <td class="py-3 px-4">
+                                <a href="https://{{ $d->domain_name }}" target="_blank" class="font-extrabold text-xs text-[#071330] hover:text-[#2563eb] transition-colors inline-flex items-center gap-1">
+                                    <span>{{ $d->domain_name }}</span>
+                                    <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                </a>
+                                <div class="flex items-center gap-1.5 mt-1">
+                                    <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
+                                        {{ $d->service_type_label }}
+                                    </span>
+                                    @if($d->auto_renew)
+                                        <span class="text-[9px] font-bold text-emerald-700 flex items-center gap-0.5">
+                                            <span class="w-1 h-1 rounded-full bg-emerald-500"></span> Auto-Renew
+                                        </span>
+                                    @endif
+                                </div>
+                            </td>
+
+                            <!-- Provider / Registrar -->
+                            <td class="py-3 px-4">
+                                <div class="font-bold text-xs text-slate-900 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                                    <span>{{ $d->provider }}</span>
+                                </div>
+                                <div class="mt-1">
+                                    <a href="{{ $d->portal_url }}" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#2563eb] hover:underline">
+                                        <span>Buka Konsol ↗</span>
+                                    </a>
+                                </div>
+                            </td>
+
+                            <!-- Expiry Date & Countdown -->
+                            <td class="py-3 px-4">
+                                <div class="mono text-xs font-bold text-slate-900">
+                                    {{ \Carbon\Carbon::parse($d->expiry_date)->translatedFormat('d F Y') }}
+                                </div>
+                                <div class="mt-1">
+                                    @if($urg === 'expired')
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-800 border border-rose-200 inline-flex items-center gap-1">
+                                            <span>⛔</span> Lewat ({{ abs($days) }} Hari)
+                                        </span>
+                                    @elseif($urg === 'critical')
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-extrabold bg-rose-50 text-rose-700 border border-rose-300 inline-flex items-center gap-1">
+                                            <span>🚨</span> {{ $days === 0 ? 'Hari Ini Expired!' : $days . ' Hari Lagi!' }}
+                                        </span>
+                                    @elseif($urg === 'warning')
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200 inline-flex items-center gap-1">
+                                            <span>⚠️</span> {{ $days }} Hari Lagi
+                                        </span>
+                                    @else
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 inline-flex items-center gap-1">
+                                            <span>✅</span> {{ $days }} Hari Lagi
+                                        </span>
+                                    @endif
+                                </div>
+                            </td>
+
+                            <!-- Client Info & WhatsApp Button (No Text Truncation) -->
+                            <td class="py-3 px-4">
+                                <div class="font-extrabold text-xs text-slate-900">
+                                    {{ $d->client_name ?: 'Internal BTD' }}
+                                </div>
+                                @if($d->client_whatsapp)
+                                    <div class="mt-1">
+                                        <a href="{{ $d->whatsapp_url }}" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-bold text-[10px] transition-colors">
+                                            <span>💬</span>
+                                            <span>Kirim WA Tagihan</span>
+                                        </a>
+                                    </div>
+                                @else
+                                    <span class="text-[10px] text-slate-400 italic block mt-0.5">Internal / Tanpa kontak</span>
+                                @endif
+                            </td>
+
+                            <!-- Renewal Price -->
+                            <td class="py-3 px-4">
+                                <div class="font-bold text-xs text-slate-900 mono">
+                                    {{ $d->formatted_price }}
+                                </div>
+                                <div class="text-[10px] text-slate-500 capitalize">
+                                    per {{ str_replace('_', ' ', $d->billing_cycle) }}
+                                </div>
+                            </td>
+
+                            <!-- Quick Action -->
+                            <td class="py-3 px-4 text-right">
+                                <div class="flex items-center justify-end gap-1.5">
+                                    <form action="{{ route('admin.domain-renewals.renew-one-year', $d->id) }}" method="POST" onsubmit="return confirm('Perpanjang masa aktif {{ $d->domain_name }} selama 1 tahun ke depan?');">
+                                        @csrf
+                                        <button type="submit" 
+                                                title="Perpanjang Cepat +1 Tahun"
+                                                class="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-slate-200 text-slate-700 font-bold text-[11px] transition-all">
+                                            +1 Thn
+                                        </button>
+                                    </form>
+                                    <a href="{{ route('admin.domain-renewals.index') }}" class="p-1 rounded-md bg-slate-100 hover:bg-blue-50 hover:text-blue-700 border border-slate-200 text-slate-600 transition-colors" title="Buka Detail">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                                    </a>
+                                </div>
+                            </td>
+
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="6" class="py-6 text-center text-xs text-slate-500">
+                                Belum ada domain terdaftar. <a href="{{ route('admin.domain-renewals.index') }}" class="text-[#2563eb] font-bold hover:underline">Tambah domain pertama &rarr;</a>
+                            </td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Two Columns: Recent Invoices & Recent Inquiries (ZERO TEXT TRUNCATION) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start">
+        
+        <!-- Left: Recent Invoices Table (7 cols) -->
+        <div class="lg:col-span-7 bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div>
+                    <h2 class="text-sm font-extrabold text-[#071330] flex items-center gap-1.5">
+                        <span>🧾</span>
+                        <span>Faktur & Invoice Klien Terakhir</span>
+                    </h2>
+                    <p class="text-[11px] text-slate-500 font-medium mt-0.5">Total tagihan terbit: <strong class="text-slate-800 mono">Rp {{ number_format($totalInvoiceAmount, 0, ',', '.') }}</strong></p>
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <a href="{{ route('admin.invoices.create') }}" class="px-2.5 py-1 rounded-lg bg-[#2563eb] text-white font-bold text-xs hover:brightness-110 transition-all flex items-center gap-1">
+                        <span>+ Buat</span>
+                    </a>
+                    <a href="{{ route('admin.invoices.index') }}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-[#2563eb] hover:text-white text-xs font-bold text-slate-700 transition-all">
+                        Semua &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="bg-slate-50 text-slate-500 font-extrabold uppercase text-[9px] tracking-wider border-b border-slate-200">
+                            <th class="py-2 px-2.5 text-center min-w-[90px]">No. Invoice</th>
+                            <th class="py-2 px-2.5 min-w-[180px]">Klien & Lembaga</th>
+                            <th class="py-2 px-2.5 text-center min-w-[70px]">Status</th>
+                            <th class="py-2 px-2.5 text-right min-w-[100px]">Total (Rp)</th>
+                            <th class="py-2 px-2.5 text-center min-w-[70px]">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 font-medium text-xs">
+                        @forelse($recentInvoices as $inv)
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-2.5 px-2.5 text-center">
+                                    <span class="font-extrabold text-[#071330] mono">#{{ $inv->invoice_number }}</span>
+                                    <div class="text-[9px] text-slate-400 mono">{{ $inv->invoice_date ? $inv->invoice_date->format('d/m/Y') : '-' }}</div>
+                                </td>
+
+                                <!-- NO TEXT TRUNCATION ON CLIENT NAMES -->
+                                <td class="py-2.5 px-2.5">
+                                    <div class="font-extrabold text-slate-900 leading-snug">{{ $inv->client_name }}</div>
+                                    @if($inv->client_attn)
+                                        <div class="text-[10px] text-slate-500 font-semibold leading-tight mt-0.5">{{ $inv->client_attn }}</div>
+                                    @endif
+                                </td>
+
+                                <td class="py-2.5 px-2.5 text-center">
+                                    @if($inv->status === 'PAID')
+                                        <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[9px] border border-emerald-200">PAID</span>
+                                    @elseif($inv->status === 'PARTIAL')
+                                        <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 font-bold text-[9px] border border-amber-200">DP</span>
+                                    @else
+                                        <span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 font-bold text-[9px] border border-rose-200">UNPAID</span>
+                                    @endif
+                                </td>
+                                <td class="py-2.5 px-2.5 text-right font-extrabold text-slate-900 mono">
+                                    Rp {{ number_format($inv->total_amount, 0, ',', '.') }}
+                                </td>
+                                <td class="py-2.5 px-2.5 text-center">
+                                    <a href="{{ route('admin.invoices.print', $inv->id) }}" target="_blank" class="px-2 py-1 rounded-md bg-blue-50 text-[#2563eb] hover:bg-blue-100 font-bold text-[10px] transition-all inline-flex items-center gap-1 border border-blue-200/60">
+                                        <span>🖨️ Cetak</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="5" class="py-6 text-center text-xs text-slate-500">
+                                    Belum ada invoice. <a href="{{ route('admin.invoices.create') }}" class="text-[#2563eb] font-bold hover:underline">Buat invoice sekarang &rarr;</a>
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Right: Recent Inquiries (5 cols) -->
+        <div class="lg:col-span-5 bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div>
+                    <h2 class="text-sm font-extrabold text-[#071330] flex items-center gap-1.5">
+                        <span>✉️</span>
+                        <span>Pesan Masuk Terbaru</span>
+                    </h2>
+                    <p class="text-[11px] text-slate-500 font-medium">Formulir penawaran dari website</p>
+                </div>
+                <a href="{{ route('admin.inquiries.index') }}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-[#2563eb] hover:text-white text-xs font-bold text-slate-700 transition-all">
+                    Lihat Semua &rarr;
+                </a>
+            </div>
+
+            <div class="space-y-2.5">
+                @forelse($recentInquiries as $inq)
+                    <a href="{{ route('admin.inquiries.show', $inq->id) }}" class="p-3 rounded-xl border {{ !$inq->is_read ? 'border-orange-300 bg-orange-50/30' : 'border-slate-200 bg-white' }} hover:border-[#2563eb] transition-all flex items-start justify-between gap-2.5 block group">
+                        <div class="space-y-0.5 flex-1 min-w-0">
+                            <div class="flex items-center gap-1.5">
+                                <span class="font-extrabold text-xs text-[#071330] group-hover:text-[#2563eb] transition-colors">{{ $inq->name }}</span>
+                                @if(!$inq->is_read)
+                                    <span class="px-1.5 py-0.2 rounded-full bg-[#fe6000] text-white font-extrabold text-[8px] shrink-0">BARU</span>
+                                @endif
+                            </div>
+                            <div class="text-[10px] text-slate-500 font-medium">
+                                {{ $inq->email }} &bull; {{ $inq->phone ?? '-' }}
+                            </div>
+                        </div>
+                        <span class="text-[9px] text-slate-400 mono font-bold shrink-0">{{ $inq->created_at->diffForHumans() }}</span>
+                    </a>
+                @empty
+                    <div class="text-center py-6 text-xs text-slate-500 space-y-1">
+                        <div class="text-xl">📬</div>
+                        <p class="font-medium">Belum ada pesan penawaran masuk.</p>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+
     </div>
 
     <!-- PUSAT PEMANTAUAN KEAMANAN & DETEKSI ANCAMAN SIBER -->
@@ -282,7 +599,7 @@
                 </div>
             </div>
 
-            <div class="flex items-center gap-2 text-[11px] font-mono shrink-0">
+            <div class="flex items-center gap-2 text-[11px] mono shrink-0">
                 <span class="px-2.5 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-slate-300">
                     PHP {{ $securityStatus['php_version'] }}
                 </span>
@@ -331,203 +648,8 @@
         </div>
     </div>
 
-    <!-- PELACAK & PENGINGAT MASA AKTIF DOMAIN & HOSTING TERDEKAT -->
-    @if(isset($domainExpiringSoonList) && $domainExpiringSoonList->count() > 0)
-        <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-4">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 rounded-lg bg-blue-50 text-[#2563eb] flex items-center justify-center text-base shrink-0">
-                        🌐
-                    </div>
-                    <div>
-                        <h2 class="text-sm font-bold text-[#071330] flex items-center gap-2">
-                            <span>Pelacak & Pengingat Masa Aktif Domain & Hosting</span>
-                            @if(isset($domainCriticalCount) && $domainCriticalCount > 0)
-                                <span class="px-2 py-0.5 rounded-full bg-rose-600 text-white text-[9px] font-black animate-pulse">
-                                    {{ $domainCriticalCount }} Kritis
-                                </span>
-                            @endif
-                        </h2>
-                        <p class="text-[11px] text-slate-500 font-medium">Daftar domain & server dengan batas waktu perpanjangan terdekat lintas provider.</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-2">
-                    <a href="{{ route('admin.domain-renewals.index') }}" class="px-3 py-1.5 rounded-xl bg-[#2563eb] text-white text-xs font-bold hover:brightness-110 transition-all flex items-center gap-1.5 shadow-sm">
-                        <span>Lihat Semua ({{ $domainCount }}) &rarr;</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-                @foreach($domainExpiringSoonList as $d)
-                    @php
-                        $days = $d->days_remaining;
-                        $urg = $d->urgency_level;
-                    @endphp
-                    <div class="p-3.5 rounded-xl border {{ $urg === 'critical' ? 'border-rose-300 bg-rose-50/40' : ($urg === 'warning' ? 'border-amber-300 bg-amber-50/20' : ($urg === 'expired' ? 'border-rose-900/40 bg-rose-950/10' : 'border-slate-200 bg-slate-50/60')) }} flex flex-col justify-between space-y-2.5">
-                        <div>
-                            <div class="flex items-center justify-between gap-1 mb-1">
-                                <span class="px-2 py-0.5 rounded-md text-[9px] font-extrabold uppercase bg-white border border-slate-200 text-slate-700">
-                                    {{ $d->provider }}
-                                </span>
-                                @if($urg === 'expired')
-                                    <span class="px-2 py-0.5 rounded-md bg-rose-950 text-rose-200 text-[9px] font-bold">⛔ Expired</span>
-                                @elseif($urg === 'critical')
-                                    <span class="px-2 py-0.5 rounded-md bg-rose-600 text-white text-[9px] font-black animate-pulse">🚨 {{ $days }} Hari</span>
-                                @elseif($urg === 'warning')
-                                    <span class="px-2 py-0.5 rounded-md bg-amber-500 text-white text-[9px] font-bold">⚠️ {{ $days }} Hari</span>
-                                @else
-                                    <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[9px] font-bold">✅ {{ $days }} Hari</span>
-                                @endif
-                            </div>
-                            
-                            <a href="https://{{ $d->domain_name }}" target="_blank" class="font-extrabold text-xs text-[#071330] hover:text-[#2563eb] transition-colors truncate block">
-                                {{ $d->domain_name }}
-                            </a>
-                            <div class="text-[10px] text-slate-500 truncate mt-0.5">
-                                Klien: <strong>{{ $d->client_name ?: 'Internal BTD' }}</strong>
-                            </div>
-                        </div>
-
-                        <div class="pt-2 border-t border-slate-200/80 flex items-center justify-between text-[11px]">
-                            <span class="font-mono font-bold text-slate-900">{{ $d->formatted_price }}</span>
-                            <div class="flex items-center gap-1.5">
-                                @if($d->client_whatsapp)
-                                    <a href="{{ $d->whatsapp_url }}" target="_blank" class="p-1 rounded-md bg-emerald-50 text-emerald-600 hover:bg-emerald-100 transition-colors" title="Kirim WA Klien">
-                                        💬
-                                    </a>
-                                @endif
-                                <a href="{{ $d->portal_url }}" target="_blank" class="px-2 py-0.5 rounded-md bg-blue-50 text-[#2563eb] hover:bg-blue-100 font-bold text-[10px] transition-colors" title="Buka Konsol Provider">
-                                    Konsol ↗
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    @endif
-
-    <!-- Two Columns: Recent Invoices & Recent Inquiries -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start">
-        
-        <!-- Left: Recent Invoices Table (7 cols) -->
-        <div class="lg:col-span-7 bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                <div>
-                    <h2 class="text-sm font-bold text-[#071330] flex items-center gap-1.5">
-                        <span>🧾</span>
-                        <span>Faktur & Invoice Klien Terakhir</span>
-                    </h2>
-                    <p class="text-[11px] text-slate-500 font-medium mt-0.5">Total tagihan terbit: <strong class="text-slate-800 mono">Rp {{ number_format($totalInvoiceAmount, 0, ',', '.') }}</strong></p>
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <a href="{{ route('admin.invoices.create') }}" class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition-all flex items-center gap-1">
-                        <span>+ Buat</span>
-                    </a>
-                    <a href="{{ route('admin.invoices.index') }}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-[#3E5CE7] hover:text-white text-xs font-bold text-slate-700 transition-all">
-                        Semua &rarr;
-                    </a>
-                </div>
-            </div>
-
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse text-xs">
-                    <thead>
-                        <tr class="bg-slate-50 text-slate-500 font-extrabold uppercase text-[9px] tracking-wider border-b border-slate-200">
-                            <th class="py-2 px-2.5 text-center">No. Invoice</th>
-                            <th class="py-2 px-2.5">Klien</th>
-                            <th class="py-2 px-2.5 text-center">Status</th>
-                            <th class="py-2 px-2.5 text-right">Total (Rp)</th>
-                            <th class="py-2 px-2.5 text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-100 font-medium text-xs">
-                        @forelse($recentInvoices as $inv)
-                            <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="py-2.5 px-2.5 text-center">
-                                    <span class="font-extrabold text-[#071330] mono">#{{ $inv->invoice_number }}</span>
-                                    <div class="text-[9px] text-slate-400 font-mono">{{ $inv->invoice_date ? $inv->invoice_date->format('d/m/Y') : '-' }}</div>
-                                </td>
-                                <td class="py-2.5 px-2.5">
-                                    <div class="font-bold text-slate-800 truncate max-w-[130px]">{{ $inv->client_name }}</div>
-                                    <div class="text-[10px] text-slate-500 truncate max-w-[130px]">{{ $inv->client_attn }}</div>
-                                </td>
-                                <td class="py-2.5 px-2.5 text-center">
-                                    @if($inv->status === 'PAID')
-                                        <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[9px] border border-emerald-200">PAID</span>
-                                    @elseif($inv->status === 'PARTIAL')
-                                        <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 font-bold text-[9px] border border-amber-200">DP</span>
-                                    @else
-                                        <span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 font-bold text-[9px] border border-rose-200">UNPAID</span>
-                                    @endif
-                                </td>
-                                <td class="py-2.5 px-2.5 text-right font-extrabold text-slate-900 mono">
-                                    Rp {{ number_format($inv->total_amount, 0, ',', '.') }}
-                                </td>
-                                <td class="py-2.5 px-2.5 text-center">
-                                    <a href="{{ route('admin.invoices.print', $inv->id) }}" target="_blank" class="px-2 py-1 rounded-md bg-blue-50 text-[#3E5CE7] hover:bg-blue-100 font-bold text-[10px] transition-all inline-flex items-center gap-1 border border-blue-200/60">
-                                        <span>🖨️ Cetak</span>
-                                    </a>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="5" class="py-6 text-center text-xs text-slate-500">
-                                    Belum ada invoice. <a href="{{ route('admin.invoices.create') }}" class="text-[#3E5CE7] font-bold hover:underline">Buat invoice sekarang &rarr;</a>
-                                </td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Right: Recent Inquiries (5 cols) -->
-        <div class="lg:col-span-5 bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                <div>
-                    <h2 class="text-sm font-bold text-[#071330] flex items-center gap-1.5">
-                        <span>✉️</span>
-                        <span>Pesan Masuk Terbaru</span>
-                    </h2>
-                    <p class="text-[11px] text-slate-500 font-medium">Formulir penawaran dari website</p>
-                </div>
-                <a href="{{ route('admin.inquiries.index') }}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-[#3E5CE7] hover:text-white text-xs font-bold text-slate-700 transition-all">
-                    Lihat Semua &rarr;
-                </a>
-            </div>
-
-            <div class="space-y-2.5">
-                @forelse($recentInquiries as $inq)
-                    <a href="{{ route('admin.inquiries.show', $inq->id) }}" class="p-3 rounded-xl border {{ !$inq->is_read ? 'border-orange-300 bg-orange-50/40' : 'border-slate-200 bg-white' }} hover:border-[#3E5CE7] transition-all flex items-start justify-between gap-2.5 block group">
-                        <div class="space-y-0.5 flex-1 min-w-0">
-                            <div class="flex items-center gap-1.5">
-                                <span class="font-bold text-xs text-[#071330] group-hover:text-[#3E5CE7] transition-colors truncate">{{ $inq->name }}</span>
-                                @if(!$inq->is_read)
-                                    <span class="px-1.5 py-0.2 rounded-full bg-[#fe6000] text-white font-bold text-[8px] shrink-0">BARU</span>
-                                @endif
-                            </div>
-                            <div class="text-[10px] text-slate-500 font-medium truncate">
-                                {{ $inq->email }} &bull; {{ $inq->phone ?? '-' }}
-                            </div>
-                        </div>
-                        <span class="text-[9px] text-slate-400 font-mono font-bold shrink-0">{{ $inq->created_at->diffForHumans() }}</span>
-                    </a>
-                @empty
-                    <div class="text-center py-6 text-xs text-slate-500 space-y-1">
-                        <div class="text-xl">📬</div>
-                        <p class="font-medium">Belum ada pesan penawaran masuk.</p>
-                    </div>
-                @endforelse
-            </div>
-        </div>
-
-    </div>
-
     <!-- BOTTOM ROW: SYSTEM LOGS & ERROR AUDIT TRAIL -->
-    <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-2xs space-y-3">
+    <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-xs space-y-3">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
             <div class="flex items-center gap-2">
                 <span class="text-base">📜</span>
@@ -552,7 +674,7 @@
             </div>
         </div>
 
-        <div class="space-y-1.5 font-mono text-[11px]">
+        <div class="space-y-1.5 mono text-[11px]">
             @forelse($systemLogs as $log)
                 <div class="p-2.5 rounded-xl border {{ $log['level'] === 'ERROR' ? 'border-rose-200 bg-rose-50/50 text-rose-900' : ($log['level'] === 'WARNING' ? 'border-amber-200 bg-amber-50/50 text-amber-900' : 'border-slate-200 bg-slate-50 text-slate-700') }} flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div class="flex items-center gap-2 overflow-hidden">
@@ -569,7 +691,7 @@
                         <span class="text-emerald-500 font-bold">✓</span>
                         <span>Log sistem bersih dan stabil. Tidak ada uncaught exception atau insiden keamanan tercatat.</span>
                     </div>
-                    <span class="text-slate-400 text-[10px] font-mono">Status: Healthy</span>
+                    <span class="text-slate-400 text-[10px] mono">Status: Healthy</span>
                 </div>
             @endforelse
         </div>
