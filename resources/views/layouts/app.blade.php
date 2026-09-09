@@ -487,17 +487,21 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
-            <!-- Top Banner: Dapatkan Info Terupdate (Sesuai Referensi Gambar 2) -->
-            <div class="rounded-2xl sm:rounded-3xl p-6 sm:p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden border border-white/20"
-                 style="background: linear-gradient(135deg, #fe6000 0%, #ff7a1a 100%);">
+            <!-- Top Banner: Dapatkan Info Terupdate (Warna Selaras dengan Biru Logo) -->
+            <div class="rounded-2xl sm:rounded-3xl p-6 sm:p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden"
+                 style="background: linear-gradient(135deg, #092633 0%, #0e3948 50%, #144d60 100%); border: 1px solid rgba(255, 255, 255, 0.18);">
                 <!-- Ambient Glow on Banner -->
-                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/15 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-[#269DB9]/25 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -left-10 -top-10 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
                 
                 <div class="text-center md:text-left relative z-10">
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 border border-white/20 text-cyan-200 text-[10px] font-bold uppercase tracking-wider mb-2">
+                        <span>✨ Newsletter & Konsultasi</span>
+                    </div>
                     <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight">
                         Dapatkan Info Terupdate
                     </h3>
-                    <p class="text-xs sm:text-sm text-white/95 font-medium mt-1 max-w-md">
+                    <p class="text-xs sm:text-sm text-white/85 font-medium mt-1 max-w-md">
                         Konsultasikan kebutuhan sistem IT Anda atau dapatkan penawaran & wawasan teknologi terbaru.
                     </p>
                 </div>
@@ -511,11 +515,11 @@
                     
                     <div class="relative w-full sm:w-72">
                         <input type="email" name="email" required placeholder="Masukkan Email Anda"
-                               class="w-full px-5 py-3 rounded-full bg-white text-slate-800 placeholder-slate-400 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-slate-900 shadow-inner">
+                               class="w-full px-5 py-3 rounded-full bg-white text-slate-800 placeholder-slate-400 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-inner">
                     </div>
                     <button type="submit"
-                            class="w-full sm:w-auto px-6 py-3 rounded-full bg-slate-950 hover:bg-slate-900 text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-md transition-all hover:scale-105 active:scale-95 shrink-0">
-                        <svg class="w-4 h-4 rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                            class="w-full sm:w-auto px-6 py-3 rounded-full bg-white hover:bg-cyan-50 text-[#0e3b4a] font-extrabold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg transition-all hover:scale-105 active:scale-95 shrink-0 border border-white">
+                        <svg class="w-4 h-4 rotate-45 text-[#0e3b4a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                         <span>SUBSCRIBE</span>
                     </button>
                 </form>
@@ -553,14 +557,14 @@
                         <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" loading="lazy" decoding="async" class="block h-11 w-auto max-w-[200px] object-contain hover:scale-105 transition-transform drop-shadow-sm" />
                     </a>
                     <p class="text-xs sm:text-sm leading-relaxed font-medium text-white/90">
-                        <strong class="text-white font-extrabold">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Training.
+                        <strong class="text-white font-extrabold">CV. Beranda Teknologi Digital</strong> merupakan Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Training.
                     </p>
                 </div>
 
                 <!-- Kolom 2: Alamat -->
                 <div class="space-y-3.5 flex flex-col items-start text-left">
                     <h4 class="font-extrabold text-sm sm:text-base tracking-wide text-white flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-[#fe6000]"></span>
+                        <span class="w-2 h-2 rounded-full bg-cyan-300"></span>
                         Alamat
                     </h4>
                     <p class="text-xs sm:text-sm leading-relaxed font-medium text-white/85">
@@ -569,18 +573,15 @@
                     
                     <div class="space-y-2 pt-1 text-xs sm:text-sm font-semibold">
                         <div class="flex items-center gap-2.5">
-                            <span class="w-6 h-6 rounded-full bg-white/20 text-white flex items-center justify-center text-xs shrink-0 shadow-xs">📞</span>
-                            <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer" 
-                               class="text-white hover:text-orange-200 transition-colors mono font-bold">
-                                0896 9524 9089
-                            </a>
-                        </div>
-                        <div class="flex items-center gap-2.5">
                             <span class="w-6 h-6 rounded-full bg-white/20 text-white flex items-center justify-center text-xs shrink-0 shadow-xs">✉️</span>
                             <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}" 
-                               class="text-white hover:text-orange-200 transition-colors">
+                               class="text-white hover:text-cyan-200 transition-colors">
                                 {{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}
                             </a>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-white/80">
+                            <span class="w-6 h-6 rounded-full bg-white/20 text-white flex items-center justify-center text-xs shrink-0 shadow-xs">🕒</span>
+                            <span>Senin - Jumat: 08:00 - 17:00 WIB</span>
                         </div>
                     </div>
                 </div>
@@ -588,7 +589,7 @@
                 <!-- Kolom 3: Sosial Media -->
                 <div class="space-y-3.5 flex flex-col items-start text-left">
                     <h4 class="font-extrabold text-sm sm:text-base tracking-wide text-white flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-[#fe6000]"></span>
+                        <span class="w-2 h-2 rounded-full bg-cyan-300"></span>
                         Sosial Media
                     </h4>
                     <p class="text-xs sm:text-sm font-bold text-white/95">
@@ -623,18 +624,18 @@
                         </a>
                     </div>
 
-                    <!-- Domain Links dengan Icon Globe (Sesuai Referensi Gambar 2) -->
+                    <!-- Domain & Layanan Links (Relevan, Tidak Ada Duplikasi No HP) -->
                     <div class="space-y-1.5 pt-2 text-xs font-semibold">
                         <div class="flex items-center gap-2">
                             <span class="text-white/80 shrink-0">🌐</span>
-                            <a href="https://berandadigital.net" target="_blank" class="text-white/90 hover:text-white underline-offset-2 hover:underline transition-colors">
+                            <a href="{{ route('home') }}" class="text-white/90 hover:text-white underline-offset-2 hover:underline transition-colors">
                                 berandadigital.net
                             </a>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="text-white/80 shrink-0">🌐</span>
-                            <a href="https://wa.me/6289695249089" target="_blank" class="text-white/90 hover:text-white underline-offset-2 hover:underline transition-colors">
-                                wa.me/6289695249089
+                            <span class="text-white/80 shrink-0">💼</span>
+                            <a href="{{ route('services') }}" class="text-white/90 hover:text-white underline-offset-2 hover:underline transition-colors">
+                                Layanan & Solusi Digital
                             </a>
                         </div>
                     </div>

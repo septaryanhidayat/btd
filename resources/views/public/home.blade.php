@@ -1770,9 +1770,7 @@
         <!-- Header Text (Centered Style matching File 2) -->
         <div class="text-center space-y-2 reveal-on-scroll">
             <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-700 dark:text-blue-400 dark:text-blue-400">
-                <span>—</span>
                 <span>Berita & Dokumentasi Terbaru</span>
-                <span>—</span>
             </div>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07153f] dark:text-white">
                 Workshop dan Webinar Kami
