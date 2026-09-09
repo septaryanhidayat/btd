@@ -173,36 +173,50 @@
     </div>
 
     <!-- STRATEGIC POLICY MAKER CONSIDERATIONS (Pertimbangan Pengambil Kebijakan Keuangan BTD) -->
-    <div class="bg-gradient-to-br from-[#071330] to-[#0f2452] rounded-2xl p-5 sm:p-6 text-white border-2 border-slate-700 shadow-md space-y-4">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3.5">
+    <div class="bg-white rounded-2xl p-5 sm:p-6 border-2 border-slate-300 shadow-sm space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-slate-100 pb-4">
             <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-amber-400/20 border border-amber-400/30 text-amber-300 flex items-center justify-center text-lg shrink-0">
+                <div class="w-10 h-10 rounded-xl bg-amber-100 border-2 border-amber-300 text-amber-800 flex items-center justify-center text-xl shrink-0 shadow-xs">
                     💡
                 </div>
                 <div>
-                    <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
-                        <span>Pertimbangan & Rekomendasi Pengambil Kebijakan Keuangan BTD</span>
-                        <span class="px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-[10px] font-black border border-amber-400/30">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h3 class="text-base font-black text-slate-900">
+                            Pertimbangan & Rekomendasi Pengambil Kebijakan Keuangan BTD
+                        </h3>
+                        <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-black border border-amber-300 uppercase tracking-wider">
                             Executive Directive
                         </span>
-                    </h3>
-                    <p class="text-xs text-slate-300 font-medium">Analisis otomatis berdasarkan data kas riil untuk mendukung keputusan jajaran pimpinan</p>
+                    </div>
+                    <p class="text-xs text-slate-600 font-semibold mt-0.5">Analisis otomatis berbasis data kas riil untuk mendukung keputusan jajaran direksi & pimpinan</p>
                 </div>
             </div>
-            <span class="text-[11px] text-slate-400 font-mono">Status Kas: {{ $healthStatus }}</span>
+            <div class="flex items-center gap-2 self-start sm:self-auto shrink-0">
+                <span class="text-xs font-bold text-slate-500">Status Kas:</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-300 text-slate-800 font-extrabold text-xs mono">
+                    {{ $healthStatus }}
+                </span>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-            @foreach($policyInsights as $insight)
-            <div class="p-4 rounded-xl bg-white/[0.05] border border-white/10 hover:border-white/20 transition-all space-y-1.5">
-                <div class="flex items-center gap-2">
-                    <span class="text-base">{{ $insight['icon'] }}</span>
-                    <span class="font-bold text-xs text-white">{{ $insight['title'] }}</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            @foreach($policyInsights as $index => $insight)
+                @php
+                    $cardTheme = match($index) {
+                        0 => ['bg' => 'bg-amber-50/80', 'border' => 'border-amber-300', 'title' => 'text-amber-950', 'text' => 'text-slate-800'],
+                        1 => ['bg' => 'bg-rose-50/80', 'border' => 'border-rose-300', 'title' => 'text-rose-950', 'text' => 'text-slate-800'],
+                        default => ['bg' => 'bg-blue-50/80', 'border' => 'border-blue-300', 'title' => 'text-blue-950', 'text' => 'text-slate-800'],
+                    };
+                @endphp
+                <div class="p-4 rounded-xl {{ $cardTheme['bg'] }} border-2 {{ $cardTheme['border'] }} shadow-xs space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg">{{ $insight['icon'] }}</span>
+                        <span class="font-black text-xs sm:text-sm {{ $cardTheme['title'] }}">{{ $insight['title'] }}</span>
+                    </div>
+                    <p class="text-xs {{ $cardTheme['text'] }} leading-relaxed font-medium">
+                        {{ $insight['description'] }}
+                    </p>
                 </div>
-                <p class="text-xs text-slate-300 leading-relaxed font-normal">
-                    {{ $insight['description'] }}
-                </p>
-            </div>
             @endforeach
         </div>
     </div>
