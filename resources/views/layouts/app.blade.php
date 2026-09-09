@@ -478,23 +478,26 @@
     </main>
 
     <!-- Ultra-Sleek Symmetrical Enterprise Footer -->
-    <footer class="border-t pt-16 pb-8 transition-colors duration-300 relative overflow-hidden" style="background-color: var(--bg-deep); border-color: var(--border);">
+    <footer class="border-t pt-16 pb-8 transition-colors duration-300 relative overflow-hidden text-white" 
+            style="background: linear-gradient(165deg, #104250 0%, #16586a 35%, #1d738a 75%, #269DB9 100%); border-color: rgba(255, 255, 255, 0.15);">
         <!-- Subtle ambient background glow -->
-        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-gradient-to-b from-[#3E5CE7]/5 via-transparent to-transparent pointer-events-none rounded-full blur-2xl"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-3/4 h-48 bg-white/10 pointer-events-none rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-[#269DB9]/25 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-[#269DB9]/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             <!-- Top Banner: Dapatkan Info Terupdate (Sesuai Referensi Gambar 2) -->
-            <div class="rounded-2xl sm:rounded-3xl p-6 sm:p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden"
+            <div class="rounded-2xl sm:rounded-3xl p-6 sm:p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden border border-white/20"
                  style="background: linear-gradient(135deg, #fe6000 0%, #ff7a1a 100%);">
                 <!-- Ambient Glow on Banner -->
-                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/15 rounded-full blur-2xl pointer-events-none"></div>
                 
                 <div class="text-center md:text-left relative z-10">
                     <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight">
                         Dapatkan Info Terupdate
                     </h3>
-                    <p class="text-xs sm:text-sm text-white/90 font-medium mt-1 max-w-md">
+                    <p class="text-xs sm:text-sm text-white/95 font-medium mt-1 max-w-md">
                         Konsultasikan kebutuhan sistem IT Anda atau dapatkan penawaran & wawasan teknologi terbaru.
                     </p>
                 </div>
@@ -547,35 +550,35 @@
                 <!-- Kolom 1: Logo & Profil -->
                 <div class="space-y-4 flex flex-col items-start text-left">
                     <a href="{{ route('home') }}" class="inline-block py-1 group" aria-label="CV. Beranda Teknologi Digital">
-                        <img src="{{ asset('images/Logo-BTD.png') }}" alt="CV. Beranda Teknologi Digital" width="393" height="164" loading="lazy" decoding="async" class="logo-light-mode block h-11 w-auto max-w-[200px] object-contain hover:scale-105 transition-transform" />
-                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" loading="lazy" decoding="async" class="logo-dark-mode hidden h-11 w-auto max-w-[200px] object-contain hover:scale-105 transition-transform" />
+                        <img src="{{ asset('images/Logo-BTD-white.png') }}" alt="CV. Beranda Teknologi Digital" width="394" height="164" loading="lazy" decoding="async" class="block h-11 w-auto max-w-[200px] object-contain hover:scale-105 transition-transform drop-shadow-sm" />
                     </a>
-                    <p class="text-xs sm:text-sm leading-relaxed font-medium" style="color: var(--text-muted);">
-                        <strong style="color: var(--text);">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Training.
+                    <p class="text-xs sm:text-sm leading-relaxed font-medium text-white/90">
+                        <strong class="text-white font-extrabold">CV. Beranda Teknologi Digital</strong> — Digital Agency & Software House terpercaya di Indonesia. Solusi Website Enterprise, Mobile Apps, dan IT Training.
                     </p>
                 </div>
 
                 <!-- Kolom 2: Alamat -->
                 <div class="space-y-3.5 flex flex-col items-start text-left">
-                    <h4 class="font-extrabold text-sm sm:text-base tracking-wide" style="color: #fe6000;">
+                    <h4 class="font-extrabold text-sm sm:text-base tracking-wide text-white flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#fe6000]"></span>
                         Alamat
                     </h4>
-                    <p class="text-xs sm:text-sm leading-relaxed font-medium" style="color: var(--text-muted);">
+                    <p class="text-xs sm:text-sm leading-relaxed font-medium text-white/85">
                         {{ $siteSettings['contact_address'] ?? 'Jl. Sarjana Kel. Timbangan Blok A No. 15, Indralaya Utara, Kab. Ogan Ilir, Sumatera Selatan.' }}
                     </p>
                     
                     <div class="space-y-2 pt-1 text-xs sm:text-sm font-semibold">
                         <div class="flex items-center gap-2.5">
-                            <span class="text-[#fe6000] text-sm shrink-0">📞</span>
+                            <span class="w-6 h-6 rounded-full bg-white/20 text-white flex items-center justify-center text-xs shrink-0 shadow-xs">📞</span>
                             <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer" 
-                               class="hover:text-[#fe6000] transition-colors mono font-bold" style="color: var(--text);">
+                               class="text-white hover:text-orange-200 transition-colors mono font-bold">
                                 0896 9524 9089
                             </a>
                         </div>
                         <div class="flex items-center gap-2.5">
-                            <span class="text-[#fe6000] text-sm shrink-0">✉️</span>
+                            <span class="w-6 h-6 rounded-full bg-white/20 text-white flex items-center justify-center text-xs shrink-0 shadow-xs">✉️</span>
                             <a href="mailto:{{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}" 
-                               class="hover:text-[#fe6000] transition-colors" style="color: var(--text);">
+                               class="text-white hover:text-orange-200 transition-colors">
                                 {{ $siteSettings['contact_email'] ?? 'info@berandadigital.net' }}
                             </a>
                         </div>
@@ -584,58 +587,53 @@
 
                 <!-- Kolom 3: Sosial Media -->
                 <div class="space-y-3.5 flex flex-col items-start text-left">
-                    <h4 class="font-extrabold text-sm sm:text-base tracking-wide" style="color: #fe6000;">
+                    <h4 class="font-extrabold text-sm sm:text-base tracking-wide text-white flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#fe6000]"></span>
                         Sosial Media
                     </h4>
-                    <p class="text-xs sm:text-sm font-bold" style="color: var(--text);">
+                    <p class="text-xs sm:text-sm font-bold text-white/95">
                         CV. Beranda Teknologi Digital
                     </p>
 
-                    <!-- Baris Tombol Ikon Bulat Medsos (Sesuai Referensi Gambar 2) -->
-                    <div class="flex items-center flex-wrap gap-2 pt-0.5">
+                    <!-- Baris Tombol Ikon Bulat Medsos: FB, IG, YouTube, WA -->
+                    <div class="flex items-center flex-wrap gap-2.5 pt-1">
+                        <!-- Facebook -->
+                        <a href="{{ $siteSettings['social_facebook'] ?? 'https://www.facebook.com/berandateknologidigital' }}" target="_blank" rel="noopener noreferrer" 
+                           aria-label="Facebook Beranda Digital" title="Facebook: @berandateknologidigital"
+                           class="w-10 h-10 rounded-full bg-white text-[#1877F2] hover:bg-[#1877F2] hover:text-white border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/bteknologi_digital" target="_blank" rel="noopener noreferrer" 
-                           aria-label="Instagram @bteknologi_digital" title="Instagram @bteknologi_digital"
-                           class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/80 hover:bg-[#fe6000] hover:text-white hover:border-[#fe6000] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xs shrink-0">
+                        <a href="{{ $siteSettings['social_instagram'] ?? 'https://www.instagram.com/berandadigital_net' }}" target="_blank" rel="noopener noreferrer" 
+                           aria-label="Instagram @berandadigital_net" title="Instagram: @berandadigital_net"
+                           class="w-10 h-10 rounded-full bg-white text-[#E4405F] hover:bg-[#E4405F] hover:text-white border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md shrink-0">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         </a>
-                        <!-- LinkedIn -->
-                        <a href="https://linkedin.com/company/berandadigital" target="_blank" rel="noopener noreferrer" 
-                           aria-label="LinkedIn Beranda Digital" title="LinkedIn Beranda Digital"
-                           class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/80 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xs shrink-0">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-                        <!-- GitHub -->
-                        <a href="https://github.com/septaryanhidayat/btd" target="_blank" rel="noopener noreferrer" 
-                           aria-label="GitHub Repository" title="GitHub Repository"
-                           class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/80 hover:bg-slate-900 hover:text-white hover:border-slate-900 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xs shrink-0">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                        </a>
                         <!-- YouTube -->
-                        <a href="https://www.youtube.com/@berandadigital" target="_blank" rel="noopener noreferrer" 
-                           aria-label="YouTube Beranda Digital" title="YouTube Beranda Digital"
-                           class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/80 hover:bg-red-600 hover:text-white hover:border-red-600 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xs shrink-0">
+                        <a href="{{ $siteSettings['social_youtube'] ?? 'https://www.youtube.com/@BerandaDigital' }}" target="_blank" rel="noopener noreferrer" 
+                           aria-label="YouTube Beranda Digital" title="YouTube: @BerandaDigital"
+                           class="w-10 h-10 rounded-full bg-white text-[#FF0000] hover:bg-[#FF0000] hover:text-white border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md shrink-0">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                         </a>
                         <!-- WhatsApp -->
                         <a href="https://wa.me/6289695249089" target="_blank" rel="noopener noreferrer" 
-                           aria-label="WhatsApp Kami" title="WhatsApp Kami"
-                           class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/80 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-xs shrink-0">
+                           aria-label="WhatsApp Kami" title="WhatsApp: 0896 9524 9089"
+                           class="w-10 h-10 rounded-full bg-white text-[#25D366] hover:bg-[#25D366] hover:text-white border border-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md shrink-0">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.79 14.07c-.24.68-1.2 1.25-1.65 1.33-.45.08-1.03.11-3.32-.84-2.75-1.14-4.52-3.95-4.66-4.14-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.02.95-2.29.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4.06.61.57.24.58.82 2 .89 2.15.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.31.31-.13.62.18.31.8 1.32 1.72 2.14 1.18 1.05 2.17 1.37 2.48 1.52.31.15.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.16.28.1 1.77.83 2.07.98.3.15.5.22.58.35.07.13.07.76-.17 1.44z"/></svg>
                         </a>
                     </div>
 
                     <!-- Domain Links dengan Icon Globe (Sesuai Referensi Gambar 2) -->
-                    <div class="space-y-1.5 pt-1 text-xs font-medium">
+                    <div class="space-y-1.5 pt-2 text-xs font-semibold">
                         <div class="flex items-center gap-2">
-                            <span class="text-[#fe6000] shrink-0">🌐</span>
-                            <a href="https://berandadigital.net" target="_blank" class="hover:text-[#fe6000] transition-colors" style="color: var(--text-muted);">
+                            <span class="text-white/80 shrink-0">🌐</span>
+                            <a href="https://berandadigital.net" target="_blank" class="text-white/90 hover:text-white underline-offset-2 hover:underline transition-colors">
                                 berandadigital.net
                             </a>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="text-[#fe6000] shrink-0">🌐</span>
-                            <a href="https://wa.me/6289695249089" target="_blank" class="hover:text-[#fe6000] transition-colors" style="color: var(--text-muted);">
+                            <span class="text-white/80 shrink-0">🌐</span>
+                            <a href="https://wa.me/6289695249089" target="_blank" class="text-white/90 hover:text-white underline-offset-2 hover:underline transition-colors">
                                 wa.me/6289695249089
                             </a>
                         </div>
@@ -684,43 +682,43 @@
                     
                     <!-- Judul Pengunjung + Pill Badge Live (Sesuai Referensi Gambar 2) -->
                     <div class="flex items-center gap-2.5">
-                        <h4 class="font-extrabold text-sm sm:text-base tracking-wide" style="color: #fe6000;">
+                        <h4 class="font-extrabold text-sm sm:text-base tracking-wide text-white flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#fe6000]"></span>
                             Pengunjung
                         </h4>
-                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-orange-500/40 bg-orange-500/10 text-orange-600 dark:text-orange-400 text-[10px] font-extrabold uppercase tracking-wider">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#fe6000] animate-ping"></span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-white/30 bg-white/15 text-white text-[10px] font-extrabold uppercase tracking-wider backdrop-blur-xs">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
                             Live
                         </span>
                     </div>
 
                     <!-- Angka Pengunjung Besar Tebal (Sesuai Referensi Gambar 2) -->
-                    <div class="text-4xl sm:text-5xl font-black tracking-tight mono select-all leading-tight my-1"
-                         style="color: var(--text);"
+                    <div class="text-4xl sm:text-5xl font-black tracking-tight mono select-all leading-tight my-1 text-white drop-shadow-sm"
                          x-text="formatted">
                         {{ $visitorFormattedCount ?? '153.563' }}
                     </div>
 
                     <!-- Status Pengunjung Online Real-Time -->
-                    <div class="flex items-center gap-2 text-xs font-semibold pt-1" style="color: var(--text-muted);">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                    <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-black/25 border border-white/15 text-white shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
                         <span>
-                            <strong class="text-emerald-600 dark:text-emerald-400 font-extrabold">{{ $visitorOnlineCount ?? 1 }}</strong> Pengunjung Online
+                            <strong class="text-emerald-300 font-extrabold">{{ $visitorOnlineCount ?? 1 }}</strong> Pengunjung Online
                         </span>
-                        <span class="text-[10px] mono uppercase text-slate-400 font-bold ml-1">Real-Time</span>
+                        <span class="text-[10px] mono uppercase text-white/70 font-bold ml-1">Real-Time</span>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Gradient Divider -->
-            <div class="h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent my-6"></div>
+            <!-- Divider -->
+            <div class="h-px bg-white/20 my-6"></div>
 
             <!-- Bottom Copyright -->
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium" style="color: var(--text-dim);">
-                <p>&copy; {{ date('Y') }} <a href="{{ route('home') }}" class="font-bold hover:underline hover:text-[#3E5CE7] transition-colors" style="color: var(--text);">CV. Beranda Teknologi Digital</a>. All Rights Reserved.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium text-white/80">
+                <p>&copy; {{ date('Y') }} <a href="{{ route('home') }}" class="font-bold text-white hover:underline transition-colors">CV. Beranda Teknologi Digital</a>. All Rights Reserved.</p>
                 <div class="flex items-center gap-2">
-                    <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 text-[10px] font-bold tracking-wider" style="color: var(--text-dim);">🇮🇩 MADE IN INDONESIA</span>
-                    <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/60 dark:border-emerald-800/60 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold tracking-wider">🔒 SSL SECURED</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/15 border border-white/25 text-white text-[10px] font-bold tracking-wider shadow-xs">🇮🇩 MADE IN INDONESIA</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white/15 border border-white/25 text-white text-[10px] font-bold tracking-wider shadow-xs">🔒 SSL SECURED</span>
                 </div>
             </div>
         </div>
