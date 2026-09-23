@@ -134,8 +134,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'throttle:60,1'])->g
     Route::post('/invoices/{invoice}/send-email', [AdminInvoiceController::class, 'sendEmail'])->name('invoices.send-email');
     Route::resource('invoices', AdminInvoiceController::class);
 
-    // SOP & Panduan Pemesanan Web/App (Shareable Document to Clients)
+    // SOP & Panduan Pemesanan Web/App (Shareable Document to Clients & Word-like Editor)
     Route::get('/panduan-pemesanan', [AdminOrderGuideController::class, 'index'])->name('order-guide.index');
+    Route::post('/panduan-pemesanan', [AdminOrderGuideController::class, 'update'])->name('order-guide.update');
+    Route::post('/panduan-pemesanan/reset', [AdminOrderGuideController::class, 'reset'])->name('order-guide.reset');
 
     // Profile & Account Settings
     Route::get('/profile', [AdminProfileController::class, 'index'])->name('profile.index');
