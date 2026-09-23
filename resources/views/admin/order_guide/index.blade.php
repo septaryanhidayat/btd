@@ -100,6 +100,21 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Lampiran Format Surat Permohonan & Surat Kuasa Quick Actions -->
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between flex-wrap gap-2">
+                <div class="flex items-center gap-1.5 text-xs text-slate-700 font-bold">
+                    <span class="text-teal-600">📄</span> Contoh Format Surat Legalitas (.sch.id):
+                </div>
+                <div class="flex items-center gap-2">
+                    <button @click="copyLetter('permohonan')" class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-slate-700 text-[11px] font-bold border border-slate-200 transition-all">
+                        📋 Salin Format Permohonan
+                    </button>
+                    <button @click="copyLetter('kuasa')" class="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-slate-700 text-[11px] font-bold border border-slate-200 transition-all">
+                        📋 Salin Format Surat Kuasa
+                    </button>
+                </div>
+            </div>
         </div>
 
         <!-- Kolom 3: Validasi QR Code Digital Card -->
@@ -179,6 +194,27 @@
                     el.select();
                     document.execCommand('copy');
                     alert('✓ Template teks pesan WhatsApp berhasil disalin! Anda tinggal paste di WhatsApp klien.');
+                }
+            },
+            copyLetter(type) {
+                let text = '';
+                let title = '';
+                if (type === 'permohonan') {
+                    title = 'Format Surat Permohonan Domain .sch.id';
+                    text = `KOP SURAT RESMI SEKOLAH\nAlamat Lengkap Sekolah, Telepon, Email, Website Resmi\n========================================================================\n\nNomor    : [Nomor Surat dari Sekolah]               [Kota], [Tanggal Bulan Tahun]\nHal      : Permohonan Pendaftaran Domain sch.id\nLampiran : 1 berkas\n\nKepada Yth.\nPANDI – Pengelola Nama Domain Internet Indonesia\nDi Gedung Arthaloka Lantai 11, Jalan Jenderal Sudirman No. 2, Jakarta Pusat\n\nDengan Hormat,\n\nYang bertanda tangan di bawah ini:\nNama    : [Nama Kepala Sekolah]\nNIP     : [NIP Kepala Sekolah / - jika non-PNS]\nJabatan : Kepala Sekolah [Nama Sekolah]\n\nBermaksud mengajukan permohonan pendaftaran domain [namadomain.sch.id] untuk keperluan pembuatan website sekolah [Nama Sekolah] [Nama Kota], sebagai persyaratan terlampir.\n\nDemikian permohonan ini kami sampaikan, atas kerja sama dan terkabulnya permohonan ini, kami sampaikan terima kasih.\n\n\nHormat Kami,\nKepala Sekolah [Nama Sekolah]\n\n\n(Tanda Tangan & Cap Stempel Basah Sekolah)\n\n\n[Nama Lengkap Kepala Sekolah]\nNIP. [NIP Kepala Sekolah]`;
+                } else {
+                    title = 'Format Surat Kuasa Domain .sch.id';
+                    text = `KOP SURAT RESMI SEKOLAH\nAlamat Lengkap Sekolah, Telepon, Email, Website Resmi\n========================================================================\n\nSURAT KUASA\nNO: [Nomor Surat Kuasa dari Sekolah]\n\nKepada Yth.\nPANDI – Pengelola Nama Domain Internet Indonesia\nDi Gedung Arthaloka Lantai 11, Jalan Jenderal Sudirman No. 2, Jakarta Pusat\n\nDengan Hormat,\n\nYang bertanda tangan di bawah ini:\nNama    : [Nama Kepala Sekolah]\nNIP     : [NIP Kepala Sekolah / - jika non-PNS]\nJabatan : Kepala Sekolah [Nama Sekolah]\n\nDengan ini memberi kuasa kepada:\nNama    : [Nama yang Diberi Kuasa / Septa Ryan Hidayat - Tim CV. Beranda Teknologi Digital]\nNo KTP  : [Nomor KTP yang Diberi Kuasa]\n\nSebagai penanggung jawab untuk pendaftaran dan pengelolaan domain [namadomain.sch.id] untuk keperluan pembuatan website sekolah [Nama Sekolah] [Nama Kota].\n\nDemikian surat permohonan ini kami sampaikan, atas kerja samanya, kami sampaikan terima kasih.\n\n\n[Kota], [Tanggal Bulan Tahun]\nKepala Sekolah [Nama Sekolah]\n\n\n(Tanda Tangan & Cap Stempel Basah Sekolah)\n\n\n[Nama Lengkap Kepala Sekolah]\nNIP. [NIP Kepala Sekolah]`;
+                }
+
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        alert('✓ ' + title + ' berhasil disalin ke clipboard! Anda tinggal paste di Word atau WhatsApp.');
+                    }).catch(() => {
+                        this.fallbackCopy(text);
+                    });
+                } else {
+                    this.fallbackCopy(text);
                 }
             },
             fallbackCopy(text) {

@@ -434,6 +434,178 @@
             margin-right: 4px;
         }
 
+        /* Lampiran Surat Permohonan & Surat Kuasa */
+        .lampiran-section {
+            background: #ffffff;
+            border: 1px solid #dcebf0;
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+        .lampiran-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            font-weight: 800;
+            color: #0d9488;
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .lampiran-title {
+            font-size: 15px;
+            font-weight: 900;
+            color: #0f172a;
+            letter-spacing: -0.3px;
+            margin-bottom: 4px;
+        }
+        .lampiran-desc {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+        .lampiran-notes-box {
+            background: #fffbeb;
+            border: 1px solid #fef3c7;
+            border-left: 3.5px solid #f59e0b;
+            border-radius: 8px;
+            padding: 11px 16px;
+            margin-bottom: 18px;
+            font-size: 11.5px;
+            color: #92400e;
+            line-height: 1.55;
+        }
+        .lampiran-notes-box .notes-title {
+            font-size: 11.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 4px;
+            color: #b45309;
+        }
+        .lampiran-notes-box ol {
+            padding-left: 18px;
+            margin: 4px 0 0 0;
+        }
+        .lampiran-notes-box li {
+            margin-bottom: 4px;
+        }
+        .letters-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .letter-card {
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            position: relative;
+        }
+        .letter-card-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+            border-bottom: 1px dashed #e2e8f0;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .letter-card-title {
+            font-size: 12.5px;
+            font-weight: 800;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-copy-letter {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-copy-letter:hover {
+            background: #269DB9;
+            color: #ffffff;
+            border-color: #269DB9;
+            transform: translateY(-1px);
+        }
+        .letter-paper {
+            font-size: 11.5px;
+            color: #1e293b;
+            line-height: 1.65;
+            background: #fafbfd;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px 24px;
+        }
+        .letter-kop-simulated {
+            text-align: center;
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+            border-bottom: 3px double #334155;
+        }
+        .kop-text-main {
+            font-size: 13.5px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #0f172a;
+            text-transform: uppercase;
+        }
+        .kop-text-sub {
+            font-size: 10px;
+            color: #64748b;
+        }
+        .letter-field {
+            color: #0284c7;
+            background: #f0f9ff;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-weight: 700;
+            border: 1px dashed #bae6fd;
+        }
+        .letter-sign-block {
+            margin-top: 18px;
+            display: flex;
+            justify-content: flex-end;
+            text-align: right;
+        }
+        .letter-sign-inner {
+            display: inline-block;
+            text-align: center;
+            min-width: 220px;
+            font-size: 11.5px;
+        }
+        .letter-sign-space {
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 10px;
+            font-style: italic;
+        }
+
         /* Payment Instruction Box (Identik dengan Invoice) */
         .payment-box-full {
             width: 100%;
@@ -812,6 +984,13 @@
                 border: 1px solid #cbd5e1 !important;
                 page-break-inside: avoid !important;
             }
+            .lampiran-section, .letter-card {
+                page-break-inside: avoid !important;
+                box-shadow: none !important;
+            }
+            .letter-card-toolbar {
+                display: none !important;
+            }
             .payment-box-full, .contact-box-grid, .doc-footer-container {
                 page-break-inside: avoid !important;
             }
@@ -988,6 +1167,11 @@
                             <strong>KTP Penanggung Jawab</strong> (pendaftaran instan tanpa persyaratan berkas tambahan).
                         </li>
                     </ul>
+
+                    <div style="margin-top: 10px; padding: 9px 13px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; font-size: 11.5px; color: #166534; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                        <span><strong>💡 Butuh contoh surat resmi?</strong> Disediakan format Surat Permohonan & Surat Kuasa domain .sch.id yang siap diedit & disalin di bagian lampiran bawah.</span>
+                        <a href="#lampiran-surat" style="color: #0d9488; font-weight: 800; text-decoration: none; background: #ffffff; padding: 3px 10px; border-radius: 4px; border: 1px solid #99f6e4; font-size: 11px;">Lihat Contoh Surat &darr;</a>
+                    </div>
                 </div>
             </div>
 
@@ -1081,6 +1265,279 @@
                 </div>
             </div>
 
+        </div>
+
+        <!-- LAMPIRAN CONTOH FORMAT: SURAT PERMOHONAN & SURAT KUASA DOMAIN (.SCH.ID / LEMBAGA) -->
+        <div class="lampiran-section" id="lampiran-surat">
+            <div class="lampiran-badge">
+                <span>📄 LAMPIRAN RESMI DOKUMEN</span>
+            </div>
+            <div class="lampiran-title">Contoh Format Surat Permohonan & Surat Kuasa Domain (.sch.id)</div>
+            <div class="lampiran-desc">
+                Format standar yang disyaratkan oleh PANDI (Pengelola Nama Domain Internet Indonesia) untuk pendaftaran nama domain institusi sekolah / madrasah / pesantren.
+            </div>
+
+            <!-- Box Petunjuk & Keterangan Pengisian -->
+            <div class="lampiran-notes-box">
+                <div class="notes-title">📌 KETERANGAN & PANDUAN PENGISIAN:</div>
+                <ol>
+                    <li>Silakan edit dan sesuaikan data di dalam tanda kurung siku <span class="letter-field">[ ... ]</span> dengan identitas resmi sekolah/institusi Anda.</li>
+                    <li>Surat wajib dicetak menggunakan <strong>KOP Resmi Sekolah</strong>, ditandatangani oleh Kepala Sekolah / Pejabat berwenang, dan <strong>dibubuhi cap stempel basah sekolah</strong>.</li>
+                    <li>Khusus untuk surat kuasa, lampirkan <strong>scan/foto KTP Kepala Sekolah</strong> dan <strong>KTP penerima kuasa</strong> yang masih berlaku.</li>
+                </ol>
+            </div>
+
+            <div class="letters-grid">
+
+                <!-- Contoh Surat 1: Permohonan Domain sch.id -->
+                <div class="letter-card">
+                    <div class="letter-card-toolbar">
+                        <div class="letter-card-title">
+                            <span>1. Contoh Surat Permohonan Pendaftaran Domain .sch.id</span>
+                        </div>
+                        <button onclick="copyLetterTemplate('rawLetterPermohonan', 'Format Surat Permohonan berhasil disalin ke clipboard!')" class="btn-copy-letter">
+                            📋 Salin Teks Format Surat
+                        </button>
+                    </div>
+
+                    <div class="letter-paper">
+                        <div class="letter-kop-simulated">
+                            <div class="kop-text-main">KOP SURAT RESMI SEKOLAH</div>
+                            <div class="kop-text-sub">Alamat Lengkap Sekolah &bull; Telepon: (0711) xxxxxx &bull; Email: sekolah@domain.sch.id &bull; NPSN: xxxxxxxx</div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap;">
+                            <div style="line-height: 1.5;">
+                                <div><strong>Nomor</strong> : <span class="letter-field">420/123/SMP-BTD/2026</span></div>
+                                <div><strong>Hal</strong> : Permohonan Pendaftaran Domain sch.id</div>
+                                <div><strong>Lampiran</strong> : 1 berkas</div>
+                            </div>
+                            <div style="text-align: right; line-height: 1.5;">
+                                <span class="letter-field">Palembang, 23 September 2026</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 12px; line-height: 1.5;">
+                            <div>Kepada Yth.</div>
+                            <div><strong>PANDI – Pengelola Nama Domain Internet Indonesia</strong></div>
+                            <div>Di Gedung Arthaloka Lantai 11, Jalan Jenderal Sudirman No. 2, Jakarta Pusat</div>
+                        </div>
+
+                        <div style="margin-bottom: 10px;">
+                            Dengan Hormat,
+                        </div>
+
+                        <div style="margin-bottom: 10px;">
+                            Yang bertanda tangan di bawah ini:
+                        </div>
+
+                        <table style="margin-left: 12px; margin-bottom: 12px; border-collapse: collapse; font-size: 11.5px;">
+                            <tr>
+                                <td style="width: 90px; padding: 2px 0;"><strong>Nama</strong></td>
+                                <td style="width: 15px; padding: 2px 0;">:</td>
+                                <td style="padding: 2px 0;"><span class="letter-field">Drs. H. Ahmad Fauzi, M.Pd.</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px 0;"><strong>NIP</strong></td>
+                                <td style="padding: 2px 0;">:</td>
+                                <td style="padding: 2px 0;"><span class="letter-field">19750512 200003 1 002</span> <em>(atau - jika sekolah swasta)</em></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px 0;"><strong>Jabatan</strong></td>
+                                <td style="padding: 2px 0;">:</td>
+                                <td style="padding: 2px 0;">Kepala Sekolah <span class="letter-field">SMP Negeri 1 Unggulan</span></td>
+                            </tr>
+                        </table>
+
+                        <p style="margin-bottom: 10px; text-align: justify;">
+                            Bermaksud mengajukan permohonan pendaftaran domain <strong class="letter-field">smpn1unggulan.sch.id</strong> untuk keperluan pembuatan dan pengelolaan website resmi sekolah <span class="letter-field">SMP Negeri 1 Unggulan Kota Palembang</span>, sebagai persyaratan terlampir.
+                        </p>
+
+                        <p style="margin-bottom: 16px; text-align: justify;">
+                            Demikian permohonan ini kami sampaikan, atas kerja sama dan terkabulnya permohonan ini, kami sampaikan terima kasih.
+                        </p>
+
+                        <div class="letter-sign-block">
+                            <div class="letter-sign-inner">
+                                <div>Hormat Kami,</div>
+                                <div>Kepala Sekolah <span class="letter-field">SMP Negeri 1 Unggulan</span></div>
+                                <div class="letter-sign-space">
+                                    (Tanda Tangan & Cap Stempel Basah Sekolah)
+                                </div>
+                                <div><strong class="letter-field">Drs. H. Ahmad Fauzi, M.Pd.</strong></div>
+                                <div>NIP. <span class="letter-field">19750512 200003 1 002</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hidden Plaintext for Copying -->
+                    <textarea id="rawLetterPermohonan" style="display:none;">KOP SURAT RESMI SEKOLAH
+Alamat Lengkap Sekolah, Telepon, Email, Website Resmi
+========================================================================
+
+Nomor    : [Nomor Surat dari Sekolah]               [Kota], [Tanggal Bulan Tahun]
+Hal      : Permohonan Pendaftaran Domain sch.id
+Lampiran : 1 berkas
+
+Kepada Yth.
+PANDI – Pengelola Nama Domain Internet Indonesia
+Di Gedung Arthaloka Lantai 11, Jalan Jenderal Sudirman No. 2, Jakarta Pusat
+
+Dengan Hormat, 
+
+Yang bertanda tangan di bawah ini:
+Nama    : [Nama Kepala Sekolah]
+NIP     : [NIP Kepala Sekolah / - jika non-PNS]
+Jabatan : Kepala Sekolah [Nama Sekolah]
+
+Bermaksud mengajukan permohonan pendaftaran domain [namadomain.sch.id] untuk keperluan pembuatan website sekolah [Nama Sekolah] [Nama Kota], sebagai persyaratan terlampir.
+
+Demikian permohonan ini kami sampaikan, atas kerja sama dan terkabulnya permohonan ini, kami sampaikan terima kasih.
+
+
+Hormat Kami,
+Kepala Sekolah [Nama Sekolah]
+
+
+(Tanda Tangan & Cap Stempel Basah Sekolah)
+
+
+[Nama Lengkap Kepala Sekolah]
+NIP. [NIP Kepala Sekolah]</textarea>
+                </div>
+
+                <!-- Contoh Surat 2: Surat Kuasa Pendaftaran & Pengelolaan Domain -->
+                <div class="letter-card">
+                    <div class="letter-card-toolbar">
+                        <div class="letter-card-title">
+                            <span>2. Contoh Surat Kuasa Pendaftaran & Pengelolaan Domain .sch.id</span>
+                        </div>
+                        <button onclick="copyLetterTemplate('rawLetterKuasa', 'Format Surat Kuasa berhasil disalin ke clipboard!')" class="btn-copy-letter">
+                            📋 Salin Teks Format Surat Kuasa
+                        </button>
+                    </div>
+
+                    <div class="letter-paper">
+                        <div class="letter-kop-simulated">
+                            <div class="kop-text-main">KOP SURAT RESMI SEKOLAH</div>
+                            <div class="kop-text-sub">Alamat Lengkap Sekolah &bull; Telepon: (0711) xxxxxx &bull; Email: sekolah@domain.sch.id &bull; NPSN: xxxxxxxx</div>
+                        </div>
+
+                        <div style="text-align: center; margin-bottom: 14px;">
+                            <div style="font-size: 13.5px; font-weight: 900; letter-spacing: 0.5px; text-decoration: underline;">SURAT KUASA</div>
+                            <div style="font-size: 11px; color: #475569;">NOMOR: <span class="letter-field">420/124/SK-SMP/2026</span></div>
+                        </div>
+
+                        <div style="margin-bottom: 12px; line-height: 1.5;">
+                            <div>Kepada Yth.</div>
+                            <div><strong>PANDI – Pengelola Nama Domain Internet Indonesia</strong></div>
+                            <div>Di Gedung Arthaloka Lantai 11, Jalan Jenderal Sudirman No. 2, Jakarta Pusat</div>
+                        </div>
+
+                        <div style="margin-bottom: 10px;">
+                            Dengan Hormat,
+                        </div>
+
+                        <div style="margin-bottom: 10px;">
+                            Yang bertanda tangan di bawah ini:
+                        </div>
+
+                        <table style="margin-left: 12px; margin-bottom: 10px; border-collapse: collapse; font-size: 11.5px;">
+                            <tr>
+                                <td style="width: 90px; padding: 2px 0;"><strong>Nama</strong></td>
+                                <td style="width: 15px; padding: 2px 0;">:</td>
+                                <td style="padding: 2px 0;"><span class="letter-field">Drs. H. Ahmad Fauzi, M.Pd.</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px 0;"><strong>NIP</strong></td>
+                                <td style="padding: 2px 0;">:</td>
+                                <td style="padding: 2px 0;"><span class="letter-field">19750512 200003 1 002</span> <em>(atau - jika sekolah swasta)</em></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px 0;"><strong>Jabatan</strong></td>
+                                <td style="padding: 2px 0;">:</td>
+                                <td style="padding: 2px 0;">Kepala Sekolah <span class="letter-field">SMP Negeri 1 Unggulan</span></td>
+                            </tr>
+                        </table>
+
+                        <div style="margin-bottom: 10px;">
+                            Dengan ini memberi kuasa penuh kepada:
+                        </div>
+
+                        <table style="margin-left: 12px; margin-bottom: 12px; border-collapse: collapse; font-size: 11.5px;">
+                            <tr>
+                                <td style="width: 90px; padding: 2px 0;"><strong>Nama</strong></td>
+                                <td style="width: 15px; padding: 2px 0;">:</td>
+                                <td style="padding: 2px 0;"><span class="letter-field">Septa Ryan Hidayat (CV. Beranda Teknologi Digital)</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px 0;"><strong>No. KTP</strong></td>
+                                <td style="padding: 2px 0;">:</td>
+                                <td style="padding: 2px 0;"><span class="letter-field">16710xxxxxxxxxxx</span></td>
+                            </tr>
+                        </table>
+
+                        <p style="margin-bottom: 10px; text-align: justify;">
+                            Sebagai penanggung jawab untuk pendaftaran, konfigurasi DNS/Server, dan pengelolaan domain <strong class="letter-field">smpn1unggulan.sch.id</strong> untuk keperluan pembuatan website sekolah <span class="letter-field">SMP Negeri 1 Unggulan Kota Palembang</span>.
+                        </p>
+
+                        <p style="margin-bottom: 16px; text-align: justify;">
+                            Demikian surat kuasa ini kami buat dengan sebenarnya, atas kerja samanya, kami sampaikan terima kasih.
+                        </p>
+
+                        <div class="letter-sign-block">
+                            <div class="letter-sign-inner">
+                                <div><span class="letter-field">Palembang, 23 September 2026</span></div>
+                                <div>Kepala Sekolah <span class="letter-field">SMP Negeri 1 Unggulan</span></div>
+                                <div class="letter-sign-space">
+                                    (Tanda Tangan & Cap Stempel Basah Sekolah)
+                                </div>
+                                <div><strong class="letter-field">Drs. H. Ahmad Fauzi, M.Pd.</strong></div>
+                                <div>NIP. <span class="letter-field">19750512 200003 1 002</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hidden Plaintext for Copying -->
+                    <textarea id="rawLetterKuasa" style="display:none;">KOP SURAT RESMI SEKOLAH
+Alamat Lengkap Sekolah, Telepon, Email, Website Resmi
+========================================================================
+
+SURAT KUASA
+NO: [Nomor Surat Kuasa dari Sekolah]
+
+Kepada Yth.
+PANDI – Pengelola Nama Domain Internet Indonesia
+Di Gedung Arthaloka Lantai 11, Jalan Jenderal Sudirman No. 2, Jakarta Pusat
+
+Dengan Hormat, 
+
+Yang bertanda tangan di bawah ini:
+Nama    : [Nama Kepala Sekolah]
+NIP     : [NIP Kepala Sekolah / - jika non-PNS]
+Jabatan : Kepala Sekolah [Nama Sekolah]
+
+Dengan ini memberi kuasa kepada:
+Nama    : [Nama yang Diberi Kuasa / Septa Ryan Hidayat - Tim CV. Beranda Teknologi Digital]
+No KTP  : [Nomor KTP yang Diberi Kuasa]
+
+Sebagai penanggung jawab untuk pendaftaran dan pengelolaan domain [namadomain.sch.id] untuk keperluan pembuatan website sekolah [Nama Sekolah] [Nama Kota].
+
+Demikian surat permohonan ini kami sampaikan, atas kerja samanya, kami sampaikan terima kasih.
+
+
+[Kota], [Tanggal Bulan Tahun]
+Kepala Sekolah [Nama Sekolah]
+
+
+(Tanda Tangan & Cap Stempel Basah Sekolah)
+
+
+[Nama Lengkap Kepala Sekolah]
+NIP. [NIP Kepala Sekolah]</textarea>
+                </div>
+
+            </div>
         </div>
 
         <!-- Informasi Rekening & Saluran Transfer Resmi (Identik Format Invoice) -->
@@ -1261,6 +1718,22 @@
                 prompt("Salin tautan ini:", text);
             }
             document.body.removeChild(textArea);
+        }
+
+        function copyLetterTemplate(elementId, successMsg) {
+            var el = document.getElementById(elementId);
+            if (el) {
+                var text = el.value;
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(text).then(function() {
+                        showToast(successMsg || 'Format surat berhasil disalin ke clipboard!');
+                    }).catch(function() {
+                        fallbackCopy(text);
+                    });
+                } else {
+                    fallbackCopy(text);
+                }
+            }
         }
 
         function showToast(msg) {
