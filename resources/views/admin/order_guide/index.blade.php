@@ -3,6 +3,331 @@
 @section('title', 'Editor SOP & Panduan Order Klien - CV. Beranda Teknologi Digital')
 
 @section('content')
+<style>
+    /* Styling Khusus Lembar Dokumen & Editor WYSIWYG */
+    #editableCanvas, .doc-preview-canvas {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 12.5px;
+        line-height: 1.65;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        color: #22282a;
+    }
+    #editableCanvas p, 
+    #editableCanvas li {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        line-height: 1.65;
+    }
+    
+    /* Intro Box */
+    #editableCanvas .doc-intro-box {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-left: 3.5px solid #269DB9;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 22px;
+        font-size: 12px;
+        color: #334155;
+        line-height: 1.6;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+    #editableCanvas .doc-intro-box strong {
+        color: #0f172a;
+    }
+
+    /* 6 Steps Container & Cards */
+    #editableCanvas .steps-container {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 24px;
+        position: relative;
+        z-index: 10;
+    }
+    #editableCanvas .step-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 14px 18px;
+        margin-bottom: 14px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    #editableCanvas .step-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+    #editableCanvas .step-num {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        background: #f0f9fb;
+        border: 1.5px solid #269DB9;
+        color: #269DB9;
+        font-weight: 900;
+        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    #editableCanvas .step-title {
+        font-size: 13.5px;
+        font-weight: 800;
+        color: #1e293b;
+        letter-spacing: -0.2px;
+    }
+    #editableCanvas .step-body {
+        color: #475569;
+        font-size: 12px;
+        line-height: 1.6;
+        padding-left: 34px;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+    #editableCanvas .step-body p {
+        margin-bottom: 6px;
+    }
+    #editableCanvas .step-bullets {
+        margin: 6px 0;
+        padding-left: 18px;
+        list-style-type: disc;
+    }
+    #editableCanvas .step-bullets li {
+        margin-bottom: 4px;
+        color: #334155;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+    #editableCanvas .step-badge-mini {
+        display: inline-block;
+        font-size: 10.5px;
+        font-weight: 700;
+        color: #0284c7;
+        background: #e0f2fe;
+        padding: 1px 7px;
+        border-radius: 4px;
+        margin-right: 4px;
+    }
+
+    /* Lampiran Surat */
+    #editableCanvas .lampiran-section {
+        background: #ffffff;
+        border: 1px solid #dcebf0;
+        border-radius: 10px;
+        padding: 20px 22px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        position: relative;
+        z-index: 10;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    #editableCanvas .lampiran-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 10px;
+        font-weight: 800;
+        color: #0d9488;
+        background: #f0fdfa;
+        border: 1px solid #99f6e4;
+        padding: 3px 10px;
+        border-radius: 9999px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+    }
+    #editableCanvas .lampiran-title {
+        font-size: 15px;
+        font-weight: 900;
+        color: #0f172a;
+        letter-spacing: -0.3px;
+        margin-bottom: 4px;
+    }
+    #editableCanvas .lampiran-desc {
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.5;
+        margin-bottom: 14px;
+        text-align: justify !important;
+    }
+    #editableCanvas .lampiran-notes-box {
+        background: #fffbeb;
+        border: 1px solid #fef3c7;
+        border-left: 3.5px solid #f59e0b;
+        border-radius: 8px;
+        padding: 11px 16px;
+        margin-bottom: 18px;
+        font-size: 11.5px;
+        color: #92400e;
+        line-height: 1.55;
+    }
+    #editableCanvas .lampiran-notes-box .notes-title {
+        font-size: 11.5px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 4px;
+        color: #b45309;
+    }
+    #editableCanvas .lampiran-notes-box ol {
+        padding-left: 18px;
+        margin: 4px 0 0 0;
+    }
+    #editableCanvas .lampiran-notes-box li {
+        margin-bottom: 4px;
+        text-align: justify !important;
+    }
+    #editableCanvas .letters-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    #editableCanvas .letter-card {
+        background: #ffffff;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 22px 26px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        position: relative;
+        margin-bottom: 20px;
+    }
+    #editableCanvas .letter-card-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+        border-bottom: 1px dashed #e2e8f0;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    #editableCanvas .letter-card-title {
+        font-size: 12.5px;
+        font-weight: 800;
+        color: #1e293b;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    #editableCanvas .btn-copy-letter {
+        background: #f1f5f9;
+        border: 1px solid #cbd5e1;
+        color: #334155;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+    #editableCanvas .letter-paper {
+        font-size: 11.5px;
+        color: #1e293b;
+        line-height: 1.65;
+        background: #fafbfd;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        padding: 20px 24px;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+    #editableCanvas .letter-kop-simulated {
+        text-align: center !important;
+        padding-bottom: 8px;
+        margin-bottom: 14px;
+        border-bottom: 3px double #334155;
+    }
+    #editableCanvas .kop-text-main {
+        font-size: 13.5px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        color: #0f172a;
+        text-transform: uppercase;
+        text-align: center !important;
+    }
+    #editableCanvas .kop-text-sub {
+        font-size: 10.5px;
+        color: #64748b;
+        font-weight: 500;
+        text-align: center !important;
+    }
+    #editableCanvas .letter-meta-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 14px;
+        font-size: 11.5px;
+    }
+    #editableCanvas .letter-table {
+        width: 100%;
+        margin: 10px 0 14px 0;
+        border-collapse: collapse;
+        font-size: 11.5px;
+    }
+    #editableCanvas .letter-table td {
+        padding: 3px 6px;
+        vertical-align: top;
+        border: none !important;
+    }
+    #editableCanvas .letter-field {
+        background: #fef08a;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-weight: 700;
+        color: #854d0e;
+        font-size: 11px;
+    }
+    #editableCanvas .letter-sign-block {
+        margin-top: 24px;
+        display: flex;
+        justify-content: flex-end;
+        text-align: right !important;
+    }
+    #editableCanvas .letter-sign-inner {
+        display: inline-block;
+        text-align: center !important;
+        min-width: 200px;
+    }
+    #editableCanvas .letter-sign-title {
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+    #editableCanvas .letter-sign-space {
+        height: 55px;
+    }
+    #editableCanvas .letter-sign-name {
+        font-weight: 900;
+        text-decoration: underline;
+        color: #0f172a;
+    }
+    #editableCanvas .letter-sign-meta {
+        font-size: 10.5px;
+        color: #64748b;
+    }
+
+    /* Word Toolbar & Table Support */
+    #editableCanvas table:not(.letter-table) {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+    }
+    #editableCanvas table:not(.letter-table) th,
+    #editableCanvas table:not(.letter-table) td {
+        border: 1px solid #cbd5e1;
+        padding: 8px 12px;
+        text-align: left;
+    }
+    #editableCanvas table:not(.letter-table) th {
+        background: #f1f5f9;
+        font-weight: 700;
+    }
+</style>
 <div class="space-y-6 pb-12" x-data="orderGuideAdmin({ activeTab: '{{ request('tab', 'editor') }}' })">
 
     <!-- Flash Alert Success Notification -->
@@ -262,12 +587,12 @@
                 <div class="w-full max-w-[840px] bg-white rounded-lg shadow-xl p-6 sm:p-12 relative overflow-hidden text-slate-800" 
                      style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12.5px; line-height: 1.65; text-align: justify; text-justify: inter-word;">
 
-                    <!-- Watermark Samar -->
-                    <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0 select-none opacity-5">
-                        <div class="transform -rotate-25 text-center">
-                            <img src="{{ asset('images/Logo-BTD.png') }}" alt="" class="w-72 h-auto mx-auto mb-3 grayscale">
-                            <div class="text-2xl font-black tracking-widest uppercase">{{ $settings['company_legal_name'] ?? 'CV. BERANDA TEKNOLOGI DIGITAL' }}</div>
-                            <div class="text-xs font-bold tracking-widest uppercase text-teal-600">OFFICIAL SOP & ORDER GUIDE</div>
+                    <!-- Watermark Samar (Subtle Background) -->
+                    <div style="position: absolute; inset: 0; pointer-events: none; display: flex; align-items: center; justify-content: center; overflow: hidden; z-index: 0; user-select: none;">
+                        <div style="opacity: 0.038; transform: rotate(-25deg); text-align: center; user-select: none;">
+                            <img src="{{ asset('images/Logo-BTD.png') }}" alt="" style="width: 280px; height: auto; margin: 0 auto 12px auto; filter: grayscale(100%);">
+                            <div style="font-size: 24px; font-weight: 900; letter-spacing: 4px; text-transform: uppercase; color: #0f172a;">{{ $settings['company_legal_name'] ?? 'CV. BERANDA TEKNOLOGI DIGITAL' }}</div>
+                            <div style="font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #269DB9; margin-top: 4px;">OFFICIAL SOP &amp; ORDER GUIDE</div>
                         </div>
                     </div>
 

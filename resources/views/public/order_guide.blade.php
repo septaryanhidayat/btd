@@ -1153,6 +1153,8 @@
                 <div class="target-name">Institusi, Sekolah, Yayasan & Pelaku Bisnis</div>
                 <div class="target-desc">Panduan resmi alur kerja, legalitas domain, pembayaran DP, hingga serah terima & garansi pengerjaan.</div>
             </div>
+        </div>
+
         <!-- Dynamic Document Content (Rata Penuh & Terstruktur) -->
         <div class="doc-dynamic-content" style="text-align: justify; text-justify: inter-word;">
             {!! $documentContent !!}

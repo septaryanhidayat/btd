@@ -245,7 +245,7 @@ class AdminOrderGuideController extends Controller
 
         <!-- Contoh Surat 1: Permohonan Domain sch.id -->
         <div class="letter-card">
-            <div class="letter-card-toolbar">
+            <div class="letter-card-toolbar" contenteditable="false">
                 <div class="letter-card-title">
                     <span>1. Contoh Surat Permohonan Pendaftaran Domain .sch.id</span>
                 </div>
@@ -362,7 +362,7 @@ NIP. [NIP Kepala Sekolah]</textarea>
 
         <!-- Contoh Surat 2: Surat Kuasa Pendaftaran & Pengelolaan Domain -->
         <div class="letter-card">
-            <div class="letter-card-toolbar">
+            <div class="letter-card-toolbar" contenteditable="false">
                 <div class="letter-card-title">
                     <span>2. Contoh Surat Kuasa Pendaftaran & Pengelolaan Domain .sch.id</span>
                 </div>
