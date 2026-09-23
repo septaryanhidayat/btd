@@ -250,7 +250,7 @@ class AdminOrderGuideController extends Controller
                     <span>1. Contoh Surat Permohonan Pendaftaran Domain .sch.id</span>
                 </div>
                 <button type="button" onclick="copyLetterTemplate('rawLetterPermohonan', 'Format Surat Permohonan berhasil disalin ke clipboard!')" class="btn-copy-letter">
-                    📋 Salin Teks Format Surat
+                    📋 <span class="label-desktop">Salin Teks Format Surat</span><span class="label-mobile">Salin Format</span>
                 </button>
             </div>
 
@@ -367,7 +367,7 @@ NIP. [NIP Kepala Sekolah]</textarea>
                     <span>2. Contoh Surat Kuasa Pendaftaran & Pengelolaan Domain .sch.id</span>
                 </div>
                 <button type="button" onclick="copyLetterTemplate('rawLetterKuasa', 'Format Surat Kuasa berhasil disalin ke clipboard!')" class="btn-copy-letter">
-                    📋 Salin Teks Format Surat Kuasa
+                    📋 <span class="label-desktop">Salin Teks Format Surat Kuasa</span><span class="label-mobile">Salin Format</span>
                 </button>
             </div>
 

@@ -19,6 +19,21 @@
         text-justify: inter-word !important;
         line-height: 1.65;
     }
+
+    .label-desktop {
+        display: inline;
+    }
+    .label-mobile {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        .label-desktop {
+            display: none !important;
+        }
+        .label-mobile {
+            display: inline !important;
+        }
+    }
     
     /* Intro Box */
     #editableCanvas .doc-intro-box {

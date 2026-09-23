@@ -60,6 +60,13 @@
             text-align: right !important;
         }
 
+        .label-desktop {
+            display: inline;
+        }
+        .label-mobile {
+            display: none;
+        }
+
         .mono {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
             font-variant-numeric: tabular-nums;
@@ -929,60 +936,300 @@
 
         /* Responsive Mobile Styles */
         @media screen and (max-width: 768px) {
+            .label-desktop {
+                display: none !important;
+            }
+            .label-mobile {
+                display: inline !important;
+            }
+            
+            /* Sticky Control Bar: Rapi, 1 Baris Horizontal, Tombol Singkat */
             .doc-screen-bar {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 12px;
-                padding: 12px 16px;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 7px 10px !important;
+                gap: 6px !important;
+                min-height: 44px;
+            }
+            .screen-bar-left {
+                gap: 6px !important;
+                flex-shrink: 0;
+            }
+            .screen-bar-brand {
+                display: none !important; /* Disembunyikan di mobile agar tombol muat 1 baris penuh tanpa terpotong */
             }
             .screen-bar-right {
-                flex-wrap: wrap;
-                justify-content: stretch;
+                gap: 5px !important;
+                flex-wrap: nowrap !important;
+                justify-content: flex-end !important;
+                flex-shrink: 0;
             }
-            .screen-bar-right .btn-action {
-                flex: 1 1 auto;
-                justify-content: center;
+            .btn-action {
+                padding: 6px 8px !important;
+                font-size: 11px !important;
+                font-weight: 700 !important;
+                border-radius: 6px !important;
+                gap: 4px !important;
+                white-space: nowrap !important;
             }
+
+            /* Halaman Lembar Dokumen: Margin & Padding Presisi */
             .doc-page {
-                margin: 12px 8px 30px 8px !important;
-                padding: 24px 16px !important;
+                margin: 8px 6px 24px 6px !important;
+                padding: 18px 14px 20px 14px !important;
                 border-radius: 8px;
             }
+
+            /* Perataan Teks di Mobile: Rata Kiri Alami & Rapi (Menghilangkan Celah Spasi Menganga) */
+            .doc-page, 
+            .doc-dynamic-content,
+            .doc-intro-box, 
+            .step-body, 
+            .step-body p, 
+            .letter-paper, 
+            .letter-paper p,
+            .doc-dynamic-content p,
+            .doc-dynamic-content div,
+            .doc-dynamic-content li,
+            .step-bullets li {
+                text-align: left !important;
+                text-justify: auto !important;
+                word-break: break-word;
+            }
+
+            /* Header Kop Surat di Mobile */
             .doc-header {
-                flex-direction: column;
-                gap: 14px;
-                align-items: flex-start;
+                flex-direction: column !important;
+                gap: 10px !important;
+                align-items: flex-start !important;
+                margin-bottom: 14px !important;
+            }
+            .logo-img {
+                height: 44px !important;
             }
             .company-meta-area {
                 text-align: left !important;
                 margin-left: 0 !important;
-                max-width: 100%;
+                max-width: 100% !important;
                 padding-right: 0 !important;
+                font-size: 11px !important;
+                line-height: 1.4 !important;
             }
+            .company-meta-area .company-name {
+                font-size: 13.5px !important;
+                white-space: normal !important;
+            }
+
+            /* Baris Judul Dokumen & Target */
             .doc-info-row {
-                grid-template-columns: 1fr;
-                gap: 14px;
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+                margin-bottom: 14px !important;
+                padding-bottom: 12px !important;
+            }
+            .doc-title-col h1 {
+                font-size: 16px !important;
+                line-height: 1.3 !important;
+            }
+            .doc-meta-item {
+                font-size: 11px !important;
+                line-height: 1.4 !important;
             }
             .doc-target-col {
-                padding-left: 10px;
+                padding-left: 10px !important;
+                border-left: 2.5px solid #269DB9 !important;
+                font-size: 11px !important;
             }
-            .ribbon-wrapper {
-                display: none;
+            .doc-target-col .target-name {
+                font-size: 12px !important;
+            }
+
+            /* Kotak Pengantar */
+            .doc-intro-box {
+                padding: 10px 12px !important;
+                margin-bottom: 14px !important;
+                font-size: 11.5px !important;
+                line-height: 1.55 !important;
+            }
+
+            /* Kartu 6 Tahapan Pemesanan */
+            .steps-container {
+                gap: 10px !important;
+                margin-bottom: 18px !important;
+            }
+            .step-card {
+                padding: 12px 12px !important;
+            }
+            .step-header {
+                gap: 8px !important;
+                margin-bottom: 6px !important;
+            }
+            .step-num {
+                width: 22px !important;
+                height: 22px !important;
+                font-size: 11px !important;
+            }
+            .step-title {
+                font-size: 12.5px !important;
+                line-height: 1.35 !important;
+            }
+            .step-body {
+                padding-left: 0 !important; /* Hapus indent lebar di layar HP */
+                font-size: 11.5px !important;
+                line-height: 1.55 !important;
+            }
+            .step-bullets {
+                padding-left: 16px !important;
+                margin: 4px 0 !important;
+            }
+            .step-badge-mini {
+                display: inline-block !important;
+                margin-bottom: 2px !important;
+                font-size: 10px !important;
+                padding: 1px 6px !important;
+            }
+
+            /* Lampiran Contoh Surat */
+            .lampiran-section {
+                padding: 14px 12px !important;
+                margin-bottom: 18px !important;
+                border-radius: 8px !important;
+            }
+            .lampiran-title {
+                font-size: 13.5px !important;
+            }
+            .lampiran-desc {
+                font-size: 11px !important;
+                margin-bottom: 10px !important;
+            }
+            .lampiran-notes-box {
+                padding: 10px 12px !important;
+                margin-bottom: 14px !important;
+                font-size: 11px !important;
+            }
+            .lampiran-notes-box ol {
+                padding-left: 14px !important;
+            }
+            .letter-card {
+                padding: 14px 10px !important;
+                border-radius: 8px !important;
+                margin-bottom: 14px !important;
+            }
+            .letter-card-toolbar {
+                padding-bottom: 8px !important;
+                margin-bottom: 10px !important;
+                gap: 6px !important;
+            }
+            .letter-card-title {
+                font-size: 11.5px !important;
+            }
+            .btn-copy-letter {
+                font-size: 10.5px !important;
+                padding: 4px 8px !important;
+            }
+            .letter-paper {
+                padding: 12px 8px !important;
+                font-size: 10.5px !important;
+                line-height: 1.5 !important;
+            }
+            .kop-text-main {
+                font-size: 12px !important;
+            }
+            .kop-text-sub {
+                font-size: 9.5px !important;
+            }
+            .letter-table {
+                font-size: 10.5px !important;
+            }
+            .letter-table td:first-child {
+                width: 65px !important; /* Agar tidak memakan ruang tabel di HP */
+            }
+            .letter-sign-block {
+                margin-top: 16px !important;
+            }
+            .letter-sign-inner {
+                min-width: 150px !important;
+            }
+            .letter-sign-space {
+                height: 40px !important;
+            }
+
+            /* Kotak Saluran Pembayaran & Bank */
+            .payment-box-full {
+                padding: 14px 12px !important;
+                margin-bottom: 18px !important;
+            }
+            .payment-box-title {
+                font-size: 12px !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 4px !important;
+            }
+            .payment-box-subtext {
+                font-size: 11px !important;
             }
             .bank-accounts-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+                gap: 8px !important;
             }
+            .bank-card {
+                padding: 8px 10px !important;
+            }
+            .bank-acc-num {
+                font-size: 13px !important;
+            }
+            .ewallet-card {
+                padding: 10px !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 6px !important;
+            }
+            .ewallet-acc-num {
+                font-size: 14px !important;
+            }
+            .account-holder-line {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 3px !important;
+                font-size: 10.5px !important;
+            }
+
+            /* Kontak Grid */
             .contact-box-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
+                grid-template-columns: 1fr !important;
+                gap: 8px !important;
+                margin-bottom: 18px !important;
+            }
+            .contact-card-item {
+                padding: 8px 10px !important;
+            }
+
+            /* Footer & QR Code */
+            .doc-footer-container {
+                padding-top: 14px !important;
             }
             .doc-footer-row {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 16px;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 14px !important;
             }
             .qr-validation-card {
-                width: 100%;
+                width: 100% !important;
+                padding: 10px !important;
+            }
+            .qr-img {
+                width: 65px !important;
+                height: 65px !important;
+            }
+            .qr-title {
+                font-size: 11px !important;
+            }
+            .qr-desc {
+                font-size: 9.5px !important;
+            }
+            .ribbon-wrapper {
+                display: none !important;
             }
         }
 
@@ -1072,29 +1319,39 @@
     <div class="doc-screen-bar">
         <div class="screen-bar-left">
             @if(auth()->check())
-                <a href="{{ route('admin.order-guide.index') }}" class="btn-action btn-admin">
-                    &larr; Kembali ke Dashboard Admin
+                <a href="{{ route('admin.order-guide.index') }}" class="btn-action btn-admin" title="Kembali ke Dashboard Admin">
+                    <span>&larr;</span>
+                    <span class="label-desktop">Kembali ke Dashboard</span>
+                    <span class="label-mobile">Admin</span>
                 </a>
             @else
-                <a href="{{ url('/') }}" class="btn-action btn-copy">
-                    &larr; Beranda Utama
+                <a href="{{ url('/') }}" class="btn-action btn-copy" title="Kembali ke Beranda Utama">
+                    <span>&larr;</span>
+                    <span class="label-desktop">Beranda Utama</span>
+                    <span class="label-mobile">Beranda</span>
                 </a>
             @endif
             <div class="screen-bar-brand">
-                <span>Panduan Pemesanan Resmi</span>
-                <span class="screen-bar-tag">Verified SOP</span>
+                <span class="label-desktop">Panduan Pemesanan</span>
+                <span class="screen-bar-tag">SOP BTD</span>
             </div>
         </div>
 
         <div class="screen-bar-right">
-            <button onclick="copyShareLink('{{ $docUrl }}')" class="btn-action btn-copy" title="Salin tautan dokumen untuk dibagikan ke klien">
-                📋 Salin Link
+            <button onclick="copyShareLink('{{ $docUrl }}')" class="btn-action btn-copy" title="Salin tautan dokumen">
+                <span>📋</span>
+                <span class="label-desktop">Salin Link</span>
+                <span class="label-mobile">Salin</span>
             </button>
             <a href="https://wa.me/{{ $rawWaPhone }}?text={{ $shareWaText }}" target="_blank" class="btn-action btn-wa" title="Konsultasi langsung via WhatsApp">
-                💬 Konsultasi via WhatsApp
+                <span>💬</span>
+                <span class="label-desktop">WhatsApp</span>
+                <span class="label-mobile">WA</span>
             </a>
-            <button onclick="window.print()" class="btn-action btn-print" title="Cetak atau unduh dokumen format PDF">
-                🖨️ Cetak / Simpan PDF
+            <button onclick="window.print()" class="btn-action btn-print" title="Cetak atau Simpan PDF">
+                <span>🖨️</span>
+                <span class="label-desktop">Cetak PDF</span>
+                <span class="label-mobile">PDF</span>
             </button>
         </div>
     </div>
