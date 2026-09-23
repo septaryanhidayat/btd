@@ -69,8 +69,12 @@ class AdminOrderGuideController extends Controller
     /**
      * Konten HTML default berformat rata penuh (justify) yang rapi.
      */
-    public function getDefaultContent(array $settings = []): string
+    public function getDefaultContent(array|\Illuminate\Support\Collection $settings = []): string
     {
+        if ($settings instanceof \Illuminate\Support\Collection) {
+            $settings = $settings->toArray();
+        }
+
         $companyLegal = $settings['company_legal_name'] ?? 'CV. Beranda Teknologi Digital';
         $rawPhone = $settings['contact_phone'] ?? '0896 9524 9089';
         $cleanPhone = str_replace('-', ' ', $rawPhone);
